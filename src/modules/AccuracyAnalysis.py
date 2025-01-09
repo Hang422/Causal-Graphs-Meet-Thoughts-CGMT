@@ -238,6 +238,96 @@ def intersect(model_dirs):
         compare_enhanced_with_baseline(base_dir)  # 对比增强与基线
 
 
+def calculate_common_accuracies(base_dir: str, stages: List[str]) -> pd.DataFrame:
+    """
+    计算在所有stage目录下都存在的问题的正确率
+
+    步骤：
+    1. 获取每个stage目录下所有问题的ID
+    2. 取所有stage的ID交集
+    3. 只对这些共有ID的问题计算每个stage的正确率
+    """
+    base_path = config.paths["cache"] / base_dir / 'data'
+    baseline_stage = "derelict"
+
+    # 获取每个stage目录下的所有问题ID
+    stage_ids = {}
+    stage_questions = {}
+    for stage in stages:
+        stage_dir = base_path / stage
+        stage_questions[stage] = load_questions_from_dir(stage_dir)
+        stage_ids[stage] = set(stage_questions[stage].keys())
+
+    # 获取所有stage的ID交集
+    common_ids = set.intersection(*stage_ids.values())
+
+    if not common_ids:
+        logger.warning("No questions found common to all stages.")
+        return pd.DataFrame()
+
+    # 获取baseline中这些共有ID的问题
+    baseline_qs = {q: stage_questions[baseline_stage][q] for q in common_ids}
+
+    # 基于baseline计算correct/wrong集合
+    baseline_total = len(baseline_qs)
+    baseline_correct_set = {q for q, d in baseline_qs.items() if is_correct(d)}
+    baseline_wrong_set = common_ids - baseline_correct_set
+
+    baseline_correct_num = len(baseline_correct_set)
+    baseline_acc = (baseline_correct_num / baseline_total * 100) if baseline_total > 0 else 0.0
+
+    results = []
+    for stage in stages:
+        # 获取该stage下的共有问题
+        considered = {q: stage_questions[stage][q] for q in common_ids}
+
+        total_count = len(considered)
+        if total_count == 0:
+            results.append({
+                'Model': stage,
+                'Total_Questions': 0,
+                'Overall_Accuracy(%)': 0.0,
+                'Baseline_Correct_Count': len(baseline_correct_set),
+                'Baseline_Correct_Accuracy(%)': 0.0,
+                'Baseline_Wrong_Count': len(baseline_wrong_set),
+                'Baseline_Wrong_Accuracy(%)': 0.0,
+                'Improvement_over_Baseline(%)': 0.0
+            })
+            continue
+
+        # 计算overall accuracy
+        total_correct = sum(is_correct(d) for d in considered.values())
+        overall_acc = (total_correct / total_count * 100)
+
+        # 计算在baseline correct set上的正确率
+        bc_questions = {q: considered[q] for q in baseline_correct_set}
+        bc_count = len(bc_questions)
+        bc_correct = sum(is_correct(d) for d in bc_questions.values())
+        bc_acc = (bc_correct / bc_count * 100) if bc_count > 0 else 0.0
+
+        # 计算在baseline wrong set上的正确率
+        bw_questions = {q: considered[q] for q in baseline_wrong_set}
+        bw_count = len(bw_questions)
+        bw_correct = sum(is_correct(d) for d in bw_questions.values())
+        bw_acc = (bw_correct / bw_count * 100) if bw_count > 0 else 0.0
+
+        # 计算相对baseline的提升
+        improvement = overall_acc - baseline_acc
+
+        results.append({
+            'Model': stage,
+            'Total_Questions': total_count,
+            'Overall_Accuracy(%)': overall_acc,
+            'Baseline_Correct_Count': bc_count,
+            'Baseline_Correct_Accuracy(%)': bc_acc,
+            'Baseline_Wrong_Count': bw_count,
+            'Baseline_Wrong_Accuracy(%)': bw_acc,
+            'Improvement_over_Baseline(%)': improvement
+        })
+
+    df = pd.DataFrame(results)
+    return df
+
 if __name__ == "__main__":
     STAGES = ['derelict', 'enhanced',
               'causal_graph', 'knowledge_graph', 'remove_llm_enhanced', 'normal_rag']
