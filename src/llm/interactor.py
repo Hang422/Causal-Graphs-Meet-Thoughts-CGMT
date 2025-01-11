@@ -146,7 +146,7 @@ def _generate_question_identifier(question: str) -> str:
 class LLMLogger:
     """Enhanced logging system for LLM interactions"""
 
-    def __init__(self, log_path:str):
+    def __init__(self, log_path: str):
         """Initialize logger with configured paths and interaction types"""
         self.base_log_dir = config.paths["logs"] / "llm_logs" / log_path
         self.base_log_dir.mkdir(parents=True, exist_ok=True)
@@ -200,8 +200,8 @@ class LLMLogger:
         return self.models.get(model, 'gpt-3.5-turbo')  # Default to gpt-3.5-turbo if unknown model
 
     def log_interaction(self, model: str, interaction_type: str,
-                       question: MedicalQuestion, messages: List[Dict],
-                       response: str, metadata: Optional[Dict] = None) -> None:
+                        question: MedicalQuestion, messages: List[Dict],
+                        response: str, metadata: Optional[Dict] = None) -> None:
         """Log an LLM interaction with enhanced metadata"""
         try:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -425,7 +425,7 @@ Question: {question.question}
             ### Instructions:
             - Keep steps simple, each step just one state or outcome.
             - '->' separates each step.
-            
+
             ### Output Format:
             Start each chain with "CHAIN:" on a new line.
             Example:
@@ -467,7 +467,7 @@ Question: {question.question}
             logging.error(f"Error in reasoning chain generation: {str(e)}", exc_info=True)
             question.reasoning_chain = []
 
-    def enhance_information(self, question: MedicalQuestion, flag:str) -> None:
+    def enhance_information(self, question: MedicalQuestion, flag: str) -> None:
         """
         Enhancement with standardized processing:
         1. We have an 'enhanced_graph' containing multiple evidence paths (strings).
@@ -535,7 +535,7 @@ Question: {question.question}
             logging.error(f"Error in enhancement: {str(e)}")
             question.enhanced_information = ""
 
-    def enhance_information_with_chain(self, question: MedicalQuestion, flag:str) -> None:
+    def enhance_information_with_chain(self, question: MedicalQuestion, flag: str) -> None:
         """Enhancement with standardized processing:
            Use standard medical knowledge and retrieved evidence paths to prune and verify the reasoning chains.
            The retrieved paths might be broad but are correct; do not be misled by irrelevant details.
@@ -552,7 +552,7 @@ Question: {question.question}
 
         prompt += f"""
         Your task:
-        - You have per-option reasoning chains (from previous step).
+        - You have reasoning chains (from previous step).
         - You have retrieved evidence paths (enhanced graph info) that are correct but may be broad and not directly addressing the key point.
         - Use standard medical/biochemical consensus to evaluate each chain.
         - If a chain step contradicts consensus, correct or remove it.
@@ -746,7 +746,7 @@ Question: {question.question}
                 1. Identify the core medical principle and the most likely correct option based on consensus.
                 2. If the evidence is not perfectly clear, pick the best-supported option and explain the reasoning.
                 3. Provide a final analysis and a confidence score (0-100%).
-                
+
                 ### Output Format:
                 {
                   "final_analysis": "Step-by-step reasoning, prioritizing medical consensus and acknowledging complexity if present.",
@@ -802,7 +802,7 @@ Question: {question.question}
                 1. Identify the core medical principle and the most likely correct option based on consensus.
                 2. If the evidence is not perfectly clear, pick the best-supported option and explain the reasoning.
                 3. Provide a final analysis and a confidence score (0-100%).
-                
+
     ### Output Format
     Provide your response in valid JSON format:
     {   
@@ -826,4 +826,70 @@ Question: {question.question}
             logging.error(f"Error in normal answer: {str(e)}")
             _update_question_with_error(question)
 
+    def detect_multihop_question(self, question: MedicalQuestion) -> bool:
+        """
+        使用LLM判断一个医疗问题是否是多跳问题
+
+        Args:
+            question: MedicalQuestion对象，包含问题和选项信息
+
+        Returns:
+            bool: 是否是多跳问题
+        """
+        prompt = f"""
+        You are a system designed to determine if a question requires single-hop or multi-hop reasoning.
+
+        Definitions:
+        - Single-hop question:
+          1. Can be answered by recalling or looking up a single piece of knowledge.
+          2. Does not require multi-step reasoning or chaining multiple facts.
+
+        - Multi-hop question:
+          1. Requires combining multiple pieces of knowledge.
+          2. Involves multi-step reasoning or inference.
+          3. Cannot be answered by a single fact lookup.
+
+        Question:
+        {question.question}
+
+        Options:
+        """
+        for key, text in question.options.items():
+            prompt += f"{key}. {text}\n"
+
+        prompt += """
+        Instruction:
+        You must respond in valid JSON with the following format:
+
+        {
+            "is_multihop": true or false,
+            "explanation": "A short explanation about why this question is single-hop or multi-hop."
+        }
+        """
+
+        try:
+            messages = [
+                {"role": "system", "content": "You are an expert at analyzing medical questions."},
+                {"role": "user", "content": prompt}
+            ]
+
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=messages,
+                temperature=self.temperature
+            )
+            response_text = response.choices[0].message.content
+
+            result = clean_json_response(response_text)
+
+            # 检查结果格式
+            is_multihop = result.get("is_multihop")
+            if isinstance(is_multihop, str):
+                is_multihop = is_multihop.lower() == 'true'
+
+            return bool(is_multihop)
+
+        except Exception as e:
+            logging.error(f"Error in detecting multi-hop question: {str(e)}")
+            return False  # 如果发生错误，默认返回False
 

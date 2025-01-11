@@ -1,0 +1,187 @@
+{
+  "question": "Question linked to image nº1 An 80-year-old woman is brought to the emergency department for acute abdominal pain that is accompanied by hypotension, tachycardia and fever of 38ºC. Between its antecedents it emphasizes a resection of left colon by carcinoma seven days before. After the initial resuscitation, a simple chest radiograph (shown) is performed, which is diagnostic of:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Pneumoperitoneum",
+    "opb": "Intestinal obstruction.",
+    "opc": "Strangled crural hernia.",
+    "opd": "Left pneumothorax",
+    "ope": "Mesenteric ischemia."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "removal technique",
+        "Complication"
+      ],
+      [
+        "Abdomen, Acute",
+        "Disease",
+        "Tachycardia"
+      ],
+      [
+        "Abdomen, Acute",
+        "Septicemia",
+        "Tachycardia"
+      ],
+      [
+        "Abdomen, Acute",
+        "Lupus Erythematosus, Systemic",
+        "Tachycardia"
+      ],
+      [
+        "Tachycardia",
+        "Myocardial Infarction",
+        "Septicemia"
+      ],
+      [
+        "Tachycardia",
+        "Hypertensive disease",
+        "Septicemia"
+      ],
+      [
+        "Fever",
+        "Septicemia"
+      ],
+      [
+        "Septicemia",
+        "Systemic inflammatory response"
+      ],
+      [
+        "Chest radiograph",
+        "Symptoms",
+        "Pneumoperitoneum"
+      ],
+      [
+        "Pneumoperitoneum",
+        "Disease",
+        "Intestinal Perforation"
+      ],
+      [
+        "Pneumoperitoneum",
+        "Symptoms",
+        "Intestinal Perforation"
+      ],
+      [
+        "Pneumoperitoneum",
+        "Obstruction",
+        "Intestinal Perforation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(removal technique)-CAUSES->(Complication)",
+      "(Abdomen, Acute)-CAUSES->(Disease)-CAUSES->(Tachycardia)",
+      "(Abdomen, Acute)-CAUSES->(Septicemia)-CAUSES->(Tachycardia)",
+      "(Abdomen, Acute)-CAUSES->(Lupus Erythematosus, Systemic)-COMPLICATES->(Tachycardia)",
+      "(Tachycardia)-CAUSES->(Myocardial Infarction)-CAUSES->(Septicemia)",
+      "(Tachycardia)-CAUSES->(Hypertensive disease)-CAUSES->(Septicemia)",
+      "(Fever)-CAUSES->(Septicemia)",
+      "(Septicemia)-CAUSES->(Systemic inflammatory response)",
+      "(Chest radiograph)-CAUSES->(Symptoms)-CAUSES->(Pneumoperitoneum)",
+      "(Pneumoperitoneum)-CAUSES->(Disease)-CAUSES->(Intestinal Perforation)",
+      "(Pneumoperitoneum)-CAUSES->(Symptoms)-CAUSES->(Intestinal Perforation)",
+      "(Pneumoperitoneum)-CAUSES->(Obstruction)-CAUSES->(Intestinal Perforation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Left colon",
+        "Complication"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Left colon)-LOCATION_OF->(Complication)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fever)-CAUSES->(Septicemia)",
+      "(Abdomen, Acute)-CAUSES->(Disease)-CAUSES->(Tachycardia)",
+      "(Abdomen, Acute)-CAUSES->(Septicemia)-CAUSES->(Tachycardia)",
+      "(Abdomen, Acute)-CAUSES->(Lupus Erythematosus, Systemic)-COMPLICATES->(Tachycardia)",
+      "(removal technique)-CAUSES->(Complication)",
+      "(Left colon)-LOCATION_OF->(Complication)",
+      "(Tachycardia)-CAUSES->(Myocardial Infarction)-CAUSES->(Septicemia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Recent left colon resection -> risk of postoperative complications -> 80% CHAIN: Acute abdominal pain -> hypotension, tachycardia, fever -> suggestive of sepsis -> 70% CHAIN: Sepsis -> systemic inflammatory response -> possible organ dysfunction -> 60% CHAIN: Simple chest radiograph -> diagnostic evaluation for underlying cause -> 70% CHAIN: Findings on chest radiograph -> pneumoperitoneum -> suggestive of bowel perforation -> 80% CHAIN: Diagnosis of pneumoperitoneum -> likely due to anastomotic leak post-colon resection -> 80%"
+  ],
+  "enhanced_information": "The 80-year-old woman with acute abdominal pain, hypotension, tachycardia, and fever post left colon resection is likely experiencing sepsis. The simple chest radiograph showing pneumoperitoneum suggests bowel perforation, possibly due to an anastomotic leak post-colon resection.",
+  "analysis": "The patient's presentation of acute abdominal pain, hypotension, tachycardia, and fever post left colon resection is concerning for sepsis. The presence of pneumoperitoneum on the chest radiograph suggests bowel perforation, likely due to an anastomotic leak post-colon resection. This combination of symptoms and radiographic findings is highly indicative of pneumoperitoneum secondary to bowel perforation.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      8
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

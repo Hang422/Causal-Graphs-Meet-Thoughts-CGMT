@@ -1,0 +1,219 @@
+{
+  "question": "A 70-year-old woman, worried about her risk of having a stroke, comes to our office because her mother died of this cause a year ago. He has a history of high blood pressure and type 2 diabetes mellitus, so he is being treated with glipizide, aspirin, enalapril and atorvastatin. He smokes 20 cigarettes a day and does not exercise regularly. On examination, a blood pressure of 150/80 mmHg is detected. The analytical highlights a hemoglobin A1c of 8% and an LDL cholesterol of 110 mg / dl. Which of the following is associated with a greater reduction in stroke risk?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Achieve optimal levels of hemoglobin A1C.",
+    "opb": "Achieve an optimal control of blood pressure.",
+    "opc": "Add an antioxidant to the treatment.",
+    "opd": "Abandon tobacco",
+    "ope": "Achieve optimal levels of LDL."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypertensive disease",
+        "Cerebrovascular accident"
+      ],
+      [
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Cerebrovascular accident"
+      ],
+      [
+        "Glycosylated hemoglobin A",
+        "Dysglycemia",
+        "Disease",
+        "Cerebrovascular accident"
+      ],
+      [
+        "Glycosylated hemoglobin A",
+        "Dysglycemia",
+        "Myocardial Infarction",
+        "Cerebrovascular accident"
+      ],
+      [
+        "Glycosylated hemoglobin A",
+        "Dysglycemia",
+        "Hypertensive disease",
+        "Cerebrovascular accident"
+      ],
+      [
+        "Tobacco",
+        "Disease",
+        "Cerebrovascular accident"
+      ],
+      [
+        "Tobacco",
+        "Obesity",
+        "Cerebrovascular accident"
+      ],
+      [
+        "Tobacco",
+        "Virus",
+        "Cerebrovascular accident"
+      ],
+      [
+        "Low-Density Lipoproteins",
+        "Cerebrovascular accident"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Cerebrovascular accident)",
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Cerebrovascular accident)",
+      "(Glycosylated hemoglobin A)-PREDISPOSES->(Dysglycemia)-PREDISPOSES->(Disease)-CAUSES->(Cerebrovascular accident)",
+      "(Glycosylated hemoglobin A)-PREDISPOSES->(Dysglycemia)-PREDISPOSES->(Myocardial Infarction)-CAUSES->(Cerebrovascular accident)",
+      "(Glycosylated hemoglobin A)-PREDISPOSES->(Dysglycemia)-PREDISPOSES->(Hypertensive disease)-CAUSES->(Cerebrovascular accident)",
+      "(Tobacco)-TREATS->(Disease)-CAUSES->(Cerebrovascular accident)",
+      "(Tobacco)-TREATS->(Obesity)-CAUSES->(Cerebrovascular accident)",
+      "(Tobacco)-TREATS->(Virus)-CAUSES->(Cerebrovascular accident)",
+      "(Low-Density Lipoproteins)-TREATS->(Cerebrovascular accident)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Cerebrovascular accident",
+        "Pathogenesis",
+        "Glycosylated hemoglobin A"
+      ],
+      [
+        "Cerebrovascular accident",
+        "Pathogenesis",
+        "Glycosylated hemoglobin A"
+      ],
+      [
+        "Cerebrovascular accident",
+        "Pathogenesis",
+        "FRAP1 protein, human|MTOR",
+        "Tobacco"
+      ],
+      [
+        "Cerebrovascular accident",
+        "Pathogenesis",
+        "FRAP1 protein, human|MTOR",
+        "Tobacco"
+      ],
+      [
+        "Cerebrovascular accident",
+        "Pathogenesis",
+        "Low-Density Lipoproteins"
+      ],
+      [
+        "Cerebrovascular accident",
+        "Pathogenesis",
+        "Low-Density Lipoproteins"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Cerebrovascular accident)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Glycosylated hemoglobin A)",
+      "(Cerebrovascular accident)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Glycosylated hemoglobin A)",
+      "(Cerebrovascular accident)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(FRAP1 protein, human|MTOR)-INTERACTS_WITH->(Tobacco)",
+      "(Cerebrovascular accident)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(FRAP1 protein, human|MTOR)-INTERACTS_WITH->(Tobacco)",
+      "(Cerebrovascular accident)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Low-Density Lipoproteins)",
+      "(Cerebrovascular accident)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Low-Density Lipoproteins)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Low-Density Lipoproteins)-TREATS->(Cerebrovascular accident)",
+      "(Cerebrovascular accident)-CAUSES/PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Glycosylated hemoglobin A)",
+      "(Cerebrovascular accident)-MANIFESTATION_OF/PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Low-Density Lipoproteins)-Density Lipoproteins)",
+      "(Hypertensive disease)-CAUSES->(Cerebrovascular accident)",
+      "(Glycosylated hemoglobin A)-PREDISPOSES->(Dysglycemia)-PREDISPOSES->(Hypertensive disease)-CAUSES->(Cerebrovascular accident)",
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Cerebrovascular accident)",
+      "(Glycosylated hemoglobin A)-PREDISPOSES->(Dysglycemia)-PREDISPOSES->(Disease)-CAUSES->(Cerebrovascular accident)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"High blood pressure\" -> \"increased risk of stroke\" -> \"optimal control of blood pressure\" -> \"reduced risk of stroke\" -> 80% CHAIN: \"Type 2 diabetes mellitus\" -> \"increased risk of stroke\" -> \"achieve optimal levels of hemoglobin A1C\" -> \"reduced risk of stroke\" -> 70% CHAIN: \"Smoking\" -> \"increased risk of stroke\" -> \"abandon tobacco\" -> \"reduced risk of stroke\" -> 90% CHAIN: \"High LDL cholesterol\" -> \"increased risk of stroke\" -> \"achieve optimal levels of LDL\" -> \"reduced risk of stroke\" -> 80%"
+  ],
+  "enhanced_information": "To reduce the risk of stroke in a 70-year-old woman with high blood pressure, type 2 diabetes, and smoking history, achieving optimal control of blood pressure is associated with the greatest reduction in stroke risk. This is supported by the consensus that hypertension is a major risk factor for stroke. Adding an antioxidant or focusing on LDL levels is not directly supported by the evidence paths or consensus for stroke risk reduction.",
+  "analysis": "Hypertension is a major risk factor for stroke, and achieving optimal control of blood pressure is crucial in reducing stroke risk. While other factors like smoking cessation and lipid control are important, controlling blood pressure is the most significant in this scenario.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      8
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

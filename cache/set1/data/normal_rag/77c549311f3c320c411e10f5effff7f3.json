@@ -1,0 +1,221 @@
+{
+  "question": "In a 68-year-old patient with new onset headache, pain and prolonged morning stiffness in scapular and pelvic girdles of several weeks of evolution that presents unilateral bruising of sudden onset, what treatment among the following would establish before confirming the diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Prednisone 10 mg daily v.o.",
+    "opb": "Methylprednisolone 1 g i.v. daily for three days.",
+    "opc": "Cyclophosphamide i.v. 1 g / m2.",
+    "opd": "Infliximab i.v. 3 mg / Kg."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "First line treatment",
+        "Inflammation"
+      ],
+      [
+        "Prednisone",
+        "Inflammation"
+      ],
+      [
+        "Vasculitis",
+        "Inflammation"
+      ],
+      [
+        "Inflammation",
+        "Immunity"
+      ],
+      [
+        "Methylprednisolone",
+        "Immunity"
+      ],
+      [
+        "Autoimmune Diseases",
+        "Disease",
+        "Chronic Condition"
+      ],
+      [
+        "Autoimmune Diseases",
+        "Hypertensive disease",
+        "Chronic Condition"
+      ],
+      [
+        "Autoimmune Diseases",
+        "Adverse effects",
+        "Chronic Condition"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(First line treatment)-PREDISPOSES->(Inflammation)",
+      "(Prednisone)-CAUSES->(Inflammation)",
+      "(Vasculitis)-CAUSES->(Inflammation)",
+      "(Inflammation)-MANIFESTATION_OF->(Immunity)",
+      "(Methylprednisolone)-CAUSES->(Immunity)",
+      "(Autoimmune Diseases)-CAUSES->(Disease)-CAUSES->(Chronic Condition)",
+      "(Autoimmune Diseases)-CAUSES->(Hypertensive disease)-PREDISPOSES->(Chronic Condition)",
+      "(Autoimmune Diseases)-CAUSES->(Adverse effects)-PREDISPOSES->(Chronic Condition)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Temporal Arteritis",
+        "CDK9",
+        "Cell Nucleus",
+        "Mucous Membrane",
+        "First line treatment"
+      ],
+      [
+        "Temporal Arteritis",
+        "CDK9",
+        "Cell Nucleus",
+        "Skeletal muscle structure",
+        "First line treatment"
+      ],
+      [
+        "Polymyalgia",
+        "Temporal Arteritis",
+        "CDK9",
+        "Prednisone"
+      ],
+      [
+        "Polymyalgia",
+        "Vasculitis",
+        "pulmonary complications",
+        "Prednisone"
+      ],
+      [
+        "Myositis",
+        "Chronic graft-versus-host disease",
+        "Cyclophosphamide"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Temporal Arteritis)-ASSOCIATED_WITH->(CDK9)-PART_OF->(Cell Nucleus)-PART_OF->(Mucous Membrane)-LOCATION_OF->(First line treatment)",
+      "(Temporal Arteritis)-ASSOCIATED_WITH->(CDK9)-PART_OF->(Cell Nucleus)-PART_OF->(Skeletal muscle structure)-LOCATION_OF->(First line treatment)",
+      "(Polymyalgia)-ASSOCIATED_WITH->(Temporal Arteritis)-ASSOCIATED_WITH->(CDK9)-INTERACTS_WITH->(Prednisone)",
+      "(Polymyalgia)-ASSOCIATED_WITH->(Vasculitis)-CAUSES->(pulmonary complications)-ASSOCIATED_WITH->(Prednisone)",
+      "(Myositis)-COMPLICATES->(Chronic graft-versus-host disease)-ASSOCIATED_WITH->(Cyclophosphamide)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Polymyalgia)-ASSOCIATED_WITH->(Temporal Arteritis)-ASSOCIATED_WITH->(CDK9)-INTERACTS_WITH->(Prednisone)",
+      "(Prednisone)-CAUSES->(Inflammation)",
+      "(Methylprednisolone)-CAUSES->(Immunity)",
+      "(Polymyalgia)-ASSOCIATED_WITH->(Vasculitis)-CAUSES->(pulmonary complications)-ASSOCIATED_WITH->(Prednisone)",
+      "(Myositis)-COMPLICATES->(Chronic graft-versus-host disease)-ASSOCIATED_WITH->(Cyclophosphamide)",
+      "(First line treatment)-PREDISPOSES->(Inflammation)",
+      "(Vasculitis)-CAUSES->(Inflammation)",
+      "(Inflammation)-MANIFESTATION_OF->(Immunity)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"68-year-old patient with new onset headache\" -> \"possible inflammatory condition\" -> \"consider giant cell arteritis\" -> \"prednisone is first-line treatment\" -> \"reduces inflammation quickly\" -> \"improves symptoms\" -> 85%",
+    "CHAIN: \"68-year-old patient with prolonged morning stiffness\" -> \"suggests polymyalgia rheumatica\" -> \"prednisone is effective for symptom relief\" -> \"reduces pain and stiffness\" -> \"improves quality of life\" -> 80%",
+    "CHAIN: \"Unilateral bruising of sudden onset\" -> \"possible vasculitis or hematological issue\" -> \"methylprednisolone can address severe inflammation\" -> \"rapidly reduces immune response\" -> \"may stabilize condition\" -> 75%",
+    "CHAIN: \"Scapular and pelvic girdle pain\" -> \"indicates possible inflammatory myopathy\" -> \"cyclophosphamide is not first-line\" -> \"unclear if necessary at this stage\" -> 60%",
+    "CHAIN: \"68-year-old patient with new onset headache and stiffness\" -> \"considering autoimmune disease\" -> \"infliximab is for chronic conditions\" -> \"not immediate treatment option\" -> 50%"
+  ],
+  "enhanced_information": "In a 68-year-old patient with new onset headache, prolonged morning stiffness, and unilateral bruising, the clinical picture suggests possible giant cell arteritis or polymyalgia rheumatica. Prednisone is the first-line treatment for these conditions, as it effectively reduces inflammation and improves symptoms. Methylprednisolone may be considered for severe cases but is not the first-line treatment. Cyclophosphamide is not appropriate at this stage, as it is used for more severe autoimmune conditions and not for initial management. Infliximab is also not suitable for acute treatment. Therefore, the best option to establish treatment before confirming the diagnosis is Prednisone 10 mg daily, as it aligns with standard medical consensus for managing suspected inflammatory conditions in this patient demographic.",
+  "analysis": "The patient's symptoms suggest a possible inflammatory condition, such as polymyalgia rheumatica or giant cell arteritis, especially given the age and presentation of unilateral bruising and prolonged morning stiffness. In such cases, corticosteroids like prednisone are often used as a first-line treatment to quickly reduce inflammation and alleviate symptoms. While methylprednisolone is a stronger steroid and could be used in more severe cases, starting with a lower dose of prednisone is a common practice before confirming the diagnosis. Therefore, the best option to establish treatment before confirming the diagnosis is prednisone 10 mg daily.",
+  "answer": "opa",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      1,
+      3,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      11.11111111111111,
+      33.33333333333333,
+      11.11111111111111,
+      11.11111111111111
+    ],
+    "total_successes": 9
+  },
+  "normal_results": [
+    "Chemotherapeutic agent INTERACTS_WITH Androgens",
+    "Physical findings PREDISPOSES Cholecystitis",
+    "Prednisone ASSOCIATED_WITH Physical findings",
+    "Headache MANIFESTATION_OF Infarction",
+    "Systemic disease CAUSES Headache",
+    "Prednisone TREATS Headache",
+    "Steroid therapy TREATS Headache",
+    "Cyclic AMP-Dependent Protein Kinases|CAMP INTERACTS_WITH Cell Line",
+    "Pelvic Hemorrhage CAUSES Hemodynamic instability",
+    "Acute headache MANIFESTATION_OF Disease",
+    "Anti-Inflammatory Agents TREATS Carpal Tunnel Syndrome"
+  ]
+}

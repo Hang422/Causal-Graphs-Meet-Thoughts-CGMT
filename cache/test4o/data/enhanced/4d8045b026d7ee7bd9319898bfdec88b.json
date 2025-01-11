@@ -1,0 +1,183 @@
+{
+  "question": "Question linked to image nº11 Which treatment is most appropriate in the previous patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Cytoreductive surgery followed by chemotherapy type Rituximab-CHOP until complete remission.",
+    "opb": "Rituximab-CHOP / 21 x 6-8 cycles followed by retroperitoneal radiotherapy.",
+    "opc": "Rituximab-CHOP / 21 x 6-8 cycles followed by intensive QT and stem-cell transplantation (TASPE).",
+    "opd": "Intensive chemotherapy that includes Rituximab, high doses of cyclophosphamide and CNS prophylaxis.",
+    "ope": "Delay treatment until PET-CT and then treat with Rituximab-CHOP / 14 x 6-8 cycles."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "PET/CT scan",
+        "Disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(PET/CT scan)-CAUSES->(Disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Cytoreductive Surgery",
+        "Obstruction",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "Tumor Burden"
+      ],
+      [
+        "Cytoreductive Surgery",
+        "Obstruction",
+        "neuropeptide Y|NPY",
+        "Neuroglia",
+        "Tumor Burden"
+      ],
+      [
+        "Tumor Burden",
+        "Herpesvirus 4, Human",
+        "Glucocorticoids",
+        "Pharmacotherapy"
+      ],
+      [
+        "Tumor Burden",
+        "Herpesvirus 4, Human",
+        "Estradiol",
+        "Pharmacotherapy"
+      ],
+      [
+        "rituximab",
+        "Pharmaceutical Preparations",
+        "Cyclophosphamide"
+      ],
+      [
+        "rituximab",
+        "Pharmaceutical Preparations",
+        "Cyclophosphamide"
+      ],
+      [
+        "Central Nervous System Prophylaxis",
+        "Recurrence (disease attribute)",
+        "Genes",
+        "Cartilage",
+        "Prophylactic treatment"
+      ],
+      [
+        "Central Nervous System Prophylaxis",
+        "Disease Progression",
+        "Genes",
+        "Ligaments",
+        "Prophylactic treatment"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "LOCATION_OF",
+        "ISA"
+      ],
+      [
+        "DIAGNOSES",
+        "LOCATION_OF",
+        "ISA"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Cytoreductive Surgery)-TREATS->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Tumor Burden)",
+      "(Cytoreductive Surgery)-TREATS->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Neuroglia)-LOCATION_OF->(Tumor Burden)",
+      "(Tumor Burden)-DIAGNOSES->(Herpesvirus 4, Human)-LOCATION_OF->(Glucocorticoids)-ISA->(Pharmacotherapy)",
+      "(Tumor Burden)-DIAGNOSES->(Herpesvirus 4, Human)-LOCATION_OF->(Estradiol)-ISA->(Pharmacotherapy)",
+      "(rituximab)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Cyclophosphamide)",
+      "(rituximab)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Cyclophosphamide)",
+      "(Central Nervous System Prophylaxis)-TREATS->(Recurrence (disease attribute))-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage)-LOCATION_OF->(Prophylactic treatment)",
+      "(Central Nervous System Prophylaxis)-TREATS->(Disease Progression)-ASSOCIATED_WITH->(Genes)-PART_OF->(Ligaments)-LOCATION_OF->(Prophylactic treatment)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(rituximab)-INTERACTS_WITH/ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Cyclophosphamide)",
+      "(Tumor Burden)-DIAGNOSES->(Herpesvirus 4, Human)-LOCATION_OF->(Estradiol)-ISA->(Pharmacotherapy)",
+      "(Cytoreductive Surgery)-TREATS->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Tumor Burden)",
+      "(Cytoreductive Surgery)-TREATS->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Neuroglia)-LOCATION_OF->(Tumor Burden)",
+      "(Tumor Burden)-DIAGNOSES->(Herpesvirus 4, Human)-LOCATION_OF->(Glucocorticoids)-ISA->(Pharmacotherapy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Cytoreductive surgery\" -> \"reduction in tumor burden\" -> \"chemotherapy with Rituximab-CHOP\" -> \"targeted treatment of residual disease\" -> \"potential complete remission\" -> 75%",
+    "CHAIN: \"Rituximab-CHOP / 21 x 6-8 cycles\" -> \"systemic treatment of lymphoma\" -> \"retroperitoneal radiotherapy\" -> \"localized control of disease\" -> \"potential remission\" -> 80%",
+    "CHAIN: \"Rituximab-CHOP / 21 x 6-8 cycles\" -> \"systemic treatment of lymphoma\" -> \"intensive QT\" -> \"high-dose chemotherapy\" -> \"stem-cell transplantation (TASPE)\" -> \"reconstitution of hematopoietic system\" -> \"potential long-term remission\" -> 85%",
+    "CHAIN: \"Intensive chemotherapy with Rituximab\" -> \"high doses of cyclophosphamide\" -> \"aggressive treatment of lymphoma\" -> \"CNS prophylaxis\" -> \"prevention of CNS involvement\" -> \"potential remission\" -> 70%",
+    "CHAIN: \"Delay treatment until PET-CT\" -> \"assessment of disease extent\" -> \"Rituximab-CHOP / 14 x 6-8 cycles\" -> \"systemic treatment of lymphoma\" -> \"potential remission\" -> 65%"
+  ],
+  "enhanced_information": "In treating lymphoma, Rituximab-CHOP is a standard regimen. Option A suggests cytoreductive surgery followed by chemotherapy, which is not typically first-line for lymphoma unless there is a specific indication for surgery, such as obstruction. Option B involves Rituximab-CHOP followed by radiotherapy, which can be appropriate for localized control after systemic treatment. Option C includes Rituximab-CHOP followed by high-dose chemotherapy and stem-cell transplantation, a valid approach for aggressive or relapsed cases aiming for long-term remission. Option D suggests intensive chemotherapy with CNS prophylaxis, which is suitable for high-risk CNS involvement. Option E proposes delaying treatment for PET-CT assessment, which is not standard unless staging is unclear. The evidence paths confirm the interaction of Rituximab and Cyclophosphamide, supporting their use in systemic treatment. Overall, Option C aligns best with consensus for aggressive treatment aiming for long-term remission in suitable cases.",
+  "analysis": "In the treatment of lymphoma, Rituximab-CHOP is a well-established regimen. The options presented involve different strategies post-chemotherapy. Option A, which includes cytoreductive surgery, is not typically first-line unless there is a specific surgical indication. Option B suggests Rituximab-CHOP followed by radiotherapy, which is often used for localized disease control. Option C involves Rituximab-CHOP followed by high-dose chemotherapy and stem-cell transplantation, a strategy used for aggressive or relapsed lymphoma cases aiming for long-term remission. Option D suggests intensive chemotherapy with CNS prophylaxis, appropriate for cases with high risk of CNS involvement. Option E proposes delaying treatment for PET-CT, which is not standard practice unless staging is unclear. Given the context and the enhanced information, Option C is the most appropriate for aggressive treatment aiming for long-term remission in suitable cases, aligning with consensus for aggressive or relapsed lymphoma.",
+  "answer": "opc",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      0,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      40.0,
+      0.0,
+      0.0,
+      40.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

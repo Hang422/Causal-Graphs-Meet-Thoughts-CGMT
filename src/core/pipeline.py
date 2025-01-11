@@ -12,6 +12,7 @@ from src.modules.MedicalQuestion import MedicalQuestion, SubGraph
 from src.modules.filter import compare_enhanced_with_baseline
 from src.modules.AccuracyAnalysis import intersect
 
+
 class QuestionProcessor:
     """处理医学问题的流水线处理器"""
 
@@ -28,6 +29,7 @@ class QuestionProcessor:
         # 设置不同类型缓存的子目录
         self.cache_paths = {
             'original': self.cache_root / self.cache_path / 'data' / 'original',
+            'original1': self.cache_root / self.cache_path / 'data' / 'original1',
             'derelict': self.cache_root / self.cache_path / 'data' / 'derelict',
             'enhanced': self.cache_root / self.cache_path / 'data' / 'enhanced',
             'reasoning': self.cache_root / self.cache_path / 'data' / 'reasoning',
@@ -58,7 +60,8 @@ class QuestionProcessor:
             self.processor.process_chain_of_thoughts(question, 'both', True)
             self.enhancer.enhance_graphs(question)
             if len(question.enhanced_graph.paths) == 0:
-                self.logger.warning(f"Question{hashlib.md5(question.question.encode()).hexdigest()} has no enhanced graphs")
+                self.logger.warning(
+                    f"Question{hashlib.md5(question.question.encode()).hexdigest()} has no enhanced graphs")
                 return False
             self.llm.enhance_information_with_chain(question, '_complete_with_chain')  # 增强
             self.llm.answer_with_enhanced_information(question, '_complete_with_chain')
@@ -77,7 +80,8 @@ class QuestionProcessor:
             question.enhanced_graph.paths.extend(question.causal_graph.paths)
             question.enhanced_graph.paths.extend(question.knowledge_graph.paths)
             if len(question.enhanced_graph.paths) == 0:
-                self.logger.warning(f"Question{hashlib.md5(question.question.encode()).hexdigest()} has no enhanced graphs")
+                self.logger.warning(
+                    f"Question{hashlib.md5(question.question.encode()).hexdigest()} has no enhanced graphs")
                 return False
             self.llm.enhance_information_with_chain(question, '_without_enhancer')  # 增强
             self.llm.answer_with_enhanced_information(question, '_without_enhancer')
@@ -175,17 +179,29 @@ class QuestionProcessor:
                     question.to_cache()
                 else:
                     question = cached_question
-                #
+
                 # cached_question = MedicalQuestion.from_cache(
-                #     self.cache_paths['derelict'],
+                #     self.cache_paths['original1'],
                 #     question.question
                 # )
                 # if not cached_question:
-                #     self.llm.direct_answer(question)
-                #     question.set_cache_paths(self.cache_paths['derelict'])
+                #     if not self.llm.detect_multihop_question(question):
+                #         continue
+                #     question.set_cache_paths(self.cache_paths['original1'])
                 #     question.to_cache()
                 # else:
                 #     question = cached_question
+
+                cached_question = MedicalQuestion.from_cache(
+                    self.cache_paths['derelict'],
+                    question.question
+                )
+                if not cached_question:
+                    self.llm.direct_answer(question)
+                    question.set_cache_paths(self.cache_paths['derelict'])
+                    question.to_cache()
+                else:
+                    question = cached_question
 
                 cached_question = MedicalQuestion.from_cache(
                     self.cache_paths['reasoning'],
@@ -200,8 +216,9 @@ class QuestionProcessor:
 
                 if not self.complete_process_question(question, False):
                     continue
-
-                self.compare_experiments(question)
+                #
+                # self.compare_experiments(question)
+                self.normal_rag(question)
 
             except Exception as e:
                 self.logger.error(f"Error processing question {i + 1}: {str(e)}")
@@ -389,6 +406,7 @@ def compare_models(process_path):
     try:
         processor = QuestionProcessor(process_path)
         processor.process_from_cache(process_path)
+        # processor.batch_process_file('test2',10)
 
         STAGES = ['derelict', 'enhanced', 'knowledge_graph', 'remove_llm_enhanced', 'normal_rag', 'remove_enhancer']
         base_dir = process_path
@@ -409,15 +427,59 @@ def compare_models(process_path):
         print("内存清理完成！")
 
 
+import shutil
+from pathlib import Path
+
+
+def random_copy_json_files(src_dir: str, dest_dir: str, num_files: int) -> None:
+    """
+    Randomly select and copy a given number of JSON files from a source directory to a destination directory.
+
+    :param src_dir: Path to the source directory containing JSON files.
+    :param dest_dir: Path to the destination directory to store the files.
+    :param num_files: Number of JSON files to copy.
+    """
+    # Ensure source and destination directories exist
+    src_path = Path(src_dir)
+    dest_path = Path(dest_dir)
+    if not src_path.is_dir():
+        raise ValueError(f"Source directory does not exist: {src_dir}")
+
+    # Get all JSON files in the source directory
+    json_files = [file for file in src_path.iterdir() if file.suffix == '.json']
+
+    if len(json_files) == 0:
+        raise ValueError(f"No JSON files found in the source directory: {src_dir}")
+    if num_files > len(json_files):
+        raise ValueError(f"Requested number of files exceeds available files in {src_dir}.")
+
+    # Randomly select the specified number of files
+    for i in range(int(len(json_files) / num_files)):
+        selected_files = json_files[(i-1)*num_files:i*num_files]
+
+        # Copy each selected file to the destination directory
+        for file in selected_files:
+            dest_path = Path(f'{dest_dir}_{i}')
+            dest_path.mkdir(parents=True, exist_ok=True)
+            shutil.copy(file, dest_path)
+
+
+
+# Example usage:
+# random_copy_json_files("../../cache/set1/data/original", "../../cache/test4o/data/original", 100)
+
 if __name__ == "__main__":
     # models = ['4', '4o', '4o-mini']
     # intersect(models)
-    config.openai['model'] = 'gpt-4o-mini'
-    compare_models('4o-mini-intersection')
+    # config.openai['model'] = 'gpt-4o-mini'
+    # compare_models('set2')
+    # compare_models('set3')
     config.openai['model'] = 'gpt-4o'
-    compare_models('4o-intersection')
-    config.openai['model'] = 'gpt-4-turbo'
-    compare_models('4-intersection')
-    compare_models('2-mini_1-4o')
-    compare_models('chain=40-rest=mini')
-    compare_models('chain=mini-rest=4o')
+    compare_models('test4o')
+    # config.openai['model'] = 'gpt-4-turbo'
+    # compare_models('4-intersection')
+    # compare_models('2-mini_1-4o')
+    # config.openai['model'] = 'gpt-4o'
+    # compare_models('test')
+    # config.openai['model'] = 'gpt-4-turbo'
+    # compare_models('test1')

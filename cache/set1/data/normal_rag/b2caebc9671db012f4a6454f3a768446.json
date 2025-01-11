@@ -1,0 +1,169 @@
+{
+  "question": "Indicate which serum biochemical profile is suggestive of rickets due to vitamin D deficiency in a 5-month-old infant:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Normal calcium; normal phosphate; normal alkaline phosphatases (FA); normal parathyroid hormone (PTH); 25 OH vitamin D low.",
+    "opb": "Normal calcium; low phosphate; Normal FA; Normal PTH; 25 OH vitamin D low.",
+    "opc": "Low calcium; high phosphate; FA elevated; Normal PTH; 25 OH vitamin D low.",
+    "opd": "Normal calcium; normal phosphate; FA elevated; Elevated PTH; 25 OH vitamin D low."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Vitamin D Deficiency",
+        "Complication",
+        "calcium"
+      ],
+      [
+        "Vitamin D Deficiency",
+        "Complication",
+        "calcium"
+      ],
+      [
+        "calcium",
+        "Complication",
+        "PTH protein, human|PTH",
+        "Serum Calcium Level"
+      ],
+      [
+        "calcium",
+        "Complication",
+        "PTH protein, human|PTH",
+        "Serum Calcium Level"
+      ],
+      [
+        "Vitamin D Deficiency",
+        "loss; bone",
+        "Alkaline Phosphatase"
+      ],
+      [
+        "Vitamin D Deficiency",
+        "loss; bone",
+        "Alkaline Phosphatase"
+      ],
+      [
+        "Alkaline Phosphatase",
+        "T-Lymphocyte",
+        "Renal Tissue",
+        "Calcium measurement"
+      ],
+      [
+        "Alkaline Phosphatase",
+        "T-Lymphocyte",
+        "Endothelium",
+        "Calcium measurement"
+      ],
+      [
+        "calcium",
+        "Vitamin D2"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Vitamin D Deficiency)-CAUSES->(Complication)-ASSOCIATED_WITH->(calcium)",
+      "(Vitamin D Deficiency)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(calcium)",
+      "(calcium)-ASSOCIATED_WITH->(Complication)-ASSOCIATED_WITH->(PTH protein, human|PTH)-CAUSES->(Serum Calcium Level)",
+      "(calcium)-PREVENTS->(Complication)-ASSOCIATED_WITH->(PTH protein, human|PTH)-CAUSES->(Serum Calcium Level)",
+      "(Vitamin D Deficiency)-COMPLICATES->(loss; bone)-ASSOCIATED_WITH->(Alkaline Phosphatase)",
+      "(Vitamin D Deficiency)-CAUSES->(loss; bone)-ASSOCIATED_WITH->(Alkaline Phosphatase)",
+      "(Alkaline Phosphatase)-INTERACTS_WITH->(T-Lymphocyte)-PART_OF->(Renal Tissue)-LOCATION_OF->(Calcium measurement)",
+      "(Alkaline Phosphatase)-INTERACTS_WITH->(T-Lymphocyte)-PART_OF->(Endothelium)-LOCATION_OF->(Calcium measurement)",
+      "(calcium)-INTERACTS_WITH->(Vitamin D2)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(calcium)-INTERACTS_WITH->(Vitamin D2)",
+      "(Vitamin D Deficiency)-CAUSES/PREDISPOSES->(Complication)-ASSOCIATED_WITH->(calcium)",
+      "(Vitamin D Deficiency)-CAUSES/COMPLICATES->(loss; bone)-ASSOCIATED_WITH->(Alkaline Phosphatase)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Vitamin D deficiency\" -> \"decreased intestinal absorption of calcium\" -> \"normal serum calcium levels maintained by parathyroid hormone\" -> \"normal phosphate levels due to renal conservation\" -> \"low 25 OH vitamin D\" -> 85%",
+    "CHAIN: \"Vitamin D deficiency\" -> \"increased parathyroid hormone secretion\" -> \"normal serum calcium due to compensatory mechanisms\" -> \"low phosphate due to renal excretion\" -> \"low 25 OH vitamin D\" -> 80%",
+    "CHAIN: \"Vitamin D deficiency\" -> \"increased alkaline phosphatase due to bone remodeling\" -> \"normal calcium levels maintained\" -> \"low phosphate due to renal handling\" -> \"low 25 OH vitamin D\" -> 75%",
+    "CHAIN: \"Vitamin D deficiency\" -> \"increased parathyroid hormone\" -> \"elevated alkaline phosphatase\" -> \"normal calcium and phosphate levels\" -> \"low 25 OH vitamin D\" -> 90%"
+  ],
+  "enhanced_information": "In rickets due to vitamin D deficiency, the typical biochemical profile in infants includes low serum calcium, low phosphate, elevated alkaline phosphatase, and low 25 OH vitamin D levels. The reasoning chains indicate that vitamin D deficiency leads to decreased intestinal absorption of calcium, which can result in normal serum calcium levels due to compensatory mechanisms, but often presents with low phosphate due to renal handling. Elevated alkaline phosphatase is a result of increased bone remodeling due to the deficiency. Therefore, the most suggestive profile for rickets due to vitamin D deficiency in a 5-month-old infant is option 'opd': normal calcium, normal phosphate, elevated alkaline phosphatase, elevated PTH, and low 25 OH vitamin D. This aligns with the consensus that vitamin D deficiency leads to compensatory mechanisms affecting calcium and phosphate metabolism.",
+  "analysis": "Rickets due to vitamin D deficiency typically presents with low serum calcium, low phosphate, elevated alkaline phosphatase (FA), and elevated parathyroid hormone (PTH) levels. In this case, the most indicative profile is option 'opd', which shows normal calcium and phosphate, elevated alkaline phosphatase, and elevated PTH, along with low 25 OH vitamin D. This suggests a compensatory response to low vitamin D levels, leading to secondary hyperparathyroidism, which is consistent with rickets due to vitamin D deficiency.",
+  "answer": "opd",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      40.0,
+      0.0,
+      40.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "Plasma alkaline phosphatase NOS DIAGNOSES Rickets",
+    "Biochemical test DIAGNOSES Rickets",
+    "Nutritional analysis DIAGNOSES Rickets",
+    "Rickets PREDISPOSES Vitamin D Deficiency",
+    "Granulomatous slack skin disease CAUSES Hypercalcemia",
+    "biochemical test DIAGNOSES Nutritional Rickets"
+  ]
+}

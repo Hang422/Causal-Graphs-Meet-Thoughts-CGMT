@@ -1,0 +1,118 @@
+{
+  "question": "A 45-year-old woman with a history of a heart murmur detected in the pediatric age. Enter the Emergency Department for symptoms of palpitations, easy fatigue and malignant edema. Physical examination reveals absence of cyanosis. Oxygen Saturation by pulse oximeter 97%. TA: 120/80 mm Hg. Irregular heart rate at 100 bpm. Systolic ejection murmur (2/6) in pulmonary focus. 2nd R unfolded, wide and fixed. No death rattles. Slight hepatomegaly (2-3 cm). Slight malleolar edema. ECG: complete arrhythmia due to atrial fibrillation at 100 bpm. AQRS: + 120º. Conduction disorder of the right branch of the bundle of His. What is your diagnostic orientation?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Ventricular communication.",
+    "opb": "Aortic stenosis.",
+    "opc": "Mitral stenosis.",
+    "opd": "Interauricular communication.",
+    "ope": "Persistent ductus arteriosus."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Conduction disorder of the heart",
+        "Disease",
+        "Heart Septal Defects, Atrial"
+      ],
+      [
+        "Conduction disorder of the heart",
+        "Symptoms",
+        "Heart Septal Defects, Atrial"
+      ],
+      [
+        "Conduction disorder of the heart",
+        "Obstruction",
+        "Heart Septal Defects, Atrial"
+      ],
+      [
+        "Mitral Valve Stenosis",
+        "Symptoms",
+        "Hepatomegaly"
+      ],
+      [
+        "Mitral Valve Stenosis",
+        "Congestive heart failure",
+        "Hepatomegaly"
+      ],
+      [
+        "Mitral Valve Stenosis",
+        "Heart failure",
+        "Hepatomegaly"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Conduction disorder of the heart)-CAUSES->(Disease)-CAUSES->(Heart Septal Defects, Atrial)",
+      "(Conduction disorder of the heart)-CAUSES->(Symptoms)-CAUSES->(Heart Septal Defects, Atrial)",
+      "(Conduction disorder of the heart)-CAUSES->(Obstruction)-CAUSES->(Heart Septal Defects, Atrial)",
+      "(Mitral Valve Stenosis)-CAUSES->(Symptoms)-CAUSES->(Hepatomegaly)",
+      "(Mitral Valve Stenosis)-CAUSES->(Congestive heart failure)-CAUSES->(Hepatomegaly)",
+      "(Mitral Valve Stenosis)-CAUSES->(Heart failure)-CAUSES->(Hepatomegaly)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Conduction disorder of the heart)-CAUSES->(Symptoms)-CAUSES->(Heart Septal Defects, Atrial)",
+      "(Mitral Valve Stenosis)-CAUSES->(Symptoms)-CAUSES->(Hepatomegaly)",
+      "(Conduction disorder of the heart)-CAUSES->(Obstruction)-CAUSES->(Heart Septal Defects, Atrial)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Atrial fibrillation -> irregular heart rate -> conduction disorder of the right branch of the bundle of His -> possible interauricular communication -> 70% CHAIN: Systolic ejection murmur in pulmonary focus -> possible mitral stenosis -> slight hepatomegaly -> slight malleolar edema -> 60% CHAIN: Oxygen saturation -> 70%"
+  ],
+  "enhanced_information": "The patient's presentation with atrial fibrillation, conduction disorder of the right bundle branch, and possible interauricular communication suggests a diagnosis orientation towards interauricular communication (opd). This is supported by the chain linking atrial fibrillation to conduction disorder and the evidence path indicating a causal relationship between conduction disorders and atrial septal defects.",
+  "analysis": "The patient's presentation with atrial fibrillation, conduction disorder of the right bundle branch, and possible interauricular communication suggests a diagnosis orientation towards interauricular communication. This is supported by the enhanced information linking atrial fibrillation to conduction disorder and the evidence path indicating a causal relationship between conduction disorders and atrial septal defects.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

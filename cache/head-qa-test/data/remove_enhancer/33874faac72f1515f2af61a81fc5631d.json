@@ -1,0 +1,126 @@
+{
+  "question": "It evaluates a patient with pelvic pain in which the simple Rx shows osteolytic and osteosclerotic lesions in the iliac and femoral bones. Point out the INCORRECT response.",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "I would request a bone map including skull and rib cage.",
+    "opb": "I would request a determination of bone alkaline phosphatase.",
+    "opc": "I would start estrogen hormone therapy.",
+    "opd": "Endovenous bisphosphonates such as pamidronate and zoledronate are an effective option in this problem."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pelvic Pain",
+        "Symptoms",
+        "blood outflow",
+        "Bone structure of ilium"
+      ],
+      [
+        "Pelvic Pain",
+        "Symptoms",
+        "uptake",
+        "Bone structure of ilium"
+      ],
+      [
+        "Pelvic Pain",
+        "Pain",
+        "Vasodilation",
+        "Bone structure of ilium"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Pelvic Pain)-CAUSES->(Symptoms)-MANIFESTATION_OF->(blood outflow)-PROCESS_OF->(Bone structure of ilium)",
+      "(Pelvic Pain)-CAUSES->(Symptoms)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Bone structure of ilium)",
+      "(Pelvic Pain)-CAUSES->(Pain)-MANIFESTATION_OF->(Vasodilation)-PROCESS_OF->(Bone structure of ilium)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Bone and Bones",
+        "PET/CT scan",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Bone and Bones",
+        "PET/CT scan",
+        "Symptoms",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES",
+        "CAUSES",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Bone and Bones)-LOCATION_OF->(PET/CT scan)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Bone and Bones)-LOCATION_OF->(PET/CT scan)-CAUSES->(Symptoms)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pelvic Pain)-CAUSES->(Symptoms)-MANIFESTATION_OF->(blood outflow)-PROCESS_OF->(Bone structure of ilium)",
+      "(Pelvic Pain)-CAUSES->(Symptoms)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Bone structure of ilium)",
+      "(Pelvic Pain)-CAUSES->(Pain)-MANIFESTATION_OF->(Vasodilation)-PROCESS_OF->(Bone structure of ilium)",
+      "(Bone and Bones)-LOCATION_OF->(PET/CT scan)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Bone and Bones)-LOCATION_OF->(PET/CT scan)-CAUSES->(Symptoms)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Pelvic pain -> imaging shows osteolytic and osteosclerotic lesions in iliac and femoral bones -> suggestive of bone pathology -> 90% CHAIN: Bone alkaline phosphatase determination -> assess bone turnover -> helpful in diagnosing bone disorders -> 95% CHAIN: Estrogen hormone therapy -> may worsen osteolytic lesions -> not recommended in this case -> 90% CHAIN: Endovenous bisphosphonates (pamidronate, zoledronate) -> inhibit bone resorption -> effective in treating osteolytic lesions -> 90%"
+  ],
+  "enhanced_information": "Estrogen hormone therapy should not be started in this case as it may worsen osteolytic lesions. Requesting a bone map including the skull and rib cage is unnecessary. Determination of bone alkaline phosphatase can help assess bone turnover in diagnosing bone disorders. Endovenous bisphosphonates like pamidronate and zoledronate are effective options for treating osteolytic lesions.",
+  "analysis": "In this case, the patient presents with pelvic pain and imaging showing osteolytic and osteosclerotic lesions in the iliac and femoral bones. Given the context provided, starting estrogen hormone therapy would be an incorrect response as it may worsen osteolytic lesions. Requesting a bone map including the skull and rib cage is unnecessary and may not add significant value to the current presentation. Determining bone alkaline phosphatase can be helpful in assessing bone turnover and diagnosing bone disorders. Endovenous bisphosphonates like pamidronate and zoledronate are effective options for treating osteolytic lesions, making this a correct choice.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

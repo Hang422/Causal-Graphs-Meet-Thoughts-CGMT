@@ -1,0 +1,104 @@
+{
+  "question": "Which of the following tests is more important for the diagnosis of acute leukemia?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Karyotype",
+    "opb": "Medulogram",
+    "opc": "Hemogram",
+    "opd": "PET.",
+    "ope": "Lumbar puncture."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Complete blood count without differential",
+        "Complication",
+        "Genes",
+        "Blood Cells"
+      ],
+      [
+        "Complete blood count without differential",
+        "Complication",
+        "Genes",
+        "Blood Cells"
+      ],
+      [
+        "Bone Marrow Examination",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Bone Marrow Examination",
+        "Infection",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Complete blood count without differential)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood Cells)",
+      "(Complete blood count without differential)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Blood Cells)",
+      "(Bone Marrow Examination)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Bone Marrow Examination)-DIAGNOSES->(Infection)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Bone Marrow Examination)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Hemogram -> abnormal blood cell counts -> suspicion of leukemia -> 80% CHAIN: Medulogram -> bone marrow examination -> definitive diagnosis of leukemia -> 90% CHAIN: Lumbar puncture -> evaluation for central nervous system involvement in leukemia -> adjunct diagnostic tool -> 70% CHAIN: Karyotype -> identification of chromosomal abnormalities -> subtype classification of leukemia -> 85% CHAIN: PET scan -> assessment of disease extent and staging -> adjunct tool in leukemia diagnosis -> 80%"
+  ],
+  "enhanced_information": "For the diagnosis of acute leukemia, the most important test is the medulogram, which involves bone marrow examination leading to a definitive diagnosis of leukemia. Karyotype is also crucial for subtype classification based on chromosomal abnormalities. Hemogram can raise suspicion of leukemia with abnormal blood cell counts. PET scan is useful for assessing disease extent and staging, while lumbar puncture evaluates central nervous system involvement as an adjunct tool.",
+  "analysis": "The core medical principle for diagnosing acute leukemia involves bone marrow examination, making the medulogram the most important test. While karyotype is essential for subtype classification, hemogram can raise suspicion, PET scan assesses disease extent, and lumbar puncture evaluates CNS involvement. However, for the primary diagnosis, the medulogram takes precedence.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

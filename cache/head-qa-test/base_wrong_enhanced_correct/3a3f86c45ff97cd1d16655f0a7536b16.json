@@ -1,0 +1,116 @@
+{
+  "question": "Question linked to image nº12 A 58-year-old patient with a long-standing heartburn clinic. A high digestive endoscopy is performed, shown in the image. What is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Barrett's esophagus.",
+    "opb": "Peptic esophagitis.",
+    "opc": "Eosinophilic esophagitis.",
+    "opd": "Mallory-Weiss disease."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Inflammation",
+        "Barrett Esophagus"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Inflammation)-CAUSES->(Barrett Esophagus)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Esophagus",
+        "Barrett Esophagus"
+      ],
+      [
+        "Esophagus",
+        "Peptic Esophagitis"
+      ],
+      [
+        "Esophagus",
+        "Eosinophilic esophagitis"
+      ],
+      [
+        "Retching",
+        "Hypersensitivity",
+        "TRPV1 gene|TRPV1",
+        "Mucous Membrane"
+      ],
+      [
+        "Retching",
+        "Hypersensitivity",
+        "WASF1 gene|WASF1",
+        "Mucous Membrane"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Esophagus)-LOCATION_OF->(Barrett Esophagus)",
+      "(Esophagus)-LOCATION_OF->(Peptic Esophagitis)",
+      "(Esophagus)-LOCATION_OF->(Eosinophilic esophagitis)",
+      "(Retching)-MANIFESTATION_OF->(Hypersensitivity)-ASSOCIATED_WITH->(TRPV1 gene|TRPV1)-PART_OF->(Mucous Membrane)",
+      "(Retching)-MANIFESTATION_OF->(Hypersensitivity)-ASSOCIATED_WITH->(WASF1 gene|WASF1)-PART_OF->(Mucous Membrane)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Esophagus)-LOCATION_OF->(Peptic Esophagitis)",
+      "(Esophagus)-LOCATION_OF->(Eosinophilic esophagitis)",
+      "(Inflammation)-CAUSES->(Barrett Esophagus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Chronic gastroesophageal reflux -> inflammation of the esophagus -> Barrett's esophagus -> 90% CHAIN: Chronic gastroesophageal reflux -> irritation of the esophagus -> Peptic esophagitis -> 80% CHAIN: Chronic gastroesophageal reflux -> allergic response in the esophagus -> Eosinophilic esophagitis -> 70% CHAIN: Severe vomiting or retching -> tear in the mucosa at the gastroesophageal junction -> Mallory-Weiss disease -> 90%"
+  ],
+  "enhanced_information": "Chronic gastroesophageal reflux can lead to inflammation of the esophagus, which is a known risk factor for Barrett's esophagus. The presence of inflammation causing Barrett's esophagus is supported by standard medical consensus. Peptic esophagitis can also result from chronic gastroesophageal reflux, but the specific findings in the image are more indicative of Barrett's esophagus. Eosinophilic esophagitis is typically associated with allergic responses in the esophagus, which is not the primary concern in this case. Mallory-Weiss disease, characterized by mucosal tears due to severe vomiting, is not the most likely diagnosis based on the endoscopy findings. Therefore, the most likely diagnosis in this case is Barrett's esophagus.",
+  "analysis": "The core medical principle here is the association between chronic gastroesophageal reflux and the development of Barrett's esophagus. The endoscopic findings in the image are more indicative of Barrett's esophagus than other conditions. While peptic esophagitis can also result from reflux, the specific features in the image align more with Barrett's esophagus. Eosinophilic esophagitis is less likely given the lack of allergic response indications in this case. Mallory-Weiss disease, characterized by mucosal tears from vomiting, is not the primary concern based on the endoscopy findings.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

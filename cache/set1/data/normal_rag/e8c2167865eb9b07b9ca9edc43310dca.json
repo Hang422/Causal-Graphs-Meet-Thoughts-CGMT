@@ -1,0 +1,148 @@
+{
+  "question": "A 41-year-old man, diagnosed with bipolar disorder, who has performed an over-supply of lithium carbonate, comes to the emergency room. The exploration highlights intense tremor, ataxia, dysarthria and a vertical nystagmus. A litemia is obtained that is 4.1 mEq / L. What is the best therapeutic option?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Hydration.",
+    "opb": "Hemodialysis.",
+    "opc": "Gastric lavage",
+    "opd": "Aminophylline"
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hemodialysis",
+        "Disease",
+        "Blood Circulation"
+      ],
+      [
+        "Hemodialysis",
+        "Infection",
+        "Blood Circulation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Hemodialysis)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Hemodialysis)-CAUSES->(Infection)-MANIFESTATION_OF->(Blood Circulation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Lithium",
+        "Antiinflammatory Effect",
+        "Skeletal muscle structure",
+        "Hemodialysis"
+      ],
+      [
+        "Lithium",
+        "Antiinflammatory Effect",
+        "Peritoneum",
+        "Hemodialysis"
+      ],
+      [
+        "Lithium",
+        "Pharmaceutical Preparations",
+        "Choleretics",
+        "Aminophylline"
+      ],
+      [
+        "Lithium",
+        "Pharmaceutical Preparations",
+        "CAMP",
+        "Aminophylline"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Lithium)-CAUSES->(Antiinflammatory Effect)-PROCESS_OF->(Skeletal muscle structure)-LOCATION_OF->(Hemodialysis)",
+      "(Lithium)-CAUSES->(Antiinflammatory Effect)-PROCESS_OF->(Peritoneum)-LOCATION_OF->(Hemodialysis)",
+      "(Lithium)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Choleretics)-INTERACTS_WITH->(Aminophylline)",
+      "(Lithium)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(CAMP)-INTERACTS_WITH->(Aminophylline)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hemodialysis)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Hemodialysis)-CAUSES->(Infection)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Lithium)-CAUSES->(Antiinflammatory Effect)-PROCESS_OF->(Skeletal muscle structure)-LOCATION_OF->(Hemodialysis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Lithium carbonate overdose\" -> \"Symptoms include tremor, ataxia, dysarthria, and nystagmus\" -> \"Litemia shows 4.1 mEq/L, indicating severe toxicity\" -> \"Hydration helps to dilute lithium levels\" -> \"Hydration is a supportive treatment\" -> 85%",
+    "CHAIN: \"Lithium carbonate overdose\" -> \"Symptoms include tremor, ataxia, dysarthria, and nystagmus\" -> \"Litemia shows 4.1 mEq/L, indicating severe toxicity\" -> \"Hemodialysis is effective for severe lithium toxicity\" -> \"Hemodialysis can rapidly remove lithium from the bloodstream\" -> 90%",
+    "CHAIN: \"Lithium carbonate overdose\" -> \"Symptoms include tremor, ataxia, dysarthria, and nystagmus\" -> \"Litemia shows 4.1 mEq/L, indicating severe toxicity\" -> \"Gastric lavage is less effective after a certain time\" -> \"Gastric lavage is not the best option for severe toxicity\" -> 70%",
+    "CHAIN: \"Lithium carbonate overdose\" -> \"Symptoms include tremor, ataxia, dysarthria, and nystagmus\" -> \"Litemia shows 4.1 mEq/L, indicating severe toxicity\" -> \"Aminophylline is not indicated for lithium toxicity\" -> \"Aminophylline does not address the underlying issue\" -> 60%"
+  ],
+  "enhanced_information": "In the case of lithium carbonate overdose, the patient exhibits severe symptoms consistent with toxicity, including tremor, ataxia, dysarthria, and vertical nystagmus, with a litemia of 4.1 mEq/L indicating significant toxicity. Hydration is a supportive treatment but does not effectively reduce lithium levels in severe cases. Hemodialysis is the most effective therapeutic option for severe lithium toxicity, as it can rapidly remove lithium from the bloodstream, making it the preferred choice in this scenario. Gastric lavage is generally not recommended for severe toxicity due to its limited effectiveness after a certain time, and aminophylline is not indicated as it does not address lithium toxicity. Therefore, the best therapeutic option is hemodialysis.",
+  "analysis": "The patient presents with symptoms consistent with lithium toxicity, including tremor, ataxia, dysarthria, and nystagmus, alongside a significantly elevated lithium level of 4.1 mEq/L, which is well above the therapeutic range. In cases of severe lithium toxicity, especially with levels above 4.0 mEq/L, hemodialysis is often indicated to rapidly reduce lithium levels and prevent further complications. While hydration can help in mild cases, it is not sufficient for severe toxicity. Gastric lavage is not typically recommended in cases of lithium overdose due to the risk of aspiration and the delayed onset of symptoms. Aminophylline is not a treatment for lithium toxicity. Therefore, the best therapeutic option in this scenario is hemodialysis.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      66.66666666666666,
+      0.0,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": [
+    "Lithium TREATS Kidney Diseases",
+    "Lithium TREATS geriatric disorder",
+    "Gram-negative bacillus ISA Bacteria",
+    "Testicular dysfunction PREDISPOSES Oligospermia",
+    "TLR4 INTERACTS_WITH TLR2",
+    "Entire transplanted heart LOCATION_OF Delayed Hypersensitivity",
+    "Phycobilisomes PART_OF Cyanobacterium",
+    "Amylases TREATS Crush syndrome",
+    "Lithium TREATS Acute hyperkalemia",
+    "Lithium therapy TREATS Seizures"
+  ]
+}

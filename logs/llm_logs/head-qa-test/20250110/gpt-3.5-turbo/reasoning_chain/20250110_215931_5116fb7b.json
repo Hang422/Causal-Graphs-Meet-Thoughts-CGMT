@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250110_215931",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "5116fb7b",
+  "question_text": "Ludwig's angina is:",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            Ludwig's angina is:\n\n            ### Options\n    opa. A potentially serious infection of the floor of the mouth and submandibular spaces by the possible compromise of the airway.\nopb. An infection of the floor of the mouth and submandibular spaces potentially serious due to its extension to the cavernous sinus.\nopc. A form of anaerobic tonsillitis.\nopd. Its usual origin is a retropharyngeal abscess.\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n            \n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Ludwig's angina -> infection of the floor of the mouth and submandibular spaces -> possible compromise of the airway -> potentially serious condition -> 95%  \nCHAIN: Ludwig's angina -> extension to the cavernous sinus -> increased risk of complications -> potentially serious condition -> 90%  \nCHAIN: Ludwig's angina -> anaerobic infection -> possible tonsillar involvement -> not a form of anaerobic tonsillitis -> 70%  \nCHAIN: Ludwig's angina -> retropharyngeal abscess -> possible origin -> not its usual origin -> 75%",
+  "metadata": {
+    "topic": "Medicine",
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

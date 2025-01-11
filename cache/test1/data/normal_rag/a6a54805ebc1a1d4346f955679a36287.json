@@ -1,0 +1,152 @@
+{
+  "question": "A 27-year-old woman goes to the genetic counseling clinic after having a child with Down syndrome. In the child, a trisomy 21 with translocation 21/21 inherited from the mother is identified. What would be the risk of recurrence of Down syndrome in the future children of this woman?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "The risk of recurrence will be 10-15%, as in the rest of translocations.",
+    "opb": "100% of viable fetuses will be born with Down syndrome.",
+    "opc": "The risk of recurrence will be very low (12%).",
+    "opd": "The risk of recurrence will be 50%."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hereditary Diseases",
+        "Down Syndrome"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hereditary Diseases)-CAUSES->(Down Syndrome)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Trisomy",
+        "Disease",
+        "Pathogenesis",
+        "Genetic Materials"
+      ],
+      [
+        "Trisomy",
+        "Disease",
+        "Pathogenesis",
+        "Genetic Materials"
+      ],
+      [
+        "Genetic Materials",
+        "Germ Cells"
+      ],
+      [
+        "Genetic Materials",
+        "Germ Cells"
+      ],
+      [
+        "Chromosomes, Human, Pair 21",
+        "Genes",
+        "Germ Cells"
+      ],
+      [
+        "Chromosomes, Human, Pair 21",
+        "Genes",
+        "Germ Cells"
+      ],
+      [
+        "Cells",
+        "Germ Cells"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PART_OF"
+      ],
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Trisomy)-CAUSES->(Disease)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genetic Materials)",
+      "(Trisomy)-PREDISPOSES->(Disease)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genetic Materials)",
+      "(Genetic Materials)-PART_OF->(Germ Cells)",
+      "(Genetic Materials)-INTERACTS_WITH->(Germ Cells)",
+      "(Chromosomes, Human, Pair 21)-LOCATION_OF->(Genes)-PART_OF->(Germ Cells)",
+      "(Chromosomes, Human, Pair 21)-LOCATION_OF->(Genes)-INTERACTS_WITH->(Germ Cells)",
+      "(Cells)-INTERACTS_WITH->(Germ Cells)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hereditary Diseases)-CAUSES->(Down Syndrome)",
+      "(Trisomy)-CAUSES/PREDISPOSES->(Disease)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genetic Materials)",
+      "(Chromosomes, Human, Pair 21)-LOCATION_OF->(Genes)-INTERACTS_WITH/PART_OF->(Germ Cells)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Trisomy 21 with translocation 21/21\" -> \"Genetic material from chromosome 21 is duplicated in every cell\" -> \"All gametes from mother carry extra chromosome 21\" -> \"All viable fetuses inherit extra chromosome 21\" -> 100%",
+    "CHAIN: \"Translocation 21/21 identified in mother\" -> \"Mother is a carrier of balanced translocation\" -> \"Every reproductive cell from mother contains extra chromosome 21\" -> \"Every conceived child will inherit Down syndrome if pregnancy is viable\" -> 100%",
+    "CHAIN: \"Mother has translocation 21/21\" -> \"Translocation involves both copies of chromosome 21\" -> \"All eggs produced by mother will have an extra chromosome 21\" -> \"All embryos from these eggs will develop Down syndrome if they result in viable pregnancies\" -> 100%",
+    "CHAIN: \"Diagnosis of translocation 21/21 in mother\" -> \"Mother passes extra chromosome 21 to all offspring\" -> \"Genetic condition is consistent across all pregnancies\" -> \"Every child born to this mother will have Down syndrome\" -> 100%"
+  ],
+  "enhanced_information": "In the case of a woman with a 21/21 translocation, all her viable offspring will inherit an extra chromosome 21, leading to Down syndrome. This results in a 100% recurrence risk for Down syndrome in all future pregnancies.",
+  "analysis": "In the case of a 21/21 translocation in Down syndrome, the genetic abnormality is such that every cell in the parent who carries this translocation has an extra copy of chromosome 21. This type of translocation is typically associated with a very high risk of recurrence in future pregnancies because all viable offspring will inherit the extra chromosome 21. This is different from other types of translocations where the risk might vary. The retrieved medical knowledge does not directly address this specific scenario, but standard genetic principles and clinical knowledge support the understanding that a 21/21 translocation results in all viable offspring inheriting Down syndrome.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      80.0,
+      0.0,
+      0.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "Angioplasty, Balloon ISA Pharmaceutical Preparations",
+    "Amino Acids INTERACTS_WITH Leukocytes",
+    "monocyte INTERACTS_WITH TNF gene|TNF",
+    "Fluorescent Antibody Technique DIAGNOSES San Angelo virus",
+    "High-Risk Pregnancy PREDISPOSES Down Syndrome",
+    "Down Syndrome PREDISPOSES Chronic Condition"
+  ]
+}

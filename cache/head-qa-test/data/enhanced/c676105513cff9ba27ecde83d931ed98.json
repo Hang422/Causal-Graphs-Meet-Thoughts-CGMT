@@ -1,0 +1,115 @@
+{
+  "question": "Which drug reduces intraocular pressure in glaucoma by blocking β adrenergic receptors ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Timolol",
+    "opb": "Bimatoprost.",
+    "opc": "Tropicamide",
+    "opd": "Pilocarpine."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Timolol",
+        "Myocardial Infarction",
+        "Obstruction"
+      ],
+      [
+        "Timolol",
+        "Hypertensive disease",
+        "Obstruction"
+      ],
+      [
+        "Timolol",
+        "Left ventricular thrombus",
+        "Obstruction"
+      ],
+      [
+        "Obstruction",
+        "Glaucoma"
+      ],
+      [
+        "Adrenergic Receptor",
+        "imbalance",
+        "Glaucoma"
+      ],
+      [
+        "Adrenergic Receptor",
+        "Seizures",
+        "Glaucoma"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Timolol)-TREATS->(Myocardial Infarction)-CAUSES->(Obstruction)",
+      "(Timolol)-TREATS->(Hypertensive disease)-CAUSES->(Obstruction)",
+      "(Timolol)-TREATS->(Left ventricular thrombus)-CAUSES->(Obstruction)",
+      "(Obstruction)-CAUSES->(Glaucoma)",
+      "(Adrenergic Receptor)-CAUSES->(imbalance)-CAUSES->(Glaucoma)",
+      "(Adrenergic Receptor)-CAUSES->(Seizures)-PREDISPOSES->(Glaucoma)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Adrenergic Receptor)-CAUSES->(imbalance)-CAUSES->(Glaucoma)",
+      "(Adrenergic Receptor)-CAUSES->(Seizures)-PREDISPOSES->(Glaucoma)",
+      "(Timolol)-TREATS->(Myocardial Infarction)-CAUSES->(Obstruction)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Timolol -> Blocks β adrenergic receptors -> Reduces intraocular pressure in glaucoma -> 95%"
+  ],
+  "enhanced_information": "Timolol reduces intraocular pressure in glaucoma by blocking β adrenergic receptors. This mechanism is well-established in pharmacology. No contradictory information was found in the evidence paths.",
+  "analysis": "Timolol is a beta-adrenergic receptor blocker known to reduce intraocular pressure in glaucoma. This mechanism is a well-established pharmacological principle.",
+  "answer": "opa",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

@@ -1,0 +1,151 @@
+{
+  "question": "Which of the drugs reviewed could produce esophagitis if not administered properly ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Alendronate.",
+    "opb": "Raloxifene",
+    "opc": "Strontium ranelate.",
+    "opd": "Teriparatida."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Alendronate",
+        "Esophagitis"
+      ],
+      [
+        "Raloxifene",
+        "Adverse effects",
+        "Esophagitis"
+      ],
+      [
+        "Raloxifene",
+        "Disease",
+        "Esophagitis"
+      ],
+      [
+        "Raloxifene",
+        "Complication",
+        "Esophagitis"
+      ],
+      [
+        "strontium ranelate",
+        "Osteoporosis",
+        "Blood Circulation",
+        "Esophagus"
+      ],
+      [
+        "strontium ranelate",
+        "Osteoporosis",
+        "Brain activity",
+        "Esophagus"
+      ],
+      [
+        "Teriparatide",
+        "Adverse effects",
+        "Esophagitis"
+      ],
+      [
+        "Teriparatide",
+        "Disease",
+        "Esophagitis"
+      ],
+      [
+        "Teriparatide",
+        "Infection",
+        "Esophagitis"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Alendronate)-TREATS->(Esophagitis)",
+      "(Raloxifene)-PREDISPOSES->(Adverse effects)-CAUSES->(Esophagitis)",
+      "(Raloxifene)-TREATS->(Disease)-CAUSES->(Esophagitis)",
+      "(Raloxifene)-TREATS->(Complication)-CAUSES->(Esophagitis)",
+      "(strontium ranelate)-TREATS->(Osteoporosis)-MANIFESTATION_OF->(Blood Circulation)-PROCESS_OF->(Esophagus)",
+      "(strontium ranelate)-TREATS->(Osteoporosis)-MANIFESTATION_OF->(Brain activity)-PROCESS_OF->(Esophagus)",
+      "(Teriparatide)-PREDISPOSES->(Adverse effects)-CAUSES->(Esophagitis)",
+      "(Teriparatide)-TREATS->(Disease)-CAUSES->(Esophagitis)",
+      "(Teriparatide)-TREATS->(Infection)-CAUSES->(Esophagitis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Teriparatide)-PREDISPOSES->(Adverse effects)-CAUSES->(Esophagitis)",
+      "(Raloxifene)-PREDISPOSES->(Adverse effects)-CAUSES->(Esophagitis)",
+      "(Teriparatide)-TREATS->(Disease)-CAUSES->(Esophagitis)",
+      "(Teriparatide)-TREATS->(Infection)-CAUSES->(Esophagitis)",
+      "(Alendronate)-TREATS->(Esophagitis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Alendronate -> can cause esophagitis if not taken with a full glass of water and upright position -> 80% CHAIN: Raloxifene -> unlikely to cause esophagitis -> 95% CHAIN: Strontium ranelate -> may irritate the esophagus if not taken properly -> 70% CHAIN: Teriparatide -> unlikely to cause esophagitis -> 80%"
+  ],
+  "enhanced_information": "Alendronate can cause esophagitis if not taken with a full glass of water and in an upright position. Strontium ranelate may irritate the esophagus if not taken properly. Raloxifene and Teriparatide are unlikely to cause esophagitis. Evidence suggests that Alendronate treats esophagitis, supporting its potential to cause esophagitis if not administered properly.",
+  "analysis": "Alendronate and Strontium ranelate are known to potentially cause esophagitis if not administered properly. Alendronate specifically requires a full glass of water and an upright position to minimize this risk. Raloxifene and Teriparatide are not associated with esophagitis. Given the clear evidence supporting Alendronate and Strontium ranelate as potential culprits for esophagitis, the most likely correct option is Alendronate.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

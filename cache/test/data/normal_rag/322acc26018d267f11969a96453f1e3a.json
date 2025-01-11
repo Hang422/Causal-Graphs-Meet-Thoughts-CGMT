@@ -1,0 +1,130 @@
+{
+  "question": "A 55-year-old asthmatic patient goes to the ER with an exacerbation. One hour after the administration of supplemental oxygen and two nebulizations of salbutamol the patient does not improve. On examination, he breathed at 42 rpm with supraclavicular drainage and presented disseminated inspiratory and expiratory wheezing. The peak flow has dropped from 310 to 220 L / min. A gasometry extracted with oxygen at 28% shows a pO2 of 54 mmHg and a pCO2 of 35 mmHg. Which of the following attitudes seems LESS indicated?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Increase oxygen flow.",
+    "opb": "Administer 80 mg of methylprednisolone iv.",
+    "opc": "Nebulize ipratropium bromide together with salbutamol every 20 minutes.",
+    "opd": "Administer intravenous magnesium",
+    "ope": "Start non-invasive mechanical ventilation."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Airway device",
+        "Lung diseases",
+        "Airflow"
+      ],
+      [
+        "Airway device",
+        "Syndrome",
+        "Airflow"
+      ],
+      [
+        "Inflammation",
+        "Lung diseases",
+        "Airflow"
+      ],
+      [
+        "Inflammation",
+        "Syndrome",
+        "Airflow"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "PREVENTS",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Airway device)-CAUSES->(Lung diseases)-MANIFESTATION_OF->(Airflow)",
+      "(Airway device)-PREVENTS->(Syndrome)-MANIFESTATION_OF->(Airflow)",
+      "(Inflammation)-CAUSES->(Lung diseases)-MANIFESTATION_OF->(Airflow)",
+      "(Inflammation)-CAUSES->(Syndrome)-MANIFESTATION_OF->(Airflow)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Methylprednisolone",
+        "Spleen",
+        "Airway device"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Methylprednisolone)-PART_OF->(Spleen)-LOCATION_OF->(Airway device)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Methylprednisolone)-PART_OF->(Spleen)-LOCATION_OF->(Airway device)",
+      "(Airway device)-CAUSES->(Lung diseases)-MANIFESTATION_OF->(Airflow)",
+      "(Airway device)-PREVENTS->(Syndrome)-MANIFESTATION_OF->(Airflow)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Increased oxygen flow\" -> \"improved oxygenation\" -> \"potentially improved respiratory status\" -> 70%",
+    "CHAIN: \"Methylprednisolone iv\" -> \"reduced airway inflammation\" -> \"improved airflow\" -> \"potentially improved respiratory status\" -> 85%",
+    "CHAIN: \"Ipratropium bromide with salbutamol\" -> \"bronchodilation\" -> \"improved airflow\" -> \"potentially improved respiratory status\" -> 80%",
+    "CHAIN: \"Intravenous magnesium\" -> \"smooth muscle relaxation\" -> \"bronchodilation\" -> \"potentially improved respiratory status\" -> 75%",
+    "CHAIN: \"Non-invasive mechanical ventilation\" -> \"increased work of breathing\" -> \"potential fatigue\" -> \"possible worsening of respiratory status\" -> 60%"
+  ],
+  "enhanced_information": "In the management of an acute asthma exacerbation, standard medical consensus supports the following interventions: increasing oxygen flow to improve oxygenation, administering intravenous corticosteroids like methylprednisolone to reduce airway inflammation, and using bronchodilators such as ipratropium bromide with salbutamol to enhance airflow. Intravenous magnesium can also be used for its bronchodilatory effects. Non-invasive mechanical ventilation (NIV) is typically reserved for patients with respiratory failure or significant work of breathing, but in this scenario, the patient's pCO2 is not elevated, indicating that ventilation is not yet compromised. Therefore, NIV may not be necessary and could potentially increase the work of breathing and fatigue. The retrieved evidence paths do not directly support or contradict these interventions but highlight the role of airway management in lung diseases. Based on this analysis, starting non-invasive mechanical ventilation seems less indicated in this context.",
+  "analysis": "In the context of an acute asthma exacerbation, the patient is experiencing significant respiratory distress with a high respiratory rate and decreased peak flow. The blood gas analysis shows hypoxemia (low pO2) but not hypercapnia (normal pCO2), indicating that the patient is still able to ventilate adequately, albeit with difficulty. Standard treatment for severe asthma exacerbations includes increasing oxygen to maintain adequate saturation, administering systemic corticosteroids like methylprednisolone to reduce inflammation, and using bronchodilators such as salbutamol and ipratropium bromide. Intravenous magnesium can be used as an adjunct therapy in severe cases. Non-invasive mechanical ventilation (NIV) is typically reserved for patients with respiratory failure or significant hypercapnia, which is not yet present in this patient. Therefore, starting NIV seems less indicated at this stage compared to the other options.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      3,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      100.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": [
+    "Conventional Treatment PREDISPOSES Respiratory Failure",
+    "Cold Sensation PROCESS_OF Entire right foot",
+    "Aerococcus sanguicola CAUSES Urinary tract infection",
+    "Asthma PREDISPOSES Respiratory Failure",
+    "Tricuspid valve structure LOCATION_OF Stents",
+    "Clomipramine TREATS Manic"
+  ]
+}

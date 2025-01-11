@@ -1,0 +1,136 @@
+{
+  "question": "After a traffic accident, a 38-year-old patient enters the ICU in a coma. After several days the patient does not improve neurologically and CT shows hemorrhagic punctate lesions in the corpus callosum and cortico-subcortical union. What is your diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Acute subdural hematoma.",
+    "opb": "Thrombocytopenic purpura.",
+    "opc": "Cerebral hemorrhagic contusion.",
+    "opd": "Severe diffuse axonal injury.",
+    "ope": "Hypoxic-ischemic encephalopathy."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "comatose",
+        "Disease",
+        "Splenic Infarction",
+        "Left upper quadrant pain",
+        "X-Ray Computed Tomography"
+      ],
+      [
+        "comatose",
+        "Disease",
+        "Splenomegaly",
+        "Left upper quadrant pain",
+        "X-Ray Computed Tomography"
+      ],
+      [
+        "comatose",
+        "Hypertensive disease",
+        "Splenomegaly",
+        "Left upper quadrant pain",
+        "X-Ray Computed Tomography"
+      ],
+      [
+        "X-Ray Computed Tomography",
+        "Disease",
+        "Human Development",
+        "Corpus Callosum"
+      ],
+      [
+        "X-Ray Computed Tomography",
+        "Disease",
+        "uptake",
+        "Corpus Callosum"
+      ],
+      [
+        "X-Ray Computed Tomography",
+        "Symptoms",
+        "voltage gated channel",
+        "Corpus Callosum"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(comatose)-CAUSES->(Disease)-CAUSES->(Splenic Infarction)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)",
+      "(comatose)-CAUSES->(Disease)-CAUSES->(Splenomegaly)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)",
+      "(comatose)-CAUSES->(Hypertensive disease)-CAUSES->(Splenomegaly)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)",
+      "(X-Ray Computed Tomography)-CAUSES->(Disease)-MANIFESTATION_OF->(Human Development)-PROCESS_OF->(Corpus Callosum)",
+      "(X-Ray Computed Tomography)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Corpus Callosum)",
+      "(X-Ray Computed Tomography)-CAUSES->(Symptoms)-MANIFESTATION_OF->(voltage gated channel)-PROCESS_OF->(Corpus Callosum)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(X-Ray Computed Tomography)-CAUSES->(Disease)-MANIFESTATION_OF->(Human Development)-PROCESS_OF->(Corpus Callosum)",
+      "(X-Ray Computed Tomography)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Corpus Callosum)",
+      "(comatose)-CAUSES->(Disease)-CAUSES->(Splenomegaly)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Traffic accident -> head trauma -> coma -> CT scan -> hemorrhagic punctate lesions in the corpus callosum and cortico-subcortical union -> Severe diffuse axonal injury -> 95%"
+  ],
+  "enhanced_information": "The patient's presentation of coma following a traffic accident with CT findings of hemorrhagic punctate lesions in the corpus callosum and cortico-subcortical union is most indicative of severe diffuse axonal injury.",
+  "analysis": "The patient's presentation of a coma following a traffic accident with CT findings of hemorrhagic punctate lesions in the corpus callosum and cortico-subcortical union is highly suggestive of severe diffuse axonal injury. This type of injury is characterized by widespread damage to the brain's white matter due to shearing forces, commonly seen in traumatic brain injuries like high-speed motor vehicle accidents.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

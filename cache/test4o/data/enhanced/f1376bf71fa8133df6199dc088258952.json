@@ -1,0 +1,173 @@
+{
+  "question": "Patient with polyuria and polydipsia with a specific urine density greater than 1.040. From the following options indicate the most probable diagnosis:",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Alcohol intoxication",
+    "opb": "Suppression of ADH (vasopressin) by barbiturates.",
+    "opc": "Mellitus diabetes.",
+    "opd": "Lithium toxicity that causes diabetes insipidus.",
+    "ope": "Central deficit of ADH (vasopressin)."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Glucose",
+        "Diabetes Mellitus"
+      ],
+      [
+        "Dehydration",
+        "Acidosis",
+        "Alcoholic Intoxication"
+      ],
+      [
+        "Dehydration",
+        "Pathogenesis",
+        "Alcoholic Intoxication"
+      ],
+      [
+        "Dehydration",
+        "Kidney Failure, Acute",
+        "Alcoholic Intoxication"
+      ],
+      [
+        "Lithium",
+        "Diabetes Insipidus"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Glucose)-CAUSES->(Diabetes Mellitus)",
+      "(Dehydration)-CAUSES->(Acidosis)-COMPLICATES->(Alcoholic Intoxication)",
+      "(Dehydration)-CAUSES->(Pathogenesis)-MANIFESTATION_OF->(Alcoholic Intoxication)",
+      "(Dehydration)-CAUSES->(Kidney Failure, Acute)-MANIFESTATION_OF->(Alcoholic Intoxication)",
+      "(Lithium)-TREATS->(Diabetes Insipidus)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Visual Suppression",
+        "Disease",
+        "Virus",
+        "Pharmaceutical Preparations",
+        "Barbiturates"
+      ],
+      [
+        "Visual Suppression",
+        "CACNA1A",
+        "Cells",
+        "Pharmaceutical Preparations",
+        "Barbiturates"
+      ],
+      [
+        "Alcohol dehydrogenase",
+        "Cells",
+        "Pharmaceutical Preparations",
+        "Barbiturates"
+      ],
+      [
+        "Alcohol dehydrogenase",
+        "Cells",
+        "Pancreas",
+        "Barbiturates"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Visual Suppression)-ISA->(Disease)-ASSOCIATED_WITH->(Virus)-LOCATION_OF->(Pharmaceutical Preparations)-INTERACTS_WITH->(Barbiturates)",
+      "(Visual Suppression)-ASSOCIATED_WITH->(CACNA1A)-PART_OF->(Cells)-LOCATION_OF->(Pharmaceutical Preparations)-INTERACTS_WITH->(Barbiturates)",
+      "(Alcohol dehydrogenase)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Barbiturates)",
+      "(Alcohol dehydrogenase)-INTERACTS_WITH->(Cells)-PART_OF->(Pancreas)-LOCATION_OF->(Barbiturates)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Visual Suppression)-ISA->(Disease)-ASSOCIATED_WITH->(Virus)-LOCATION_OF->(Pharmaceutical Preparations)-INTERACTS_WITH->(Barbiturates)",
+      "(Lithium)-TREATS->(Diabetes Insipidus)",
+      "(Alcohol dehydrogenase)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Barbiturates)",
+      "(Alcohol dehydrogenase)-INTERACTS_WITH->(Cells)-PART_OF->(Pancreas)-LOCATION_OF->(Barbiturates)",
+      "(Visual Suppression)-ASSOCIATED_WITH->(CACNA1A)-PART_OF->(Cells)-LOCATION_OF->(Pharmaceutical Preparations)-INTERACTS_WITH->(Barbiturates)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Polyuria and polydipsia\" -> \"high urine density\" -> \"increased glucose in urine\" -> \"Mellitus diabetes\" -> 95%",
+    "CHAIN: \"Polyuria and polydipsia\" -> \"high urine density\" -> \"possible dehydration\" -> \"unclear link to alcohol intoxication\" -> 20%",
+    "CHAIN: \"Polyuria and polydipsia\" -> \"high urine density\" -> \"ADH suppression unlikely\" -> \"barbiturates\" -> 10%",
+    "CHAIN: \"Polyuria and polydipsia\" -> \"high urine density\" -> \"lithium toxicity\" -> \"diabetes insipidus unlikely\" -> 15%",
+    "CHAIN: \"Polyuria and polydipsia\" -> \"high urine density\" -> \"central ADH deficit\" -> \"unlikely due to high urine density\" -> 10%"
+  ],
+  "enhanced_information": "The patient presents with polyuria and polydipsia and a specific urine density greater than 1.040. This high urine density suggests the presence of solutes in the urine, which is consistent with diabetes mellitus, where glucose is excreted in the urine due to hyperglycemia. This aligns with the consensus that diabetes mellitus is characterized by polyuria, polydipsia, and glucosuria, leading to increased urine density. The other options are less likely: alcohol intoxication typically causes dilute urine; barbiturates suppressing ADH would lead to dilute urine; lithium toxicity causing diabetes insipidus results in dilute urine due to lack of ADH effect; and a central ADH deficit also results in dilute urine. The retrieved evidence paths do not directly support any of the other options in the context of high urine density. Therefore, the most probable diagnosis is diabetes mellitus.",
+  "analysis": "The patient presents with polyuria and polydipsia, along with a specific urine density greater than 1.040. This high urine density indicates the presence of solutes in the urine. In the context of the given options, diabetes mellitus (opc) is the most likely diagnosis. Diabetes mellitus is characterized by hyperglycemia, which leads to glucosuria (glucose in the urine), resulting in increased urine density. The other options are less likely: alcohol intoxication (opa) typically causes dilute urine; suppression of ADH by barbiturates (opb) would lead to dilute urine; lithium toxicity causing diabetes insipidus (opd) results in dilute urine due to lack of ADH effect; and a central deficit of ADH (ope) also results in dilute urine. Therefore, based on the high urine density and the symptoms of polyuria and polydipsia, diabetes mellitus is the most probable diagnosis.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      2,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      20.0,
+      20.0,
+      40.0,
+      20.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

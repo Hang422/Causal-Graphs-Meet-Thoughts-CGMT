@@ -1,0 +1,128 @@
+{
+  "question": "Which hormone favors the mobilization of aquaporins 2 to the luminal membrane in the renal tubule ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Aldosterone",
+    "opb": "Angiotensin II.",
+    "opc": "The antidiuretic hormone.",
+    "opd": "The atrial natriuretic peptide."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "human AVP protein",
+        "Hypernatremia",
+        "Thirst",
+        "Kidney"
+      ],
+      [
+        "human AVP protein",
+        "Polyuria",
+        "Thirst",
+        "Kidney"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(human AVP protein)-CAUSES->(Hypernatremia)-MANIFESTATION_OF->(Thirst)-PROCESS_OF->(Kidney)",
+      "(human AVP protein)-CAUSES->(Polyuria)-MANIFESTATION_OF->(Thirst)-PROCESS_OF->(Kidney)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "human AVP protein",
+        "Hypernatremia",
+        "Pathogenesis",
+        "water channel"
+      ],
+      [
+        "human AVP protein",
+        "Hypernatremia",
+        "Pathogenesis",
+        "water channel"
+      ],
+      [
+        "Kidney",
+        "Pathogenesis",
+        "water channel"
+      ],
+      [
+        "Kidney",
+        "Brain",
+        "water channel"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(human AVP protein)-CAUSES->(Hypernatremia)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(water channel)",
+      "(human AVP protein)-CAUSES->(Hypernatremia)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(water channel)",
+      "(Kidney)-LOCATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(water channel)",
+      "(Kidney)-PART_OF->(Brain)-LOCATION_OF->(water channel)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Kidney)-LOCATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(water channel)",
+      "(Kidney)-PART_OF->(Brain)-LOCATION_OF->(water channel)",
+      "(human AVP protein)-CAUSES->(Hypernatremia)-MANIFESTATION_OF/PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(water channel)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: The antidiuretic hormone -> favors the mobilization of aquaporins 2 to the luminal membrane in the renal tubule -> 95% CHAIN: The antidiuretic hormone -> increases water reabsorption in the kidneys -> stimulates aquaporin insertion into the luminal membrane -> 95%"
+  ],
+  "enhanced_information": "The antidiuretic hormone favors the mobilization of aquaporins 2 to the luminal membrane in the renal tubule by increasing water reabsorption in the kidneys and stimulating aquaporin insertion into the luminal membrane. Evidence paths support the role of the antidiuretic hormone in regulating water channels in the kidney and brain, aligning with consensus knowledge.",
+  "analysis": "The core medical principle is that the antidiuretic hormone (ADH) favors the mobilization of aquaporins 2 to the luminal membrane in the renal tubule by increasing water reabsorption in the kidneys and stimulating aquaporin insertion into the luminal membrane. This aligns with consensus knowledge and established physiological mechanisms.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

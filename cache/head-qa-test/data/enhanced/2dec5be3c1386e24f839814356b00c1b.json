@@ -1,0 +1,137 @@
+{
+  "question": "What is the average life time of an erythrocyte:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Four months.",
+    "opb": "Four weeks.",
+    "opc": "One year.",
+    "opd": "Sixty days",
+    "ope": "Two weeks."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Erythrocytes",
+        "Spleen"
+      ],
+      [
+        "Bone Marrow",
+        "Spleen"
+      ],
+      [
+        "Spleen",
+        "Genes",
+        "Erythrocytes"
+      ],
+      [
+        "Spleen",
+        "Genes",
+        "Erythrocytes"
+      ],
+      [
+        "Blood Circulation",
+        "Pharmaceutical Preparations",
+        "Erythrocytes"
+      ],
+      [
+        "Blood Circulation",
+        "Insulin",
+        "Erythrocytes"
+      ],
+      [
+        "Liver",
+        "Genes",
+        "Erythrocytes"
+      ],
+      [
+        "Liver",
+        "Genes",
+        "Erythrocytes"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF"
+      ],
+      [
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Erythrocytes)-PART_OF->(Spleen)",
+      "(Bone Marrow)-PART_OF->(Spleen)",
+      "(Spleen)-LOCATION_OF->(Genes)-PART_OF->(Erythrocytes)",
+      "(Spleen)-LOCATION_OF->(Genes)-INTERACTS_WITH->(Erythrocytes)",
+      "(Blood Circulation)-ASSOCIATED_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Erythrocytes)",
+      "(Blood Circulation)-ASSOCIATED_WITH->(Insulin)-INTERACTS_WITH->(Erythrocytes)",
+      "(Liver)-LOCATION_OF->(Genes)-PART_OF->(Erythrocytes)",
+      "(Liver)-LOCATION_OF->(Genes)-INTERACTS_WITH->(Erythrocytes)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Erythrocytes)-PART_OF->(Spleen)",
+      "(Spleen)-LOCATION_OF->(Genes)-INTERACTS_WITH/PART_OF->(Erythrocytes)",
+      "(Blood Circulation)-ASSOCIATED_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Erythrocytes)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Erythrocytes are also known as red blood cells. -> CHAIN: Erythrocytes have a lifespan of around 120 days. -> CHAIN: The average lifetime of an erythrocyte is approximately four months. -> 95%",
+    "CHAIN: Erythrocytes are continuously produced in the bone marrow. -> CHAIN: Erythrocytes are removed from circulation by the spleen and liver. -> CHAIN: The average lifespan of an erythrocyte is about 60-120 days. -> CHAIN: The average lifetime of an erythrocyte is approximately four months. -> 90%"
+  ],
+  "enhanced_information": "The average lifetime of an erythrocyte is approximately four months, which corresponds to around 120 days. This aligns with the consensus that erythrocytes have a lifespan of about 60-120 days. Relevant evidence supports the role of the spleen and liver in removing erythrocytes from circulation.",
+  "analysis": "The core medical principle is that erythrocytes have an average lifespan of about 60-120 days. The enhanced information provided aligns with this consensus, indicating an average lifetime of approximately four months or 120 days.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      5
+    ],
+    "coverage_rates": [
+      0.0,
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

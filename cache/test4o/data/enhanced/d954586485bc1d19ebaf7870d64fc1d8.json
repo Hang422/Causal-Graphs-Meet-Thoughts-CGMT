@@ -1,0 +1,107 @@
+{
+  "question": "We serve a patient who has just suffered a traffic accident. She is conscious and when taking the constants she has a systolic blood pressure of 70 mmHg and a heart rate of 45 beats / minute. In addition, the skin of the extremities is hot. What is the most likely cause of the shock?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Hypovolemic shock",
+    "opb": "Intrinsic cardiogenic shock.",
+    "opc": "Neurogenic shock",
+    "opd": "Septic shock.",
+    "ope": "Obstructive cardiogenic shock."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Traffic accidents",
+        "Disease",
+        "Hemorrhage"
+      ],
+      [
+        "Traffic accidents",
+        "Obesity",
+        "Hemorrhage"
+      ],
+      [
+        "Traffic accidents",
+        "Hypertensive disease",
+        "Hemorrhage"
+      ],
+      [
+        "Traffic accidents",
+        "Cardiac Tamponade"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Traffic accidents)-CAUSES->(Disease)-CAUSES->(Hemorrhage)",
+      "(Traffic accidents)-CAUSES->(Obesity)-CAUSES->(Hemorrhage)",
+      "(Traffic accidents)-CAUSES->(Hypertensive disease)-CAUSES->(Hemorrhage)",
+      "(Traffic accidents)-CAUSES->(Cardiac Tamponade)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Traffic accidents)-CAUSES->(Disease)-CAUSES->(Hemorrhage)",
+      "(Traffic accidents)-CAUSES->(Obesity)-CAUSES->(Hemorrhage)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Traffic accident\" -> \"spinal cord injury\" -> \"loss of sympathetic tone\" -> \"decreased heart rate\" -> \"decreased blood pressure\" -> \"warm extremities\" -> \"neurogenic shock\" -> 85%",
+    "CHAIN: \"Traffic accident\" -> \"blood loss\" -> \"decreased blood volume\" -> \"decreased blood pressure\" -> \"increased heart rate\" (expected) -> \"conflict with bradycardia\" -> \"unclear\" -> 40%",
+    "CHAIN: \"Traffic accident\" -> \"heart damage\" -> \"decreased cardiac output\" -> \"decreased blood pressure\" -> \"increased heart rate\" (expected) -> \"conflict with bradycardia\" -> \"unclear\" -> 35%",
+    "CHAIN: \"Traffic accident\" -> \"infection\" (unlikely) -> \"systemic vasodilation\" -> \"decreased blood pressure\" -> \"increased heart rate\" (expected) -> \"conflict with bradycardia\" -> \"unclear\" -> 30%",
+    "CHAIN: \"Traffic accident\" -> \"cardiac tamponade\" (unlikely) -> \"decreased cardiac output\" -> \"decreased blood pressure\" -> \"increased heart rate\" (expected) -> \"conflict with bradycardia\" -> \"unclear\" -> 25%"
+  ],
+  "enhanced_information": "The patient presents with hypotension (systolic blood pressure of 70 mmHg), bradycardia (heart rate of 45 beats/minute), and warm extremities following a traffic accident. These symptoms are most consistent with neurogenic shock, which can occur due to spinal cord injury leading to loss of sympathetic tone. This results in decreased heart rate and blood pressure, along with warm skin due to vasodilation. Other types of shock, such as hypovolemic, cardiogenic, septic, and obstructive, typically present with tachycardia as a compensatory mechanism for low blood pressure, which conflicts with the observed bradycardia. The retrieved evidence paths related to hemorrhage are not directly relevant to the bradycardia and warm extremities observed, which are key indicators of neurogenic shock. Therefore, neurogenic shock is the most likely cause of the patient's condition.",
+  "analysis": "The patient presents with hypotension, bradycardia, and warm extremities following a traffic accident. These symptoms are indicative of neurogenic shock, which is often associated with spinal cord injury. Neurogenic shock is characterized by a loss of sympathetic tone, leading to vasodilation (causing warm skin) and bradycardia (due to unopposed vagal tone). Other types of shock, such as hypovolemic, cardiogenic, septic, and obstructive, typically present with tachycardia as a compensatory response to hypotension. The presence of bradycardia and warm extremities strongly suggests neurogenic shock over the other types. Therefore, based on the clinical presentation and standard medical knowledge, neurogenic shock is the most likely cause of the patient's condition.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      0.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

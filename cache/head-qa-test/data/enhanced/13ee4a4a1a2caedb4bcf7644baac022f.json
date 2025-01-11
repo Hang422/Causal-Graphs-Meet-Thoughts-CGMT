@@ -1,0 +1,84 @@
+{
+  "question": "In what situations would NOT surgery be indicated to treat a cerebral hemorrhage?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Cerebellar hematoma> 3 cm in diameter and neurological deterioration.",
+    "opb": "Intraventricular hemorrhage.",
+    "opc": "Putaminal hematoma in a patient with a deep coma (Glasgow less than or equal to 8).",
+    "opd": "Lobar hematoma and neurological deterioration."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ventricular hemorrhage",
+        "Disease",
+        "Hemorrhage"
+      ],
+      [
+        "Ventricular hemorrhage",
+        "Hypertensive disease",
+        "Hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Ventricular hemorrhage)-CAUSES->(Disease)-CAUSES->(Hemorrhage)",
+      "(Ventricular hemorrhage)-CAUSES->(Hypertensive disease)-COMPLICATES->(Hemorrhage)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ventricular hemorrhage)-CAUSES->(Disease)-CAUSES->(Hemorrhage)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Cerebellar hematoma > 3 cm in diameter and neurological deterioration -> surgical intervention usually indicated -> NOT surgery would be indicated if the patient is stable and the hematoma is small -> 80%",
+    "CHAIN: Intraventricular hemorrhage -> NOT surgery may be indicated if the hemorrhage is small and the patient is stable -> 70%",
+    "CHAIN: Putaminal hematoma in a patient with a deep coma (Glasgow less than or equal to 8) -> surgical intervention usually indicated -> NOT surgery would be indicated if the patient is deemed unsuitable for surgery due to poor prognosis or other medical conditions -> 75%",
+    "CHAIN: Lobar hematoma and neurological deterioration -> surgical intervention usually indicated -> NOT surgery would be indicated if the patient is unstable or has contraindications to surgery -> 80%"
+  ],
+  "enhanced_information": "For a cerebral hemorrhage, NOT surgery may be indicated in the following situations: a stable patient with a small cerebellar hematoma > 3 cm in diameter, a stable patient with a small intraventricular hemorrhage, a patient with a putaminal hematoma in a deep coma (Glasgow ≤ 8) deemed unsuitable for surgery due to poor prognosis or other medical conditions, and an unstable patient with a lobar hematoma or contraindications to surgery.",
+  "analysis": "In the context of cerebral hemorrhage, surgery may not be indicated in certain situations to avoid unnecessary risks or when the prognosis is poor. Among the given options, a putaminal hematoma in a patient with a deep coma (Glasgow ≤ 8) is a scenario where surgery may not be recommended due to the patient's poor prognosis or other medical conditions. This aligns with the principle of weighing the risks and benefits of surgery in critically ill patients.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      100.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": []
+}

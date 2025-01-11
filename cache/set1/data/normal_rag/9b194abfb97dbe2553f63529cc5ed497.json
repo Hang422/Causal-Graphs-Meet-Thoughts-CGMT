@@ -1,0 +1,218 @@
+{
+  "question": "A 55-year-old patient, with a 15-year history of ulcerative colitis, presented in a control colonoscopy a rectal cancer eight cm from the anal margin and moderate activity of his colitis, especially on the left side of the colon. It is staged as T2N0M0 after performing image tests. What is the correct intervention for your treatment?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Pantoctocolectomy with ileoanal reservoir and protection ileostomy.",
+    "opb": "Anterior resection of rectum with protective lateral ileostomy.",
+    "opc": "Abdominoperineal rectum amputation.",
+    "opd": "External radiotherapy, and if there is good response, do a local surgery and maintain medical treatment of your inflammatory bowel disease."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Cancer Treatment",
+        "Disease",
+        "Immunity",
+        "Rectum"
+      ],
+      [
+        "Cancer Treatment",
+        "Disease",
+        "physiological aspects",
+        "Rectum"
+      ],
+      [
+        "Cancer Treatment",
+        "Disease",
+        "Excretory function",
+        "Rectum"
+      ],
+      [
+        "Colitis",
+        "Disease",
+        "Immunity",
+        "Rectum"
+      ],
+      [
+        "Colitis",
+        "Disease",
+        "physiological aspects",
+        "Rectum"
+      ],
+      [
+        "Colitis",
+        "Disease",
+        "Excretory function",
+        "Rectum"
+      ],
+      [
+        "Ulcerative Colitis",
+        "Degenerative abnormality",
+        "Local disease"
+      ],
+      [
+        "Ulcerative Colitis",
+        "Bacteria",
+        "Local disease"
+      ],
+      [
+        "Ulcerative Colitis",
+        "Systemic disease",
+        "Local disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Cancer Treatment)-CAUSES->(Disease)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Rectum)",
+      "(Cancer Treatment)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Rectum)",
+      "(Cancer Treatment)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(Rectum)",
+      "(Colitis)-CAUSES->(Disease)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Rectum)",
+      "(Colitis)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Rectum)",
+      "(Colitis)-COMPLICATES->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(Rectum)",
+      "(Ulcerative Colitis)-PREDISPOSES->(Degenerative abnormality)-CAUSES->(Local disease)",
+      "(Ulcerative Colitis)-PROCESS_OF->(Bacteria)-CAUSES->(Local disease)",
+      "(Ulcerative Colitis)-MANIFESTATION_OF->(Systemic disease)-PREDISPOSES->(Local disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Ulcerative Colitis",
+        "Pathogenesis",
+        "Glucocorticoids",
+        "Cancer Treatment"
+      ],
+      [
+        "Ulcerative Colitis",
+        "Pathogenesis",
+        "Glucocorticoids",
+        "Cancer Treatment"
+      ],
+      [
+        "Rectum",
+        "Complication"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "ISA"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "ISA"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Ulcerative Colitis)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Glucocorticoids)-ISA->(Cancer Treatment)",
+      "(Ulcerative Colitis)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Glucocorticoids)-ISA->(Cancer Treatment)",
+      "(Rectum)-LOCATION_OF->(Complication)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cancer Treatment)-CAUSES->(Disease)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Rectum)",
+      "(Cancer Treatment)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Rectum)",
+      "(Cancer Treatment)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(Rectum)",
+      "(Colitis)-CAUSES->(Disease)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Rectum)",
+      "(Colitis)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Rectum)",
+      "(Colitis)-COMPLICATES->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(Rectum)",
+      "(Rectum)-LOCATION_OF->(Complication)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient has rectal cancer staged T2N0M0\" -> \"Surgical intervention is indicated\" -> \"Options include resection or amputation\" -> \"Colitis history complicates surgical choice\" -> \"Anterior resection preserves anal function\" -> \"Protective ileostomy reduces complications\" -> 85%",
+    "CHAIN: \"Patient has moderate ulcerative colitis\" -> \"Cancer treatment must consider colitis management\" -> \"Abdominoperineal amputation removes rectum\" -> \"Higher risk of complications in colitis patients\" -> \"Anterior resection is less invasive\" -> \"Protective ileostomy is safer\" -> 80%",
+    "CHAIN: \"Rectal cancer found in a patient with ulcerative colitis\" -> \"T2N0M0 indicates localized disease\" -> \"Surgical options are evaluated\" -> \"Pantoctocolectomy is extensive\" -> \"Not necessary for T2N0M0\" -> \"External radiotherapy is not first-line\" -> \"Anterior resection is appropriate\" -> 90%",
+    "CHAIN: \"Patient's cancer is localized\" -> \"Surgical resection is the primary treatment\" -> \"Colitis history suggests careful approach\" -> \"Abdominoperineal amputation is more radical\" -> \"Anterior resection with ileostomy is less invasive\" -> \"Protective ileostomy aids recovery\" -> 88%"
+  ],
+  "enhanced_information": "The patient has rectal cancer staged T2N0M0, indicating localized disease suitable for surgical intervention. Given the patient's history of ulcerative colitis, careful consideration of surgical options is necessary. Anterior resection of the rectum is preferred as it preserves anal function and is less invasive compared to abdominoperineal amputation, which carries a higher risk of complications in patients with colitis. A protective ileostomy is advisable to reduce postoperative complications. Pantoctocolectomy is not indicated for T2N0M0 cancer, and external radiotherapy is not the first-line treatment for localized rectal cancer. Therefore, the best intervention is anterior resection with protective ileostomy.",
+  "analysis": "In this case, the patient has rectal cancer associated with a long history of ulcerative colitis. Given the T2N0M0 staging, the cancer is localized and has not spread to lymph nodes or distant sites. The standard treatment for localized rectal cancer typically involves surgical resection. The options provided include various surgical approaches. Anterior resection is appropriate for T2 rectal cancers, especially when the cancer is not very close to the anal sphincter, and a protective ileostomy can help manage potential complications. Abdominoperineal resection is more invasive and typically reserved for lower rectal cancers or when sphincter preservation is not possible. The option of external radiotherapy followed by surgery is less common for T2N0M0 rectal cancer unless there are specific indications for neoadjuvant therapy. Therefore, the best-supported option is anterior resection with a protective ileostomy.",
+  "answer": "opb",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      4,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      80.0,
+      20.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "Lipase TREATS Bacillus subtilis",
+    "Hormone measurement ISA Laboratory Procedures",
+    "Cancer Treatment TREATS Inflammatory Bowel Diseases",
+    "Cardiac CT DIAGNOSES Pulmonary Embolism",
+    "Medical therapy TREATS Rectal Diseases",
+    "Mandibular Condyle LOCATION_OF Avascular necrosis",
+    "colonoscopy TREATS Ulcerative Colitis",
+    "removal technique TREATS Hemorrhoids",
+    "MUC20 INTERACTS_WITH Cells",
+    "colonoscopy DIAGNOSES Colitis"
+  ]
+}

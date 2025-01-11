@@ -1,0 +1,151 @@
+{
+  "question": "A 63-year-old patient with a first-degree family history of colorectal cancer at 56 years of age. In his personal history, an episode of rectorrhagia secondary to the hemorrhoidal syndrome was highlighted 15 years ago, so a colonoscopy was performed that was normal and did not present rectal bleeding. Goes to the emergency room for a hematochezic episode. FC 120 bpm and BP 70/40 mmHg. The blood test shows a hemoglobin of 8 g / dL. Point out the INCORRECT response in regards to the management of this patient:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Even if hemodynamic stability is not achieved, it is necessary to insist on colon preparation.",
+    "opb": "If the colonoscopy is normal, an upper digestive endoscopy can give the diagnosis in 10-15% of the cases.",
+    "opc": "Colonoscopy is the exploration with the best cost / effectiveness ratio for its safety, sensitivity and therapeutic potential.",
+    "opd": "The scintigraphy with Tc99m is of proven utility if a Meckel's diverticulum is suspected."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hematochezia",
+        "Shock, Hemorrhagic",
+        "Gastrointestinal Hemorrhage"
+      ],
+      [
+        "Hematochezia",
+        "Disease",
+        "Gastrointestinal Hemorrhage"
+      ],
+      [
+        "Hematochezia",
+        "Gastrointestinal tract vascular insufficiency",
+        "Gastrointestinal Hemorrhage"
+      ],
+      [
+        "chrysarobin",
+        "Psoriasis",
+        "Disease",
+        "Acute hemorrhage"
+      ],
+      [
+        "chrysarobin",
+        "Psoriasis",
+        "Moyamoya Disease",
+        "Acute hemorrhage"
+      ],
+      [
+        "chrysarobin",
+        "Psoriasis",
+        "Vascular Diseases",
+        "Acute hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hematochezia)-CAUSES->(Shock, Hemorrhagic)-COMPLICATES->(Gastrointestinal Hemorrhage)",
+      "(Hematochezia)-MANIFESTATION_OF->(Disease)-CAUSES->(Gastrointestinal Hemorrhage)",
+      "(Hematochezia)-MANIFESTATION_OF->(Gastrointestinal tract vascular insufficiency)-CAUSES->(Gastrointestinal Hemorrhage)",
+      "(chrysarobin)-TREATS->(Psoriasis)-CAUSES->(Disease)-CAUSES->(Acute hemorrhage)",
+      "(chrysarobin)-TREATS->(Psoriasis)-CAUSES->(Moyamoya Disease)-CAUSES->(Acute hemorrhage)",
+      "(chrysarobin)-TREATS->(Psoriasis)-CAUSES->(Vascular Diseases)-CAUSES->(Acute hemorrhage)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hypovolemic Shock",
+        "TNF protein, human|TNF",
+        "Body tissue",
+        "Fluid resuscitation"
+      ],
+      [
+        "Hypovolemic Shock",
+        "ENO1",
+        "Muscle",
+        "Fluid resuscitation"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Hypovolemic Shock)-ASSOCIATED_WITH->(TNF protein, human|TNF)-PART_OF->(Body tissue)-LOCATION_OF->(Fluid resuscitation)",
+      "(Hypovolemic Shock)-ASSOCIATED_WITH->(ENO1)-PART_OF->(Muscle)-LOCATION_OF->(Fluid resuscitation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(chrysarobin)-TREATS->(Psoriasis)-CAUSES->(Disease)-CAUSES->(Acute hemorrhage)",
+      "(chrysarobin)-TREATS->(Psoriasis)-CAUSES->(Moyamoya Disease)-CAUSES->(Acute hemorrhage)",
+      "(chrysarobin)-TREATS->(Psoriasis)-CAUSES->(Vascular Diseases)-CAUSES->(Acute hemorrhage)",
+      "(Hematochezia)-CAUSES->(Shock, Hemorrhagic)-COMPLICATES->(Gastrointestinal Hemorrhage)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Hematochezia -> low hemoglobin level -> possible gastrointestinal bleeding -> 80% CHAIN: Low blood pressure (70/40 mmHg) -> hypovolemic shock -> urgent need for fluid resuscitation -> 90% CHAIN: Hematochezia -> possible lower gastrointestinal bleeding -> need for urgent evaluation -> 85% CHAIN: Hematochezia -> hemoglobin of 8 g/dL -> possible acute blood loss -> 80%"
+  ],
+  "enhanced_information": "In the management of this patient, the INCORRECT response is opb. An upper digestive endoscopy is not the recommended approach for evaluating lower gastrointestinal bleeding. Colonoscopy is the preferred exploration due to its safety, sensitivity, and therapeutic potential. The patient requires urgent evaluation for possible lower gastrointestinal bleeding given the hematochezia, low hemoglobin level, and signs of hypovolemic shock.",
+  "analysis": "The core medical principle here is to prioritize colonoscopy as the initial diagnostic modality for evaluating lower gastrointestinal bleeding. Upper digestive endoscopy is not the recommended approach in this context. Given the patient's presentation with hematochezia, low hemoglobin level, and signs of hypovolemic shock, urgent evaluation for lower gastrointestinal bleeding is crucial.",
+  "answer": "opb",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

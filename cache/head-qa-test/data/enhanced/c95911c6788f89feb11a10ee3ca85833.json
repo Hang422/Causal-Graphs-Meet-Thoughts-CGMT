@@ -1,0 +1,104 @@
+{
+  "question": "Question linked to image nº2 The same type of pathology can occur in other contexts. Point out which of them is more likely:",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Hypothyroidism",
+    "opb": "Hyperthyroidism.",
+    "opc": "Ulcerative colitis",
+    "opd": "Scleroderma",
+    "ope": "Glucagonoma"
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ulcerative Colitis",
+        "Abdominal Pain"
+      ],
+      [
+        "Abdominal Pain",
+        "Disease",
+        "Hemorrhagic diarrhea"
+      ],
+      [
+        "Abdominal Pain",
+        "Colitis, Ischemic",
+        "Hemorrhagic diarrhea"
+      ],
+      [
+        "Abdominal Pain",
+        "Ischemia",
+        "Hemorrhagic diarrhea"
+      ],
+      [
+        "Scleroderma",
+        "[D]Thickening of skin"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Ulcerative Colitis)-CAUSES->(Abdominal Pain)",
+      "(Abdominal Pain)-CAUSES->(Disease)-CAUSES->(Hemorrhagic diarrhea)",
+      "(Abdominal Pain)-CAUSES->(Colitis, Ischemic)-CAUSES->(Hemorrhagic diarrhea)",
+      "(Abdominal Pain)-CAUSES->(Ischemia)-CAUSES->(Hemorrhagic diarrhea)",
+      "(Scleroderma)-CAUSES->([D]Thickening of skin)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ulcerative Colitis)-CAUSES->(Abdominal Pain)",
+      "(Scleroderma)-CAUSES->([D]Thickening of skin)",
+      "(Abdominal Pain)-CAUSES->(Disease)-CAUSES->(Hemorrhagic diarrhea)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Glucagonoma -> hyperglycemia -> weight loss -> 80% CHAIN: Hyperthyroidism -> weight loss -> heat intolerance -> 85% CHAIN: Hypothyroidism -> weight gain -> fatigue -> 80% CHAIN: Ulcerative colitis -> abdominal pain -> bloody diarrhea -> 75% CHAIN: Scleroderma -> skin thickening -> Raynaud's phenomenon -> 80%"
+  ],
+  "enhanced_information": "Glucagonoma is more likely as it can lead to hyperglycemia, weight loss, and fits the chain of symptoms. Ulcerative colitis and scleroderma are less likely as their symptom chains do not align as closely with the presented information.",
+  "analysis": "Glucagonoma is the most likely pathology based on the enhanced information provided. The symptoms of hyperglycemia and weight loss align closely with the presentation in the image. Hypothyroidism and ulcerative colitis do not match the symptom chain, and scleroderma is less likely. Hyperthyroidism could be considered due to its metabolic effects, but the specific symptoms mentioned in the enhanced information point more towards glucagonoma.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

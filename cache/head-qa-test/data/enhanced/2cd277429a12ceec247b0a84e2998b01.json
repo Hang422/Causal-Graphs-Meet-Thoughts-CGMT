@@ -1,0 +1,106 @@
+{
+  "question": "A 24-year-old student of mathematics, who comes to the clinic to confirm the diagnostic suspicion after a consultation in Google. Since childhood he has episodes of intense pain, lancinating, in hands and feet, lasting between minutes and days. He relates them to physical exercise, stress or fever, and was diagnosed with \"growing pains\". Later he notes that he does not have sweating after playing sports. He has also observed punctate skin lesions, of a dark red color, in \"the swimsuit zone\", considered non-specific. Get the diagnosis after collecting three keys (painful neuropathy, hypohidrosis and angiokeratomas). What do you think is the diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Fabry disease.",
+    "opb": "Pompe disease.",
+    "opc": "Hereditary amyloidotic polyneuropathy.",
+    "opd": "Gaucher disease."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Skin lesion",
+        "Disease",
+        "Fabry Disease"
+      ],
+      [
+        "Skin lesion",
+        "Symptoms",
+        "Fabry Disease"
+      ],
+      [
+        "Skin lesion",
+        "Pain",
+        "Fabry Disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Skin lesion)-CAUSES->(Disease)-CAUSES->(Fabry Disease)",
+      "(Skin lesion)-CAUSES->(Symptoms)-CAUSES->(Fabry Disease)",
+      "(Skin lesion)-CAUSES->(Pain)-CAUSES->(Fabry Disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pes",
+        "Fever"
+      ],
+      [
+        "Hand",
+        "Fever"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Pes)-LOCATION_OF->(Fever)",
+      "(Hand)-LOCATION_OF->(Fever)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pes)-LOCATION_OF->(Fever)",
+      "(Skin lesion)-CAUSES->(Pain)-CAUSES->(Fabry Disease)",
+      "(Hand)-LOCATION_OF->(Fever)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Painful neuropathy -> Hypohidrosis -> Angiokeratomas -> Fabry disease -> 95% CHAIN: Intense pain in hands and feet -> Episodes related to physical exercise, stress, or fever -> No sweating after sports -> Fabry disease -> 90% CHAIN: Lancinating pain -> No sweating after physical activity -> Punctate skin lesions in the swimsuit zone -> Fabry disease -> 95%"
+  ],
+  "enhanced_information": "The constellation of symptoms including painful neuropathy, hypohidrosis, and angiokeratomas points towards Fabry disease as the likely diagnosis. The presence of intense pain in hands and feet, episodes related to physical exercise, stress, or fever, and the absence of sweating after sports align with Fabry disease. Additionally, the punctate skin lesions in the swimsuit zone further support this diagnosis. Retrieved evidence paths linking skin lesions causing pain to Fabry disease also reinforce this conclusion.",
+  "analysis": "The constellation of symptoms including painful neuropathy, hypohidrosis, and angiokeratomas strongly suggests Fabry disease. The presence of intense pain in hands and feet, triggered by physical exercise, stress, or fever, along with the absence of sweating after sports, and the specific skin lesions in the swimsuit zone are classic features of Fabry disease. The enhanced information provided further solidifies this diagnosis.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

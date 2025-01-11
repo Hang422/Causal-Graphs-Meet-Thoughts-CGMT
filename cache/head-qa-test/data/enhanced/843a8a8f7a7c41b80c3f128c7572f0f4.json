@@ -1,0 +1,122 @@
+{
+  "question": "A man suffering from bronchial asthma is undergoing a chronic treatment lasting several years with glucocorticoids. Which of the following adverse reactions detected in said patient is not due to the prolonged use of corticoid therapy ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Poor healing of wounds.",
+    "opb": "Osteoporosis.",
+    "opc": "Arterial hypotension.",
+    "opd": "Thinning of the skin",
+    "ope": "Muscular atrophy."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "GLUCOCORTICOID THERAPY",
+        "Osteoporosis"
+      ],
+      [
+        "GLUCOCORTICOID THERAPY",
+        "Obesity",
+        "physiological aspects",
+        "Skin Specimen"
+      ],
+      [
+        "GLUCOCORTICOID THERAPY",
+        "Growth retardation",
+        "physiological aspects",
+        "Skin Specimen"
+      ],
+      [
+        "GLUCOCORTICOID THERAPY",
+        "Infertility",
+        "physiological aspects",
+        "Skin Specimen"
+      ],
+      [
+        "GLUCOCORTICOID THERAPY",
+        "Obesity",
+        "Muscular Atrophy"
+      ],
+      [
+        "GLUCOCORTICOID THERAPY",
+        "Disease",
+        "Muscular Atrophy"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(GLUCOCORTICOID THERAPY)-CAUSES->(Osteoporosis)",
+      "(GLUCOCORTICOID THERAPY)-CAUSES->(Obesity)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Skin Specimen)",
+      "(GLUCOCORTICOID THERAPY)-CAUSES->(Growth retardation)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Skin Specimen)",
+      "(GLUCOCORTICOID THERAPY)-CAUSES->(Infertility)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Skin Specimen)",
+      "(GLUCOCORTICOID THERAPY)-CAUSES->(Obesity)-CAUSES->(Muscular Atrophy)",
+      "(GLUCOCORTICOID THERAPY)-COMPLICATES->(Disease)-CAUSES->(Muscular Atrophy)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(GLUCOCORTICOID THERAPY)-CAUSES->(Obesity)-CAUSES->(Muscular Atrophy)",
+      "(GLUCOCORTICOID THERAPY)-COMPLICATES->(Disease)-CAUSES->(Muscular Atrophy)",
+      "(GLUCOCORTICOID THERAPY)-CAUSES->(Osteoporosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Glucocorticoid therapy -> poor healing of wounds -> 80% CHAIN: Glucocorticoid therapy -> osteoporosis -> 90% CHAIN: Glucocorticoid therapy -> arterial hypotension -> 10% CHAIN: Glucocorticoid therapy -> thinning of the skin -> 90% CHAIN: Glucocorticoid therapy -> muscular atrophy -> 80%"
+  ],
+  "enhanced_information": "Arterial hypotension is not typically associated with prolonged corticosteroid therapy. The adverse reactions of poor healing of wounds, osteoporosis, thinning of the skin, and muscular atrophy are commonly linked to chronic glucocorticoid use. Evidence paths do not provide additional relevant information for this specific question.",
+  "analysis": "Arterial hypotension is not a common adverse reaction associated with prolonged corticosteroid therapy. Poor healing of wounds, osteoporosis, thinning of the skin, and muscular atrophy are more commonly linked to chronic glucocorticoid use.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

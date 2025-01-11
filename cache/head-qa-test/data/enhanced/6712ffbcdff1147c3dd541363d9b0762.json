@@ -1,0 +1,97 @@
+{
+  "question": "A 52-year-old male presents with acute form a confusional syndrome, paresis of both external ocular rectus muscles and gait ataxia.",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Hyperglycemic encephalopathy.",
+    "opb": "Korsakoff encephalopathy.",
+    "opc": "Cerebellar infarction.",
+    "opd": "Administer thiamin immediately.",
+    "ope": "Lead poisoning."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Cerebellar infarction",
+        "Ataxia",
+        "Abnormal coordination"
+      ],
+      [
+        "Cerebellar infarction",
+        "Cerebrovascular accident",
+        "Abnormal coordination"
+      ],
+      [
+        "Abnormal coordination",
+        "Cerebrovascular accident",
+        "Gait Ataxia"
+      ],
+      [
+        "Abnormal coordination",
+        "Cerebellar Diseases",
+        "Gait Ataxia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Cerebellar infarction)-CAUSES->(Ataxia)-CAUSES->(Abnormal coordination)",
+      "(Cerebellar infarction)-CAUSES->(Cerebrovascular accident)-CAUSES->(Abnormal coordination)",
+      "(Abnormal coordination)-CAUSES->(Cerebrovascular accident)-CAUSES->(Gait Ataxia)",
+      "(Abnormal coordination)-MANIFESTATION_OF->(Cerebellar Diseases)-CAUSES->(Gait Ataxia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cerebellar infarction)-CAUSES->(Ataxia)-CAUSES->(Abnormal coordination)",
+      "(Abnormal coordination)-CAUSES->(Cerebrovascular accident)-CAUSES->(Gait Ataxia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Cerebellar infarction -> Impaired coordination and balance -> Gait ataxia -> 80% CHAIN: Hyperglycemic encephalopathy -> Confusional syndrome -> Paresis of external ocular rectus muscles -> 70% CHAIN: Administer thiamin immediately -> Suspected Korsakoff encephalopathy -> Confusional syndrome -> 80%"
+  ],
+  "enhanced_information": "The presentation of a 52-year-old male with acute confusional syndrome, paresis of both external ocular rectus muscles, and gait ataxia is most likely indicative of hyperglycemic encephalopathy. The chain aligns with the consensus that hyperglycemic encephalopathy can lead to a confusional state and ocular muscle paresis. Administering thiamin immediately is not the priority in this case, as the symptoms are more suggestive of hyperglycemic encephalopathy rather than Korsakoff encephalopathy. Cerebellar infarction is less likely given the specific symptom presentation.",
+  "analysis": "The presentation of a 52-year-old male with acute confusional syndrome, paresis of both external ocular rectus muscles, and gait ataxia is most likely indicative of hyperglycemic encephalopathy based on the enhanced information provided. The symptoms align with the consensus that hyperglycemic encephalopathy can lead to a confusional state and ocular muscle paresis. Cerebellar infarction is less likely given the specific symptom presentation. Administering thiamin immediately is not the priority in this case, as the symptoms are more suggestive of hyperglycemic encephalopathy rather than Korsakoff encephalopathy.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

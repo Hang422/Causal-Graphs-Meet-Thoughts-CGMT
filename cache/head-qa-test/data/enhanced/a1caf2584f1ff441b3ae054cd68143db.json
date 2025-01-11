@@ -1,0 +1,106 @@
+{
+  "question": "A man with myopia magna, 47 years old, who underwent surgery for cataracts 2 years ago, goes to the emergency room referring to a profound and painless loss of vision in his right eye. Which of the following diagnoses can this symptom cause?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Post-surgical endophthalmitis.",
+    "opb": "Retinal detachment.",
+    "opc": "Macular degeneration associated with age, wet form.",
+    "opd": "Posterior vitreous detachment."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Cataract Extraction",
+        "Posterior Vitreous Detachment"
+      ],
+      [
+        "Low Vision",
+        "Blind Vision",
+        "Retinal Detachment"
+      ],
+      [
+        "Low Vision",
+        "Nystagmus",
+        "Retinal Detachment"
+      ],
+      [
+        "Low Vision",
+        "Fever",
+        "Retinal Detachment"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Cataract Extraction)-CAUSES->(Posterior Vitreous Detachment)",
+      "(Low Vision)-CAUSES->(Blind Vision)-CAUSES->(Retinal Detachment)",
+      "(Low Vision)-CAUSES->(Nystagmus)-CAUSES->(Retinal Detachment)",
+      "(Low Vision)-CAUSES->(Fever)-CAUSES->(Retinal Detachment)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Right eye",
+        "Retinal Detachment"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Right eye)-LOCATION_OF->(Retinal Detachment)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Low Vision)-CAUSES->(Nystagmus)-CAUSES->(Retinal Detachment)",
+      "(Right eye)-LOCATION_OF->(Retinal Detachment)",
+      "(Low Vision)-CAUSES->(Blind Vision)-CAUSES->(Retinal Detachment)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Myopia magna\" -> \"Increased risk of retinal detachment\" -> \"Retinal detachment\" -> 80% CHAIN: \"Cataract surgery\" -> \"Increased risk of posterior vitreous detachment\" -> \"Posterior vitreous detachment\" -> 70% CHAIN: \"Profound and painless loss of vision in right eye\" -> \"Possible retinal detachment\" -> \"Retinal detachment\" -> 80%"
+  ],
+  "enhanced_information": "The profound and painless loss of vision in the right eye in a man with myopia magna and history of cataract surgery raises concern for retinal detachment. This is supported by the increased risk of retinal detachment in myopia magna and after cataract surgery. Post-surgical endophthalmitis, macular degeneration associated with age (wet form), and posterior vitreous detachment are less likely causes in this context.",
+  "analysis": "The profound and painless loss of vision in the right eye in a man with myopia magna and history of cataract surgery raises concern for retinal detachment, which is a known risk in these conditions. Post-surgical endophthalmitis, macular degeneration associated with age (wet form), and posterior vitreous detachment are less likely based on the provided information.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

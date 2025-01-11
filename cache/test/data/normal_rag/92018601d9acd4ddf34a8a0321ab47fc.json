@@ -1,0 +1,152 @@
+{
+  "question": "A 29-year-old woman, obese, with no history of interest, who consulted for a bilateral, intense, pulsatile headache lasting one month, accompanied by horizontal diplopia and episodes of monocular amaurosis of seconds duration. The exploration is normal, except for the presence of bilateral papilledema. Which of these tests do you think will allow you to fully confirm your diagnosis ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Ultrasound of supra-aortic trunks.",
+    "opb": "Magnetic resonance of the skull.",
+    "opc": "Electroencephalogram.",
+    "opd": "Lumbar puncture.",
+    "ope": "Visual evoked potentials."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Diplopia, Horizontal",
+        "Diplopia, Vertical",
+        "Hypertensive disease",
+        "Disease",
+        "Abducens Nerve Palsy"
+      ],
+      [
+        "Diplopia, Horizontal",
+        "Diplopia, Vertical",
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Disease",
+        "Abducens Nerve Palsy"
+      ],
+      [
+        "Diplopia, Horizontal",
+        "Diplopia, Vertical",
+        "Diplopia",
+        "Disease",
+        "Abducens Nerve Palsy"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Diplopia, Horizontal)-CAUSES->(Diplopia, Vertical)-CAUSES->(Hypertensive disease)-CAUSES->(Disease)-CAUSES->(Abducens Nerve Palsy)",
+      "(Diplopia, Horizontal)-CAUSES->(Diplopia, Vertical)-CAUSES->(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Disease)-CAUSES->(Abducens Nerve Palsy)",
+      "(Diplopia, Horizontal)-CAUSES->(Diplopia, Vertical)-COMPLICATES->(Diplopia)-CAUSES->(Disease)-CAUSES->(Abducens Nerve Palsy)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pseudotumor Cerebri",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Pseudotumor Cerebri",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Pseudotumor Cerebri)-MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Pseudotumor Cerebri)-CAUSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pseudotumor Cerebri)-CAUSES/MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Diplopia, Horizontal)-CAUSES->(Diplopia, Vertical)-CAUSES->(Hypertensive disease)-CAUSES->(Disease)-CAUSES->(Abducens Nerve Palsy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Obese woman\" -> \"bilateral papilledema\" -> \"increased intracranial pressure\" -> \"lumbar puncture measures opening pressure\" -> 95%",
+    "CHAIN: \"Intense, pulsatile headache\" -> \"bilateral papilledema\" -> \"possible idiopathic intracranial hypertension\" -> \"lumbar puncture confirms diagnosis\" -> 90%",
+    "CHAIN: \"Horizontal diplopia\" -> \"cranial nerve VI palsy\" -> \"increased intracranial pressure\" -> \"lumbar puncture measures pressure\" -> 85%",
+    "CHAIN: \"Monocular amaurosis\" -> \"transient visual obscurations\" -> \"increased intracranial pressure\" -> \"lumbar puncture confirms elevated pressure\" -> 90%",
+    "CHAIN: \"Bilateral papilledema\" -> \"rule out other causes\" -> \"lumbar puncture to confirm idiopathic intracranial hypertension\" -> 92%"
+  ],
+  "enhanced_information": "The clinical presentation of a 29-year-old obese woman with bilateral papilledema, intense pulsatile headache, horizontal diplopia, and transient visual obscurations strongly suggests increased intracranial pressure, likely due to idiopathic intracranial hypertension (IIH). The standard medical consensus for confirming IIH involves measuring the opening pressure of cerebrospinal fluid via a lumbar puncture. This test directly assesses intracranial pressure, which is elevated in IIH, and can help rule out other causes of papilledema. The retrieved evidence paths, while broad, support the association between increased intracranial pressure and symptoms like diplopia and papilledema, aligning with the consensus that lumbar puncture is the definitive diagnostic test in this scenario. Therefore, option 'opd. Lumbar puncture' is the most appropriate test to confirm the diagnosis.",
+  "analysis": "The clinical presentation of the patient, including bilateral papilledema, headache, and transient visual disturbances, is suggestive of increased intracranial pressure, potentially due to idiopathic intracranial hypertension (IIH), also known as pseudotumor cerebri. A lumbar puncture is the definitive test to confirm this diagnosis as it can measure the opening pressure of the cerebrospinal fluid, which is typically elevated in IIH. Other options like MRI can help rule out other causes of increased intracranial pressure, but they do not confirm the diagnosis of IIH. Therefore, a lumbar puncture is the most appropriate test to fully confirm the diagnosis.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      50.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Biopsy DIAGNOSES Headache",
+    "EDNRA wt Allele|EDNRA PART_OF Myocardium",
+    "Hepatitis C virus CAUSES Persistent infection",
+    "Breast Cancer Cell LOCATION_OF NELL2",
+    "Diagnosis DIAGNOSES Headache",
+    "Ultrasound examination DIAGNOSES Headache",
+    "Neurologic Examination DIAGNOSES Multiple symptoms",
+    "Diagnostic tests DIAGNOSES Headache",
+    "Serologic tests DIAGNOSES Hepatitis C, Chronic",
+    "3,4-Methylenedioxyamphetamine TREATS Asthma",
+    "Borrelia species ASSOCIATED_WITH Glossitis, Benign Migratory",
+    "c-K-ras Genes ISA Proto-Oncogenes",
+    "Ophthalmoscopy DIAGNOSES Headache"
+  ]
+}

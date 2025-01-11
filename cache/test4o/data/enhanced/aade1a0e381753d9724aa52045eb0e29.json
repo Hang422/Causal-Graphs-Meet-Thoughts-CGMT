@@ -1,0 +1,154 @@
+{
+  "question": "Question linked to the image nº24 Brain CT scan performed as a matter of urgency in the case of cranioencephalic traumatism. What is your diagnosis?:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Acute subdural hematoma.",
+    "opb": "Epidural hematoma.",
+    "opc": "Cortical injury (cerebral contusion).",
+    "opd": "Intraventricular hemorrhage."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "CAT scan of brain",
+        "Symptoms",
+        "voltage gated channel",
+        "Heart Ventricle"
+      ],
+      [
+        "CAT scan of brain",
+        "Symptoms",
+        "paracrine",
+        "Heart Ventricle"
+      ],
+      [
+        "CAT scan of brain",
+        "Cerebrovascular accident",
+        "Muscle Contraction",
+        "Heart Ventricle"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(CAT scan of brain)-CAUSES->(Symptoms)-MANIFESTATION_OF->(voltage gated channel)-PROCESS_OF->(Heart Ventricle)",
+      "(CAT scan of brain)-CAUSES->(Symptoms)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Heart Ventricle)",
+      "(CAT scan of brain)-CAUSES->(Cerebrovascular accident)-MANIFESTATION_OF->(Muscle Contraction)-PROCESS_OF->(Heart Ventricle)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Heart Ventricle",
+        "FAS",
+        "Blood"
+      ],
+      [
+        "Heart Ventricle",
+        "Lipids",
+        "Blood"
+      ],
+      [
+        "Heart Ventricle",
+        "Ventricular hemorrhage"
+      ],
+      [
+        "Blood",
+        "Infection",
+        "Ventricular hemorrhage"
+      ],
+      [
+        "Blood",
+        "Infection",
+        "Ventricular hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Heart Ventricle)-LOCATION_OF->(FAS)-PART_OF->(Blood)",
+      "(Heart Ventricle)-LOCATION_OF->(Lipids)-PART_OF->(Blood)",
+      "(Heart Ventricle)-LOCATION_OF->(Ventricular hemorrhage)",
+      "(Blood)-LOCATION_OF->(Infection)-CAUSES->(Ventricular hemorrhage)",
+      "(Blood)-LOCATION_OF->(Infection)-PREDISPOSES->(Ventricular hemorrhage)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Heart Ventricle)-LOCATION_OF->(Ventricular hemorrhage)",
+      "(Blood)-LOCATION_OF->(Infection)-CAUSES/PREDISPOSES->(Ventricular hemorrhage)",
+      "(CAT scan of brain)-CAUSES->(Symptoms)-MANIFESTATION_OF->(voltage gated channel)-PROCESS_OF->(Heart Ventricle)",
+      "(CAT scan of brain)-CAUSES->(Symptoms)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Heart Ventricle)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Brain CT scan\" -> \"crescent-shaped hyperdensity\" -> \"crosses suture lines\" -> \"Acute subdural hematoma\" -> 85%",
+    "CHAIN: \"Brain CT scan\" -> \"biconvex hyperdensity\" -> \"does not cross suture lines\" -> \"Epidural hematoma\" -> 80%",
+    "CHAIN: \"Brain CT scan\" -> \"patchy hyperdensity\" -> \"adjacent to skull\" -> \"Cortical injury (cerebral contusion)\" -> 75%",
+    "CHAIN: \"Brain CT scan\" -> \"hyperdensity within ventricles\" -> \"possible blood in ventricles\" -> \"Intraventricular hemorrhage\" -> 70%"
+  ],
+  "enhanced_information": "In evaluating the CT scan for cranioencephalic trauma, standard medical consensus provides specific characteristics for each type of hemorrhage. For acute subdural hematoma, the CT scan typically shows a crescent-shaped hyperdensity that can cross suture lines, aligning with the reasoning chain for option A. For epidural hematoma, the CT scan shows a biconvex (lens-shaped) hyperdensity that does not cross suture lines, supporting the reasoning chain for option B. Cortical injury or cerebral contusion is characterized by patchy hyperdensities adjacent to the skull, consistent with option C. Intraventricular hemorrhage is identified by hyperdensity within the ventricles, indicating possible blood presence, which aligns with option D. The retrieved evidence paths, while broad, do not directly contribute to the specific CT findings for these conditions and are therefore not integrated into the final decision. Based on the CT scan characteristics, the most likely diagnosis is acute subdural hematoma, as it is the only option with a clear consensus-aligned description of the CT findings.",
+  "analysis": "In evaluating a CT scan for cranioencephalic trauma, it is crucial to identify the specific characteristics of different types of hemorrhages. An acute subdural hematoma typically appears as a crescent-shaped hyperdensity on a CT scan and can cross suture lines. An epidural hematoma, on the other hand, presents as a biconvex (lens-shaped) hyperdensity that does not cross suture lines. A cortical injury or cerebral contusion is characterized by patchy hyperdensities adjacent to the skull. Intraventricular hemorrhage is identified by hyperdensity within the ventricles. Given the description provided, the most likely diagnosis is an acute subdural hematoma, as it aligns with the crescent-shaped hyperdensity that can cross suture lines, which is a key distinguishing feature. This diagnosis is supported by standard medical consensus on the appearance of these conditions on CT scans.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      4
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

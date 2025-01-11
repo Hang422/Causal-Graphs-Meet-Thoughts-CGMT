@@ -1,0 +1,99 @@
+{
+  "question": "Of the drugs reviewed, which of them does NOT act on the renin-angiotensin-aldosterone system ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Atenolol.",
+    "opb": "Captopril.",
+    "opc": "Minoxidil",
+    "opd": "Eplerenone.",
+    "ope": "Aliskiren."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Atenolol",
+        "Adrenergic beta-Antagonists"
+      ],
+      [
+        "Captopril",
+        "Angiotensin-Converting Enzyme Inhibitors"
+      ],
+      [
+        "Minoxidil",
+        "Pharmaceutical Preparations",
+        "Vasodilator Agents"
+      ],
+      [
+        "eplerenone",
+        "Aldosterone Antagonists"
+      ],
+      [
+        "eplerenone",
+        "Aldosterone Antagonists"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA"
+      ],
+      [
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Atenolol)-INTERACTS_WITH->(Adrenergic beta-Antagonists)",
+      "(Captopril)-INTERACTS_WITH->(Angiotensin-Converting Enzyme Inhibitors)",
+      "(Minoxidil)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Vasodilator Agents)",
+      "(eplerenone)-ISA->(Aldosterone Antagonists)",
+      "(eplerenone)-INTERACTS_WITH->(Aldosterone Antagonists)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Minoxidil)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Vasodilator Agents)",
+      "(Atenolol)-INTERACTS_WITH->(Adrenergic beta-Antagonists)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Atenolol -> beta-blocker -> does NOT act on the renin-angiotensin-aldosterone system -> 95% CHAIN: Captopril -> ACE inhibitor -> acts on the renin-angiotensin-aldosterone system -> NOT the correct answer -> 90% CHAIN: Minoxidil -> vasodilator -> does NOT act on the renin-angiotensin-aldosterone system -> 95% CHAIN: Eplerenone -> aldosterone receptor antagonist -> acts on the renin-angiotensin-aldosterone system -> NOT the correct answer -> 90% CHAIN: Aliskiren -> direct renin inhibitor -> does NOT act on the renin-angiotensin-aldosterone system -> Correct answer -> 95%"
+  ],
+  "enhanced_information": "Atenolol is a beta-blocker that does NOT act on the renin-angiotensin-aldosterone system. Captopril is an ACE inhibitor that acts on the renin-angiotensin-aldosterone system. Minoxidil is a vasodilator that does NOT act on the renin-angiotensin-aldosterone system. Eplerenone is an aldosterone receptor antagonist that acts on the renin-angiotensin-aldosterone system. Aliskiren is a direct renin inhibitor that does NOT act on the renin-angiotensin-aldosterone system. Therefore, the correct answer is Aliskiren.",
+  "analysis": "Based on standard medical knowledge, drugs like Atenolol, Minoxidil, and Aliskiren do not act on the renin-angiotensin-aldosterone system. Captopril and Eplerenone are known to act on this system. Therefore, the drug that does NOT act on the renin-angiotensin-aldosterone system is Aliskiren.",
+  "answer": "ope",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

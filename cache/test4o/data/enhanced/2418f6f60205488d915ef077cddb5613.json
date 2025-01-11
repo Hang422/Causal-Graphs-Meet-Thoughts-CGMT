@@ -1,0 +1,103 @@
+{
+  "question": "Question linked to image nº22 The patient whose radiographs are shown is being followed in the pulmonology consultations by a chronic obstructive bronchopneumonia. Between its antecedents a treated tuberculosis appears, without signs of reactivation. Consultation for an increase, in the last year, of cough and more expectoration than usual, with occasional hemoptotic sputum. The simple radiograph shown is similar to those performed in the annual controls except for a slight increase in radiopacity over the lesion of the right upper lobe. It was decided to perform thoracic CT in supine and prone position whose images are shown in a section of upper lung fields. Is the diagnosis most likely?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Cavitated lung cancer.",
+    "opb": "Mycetoma in an existing cavity.",
+    "opc": "Lung abscess",
+    "opd": "Necrotizing pneumonia"
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Dental caries",
+        "Infection",
+        "Maduromycosis"
+      ],
+      [
+        "Dental caries",
+        "Bacterial Infections",
+        "Maduromycosis"
+      ],
+      [
+        "Dental caries",
+        "Actinomyces",
+        "Maduromycosis"
+      ],
+      [
+        "Bacterial Infections",
+        "Lung Abscess"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Dental caries)-CAUSES->(Infection)-CAUSES->(Maduromycosis)",
+      "(Dental caries)-PREDISPOSES->(Bacterial Infections)-CAUSES->(Maduromycosis)",
+      "(Dental caries)-PROCESS_OF->(Actinomyces)-CAUSES->(Maduromycosis)",
+      "(Bacterial Infections)-CAUSES->(Lung Abscess)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Bacterial Infections)-CAUSES->(Lung Abscess)",
+      "(Dental caries)-CAUSES->(Infection)-CAUSES->(Maduromycosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Chronic obstructive bronchopneumonia\" -> \"existing lung cavity from treated tuberculosis\" -> \"increased cough and expectoration\" -> \"occasional hemoptysis\" -> \"slight increase in radiopacity\" -> \"fungal colonization in cavity\" -> \"mycetoma in an existing cavity\" -> 85%",
+    "CHAIN: \"Chronic obstructive bronchopneumonia\" -> \"existing lung cavity from treated tuberculosis\" -> \"increased cough and expectoration\" -> \"occasional hemoptysis\" -> \"slight increase in radiopacity\" -> \"possible bacterial infection\" -> \"lung abscess\" -> 60%",
+    "CHAIN: \"Chronic obstructive bronchopneumonia\" -> \"existing lung cavity from treated tuberculosis\" -> \"increased cough and expectoration\" -> \"occasional hemoptysis\" -> \"slight increase in radiopacity\" -> \"possible necrotizing infection\" -> \"necrotizing pneumonia\" -> 50%",
+    "CHAIN: \"Chronic obstructive bronchopneumonia\" -> \"existing lung cavity from treated tuberculosis\" -> \"increased cough and expectoration\" -> \"occasional hemoptysis\" -> \"slight increase in radiopacity\" -> \"possible malignancy\" -> \"cavitated lung cancer\" -> 40%"
+  ],
+  "enhanced_information": "The patient has a history of treated tuberculosis, which likely resulted in an existing lung cavity. The current symptoms of increased cough, expectoration, and occasional hemoptysis, along with a slight increase in radiopacity in the right upper lobe, suggest a change in the cavity's condition. The most likely diagnosis is a mycetoma (fungal ball) in the existing cavity, as fungal colonization is common in pre-existing cavities, especially in patients with a history of tuberculosis. This aligns with the reasoning chain that points to mycetoma as the most probable cause, supported by the consensus that fungal infections like aspergillosis can lead to mycetoma in such scenarios. The evidence path regarding bacterial infections causing lung abscesses is less relevant here, as the presentation and history are more indicative of a fungal process rather than a bacterial one. Similarly, the possibility of cavitated lung cancer or necrotizing pneumonia is less supported by the clinical presentation and history. Therefore, the diagnosis of mycetoma in an existing cavity is the most consensus-aligned interpretation.",
+  "analysis": "The patient has a history of treated tuberculosis, which often results in residual lung cavities. The symptoms of increased cough, expectoration, and occasional hemoptysis, along with a slight increase in radiopacity in the right upper lobe, suggest a change in the cavity's condition. In patients with a history of tuberculosis, these cavities can become colonized by fungi, leading to the formation of a mycetoma, commonly caused by Aspergillus species. The presence of a mycetoma is consistent with the symptoms of hemoptysis and the radiographic findings of increased radiopacity due to the fungal ball. While cavitated lung cancer, lung abscess, and necrotizing pneumonia are possible, they are less likely given the patient's history and the typical presentation of mycetoma in such cases. Therefore, the most likely diagnosis is a mycetoma in an existing cavity.",
+  "answer": "opb",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

@@ -1,0 +1,95 @@
+{
+  "question": "A 25-year-old man, a military man by profession, is found in a coma with a temperature of 41ºC after vigorous physical exercise at noon on a hot day. His blood pressure despite the contribution of 3 liters of crystalloids is 80 mm Hg, with oliguria and lactate rise. His heart rate is 125 bpm with ECG showing a supraventricular tachycardia. In the analytical one highlights a prothrombin activity of 30% and INR of 3. Indicate the true answer:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "The elevation of muscle enzymes is higher in the classic heat stroke than in heat stroke by exercise.",
+    "opb": "A lumbar puncture should be performed to diagnose the condition.",
+    "opc": "Digoxin must be administered to control the heart rate.",
+    "opd": "Peripheral vasoconstrictors should be avoided for the treatment of hypotension."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Blood Coagulation Disorders",
+        "Hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Blood Coagulation Disorders)-CAUSES->(Hemorrhage)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "International Normalized Ratio",
+        "Blood Coagulation Disorders"
+      ],
+      [
+        "Clotting factor II assay",
+        "Disease",
+        "Blood Coagulation Disorders"
+      ],
+      [
+        "Clotting factor II assay",
+        "Pancreatitis",
+        "Blood Coagulation Disorders"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES"
+      ],
+      [
+        "DIAGNOSES",
+        "PREDISPOSES"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(International Normalized Ratio)-DIAGNOSES->(Blood Coagulation Disorders)",
+      "(Clotting factor II assay)-DIAGNOSES->(Disease)-PREDISPOSES->(Blood Coagulation Disorders)",
+      "(Clotting factor II assay)-DIAGNOSES->(Pancreatitis)-CAUSES->(Blood Coagulation Disorders)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(International Normalized Ratio)-DIAGNOSES->(Blood Coagulation Disorders)",
+      "(Clotting factor II assay)-DIAGNOSES->(Disease)-PREDISPOSES->(Blood Coagulation Disorders)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Vigorous physical exercise in hot weather -> heat stroke -> hyperthermia -> 80% CHAIN: Hyperthermia -> increased metabolic demand -> dehydration -> 70% CHAIN: Dehydration -> decreased blood volume -> hypotension -> 60% CHAIN: Hypotension -> oliguria -> decreased renal perfusion -> 70% CHAIN: Decreased renal perfusion -> lactate rise -> metabolic acidosis -> 80% CHAIN: Metabolic acidosis -> increased heart rate -> compensatory mechanism -> 70% CHAIN: Increased heart rate -> supraventricular tachycardia on ECG -> 80% CHAIN: Prothrombin activity of 30% and INR of 3 -> coagulopathy -> 90% CHAIN: Coagulopathy -> increased risk of bleeding -> 80% CHAIN: Peripheral vasoconstrictors should be avoided for the treatment of hypotension -> risk of worsening tissue perfusion -> 80%"
+  ],
+  "enhanced_information": "The elevation of muscle enzymes is higher in classic heat stroke than in heat stroke by exercise. A lumbar puncture is not indicated for the diagnosis in this case. Digoxin should not be administered to control the heart rate. Peripheral vasoconstrictors should be avoided for the treatment of hypotension due to the risk of worsening tissue perfusion.",
+  "analysis": "The core medical principle here is to address the manifestations of heat stroke and associated complications. Classic heat stroke typically presents with higher elevation of muscle enzymes compared to heat stroke by exercise. A lumbar puncture is not indicated in this scenario as the clinical presentation is consistent with heat stroke. Digoxin is contraindicated in the setting of supraventricular tachycardia and should not be administered. Peripheral vasoconstrictors should be avoided in the treatment of hypotension to prevent further compromise of tissue perfusion.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

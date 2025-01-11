@@ -1,0 +1,152 @@
+{
+  "question": "A 25-year-old man consults for jaundice. He practices bodybuilding and has injected anabolic steroids substitutes for 17alkalkyl, three weeks before. For a tonsillitis he had taken amoxicillin-clavulanic acid which he removed 15 days ago. Analytical: AST 1200 IU / L (normal upper limit, lsn 40), ALT 1300 IU / L (lsn 40), GGT 150 IU / L (lsn 50), alkaline phosphatase 180 IU / L (lsn 105), total bililrubin 4 , 8 mg / dL with direct bilirubin predominance. Serology of virus B: Anti-HBs and Anti-HBc positive. Ultrasound suggests grade I steatosis. What is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Hepatitis by amoxicillin-clavulanic acid.",
+    "opb": "Anabolic steroid hepatitis.",
+    "opc": "Acute hepatitis B virus",
+    "opd": "Non-alcoholic steatohepatitis.",
+    "ope": "Cholestasis due to drugs."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Amoxicillin / Clavulanate",
+        "Drug-induced liver disease"
+      ],
+      [
+        "Antibody to hepatitis B core antigen",
+        "Hepatitis B, Chronic",
+        "Hepatitis B"
+      ],
+      [
+        "Ultrasonography",
+        "Non-alcoholic fatty liver"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Amoxicillin / Clavulanate)-CAUSES->(Drug-induced liver disease)",
+      "(Antibody to hepatitis B core antigen)-TREATS->(Hepatitis B, Chronic)-CAUSES->(Hepatitis B)",
+      "(Ultrasonography)-CAUSES->(Non-alcoholic fatty liver)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Drug-induced liver disease",
+        "Icterus",
+        "Alanine Transaminase"
+      ],
+      [
+        "Drug-induced liver disease",
+        "Liver damage",
+        "Alanine Transaminase"
+      ],
+      [
+        "Hepatitis B Virus Surface Antibody",
+        "Erythrocytes",
+        "Virus",
+        "Hepatitis B"
+      ],
+      [
+        "Hepatitis B Virus Surface Antibody",
+        "Erythrocytes",
+        "Virus",
+        "Hepatitis B"
+      ],
+      [
+        "Cholestasis",
+        "Newborn death",
+        "Alkaline Phosphatase"
+      ],
+      [
+        "Cholestasis",
+        "loss; bone",
+        "Alkaline Phosphatase"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "CAUSES"
+      ],
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Drug-induced liver disease)-CAUSES->(Icterus)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Drug-induced liver disease)-CAUSES->(Liver damage)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Hepatitis B Virus Surface Antibody)-INTERACTS_WITH->(Erythrocytes)-PART_OF->(Virus)-CAUSES->(Hepatitis B)",
+      "(Hepatitis B Virus Surface Antibody)-INTERACTS_WITH->(Erythrocytes)-LOCATION_OF->(Virus)-INTERACTS_WITH->(Hepatitis B)",
+      "(Cholestasis)-CAUSES->(Newborn death)-ASSOCIATED_WITH->(Alkaline Phosphatase)",
+      "(Cholestasis)-CAUSES->(loss; bone)-ASSOCIATED_WITH->(Alkaline Phosphatase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Drug-induced liver disease)-CAUSES->(Icterus)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Antibody to hepatitis B core antigen)-TREATS->(Hepatitis B, Chronic)-CAUSES->(Hepatitis B)",
+      "(Drug-induced liver disease)-CAUSES->(Liver damage)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Cholestasis)-CAUSES->(Newborn death)-ASSOCIATED_WITH->(Alkaline Phosphatase)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Anabolic steroids substitutes injection -> liver injury -> elevated AST and ALT levels -> 80% CHAIN: Amoxicillin-clavulanic acid intake -> drug-induced liver injury -> elevated AST and ALT levels -> 70% CHAIN: Positive Anti-HBs and Anti-HBc -> previous hepatitis B infection -> direct bilirubin predominance -> 60% CHAIN: Ultrasound showing grade I steatosis -> non-alcoholic fatty liver disease -> elevated liver enzymes -> 70% CHAIN: Direct bilirubin predominance -> cholestasis -> elevated GGT and alkaline phosphatase -> 80%"
+  ],
+  "enhanced_information": "The most likely diagnosis is anabolic steroid hepatitis. The elevated AST and ALT levels are consistent with liver injury from anabolic steroids. The positive Anti-HBs and Anti-HBc suggest previous hepatitis B infection, supporting the direct bilirubin predominance. The ultrasound findings of grade I steatosis align with non-alcoholic fatty liver disease, further supporting the diagnosis.",
+  "analysis": "The most likely diagnosis in this case is anabolic steroid hepatitis. The elevated liver enzymes (AST, ALT) are consistent with liver injury from anabolic steroids. The positive Anti-HBs and Anti-HBc indicate previous hepatitis B infection, supporting the direct bilirubin predominance. The ultrasound findings of grade I steatosis align with non-alcoholic fatty liver disease, further supporting the diagnosis of anabolic steroid hepatitis.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

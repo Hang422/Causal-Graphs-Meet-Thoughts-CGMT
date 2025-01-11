@@ -1,0 +1,100 @@
+{
+  "question": "Question linked to image # 15 While we are exploring this patient, he has a sudden worsening of his hemodynamic state and an increase in his tachypnea. Tracheal deviation to the left, distended jugular veins and absence of ventilation in the right hemithorax are observed. The most likely diagnosis is:",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Progression of the right pulmonary contusion.",
+    "opb": "Expansive right cervical vascular injury.",
+    "opc": "Cardiac tamponade.",
+    "opd": "Right hemothorax",
+    "ope": "Tension pneumothorax."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Respiration",
+        "Endomycorrhizae",
+        "Disease",
+        "Tension pneumothorax"
+      ],
+      [
+        "[D]Tachypnea",
+        "Respiratory distress",
+        "Tension pneumothorax"
+      ],
+      [
+        "[D]Tachypnea",
+        "Pneumonia",
+        "Tension pneumothorax"
+      ],
+      [
+        "Respiration",
+        "Endomycorrhizae",
+        "Disease",
+        "Tension pneumothorax"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Respiration)-PROCESS_OF->(Endomycorrhizae)-CAUSES->(Disease)-CAUSES->(Tension pneumothorax)",
+      "([D]Tachypnea)-CAUSES->(Respiratory distress)-CAUSES->(Tension pneumothorax)",
+      "([D]Tachypnea)-PREDISPOSES->(Pneumonia)-CAUSES->(Tension pneumothorax)",
+      "(Respiration)-PROCESS_OF->(Endomycorrhizae)-CAUSES->(Disease)-CAUSES->(Tension pneumothorax)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Respiration)-PROCESS_OF->(Endomycorrhizae)-CAUSES->(Disease)-CAUSES->(Tension pneumothorax)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Tracheal deviation to the left -> distended jugular veins -> absence of ventilation in the right hemithorax -> Tension pneumothorax -> 95% CHAIN: Sudden worsening of hemodynamic state -> increase in tachypnea -> Tension pneumothorax -> 90% CHAIN: Absence of ventilation in the right hemithorax -> Tension pneumothorax -> 85% CHAIN: Distended jugular veins -> Tension pneumothorax -> 95%"
+  ],
+  "enhanced_information": "The most likely diagnosis in this case is tension pneumothorax, supported by the presence of tracheal deviation to the left, distended jugular veins, absence of ventilation in the right hemithorax, sudden worsening of hemodynamic state, and increase in tachypnea. These clinical findings are consistent with tension pneumothorax, a life-threatening condition that requires immediate intervention.",
+  "analysis": "The clinical presentation of tracheal deviation to the left, distended jugular veins, absence of ventilation in the right hemithorax, sudden worsening of hemodynamic state, and increase in tachypnea strongly suggest a tension pneumothorax. This is a life-threatening condition that requires immediate intervention.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

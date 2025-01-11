@@ -1,0 +1,120 @@
+{
+  "question": "Indicate which of the drugs listed below and used in the treatment of pulmonary arterial hypertension is NOT an analogue of prostacyclin:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Iloprost.",
+    "opb": "Riociguat.",
+    "opc": "Treprostinil.",
+    "opd": "Epoprostenol."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Iloprost",
+        "Pharmaceutical Preparations",
+        "Epoprostenol"
+      ],
+      [
+        "Iloprost",
+        "Pharmaceutical Preparations",
+        "Epoprostenol"
+      ],
+      [
+        "riociguat",
+        "Hypertension, Pulmonary",
+        "Pulmonary Vascular Resistance",
+        "Epoprostenol"
+      ],
+      [
+        "riociguat",
+        "Sarcoidosis",
+        "Excretory function",
+        "Epoprostenol"
+      ],
+      [
+        "Treprostinil",
+        "Pharmaceutical Preparations",
+        "Epoprostenol"
+      ],
+      [
+        "Treprostinil",
+        "Pharmaceutical Preparations",
+        "Epoprostenol"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Iloprost)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Epoprostenol)",
+      "(Iloprost)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Epoprostenol)",
+      "(riociguat)-TREATS->(Hypertension, Pulmonary)-MANIFESTATION_OF->(Pulmonary Vascular Resistance)-ASSOCIATED_WITH->(Epoprostenol)",
+      "(riociguat)-TREATS->(Sarcoidosis)-MANIFESTATION_OF->(Excretory function)-ASSOCIATED_WITH->(Epoprostenol)",
+      "(Treprostinil)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Epoprostenol)",
+      "(Treprostinil)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Epoprostenol)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(riociguat)-TREATS->(Hypertension, Pulmonary)-MANIFESTATION_OF->(Pulmonary Vascular Resistance)-ASSOCIATED_WITH->(Epoprostenol)",
+      "(riociguat)-TREATS->(Sarcoidosis)-MANIFESTATION_OF->(Excretory function)-ASSOCIATED_WITH->(Epoprostenol)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Iloprost -> prostacyclin analogue -> Riociguat -> NOT an analogue of prostacyclin -> 95% CHAIN: Treprostinil -> prostacyclin analogue -> Epoprostenol -> prostacyclin analogue -> 95%"
+  ],
+  "enhanced_information": "Riociguat is NOT an analogue of prostacyclin. While Riociguat is used in the treatment of pulmonary arterial hypertension, it is not a prostacyclin analogue. Evidence paths show its association with pulmonary vascular resistance and sarcoidosis, but do not support it being a prostacyclin analogue.",
+  "analysis": "Riociguat is not an analogue of prostacyclin, as it works through a different mechanism. Iloprost, Treprostinil, and Epoprostenol are all prostacyclin analogues used in the treatment of pulmonary arterial hypertension.",
+  "answer": "opb",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

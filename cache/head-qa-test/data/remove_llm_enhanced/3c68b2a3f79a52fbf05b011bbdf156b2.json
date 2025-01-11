@@ -1,0 +1,84 @@
+{
+  "question": "A 78-year-old man who underwent cardiac catheterization with revascularization of the right coronary artery 3 weeks ago and consulted for nausea and vomiting of 3 days of evolution. It presents arterial pressure of 185/85 mm Hg and purple lesions on the toes of both feet. In the analytical, urea 230 mg / dL and creatinine 5.8 mg / dL were observed. What is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Malignant arterial hypertension.",
+    "opb": "Acute tubular necrosis by contrast.",
+    "opc": "Rapidly progressive renal failure.",
+    "opd": "Renal atheroembolic disease.",
+    "ope": "Bilateral renal artery stenosis."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "[D]Nausea and vomiting NOS",
+        "Disease",
+        "Uremia"
+      ],
+      [
+        "[D]Nausea and vomiting NOS",
+        "Dehydration",
+        "Uremia"
+      ],
+      [
+        "Uremia",
+        "Kidney Failure"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "([D]Nausea and vomiting NOS)-CAUSES->(Disease)-CAUSES->(Uremia)",
+      "([D]Nausea and vomiting NOS)-PREDISPOSES->(Dehydration)-CAUSES->(Uremia)",
+      "(Uremia)-CAUSES->(Kidney Failure)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Uremia)-CAUSES->(Kidney Failure)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Cardiac catheterization with revascularization\" -> \"possible contrast use\" -> \"acute kidney injury\" -> \"elevated urea and creatinine levels\" -> \"acute tubular necrosis by contrast\" -> 80% CHAIN: \"Purple lesions on toes\" -> \"suggestive of cholesterol emboli\" -> \"renal atheroembolic disease\" -> 70% CHAIN: \"Arterial pressure of 185/85 mm Hg\" -> \"severe hypertension\" -> \"malignant arterial hypertension\" -> 60% CHAIN: \"Nausea and vomiting\" -> \"possible signs of uremia\" -> \"rapidly progressive renal failure\" -> 80%"
+  ],
+  "enhanced_information": "The most likely diagnosis is acute tubular necrosis by contrast due to the patient's history of cardiac catheterization with revascularization, elevated urea and creatinine levels, and absence of other specific findings supporting alternative diagnoses like renal atheroembolic disease or malignant arterial hypertension.",
+  "analysis": "The most likely diagnosis in this case is acute tubular necrosis by contrast. The patient's history of cardiac catheterization with revascularization, elevated urea and creatinine levels, and absence of specific findings supporting alternative diagnoses like renal atheroembolic disease or malignant arterial hypertension point towards this conclusion.",
+  "answer": "opb",
+  "confidence": 80.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

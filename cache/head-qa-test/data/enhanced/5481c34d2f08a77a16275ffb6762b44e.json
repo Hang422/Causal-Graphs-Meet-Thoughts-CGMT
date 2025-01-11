@@ -1,0 +1,139 @@
+{
+  "question": "Tularemia is a zoonosis caused by a species of the genus:",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Frankia",
+    "opb": "Francisella.",
+    "opc": "Enterococcus.",
+    "opd": "Streptococcus"
+  },
+  "topic_name": "Biology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Francisella",
+        "Tularemia"
+      ],
+      [
+        "Francisella",
+        "Disease",
+        "Gram-Negative Bacteria"
+      ],
+      [
+        "Francisella",
+        "Infection",
+        "Gram-Negative Bacteria"
+      ],
+      [
+        "Francisella",
+        "Septicemia",
+        "Gram-Negative Bacteria"
+      ],
+      [
+        "Tularemia",
+        "Disease",
+        "disease transmission"
+      ],
+      [
+        "Tularemia",
+        "Infection",
+        "disease transmission"
+      ],
+      [
+        "Tularemia",
+        "Bacteria",
+        "disease transmission"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Francisella)-CAUSES->(Tularemia)",
+      "(Francisella)-CAUSES->(Disease)-PROCESS_OF->(Gram-Negative Bacteria)",
+      "(Francisella)-CAUSES->(Infection)-PROCESS_OF->(Gram-Negative Bacteria)",
+      "(Francisella)-CAUSES->(Septicemia)-PROCESS_OF->(Gram-Negative Bacteria)",
+      "(Tularemia)-CAUSES->(Disease)-CAUSES->(disease transmission)",
+      "(Tularemia)-PREDISPOSES->(Infection)-CAUSES->(disease transmission)",
+      "(Tularemia)-PROCESS_OF->(Bacteria)-CAUSES->(disease transmission)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Francisella",
+        "MAP1LC3A",
+        "Protoplasm"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Francisella)-INTERACTS_WITH->(MAP1LC3A)-PART_OF->(Protoplasm)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Francisella)-CAUSES->(Tularemia)",
+      "(Francisella)-CAUSES->(Disease)-PROCESS_OF->(Gram-Negative Bacteria)",
+      "(Francisella)-CAUSES->(Infection)-PROCESS_OF->(Gram-Negative Bacteria)",
+      "(Francisella)-CAUSES->(Septicemia)-PROCESS_OF->(Gram-Negative Bacteria)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Francisella -> Causes tularemia -> 95% CHAIN: Zoonosis -> Transmitted to humans from animals -> 85% CHAIN: Francisella -> Gram-negative bacterium -> 80% CHAIN: Tularemia -> Can be transmitted through tick bites -> 75% CHAIN: Francisella -> Obligate intracellular pathogen -> 95%"
+  ],
+  "enhanced_information": "Tularemia is a zoonosis caused by a species of the genus Francisella. Francisella is a Gram-negative bacterium and an obligate intracellular pathogen. It can cause tularemia, which is transmitted to humans from animals and can also be transmitted through tick bites.",
+  "analysis": "Tularemia is a zoonotic disease caused by a species of the genus Francisella, a Gram-negative bacterium. The enhanced information confirms that Francisella is the correct genus associated with tularemia.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

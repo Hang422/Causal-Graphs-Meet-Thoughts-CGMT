@@ -1,0 +1,95 @@
+{
+  "question": "Which of the drugs reported produces tachycardia and palpitations as adverse effects ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Atenolol.",
+    "opb": "Lidocaine",
+    "opc": "Metamizole",
+    "opd": "Salbutamol"
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "beta-2 Adrenergic Receptors",
+        "Tachycardia"
+      ],
+      [
+        "Lidocaine",
+        "Tachycardia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(beta-2 Adrenergic Receptors)-CAUSES->(Tachycardia)",
+      "(Lidocaine)-TREATS->(Tachycardia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Albuterol",
+        "Functional disorder",
+        "beta-2 Adrenergic Receptors"
+      ],
+      [
+        "Albuterol",
+        "Obstruction",
+        "beta-2 Adrenergic Receptors"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Albuterol)-TREATS->(Functional disorder)-ASSOCIATED_WITH->(beta-2 Adrenergic Receptors)",
+      "(Albuterol)-TREATS->(Obstruction)-ASSOCIATED_WITH->(beta-2 Adrenergic Receptors)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Lidocaine)-TREATS->(Tachycardia)",
+      "(Albuterol)-TREATS->(Obstruction)-ASSOCIATED_WITH->(beta-2 Adrenergic Receptors)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Salbutamol\" -> \"activates beta-2 adrenergic receptors\" -> \"increased heart rate (tachycardia)\" -> \"palpitations\" -> 95% CHAIN: \"Lidocaine\" -> \"can cause tachycardia\" -> \"can lead to palpitations\" -> 95%"
+  ],
+  "enhanced_information": "Salbutamol activates beta-2 adrenergic receptors leading to increased heart rate (tachycardia) and palpitations. Lidocaine can cause tachycardia and palpitations. Evidence supports Salbutamol and Lidocaine as drugs that can produce tachycardia and palpitations as adverse effects.",
+  "analysis": "Salbutamol and Lidocaine are both reported to produce tachycardia and palpitations as adverse effects. Atenolol is a beta-blocker that typically reduces heart rate and is less likely to cause tachycardia. Metamizole is a non-opioid analgesic and antipyretic that is not known to cause tachycardia or palpitations. Based on the information provided, the most likely correct option is Salbutamol (opd) and Lidocaine (opb) as drugs that can produce tachycardia and palpitations.",
+  "answer": "opb, opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

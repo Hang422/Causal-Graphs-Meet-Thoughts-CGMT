@@ -1,0 +1,118 @@
+{
+  "question": "Indicate which serum biochemical profile is suggestive of rickets due to vitamin D deficiency in a 5-month-old infant:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Normal calcium; normal phosphate; normal alkaline phosphatases (FA); normal parathyroid hormone (PTH); 25 OH vitamin D low.",
+    "opb": "Normal calcium; low phosphate; Normal FA; Normal PTH; 25 OH vitamin D low.",
+    "opc": "Low calcium; high phosphate; FA elevated; Normal PTH; 25 OH vitamin D low.",
+    "opd": "Normal calcium; normal phosphate; FA elevated; Elevated PTH; 25 OH vitamin D low."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Oligomeric Procyanidin Complex",
+        "Complication",
+        "Rickets"
+      ],
+      [
+        "Oligomeric Procyanidin Complex",
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Rickets"
+      ],
+      [
+        "calcium",
+        "Rickets"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "PREDISPOSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Oligomeric Procyanidin Complex)-PREVENTS->(Complication)-CAUSES->(Rickets)",
+      "(Oligomeric Procyanidin Complex)-TREATS->(Diabetes Mellitus, Non-Insulin-Dependent)-PREDISPOSES->(Rickets)",
+      "(calcium)-TREATS->(Rickets)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Oligomeric Procyanidin Complex",
+        "Complication",
+        "calcium"
+      ],
+      [
+        "Oligomeric Procyanidin Complex",
+        "Inflammation",
+        "Alkaline Phosphatase"
+      ],
+      [
+        "Oligomeric Procyanidin Complex",
+        "Inflammation",
+        "Alkaline Phosphatase"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREVENTS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREVENTS",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Oligomeric Procyanidin Complex)-PREVENTS->(Complication)-ASSOCIATED_WITH->(calcium)",
+      "(Oligomeric Procyanidin Complex)-TREATS->(Inflammation)-ASSOCIATED_WITH->(Alkaline Phosphatase)",
+      "(Oligomeric Procyanidin Complex)-PREVENTS->(Inflammation)-ASSOCIATED_WITH->(Alkaline Phosphatase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(calcium)-TREATS->(Rickets)",
+      "(Oligomeric Procyanidin Complex)-PREVENTS->(Complication)-ASSOCIATED_WITH->(calcium)",
+      "(Oligomeric Procyanidin Complex)-PREVENTS/TREATS->(Inflammation)-ASSOCIATED_WITH->(Alkaline Phosphatase)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: opc -> suggestive of rickets due to vitamin D deficiency -> 80% CHAIN: opc -> low calcium -> possible rickets -> 70% CHAIN: opc -> high phosphate -> suggestive of impaired mineralization in bones -> 60% CHAIN: opc -> elevated alkaline phosphatases (FA) -> indicative of bone turnover -> 50% CHAIN: opc -> normal PTH -> less likely secondary hyperparathyroidism -> 80%"
+  ],
+  "enhanced_information": "Option opc is suggestive of rickets due to vitamin D deficiency in a 5-month-old infant. The low calcium, high phosphate, elevated alkaline phosphatases (FA), and low 25 OH vitamin D levels align with the expected biochemical profile in this condition. The normal PTH level makes secondary hyperparathyroidism less likely, supporting the diagnosis of rickets due to vitamin D deficiency.",
+  "analysis": "Rickets due to vitamin D deficiency typically presents with low calcium, high phosphate, elevated alkaline phosphatases (FA), and low 25 OH vitamin D levels. The normal PTH level in this context makes secondary hyperparathyroidism less likely. Option opc aligns with the expected biochemical profile for rickets due to vitamin D deficiency in a 5-month-old infant.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

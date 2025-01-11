@@ -1,0 +1,95 @@
+{
+  "question": "Question linked to image no. 2 In the case described above and regarding pharmacological treatment, which is the correct statement.",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "The pharmacological treatment is not necessary since the bleeding lesion has been identified.",
+    "opb": "The ideal treatment for this patient is perfusion of somatostatin since it is a hepatopathic patient.",
+    "opc": "The use of omeprazole at high doses reduces the recurrence of bleeding.",
+    "opd": "Ranitidine is the drug of choice to avoid pharmacological toxicity when dealing with a patient with chronic liver disease.",
+    "ope": "The eradication of Helicobacter pylori is the first measure to be taken."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Omeprazole",
+        "Hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Omeprazole)-TREATS->(Hemorrhage)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Chronic liver disease NOS",
+        "Virus",
+        "Lipids",
+        "Gastric mucosa",
+        "Ranitidine"
+      ],
+      [
+        "Chronic liver disease NOS",
+        "Virus",
+        "Enzymes",
+        "Gastric mucosa",
+        "Ranitidine"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Chronic liver disease NOS)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Lipids)-PART_OF->(Gastric mucosa)-LOCATION_OF->(Ranitidine)",
+      "(Chronic liver disease NOS)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Enzymes)-PART_OF->(Gastric mucosa)-LOCATION_OF->(Ranitidine)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Omeprazole)-TREATS->(Hemorrhage)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Bleeding lesion identified -> Pharmacological treatment may still be necessary -> 70% CHAIN: Hepatopathic patient -> Consider somatostatin perfusion -> 60% CHAIN: High-dose omeprazole -> Potential reduction in bleeding recurrence -> 50% CHAIN: Chronic liver disease -> Consider ranitidine to avoid pharmacological toxicity -> 60% CHAIN: Presence of Helicobacter pylori -> Eradication as the initial measure -> 70%"
+  ],
+  "enhanced_information": "In the case of a bleeding lesion, pharmacological treatment may still be necessary despite identification. Somatostatin perfusion is not the ideal treatment for a hepatopathic patient. High-dose omeprazole may potentially reduce bleeding recurrence. Ranitidine is not the drug of choice to avoid pharmacological toxicity in chronic liver disease. Eradication of Helicobacter pylori is the initial measure to be taken.",
+  "analysis": "In the case of a bleeding lesion, pharmacological treatment may still be necessary despite identification. Somatostatin perfusion is not the ideal treatment for a hepatopathic patient. High-dose omeprazole may potentially reduce bleeding recurrence. Ranitidine is not the drug of choice to avoid pharmacological toxicity in chronic liver disease. Eradication of Helicobacter pylori is the initial measure to be taken. Therefore, the correct statement is that high-dose omeprazole reduces the recurrence of bleeding.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

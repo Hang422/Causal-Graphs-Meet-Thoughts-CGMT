@@ -1,0 +1,173 @@
+{
+  "question": "A 76-year-old patient with hypertension and diabetes mellitus, who went to the Emergency Department because 72 hours ago he started with a palpitations and decreased his ability to make efforts. Upon arrival, atrial fibrillation with ventricular response was documented at around 120 bpm. Which of the following options is FALSE ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "This patient must be orally anticoagulated for life, unless contraindicated.",
+    "opb": "If we decide to perform a cardioversion upon arrival in the Emergency Department, it would be necessary to previously perform a transesophageal echocardiography.",
+    "opc": "Being the first episode of atrial fibrillation is the ideal candidate for catheter ablation.",
+    "opd": "To slow the heart rate we could use beta-blockers."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Electric Countershock",
+        "Atrial Fibrillation"
+      ],
+      [
+        "Thrombus",
+        "Atrial Fibrillation"
+      ],
+      [
+        "Echocardiography, Transesophageal",
+        "Atrial Fibrillation"
+      ],
+      [
+        "Cardiac ablation",
+        "Atrial Fibrillation"
+      ],
+      [
+        "Treated with",
+        "Atherosclerosis",
+        "Atrial Fibrillation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Electric Countershock)-CAUSES->(Atrial Fibrillation)",
+      "(Thrombus)-CAUSES->(Atrial Fibrillation)",
+      "(Echocardiography, Transesophageal)-TREATS->(Atrial Fibrillation)",
+      "(Cardiac ablation)-CAUSES->(Atrial Fibrillation)",
+      "(Treated with)-TREATS->(Atherosclerosis)-CAUSES->(Atrial Fibrillation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Atrial Fibrillation",
+        "Genes",
+        "Myocardium",
+        "Electric Countershock"
+      ],
+      [
+        "Atrial Fibrillation",
+        "Genes",
+        "Tissue fiber",
+        "Electric Countershock"
+      ],
+      [
+        "Atrial Fibrillation",
+        "Genes",
+        "Tissue fiber",
+        "Cardiac ablation"
+      ],
+      [
+        "Atrial Fibrillation",
+        "Genes",
+        "Muscle",
+        "Cardiac ablation"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Atrial Fibrillation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Myocardium)-LOCATION_OF->(Electric Countershock)",
+      "(Atrial Fibrillation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Tissue fiber)-LOCATION_OF->(Electric Countershock)",
+      "(Atrial Fibrillation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Tissue fiber)-LOCATION_OF->(Cardiac ablation)",
+      "(Atrial Fibrillation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Muscle)-LOCATION_OF->(Cardiac ablation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Electric Countershock)-CAUSES->(Atrial Fibrillation)",
+      "(Cardiac ablation)-CAUSES->(Atrial Fibrillation)",
+      "(Echocardiography, Transesophageal)-TREATS->(Atrial Fibrillation)",
+      "(Thrombus)-CAUSES->(Atrial Fibrillation)",
+      "(Atrial Fibrillation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Myocardium)-LOCATION_OF->(Electric Countershock)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Atrial fibrillation increases stroke risk -> Oral anticoagulation is recommended for high-risk patients -> This patient has hypertension and diabetes -> He should be anticoagulated for life unless contraindicated -> 90%",
+    "CHAIN: Atrial fibrillation can be cardioverted -> Transesophageal echocardiography is used to rule out thrombus before cardioversion -> This is a standard procedure in patients with atrial fibrillation > 48 hours -> 85%",
+    "CHAIN: First episode of atrial fibrillation can be treated with catheter ablation -> Catheter ablation is typically considered for recurrent atrial fibrillation -> This patient has only one episode -> He is not the ideal candidate for catheter ablation -> 80%",
+    "CHAIN: Beta-blockers can be used to slow heart rate in atrial fibrillation -> They are effective in controlling ventricular response -> This is a common treatment approach -> 90%"
+  ],
+  "enhanced_information": "Atrial fibrillation (AF) significantly increases the risk of stroke, particularly in patients with risk factors such as hypertension and diabetes. Therefore, lifelong oral anticoagulation is recommended for this patient unless contraindicated, making option (a) true. In cases of AF lasting more than 48 hours, transesophageal echocardiography is necessary to rule out thrombus before cardioversion, confirming option (b) as true. Although catheter ablation is a treatment for AF, it is typically reserved for patients with recurrent episodes rather than a first episode, indicating that option (c) is false. Beta-blockers are indeed effective for controlling heart rate in AF, supporting option (d) as true. Thus, the false statement is option (c), as this patient is not the ideal candidate for catheter ablation given it is his first episode.",
+  "analysis": "In this scenario, the patient has atrial fibrillation (AF) and is at risk for thromboembolic events due to his age and comorbidities (hypertension and diabetes). The statement that is FALSE is option 'opc', which suggests that the patient is an ideal candidate for catheter ablation as this is typically not the first-line treatment for a first episode of AF. Catheter ablation is usually considered for patients with recurrent AF or those who are symptomatic despite optimal medical therapy. The other options are consistent with standard management practices: lifelong anticoagulation is recommended for patients with AF and risk factors, transesophageal echocardiography is often performed to rule out thrombus before cardioversion, and beta-blockers can be used to control heart rate.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      4,
+      3,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      57.14285714285714,
+      42.857142857142854,
+      0.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": [
+    "Seizures MANIFESTATION_OF Encephalopathies",
+    "Electrocardiographic monitoring PREDISPOSES Proarrhythmia",
+    "DIGOXIN TREATMENT TREATS Chronic heart failure",
+    "Cell Line LOCATION_OF PPIX",
+    "Hyperglycemia CAUSES cardiac arrhythmia",
+    "Diabetes PREDISPOSES Ventricular arrhythmia",
+    "Subclinical hypothyroidism PREDISPOSES Atherosclerosis of aorta",
+    "MIR7-3HG gene|MIR7-3HG INTERACTS_WITH LINC00491 gene|LINC00491",
+    "Transient neurological symptoms PREDISPOSES Cerebrovascular accident",
+    "Late pregnancy ISA Disease",
+    "ATF2 gene|ATF2 INTERACTS_WITH Clone Cells"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "question": "A 59-year-old woman with a personal history of breast cancer operated on 8 months ago and osteoporosis, suffers a fall and has a fracture of the right femur neck. She is operated on surgically and remains in bed with plaster for 10 days. A week after her high note suddenly a shortness of breath that leads her to consult her GP who notes that her right calf has edema and pain on palpation. What clinical elements would NOT be important in determining that you have a high clinical risk of pulmonary thromboembolism ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "The history of breast cancer.",
+    "opb": "The history of osteoporosis.",
+    "opc": "The antecedent of having been more than 3 days at rest.",
+    "opd": "The presence of unilateral edema of the right calf."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Thromboembolism",
+        "Pulmonary Thromboembolisms"
+      ],
+      [
+        "Thromboembolism",
+        "Pulmonary Thromboembolisms"
+      ],
+      [
+        "Venous stasis",
+        "Disease",
+        "Thromboembolism"
+      ],
+      [
+        "Venous stasis",
+        "Deep Vein Thrombosis",
+        "Thromboembolism"
+      ],
+      [
+        "Venous stasis",
+        "Pulmonary Thromboembolisms",
+        "Thromboembolism"
+      ],
+      [
+        "Thromboembolism",
+        "Pulmonary Thromboembolisms"
+      ],
+      [
+        "Deep Vein Thrombosis",
+        "Pulmonary Thromboembolisms"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Thromboembolism)-CAUSES->(Pulmonary Thromboembolisms)",
+      "(Thromboembolism)-CAUSES->(Pulmonary Thromboembolisms)",
+      "(Venous stasis)-CAUSES->(Disease)-CAUSES->(Thromboembolism)",
+      "(Venous stasis)-CAUSES->(Deep Vein Thrombosis)-CAUSES->(Thromboembolism)",
+      "(Venous stasis)-CAUSES->(Pulmonary Thromboembolisms)-PREDISPOSES->(Thromboembolism)",
+      "(Thromboembolism)-CAUSES->(Pulmonary Thromboembolisms)",
+      "(Deep Vein Thrombosis)-CAUSES->(Pulmonary Thromboembolisms)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Deep Vein Thrombosis)-CAUSES->(Pulmonary Thromboembolisms)",
+      "(Thromboembolism)-CAUSES->(Pulmonary Thromboembolisms)",
+      "(Venous stasis)-CAUSES->(Pulmonary Thromboembolisms)-PREDISPOSES->(Thromboembolism)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"History of breast cancer\" -> \"increased risk of thromboembolism\" -> \"relevant for pulmonary thromboembolism risk\" -> 85%",
+    "CHAIN: \"History of osteoporosis\" -> \"no direct link to thromboembolism\" -> \"not relevant for pulmonary thromboembolism risk\" -> 95%",
+    "CHAIN: \"More than 3 days at rest\" -> \"increased risk of venous stasis\" -> \"increased risk of thromboembolism\" -> \"relevant for pulmonary thromboembolism risk\" -> 90%",
+    "CHAIN: \"Unilateral edema of right calf\" -> \"possible deep vein thrombosis\" -> \"increased risk of pulmonary thromboembolism\" -> \"relevant for pulmonary thromboembolism risk\" -> 90%"
+  ],
+  "enhanced_information": "In assessing the clinical risk of pulmonary thromboembolism, the following considerations are important: 1) A history of breast cancer is relevant as it is associated with an increased risk of thromboembolism due to potential hypercoagulability. 2) Osteoporosis does not have a direct link to thromboembolism and is not relevant for assessing pulmonary thromboembolism risk. 3) Prolonged immobilization, such as being at rest for more than 3 days, increases the risk of venous stasis, which is a known risk factor for thromboembolism and thus relevant. 4) Unilateral edema of the right calf suggests possible deep vein thrombosis, which can lead to pulmonary thromboembolism, making it a relevant clinical element. Therefore, the history of osteoporosis is the clinical element that would NOT be important in determining a high clinical risk of pulmonary thromboembolism.",
+  "analysis": "In assessing the risk of pulmonary thromboembolism (PTE), several factors are considered. A history of breast cancer is relevant because cancer can increase the risk of thromboembolism due to hypercoagulability. Prolonged immobilization, such as being bedridden for more than 3 days, is a significant risk factor for PTE due to venous stasis. Unilateral edema of the calf is a clinical sign suggestive of deep vein thrombosis (DVT), which can lead to PTE. Osteoporosis, however, does not have a direct association with increased risk of thromboembolism. Therefore, among the options provided, the history of osteoporosis is the clinical element that would NOT be important in determining a high clinical risk of pulmonary thromboembolism.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      20.0,
+      20.0,
+      40.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

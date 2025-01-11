@@ -1,0 +1,126 @@
+{
+  "question": "An 80-year-old man is admitted with a sudden picture of aphasia and right hemiparesis. As background highlights, hypertension, well controlled diet and cognitive impairment in the last year under study by his neurologist. Emergency cranial CT demonstrates a left frontal lobar hematoma without contrast enhancement. What is the most likely cause of the hematoma?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Arteriovenous malformation masked by the acute hematoma.",
+    "opb": "Chronic arterial hypertension.",
+    "opc": "Vasculitis isolated from the nervous system.",
+    "opd": "Brain tumor.",
+    "ope": "Amyloid cerebral angiopathy (congophilic angiopathy)."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Structure of wall of blood vessel",
+        "Hemorrhage"
+      ],
+      [
+        "Cerebral Amyloid Angiopathy",
+        "Disease",
+        "Transformation, function",
+        "Structure of wall of blood vessel"
+      ],
+      [
+        "Cerebral Amyloid Angiopathy",
+        "Disease",
+        "Transformation, function",
+        "Structure of wall of blood vessel"
+      ],
+      [
+        "Structure of wall of blood vessel",
+        "Blood Vessels"
+      ],
+      [
+        "Amyloid Proteins",
+        "Cells",
+        "Blood Vessels"
+      ],
+      [
+        "Amyloid Proteins",
+        "Muscle Fibers",
+        "Blood Vessels"
+      ],
+      [
+        "Blood Vessels",
+        "Hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PART_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Structure of wall of blood vessel)-LOCATION_OF->(Hemorrhage)",
+      "(Cerebral Amyloid Angiopathy)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Transformation, function)-PROCESS_OF->(Structure of wall of blood vessel)",
+      "(Cerebral Amyloid Angiopathy)-MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Transformation, function)-PROCESS_OF->(Structure of wall of blood vessel)",
+      "(Structure of wall of blood vessel)-PART_OF->(Blood Vessels)",
+      "(Amyloid Proteins)-INTERACTS_WITH->(Cells)-PART_OF->(Blood Vessels)",
+      "(Amyloid Proteins)-INTERACTS_WITH->(Muscle Fibers)-PART_OF->(Blood Vessels)",
+      "(Blood Vessels)-LOCATION_OF->(Hemorrhage)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Structure of wall of blood vessel)-LOCATION_OF->(Hemorrhage)",
+      "(Blood Vessels)-LOCATION_OF->(Hemorrhage)",
+      "(Cerebral Amyloid Angiopathy)-MANIFESTATION_OF/PREDISPOSES->(Disease)-MANIFESTATION_OF->(Transformation, function)-PROCESS_OF->(Structure of wall of blood vessel)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Chronic arterial hypertension -> weakening of blood vessel walls -> increased risk of hemorrhage -> 80% CHAIN: Amyloid cerebral angiopathy -> deposition of amyloid protein in blood vessel walls -> vessel fragility -> increased risk of hemorrhage -> 80%"
+  ],
+  "enhanced_information": "The most likely cause of the hematoma in the 80-year-old man with aphasia and right hemiparesis is chronic arterial hypertension, given the presence of a left frontal lobar hematoma without contrast enhancement. This is supported by the chain of chronic arterial hypertension leading to weakening of blood vessel walls and increased risk of hemorrhage. The evidence path showing the structure of the blood vessel wall leading to hemorrhage further supports this conclusion.",
+  "analysis": "The most likely cause of the left frontal lobar hematoma in the 80-year-old man with chronic arterial hypertension, aphasia, and right hemiparesis is chronic arterial hypertension. Chronic hypertension can lead to weakening of blood vessel walls, making them more susceptible to hemorrhage. The absence of contrast enhancement in the hematoma on CT imaging suggests a non-vascular etiology. Arteriovenous malformation, vasculitis, and brain tumor are less likely in this context. Amyloid cerebral angiopathy could be considered, but chronic arterial hypertension remains the most probable cause.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

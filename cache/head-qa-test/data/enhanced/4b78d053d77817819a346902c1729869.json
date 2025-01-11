@@ -1,0 +1,183 @@
+{
+  "question": "Which of the following antifungals is used in the treatment of invasive aspergillosis and severe candidiasis including Candida krusei and Candida glabrata ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Voriconazole",
+    "opb": "Miconazole",
+    "opc": "Ketoconazole",
+    "opd": "Fluconazole",
+    "ope": "1 and 3 are correct."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "voriconazole",
+        "ASPERGILLOSIS, INVASIVE"
+      ],
+      [
+        "ASPERGILLOSIS, INVASIVE",
+        "Disease",
+        "Candidiasis"
+      ],
+      [
+        "ASPERGILLOSIS, INVASIVE",
+        "Infection",
+        "Candidiasis"
+      ],
+      [
+        "Candida glabrata",
+        "Infection",
+        "ASPERGILLOSIS, INVASIVE"
+      ],
+      [
+        "Candida glabrata",
+        "Systemic mycosis",
+        "ASPERGILLOSIS, INVASIVE"
+      ],
+      [
+        "Candida glabrata",
+        "Infectious disease of lung",
+        "ASPERGILLOSIS, INVASIVE"
+      ],
+      [
+        "Pichia kudriavzevii",
+        "Arteritis",
+        "ASPERGILLOSIS, INVASIVE"
+      ],
+      [
+        "Pichia kudriavzevii",
+        "Osteomyelitis",
+        "ASPERGILLOSIS, INVASIVE"
+      ],
+      [
+        "Candidiasis",
+        "Infection",
+        "ASPERGILLOSIS, INVASIVE"
+      ],
+      [
+        "Candidiasis",
+        "Disease",
+        "ASPERGILLOSIS, INVASIVE"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(voriconazole)-TREATS->(ASPERGILLOSIS, INVASIVE)",
+      "(ASPERGILLOSIS, INVASIVE)-CAUSES->(Disease)-CAUSES->(Candidiasis)",
+      "(ASPERGILLOSIS, INVASIVE)-CAUSES->(Infection)-CAUSES->(Candidiasis)",
+      "(Candida glabrata)-CAUSES->(Infection)-CAUSES->(ASPERGILLOSIS, INVASIVE)",
+      "(Candida glabrata)-CAUSES->(Systemic mycosis)-CAUSES->(ASPERGILLOSIS, INVASIVE)",
+      "(Candida glabrata)-CAUSES->(Infectious disease of lung)-CAUSES->(ASPERGILLOSIS, INVASIVE)",
+      "(Pichia kudriavzevii)-CAUSES->(Arteritis)-CAUSES->(ASPERGILLOSIS, INVASIVE)",
+      "(Pichia kudriavzevii)-CAUSES->(Osteomyelitis)-COMPLICATES->(ASPERGILLOSIS, INVASIVE)",
+      "(Candidiasis)-COMPLICATES->(Infection)-CAUSES->(ASPERGILLOSIS, INVASIVE)",
+      "(Candidiasis)-CAUSES->(Disease)-PREDISPOSES->(ASPERGILLOSIS, INVASIVE)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Fluconazole",
+        "Microbial Biofilms",
+        "Candida glabrata"
+      ],
+      [
+        "Fluconazole",
+        "Candida albicans",
+        "Candida glabrata"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "INTERACTS_WITH"
+      ],
+      [
+        "TREATS",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Fluconazole)-TREATS->(Microbial Biofilms)-INTERACTS_WITH->(Candida glabrata)",
+      "(Fluconazole)-TREATS->(Candida albicans)-INTERACTS_WITH->(Candida glabrata)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fluconazole)-TREATS->(Microbial Biofilms)-INTERACTS_WITH->(Candida glabrata)",
+      "(Fluconazole)-TREATS->(Candida albicans)-INTERACTS_WITH->(Candida glabrata)",
+      "(voriconazole)-TREATS->(ASPERGILLOSIS, INVASIVE)",
+      "(Candida glabrata)-CAUSES->(Infection)-CAUSES->(ASPERGILLOSIS, INVASIVE)",
+      "(Candida glabrata)-CAUSES->(Systemic mycosis)-CAUSES->(ASPERGILLOSIS, INVASIVE)",
+      "(Candida glabrata)-CAUSES->(Infectious disease of lung)-CAUSES->(ASPERGILLOSIS, INVASIVE)",
+      "(Pichia kudriavzevii)-CAUSES->(Arteritis)-CAUSES->(ASPERGILLOSIS, INVASIVE)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Voriconazole -> effective against invasive aspergillosis -> used in severe candidiasis including Candida krusei and Candida glabrata -> 95% CHAIN: Fluconazole -> effective against severe candidiasis including Candida krusei and Candida glabrata -> used in invasive aspergillosis -> 95%"
+  ],
+  "enhanced_information": "Voriconazole is used in the treatment of invasive aspergillosis and severe candidiasis including Candida krusei and Candida glabrata. Fluconazole is also effective against severe candidiasis including Candida krusei and Candida glabrata but not typically used for invasive aspergillosis. Evidence supports voriconazole for invasive aspergillosis and fluconazole for Candida species, confirming the effectiveness of both antifungals in the specified conditions.",
+  "analysis": "Voriconazole is the antifungal of choice for the treatment of invasive aspergillosis and severe candidiasis, including Candida krusei and Candida glabrata. Fluconazole is effective against severe candidiasis caused by Candida species but is not typically used for invasive aspergillosis. While both voriconazole and fluconazole are effective against Candida krusei and Candida glabrata, voriconazole is preferred for invasive aspergillosis. Therefore, the most likely correct option is Voriconazole (opa).",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

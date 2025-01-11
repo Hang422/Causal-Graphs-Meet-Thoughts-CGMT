@@ -1,0 +1,158 @@
+{
+  "question": "A 72-year-old man with a pathological fracture in the left femur goes to the Emergency Department. After the surgical intervention, the diagnostic study was performed to find out the underlying pathology with the following findings: hemoglobin 9.5 g / dl, total protein 11 g / dl, (VN: 6-8 g / dl), serum albumin 2 g / dl, (VN 3.5-5.0 g / dl), beta 2 microglobulin 6 mg / l (VN 1.1-2.4 mg / l), serum creatinine 1.8 mg / dl (VN: 0 , 1-1.4 mg / dl). Indicate what would be the diagnostic tests necessary to confirm the most probable diagnosis:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Radiological bone series and bone marrow aspiration.",
+    "opb": "Serum and urinary electrophoresis and renal function tests.",
+    "opc": "Bone marrow aspirate and serum calcium concentration.",
+    "opd": "Bone marrow aspiration and serum and urinary electrophoresis.",
+    "ope": "Biopsy of the pathological fracture and radiological bone series."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Plasma cell dyscrasia",
+        "Disease",
+        "Symptoms",
+        "Diagnostic tests"
+      ],
+      [
+        "Plasma cell dyscrasia",
+        "Renal Insufficiency",
+        "Symptoms",
+        "Diagnostic tests"
+      ],
+      [
+        "Plasma cell dyscrasia",
+        "Multisystem disorder",
+        "Symptoms",
+        "Diagnostic tests"
+      ],
+      [
+        "Renal Insufficiency",
+        "Symptoms",
+        "Diagnostic tests"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Plasma cell dyscrasia)-CAUSES->(Disease)-CAUSES->(Symptoms)-CAUSES->(Diagnostic tests)",
+      "(Plasma cell dyscrasia)-CAUSES->(Renal Insufficiency)-CAUSES->(Symptoms)-CAUSES->(Diagnostic tests)",
+      "(Plasma cell dyscrasia)-CAUSES->(Multisystem disorder)-CAUSES->(Symptoms)-CAUSES->(Diagnostic tests)",
+      "(Renal Insufficiency)-CAUSES->(Symptoms)-CAUSES->(Diagnostic tests)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Diagnostic tests",
+        "Pathogenesis",
+        "Erythropoietin",
+        "Decreased hemoglobin"
+      ],
+      [
+        "Diagnostic tests",
+        "Complication",
+        "ARGINASE",
+        "Decreased hemoglobin"
+      ],
+      [
+        "Diagnostic tests",
+        "Pathogenesis",
+        "Erythropoietin",
+        "Decreased hemoglobin"
+      ],
+      [
+        "Diagnostic tests",
+        "Complication",
+        "ARGINASE",
+        "Decreased hemoglobin"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Diagnostic tests)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Erythropoietin)-CAUSES->(Decreased hemoglobin)",
+      "(Diagnostic tests)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(ARGINASE)-CAUSES->(Decreased hemoglobin)",
+      "(Diagnostic tests)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Erythropoietin)-CAUSES->(Decreased hemoglobin)",
+      "(Diagnostic tests)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(ARGINASE)-CAUSES->(Decreased hemoglobin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Diagnostic tests)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Erythropoietin)-CAUSES->(Decreased hemoglobin)",
+      "(Diagnostic tests)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(ARGINASE)-CAUSES->(Decreased hemoglobin)",
+      "(Plasma cell dyscrasia)-CAUSES->(Disease)-CAUSES->(Symptoms)-CAUSES->(Diagnostic tests)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Pathological fracture in left femur -> Surgical intervention -> Diagnostic study findings -> Low hemoglobin (9.5 g/dl) -> Low total protein (11 g/dl) -> Low serum albumin (2 g/dl) -> Elevated beta 2 microglobulin (6 mg/l) -> Elevated serum creatinine (1.8 mg/dl) -> Suspicion of multiple myeloma or other plasma cell dyscrasia -> Diagnostic tests necessary to confirm: Bone marrow aspiration and serum and urinary electrophoresis -> 85%",
+    "CHAIN: Pathological fracture in left femur -> Surgical intervention -> Diagnostic study findings -> Low hemoglobin (9.5 g/dl) -> Low total protein (11 g/dl) -> Low serum albumin (2 g/dl) -> Elevated beta 2 microglobulin (6 mg/l) -> Elevated serum creatinine (1.8 mg/dl) -> Suspicion of renal dysfunction -> Diagnostic tests necessary to confirm: Serum and urinary electrophoresis and renal function tests -> 80%"
+  ],
+  "enhanced_information": "The most probable diagnosis in this case is multiple myeloma or other plasma cell dyscrasia. To confirm this, the necessary diagnostic tests would be bone marrow aspiration and serum and urinary electrophoresis, as indicated by the patient's findings of low hemoglobin, low total protein, low serum albumin, elevated beta 2 microglobulin, and elevated serum creatinine. This aligns with the consensus-supported reasoning based on the patient's presentation and laboratory results.",
+  "analysis": "The patient's presentation with low hemoglobin, low total protein, low serum albumin, elevated beta 2 microglobulin, and elevated serum creatinine is highly suggestive of multiple myeloma or another plasma cell dyscrasia. To confirm this diagnosis, the necessary diagnostic tests would include bone marrow aspiration to assess for abnormal plasma cells and serum and urinary electrophoresis to detect monoclonal proteins. These tests are crucial for diagnosing and characterizing multiple myeloma.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      2
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

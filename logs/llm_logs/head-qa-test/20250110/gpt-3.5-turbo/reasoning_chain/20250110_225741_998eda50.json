@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250110_225741",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "998eda50",
+  "question_text": "In an epidemiological cohort study, what do we mean by exposed patients?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            In an epidemiological cohort study, what do we mean by exposed patients?\n\n            ### Options\n    opa. Patients who have the risk factor of the disease or health problem we want to study.\nopb. Patients who agree to participate in the study after giving their informed consent.\nopc. Subjects who do not develop the disease or health problem under study during follow-up.\nopd. Patients who have the disease or health problem we want to study.\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n            \n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Patients who have the risk factor of the disease -> Exposed patients -> 80%\nCHAIN: Patients who have the disease or health problem we want to study -> Exposed patients -> 70%",
+  "metadata": {
+    "topic": "Medicine",
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

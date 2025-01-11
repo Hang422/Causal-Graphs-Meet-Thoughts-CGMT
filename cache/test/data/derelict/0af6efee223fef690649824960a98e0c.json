@@ -1,0 +1,130 @@
+{
+  "question": "Regarding substance abuse by the adolescent, point out the correct answer:",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "It is usually an individual consumption which indicates a better prognosis.",
+    "opb": "The onset of abuse in adolescence has not shown an increased risk of becoming addicted.",
+    "opc": "It is independent of the risk of HIV infection.",
+    "opd": "The most popular drug among teenagers is cannabis.",
+    "ope": "It should be considered in adolescents who come to the emergency with a crisis."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Substance abuse problem",
+        "Liver diseases",
+        "Disease",
+        "Addictive Behavior"
+      ],
+      [
+        "Substance abuse problem",
+        "Attention deficit hyperactivity disorder",
+        "Disease",
+        "Addictive Behavior"
+      ],
+      [
+        "Emergency Situation",
+        "Disease",
+        "Substance abuse problem"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Substance abuse problem)-CAUSES->(Liver diseases)-CAUSES->(Disease)-PREDISPOSES->(Addictive Behavior)",
+      "(Substance abuse problem)-COMPLICATES->(Attention deficit hyperactivity disorder)-CAUSES->(Disease)-PREDISPOSES->(Addictive Behavior)",
+      "(Emergency Situation)-CAUSES->(Disease)-PREDISPOSES->(Substance abuse problem)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "HIV Infections",
+        "Disease",
+        "Immunity",
+        "Oligomeric Procyanidin Complex"
+      ],
+      [
+        "HIV Infections",
+        "Disease",
+        "Immunity",
+        "Oligomeric Procyanidin Complex"
+      ]
+    ],
+    "relationships": [
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(HIV Infections)-COMPLICATES->(Disease)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Oligomeric Procyanidin Complex)",
+      "(HIV Infections)-MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Oligomeric Procyanidin Complex)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Emergency Situation)-CAUSES->(Disease)-PREDISPOSES->(Substance abuse problem)",
+      "(Substance abuse problem)-CAUSES->(Liver diseases)-CAUSES->(Disease)-PREDISPOSES->(Addictive Behavior)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Substance abuse in adolescents\" -> \"often involves peer influence\" -> \"indicates a higher risk of addiction\" -> \"lower prognosis\" -> 85%",
+    "CHAIN: \"Onset of substance abuse in adolescence\" -> \"associated with increased risk of addiction\" -> \"contradicts option opb\" -> \"unclear if it is true\" -> 70%",
+    "CHAIN: \"Substance abuse\" -> \"can lead to risky behaviors\" -> \"increases risk of HIV infection\" -> \"contradicts option opc\" -> 80%",
+    "CHAIN: \"Cannabis use among teenagers\" -> \"is reported as the most commonly used illicit drug\" -> \"supports option opd\" -> 90%",
+    "CHAIN: \"Adolescents in emergency with a crisis\" -> \"should be evaluated for substance abuse\" -> \"supports option ope\" -> 95%"
+  ],
+  "enhanced_information": "Substance abuse in adolescents is often influenced by peer pressure and is associated with a higher risk of addiction, indicating a poorer prognosis (contradicting option opa). The onset of substance abuse during adolescence is indeed linked to an increased risk of developing addiction later in life (contradicting option opb). Additionally, substance abuse can lead to risky behaviors, which increases the risk of HIV infection (contradicting option opc). Cannabis is reported as the most commonly used illicit drug among teenagers, supporting option opd. Lastly, adolescents presenting to the emergency department with a crisis should be evaluated for potential substance abuse, which aligns with option ope. Therefore, the most accurate options are opd and ope.",
+  "analysis": "Substance abuse in adolescents is a significant concern, with cannabis being the most commonly used drug among teenagers. Early onset of substance abuse in adolescence is associated with a higher risk of developing addiction. Substance abuse can also increase the risk of HIV infection due to risky behaviors. Adolescents presenting to the emergency department with a crisis should be evaluated for potential substance abuse.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      33.33333333333333,
+      33.33333333333333,
+      0.0,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

@@ -1,0 +1,204 @@
+{
+  "question": "A 59-year-old woman presented with chronic watery diarrhea of ​​4 months evolution. In the endoscopy, the mucosa did not show relevant aspects. In particular, no ulcers or friable areas were observed. A transverse colon biopsy was performed. In the histopathological study, a thickened area was recognized below the surface coating epithelium, which was more evident by Masson's trichrome technique and involved epithelial atrophy and denudation. There was also a clear increase in the density of intraepithelial lymphocytes. Is the diagnosis of the intestinal lesion?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Chronic ulcerative colitis.",
+    "opb": "Pseudomembranous colitis.",
+    "opc": "Collagenous colitis",
+    "opd": "Fibrosing Crohn's disease."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ulcer",
+        "Disease",
+        "Biopsy"
+      ],
+      [
+        "endoscopy",
+        "Disease",
+        "Biopsy"
+      ],
+      [
+        "endoscopy",
+        "Pain, Postoperative",
+        "Biopsy"
+      ],
+      [
+        "Biopsy",
+        "Disease",
+        "Histopathology"
+      ],
+      [
+        "Biopsy",
+        "Infection",
+        "Histopathology"
+      ],
+      [
+        "Biopsy",
+        "Hypertensive disease",
+        "Histopathology"
+      ],
+      [
+        "Epithelial atrophy",
+        "Kidney Failure, Chronic",
+        "Disease",
+        "Colitis, Collagenous"
+      ],
+      [
+        "Epithelial atrophy",
+        "Symptoms",
+        "Disease",
+        "Colitis, Collagenous"
+      ],
+      [
+        "Epithelial atrophy",
+        "Symptoms",
+        "COVID-19",
+        "Colitis, Collagenous"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Ulcer)-CAUSES->(Disease)-CAUSES->(Biopsy)",
+      "(endoscopy)-CAUSES->(Disease)-CAUSES->(Biopsy)",
+      "(endoscopy)-CAUSES->(Pain, Postoperative)-CAUSES->(Biopsy)",
+      "(Biopsy)-CAUSES->(Disease)-CAUSES->(Histopathology)",
+      "(Biopsy)-CAUSES->(Infection)-CAUSES->(Histopathology)",
+      "(Biopsy)-CAUSES->(Hypertensive disease)-CAUSES->(Histopathology)",
+      "(Epithelial atrophy)-CAUSES->(Kidney Failure, Chronic)-CAUSES->(Disease)-CAUSES->(Colitis, Collagenous)",
+      "(Epithelial atrophy)-PREDISPOSES->(Symptoms)-CAUSES->(Disease)-CAUSES->(Colitis, Collagenous)",
+      "(Epithelial atrophy)-PREDISPOSES->(Symptoms)-CAUSES->(COVID-19)-CAUSES->(Colitis, Collagenous)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Transverse colon",
+        "Disease",
+        "Histopathology"
+      ],
+      [
+        "Transverse colon",
+        "Infection",
+        "Histopathology"
+      ],
+      [
+        "Colitis, Collagenous",
+        "Disease",
+        "Immunity",
+        "Oligomeric Procyanidin Complex"
+      ],
+      [
+        "Colitis, Collagenous",
+        "Disease",
+        "Immunity",
+        "Oligomeric Procyanidin Complex"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Transverse colon)-LOCATION_OF->(Disease)-CAUSES->(Histopathology)",
+      "(Transverse colon)-LOCATION_OF->(Infection)-CAUSES->(Histopathology)",
+      "(Colitis, Collagenous)-ISA->(Disease)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Oligomeric Procyanidin Complex)",
+      "(Colitis, Collagenous)-CAUSES->(Disease)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Oligomeric Procyanidin Complex)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ulcer)-CAUSES->(Disease)-CAUSES->(Biopsy)",
+      "(Epithelial atrophy)-CAUSES->(Kidney Failure, Chronic)-CAUSES->(Disease)-CAUSES->(Colitis, Collagenous)",
+      "(Epithelial atrophy)-PREDISPOSES->(Symptoms)-CAUSES->(Disease)-CAUSES->(Colitis, Collagenous)",
+      "(Epithelial atrophy)-PREDISPOSES->(Symptoms)-CAUSES->(COVID-19)-CAUSES->(Colitis, Collagenous)",
+      "(Biopsy)-CAUSES->(Disease)-CAUSES->(Histopathology)",
+      "(Biopsy)-CAUSES->(Infection)-CAUSES->(Histopathology)",
+      "(Biopsy)-CAUSES->(Hypertensive disease)-CAUSES->(Histopathology)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Chronic watery diarrhea -> Endoscopy with no ulcers or friable areas -> Transverse colon biopsy -> Histopathological study shows thickened area below surface coating epithelium -> Masson's trichrome technique highlights thickened area -> Intraepithelial lymphocytosis -> Epithelial atrophy and denudation -> Collagenous colitis -> opc. Collagenous colitis -> 95%"
+  ],
+  "enhanced_information": "The histopathological findings of a thickened area below the surface coating epithelium, intraepithelial lymphocytosis, epithelial atrophy, and denudation are consistent with collagenous colitis. The absence of ulcers or friable areas on endoscopy supports this diagnosis. The evidence paths do not provide additional relevant information for this case.",
+  "analysis": "The histopathological findings of a thickened area below the surface coating epithelium, intraepithelial lymphocytosis, epithelial atrophy, and denudation, along with the absence of ulcers or friable areas on endoscopy, are classic features of collagenous colitis. Chronic ulcerative colitis typically presents with ulcers and friable areas, which are not seen in this case. Pseudomembranous colitis is associated with Clostridium difficile infection, which is not indicated here. Fibrosing Crohn's disease typically shows transmural inflammation and fibrosis, which are not described in the case. Therefore, the most likely correct option is collagenous colitis.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

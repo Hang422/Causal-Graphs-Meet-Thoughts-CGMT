@@ -1,0 +1,102 @@
+{
+  "question": "Infant of 1 month of life who goes to the hospital emergency department referred by his pediatrician for jaundice. He has been referring for 10 days and has been increasing. In the blood test, a total bilirubin of 7 mg / dl stands out, with indirect bilirubin being 1.5 mg / dl. The most likely cause, among the following, of this jaundice is:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Biliary tract atresia",
+    "opb": "Jaundice due to breastfeeding.",
+    "opc": "Isoimmunization 0-A late onset.",
+    "opd": "Gilbert's disease.",
+    "ope": "Hereditary spherocytosis."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hyperbilirubinemia",
+        "Icterus"
+      ],
+      [
+        "Anemia",
+        "Disease",
+        "Spherocytosis, Hereditary"
+      ],
+      [
+        "Anemia",
+        "Infection",
+        "Spherocytosis, Hereditary"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hyperbilirubinemia)-CAUSES->(Icterus)",
+      "(Anemia)-CAUSES->(Disease)-CAUSES->(Spherocytosis, Hereditary)",
+      "(Anemia)-CAUSES->(Infection)-CAUSES->(Spherocytosis, Hereditary)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hyperbilirubinemia)-CAUSES->(Icterus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Infant presents with jaundice\" -> \"Jaundice has been increasing for 10 days\" -> \"Total bilirubin is 7 mg/dL\" -> \"Indirect bilirubin is 1.5 mg/dL\" -> \"Breastfeeding jaundice is common in infants\" -> \"Breastfeeding jaundice typically presents with indirect hyperbilirubinemia\" -> \"Most likely cause is jaundice due to breastfeeding\" -> 85%",
+    "CHAIN: \"Infant presents with jaundice\" -> \"Jaundice has been increasing for 10 days\" -> \"Total bilirubin is 7 mg/dL\" -> \"Indirect bilirubin is 1.5 mg/dL\" -> \"Biliary tract atresia usually presents with higher bilirubin levels\" -> \"Biliary tract atresia is less likely\" -> 60%",
+    "CHAIN: \"Infant presents with jaundice\" -> \"Jaundice has been increasing for 10 days\" -> \"Total bilirubin is 7 mg/dL\" -> \"Indirect bilirubin is 1.5 mg/dL\" -> \"Isoimmunization typically presents earlier in life\" -> \"Isoimmunization is less likely\" -> 55%",
+    "CHAIN: \"Infant presents with jaundice\" -> \"Jaundice has been increasing for 10 days\" -> \"Total bilirubin is 7 mg/dL\" -> \"Indirect bilirubin is 1.5 mg/dL\" -> \"Gilbert's disease is rare in infants\" -> \"Gilbert's disease is less likely\" -> 50%",
+    "CHAIN: \"Infant presents with jaundice\" -> \"Jaundice has been increasing for 10 days\" -> \"Total bilirubin is 7 mg/dL\" -> \"Indirect bilirubin is 1.5 mg/dL\" -> \"Hereditary spherocytosis typically presents with anemia\" -> \"Hereditary spherocytosis is less likely\" -> 50%"
+  ],
+  "enhanced_information": "The infant presents with jaundice that has been increasing for 10 days, with a total bilirubin of 7 mg/dL and indirect bilirubin of 1.5 mg/dL. Breastfeeding jaundice is common in infants and typically presents with indirect hyperbilirubinemia, making it a likely cause in this case. Biliary tract atresia usually presents with higher bilirubin levels and is less likely given the current bilirubin levels. Isoimmunization typically occurs earlier in life, making it less likely here. Gilbert's disease is rare in infants and hereditary spherocytosis usually presents with anemia, further reducing their likelihood. Therefore, the most likely cause of jaundice in this infant is jaundice due to breastfeeding.",
+  "analysis": "The infant's jaundice, which has been increasing over 10 days, along with a total bilirubin level of 7 mg/dL and an indirect bilirubin level of 1.5 mg/dL, suggests a case of unconjugated hyperbilirubinemia. Among the options provided, jaundice due to breastfeeding is a common cause of indirect hyperbilirubinemia in infants, especially in the first month of life. Biliary tract atresia typically presents with conjugated hyperbilirubinemia and other signs such as pale stools and dark urine, which are not mentioned here. Isoimmunization usually presents earlier and with more severe jaundice. Gilbert's disease is rare in infants and typically presents later in life. Hereditary spherocytosis would likely present with anemia and splenomegaly. Therefore, the most likely cause of jaundice in this case is jaundice due to breastfeeding.",
+  "answer": "opb",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      0.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "NOD1 gene|NOD1 PART_OF Jejunum",
+    "Neonatal Jaundice PREDISPOSES Hyperbilirubinemia",
+    "IMPACT gene PART_OF Human papillomavirus 18",
+    "Culture Bound Syndromes ISA Syndrome",
+    "Avian crop LOCATION_OF Xanthomonadaceae"
+  ]
+}

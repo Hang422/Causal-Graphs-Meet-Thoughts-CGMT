@@ -1,0 +1,94 @@
+{
+  "question": "What clinical entity is caused, mainly, by Clostridium difficile ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Botulism.",
+    "opb": "Diarrhea associated with antibiotics.",
+    "opc": "Gas gangrene.",
+    "opd": "Tetanus."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Inflammation",
+        "Diarrhea"
+      ],
+      [
+        "Clostridium difficile",
+        "Infection",
+        "Bacteria"
+      ],
+      [
+        "Clostridium difficile",
+        "Irritable Bowel Syndrome",
+        "Bacteria"
+      ],
+      [
+        "Clostridium difficile",
+        "Prosthetic joint infection",
+        "Bacteria"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Inflammation)-PREDISPOSES->(Diarrhea)",
+      "(Clostridium difficile)-CAUSES->(Infection)-PROCESS_OF->(Bacteria)",
+      "(Clostridium difficile)-CAUSES->(Irritable Bowel Syndrome)-PROCESS_OF->(Bacteria)",
+      "(Clostridium difficile)-CAUSES->(Prosthetic joint infection)-PROCESS_OF->(Bacteria)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Clostridium difficile)-CAUSES->(Infection)-PROCESS_OF->(Bacteria)",
+      "(Clostridium difficile)-CAUSES->(Irritable Bowel Syndrome)-PROCESS_OF->(Bacteria)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Clostridium difficile infection -> release of toxins -> damage to the intestinal lining -> inflammation -> diarrhea associated with antibiotics -> 95% CHAIN: Clostridium difficile infection -> overgrowth of bacteria -> disruption of normal gut flora -> diarrhea associated with antibiotics -> 95%"
+  ],
+  "enhanced_information": "Clostridium difficile infection mainly causes diarrhea associated with antibiotics by overgrowth of bacteria leading to disruption of normal gut flora, resulting in damage to the intestinal lining and inflammation.",
+  "analysis": "Clostridium difficile infection mainly causes diarrhea associated with antibiotics by disrupting the normal gut flora and leading to intestinal damage and inflammation. This is a well-established clinical entity associated with this bacterium.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

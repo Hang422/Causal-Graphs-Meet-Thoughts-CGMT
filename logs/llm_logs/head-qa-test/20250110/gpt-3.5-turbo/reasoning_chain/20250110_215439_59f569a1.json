@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250110_215439",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "59f569a1",
+  "question_text": "One of the following compounds produces liver damage as the main toxic effect:",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            One of the following compounds produces liver damage as the main toxic effect:\n\n            ### Options\n    opa. Diethylene glycol.\nopb. Methanol\nopc. Acetone.\nopd. Benzene.\nope. Carbon tetrachloride.\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n            \n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Carbon tetrachloride\" -> \"metabolized in the liver to toxic metabolites\" -> \"causes liver damage\" -> 95%\nCHAIN: \"Diethylene glycol\" -> \"metabolized in the liver to toxic metabolites\" -> \"causes liver damage\" -> 90%\nCHAIN: \"Methanol\" -> \"metabolized in the liver to formaldehyde and formic acid\" -> \"causes liver damage\" -> 85%\nCHAIN: \"Benzene\" -> \"metabolized in the liver to toxic intermediates\" -> \"may contribute to liver damage\" -> 70%\nCHAIN: \"Acetone\" -> \"metabolized in the liver to acetone metabolites\" -> \"unlikely to cause significant liver damage\" -> 60%",
+  "metadata": {
+    "topic": "Pharmacy",
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

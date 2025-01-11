@@ -1,0 +1,115 @@
+{
+  "question": "Of the following diseases, one of them can be manifested with absence of jugular venous pulse:",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Constrictive pericarditis.",
+    "opb": "Superior vena cava syndrome.",
+    "opc": "Tricuspid insufficiency.",
+    "opd": "Heart failure."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Superior Vena Cava Syndrome",
+        "Obstruction"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Superior Vena Cava Syndrome)-CAUSES->(Obstruction)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Tricuspid Valve Insufficiency",
+        "Hypoxia",
+        "Angiotensins",
+        "Right atrial pressure"
+      ],
+      [
+        "Tricuspid Valve Insufficiency",
+        "Functional disorder",
+        "VPS51",
+        "Right atrial pressure"
+      ],
+      [
+        "Heart failure",
+        "Pathogenesis",
+        "Angiotensins",
+        "Right atrial pressure"
+      ],
+      [
+        "Heart failure",
+        "Pathogenesis",
+        "Angiotensins",
+        "Right atrial pressure"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Tricuspid Valve Insufficiency)-CAUSES->(Hypoxia)-ASSOCIATED_WITH->(Angiotensins)-CAUSES->(Right atrial pressure)",
+      "(Tricuspid Valve Insufficiency)-CAUSES->(Functional disorder)-ASSOCIATED_WITH->(VPS51)-CAUSES->(Right atrial pressure)",
+      "(Heart failure)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Angiotensins)-CAUSES->(Right atrial pressure)",
+      "(Heart failure)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Angiotensins)-CAUSES->(Right atrial pressure)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Superior Vena Cava Syndrome)-CAUSES->(Obstruction)",
+      "(Tricuspid Valve Insufficiency)-CAUSES->(Hypoxia)-ASSOCIATED_WITH->(Angiotensins)-CAUSES->(Right atrial pressure)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Constrictive pericarditis\" -> \"restricts cardiac filling\" -> \"reduced venous return\" -> \"absence of jugular venous pulse\" -> 95% CHAIN: \"Superior vena cava syndrome\" -> \"obstruction of venous return\" -> \"absence of jugular venous pulse\" -> 90% CHAIN: \"Tricuspid insufficiency\" -> \"increased right atrial pressure\" -> \"visible jugular venous pulse\" -> 5% CHAIN: \"Heart failure\" -> \"increased right atrial pressure\" -> \"visible jugular venous pulse\" -> 95%"
+  ],
+  "enhanced_information": "Constrictive pericarditis and superior vena cava syndrome can both manifest with the absence of jugular venous pulse due to reduced venous return caused by cardiac filling restriction or venous obstruction. Tricuspid insufficiency and heart failure are less likely to present with absence of jugular venous pulse as they are associated with increased right atrial pressure leading to visible jugular venous pulse.",
+  "analysis": "Constrictive pericarditis and superior vena cava syndrome can both lead to the absence of jugular venous pulse due to reduced venous return. Tricuspid insufficiency and heart failure are more likely to cause visible jugular venous pulse due to increased right atrial pressure. Therefore, the most likely correct option is opb. Superior vena cava syndrome.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

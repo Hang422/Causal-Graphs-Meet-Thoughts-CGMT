@@ -1,0 +1,132 @@
+{
+  "question": "The acini of the pancreas segregate:",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Pepsinogen",
+    "opb": "Tripsinogen",
+    "opc": "Insulin.",
+    "opd": "Trypsin"
+  },
+  "topic_name": "Biology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pancreas",
+        "Cells",
+        "Digestive Enzymes"
+      ],
+      [
+        "Pancreas",
+        "Inflammation",
+        "Digestive Enzymes"
+      ],
+      [
+        "Digestive Enzymes",
+        "Cells",
+        "macrophage",
+        "Trypsinogen"
+      ],
+      [
+        "Digestive Enzymes",
+        "Cells",
+        "[M]Unspecified tumor cell NOS",
+        "Trypsinogen"
+      ],
+      [
+        "Pancreas",
+        "Insulin"
+      ],
+      [
+        "Pancreas",
+        "Liver",
+        "Trypsinogen"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Pancreas)-PART_OF->(Cells)-INTERACTS_WITH->(Digestive Enzymes)",
+      "(Pancreas)-LOCATION_OF->(Inflammation)-ASSOCIATED_WITH->(Digestive Enzymes)",
+      "(Digestive Enzymes)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(macrophage)-INTERACTS_WITH->(Trypsinogen)",
+      "(Digestive Enzymes)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->([M]Unspecified tumor cell NOS)-LOCATION_OF->(Trypsinogen)",
+      "(Pancreas)-LOCATION_OF->(Insulin)",
+      "(Pancreas)-PART_OF->(Liver)-LOCATION_OF->(Trypsinogen)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pancreas)-LOCATION_OF->(Insulin)",
+      "(Pancreas)-PART_OF->(Cells)-INTERACTS_WITH->(Digestive Enzymes)",
+      "(Pancreas)-LOCATION_OF->(Inflammation)-ASSOCIATED_WITH->(Digestive Enzymes)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Acini of the pancreas\" -> \"secrete digestive enzymes\" -> \"such as trypsinogen\" -> 95% CHAIN: \"Acini of the pancreas\" -> \"do not secrete insulin\" -> 90% CHAIN: \"Acini of the pancreas\" -> \"secrete trypsinogen\" -> 95%"
+  ],
+  "enhanced_information": "The acini of the pancreas secrete digestive enzymes such as trypsinogen and do not secrete insulin. Therefore, the correct options are Tripsinogen and Trypsin, while Insulin is not segregated by the acini of the pancreas.",
+  "analysis": "Based on the retrieved medical knowledge, it is known that Insulin interacts with Acinar cells of the pancreas. Therefore, the most likely correct option is Insulin.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": [
+    "Autoimmunity ASSOCIATED_WITH anakinra",
+    "macrophage INTERACTS_WITH B-Lymphocytes",
+    "Cisplatin TREATS Anuria",
+    "Amylases INTERACTS_WITH Acinar cell of pancreas",
+    "Insulin INTERACTS_WITH Acinar Cell",
+    "Thyrotropin-Releasing Hormone INTERACTS_WITH Acinar cell of pancreas",
+    "IMMUNOHISTOCHEMICAL DIAGNOSES Otitis Media",
+    "Esthesiometers TREATS Trigeminal Neuralgia, Idiopathic",
+    "Presynaptic Terminals LOCATION_OF GAD1",
+    "Oxygenators, Membrane TREATS Respiratory Insufficiency",
+    "Vena caval structure LOCATION_OF Chest Tubes",
+    "Tetradecanoylphorbol Acetate INTERACTS_WITH Acinar cell of pancreas"
+  ]
+}

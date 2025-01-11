@@ -1,0 +1,98 @@
+{
+  "question": "Indicate which of the following is the most frequent cause of liver transplantation in childhood:",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Crigler-Najjar disease type I.",
+    "opb": "Primary type I hyperoxaluria",
+    "opc": "Biliary atresia",
+    "opd": "Alagille's disease"
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Biliary Atresia",
+        "Liver damage"
+      ],
+      [
+        "Primary hyperoxaluria, type I",
+        "Kidney Calculi"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Biliary Atresia)-CAUSES->(Liver damage)",
+      "(Primary hyperoxaluria, type I)-CAUSES->(Kidney Calculi)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Liver",
+        "Tissue specimen from liver",
+        "Transplantation of liver"
+      ],
+      [
+        "Liver",
+        "Transplanted tissue",
+        "Transplantation of liver"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Liver)-PART_OF->(Tissue specimen from liver)-LOCATION_OF->(Transplantation of liver)",
+      "(Liver)-PART_OF->(Transplanted tissue)-LOCATION_OF->(Transplantation of liver)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Biliary Atresia)-CAUSES->(Liver damage)",
+      "(Primary hyperoxaluria, type I)-CAUSES->(Kidney Calculi)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Biliary atresia -> liver damage -> end-stage liver disease -> liver transplantation in childhood -> 90%",
+    "CHAIN: Primary type I hyperoxaluria -> kidney stones -> kidney damage -> oxalate deposition in the liver -> liver transplantation in childhood -> 80%"
+  ],
+  "enhanced_information": "Biliary atresia is the most frequent cause of liver transplantation in childhood, accounting for 90% of cases. This is due to the progression of liver damage leading to end-stage liver disease. Primary type I hyperoxaluria, although causing kidney stones and kidney damage, is not as common a cause for liver transplantation in childhood.",
+  "analysis": "Biliary atresia is widely recognized as the most frequent cause of liver transplantation in childhood, accounting for the majority of cases. This condition leads to progressive liver damage and end-stage liver disease, necessitating transplantation. While other conditions like Primary type I hyperoxaluria can lead to kidney issues, they are not as commonly associated with liver transplantation in childhood.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      66.66666666666666
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

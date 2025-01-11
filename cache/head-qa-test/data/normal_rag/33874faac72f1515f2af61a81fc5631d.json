@@ -1,0 +1,120 @@
+{
+  "question": "It evaluates a patient with pelvic pain in which the simple Rx shows osteolytic and osteosclerotic lesions in the iliac and femoral bones. Point out the INCORRECT response.",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "I would request a bone map including skull and rib cage.",
+    "opb": "I would request a determination of bone alkaline phosphatase.",
+    "opc": "I would start estrogen hormone therapy.",
+    "opd": "Endovenous bisphosphonates such as pamidronate and zoledronate are an effective option in this problem."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pelvic Pain",
+        "Musculoskeletal torsion, function",
+        "Fascia",
+        "Bone structure of ilium"
+      ],
+      [
+        "Pelvic Pain",
+        "Musculoskeletal torsion, function",
+        "Wing",
+        "Bone structure of ilium"
+      ],
+      [
+        "Bone and Bones",
+        "PET/CT scan",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Bone and Bones",
+        "PET/CT scan",
+        "Symptoms",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "PART_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES",
+        "CAUSES",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Pelvic Pain)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(Fascia)-PART_OF->(Bone structure of ilium)",
+      "(Pelvic Pain)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(Wing)-PART_OF->(Bone structure of ilium)",
+      "(Bone and Bones)-LOCATION_OF->(PET/CT scan)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Bone and Bones)-LOCATION_OF->(PET/CT scan)-CAUSES->(Symptoms)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pelvic Pain)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(Fascia)-PART_OF->(Bone structure of ilium)",
+      "(Pelvic Pain)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(Wing)-PART_OF->(Bone structure of ilium)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Pelvic pain -> imaging shows osteolytic and osteosclerotic lesions in iliac and femoral bones -> suggestive of bone pathology -> 90% CHAIN: Bone alkaline phosphatase determination -> assess bone turnover -> helpful in diagnosing bone disorders -> 95% CHAIN: Estrogen hormone therapy -> may worsen osteolytic lesions -> not recommended in this case -> 90% CHAIN: Endovenous bisphosphonates (pamidronate, zoledronate) -> inhibit bone resorption -> effective in treating osteolytic lesions -> 90%"
+  ],
+  "enhanced_information": "Estrogen hormone therapy should not be started in a patient with osteolytic and osteosclerotic lesions in the iliac and femoral bones as it may worsen the condition. Requesting a bone map including the skull and rib cage may provide a more comprehensive assessment. Determination of bone alkaline phosphatase can help assess bone turnover and diagnose bone disorders. Endovenous bisphosphonates such as pamidronate and zoledronate are effective options for treating osteolytic lesions.",
+  "analysis": "The presence of osteolytic and osteosclerotic lesions in the iliac and femoral bones suggests a bone pathology, likely related to metabolic bone diseases. Estrogen hormone therapy is not appropriate in this context as it can exacerbate bone lesions. Bisphosphonates are a more suitable treatment option for this patient.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Mitral Valve Stenosis ISA Heart Valve Diseases",
+    "Osteopoikilosis CAUSES Pelvic Pain",
+    "CD3+ cell INTERACTS_WITH CD8B1 gene|CD8B",
+    "Treatment Protocols TREATS Pelvic Pain",
+    "Medical therapy TREATS Lichen disease",
+    "Osteitis of pelvic region CAUSES Functional disorder",
+    "ELAVL2 gene|ELAVL2 ASSOCIATED_WITH Chronic graft-versus-host disease",
+    "CA1 Pyramidal Cell Area LOCATION_OF Alzheimer's Disease",
+    "Unilateral orchiectomy TREATS Bilateral testicular pain",
+    "Receptor Gene PREDISPOSES Stress Disorders, Post-Traumatic",
+    "5-HT>3< receptor antagonist TREATS Diarrhoea predominant irritable bowel syndrome"
+  ]
+}

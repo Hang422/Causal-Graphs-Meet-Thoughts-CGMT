@@ -1,0 +1,150 @@
+{
+  "question": "A 69-year-old woman consulted for dysuria and frequency, symptoms that she has suffered numerous times in the last two years. He says that he has been taking cotrimoxazole in a daily dose for three months, prescribed by his family doctor. In the hospital's emergency department, a sediment and a urine culture were taken. The urinary sediment was pathological (significant pyuria, positive nitrites). He was prescribed ciprofloxacin, and was re-cited with his primary care physician. The urine culture was positive (Escherichia coli,> 10 (5) CFU / ml) and the results of the antibiogram showed resistance to ampicillin, cotrimoxazole and quinolones, but sensitivity to fosfomycin, the antimicrobial agent that you prescribe. Which of the following answers is FALSE?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "The change from ciprofloxacin to norfloxacin would have been correct, according to the results of the antibiogram.",
+    "opb": "Cotrimoxazole was being used as a prophylaxis.",
+    "opc": "The choice of fosfomycin constitutes a targeted treatment.",
+    "opd": "The choice of ciprofloxacin constitutes an empirical treatment.",
+    "ope": "The change from ciprofloxacin to fosfomycin was correct, according to the results of the antibiogram."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fluoroquinolones",
+        "Escherichia coli"
+      ],
+      [
+        "Ciprofloxacin",
+        "Escherichia coli"
+      ],
+      [
+        "Escherichia coli",
+        "Communicable Diseases"
+      ],
+      [
+        "Trimethoprim-Sulfamethoxazole Combination",
+        "Urinary symptoms"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Fluoroquinolones)-TREATS->(Escherichia coli)",
+      "(Ciprofloxacin)-TREATS->(Escherichia coli)",
+      "(Escherichia coli)-CAUSES->(Communicable Diseases)",
+      "(Trimethoprim-Sulfamethoxazole Combination)-TREATS->(Urinary symptoms)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Urinary symptoms",
+        "Late pregnancy",
+        "Genes",
+        "Trimethoprim-Sulfamethoxazole Combination"
+      ],
+      [
+        "Urinary symptoms",
+        "Functional disorder",
+        "Genes",
+        "Trimethoprim-Sulfamethoxazole Combination"
+      ],
+      [
+        "Urinary tract infection",
+        "Microbial Biofilms",
+        "Ciprofloxacin"
+      ],
+      [
+        "Urinary tract infection",
+        "Microbial Biofilms",
+        "Ciprofloxacin"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Urinary symptoms)-ASSOCIATED_WITH->(Late pregnancy)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)",
+      "(Urinary symptoms)-MANIFESTATION_OF->(Functional disorder)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)",
+      "(Urinary tract infection)-PROCESS_OF->(Microbial Biofilms)-LOCATION_OF->(Ciprofloxacin)",
+      "(Urinary tract infection)-ASSOCIATED_WITH->(Microbial Biofilms)-LOCATION_OF->(Ciprofloxacin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ciprofloxacin)-TREATS->(Escherichia coli)",
+      "(Fluoroquinolones)-TREATS->(Escherichia coli)",
+      "(Trimethoprim-Sulfamethoxazole Combination)-TREATS->(Urinary symptoms)",
+      "(Escherichia coli)-CAUSES->(Communicable Diseases)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Ciprofloxacin is a fluoroquinolone\" -> \"Escherichia coli showed resistance to quinolones\" -> \"Ciprofloxacin is not effective for this infection\" -> \"Changing to norfloxacin would not be correct\" -> 80%",
+    "CHAIN: \"Cotrimoxazole was prescribed for two years\" -> \"Patient has recurrent urinary symptoms\" -> \"Cotrimoxazole is not effective due to resistance\" -> \"Cotrimoxazole was likely used as prophylaxis\" -> 90%",
+    "CHAIN: \"Fosfomycin is effective against the isolated E. coli\" -> \"Fosfomycin is a targeted treatment\" -> \"Choice of fosfomycin is appropriate\" -> 95%",
+    "CHAIN: \"Ciprofloxacin was prescribed empirically\" -> \"Empirical treatment is based on common pathogens\" -> \"Ciprofloxacin is commonly used for UTIs\" -> \"Choice of ciprofloxacin was an empirical treatment\" -> 90%",
+    "CHAIN: \"Ciprofloxacin was changed to fosfomycin\" -> \"Fosfomycin is sensitive according to antibiogram\" -> \"Change was appropriate based on culture results\" -> 95%"
+  ],
+  "enhanced_information": "Ciprofloxacin is a fluoroquinolone, and the urine culture showed resistance to quinolones, indicating that ciprofloxacin would not be effective for this infection. Therefore, the change from ciprofloxacin to norfloxacin would not be correct, as norfloxacin is also a fluoroquinolone and would similarly be ineffective. Cotrimoxazole was likely used as prophylaxis given the patient's recurrent urinary symptoms and the resistance observed. Fosfomycin is effective against the isolated E. coli, making its choice a targeted treatment. Ciprofloxacin was prescribed empirically, as it is commonly used for UTIs based on typical pathogens. The change from ciprofloxacin to fosfomycin was appropriate based on the culture results showing sensitivity. Thus, the false statement is that the change from ciprofloxacin to norfloxacin would have been correct, as both are ineffective against the resistant E. coli.",
+  "analysis": "In this case, we have a 69-year-old woman with recurrent urinary tract infections (UTIs) caused by E. coli, which has shown resistance to multiple antibiotics including cotrimoxazole and quinolones (ciprofloxacin). The key points to consider are: 1) The change from ciprofloxacin to norfloxacin would not be appropriate because both are fluoroquinolones and the organism is resistant to this class of antibiotics. 2) Cotrimoxazole was likely used as prophylaxis given the patient's recurrent symptoms and the resistance pattern. 3) The choice of fosfomycin is indeed a targeted treatment since the organism is sensitive to it. 4) Ciprofloxacin was prescribed empirically, which is standard practice for UTIs. 5) The change from ciprofloxacin to fosfomycin is correct based on the antibiogram results. Therefore, the false statement is that the change from ciprofloxacin to norfloxacin would have been correct, as both are ineffective against the resistant E. coli.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      2,
+      0,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      33.33333333333333,
+      0.0,
+      16.666666666666664,
+      0.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

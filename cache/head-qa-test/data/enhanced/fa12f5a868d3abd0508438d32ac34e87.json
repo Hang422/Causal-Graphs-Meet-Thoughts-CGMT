@@ -1,0 +1,86 @@
+{
+  "question": "A 50-year-old man with a chronic bronchitis who was admitted for a pneumonic episode with a blood culture positive for Streptococcus pneumoniae, with a CMI at penicillin of 0.0125 mg / l. Treatment with 2 million penicillin is started every 4 hours. On the fifth day it continues with a fever of 38ºC. Which of the following decisions do you think is right?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "I would change the treatment to ceftriaxone because of its greater efficacy.",
+    "opb": "I would add a quinolone to the treatment.",
+    "opc": "I would switch to amoxicillin / clavulanic acid.",
+    "opd": "It would rule out the presence of a pleural empyema.",
+    "ope": "I would continue with the same treatment, assuming that it is simply a problem of time."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fever",
+        "Disease",
+        "Empyema, Pleural"
+      ],
+      [
+        "Fever",
+        "Respiratory Distress Syndrome, Adult",
+        "Empyema, Pleural"
+      ],
+      [
+        "Fever",
+        "Bacteremia",
+        "Empyema, Pleural"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Empyema, Pleural)",
+      "(Fever)-CAUSES->(Respiratory Distress Syndrome, Adult)-COMPLICATES->(Empyema, Pleural)",
+      "(Fever)-CAUSES->(Bacteremia)-COMPLICATES->(Empyema, Pleural)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Empyema, Pleural)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Streptococcus pneumoniae infection -> penicillin treatment -> CMI at penicillin of 0.0125 mg/l -> fever persists on the fifth day -> 50% CHAIN: Streptococcus pneumoniae infection -> penicillin treatment -> CMI at penicillin of 0.0125 mg/l -> fever persists on the fifth day -> consider changing antibiotic -> 60% CHAIN: Streptococcus pneumoniae infection -> penicillin treatment -> CMI at penicillin of 0.0125 mg/l -> fever persists on the fifth day -> consider changing to ceftriaxone for greater efficacy -> 70% CHAIN: Streptococcus pneumoniae infection -> penicillin treatment -> CMI at penicillin of 0.0125 mg/l -> fever persists on the fifth day -> consider adding a quinolone to the treatment -> 50% CHAIN: Streptococcus pneumoniae infection -> penicillin treatment -> CMI at penicillin of 0.0125 mg/l -> fever persists on the fifth day -> consider switching to amoxicillin/clavulanic acid -> 60% CHAIN: Streptococcus pneumoniae infection -> penicillin treatment -> CMI at penicillin of 0.0125 mg/l -> fever persists on the fifth day -> rule out pleural empyema -> 70% CHAIN: Streptococcus pneumoniae infection -> penicillin treatment -> CMI at penicillin of 0.0125 mg/l -> fever persists on the fifth day -> continue with the same treatment, assuming it's a matter of time -> 50%"
+  ],
+  "enhanced_information": "In a 50-year-old man with chronic bronchitis and a pneumonic episode caused by Streptococcus pneumoniae with a CMI at penicillin of 0.0125 mg/l, continuing to have a fever on the fifth day raises concerns. Considering the options, it would be appropriate to rule out the presence of pleural empyema before making any changes to the antibiotic treatment.",
+  "analysis": "In this case, the patient is a 50-year-old man with chronic bronchitis and a pneumonic episode caused by Streptococcus pneumoniae. Despite being on penicillin treatment, he continues to have a fever on the fifth day. Given this scenario, it is crucial to rule out the presence of pleural empyema before considering changing the antibiotic regimen. Pleural empyema can be a complication of pneumonia and may require specific management. Therefore, the priority should be to investigate this possibility before making any treatment adjustments.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": []
+}

@@ -19,7 +19,7 @@ class PathScore:
 
 
 class EnhancedGraphEnhancer:
-    def __init__(self, keep_ratio: float = 0.6):
+    def __init__(self, keep_ratio: float = 0.65):
         self.logger = logging.getLogger(__name__)
         self.entity_processor = EntityProcessor()
         self.keep_ratio = keep_ratio

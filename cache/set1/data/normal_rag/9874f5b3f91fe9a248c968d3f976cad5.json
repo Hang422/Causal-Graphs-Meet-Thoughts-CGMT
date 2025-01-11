@@ -1,0 +1,117 @@
+{
+  "question": "The determination of the concentration of one of the following proteins in serum can give us information of a possible hemolytic anemia. Indicate which:",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Transferrin",
+    "opb": "Hemosiderin.",
+    "opc": "Ceruloplasmin.",
+    "opd": "Ferritin.",
+    "ope": "Haptoglobin."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Anemia, Hemolytic",
+        "Pathogenesis",
+        "Genes",
+        "Trimethoprim-Sulfamethoxazole Combination",
+        "Hemolysis (disorder)"
+      ],
+      [
+        "Anemia, Hemolytic",
+        "Pathogenesis",
+        "BMP1|PRCP|PGPEP1",
+        "Trimethoprim-Sulfamethoxazole Combination",
+        "Hemolysis (disorder)"
+      ],
+      [
+        "Ceruloplasmin",
+        "Cells",
+        "Copper Transport Proteins"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "CAUSES"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "CAUSES"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Anemia, Hemolytic)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)-CAUSES->(Hemolysis (disorder))",
+      "(Anemia, Hemolytic)-ISA->(Pathogenesis)-ASSOCIATED_WITH->(BMP1|PRCP|PGPEP1)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)-CAUSES->(Hemolysis (disorder))",
+      "(Ceruloplasmin)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Copper Transport Proteins)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ceruloplasmin)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Copper Transport Proteins)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Haptoglobin\" -> \"binds free hemoglobin\" -> \"decreased levels in hemolytic anemia\" -> \"indicates hemolysis\" -> 95%",
+    "CHAIN: \"Transferrin\" -> \"binds iron\" -> \"not directly related to hemolysis\" -> \"less informative for hemolytic anemia\" -> 60%",
+    "CHAIN: \"Hemosiderin\" -> \"iron storage form\" -> \"increased in chronic hemolysis\" -> \"not a direct marker for acute hemolytic anemia\" -> 70%",
+    "CHAIN: \"Ceruloplasmin\" -> \"copper transport protein\" -> \"not related to hemolytic anemia\" -> \"less informative\" -> 50%",
+    "CHAIN: \"Ferritin\" -> \"iron storage protein\" -> \"not specific for hemolytic anemia\" -> \"less informative\" -> 55%"
+  ],
+  "enhanced_information": "Haptoglobin is a protein that binds free hemoglobin released during hemolysis. In cases of hemolytic anemia, haptoglobin levels decrease as it binds to the excess free hemoglobin, making it a direct indicator of hemolysis. Transferrin, while important for iron transport, is not directly related to hemolytic processes and is less informative in this context. Hemosiderin, an iron storage form, may increase in chronic hemolysis but is not a direct marker for acute hemolytic anemia. Ceruloplasmin is primarily involved in copper transport and does not provide relevant information regarding hemolytic anemia. Ferritin, as an iron storage protein, is also not specific to hemolytic anemia. Therefore, the most relevant protein for indicating possible hemolytic anemia is haptoglobin.",
+  "analysis": "Haptoglobin is a protein that binds free hemoglobin released into the bloodstream during hemolysis. In cases of hemolytic anemia, haptoglobin levels are typically decreased because it is consumed as it binds to the free hemoglobin. The other proteins listed (transferrin, hemosiderin, ceruloplasmin, and ferritin) do not provide direct information about hemolytic processes in the same way that haptoglobin does. Therefore, the determination of haptoglobin concentration is the most relevant for diagnosing possible hemolytic anemia.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      0.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Magnetic Resonance Angiography DIAGNOSES Middle cerebral artery stenosis",
+    "Estimated Glomerular Filtration Rate DIAGNOSES Disease Progression",
+    "Transcranial Magnetic Stimulation, Repetitive TREATS Anxiety symptoms",
+    "Pathogenesis ASSOCIATED_WITH Ceruloplasmin",
+    "Ferritin level PREDISPOSES Anemia",
+    "Laboratory studies DIAGNOSES Anemia, Hemolytic",
+    "Ferritin ASSOCIATED_WITH Anemia",
+    "Adrenal Glands LOCATION_OF Very long chain fatty acid",
+    "Serum iron DIAGNOSES Anemia, Hemolytic",
+    "Ichthyosis Vulgaris PREDISPOSES Dermatitis, Atopic"
+  ]
+}

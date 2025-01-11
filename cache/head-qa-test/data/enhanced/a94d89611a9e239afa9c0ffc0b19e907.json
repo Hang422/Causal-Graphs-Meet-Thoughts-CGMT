@@ -1,0 +1,112 @@
+{
+  "question": "Among the disorders that can cause a hemorrhage is NOT found:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Antithrombin III deficiency.",
+    "opb": "Vitamin K deficiency",
+    "opc": "Liver disease",
+    "opd": "Thrombocytopenia"
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Antithrombin III Deficiency",
+        "Thrombosis"
+      ],
+      [
+        "Thrombosis",
+        "Hemorrhage"
+      ],
+      [
+        "Blood Coagulation Factor",
+        "Hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Antithrombin III Deficiency)-CAUSES->(Thrombosis)",
+      "(Thrombosis)-COMPLICATES->(Hemorrhage)",
+      "(Blood Coagulation Factor)-CAUSES->(Hemorrhage)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Liver diseases",
+        "Pathogenesis",
+        "Blood Coagulation Factor"
+      ],
+      [
+        "Liver diseases",
+        "Complication",
+        "Blood Coagulation Factor"
+      ],
+      [
+        "Clot formation",
+        "Hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES"
+      ]
+    ],
+    "paths": [
+      "(Liver diseases)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Blood Coagulation Factor)",
+      "(Liver diseases)-CAUSES->(Complication)-ASSOCIATED_WITH->(Blood Coagulation Factor)",
+      "(Clot formation)-DIAGNOSES->(Hemorrhage)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Antithrombin III Deficiency)-CAUSES->(Thrombosis)",
+      "(Liver diseases)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Blood Coagulation Factor)",
+      "(Liver diseases)-CAUSES->(Complication)-ASSOCIATED_WITH->(Blood Coagulation Factor)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Antithrombin III deficiency -> increased risk of thrombosis -> not a direct cause of hemorrhage -> 95% CHAIN: Vitamin K deficiency -> impaired blood clotting -> increased risk of bleeding -> not a direct cause of hemorrhage -> 90% CHAIN: Liver disease -> decreased production of clotting factors -> increased risk of bleeding -> not a direct cause of hemorrhage -> 85% CHAIN: Thrombocytopenia -> low platelet count -> impaired clot formation -> increased risk of bleeding -> not a direct cause of hemorrhage -> 95%"
+  ],
+  "enhanced_information": "Among the disorders that can cause a hemorrhage, Antithrombin III deficiency is NOT found. Antithrombin III deficiency increases the risk of thrombosis, not hemorrhage. Evidence paths confirm this by showing the association of Antithrombin III deficiency with thrombosis, not hemorrhage.",
+  "analysis": "Antithrombin III deficiency is associated with an increased risk of thrombosis, not hemorrhage. Vitamin K deficiency, liver disease, and thrombocytopenia are known to cause hemorrhage.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

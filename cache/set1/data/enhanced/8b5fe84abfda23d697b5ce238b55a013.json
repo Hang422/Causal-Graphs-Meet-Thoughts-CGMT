@@ -1,0 +1,120 @@
+{
+  "question": "Infant of 5 months of age fed with exclusive breastfeeding until the moment that for maternal work motive is introduced bottle with formula of beginning and a few days ago it is added with cereals with and without gluten. As a family history, a 28-year-old asthmatic mother, a healthy 32-year-old father and a 5-year-old brother with celiac disease and atopic dermatitis stood out. As a personal history, pregnancy without incidences and delivery by caesarean section, having been offered a bottle with formula to start the first day of life in maternity. From a few days ago, she began with abdominal distension, diarrheic stools, rejection of feeds, perioral erythema with longer duration in time after taking the bottle and lately vomiting after ingestion, tolerating the breast well. What is your most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Celiac Disease.",
+    "opb": "Acute gastroenteritis",
+    "opc": "Allergy to the proteins of cow's milk.",
+    "opd": "Allergy to baby bottles."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Diet, Formula",
+        "Obesity",
+        "Disease",
+        "Acute gastroenteritis"
+      ],
+      [
+        "Diet, Formula",
+        "Acute hemorrhage",
+        "Disease",
+        "Acute gastroenteritis"
+      ],
+      [
+        "Vomiting",
+        "Disease",
+        "Acute gastroenteritis"
+      ],
+      [
+        "Vomiting",
+        "Infection",
+        "Acute gastroenteritis"
+      ],
+      [
+        "Vomiting",
+        "Symptoms",
+        "Acute gastroenteritis"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Diet, Formula)-TREATS->(Obesity)-CAUSES->(Disease)-CAUSES->(Acute gastroenteritis)",
+      "(Diet, Formula)-TREATS->(Acute hemorrhage)-PREDISPOSES->(Disease)-CAUSES->(Acute gastroenteritis)",
+      "(Vomiting)-CAUSES->(Disease)-CAUSES->(Acute gastroenteritis)",
+      "(Vomiting)-CAUSES->(Infection)-CAUSES->(Acute gastroenteritis)",
+      "(Vomiting)-CAUSES->(Symptoms)-CAUSES->(Acute gastroenteritis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Diet, Formula)-TREATS->(Obesity)-CAUSES->(Disease)-CAUSES->(Acute gastroenteritis)",
+      "(Diet, Formula)-TREATS->(Acute hemorrhage)-PREDISPOSES->(Disease)-CAUSES->(Acute gastroenteritis)",
+      "(Vomiting)-CAUSES->(Symptoms)-CAUSES->(Acute gastroenteritis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"5-month-old infant\" -> \"recent introduction of formula and cereals\" -> \"abdominal distension and diarrheic stools\" -> \"rejection of feeds and perioral erythema\" -> \"vomiting after ingestion of formula\" -> \"tolerates breast milk well\" -> \"possible allergy to cow's milk proteins\" -> 85%",
+    "CHAIN: \"5-month-old infant\" -> \"family history of celiac disease\" -> \"recent introduction of gluten-containing cereals\" -> \"abdominal distension and diarrheic stools\" -> \"rejection of feeds and perioral erythema\" -> \"vomiting after ingestion of formula\" -> \"tolerates breast milk well\" -> \"possible celiac disease\" -> 70%",
+    "CHAIN: \"5-month-old infant\" -> \"recent introduction of formula\" -> \"abdominal distension and diarrheic stools\" -> \"rejection of feeds and perioral erythema\" -> \"vomiting after ingestion of formula\" -> \"symptoms consistent with acute gastroenteritis\" -> \"but also possible allergy\" -> \"unclear diagnosis\" -> 60%",
+    "CHAIN: \"5-month-old infant\" -> \"recent introduction of formula and cereals\" -> \"abdominal distension and diarrheic stools\" -> \"rejection of feeds and perioral erythema\" -> \"vomiting after ingestion of formula\" -> \"possible allergy to baby bottles\" -> \"less likely due to symptoms\" -> 50%"
+  ],
+  "enhanced_information": "The infant's symptoms of abdominal distension, diarrheic stools, rejection of feeds, perioral erythema, and vomiting after ingestion of formula, while tolerating breast milk well, suggest a likely allergy to cow's milk proteins. The family history of celiac disease and the recent introduction of gluten-containing cereals could raise concern for celiac disease; however, the acute nature of the symptoms and the infant's tolerance of breast milk make this less likely. Acute gastroenteritis is a possibility, but the specific symptoms following formula introduction point more towards a food allergy rather than an infectious cause. Allergy to baby bottles is unlikely given the symptom profile. Therefore, the most supported diagnosis is an allergy to cow's milk proteins.",
+  "analysis": "The infant's symptoms of abdominal distension, diarrheic stools, rejection of feeds, perioral erythema, and vomiting after ingestion of formula, while tolerating breast milk well, strongly suggest an allergy to cow's milk proteins. The acute onset of these symptoms following the introduction of formula and cereals, combined with the family history of atopic conditions (asthma, celiac disease, and atopic dermatitis), supports this diagnosis. Celiac disease is less likely due to the immediate nature of the symptoms and the infant's ability to tolerate breast milk, which does not contain cow's milk proteins. Acute gastroenteritis could be a consideration, but the symptom pattern aligns more closely with a food allergy. Allergy to baby bottles is not supported by the symptom profile. Therefore, the most likely diagnosis is an allergy to the proteins of cow's milk.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      100.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

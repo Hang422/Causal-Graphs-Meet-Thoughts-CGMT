@@ -1,0 +1,196 @@
+{
+  "question": "Which of the drugs reported produces tachycardia and palpitations as adverse effects ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Atenolol.",
+    "opb": "Lidocaine",
+    "opc": "Metamizole",
+    "opd": "Salbutamol"
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Analgesics",
+        "Disease",
+        "Tachycardia"
+      ],
+      [
+        "Analgesics",
+        "Hypertensive disease",
+        "Tachycardia"
+      ],
+      [
+        "Analgesics",
+        "Myocardial Infarction",
+        "Tachycardia"
+      ],
+      [
+        "Antipyretics",
+        "Disease",
+        "Tachycardia"
+      ],
+      [
+        "Antipyretics",
+        "Syndrome",
+        "Tachycardia"
+      ],
+      [
+        "Antipyretics",
+        "Subarachnoid Hemorrhage",
+        "Tachycardia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Analgesics)-CAUSES->(Disease)-CAUSES->(Tachycardia)",
+      "(Analgesics)-CAUSES->(Hypertensive disease)-CAUSES->(Tachycardia)",
+      "(Analgesics)-TREATS->(Myocardial Infarction)-CAUSES->(Tachycardia)",
+      "(Antipyretics)-PREVENTS->(Disease)-CAUSES->(Tachycardia)",
+      "(Antipyretics)-TREATS->(Syndrome)-CAUSES->(Tachycardia)",
+      "(Antipyretics)-TREATS->(Subarachnoid Hemorrhage)-CAUSES->(Tachycardia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Lidocaine",
+        "Corneal epithelial cell",
+        "Body tissue",
+        "Local anesthesia"
+      ],
+      [
+        "Lidocaine",
+        "TNFRSF10B gene|TNFRSF10B",
+        "Myocardium",
+        "Local anesthesia"
+      ],
+      [
+        "Cardiovascular system",
+        "Pharmacological Treatment",
+        "Tachycardia"
+      ],
+      [
+        "Cardiovascular system",
+        "Pharmacological Treatment",
+        "Tachycardia"
+      ],
+      [
+        "Dipyrone",
+        "Analgesics, Non-Narcotic",
+        "Analgesics"
+      ],
+      [
+        "Dipyrone",
+        "Analgesics, Non-Narcotic",
+        "Analgesics"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ],
+      [
+        "LOCATION_OF",
+        "TREATS"
+      ],
+      [
+        "ISA",
+        "ISA"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Lidocaine)-PART_OF->(Corneal epithelial cell)-PART_OF->(Body tissue)-LOCATION_OF->(Local anesthesia)",
+      "(Lidocaine)-INTERACTS_WITH->(TNFRSF10B gene|TNFRSF10B)-PART_OF->(Myocardium)-LOCATION_OF->(Local anesthesia)",
+      "(Cardiovascular system)-LOCATION_OF->(Pharmacological Treatment)-PREDISPOSES->(Tachycardia)",
+      "(Cardiovascular system)-LOCATION_OF->(Pharmacological Treatment)-TREATS->(Tachycardia)",
+      "(Dipyrone)-ISA->(Analgesics, Non-Narcotic)-ISA->(Analgesics)",
+      "(Dipyrone)-ISA->(Analgesics, Non-Narcotic)-INTERACTS_WITH->(Analgesics)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Analgesics)-CAUSES->(Disease)-CAUSES->(Tachycardia)",
+      "(Analgesics)-CAUSES->(Hypertensive disease)-CAUSES->(Tachycardia)",
+      "(Analgesics)-TREATS->(Myocardial Infarction)-CAUSES->(Tachycardia)",
+      "(Antipyretics)-PREVENTS->(Disease)-CAUSES->(Tachycardia)",
+      "(Antipyretics)-TREATS->(Syndrome)-CAUSES->(Tachycardia)",
+      "(Antipyretics)-TREATS->(Subarachnoid Hemorrhage)-CAUSES->(Tachycardia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Atenolol\" -> \"beta-blocker medication\" -> \"reduces heart rate\" -> \"unlikely to cause tachycardia\" -> 90%",
+    "CHAIN: \"Lidocaine\" -> \"local anesthetic\" -> \"can cause cardiovascular effects\" -> \"possible tachycardia\" -> 70%",
+    "CHAIN: \"Metamizole\" -> \"analgesic and antipyretic\" -> \"not commonly associated with tachycardia\" -> \"unlikely to cause palpitations\" -> 85%",
+    "CHAIN: \"Salbutamol\" -> \"beta-agonist medication\" -> \"increases heart rate\" -> \"can cause tachycardia and palpitations\" -> 95%"
+  ],
+  "enhanced_information": "Atenolol is a beta-blocker that reduces heart rate and is unlikely to cause tachycardia or palpitations. Lidocaine, a local anesthetic, can have cardiovascular effects, including possible tachycardia, but this is less common. Metamizole, an analgesic and antipyretic, is not commonly associated with tachycardia or palpitations. Salbutamol, a beta-agonist, is known to increase heart rate and can cause tachycardia and palpitations. Therefore, the drugs that produce tachycardia and palpitations as adverse effects are Lidocaine and Salbutamol.",
+  "analysis": "In evaluating the options provided, we consider the pharmacological effects and known adverse effects of each drug. Atenolol is a beta-blocker that typically decreases heart rate and is not associated with tachycardia or palpitations. Lidocaine, while it can have cardiovascular effects, is not commonly known to cause significant tachycardia or palpitations in most clinical scenarios. Metamizole is primarily an analgesic and antipyretic and does not have a strong association with these cardiovascular effects. Salbutamol, a beta-agonist used primarily for asthma and other respiratory conditions, is well-documented to cause tachycardia and palpitations due to its mechanism of action on beta-adrenergic receptors. Therefore, the most likely correct answer, based on established medical knowledge, is Salbutamol.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      3,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      40.0,
+      60.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

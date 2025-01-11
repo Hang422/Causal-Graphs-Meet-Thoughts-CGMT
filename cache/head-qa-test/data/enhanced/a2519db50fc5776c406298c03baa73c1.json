@@ -1,0 +1,178 @@
+{
+  "question": "Question linked to image No. 1 In the same patient, from the observation of the chest x-ray, it can be deduced:",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "That the patient has pulmonary metastases.",
+    "opb": "Suspected nosocomial pneumonia.",
+    "opc": "A failure (dehiscence) of the colonic anastomosis should be considered.",
+    "opd": "Suspicion of PET",
+    "ope": "You have an infection of the surgical wound."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Radiography, Thoracic",
+        "Infection",
+        "Nosocomial pneumonia"
+      ],
+      [
+        "Radiography, Thoracic",
+        "Pneumonia",
+        "Nosocomial pneumonia"
+      ],
+      [
+        "Radiography, Thoracic",
+        "Respiratory Distress Syndrome, Adult",
+        "Nosocomial pneumonia"
+      ],
+      [
+        "Radiography, Thoracic",
+        "Disease",
+        "Dehiscence"
+      ],
+      [
+        "Large intestine anastomosis",
+        "Dehiscence"
+      ],
+      [
+        "Purulent discharge",
+        "Exanthema",
+        "Communicable Diseases"
+      ],
+      [
+        "Purulent discharge",
+        "Bacterial Infections",
+        "Communicable Diseases"
+      ],
+      [
+        "Purulent discharge",
+        "Infection",
+        "Communicable Diseases"
+      ],
+      [
+        "Operative Surgical Procedures",
+        "Communicable Diseases"
+      ],
+      [
+        "Erythema",
+        "Infection",
+        "Communicable Diseases"
+      ],
+      [
+        "Erythema",
+        "Symptoms",
+        "Communicable Diseases"
+      ],
+      [
+        "Erythema",
+        "Disease",
+        "Communicable Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREVENTS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Radiography, Thoracic)-CAUSES->(Infection)-CAUSES->(Nosocomial pneumonia)",
+      "(Radiography, Thoracic)-CAUSES->(Pneumonia)-CAUSES->(Nosocomial pneumonia)",
+      "(Radiography, Thoracic)-CAUSES->(Respiratory Distress Syndrome, Adult)-COMPLICATES->(Nosocomial pneumonia)",
+      "(Radiography, Thoracic)-CAUSES->(Disease)-PREDISPOSES->(Dehiscence)",
+      "(Large intestine anastomosis)-PREVENTS->(Dehiscence)",
+      "(Purulent discharge)-CAUSES->(Exanthema)-CAUSES->(Communicable Diseases)",
+      "(Purulent discharge)-PREDISPOSES->(Bacterial Infections)-CAUSES->(Communicable Diseases)",
+      "(Purulent discharge)-MANIFESTATION_OF->(Infection)-CAUSES->(Communicable Diseases)",
+      "(Operative Surgical Procedures)-CAUSES->(Communicable Diseases)",
+      "(Erythema)-CAUSES->(Infection)-CAUSES->(Communicable Diseases)",
+      "(Erythema)-CAUSES->(Symptoms)-CAUSES->(Communicable Diseases)",
+      "(Erythema)-PREDISPOSES->(Disease)-CAUSES->(Communicable Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Radiography, Thoracic)-CAUSES->(Disease)-PREDISPOSES->(Dehiscence)",
+      "(Large intestine anastomosis)-PREVENTS->(Dehiscence)",
+      "(Operative Surgical Procedures)-CAUSES->(Communicable Diseases)",
+      "(Radiography, Thoracic)-CAUSES->(Infection)-CAUSES->(Nosocomial pneumonia)",
+      "(Radiography, Thoracic)-CAUSES->(Pneumonia)-CAUSES->(Nosocomial pneumonia)",
+      "(Radiography, Thoracic)-CAUSES->(Respiratory Distress Syndrome, Adult)-COMPLICATES->(Nosocomial pneumonia)",
+      "(Erythema)-CAUSES->(Symptoms)-CAUSES->(Communicable Diseases)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Presence of multiple nodules in the lungs on chest x-ray\" -> \"Consideration of pulmonary metastases\" -> 70% CHAIN: \"New infiltrate on chest x-ray\" -> \"Suspicion of nosocomial pneumonia\" -> 80% CHAIN: \"Abnormal gas pattern around the colonic anastomosis on chest x-ray\" -> \"Consideration of colonic anastomosis dehiscence\" -> 75% CHAIN: \"Detection of abnormal uptake on PET scan\" -> \"Suspicion of PET activity\" -> 85% CHAIN: \"Erythema, warmth, and purulent discharge at the surgical wound site\" -> \"Possibility of infection of the surgical wound\" -> 70%"
+  ],
+  "enhanced_information": "The observation of multiple nodules in the lungs on chest x-ray suggests consideration of pulmonary metastases. Suspected nosocomial pneumonia can be inferred from the presence of a new infiltrate on the chest x-ray. The abnormal gas pattern around the colonic anastomosis on the chest x-ray raises concern for colonic anastomosis dehiscence. PET scan abnormal uptake indicates suspicion of PET activity. Erythema, warmth, and purulent discharge at the surgical wound site point to a possible infection of the surgical wound.",
+  "analysis": "The observation of multiple nodules in the lungs on chest x-ray suggests consideration of pulmonary metastases. Suspected nosocomial pneumonia can be inferred from the presence of a new infiltrate on the chest x-ray. However, the presence of multiple nodules is more indicative of metastases than a single infiltrate. Colonic anastomosis dehiscence would typically present with specific findings related to the surgical site rather than on a chest x-ray. PET scan abnormal uptake would not be directly visible on a chest x-ray. Given the information provided, the most likely correct option is that the patient has pulmonary metastases.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

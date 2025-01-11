@@ -1,0 +1,162 @@
+{
+  "question": "Ophthalmological ointments:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "They may contain solid particles but only with a controlled size.",
+    "opb": "They do not need to be sterile.",
+    "opc": "They require the test of pyrogens.",
+    "opd": "They can not be W / O emulsions.",
+    "ope": "Always your excipients must be fatty"
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Eye",
+        "COMPLEMENT FACTOR H|CFH",
+        "Cells",
+        "Pyrogens"
+      ],
+      [
+        "Eye",
+        "COMPLEMENT FACTOR H|CFH",
+        "Phagocytes",
+        "Pyrogens"
+      ],
+      [
+        "Fever",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "Pyrogens"
+      ],
+      [
+        "Fever",
+        "Fetal Growth Retardation",
+        "neuropeptide Y|NPY",
+        "Phagocytes",
+        "Pyrogens"
+      ],
+      [
+        "Adverse reactions",
+        "bevacizumab",
+        "macrophage",
+        "Pyrogens"
+      ],
+      [
+        "Adverse reactions",
+        "bevacizumab",
+        "Endothelial Cells",
+        "Pyrogens"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Eye)-LOCATION_OF->(COMPLEMENT FACTOR H|CFH)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Pyrogens)",
+      "(Eye)-LOCATION_OF->(COMPLEMENT FACTOR H|CFH)-INTERACTS_WITH->(Phagocytes)-LOCATION_OF->(Pyrogens)",
+      "(Fever)-MANIFESTATION_OF->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Pyrogens)",
+      "(Fever)-CAUSES->(Fetal Growth Retardation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Phagocytes)-LOCATION_OF->(Pyrogens)",
+      "(Adverse reactions)-ASSOCIATED_WITH->(bevacizumab)-INTERACTS_WITH->(macrophage)-LOCATION_OF->(Pyrogens)",
+      "(Adverse reactions)-ASSOCIATED_WITH->(bevacizumab)-INTERACTS_WITH->(Endothelial Cells)-LOCATION_OF->(Pyrogens)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Adverse reactions)-ASSOCIATED_WITH->(bevacizumab)-INTERACTS_WITH->(macrophage)-LOCATION_OF->(Pyrogens)",
+      "(Adverse reactions)-ASSOCIATED_WITH->(bevacizumab)-INTERACTS_WITH->(Endothelial Cells)-LOCATION_OF->(Pyrogens)",
+      "(Eye)-LOCATION_OF->(COMPLEMENT FACTOR H|CFH)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Pyrogens)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Ophthalmological ointments must be sterile -> They are applied to sensitive eye tissues -> Contamination can lead to infections -> Therefore, they need to be sterile -> 95%",
+    "CHAIN: Ophthalmological ointments may contain solid particles -> These particles must be of controlled size -> To avoid irritation or damage to the eye -> Therefore, they may contain solid particles but only with a controlled size -> 90%",
+    "CHAIN: Ophthalmological ointments are used in the eye -> They must be free from pyrogens to prevent fever -> Pyrogens can cause adverse reactions -> Therefore, they require the test of pyrogens -> 85%",
+    "CHAIN: Ophthalmological ointments can be formulated in various ways -> W/O emulsions are one type of formulation -> They can be used in ophthalmic preparations -> Therefore, they can be W/O emulsions -> 80%",
+    "CHAIN: Excipients in ophthalmological ointments can vary -> They do not always have to be fatty -> Some formulations may use aqueous or other types of excipients -> Therefore, always your excipients must be fatty is incorrect -> 75%"
+  ],
+  "enhanced_information": "Ophthalmological ointments must be sterile to prevent infections when applied to sensitive eye tissues. They may contain solid particles, but these must be of controlled size to avoid irritation or damage to the eye. Additionally, ophthalmological ointments require testing for pyrogens to ensure they are free from substances that could cause adverse reactions, such as fever. Contrary to some formulations, ophthalmological ointments can be W/O emulsions, and excipients do not always have to be fatty; they can also include aqueous or other types of excipients. Therefore, the correct statements are that they must be sterile, may contain controlled solid particles, require pyrogen testing, and can be formulated in various ways, including W/O emulsions.",
+  "analysis": "Ophthalmological ointments are typically required to be sterile due to their application in the eye, which is a sensitive area prone to infections. They may contain solid particles, but these must be controlled in size to avoid irritation or damage to the ocular surface. The requirement for sterility and the potential for pyrogens (fever-inducing substances) necessitates that these ointments undergo testing for pyrogens. While W/O (water-in-oil) emulsions can be used in ophthalmic formulations, they are not the only type of emulsion available, and excipients can vary widely, not necessarily being fatty. Therefore, the most accurate statement is that they require the test of pyrogens, making option opc the best choice.",
+  "answer": "opc",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      3,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      100.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": [
+    "Lipids ASSOCIATED_WITH Uveitis",
+    "delivery method TREATS Ocular surface disease",
+    "Bacillus species ISA Enterobacteriaceae",
+    "borogluconate, calcium salt TREATS Disease",
+    "Lipids PREDISPOSES Ocular surface disease",
+    "Brachytherapy TREATS Hypertension, Renovascular",
+    "Vaccines TREATS Ocular surface disease",
+    "Allergic sensitization PREDISPOSES Ocular surface disease",
+    "Complication COMPLICATES Ocular surface disease",
+    "Therapeutic procedure COMPLICATES Eye diseases",
+    "Inflammation PREDISPOSES [D]Acute retention of urine",
+    "Structure of apex of left ventricle LOCATION_OF Implants",
+    "Oral form acyclovir TREATS Necrotizing keratitis",
+    "Lipopolysaccharides ASSOCIATED_WITH Ocular surface disease",
+    "Urine for culture DIAGNOSES Pyuria"
+  ]
+}

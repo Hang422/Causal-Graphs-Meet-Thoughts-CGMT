@@ -1,0 +1,149 @@
+{
+  "question": "The secretion of GH or growth hormone:",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "It stops at 20 years old.",
+    "opb": "It last for ever.",
+    "opc": "During the day it is greater than at night.",
+    "opd": "It is stimulated by somatostatin.",
+    "ope": "It is stimulated by the substances."
+  },
+  "topic_name": "Biology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hypothalamic structure",
+        "Genes",
+        "Body tissue",
+        "Release (procedure)"
+      ],
+      [
+        "Hypothalamic structure",
+        "Genes",
+        "soft tissue",
+        "Release (procedure)"
+      ],
+      [
+        "Release (procedure)",
+        "Disease",
+        "Sleep, Slow-Wave",
+        "Somatotropin-Releasing Hormone"
+      ],
+      [
+        "Release (procedure)",
+        "Disease",
+        "Sleep, Slow-Wave",
+        "Somatotropin-Releasing Hormone"
+      ],
+      [
+        "Hypothalamic structure",
+        "Somatotropin-Releasing Hormone"
+      ],
+      [
+        "Somatostatin",
+        "T-Lymphocyte",
+        "Nerve",
+        "Release procedure"
+      ],
+      [
+        "Somatostatin",
+        "Cells",
+        "Fascia",
+        "Release procedure"
+      ],
+      [
+        "Release procedure",
+        "Complication",
+        "Somatostatin"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREVENTS",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hypothalamic structure)-LOCATION_OF->(Genes)-PART_OF->(Body tissue)-LOCATION_OF->(Release (procedure))",
+      "(Hypothalamic structure)-LOCATION_OF->(Genes)-PART_OF->(soft tissue)-LOCATION_OF->(Release (procedure))",
+      "(Release (procedure))-CAUSES->(Disease)-MANIFESTATION_OF->(Sleep, Slow-Wave)-ASSOCIATED_WITH->(Somatotropin-Releasing Hormone)",
+      "(Release (procedure))-TREATS->(Disease)-MANIFESTATION_OF->(Sleep, Slow-Wave)-ASSOCIATED_WITH->(Somatotropin-Releasing Hormone)",
+      "(Hypothalamic structure)-LOCATION_OF->(Somatotropin-Releasing Hormone)",
+      "(Somatostatin)-INTERACTS_WITH->(T-Lymphocyte)-PART_OF->(Nerve)-LOCATION_OF->(Release procedure)",
+      "(Somatostatin)-PART_OF->(Cells)-PART_OF->(Fascia)-LOCATION_OF->(Release procedure)",
+      "(Release procedure)-PREVENTS->(Complication)-ASSOCIATED_WITH->(Somatostatin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Release procedure)-PREVENTS->(Complication)-ASSOCIATED_WITH->(Somatostatin)",
+      "(Somatostatin)-INTERACTS_WITH->(T-Lymphocyte)-PART_OF->(Nerve)-LOCATION_OF->(Release procedure)",
+      "(Somatostatin)-PART_OF->(Cells)-PART_OF->(Fascia)-LOCATION_OF->(Release procedure)",
+      "(Hypothalamic structure)-LOCATION_OF->(Somatotropin-Releasing Hormone)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: GH secretion is pulsatile -> GH secretion peaks during deep sleep -> GH secretion decreases with age -> 80% confidence. CHAIN: GH secretion is regulated by the hypothalamus -> Hypothalamus releases GHRH to stimulate GH secretion -> GHRH secretion is higher at night -> 85% confidence. CHAIN: GH secretion is inhibited by somatostatin -> Somatostatin is released in response to high GH levels -> Somatostatin secretion is higher during the day -> 80%"
+  ],
+  "enhanced_information": "GH secretion is pulsatile, peaking during deep sleep and decreasing with age. It is regulated by the hypothalamus, with GHRH secretion higher at night. Somatostatin inhibits GH secretion, with higher levels during the day. Evidence supports the role of somatostatin in GH regulation and its interaction with T-lymphocytes and nerve cells.",
+  "analysis": "GH secretion is pulsatile, peaking during deep sleep and decreasing with age. It is regulated by the hypothalamus, with GHRH secretion higher at night. Somatostatin inhibits GH secretion, with higher levels during the day. The enhanced information aligns with the standard medical knowledge that GH secretion is greater at night due to higher GHRH levels and is inhibited by somatostatin during the day.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

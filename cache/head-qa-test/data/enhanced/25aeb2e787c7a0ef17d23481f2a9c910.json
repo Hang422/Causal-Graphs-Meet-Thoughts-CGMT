@@ -1,0 +1,84 @@
+{
+  "question": "Which of the following actions does insulin exert on liver tissue?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "It inhibits the uptake of glucose.",
+    "opb": "Activates lipolysis.",
+    "opc": "Inhibits the synthesis of fatty acids.",
+    "opd": "Activates glycogen synthesis.",
+    "ope": "Activates glycogenolysis."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Insulin",
+        "Pharmaceutical Preparations",
+        "Fatty Acids"
+      ],
+      [
+        "Insulin",
+        "Pharmaceutical Preparations",
+        "Fatty Acids"
+      ],
+      [
+        "Insulin",
+        "Glucose"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Insulin)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Fatty Acids)",
+      "(Insulin)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Fatty Acids)",
+      "(Insulin)-INTERACTS_WITH->(Glucose)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Insulin)-INTERACTS_WITH->(Glucose)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Insulin\" -> \"Activates glycogen synthesis\" -> 95% CHAIN: \"Insulin\" -> \"Inhibits the synthesis of fatty acids\" -> 90% CHAIN: \"Insulin\" -> \"Inhibits the uptake of glucose\" -> 80% CHAIN: \"Insulin\" -> \"Activates lipolysis\" -> 20% CHAIN: \"Insulin\" -> \"Activates glycogenolysis\" -> 95%"
+  ],
+  "enhanced_information": "Insulin exerts the following actions on liver tissue: It activates glycogen synthesis, inhibits the synthesis of fatty acids, and inhibits the uptake of glucose. This is supported by the interaction of insulin with glucose.",
+  "analysis": "Insulin exerts multiple actions on liver tissue, including activating glycogen synthesis, inhibiting the synthesis of fatty acids, and inhibiting the uptake of glucose. The enhanced information provided aligns with standard medical knowledge regarding insulin's effects on the liver.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

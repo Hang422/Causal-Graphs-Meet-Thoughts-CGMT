@@ -1,0 +1,109 @@
+{
+  "question": "Question linked to image # 5 In this patient, what should be the initial treatment?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Perform a diagnostic angiography plus an associated fibrinolysis.",
+    "opb": "Modify vascular risk factors, physical exercise and medical treatment.",
+    "opc": "The surgery of revascularization by bypass or by endovascular surgery.",
+    "opd": "Perform an urgent embolectomy.",
+    "ope": "Analgesic treatment and decrease physical exercise until symptoms improve."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Embolectomy",
+        "Complication",
+        "Blood Circulation"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Embolectomy)-TREATS->(Complication)-MANIFESTATION_OF->(Blood Circulation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Embolectomy",
+        "Excision",
+        "Virus",
+        "Deoxyglucose",
+        "Perfusion (procedure)"
+      ],
+      [
+        "Embolectomy",
+        "Therapeutic procedure",
+        "Virus",
+        "Deoxyglucose",
+        "Perfusion (procedure)"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "TREATS",
+        "LOCATION_OF",
+        "ISA"
+      ],
+      [
+        "ISA",
+        "TREATS",
+        "LOCATION_OF",
+        "ISA"
+      ]
+    ],
+    "paths": [
+      "(Embolectomy)-ISA->(Excision)-TREATS->(Virus)-LOCATION_OF->(Deoxyglucose)-ISA->(Perfusion (procedure))",
+      "(Embolectomy)-ISA->(Therapeutic procedure)-TREATS->(Virus)-LOCATION_OF->(Deoxyglucose)-ISA->(Perfusion (procedure))"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Embolectomy)-TREATS->(Complication)-MANIFESTATION_OF->(Blood Circulation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient presents with acute limb ischemia\" -> \"Urgent intervention is required\" -> \"Embolectomy is a common initial treatment\" -> \"Restores blood flow quickly\" -> 85%",
+    "CHAIN: \"Patient has risk factors for vascular disease\" -> \"Modify vascular risk factors is important\" -> \"Long-term management strategy\" -> \"Not immediate treatment\" -> 70%",
+    "CHAIN: \"Patient shows signs of critical limb ischemia\" -> \"Urgent embolectomy indicated\" -> \"Removes obstruction\" -> \"Improves limb viability\" -> 90%",
+    "CHAIN: \"Patient's symptoms suggest acute arterial occlusion\" -> \"Immediate surgical intervention is often necessary\" -> \"Embolectomy is a standard approach\" -> \"Restores perfusion\" -> 88%",
+    "CHAIN: \"Patient requires pain management\" -> \"Analgesic treatment can be provided\" -> \"Does not address underlying issue\" -> \"Not the initial treatment of choice\" -> 65%"
+  ],
+  "enhanced_information": "In cases of acute limb ischemia, especially when critical limb ischemia is present, urgent intervention is crucial. The most appropriate initial treatment is an urgent embolectomy, which is a standard approach to restore blood flow quickly and improve limb viability. While modifying vascular risk factors is important for long-term management, it does not address the immediate need for intervention. Analgesic treatment may be necessary for pain management but does not resolve the underlying issue of blood flow obstruction. Therefore, the consensus supports embolectomy as the initial treatment in this scenario.",
+  "analysis": "In cases of acute limb ischemia, especially when critical limb ischemia is suspected, the primary goal is to restore blood flow as quickly as possible to prevent tissue necrosis and preserve limb viability. The options provided include various approaches, but the most immediate and effective intervention in acute scenarios is an urgent embolectomy. This procedure directly addresses the obstruction of blood flow, which is critical in acute limb ischemia. While other options like modifying vascular risk factors and analgesic treatment are important for long-term management and symptom relief, they do not provide the urgent intervention needed in this acute situation. Therefore, based on the consensus in medical practice, the best initial treatment is to perform an urgent embolectomy.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      0.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

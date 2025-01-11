@@ -1,0 +1,219 @@
+{
+  "question": "A 29-year-old woman, obese, with no history of interest, who consulted for a bilateral, intense, pulsatile headache lasting one month, accompanied by horizontal diplopia and episodes of monocular amaurosis of seconds duration. The exploration is normal, except for the presence of bilateral papilledema. Which of these tests do you think will allow you to fully confirm your diagnosis ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Ultrasound of supra-aortic trunks.",
+    "opb": "Magnetic resonance of the skull.",
+    "opc": "Electroencephalogram.",
+    "opd": "Lumbar puncture.",
+    "ope": "Visual evoked potentials."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Brain imaging",
+        "Disease",
+        "Adhesions",
+        "Magnetic Resonance Imaging"
+      ],
+      [
+        "Brain imaging",
+        "Disease",
+        "Status Epilepticus",
+        "Magnetic Resonance Imaging"
+      ],
+      [
+        "Brain imaging",
+        "Disease",
+        "Headache",
+        "Magnetic Resonance Imaging"
+      ],
+      [
+        "Diplopia, Horizontal",
+        "Diplopia, Vertical",
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "physiological aspects",
+        "Visual Pathways"
+      ],
+      [
+        "Diplopia, Horizontal",
+        "Diplopia, Vertical",
+        "Hypertensive disease",
+        "uptake",
+        "Visual Pathways"
+      ],
+      [
+        "Physical findings",
+        "Fluctuation",
+        "Brain activity"
+      ],
+      [
+        "Physical findings",
+        "Osteoporosis",
+        "Brain activity"
+      ],
+      [
+        "Physical findings",
+        "Functional disorder",
+        "Brain activity"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Brain imaging)-CAUSES->(Disease)-CAUSES->(Adhesions)-CAUSES->(Magnetic Resonance Imaging)",
+      "(Brain imaging)-CAUSES->(Disease)-CAUSES->(Status Epilepticus)-CAUSES->(Magnetic Resonance Imaging)",
+      "(Brain imaging)-CAUSES->(Disease)-CAUSES->(Headache)-CAUSES->(Magnetic Resonance Imaging)",
+      "(Diplopia, Horizontal)-CAUSES->(Diplopia, Vertical)-CAUSES->(Diabetes Mellitus, Non-Insulin-Dependent)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Visual Pathways)",
+      "(Diplopia, Horizontal)-CAUSES->(Diplopia, Vertical)-CAUSES->(Hypertensive disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Visual Pathways)",
+      "(Physical findings)-CAUSES->(Fluctuation)-MANIFESTATION_OF->(Brain activity)",
+      "(Physical findings)-PREDISPOSES->(Osteoporosis)-MANIFESTATION_OF->(Brain activity)",
+      "(Physical findings)-MANIFESTATION_OF->(Functional disorder)-MANIFESTATION_OF->(Brain activity)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Spinal Puncture",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Spinal Puncture",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Visual Pathways",
+        "Ultrasonography"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Spinal Puncture)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Spinal Puncture)-TREATS->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Visual Pathways)-LOCATION_OF->(Ultrasonography)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Spinal Puncture)-DIAGNOSES/TREATS->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Brain imaging)-CAUSES->(Disease)-CAUSES->(Headache)-CAUSES->(Magnetic Resonance Imaging)",
+      "(Visual Pathways)-LOCATION_OF->(Ultrasonography)",
+      "(Brain imaging)-CAUSES->(Disease)-CAUSES->(Adhesions)-CAUSES->(Magnetic Resonance Imaging)",
+      "(Brain imaging)-CAUSES->(Disease)-CAUSES->(Status Epilepticus)-CAUSES->(Magnetic Resonance Imaging)",
+      "(Diplopia, Horizontal)-CAUSES->(Diplopia, Vertical)-CAUSES->(Diabetes Mellitus, Non-Insulin-Dependent)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Visual Pathways)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Bilateral intense pulsatile headache\" -> \"Accompanied by horizontal diplopia\" -> \"Episodes of monocular amaurosis\" -> \"Bilateral papilledema observed\" -> \"Symptoms and signs suggestive of increased intracranial pressure\" -> \"Magnetic resonance of the skull to visualize intracranial structures and assess for causes of increased pressure\" -> 95%",
+    "CHAIN: \"Bilateral papilledema\" -> \"Indicator of increased intracranial pressure\" -> \"Lumbar puncture to measure cerebrospinal fluid pressure and composition\" -> \"Confirm diagnosis of intracranial hypertension\" -> 90%",
+    "CHAIN: \"Episodes of monocular amaurosis\" -> \"Visual symptoms associated with optic nerve dysfunction\" -> \"Visual evoked potentials to assess optic nerve function\" -> \"Possible additional diagnostic information\" -> 70%",
+    "CHAIN: \"Bilateral intense pulsatile headache\" -> \"Symptoms lasting one month\" -> \"Need for detailed brain imaging\" -> \"Magnetic resonance of the skull to rule out structural causes\" -> 95%",
+    "CHAIN: \"Horizontal diplopia and monocular amaurosis\" -> \"Symptoms involving visual pathways\" -> \"Ultrasound of supra-aortic trunks to assess vascular contribution to symptoms\" -> \"Less likely to confirm intracranial pressure issues directly\" -> 50%",
+    "CHAIN: \"Bilateral papilledema\" -> \"Sign of optic nerve swelling due to possible increased intracranial pressure\" -> \"Electroencephalogram to monitor brain activity\" -> \"Unlikely to directly confirm increased intracranial pressure\" -> 40%"
+  ],
+  "enhanced_information": "For a patient presenting with symptoms indicative of increased intracranial pressure, such as bilateral intense pulsatile headache, horizontal diplopia, monocular amaurosis, and bilateral papilledema, the most appropriate diagnostic tests are Magnetic Resonance Imaging (MRI) of the skull and lumbar puncture. MRI is essential for visualizing intracranial structures to identify any underlying causes of the symptoms, while lumbar puncture can confirm increased cerebrospinal fluid pressure, directly supporting a diagnosis of intracranial hypertension. Other tests like visual evoked potentials, ultrasound of supra-aortic trunks, and EEG are less relevant for confirming this specific diagnosis.",
+  "analysis": "The patient's symptoms of bilateral intense pulsatile headache, horizontal diplopia, episodes of monocular amaurosis, and the finding of bilateral papilledema suggest a condition involving increased intracranial pressure, possibly idiopathic intracranial hypertension (IIH). A lumbar puncture is the most appropriate diagnostic test in this scenario as it can measure cerebrospinal fluid pressure and analyze its composition, which is crucial for confirming a diagnosis of IIH. Magnetic resonance imaging (MRI) of the skull could be useful for ruling out other causes of increased intracranial pressure, but it does not confirm IIH directly. The other options listed (ultrasound of supra-aortic trunks, electroencephalogram, visual evoked potentials) are not directly relevant for diagnosing this condition based on the symptoms described.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      0,
+      1,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      20.0,
+      0.0,
+      20.0,
+      40.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "Biopsy DIAGNOSES Headache",
+    "EDNRA wt Allele|EDNRA PART_OF Myocardium",
+    "Hepatitis C virus CAUSES Persistent infection",
+    "Breast Cancer Cell LOCATION_OF NELL2",
+    "Diagnosis DIAGNOSES Headache",
+    "Ultrasound examination DIAGNOSES Headache",
+    "Neurologic Examination DIAGNOSES Multiple symptoms",
+    "Diagnostic tests DIAGNOSES Headache",
+    "Serologic tests DIAGNOSES Hepatitis C, Chronic",
+    "3,4-Methylenedioxyamphetamine TREATS Asthma",
+    "Borrelia species ASSOCIATED_WITH Glossitis, Benign Migratory",
+    "c-K-ras Genes ISA Proto-Oncogenes",
+    "Ophthalmoscopy DIAGNOSES Headache"
+  ]
+}

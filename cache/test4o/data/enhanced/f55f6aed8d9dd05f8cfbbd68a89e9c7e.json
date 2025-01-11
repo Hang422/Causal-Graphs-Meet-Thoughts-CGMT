@@ -1,0 +1,99 @@
+{
+  "question": "The hairy cell leukemia (hairy cell leukemia) presents as characteristic clinical-biological features:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Lymphocytosis in peripheral blood greater than 50,000 lymphocytes / microL.",
+    "opb": "T lymphoid line markers",
+    "opc": "Exfoliative generalized erythroderma, plaques and skin tumors.",
+    "opd": "Pancytopenia and splenomegaly."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pancytopenia",
+        "Splenomegaly"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pancytopenia)-CAUSES->(Splenomegaly)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pancytopenia",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "Lymphocyte"
+      ],
+      [
+        "Pancytopenia",
+        "Functional disorder",
+        "neuropeptide Y|NPY",
+        "Lymphocyte"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Pancytopenia)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Lymphocyte)",
+      "(Pancytopenia)-CAUSES->(Functional disorder)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Lymphocyte)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pancytopenia)-CAUSES->(Splenomegaly)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Hairy cell leukemia\" -> \"bone marrow infiltration\" -> \"pancytopenia\" -> \"splenomegaly\" -> 95%",
+    "CHAIN: \"Hairy cell leukemia\" -> \"B-cell neoplasm\" -> \"not T lymphoid line markers\" -> 80%",
+    "CHAIN: \"Hairy cell leukemia\" -> \"bone marrow infiltration\" -> \"pancytopenia\" -> \"decreased lymphocytes\" -> 85%",
+    "CHAIN: \"Hairy cell leukemia\" -> \"B-cell neoplasm\" -> \"not associated with skin manifestations\" -> 75%"
+  ],
+  "enhanced_information": "Hairy cell leukemia is characterized by bone marrow infiltration leading to pancytopenia and splenomegaly, which aligns with standard medical consensus. This condition is a B-cell neoplasm, and therefore, it does not present with T lymphoid line markers. Additionally, hairy cell leukemia is not associated with skin manifestations such as exfoliative erythroderma, plaques, or skin tumors. The retrieved evidence path supports the link between pancytopenia and splenomegaly, which are key features of hairy cell leukemia. Lymphocytosis with counts greater than 50,000 lymphocytes/microL is not typical of hairy cell leukemia, as it usually presents with decreased lymphocytes due to bone marrow infiltration.",
+  "analysis": "Hairy cell leukemia is a rare type of chronic B-cell leukemia characterized by the presence of 'hairy' cells in the bone marrow and peripheral blood. The disease typically presents with pancytopenia due to bone marrow infiltration and splenomegaly. This aligns with the standard medical consensus that hairy cell leukemia does not present with high lymphocyte counts, such as lymphocytosis greater than 50,000 lymphocytes/microL, which is more characteristic of other types of leukemias like chronic lymphocytic leukemia. Additionally, hairy cell leukemia is a B-cell neoplasm, so it does not exhibit T lymphoid line markers. The condition is not associated with skin manifestations such as exfoliative erythroderma, plaques, or skin tumors, which are more typical of cutaneous T-cell lymphomas. Therefore, the most characteristic clinical-biological features of hairy cell leukemia are pancytopenia and splenomegaly.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

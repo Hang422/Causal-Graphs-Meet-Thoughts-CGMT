@@ -1,0 +1,139 @@
+{
+  "question": "35-year-old woman on hormonal treatment for infertility. He went to the emergency department due to constitutional syndrome and paresthesias in the left side of the body. In blood tests, Hb 7.5 g / dL, reticulocytes 10% (0.52%), platelets 5,000 / uL, normal leukocytes, LDH 1,200 IU / L, direct negative Coombs test, undetectable haptoglobin are detected. Morphology of peripheral blood with abundant schistocytes. Normal coagulation tests. What is the diagnostic suspicion and the most appropriate treatment?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Autoimmune hemolytic anemia. Start steroids.",
+    "opb": "Von Willebrand disease. Administration of desmopressin.",
+    "opc": "Thrombocytopenic purpura. Start steroids and platelet transfusion.",
+    "opd": "Evans syndrome. Start steroids.",
+    "ope": "Thrombotic thrombocytopenic purpura. Treatment with plasmapheresis."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hemorrhage",
+        "Disease",
+        "Purpura, Thrombotic Thrombocytopenic"
+      ]
+    ],
+    "relationships": [
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hemorrhage)-COMPLICATES->(Disease)-CAUSES->(Purpura, Thrombotic Thrombocytopenic)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Anemia, Hemolytic",
+        "Pathogenesis",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Cytoplasm",
+        "Schistocyte"
+      ],
+      [
+        "Anemia, Hemolytic",
+        "Pathogenesis",
+        "Genes",
+        "Cytoplasm",
+        "Schistocyte"
+      ],
+      [
+        "Schistocyte",
+        "Blood",
+        "Purpura, Thrombotic Thrombocytopenic"
+      ],
+      [
+        "Schistocyte",
+        "Early Diagnosis",
+        "Purpura, Thrombotic Thrombocytopenic"
+      ],
+      [
+        "Blood Platelets",
+        "Genes",
+        "Hemorrhage"
+      ],
+      [
+        "Blood Platelets",
+        "Genes",
+        "Hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "DIAGNOSES"
+      ],
+      [
+        "INTERACTS_WITH",
+        "CAUSES"
+      ],
+      [
+        "INTERACTS_WITH",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Anemia, Hemolytic)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Cytoplasm)-PART_OF->(Schistocyte)",
+      "(Anemia, Hemolytic)-ISA->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cytoplasm)-PART_OF->(Schistocyte)",
+      "(Schistocyte)-PART_OF->(Blood)-LOCATION_OF->(Purpura, Thrombotic Thrombocytopenic)",
+      "(Schistocyte)-LOCATION_OF->(Early Diagnosis)-DIAGNOSES->(Purpura, Thrombotic Thrombocytopenic)",
+      "(Blood Platelets)-INTERACTS_WITH->(Genes)-CAUSES->(Hemorrhage)",
+      "(Blood Platelets)-INTERACTS_WITH->(Genes)-ASSOCIATED_WITH->(Hemorrhage)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Schistocyte)-PART_OF->(Blood)-LOCATION_OF->(Purpura, Thrombotic Thrombocytopenic)",
+      "(Schistocyte)-LOCATION_OF->(Early Diagnosis)-DIAGNOSES->(Purpura, Thrombotic Thrombocytopenic)",
+      "(Anemia, Hemolytic)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Cytoplasm)-PART_OF->(Schistocyte)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Microangiopathic hemolytic anemia -> Schistocytes on peripheral blood smear -> Thrombotic thrombocytopenic purpura (TTP) suspicion -> 80% confidence. CHAIN: Severe thrombocytopenia -> Platelets 5,000/uL -> Increased risk of bleeding -> Thrombotic thrombocytopenic purpura (TTP) suspicion -> 75% confidence. CHAIN: Hemoglobin 7.5 g/dL -> Reticulocytes -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with schistocytes on peripheral blood smear, severe thrombocytopenia, and constitutional symptoms raises suspicion for thrombotic thrombocytopenic purpura (TTP). Given the clinical findings and evidence paths linking schistocytes to TTP, the most appropriate treatment would be plasmapheresis for TTP.",
+  "analysis": "The patient's presentation with schistocytes, severe thrombocytopenia, and constitutional symptoms is highly suggestive of thrombotic thrombocytopenic purpura (TTP). The enhanced information further supports this suspicion. Plasmapheresis is the cornerstone of treatment for TTP to remove autoantibodies and replenish ADAMTS13 activity.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

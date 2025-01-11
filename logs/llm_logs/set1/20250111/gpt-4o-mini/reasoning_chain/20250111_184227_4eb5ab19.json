@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250111_184227",
+  "model": "gpt-4o-mini",
+  "interaction_type": "reasoning_chain",
+  "question_id": "4eb5ab19",
+  "question_text": "A 68-year-old man with a history of diabetes of 20 years of evolution, hypertension and prostatism in treatment, consulted for repeated episodes of syncope. The episodes have occurred while standing, after meals and have been preceded by an oppressive pain in the nape, neck and shoulder girdle. Which of these complementary tests is essential?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 68-year-old man with a history of diabetes of 20 years of evolution, hypertension and prostatism in treatment, consulted for repeated episodes of syncope. The episodes have occurred while standing, after meals and have been preceded by an oppressive pain in the nape, neck and shoulder girdle. Which of these complementary tests is essential?\n\n            ### Options\n    opa. Brain and cervical MRI.\nopb. Angio-MR of the supra-aortic trunks.\nopc. Nuclear medicine study of cerebral dopamine transporter (SPECT with ioflupane).\nopd. Measurement of blood pressure in decubitus and standing.\nope. 24-hour Holter record of the electrocardiogram.\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Patient has history of diabetes and hypertension\" -> \"Increased risk of cardiovascular issues\" -> \"Syncope episodes may be related to orthostatic hypotension\" -> \"Measurement of blood pressure in decubitus and standing can assess for orthostatic changes\" -> 85%\n\nCHAIN: \"Patient experiences syncope after meals\" -> \"Possible postprandial hypotension\" -> \"Measurement of blood pressure in decubitus and standing can help diagnose this condition\" -> 80%\n\nCHAIN: \"Patient has oppressive pain in the nape and neck\" -> \"Could indicate cervical spine issues or vascular problems\" -> \"Brain and cervical MRI may be useful but not essential for syncope\" -> \"Measurement of blood pressure in decubitus and standing is more directly related to syncope\" -> 75%\n\nCHAIN: \"Syncope episodes are recurrent\" -> \"Need to identify underlying cause\" -> \"Holter monitor can assess for arrhythmias\" -> \"However, blood pressure measurement is more directly related to the episodes\" -> 70%\n\nCHAIN: \"Patient's age and comorbidities increase risk of syncope\" -> \"Essential to evaluate for orthostatic hypotension\" -> \"Measurement of blood pressure in decubitus and standing is crucial\" -> 90%",
+  "metadata": {
+    "topic": "Medicine",
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-4o-mini",
+    "temperature": 0.0
+  }
+}
