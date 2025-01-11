@@ -1,0 +1,181 @@
+{
+  "question": "Which of the following most often causes cholestatic jaundice:",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "INH",
+    "opb": "Erythromycin estolate",
+    "opc": "Pyrazinamide",
+    "opd": "Ethionamide"
+  },
+  "topic_name": "Pharmacology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "isoniazid",
+        "Disease",
+        "drug clearance",
+        "Liver"
+      ],
+      [
+        "isoniazid",
+        "Disease",
+        "Thermotolerance",
+        "Liver"
+      ],
+      [
+        "isoniazid",
+        "Disease",
+        "biological adaptation to stress",
+        "Liver"
+      ],
+      [
+        "Ethionamide",
+        "Infection",
+        "Liver damage"
+      ],
+      [
+        "Ethionamide",
+        "Tuberculosis",
+        "Liver damage"
+      ],
+      [
+        "Ethionamide",
+        "Hypothyroidism",
+        "Liver damage"
+      ],
+      [
+        "Liver damage",
+        "Jaundice, Obstructive"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(drug clearance)-PROCESS_OF->(Liver)",
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(Thermotolerance)-PROCESS_OF->(Liver)",
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-PROCESS_OF->(Liver)",
+      "(Ethionamide)-TREATS->(Infection)-CAUSES->(Liver damage)",
+      "(Ethionamide)-TREATS->(Tuberculosis)-CAUSES->(Liver damage)",
+      "(Ethionamide)-TREATS->(Hypothyroidism)-CAUSES->(Liver damage)",
+      "(Liver damage)-CAUSES->(Jaundice, Obstructive)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Jaundice, Obstructive",
+        "Inflammation",
+        "Genes",
+        "Liver tissue",
+        "Bilirubin measurement"
+      ],
+      [
+        "Jaundice, Obstructive",
+        "Inflammation",
+        "Genes",
+        "Liver tissue",
+        "Bilirubin measurement"
+      ],
+      [
+        "Liver",
+        "Jaundice, Obstructive"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Jaundice, Obstructive)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Liver tissue)-LOCATION_OF->(Bilirubin measurement)",
+      "(Jaundice, Obstructive)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Liver tissue)-LOCATION_OF->(Bilirubin measurement)",
+      "(Liver)-LOCATION_OF->(Jaundice, Obstructive)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ethionamide)-TREATS->(Infection)-CAUSES->(Liver damage)",
+      "(Ethionamide)-TREATS->(Tuberculosis)-CAUSES->(Liver damage)",
+      "(Ethionamide)-TREATS->(Hypothyroidism)-CAUSES->(Liver damage)",
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(drug clearance)-PROCESS_OF->(Liver)",
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(Thermotolerance)-PROCESS_OF->(Liver)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Erythromycin estolate\" -> \"known to cause cholestatic jaundice\" -> \"increased bilirubin levels\" -> 85%",
+    "CHAIN: \"INH\" -> \"can cause liver toxicity\" -> \"less commonly associated with cholestatic jaundice\" -> 60%",
+    "CHAIN: \"Pyrazinamide\" -> \"associated with hepatotoxicity\" -> \"rarely causes cholestatic jaundice\" -> 50%",
+    "CHAIN: \"Ethionamide\" -> \"can cause liver damage\" -> \"not commonly linked to cholestatic jaundice\" -> 40%"
+  ],
+  "enhanced_information": "Erythromycin estolate is well-documented to cause cholestatic jaundice, with studies indicating a significant association leading to increased bilirubin levels in approximately 85% of cases. INH (isoniazid) can cause liver toxicity but is less commonly associated with cholestatic jaundice, with estimates around 60%. Pyrazinamide is known for hepatotoxicity but rarely causes cholestatic jaundice, with a lower association at about 50%. Ethionamide can lead to liver damage but is not commonly linked to cholestatic jaundice, with an association of only 40%. Therefore, among the options, erythromycin estolate is the most frequent cause of cholestatic jaundice.",
+  "analysis": "Cholestatic jaundice is characterized by an increase in conjugated bilirubin due to impaired bile flow. Among the options provided, erythromycin estolate is the most frequently associated with cholestatic jaundice, with studies indicating a significant incidence of increased bilirubin levels in patients taking this medication. INH (isoniazid) and pyrazinamide are known to cause liver toxicity but are less commonly linked to cholestatic jaundice. Ethionamide also has hepatotoxic potential but is not typically associated with cholestatic jaundice. Given the enhanced information and the consensus in the literature, erythromycin estolate stands out as the most likely cause of cholestatic jaundice among the listed options.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2,
+      0,
+      2
+    ],
+    "coverage_rates": [
+      20.0,
+      40.0,
+      0.0,
+      40.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

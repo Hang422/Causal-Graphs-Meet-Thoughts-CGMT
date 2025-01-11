@@ -1,0 +1,131 @@
+{
+  "question": "Which is not secreted by stomach?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Lipase",
+    "opb": "Pepsinogens",
+    "opc": "HCI",
+    "opd": "None"
+  },
+  "topic_name": "Physiology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Lipase",
+        "Fat absorption",
+        "Pancreas"
+      ],
+      [
+        "Pancreas",
+        "Pancreatitis",
+        "Neutrophil Infiltration",
+        "Stomach"
+      ],
+      [
+        "Pepsin A",
+        "Chronic sinusitis NOS",
+        "Neutrophil Infiltration",
+        "Stomach"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Lipase)-CAUSES->(Fat absorption)-PROCESS_OF->(Pancreas)",
+      "(Pancreas)-CAUSES->(Pancreatitis)-MANIFESTATION_OF->(Neutrophil Infiltration)-PROCESS_OF->(Stomach)",
+      "(Pepsin A)-TREATS->(Chronic sinusitis NOS)-MANIFESTATION_OF->(Neutrophil Infiltration)-PROCESS_OF->(Stomach)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pepsinogens",
+        "Chief Cells, Gastric"
+      ],
+      [
+        "Stomach",
+        "Pathogenesis",
+        "Lipase"
+      ],
+      [
+        "Stomach",
+        "Fatty degeneration",
+        "Lipase"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Pepsinogens)-INTERACTS_WITH->(Chief Cells, Gastric)",
+      "(Stomach)-LOCATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Lipase)",
+      "(Stomach)-LOCATION_OF->(Fatty degeneration)-ASSOCIATED_WITH->(Lipase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Stomach)-LOCATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Lipase)",
+      "(Stomach)-LOCATION_OF->(Fatty degeneration)-ASSOCIATED_WITH->(Lipase)",
+      "(Pepsinogens)-INTERACTS_WITH->(Chief Cells, Gastric)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Lipase\" -> \"primarily secreted by pancreas\" -> \"not secreted by stomach\" -> 95%",
+    "CHAIN: \"Pepsinogens\" -> \"secreted by gastric chief cells\" -> \"converted to pepsin in acidic environment\" -> \"secreted by stomach\" -> 90%",
+    "CHAIN: \"HCl\" -> \"produced by parietal cells\" -> \"important for digestion\" -> \"secreted by stomach\" -> 90%",
+    "CHAIN: \"None\" -> \"implies all options are secreted by stomach\" -> \"conflicts with lipase\" -> \"not correct\" -> 85%"
+  ],
+  "enhanced_information": "Lipase is primarily secreted by the pancreas, not the stomach, confirming that it is not secreted by the stomach. Pepsinogens are secreted by gastric chief cells in the stomach and are converted to pepsin in the acidic environment created by HCl, which is produced by parietal cells and is also secreted by the stomach. Therefore, the correct answer is that lipase is not secreted by the stomach.",
+  "analysis": "The question asks which substance is not secreted by the stomach. The options include lipase, pepsinogens, and HCl. Lipase is primarily secreted by the pancreas and is not produced in the stomach, while pepsinogens and HCl are both secreted by the stomach. Pepsinogens are secreted by gastric chief cells and are activated to pepsin in the presence of HCl, which is secreted by parietal cells. Therefore, the only substance listed that is not secreted by the stomach is lipase. The enhanced information confirms this understanding, aligning with standard medical knowledge. Thus, the correct answer is that lipase is not secreted by the stomach.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      2,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      40.0,
+      40.0,
+      0.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

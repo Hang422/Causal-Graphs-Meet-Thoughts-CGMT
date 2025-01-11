@@ -1,0 +1,121 @@
+{
+  "question": "Mark the true statement regarding use of Lithium in maniac-depressive psychosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Monotherapy for acute episodes",
+    "opb": "Monitoring of serum concentration is not useful for guiding dose adjustment",
+    "opc": "Can result in leucocytosis",
+    "opd": "Can result in hypehyroidism on long term use"
+  },
+  "topic_name": "Pharmacology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Lithium",
+        "Adverse effects"
+      ],
+      [
+        "Lithium",
+        "Hypothyroidism"
+      ],
+      [
+        "Hypothyroidism",
+        "Hyperthyroidism"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Lithium)-CAUSES->(Adverse effects)",
+      "(Lithium)-PREDISPOSES->(Hypothyroidism)",
+      "(Hypothyroidism)-CAUSES->(Hyperthyroidism)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Blood Cell Count",
+        "Adverse effects"
+      ],
+      [
+        "thyroid function",
+        "Thyrotropin",
+        "Hypothyroidism"
+      ],
+      [
+        "thyroid function",
+        "Kidney",
+        "Hypothyroidism"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "TREATS"
+      ],
+      [
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Blood Cell Count)-DIAGNOSES->(Adverse effects)",
+      "(thyroid function)-ASSOCIATED_WITH->(Thyrotropin)-TREATS->(Hypothyroidism)",
+      "(thyroid function)-PROCESS_OF->(Kidney)-LOCATION_OF->(Hypothyroidism)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Lithium)-PREDISPOSES->(Hypothyroidism)",
+      "(Lithium)-CAUSES->(Adverse effects)",
+      "(thyroid function)-ASSOCIATED_WITH->(Thyrotropin)-TREATS->(Hypothyroidism)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Lithium is used in bipolar disorder\" -> \"Effective for acute manic episodes\" -> \"Can be used as monotherapy\" -> 85%",
+    "CHAIN: \"Monitoring serum concentration is standard practice\" -> \"Guides dose adjustment for Lithium\" -> \"Important for preventing toxicity\" -> 90%",
+    "CHAIN: \"Lithium can affect blood cell counts\" -> \"Leucocytosis is a possible side effect\" -> \"Not commonly reported but can occur\" -> 70%",
+    "CHAIN: \"Long-term use of Lithium can affect thyroid function\" -> \"Hypothyroidism is a known risk\" -> \"Hyperthyroidism is less common but possible\" -> 75%"
+  ],
+  "enhanced_information": "Lithium is a first-line treatment for acute manic episodes in bipolar disorder and can be used as monotherapy, making option (a) true. Monitoring serum concentration is crucial for guiding dose adjustments and preventing toxicity, contradicting option (b). While lithium can affect blood cell counts, leucocytosis is not a common side effect, thus option (c) is misleading. Long-term use of lithium is associated with hypothyroidism, and while hyperthyroidism is less common, it can occur, supporting option (d) as partially true but less relevant than option (a). Therefore, the best-supported statement is that lithium can be used as monotherapy for acute episodes.",
+  "analysis": "Lithium is indeed a first-line treatment for acute manic episodes in bipolar disorder, and it can be used as monotherapy, making option (a) true. Monitoring serum concentration is essential for guiding dose adjustments and preventing toxicity, which directly contradicts option (b). While lithium can affect blood cell counts, leucocytosis is not a common side effect, making option (c) misleading. Long-term use of lithium is more commonly associated with hypothyroidism rather than hyperthyroidism, although hyperthyroidism can occur in rare cases, which makes option (d) less relevant than option (a). Therefore, the best-supported statement is that lithium can be used as monotherapy for acute episodes, aligning with established medical guidelines.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      2,
+      3
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      40.0,
+      60.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

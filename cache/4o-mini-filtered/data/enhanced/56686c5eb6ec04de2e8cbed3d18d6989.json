@@ -1,0 +1,95 @@
+{
+  "question": "Valproic acid causes all EXCEPT",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "It is an enzyme inducer",
+    "opb": "It causes obesity",
+    "opc": "It causes Hirsutism",
+    "opd": "It causes neural tube defects"
+  },
+  "topic_name": "Pharmacology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Valproic Acid",
+        "Polycystic Ovary Syndrome",
+        "Hirsutism"
+      ],
+      [
+        "Valproic Acid",
+        "Disease",
+        "Hirsutism"
+      ],
+      [
+        "Valproic Acid",
+        "Obesity"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Valproic Acid)-CAUSES->(Polycystic Ovary Syndrome)-CAUSES->(Hirsutism)",
+      "(Valproic Acid)-PREVENTS->(Disease)-CAUSES->(Hirsutism)",
+      "(Valproic Acid)-CAUSES->(Obesity)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Valproic Acid)-CAUSES->(Obesity)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Valproic acid\" -> \"known to cause weight gain\" -> \"associated with obesity\" -> 90%",
+    "CHAIN: \"Valproic acid\" -> \"can cause hirsutism\" -> \"increased hair growth in women\" -> 85%",
+    "CHAIN: \"Valproic acid\" -> \"not an enzyme inducer\" -> \"it is an enzyme inhibitor\" -> 80%",
+    "CHAIN: \"Valproic acid\" -> \"associated with neural tube defects\" -> \"increased risk during pregnancy\" -> 90%",
+    "CHAIN: \"Valproic acid\" -> \"causes obesity\" -> \"conflicts with enzyme induction\" -> \"possible\" -> 70%"
+  ],
+  "enhanced_information": "Valproic acid is known to cause weight gain, which can be associated with obesity, thus supporting option 'opb'. It can also cause hirsutism, as increased hair growth in women is a recognized side effect, supporting option 'opc'. However, valproic acid is not an enzyme inducer; it is actually an enzyme inhibitor, which contradicts option 'opa'. Lastly, valproic acid is associated with an increased risk of neural tube defects during pregnancy, supporting option 'opd'. Therefore, the correct answer to the question is that valproic acid does not act as an enzyme inducer.",
+  "analysis": "Valproic acid is primarily known as an anticonvulsant and mood-stabilizing drug. It is important to analyze each option: 'opa' states that it is an enzyme inducer, which is incorrect as valproic acid is an enzyme inhibitor, particularly of CYP450 enzymes. 'opb' suggests it causes obesity, which is supported by evidence of weight gain as a side effect. 'opc' indicates it causes hirsutism, which is also a recognized side effect due to hormonal changes. Lastly, 'opd' states it causes neural tube defects, which is well-documented in the literature, especially in pregnant women taking the drug. Therefore, the only statement that is incorrect is that valproic acid is an enzyme inducer, making 'opa' the correct answer to the question.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      0.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

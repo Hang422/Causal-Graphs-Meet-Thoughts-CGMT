@@ -1,0 +1,150 @@
+{
+  "question": "The patient is being administered i.v. quinine following which he developed restlessness and sweating, the most likely cause is :",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Hypoglycemia",
+    "opb": "Cinchonism",
+    "opc": "Arrhythmias",
+    "opd": "Sweating"
+  },
+  "topic_name": "Pharmacology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Quinine",
+        "Disease",
+        "Adverse reactions"
+      ],
+      [
+        "Quinine",
+        "COVID-19",
+        "Adverse reactions"
+      ],
+      [
+        "Quinine",
+        "Syndrome",
+        "Adverse reactions"
+      ],
+      [
+        "Adverse reactions",
+        "Disease",
+        "Agitation"
+      ],
+      [
+        "Adverse reactions",
+        "Hyperinsulinism",
+        "Agitation"
+      ],
+      [
+        "Adverse reactions",
+        "Diabetes",
+        "Agitation"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Quinine)-TREATS->(Disease)-CAUSES->(Adverse reactions)",
+      "(Quinine)-TREATS->(COVID-19)-CAUSES->(Adverse reactions)",
+      "(Quinine)-TREATS->(Syndrome)-CAUSES->(Adverse reactions)",
+      "(Adverse reactions)-CAUSES->(Disease)-CAUSES->(Agitation)",
+      "(Adverse reactions)-CAUSES->(Hyperinsulinism)-CAUSES->(Agitation)",
+      "(Adverse reactions)-CAUSES->(Diabetes)-CAUSES->(Agitation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Cardiovascular system",
+        "Bed rest",
+        "cardiac arrhythmia"
+      ],
+      [
+        "Cardiovascular system",
+        "Bed rest",
+        "cardiac arrhythmia"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PREVENTS"
+      ],
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Cardiovascular system)-LOCATION_OF->(Bed rest)-PREVENTS->(cardiac arrhythmia)",
+      "(Cardiovascular system)-LOCATION_OF->(Bed rest)-PREDISPOSES->(cardiac arrhythmia)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Quinine)-TREATS->(Disease)-CAUSES->(Adverse reactions)",
+      "(Quinine)-TREATS->(COVID-19)-CAUSES->(Adverse reactions)",
+      "(Quinine)-TREATS->(Syndrome)-CAUSES->(Adverse reactions)",
+      "(Adverse reactions)-CAUSES->(Disease)-CAUSES->(Agitation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Administration of i.v. quinine\" -> \"possible side effects\" -> \"restlessness and sweating\" -> \"Cinchonism\" -> 85%",
+    "CHAIN: \"Quinine administration\" -> \"increased sympathetic activity\" -> \"sweating\" -> \"restlessness\" -> \"possible Cinchonism\" -> 80%",
+    "CHAIN: \"Quinine given intravenously\" -> \"adverse reactions\" -> \"restlessness\" -> \"sweating\" -> \"possible hypoglycemia\" -> 70%",
+    "CHAIN: \"Quinine infusion\" -> \"cardiovascular effects\" -> \"arrhythmias\" -> \"increased sympathetic response\" -> \"sweating and restlessness\" -> 75%"
+  ],
+  "enhanced_information": "The administration of i.v. quinine can lead to several side effects, with restlessness and sweating being notable symptoms. The most likely cause of these symptoms in this context is Cinchonism, which is a well-documented adverse reaction to quinine characterized by symptoms such as tinnitus, headache, nausea, and restlessness. While hypoglycemia and arrhythmias can occur with quinine use, they are less directly associated with the specific symptoms of restlessness and sweating. The evidence paths confirm that quinine can cause adverse reactions, supporting the likelihood of Cinchonism as the primary cause of the patient's symptoms.",
+  "analysis": "Quinine is known to cause a range of side effects, and the symptoms of restlessness and sweating are particularly indicative of Cinchonism, which is a well-recognized adverse reaction to quinine. Cinchonism can manifest with symptoms such as tinnitus, headache, nausea, and restlessness, making it the most likely cause of the patient's symptoms in this scenario. While hypoglycemia and arrhythmias are potential complications associated with quinine, they do not directly correlate with the specific symptoms of restlessness and sweating as strongly as Cinchonism does. Therefore, based on the consensus in pharmacology regarding quinine's side effects, the most likely cause of the patient's symptoms is Cinchonism.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      66.66666666666666,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

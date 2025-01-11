@@ -1,0 +1,150 @@
+{
+  "question": "All will predispose to atherosclerosis, except",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Homocystinemia",
+    "opb": "Fibrinogen",
+    "opc": "Calcium",
+    "opd": "Lipoprotein A"
+  },
+  "topic_name": "Biochemistry",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fibrinogen",
+        "Blood Viscosity"
+      ],
+      [
+        "Thrombus",
+        "Arteriosclerosis"
+      ],
+      [
+        "Lipoprotein (a)",
+        "Adverse event",
+        "Myocardial Infarction",
+        "Cholesterol deposition"
+      ],
+      [
+        "Lipoprotein (a)",
+        "Coronary Arteriosclerosis",
+        "Myocardial Infarction",
+        "Cholesterol deposition"
+      ],
+      [
+        "Lipoprotein (a)",
+        "Coronary Arteriosclerosis",
+        "Obesity",
+        "Cholesterol deposition"
+      ],
+      [
+        "Cholesterol deposition",
+        "Arteriosclerosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Fibrinogen)-CAUSES->(Blood Viscosity)",
+      "(Thrombus)-CAUSES->(Arteriosclerosis)",
+      "(Lipoprotein (a))-PREDISPOSES->(Adverse event)-CAUSES->(Myocardial Infarction)-CAUSES->(Cholesterol deposition)",
+      "(Lipoprotein (a))-PREDISPOSES->(Coronary Arteriosclerosis)-CAUSES->(Myocardial Infarction)-CAUSES->(Cholesterol deposition)",
+      "(Lipoprotein (a))-PREDISPOSES->(Coronary Arteriosclerosis)-CAUSES->(Obesity)-PREDISPOSES->(Cholesterol deposition)",
+      "(Cholesterol deposition)-PREDISPOSES->(Arteriosclerosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Blood Viscosity",
+        "Anticoagulants",
+        "Thrombus"
+      ],
+      [
+        "Blood Viscosity",
+        "Anticoagulants",
+        "Thrombus"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "TREATS"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PREVENTS"
+      ]
+    ],
+    "paths": [
+      "(Blood Viscosity)-ASSOCIATED_WITH->(Anticoagulants)-TREATS->(Thrombus)",
+      "(Blood Viscosity)-ASSOCIATED_WITH->(Anticoagulants)-PREVENTS->(Thrombus)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fibrinogen)-CAUSES->(Blood Viscosity)",
+      "(Cholesterol deposition)-PREDISPOSES->(Arteriosclerosis)",
+      "(Lipoprotein (a))-PREDISPOSES->(Adverse event)-CAUSES->(Myocardial Infarction)-CAUSES->(Cholesterol deposition)",
+      "(Lipoprotein (a))-PREDISPOSES->(Coronary Arteriosclerosis)-CAUSES->(Myocardial Infarction)-CAUSES->(Cholesterol deposition)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Homocystinemia\" -> \"increased endothelial damage\" -> \"promotes atherosclerosis\" -> 95%",
+    "CHAIN: \"Fibrinogen\" -> \"increased blood viscosity\" -> \"promotes thrombus formation\" -> \"contributes to atherosclerosis\" -> 90%",
+    "CHAIN: \"Calcium\" -> \"involved in vascular smooth muscle contraction\" -> \"unclear role in atherosclerosis\" -> \"possible association\" -> 70%",
+    "CHAIN: \"Lipoprotein A\" -> \"increased cholesterol deposition\" -> \"promotes atherosclerosis\" -> 90%"
+  ],
+  "enhanced_information": "Homocystinemia is associated with increased endothelial damage, which promotes atherosclerosis, aligning with consensus. Fibrinogen contributes to increased blood viscosity and thrombus formation, which is also consistent with its role in atherosclerosis. Lipoprotein A is known to predispose individuals to atherosclerosis through increased cholesterol deposition. However, the role of calcium in atherosclerosis is less clear; while it is involved in vascular smooth muscle contraction, it does not have a direct, established role in promoting atherosclerosis compared to the other options. Therefore, calcium is the least likely to predispose to atherosclerosis among the options provided.",
+  "analysis": "Atherosclerosis is a complex condition influenced by various biochemical factors. Homocystinemia is known to cause endothelial damage, which is a key factor in the development of atherosclerosis. Fibrinogen is associated with increased blood viscosity and thrombus formation, both of which contribute to atherosclerotic processes. Lipoprotein A is recognized for its role in cholesterol deposition and is a well-established risk factor for atherosclerosis. In contrast, while calcium plays a role in vascular function, its direct involvement in promoting atherosclerosis is not as clearly established as the other factors listed. Therefore, among the options provided, calcium is the least likely to predispose to atherosclerosis. This reasoning aligns with the consensus in the medical literature regarding the risk factors for atherosclerosis.",
+  "answer": "opc",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      3,
+      0,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      60.0,
+      0.0,
+      40.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

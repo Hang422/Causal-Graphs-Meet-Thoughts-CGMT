@@ -1,0 +1,164 @@
+{
+  "question": "Aspirin is contraindicated in?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Fever",
+    "opb": "Peptic ulcer",
+    "opc": "Unstable angina",
+    "opd": "Myalgia"
+  },
+  "topic_name": "Pharmacology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hemorrhage",
+        "Peptic Ulcer"
+      ],
+      [
+        "Aspirin",
+        "Inflammation"
+      ],
+      [
+        "Inflammation",
+        "Myalgia"
+      ],
+      [
+        "Peptic Ulcer",
+        "Bleeding ulcer"
+      ],
+      [
+        "Aspirin",
+        "Reye Syndrome"
+      ],
+      [
+        "Reye Syndrome",
+        "hypoglycemia",
+        "Fever"
+      ],
+      [
+        "Reye Syndrome",
+        "Virus Diseases",
+        "Fever"
+      ],
+      [
+        "Reye Syndrome",
+        "COVID-19",
+        "Fever"
+      ]
+    ],
+    "relationships": [
+      [
+        "COMPLICATES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "COMPLICATES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hemorrhage)-COMPLICATES->(Peptic Ulcer)",
+      "(Aspirin)-PREDISPOSES->(Inflammation)",
+      "(Inflammation)-PREDISPOSES->(Myalgia)",
+      "(Peptic Ulcer)-COMPLICATES->(Bleeding ulcer)",
+      "(Aspirin)-TREATS->(Reye Syndrome)",
+      "(Reye Syndrome)-CAUSES->(hypoglycemia)-CAUSES->(Fever)",
+      "(Reye Syndrome)-COMPLICATES->(Virus Diseases)-CAUSES->(Fever)",
+      "(Reye Syndrome)-COMPLICATES->(COVID-19)-CAUSES->(Fever)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Cardiovascular system",
+        "Coronary revascularisation",
+        "Unstable angina"
+      ],
+      [
+        "Cardiovascular system",
+        "Coronary revascularisation",
+        "Unstable angina"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PREVENTS"
+      ],
+      [
+        "LOCATION_OF",
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Cardiovascular system)-LOCATION_OF->(Coronary revascularisation)-PREVENTS->(Unstable angina)",
+      "(Cardiovascular system)-LOCATION_OF->(Coronary revascularisation)-TREATS->(Unstable angina)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Aspirin)-TREATS->(Reye Syndrome)",
+      "(Aspirin)-PREDISPOSES->(Inflammation)",
+      "(Reye Syndrome)-CAUSES->(hypoglycemia)-CAUSES->(Fever)",
+      "(Reye Syndrome)-COMPLICATES->(Virus Diseases)-CAUSES->(Fever)",
+      "(Reye Syndrome)-COMPLICATES->(COVID-19)-CAUSES->(Fever)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Aspirin\" -> \"inhibits platelet aggregation\" -> \"increased risk of bleeding\" -> \"contraindicated in peptic ulcer\" -> 95%",
+    "CHAIN: \"Aspirin\" -> \"reduces inflammation\" -> \"may be used in myalgia\" -> \"not contraindicated\" -> 90%",
+    "CHAIN: \"Aspirin\" -> \"can exacerbate gastrointestinal issues\" -> \"contraindicated in peptic ulcer\" -> \"risk of ulcer bleeding\" -> 90%",
+    "CHAIN: \"Aspirin\" -> \"used for cardiovascular protection\" -> \"not contraindicated in unstable angina\" -> \"beneficial in this condition\" -> 85%",
+    "CHAIN: \"Aspirin\" -> \"can cause Reye's syndrome in children\" -> \"contraindicated in fever in children\" -> \"but not in adults\" -> 70%"
+  ],
+  "enhanced_information": "Aspirin is contraindicated primarily in peptic ulcer disease due to its ability to inhibit platelet aggregation, which increases the risk of gastrointestinal bleeding. This is supported by the reasoning that aspirin can exacerbate gastrointestinal issues, leading to ulcer bleeding. In contrast, aspirin is not contraindicated in myalgia, as it is often used to reduce inflammation and pain. For unstable angina, aspirin is beneficial as it provides cardiovascular protection. While aspirin is contraindicated in children with fever due to the risk of Reye's syndrome, this concern does not apply to adults. Therefore, the most significant contraindication for aspirin is in peptic ulcer disease.",
+  "analysis": "Aspirin is known to inhibit platelet aggregation and can increase the risk of gastrointestinal bleeding, making it contraindicated in patients with peptic ulcer disease. This is the most significant concern among the options provided. While aspirin is often used to manage fever and myalgia, it is not contraindicated in these conditions. In the case of unstable angina, aspirin is actually beneficial as it helps prevent thrombus formation. Therefore, the most appropriate answer, based on established medical guidelines, is that aspirin is contraindicated in peptic ulcer disease.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "coverage_rates": [
+      14.285714285714285,
+      28.57142857142857,
+      14.285714285714285,
+      14.285714285714285,
+      28.57142857142857
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

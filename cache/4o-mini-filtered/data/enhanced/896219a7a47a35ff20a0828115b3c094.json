@@ -1,0 +1,103 @@
+{
+  "question": "Praziquantel is used for the treatment of",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Strongyloidiasis",
+    "opb": "Trichomoniasis",
+    "opc": "Schistosomiasis",
+    "opd": "Rhinosporidiosis"
+  },
+  "topic_name": "Pharmacology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Protozoan Infections",
+        "Infection",
+        "Trichomonas Infections"
+      ],
+      [
+        "Protozoan Infections",
+        "Vaginitis",
+        "Trichomonas Infections"
+      ],
+      [
+        "Protozoan Infections",
+        "Complication",
+        "Trichomonas Infections"
+      ],
+      [
+        "Mycoses",
+        "Rhinosporidiosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Protozoan Infections)-CAUSES->(Infection)-CAUSES->(Trichomonas Infections)",
+      "(Protozoan Infections)-CAUSES->(Vaginitis)-CAUSES->(Trichomonas Infections)",
+      "(Protozoan Infections)-CAUSES->(Complication)-CAUSES->(Trichomonas Infections)",
+      "(Mycoses)-CAUSES->(Rhinosporidiosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Mycoses)-CAUSES->(Rhinosporidiosis)",
+      "(Protozoan Infections)-CAUSES->(Infection)-CAUSES->(Trichomonas Infections)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Praziquantel\" -> \"antiparasitic medication\" -> \"effective against trematodes\" -> \"used for schistosomiasis\" -> 95%",
+    "CHAIN: \"Praziquantel\" -> \"antiparasitic medication\" -> \"not effective against nematodes\" -> \"not used for strongyloidiasis\" -> 90%",
+    "CHAIN: \"Praziquantel\" -> \"antiparasitic medication\" -> \"not indicated for protozoan infections\" -> \"not used for trichomoniasis\" -> 90%",
+    "CHAIN: \"Praziquantel\" -> \"antiparasitic medication\" -> \"not effective for fungal infections\" -> \"not used for rhinosporidiosis\" -> 90%"
+  ],
+  "enhanced_information": "Praziquantel is an antiparasitic medication primarily effective against trematodes, particularly used for the treatment of schistosomiasis. It is not effective against nematodes, which is why it is not used for strongyloidiasis. Additionally, praziquantel is not indicated for protozoan infections, making it ineffective for trichomoniasis. Lastly, it does not target fungal infections, thus it is not used for rhinosporidiosis. Therefore, the correct treatment indication for praziquantel is schistosomiasis.",
+  "analysis": "Praziquantel is an antiparasitic medication that is primarily effective against trematodes, particularly in the treatment of schistosomiasis. It is not effective against nematodes, which rules out strongyloidiasis, and it is also not indicated for protozoan infections like trichomoniasis. Furthermore, praziquantel does not target fungal infections, making it ineffective for rhinosporidiosis. Given this information, the consensus in the medical community clearly supports that praziquantel is used for schistosomiasis. Therefore, the most likely correct option is 'opc. Schistosomiasis'.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

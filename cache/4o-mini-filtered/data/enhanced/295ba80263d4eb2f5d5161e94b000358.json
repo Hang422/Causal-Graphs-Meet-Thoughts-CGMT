@@ -1,0 +1,173 @@
+{
+  "question": "Which of the following vitamin reduces the risk of insulin resistance, obesity, and the metabolic syndrome?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Vitamin A",
+    "opb": "Vitamin C",
+    "opc": "Vitamin D",
+    "opd": "Vitamin B12"
+  },
+  "topic_name": "Biochemistry",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Vitamin D2",
+        "Disease",
+        "insulin sensitivity"
+      ],
+      [
+        "Vitamin D2",
+        "Hypertensive disease",
+        "insulin sensitivity"
+      ],
+      [
+        "Vitamin D2",
+        "Obesity",
+        "insulin sensitivity"
+      ],
+      [
+        "insulin sensitivity",
+        "Insulin Resistance"
+      ],
+      [
+        "Insulin Resistance",
+        "Obesity"
+      ],
+      [
+        "Obesity",
+        "Metabolic Syndrome X"
+      ],
+      [
+        "Vitamin B 12",
+        "Obesity",
+        "Energy Metabolism"
+      ],
+      [
+        "Vitamin B 12",
+        "Autoimmune Diseases",
+        "Energy Metabolism"
+      ],
+      [
+        "Vitamin B 12",
+        "Heart failure",
+        "Energy Metabolism"
+      ],
+      [
+        "Energy Metabolism",
+        "Pancreas",
+        "Pancreatitis",
+        "Insulin Resistance"
+      ],
+      [
+        "Insulin Resistance",
+        "Obesity"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Vitamin D2)-PREDISPOSES->(Disease)-CAUSES->(insulin sensitivity)",
+      "(Vitamin D2)-CAUSES->(Hypertensive disease)-PREDISPOSES->(insulin sensitivity)",
+      "(Vitamin D2)-TREATS->(Obesity)-CAUSES->(insulin sensitivity)",
+      "(insulin sensitivity)-COMPLICATES->(Insulin Resistance)",
+      "(Insulin Resistance)-CAUSES->(Obesity)",
+      "(Obesity)-CAUSES->(Metabolic Syndrome X)",
+      "(Vitamin B 12)-TREATS->(Obesity)-MANIFESTATION_OF->(Energy Metabolism)",
+      "(Vitamin B 12)-TREATS->(Autoimmune Diseases)-MANIFESTATION_OF->(Energy Metabolism)",
+      "(Vitamin B 12)-TREATS->(Heart failure)-MANIFESTATION_OF->(Energy Metabolism)",
+      "(Energy Metabolism)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-COMPLICATES->(Insulin Resistance)",
+      "(Insulin Resistance)-CAUSES->(Obesity)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vitamin D2)-TREATS->(Obesity)-CAUSES->(insulin sensitivity)",
+      "(Vitamin D2)-PREDISPOSES->(Disease)-CAUSES->(insulin sensitivity)",
+      "(Vitamin D2)-CAUSES->(Hypertensive disease)-PREDISPOSES->(insulin sensitivity)",
+      "(Vitamin B 12)-TREATS->(Obesity)-MANIFESTATION_OF->(Energy Metabolism)",
+      "(Vitamin B 12)-TREATS->(Autoimmune Diseases)-MANIFESTATION_OF->(Energy Metabolism)",
+      "(Vitamin B 12)-TREATS->(Heart failure)-MANIFESTATION_OF->(Energy Metabolism)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Vitamin D\" -> \"enhances insulin sensitivity\" -> \"reduces risk of insulin resistance\" -> \"lowers obesity risk\" -> \"decreases metabolic syndrome prevalence\" -> 85%",
+    "CHAIN: \"Vitamin C\" -> \"antioxidant properties\" -> \"may improve metabolic health\" -> \"unclear direct effect on insulin resistance\" -> 60%",
+    "CHAIN: \"Vitamin A\" -> \"involved in metabolic processes\" -> \"limited evidence on insulin resistance\" -> \"possible indirect effects\" -> 50%",
+    "CHAIN: \"Vitamin B12\" -> \"essential for energy metabolism\" -> \"no direct link to insulin resistance\" -> \"unclear role in obesity\" -> 40%"
+  ],
+  "enhanced_information": "Vitamin D is well-supported in the literature for enhancing insulin sensitivity, which reduces the risk of insulin resistance, obesity, and metabolic syndrome. The reasoning chain for Vitamin D is consistent with consensus, as it directly links to improved metabolic health outcomes. Vitamin C, while having antioxidant properties, lacks clear evidence of a direct effect on insulin resistance, making its role less certain. Vitamin A has limited evidence regarding its direct impact on insulin resistance, suggesting only possible indirect effects. Vitamin B12 is essential for energy metabolism but does not have a direct link to insulin resistance or obesity. Therefore, the most consensus-aligned option is Vitamin D, which is supported by evidence indicating its role in improving insulin sensitivity and reducing metabolic syndrome risk.",
+  "analysis": "The core medical principle here revolves around the role of vitamins in metabolic health, particularly their influence on insulin sensitivity and the risk of conditions like obesity and metabolic syndrome. Among the options provided, Vitamin D has been consistently supported by research for its role in enhancing insulin sensitivity, which is crucial in reducing the risk of insulin resistance and metabolic syndrome. While Vitamin C has antioxidant properties, its direct impact on insulin resistance is not well-established. Vitamin A and Vitamin B12 also do not have strong evidence linking them directly to improved insulin sensitivity or reduced risk of metabolic syndrome. Therefore, based on the consensus in the literature, Vitamin D is the most likely correct answer.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4,
+      0,
+      0,
+      3
+    ],
+    "coverage_rates": [
+      57.14285714285714,
+      0.0,
+      0.0,
+      42.857142857142854
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

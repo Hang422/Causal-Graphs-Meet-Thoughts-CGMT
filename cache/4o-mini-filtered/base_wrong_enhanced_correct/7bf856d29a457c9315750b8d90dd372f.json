@@ -1,0 +1,154 @@
+{
+  "question": "Choose the drug which blocks basal as well as stimulated gastric acid secretion without affecting cholinergic, histaminergic or gastrin receptors",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Loxatidine",
+    "opb": "Pirenzepine",
+    "opc": "Omeprazole",
+    "opd": "Famotidine"
+  },
+  "topic_name": "Pharmacology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pirenzepine",
+        "Disease",
+        "Obstruction"
+      ],
+      [
+        "Pirenzepine",
+        "Chronic liver disease NOS",
+        "Obstruction"
+      ],
+      [
+        "Pirenzepine",
+        "Gastritis, Hypertrophic",
+        "Obstruction"
+      ],
+      [
+        "Famotidine",
+        "Disease",
+        "Obstruction"
+      ],
+      [
+        "Famotidine",
+        "Chronic liver disease NOS",
+        "Obstruction"
+      ],
+      [
+        "Famotidine",
+        "Acute coronary syndrome",
+        "Obstruction"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Pirenzepine)-TREATS->(Disease)-CAUSES->(Obstruction)",
+      "(Pirenzepine)-TREATS->(Chronic liver disease NOS)-CAUSES->(Obstruction)",
+      "(Pirenzepine)-TREATS->(Gastritis, Hypertrophic)-CAUSES->(Obstruction)",
+      "(Famotidine)-TREATS->(Disease)-CAUSES->(Obstruction)",
+      "(Famotidine)-TREATS->(Chronic liver disease NOS)-CAUSES->(Obstruction)",
+      "(Famotidine)-TREATS->(Acute coronary syndrome)-COMPLICATES->(Obstruction)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Omeprazole",
+        "Disease",
+        "Metabolic acidosis",
+        "Proton Pump"
+      ],
+      [
+        "Omeprazole",
+        "Disease",
+        "Metabolic acidosis",
+        "Proton Pump"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Omeprazole)-TREATS->(Disease)-MANIFESTATION_OF->(Metabolic acidosis)-ASSOCIATED_WITH->(Proton Pump)",
+      "(Omeprazole)-TREATS->(Disease)-CAUSES->(Metabolic acidosis)-ASSOCIATED_WITH->(Proton Pump)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pirenzepine)-TREATS->(Chronic liver disease NOS)-CAUSES->(Obstruction)",
+      "(Famotidine)-TREATS->(Chronic liver disease NOS)-CAUSES->(Obstruction)",
+      "(Pirenzepine)-TREATS->(Disease)-CAUSES->(Obstruction)",
+      "(Pirenzepine)-TREATS->(Gastritis, Hypertrophic)-CAUSES->(Obstruction)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Loxatidine\" -> \"blocks H2 receptors\" -> \"reduces gastric acid secretion\" -> \"does not block cholinergic, histaminergic, or gastrin receptors\" -> 70%",
+    "CHAIN: \"Pirenzepine\" -> \"blocks M1 muscarinic receptors\" -> \"reduces gastric acid secretion\" -> \"does not block H2 receptors\" -> \"not effective for basal and stimulated secretion\" -> 60%",
+    "CHAIN: \"Omeprazole\" -> \"inhibits proton pump\" -> \"blocks gastric acid secretion\" -> \"does not affect cholinergic, histaminergic, or gastrin receptors\" -> \"effective for both basal and stimulated secretion\" -> 90%",
+    "CHAIN: \"Famotidine\" -> \"blocks H2 receptors\" -> \"reduces gastric acid secretion\" -> \"does not block cholinergic, histaminergic, or gastrin receptors\" -> 80%"
+  ],
+  "enhanced_information": "Loxatidine is an H2 receptor antagonist that reduces gastric acid secretion but does not block cholinergic, histaminergic, or gastrin receptors, making it a potential candidate. However, it primarily targets H2 receptors, which may not fully address the requirement for blocking both basal and stimulated secretion effectively. Pirenzepine blocks M1 muscarinic receptors, which does not align with the requirement as it does not affect H2 receptors and is not effective for both types of secretion. Omeprazole, a proton pump inhibitor, effectively blocks gastric acid secretion and does not affect cholinergic, histaminergic, or gastrin receptors, making it suitable for both basal and stimulated secretion. Famotidine, like Loxatidine, blocks H2 receptors and reduces gastric acid secretion but does not meet the requirement for both types of secretion as effectively as Omeprazole. Therefore, the best option is Omeprazole, as it aligns with the consensus on blocking gastric acid secretion without affecting the specified receptors.",
+  "analysis": "The question requires identifying a drug that blocks both basal and stimulated gastric acid secretion without affecting cholinergic, histaminergic, or gastrin receptors. Omeprazole is a proton pump inhibitor that effectively inhibits the final step of gastric acid production by blocking the proton pump (H+/K+ ATPase) in the gastric parietal cells. This mechanism allows it to reduce both basal and stimulated gastric acid secretion without interacting with the specified receptors. In contrast, Loxatidine and Famotidine are H2 receptor antagonists, which primarily block histamine receptors and may not be as effective in inhibiting stimulated secretion. Pirenzepine, on the other hand, targets M1 muscarinic receptors and does not align with the requirement. Therefore, Omeprazole is the most suitable option as it meets all the criteria outlined in the question.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      33.33333333333333,
+      33.33333333333333,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

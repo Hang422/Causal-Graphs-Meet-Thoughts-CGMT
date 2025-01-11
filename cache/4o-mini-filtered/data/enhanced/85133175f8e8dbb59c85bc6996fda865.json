@@ -1,0 +1,162 @@
+{
+  "question": "Hyperprolactinemia is a side effect of",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Bromocriptine",
+    "opb": "Levodopa",
+    "opc": "Amantadine",
+    "opd": "Metoclopramide"
+  },
+  "topic_name": "Pharmacology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Prolactin",
+        "Hyperprolactinemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREVENTS"
+      ]
+    ],
+    "paths": [
+      "(Prolactin)-PREVENTS->(Hyperprolactinemia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Bromocriptine",
+        "Pharmaceutical Preparations",
+        "Dopamine"
+      ],
+      [
+        "Amantadine",
+        "Pharmaceutical Preparations",
+        "Dopamine Antagonists"
+      ],
+      [
+        "Dopamine Antagonists",
+        "Pharmaceutical Preparations",
+        "Dopamine"
+      ],
+      [
+        "Dopamine Antagonists",
+        "Pharmaceutical Preparations",
+        "Dopamine"
+      ],
+      [
+        "Dopamine",
+        "Pharmaceutical Preparations",
+        "Prolactin"
+      ],
+      [
+        "Dopamine",
+        "Cells",
+        "Prolactin"
+      ],
+      [
+        "Metoclopramide",
+        "Functional disorder",
+        "physiological aspects",
+        "Dopamine Antagonists"
+      ],
+      [
+        "Metoclopramide",
+        "Epilepsy",
+        "physiological aspects",
+        "Dopamine Antagonists"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PART_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Bromocriptine)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Dopamine)",
+      "(Amantadine)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Dopamine Antagonists)",
+      "(Dopamine Antagonists)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Dopamine)",
+      "(Dopamine Antagonists)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Dopamine)",
+      "(Dopamine)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Prolactin)",
+      "(Dopamine)-PART_OF->(Cells)-INTERACTS_WITH->(Prolactin)",
+      "(Metoclopramide)-TREATS->(Functional disorder)-MANIFESTATION_OF->(physiological aspects)-ASSOCIATED_WITH->(Dopamine Antagonists)",
+      "(Metoclopramide)-TREATS->(Epilepsy)-MANIFESTATION_OF->(physiological aspects)-ASSOCIATED_WITH->(Dopamine Antagonists)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Metoclopramide)-TREATS->(Functional disorder)-MANIFESTATION_OF->(physiological aspects)-ASSOCIATED_WITH->(Dopamine Antagonists)",
+      "(Metoclopramide)-TREATS->(Epilepsy)-MANIFESTATION_OF->(physiological aspects)-ASSOCIATED_WITH->(Dopamine Antagonists)",
+      "(Prolactin)-PREVENTS->(Hyperprolactinemia)",
+      "(Bromocriptine)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Dopamine)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Bromocriptine\" -> \"dopamine agonist\" -> \"decreased prolactin secretion\" -> \"not a cause of hyperprolactinemia\" -> 90%",
+    "CHAIN: \"Levodopa\" -> \"dopamine precursor\" -> \"increased dopamine levels\" -> \"possible decrease in prolactin\" -> \"not a cause of hyperprolactinemia\" -> 85%",
+    "CHAIN: \"Amantadine\" -> \"dopamine receptor antagonist\" -> \"possible increase in dopamine\" -> \"unclear effect on prolactin\" -> 70%",
+    "CHAIN: \"Metoclopramide\" -> \"dopamine antagonist\" -> \"increased prolactin secretion\" -> \"cause of hyperprolactinemia\" -> 95%"
+  ],
+  "enhanced_information": "Hyperprolactinemia is primarily caused by dopamine antagonists, which increase prolactin secretion. Among the options, Metoclopramide is a known dopamine antagonist that leads to increased prolactin levels, making it a cause of hyperprolactinemia. In contrast, Bromocriptine is a dopamine agonist that decreases prolactin secretion, and thus is not a cause of hyperprolactinemia. Levodopa, a dopamine precursor, may also decrease prolactin levels, and Amantadine's effects on prolactin are unclear but are not typically associated with hyperprolactinemia. Therefore, the only option that directly causes hyperprolactinemia is Metoclopramide.",
+  "analysis": "Hyperprolactinemia is primarily caused by medications that act as dopamine antagonists, which inhibit dopamine's ability to suppress prolactin secretion. Among the options provided, Metoclopramide is a well-known dopamine antagonist that can lead to increased prolactin levels, thus causing hyperprolactinemia. In contrast, Bromocriptine is a dopamine agonist that reduces prolactin levels, making it an unlikely cause of hyperprolactinemia. Levodopa, being a precursor to dopamine, generally has a lowering effect on prolactin levels as well. Amantadine's relationship with prolactin is less clear, but it is not typically associated with causing hyperprolactinemia. Therefore, the most supported option that directly causes hyperprolactinemia is Metoclopramide.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      3,
+      1
+    ],
+    "coverage_rates": [
+      16.666666666666664,
+      16.666666666666664,
+      50.0,
+      16.666666666666664
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

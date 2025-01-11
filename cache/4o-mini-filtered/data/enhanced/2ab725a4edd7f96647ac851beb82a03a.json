@@ -1,0 +1,151 @@
+{
+  "question": "Drug used in cancer chemotherapy induced vomiting is?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Aprepitant",
+    "opb": "Dexamethasone",
+    "opc": "Ondansetrin",
+    "opd": "All of the above"
+  },
+  "topic_name": "Pharmacology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ondansetron",
+        "Disease",
+        "Obstruction"
+      ],
+      [
+        "Ondansetron",
+        "Myocardial Infarction",
+        "Obstruction"
+      ],
+      [
+        "Ondansetron",
+        "Symptoms",
+        "Obstruction"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Ondansetron)-TREATS->(Disease)-CAUSES->(Obstruction)",
+      "(Ondansetron)-TREATS->(Myocardial Infarction)-CAUSES->(Obstruction)",
+      "(Ondansetron)-TREATS->(Symptoms)-MANIFESTATION_OF->(Obstruction)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "[D]Nausea and vomiting NOS",
+        "Helicobacter pylori",
+        "Enzymes",
+        "Pharmacotherapy"
+      ],
+      [
+        "[D]Nausea and vomiting NOS",
+        "Helicobacter pylori",
+        "Ascorbic Acid",
+        "Pharmacotherapy"
+      ],
+      [
+        "Nausea",
+        "Streptococcus",
+        "Chitosan",
+        "Chemotherapy-Oncologic Procedure"
+      ],
+      [
+        "Nausea",
+        "Streptococcus",
+        "Enzymes",
+        "Chemotherapy-Oncologic Procedure"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "LOCATION_OF",
+        "ISA"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "LOCATION_OF",
+        "ISA"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "LOCATION_OF",
+        "ISA"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "LOCATION_OF",
+        "ISA"
+      ]
+    ],
+    "paths": [
+      "([D]Nausea and vomiting NOS)-ASSOCIATED_WITH->(Helicobacter pylori)-LOCATION_OF->(Enzymes)-ISA->(Pharmacotherapy)",
+      "([D]Nausea and vomiting NOS)-ASSOCIATED_WITH->(Helicobacter pylori)-LOCATION_OF->(Ascorbic Acid)-ISA->(Pharmacotherapy)",
+      "(Nausea)-ASSOCIATED_WITH->(Streptococcus)-LOCATION_OF->(Chitosan)-ISA->(Chemotherapy-Oncologic Procedure)",
+      "(Nausea)-ASSOCIATED_WITH->(Streptococcus)-LOCATION_OF->(Enzymes)-ISA->(Chemotherapy-Oncologic Procedure)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ondansetron)-TREATS->(Symptoms)-MANIFESTATION_OF->(Obstruction)",
+      "([D]Nausea and vomiting NOS)-ASSOCIATED_WITH->(Helicobacter pylori)-LOCATION_OF->(Ascorbic Acid)-ISA->(Pharmacotherapy)",
+      "(Nausea)-ASSOCIATED_WITH->(Streptococcus)-LOCATION_OF->(Chitosan)-ISA->(Chemotherapy-Oncologic Procedure)",
+      "(Ondansetron)-TREATS->(Disease)-CAUSES->(Obstruction)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Aprepitant\" -> \"blocks substance P\" -> \"reduces nausea and vomiting\" -> \"effective in chemotherapy\" -> 95%",
+    "CHAIN: \"Dexamethasone\" -> \"anti-inflammatory effects\" -> \"reduces nausea\" -> \"used in chemotherapy regimens\" -> 90%",
+    "CHAIN: \"Ondansetron\" -> \"blocks serotonin receptors\" -> \"reduces chemotherapy-induced nausea\" -> \"widely used in cancer treatment\" -> 95%",
+    "CHAIN: \"Aprepitant, Dexamethasone, and Ondansetron\" -> \"all effective in managing chemotherapy-induced vomiting\" -> \"used in combination or separately\" -> 90%",
+    "CHAIN: \"All of the above\" -> \"includes Aprepitant, Dexamethasone, and Ondansetron\" -> \"all have roles in chemotherapy-induced vomiting\" -> 85%"
+  ],
+  "enhanced_information": "Aprepitant, Dexamethasone, and Ondansetron are all effective in managing chemotherapy-induced vomiting. Aprepitant works by blocking substance P, which reduces nausea and vomiting, making it effective in chemotherapy settings. Dexamethasone, with its anti-inflammatory properties, also helps reduce nausea and is commonly used in chemotherapy regimens. Ondansetron blocks serotonin receptors, specifically 5-HT3 receptors, and is widely recognized for its efficacy in treating chemotherapy-induced nausea and vomiting. Therefore, the correct answer is 'All of the above,' as all three drugs play significant roles in the management of this condition.",
+  "analysis": "In the context of chemotherapy-induced vomiting, all three drugs listed—Aprepitant, Dexamethasone, and Ondansetron—are utilized effectively. Aprepitant is a neurokinin-1 receptor antagonist that helps prevent nausea and vomiting by blocking substance P. Dexamethasone is a corticosteroid that has anti-inflammatory effects and is often included in antiemetic regimens. Ondansetron is a 5-HT3 receptor antagonist that is widely used for its efficacy in preventing nausea and vomiting associated with chemotherapy. Given that all three agents are recognized in clinical practice for their roles in managing chemotherapy-induced nausea and vomiting, the most comprehensive answer is 'All of the above.' Therefore, the best-supported option is indeed 'All of the above.'",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      33.33333333333333,
+      33.33333333333333,
+      0.0,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}
