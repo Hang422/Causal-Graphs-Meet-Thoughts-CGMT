@@ -1,0 +1,121 @@
+{
+  "question": "A 25-year-old G1P1 with a history of diabetes and epilepsy gives birth to a female infant at 32 weeks gestation. The mother had no prenatal care and took no prenatal vitamins. The child’s temperature is 98.6°F (37°C), blood pressure is 100/70 mmHg, pulse is 130/min, and respirations are 25/min. On physical examination in the delivery room, the child’s skin is pink throughout and he cries on stimulation. All four extremities are moving spontaneously. A tuft of hair is found overlying the infant’s lumbosacral region. Which of the following medications was this patient most likely taking during her pregnancy?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Lithium",
+    "opb": "Ethosuximide",
+    "opc": "Warfarin",
+    "opd": "Gentamicin",
+    "ope": "Valproic acid"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ethosuximide",
+        "Seizures"
+      ],
+      [
+        "Lithium",
+        "Bipolar Disorder"
+      ],
+      [
+        "anticoagulation",
+        "Hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "PREVENTS"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Ethosuximide)-CAUSES->(Seizures)",
+      "(Lithium)-PREVENTS->(Bipolar Disorder)",
+      "(anticoagulation)-CAUSES->(Hemorrhage)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Warfarin",
+        "Progestins",
+        "Blood",
+        "anticoagulation"
+      ],
+      [
+        "Warfarin",
+        "Progestins",
+        "Body tissue",
+        "anticoagulation"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Warfarin)-INTERACTS_WITH->(Progestins)-PART_OF->(Blood)-LOCATION_OF->(anticoagulation)",
+      "(Warfarin)-INTERACTS_WITH->(Progestins)-PART_OF->(Body tissue)-LOCATION_OF->(anticoagulation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Warfarin)-INTERACTS_WITH->(Progestins)-PART_OF->(Blood)-LOCATION_OF->(anticoagulation)",
+      "(Ethosuximide)-CAUSES->(Seizures)",
+      "(Lithium)-PREVENTS->(Bipolar Disorder)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Valproic acid\" -> \"neural tube defects\" -> \"tuft of hair over lumbosacral region\" -> 95%",
+    "CHAIN: \"Ethosuximide\" -> \"absence seizures treatment\" -> \"less likely neural tube defects\" -> 60%",
+    "CHAIN: \"Lithium\" -> \"bipolar disorder treatment\" -> \"cardiac anomalies risk\" -> \"no neural tube defect\" -> 50%",
+    "CHAIN: \"Warfarin\" -> \"anticoagulation\" -> \"risk of bleeding\" -> \"skeletal abnormalities\" -> \"no neural tube defect\" -> 40%",
+    "CHAIN: \"Gentamicin\" -> \"antibiotic\" -> \"ototoxicity risk\" -> \"no neural tube defect\" -> 30%"
+  ],
+  "enhanced_information": "The infant's presentation with a tuft of hair over the lumbosacral region is indicative of a neural tube defect, such as spina bifida. Valproic acid is a medication known to increase the risk of neural tube defects when taken during pregnancy, particularly if taken without folic acid supplementation. This aligns with the mother's history of epilepsy, as valproic acid is commonly used to manage seizures. The other medications listed do not have a strong association with neural tube defects: Ethosuximide is used for absence seizures and is less likely to cause neural tube defects; Lithium is associated with cardiac anomalies, not neural tube defects; Warfarin is linked to bleeding and skeletal abnormalities; Gentamicin is an antibiotic with ototoxicity risk, not neural tube defects. Therefore, the most likely medication the mother was taking is valproic acid.",
+  "analysis": "The infant's presentation with a tuft of hair over the lumbosacral region suggests a neural tube defect, such as spina bifida. Neural tube defects are known to be associated with maternal use of certain medications during pregnancy, particularly those that affect folic acid metabolism. Valproic acid, a medication used to treat epilepsy, is well-documented to increase the risk of neural tube defects when taken during pregnancy, especially without adequate folic acid supplementation. The mother's history of epilepsy and lack of prenatal care, including the absence of prenatal vitamins, supports the likelihood of valproic acid use. Other medications listed, such as Ethosuximide, Lithium, Warfarin, and Gentamicin, do not have a strong association with neural tube defects. Therefore, based on the infant's presentation and the mother's medical history, valproic acid is the most likely medication she was taking during her pregnancy.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      1,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      25.0,
+      25.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250113_184400",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "answer_normal_rag",
+  "question_id": "e8f8bc00",
+  "question_text": "A 27-year-old G1P0 at 12 weeks estimated gestational age presents for prenatal care. The patient says she has occasional nausea and vomiting and a few episodes of palpitations and diarrhea this last week. Physical examination is unremarkable, except for a heart rate of 145/min. Basic thyroid function tests are shown in the table below. Which of the following additional laboratory tests would be most useful is assessing this patient’s condition?\nThyroid-stimulating hormone (TSH) \n0.28 mIU/L (0.3–4.5 mIU/L)\nTotal T4\n12 µg/dL (5.4–11.5 µg/dL)?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert making decisions based on retrieved medical knowledge."
+    },
+    {
+      "role": "user",
+      "content": "You are a medical expert.Please help answer this multiple choice question:\n\n    Question: A 27-year-old G1P0 at 12 weeks estimated gestational age presents for prenatal care. The patient says she has occasional nausea and vomiting and a few episodes of palpitations and diarrhea this last week. Physical examination is unremarkable, except for a heart rate of 145/min. Basic thyroid function tests are shown in the table below. Which of the following additional laboratory tests would be most useful is assessing this patient’s condition?\nThyroid-stimulating hormone (TSH) \n0.28 mIU/L (0.3–4.5 mIU/L)\nTotal T4\n12 µg/dL (5.4–11.5 µg/dL)?\n\n    Options:\n    opa. Total triiodothyronine (T3) levels\nopb. Free thyroxine (T4) levels\nopc. Thyroxine-binding globulin (TBG) levels\nopd. Thyroid peroxidase (TPO) antibodies\nope. Thyrotropin receptor antibodies (TRAb)\n\n### Retrieved Similar Medical Knowledge:\n- link protein INTERACTS_WITH monocyte\n- Thyroid Function Tests DIAGNOSES Eclampsia\n- Thyroid stimulating hormone measurement DIAGNOSES early pregnancy\n- Vomiting ASSOCIATED_WITH Thyrotoxicosis in pregnancy\n- Retinopathy of Prematurity PREDISPOSES Septicemia\n- Serum Thyroxine Test DIAGNOSES Thyrotoxicosis in pregnancy\n- Hemorrhage CAUSES postoperative stroke\n\n    ### Instructions:\n            - Use standard medical knowledge as the primary guide.\n            - Consider enhanced information only if it aligns with consensus.\n            - If conflicting or unclear, present the most likely correct answer based on known facts.\n            - It's acceptable to show moderate confidence if the question is complex, but still choose one best answer.\n    ### Task:\n                1. Identify the core medical principle and the most likely correct option based on consensus.\n                2. If the evidence is not perfectly clear, pick the best-supported option and explain the reasoning.\n                3. Provide a final analysis and a confidence score (0-100%).\n\n    ### Output Format\n    Provide your response in valid JSON format:\n    {   \n        \"final_analysis\": \"Your analysis of how the retrieved relationships support the answer\",\n        \"answer\": \"Option key from the available options (only key, like opa)\",\n        \"confidence\": Score between 0-100 based on evidence strength and relevance\n    }\n    "
+    }
+  ],
+  "response": "{\n    \"final_analysis\": \"The patient is presenting with symptoms suggestive of hyperthyroidism, given the elevated heart rate and thyroid function tests showing low TSH and high total T4 levels. To further assess this condition, the most useful additional laboratory test would be to check for Thyrotropin receptor antibodies (TRAb) to evaluate for Graves' disease, a common cause of hyperthyroidism.\",\n    \"answer\": \"ope\",\n    \"confidence\": 90\n}",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": true,
+    "has_enhanced_info": true,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

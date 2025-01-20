@@ -1,0 +1,134 @@
+{
+  "question": "A 70-year-old man with 29,000 leukocytes / mm3, 180,000 platelets / mm3 and 15g / dL of hemoglobin in a routine analysis. During the examination no adenopathies or organomegalies were observed. In the extension of the peripheral blood numerous shadows of Gumprecht are detected. What is the most likely diagnosis ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Monoclonal gammopathy of uncertain significance.",
+    "opb": "Viral infection",
+    "opc": "Myelodysplastic syndrome",
+    "opd": "Chronic lymphoid leukemia"
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Leukocytosis",
+        "Respiratory Distress Syndrome, Adult",
+        "Hematological Disease"
+      ],
+      [
+        "Leukocytosis",
+        "Disease",
+        "Hematological Disease"
+      ],
+      [
+        "Leukocytosis",
+        "Infection",
+        "Hematological Disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Leukocytosis)-CAUSES->(Respiratory Distress Syndrome, Adult)-COMPLICATES->(Hematological Disease)",
+      "(Leukocytosis)-PREDISPOSES->(Disease)-CAUSES->(Hematological Disease)",
+      "(Leukocytosis)-PREDISPOSES->(Infection)-CAUSES->(Hematological Disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hematological Disease",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "brain tissue surgical material",
+        "Providing presence (regime/therapy)"
+      ],
+      [
+        "Hematological Disease",
+        "Obstruction",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "brain tissue surgical material",
+        "Providing presence (regime/therapy)"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Hematological Disease)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy))",
+      "(Hematological Disease)-CAUSES->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy))"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hematological Disease)-CAUSES->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy))",
+      "(Leukocytosis)-CAUSES->(Respiratory Distress Syndrome, Adult)-COMPLICATES->(Hematological Disease)",
+      "(Leukocytosis)-PREDISPOSES->(Disease)-CAUSES->(Hematological Disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"70-year-old man\" -> \"leukocytosis (29,000 leukocytes/mm3)\" -> \"possible hematological disorder\" -> \"presence of Gumprecht shadows\" -> \"suggestive of chronic lymphoid leukemia\" -> 85%",
+    "CHAIN: \"70-year-old man\" -> \"elevated leukocyte count\" -> \"no adenopathies or organomegalies\" -> \"Gumprecht shadows in peripheral blood\" -> \"indicates possible chronic lymphoid leukemia\" -> 80%",
+    "CHAIN: \"70-year-old man\" -> \"high leukocyte count\" -> \"Gumprecht shadows observed\" -> \"suggestive of lymphocyte proliferation\" -> \"consistent with chronic lymphoid leukemia\" -> 90%",
+    "CHAIN: \"70-year-old man\" -> \"29,000 leukocytes/mm3\" -> \"Gumprecht shadows present\" -> \"indicates abnormal lymphocytes\" -> \"most likely chronic lymphoid leukemia\" -> 88%",
+    "CHAIN: \"70-year-old man\" -> \"high leukocyte count\" -> \"no signs of infection or organomegaly\" -> \"Gumprecht shadows detected\" -> \"likely chronic lymphoid leukemia\" -> 85%"
+  ],
+  "enhanced_information": "The patient is a 70-year-old man with leukocytosis (29,000 leukocytes/mm3) and the presence of Gumprecht shadows in peripheral blood, which are indicative of abnormal lymphocytes. The absence of adenopathies or organomegaly further supports a hematological disorder rather than an acute infection or other causes. The combination of high leukocyte count and Gumprecht shadows strongly suggests chronic lymphoid leukemia (CLL), as these findings are consistent with lymphocyte proliferation characteristic of this condition. Other options such as monoclonal gammopathy of uncertain significance, viral infection, and myelodysplastic syndrome do not align as closely with the presented clinical findings. Therefore, the most likely diagnosis is chronic lymphoid leukemia.",
+  "analysis": "The patient presents with leukocytosis (29,000 leukocytes/mm3), elevated platelets (180,000 platelets/mm3), and normal hemoglobin (15g/dL). The presence of Gumprecht shadows in the peripheral blood indicates the presence of abnormal lymphocytes, which is a hallmark of chronic lymphocytic leukemia (CLL). The absence of adenopathies or organomegaly further supports a diagnosis of CLL, as these features are often present in other hematological malignancies or infections. Monoclonal gammopathy of uncertain significance typically does not present with leukocytosis or Gumprecht shadows. Viral infections can cause leukocytosis but are less likely to present with such specific findings. Myelodysplastic syndromes usually present with cytopenias rather than isolated leukocytosis. Therefore, the most likely diagnosis, given the clinical findings and laboratory results, is chronic lymphoid leukemia.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      100.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

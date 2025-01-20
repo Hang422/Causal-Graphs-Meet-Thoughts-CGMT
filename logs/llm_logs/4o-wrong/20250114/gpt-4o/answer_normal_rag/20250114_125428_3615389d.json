@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250114_125428",
+  "model": "gpt-4o",
+  "interaction_type": "answer_normal_rag",
+  "question_id": "3615389d",
+  "question_text": "A 25-year-old man consults for tremor. Objective exploration dysarthria and dystonia. He has a family history of psychiatric illness and movement disorders. Which diagnostic test do you consider most accurate?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert making decisions based on retrieved medical knowledge."
+    },
+    {
+      "role": "user",
+      "content": "You are a medical expert specializing in the field of Medicine.Please help answer this multiple choice question:\n\n    Question: A 25-year-old man consults for tremor. Objective exploration dysarthria and dystonia. He has a family history of psychiatric illness and movement disorders. Which diagnostic test do you consider most accurate?\n\n    Options:\n    opa. DATSCAN.\nopb. Nerve conduction study.\nopc. Electroencephalogram.\nopd. Copper in 24-hour urine.\n\n### Retrieved Similar Medical Knowledge:\n- Parenchyma LOCATION_OF Dynamic Contrast-Enhanced Magnetic Resonance Imaging\n- Syndrome MANIFESTATION_OF Endocrine System Diseases\n- Propofol TREATS Stiff-Person Syndrome\n- prednisolone TREATS Dyspnea\n- Entire arteriole LOCATION_OF Hyaline degeneration\n- Neurologic Examination DIAGNOSES Tremor\n\n    ### Instructions:\n            - Use standard medical knowledge as the primary guide.\n            - Consider enhanced information only if it aligns with consensus.\n            - If conflicting or unclear, present the most likely correct answer based on known facts.\n            - It's acceptable to show moderate confidence if the question is complex, but still choose one best answer.\n    ### Task:\n                1. Identify the core medical principle and the most likely correct option based on consensus.\n                2. If the evidence is not perfectly clear, pick the best-supported option and explain the reasoning.\n                3. Provide a final analysis and a confidence score (0-100%).\n\n    ### Output Format\n    Provide your response in valid JSON format:\n    {   \n        \"final_analysis\": \"Your analysis of how the retrieved relationships support the answer\",\n        \"answer\": \"Option key from the available options (only key, like opa)\",\n        \"confidence\": Score between 0-100 based on evidence strength and relevance\n    }\n    "
+    }
+  ],
+  "response": "```json\n{\n    \"final_analysis\": \"The symptoms described in the question, including tremor, dysarthria, dystonia, and a family history of psychiatric illness and movement disorders, are suggestive of Wilson's disease. Wilson's disease is a genetic disorder that leads to excessive copper accumulation in the body, affecting the liver and brain. The most accurate diagnostic test for Wilson's disease is measuring copper levels in a 24-hour urine collection, as it directly assesses copper excretion, which is typically elevated in this condition.\",\n    \"answer\": \"opd\",\n    \"confidence\": 95\n}\n```",
+  "metadata": {
+    "topic": "Medicine",
+    "is_multi_choice": true,
+    "has_reasoning_chain": true,
+    "has_enhanced_info": true,
+    "model_config": "gpt-4o",
+    "temperature": 0.0
+  }
+}

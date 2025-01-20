@@ -1,0 +1,135 @@
+{
+  "question": "Question linked to image # 5 In this patient, what should be the initial treatment?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Perform a diagnostic angiography plus an associated fibrinolysis.",
+    "opb": "Modify vascular risk factors, physical exercise and medical treatment.",
+    "opc": "The surgery of revascularization by bypass or by endovascular surgery.",
+    "opd": "Perform an urgent embolectomy.",
+    "ope": "Analgesic treatment and decrease physical exercise until symptoms improve."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "angiogram",
+        "Thrombus",
+        "Fibrinolysis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(angiogram)-CAUSES->(Thrombus)-MANIFESTATION_OF->(Fibrinolysis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Blood Circulation",
+        "Liver",
+        "Transplanted tissue",
+        "Embolectomy"
+      ],
+      [
+        "Blood Circulation",
+        "Muscularis propria",
+        "Transplanted tissue",
+        "Embolectomy"
+      ],
+      [
+        "Revascularization - action",
+        "Infarction",
+        "Genes",
+        "Endothelium",
+        "Bypass"
+      ],
+      [
+        "Revascularization - action",
+        "Vascular proliferation",
+        "Genes",
+        "Endothelium",
+        "Bypass"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PROCESS_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Blood Circulation)-PROCESS_OF->(Liver)-PART_OF->(Transplanted tissue)-LOCATION_OF->(Embolectomy)",
+      "(Blood Circulation)-PROCESS_OF->(Muscularis propria)-PART_OF->(Transplanted tissue)-LOCATION_OF->(Embolectomy)",
+      "(Revascularization - action)-TREATS->(Infarction)-ASSOCIATED_WITH->(Genes)-PART_OF->(Endothelium)-LOCATION_OF->(Bypass)",
+      "(Revascularization - action)-TREATS->(Vascular proliferation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Endothelium)-LOCATION_OF->(Bypass)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(angiogram)-CAUSES->(Thrombus)-MANIFESTATION_OF->(Fibrinolysis)",
+      "(Revascularization - action)-TREATS->(Infarction)-ASSOCIATED_WITH->(Genes)-PART_OF->(Endothelium)-LOCATION_OF->(Bypass)",
+      "(Revascularization - action)-TREATS->(Vascular proliferation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Endothelium)-LOCATION_OF->(Bypass)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient with acute limb ischemia\" -> \"urgent need to restore blood flow\" -> \"perform an urgent embolectomy\" -> 95%",
+    "CHAIN: \"Patient with peripheral artery disease\" -> \"modify vascular risk factors\" -> \"initiate physical exercise and medical treatment\" -> 70%",
+    "CHAIN: \"Patient with severe arterial blockage\" -> \"consider revascularization\" -> \"surgery by bypass or endovascular surgery\" -> 60%",
+    "CHAIN: \"Patient with acute ischemic symptoms\" -> \"perform diagnostic angiography\" -> \"consider fibrinolysis if indicated\" -> 50%",
+    "CHAIN: \"Patient with pain due to ischemia\" -> \"provide analgesic treatment\" -> \"decrease physical exercise temporarily\" -> 40%"
+  ],
+  "enhanced_information": "In a patient with acute limb ischemia, the standard medical consensus emphasizes the urgent need to restore blood flow to prevent tissue damage. The most immediate and effective treatment is an urgent embolectomy, which directly addresses the blockage. This aligns with the reasoning chain for option 'opd'. Other options, such as modifying vascular risk factors or considering revascularization surgery, are more appropriate for chronic management of peripheral artery disease rather than acute ischemia. Diagnostic angiography and fibrinolysis may be considered if the embolectomy is not feasible or if the diagnosis is uncertain, but they are not the initial treatment of choice. Analgesic treatment and reduced physical activity are supportive measures but do not address the critical need for revascularization in acute ischemia. The retrieved evidence paths, while broad, support the use of revascularization techniques in treating vascular blockages, but the immediate need in acute cases is best met by embolectomy.",
+  "analysis": "In the context of acute limb ischemia, the primary medical principle is the urgent restoration of blood flow to prevent irreversible tissue damage. The most immediate and effective treatment for this condition is an urgent embolectomy, which directly removes the embolus causing the blockage. This aligns with option 'opd'. Other options, such as modifying vascular risk factors or considering revascularization surgery, are more suitable for chronic management of peripheral artery disease rather than acute ischemia. Diagnostic angiography and fibrinolysis may be considered if embolectomy is not feasible or if the diagnosis is uncertain, but they are not the initial treatment of choice. Analgesic treatment and reduced physical activity are supportive measures but do not address the critical need for revascularization in acute ischemia. Therefore, based on standard medical consensus, the most appropriate initial treatment for acute limb ischemia is an urgent embolectomy.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      1,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      0.0,
+      33.33333333333333,
+      33.33333333333333,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

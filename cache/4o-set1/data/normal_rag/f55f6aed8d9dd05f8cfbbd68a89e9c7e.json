@@ -1,0 +1,145 @@
+{
+  "question": "The hairy cell leukemia (hairy cell leukemia) presents as characteristic clinical-biological features:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Lymphocytosis in peripheral blood greater than 50,000 lymphocytes / microL.",
+    "opb": "T lymphoid line markers",
+    "opc": "Exfoliative generalized erythroderma, plaques and skin tumors.",
+    "opd": "Pancytopenia and splenomegaly."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pancytopenia",
+        "Splenomegaly"
+      ],
+      [
+        "Pancytopenia",
+        "Splenomegaly"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pancytopenia)-CAUSES->(Splenomegaly)",
+      "(Pancytopenia)-CAUSES->(Splenomegaly)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pancytopenia",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "Lymphocyte"
+      ],
+      [
+        "Pancytopenia",
+        "Functional disorder",
+        "neuropeptide Y|NPY",
+        "Lymphocyte"
+      ],
+      [
+        "Lymphocyte",
+        "Virus",
+        "Lymphocytosis"
+      ],
+      [
+        "Lymphocyte",
+        "Pharmaceutical Preparations",
+        "Lymphocytosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pancytopenia)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Lymphocyte)",
+      "(Pancytopenia)-CAUSES->(Functional disorder)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Lymphocyte)",
+      "(Lymphocyte)-LOCATION_OF->(Virus)-CAUSES->(Lymphocytosis)",
+      "(Lymphocyte)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Lymphocytosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pancytopenia)-CAUSES->(Splenomegaly)",
+      "(Lymphocyte)-LOCATION_OF->(Virus)-CAUSES->(Lymphocytosis)",
+      "(Lymphocyte)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Lymphocytosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Hairy cell leukemia\" -> \"bone marrow infiltration\" -> \"pancytopenia\" -> \"splenomegaly\" -> 95%",
+    "CHAIN: \"Hairy cell leukemia\" -> \"abnormal B cells\" -> \"pancytopenia\" -> \"splenomegaly\" -> 90%",
+    "CHAIN: \"Hairy cell leukemia\" -> \"B cell markers\" -> \"not T lymphoid line markers\" -> 85%",
+    "CHAIN: \"Hairy cell leukemia\" -> \"pancytopenia\" -> \"decreased lymphocytes\" -> \"not lymphocytosis\" -> 90%",
+    "CHAIN: \"Hairy cell leukemia\" -> \"abnormal B cells\" -> \"not associated with skin conditions\" -> 80%"
+  ],
+  "enhanced_information": "Hairy cell leukemia is characterized by bone marrow infiltration leading to pancytopenia and splenomegaly, which aligns with the consensus that these are common clinical features of the disease. The presence of abnormal B cells in hairy cell leukemia is consistent with the disease's classification as a B-cell neoplasm, and it does not typically present with T lymphoid line markers or skin conditions such as exfoliative erythroderma, plaques, or skin tumors. Lymphocytosis, particularly at levels greater than 50,000 lymphocytes/microL, is not characteristic of hairy cell leukemia, as the disease often results in decreased lymphocyte counts due to bone marrow infiltration. The retrieved evidence paths support the relationship between pancytopenia and splenomegaly, which are key features of hairy cell leukemia, while the paths related to lymphocytosis are not relevant to this condition.",
+  "analysis": "Hairy cell leukemia is characterized by pancytopenia and splenomegaly. This is due to the infiltration of the bone marrow and spleen by the leukemic cells, leading to decreased production of normal blood cells and an enlarged spleen. The other options do not align with the typical presentation of hairy cell leukemia. Lymphocytosis greater than 50,000 lymphocytes/microL is more characteristic of chronic lymphocytic leukemia. T lymphoid line markers are not typical for hairy cell leukemia, which is a B-cell neoplasm. Exfoliative erythroderma and skin tumors are not associated with hairy cell leukemia but rather with conditions like cutaneous T-cell lymphoma.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      0,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      25.0,
+      25.0,
+      0.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": [
+    "Blood Tests DIAGNOSES Lymphocytosis",
+    "Dendritic Cells INTERACTS_WITH Cathepsins B",
+    "CALCULATION DIAGNOSES Pyotraumatic dermatitis",
+    "Biological Products TREATS Lymphopenia",
+    "Retinal Diseases CAUSES Diabetes Mellitus, Non-Insulin-Dependent",
+    "Skin Manifestations ASSOCIATED_WITH Idiopathic disease",
+    "PECAM1 gene|PECAM1 INTERACTS_WITH MONONUCLEAR CELLS",
+    "Splenomegaly ASSOCIATED_WITH Pancytopenia",
+    "Tropism PROCESS_OF Intestines, Small",
+    "Lymphocyte disorder PREDISPOSES Disease",
+    "High Endothelial Venule PART_OF NODE",
+    "E 4010 TREATS Hypertension, Pulmonary"
+  ]
+}

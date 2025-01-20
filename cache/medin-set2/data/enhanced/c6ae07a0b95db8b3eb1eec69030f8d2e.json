@@ -1,0 +1,200 @@
+{
+  "question": "A 62-year-old Caucasian male receiving treatment for stable angina experiences intermittent throbbing headaches. What is the most likely cause?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Transient ischemic attack",
+    "opb": "Elevated creatine kinase",
+    "opc": "Beta adrenergic inactivation",
+    "opd": "Acute hemorrhage",
+    "ope": "Vasodilation of cerebral arteries"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Calcium Channel Blockers",
+        "Vasodilation"
+      ],
+      [
+        "Vasodilation",
+        "Pancreas",
+        "Pancreatitis",
+        "Disease",
+        "Blood Circulation"
+      ],
+      [
+        "Vasodilation",
+        "Pancreas",
+        "Pancreatitis",
+        "Infection",
+        "Blood Circulation"
+      ],
+      [
+        "Vasodilation",
+        "Pancreas",
+        "Pancreatitis",
+        "Endothelial dysfunction",
+        "Blood Circulation"
+      ],
+      [
+        "Blood Circulation",
+        "Pancreas",
+        "Pancreatitis",
+        "Disease",
+        "Headache"
+      ],
+      [
+        "Blood Circulation",
+        "Pancreas",
+        "Pancreatitis",
+        "Infection",
+        "Headache"
+      ],
+      [
+        "Blood Circulation",
+        "Pancreas",
+        "Pancreatitis",
+        "Hypertensive disease",
+        "Headache"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Calcium Channel Blockers)-CAUSES->(Vasodilation)",
+      "(Vasodilation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Vasodilation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Infection)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Vasodilation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Endothelial dysfunction)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Disease)-CAUSES->(Headache)",
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Infection)-CAUSES->(Headache)",
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Hypertensive disease)-CAUSES->(Headache)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Stable angina",
+        "Inflammation",
+        "EDNRB",
+        "Calcium Channel Blockers"
+      ],
+      [
+        "Stable angina",
+        "Inflammation",
+        "CYP2B6",
+        "Calcium Channel Blockers"
+      ],
+      [
+        "Brain",
+        "Headache"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Stable angina)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(EDNRB)-INTERACTS_WITH->(Calcium Channel Blockers)",
+      "(Stable angina)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(CYP2B6)-INTERACTS_WITH->(Calcium Channel Blockers)",
+      "(Brain)-LOCATION_OF->(Headache)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Stable angina)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(CYP2B6)-INTERACTS_WITH->(Calcium Channel Blockers)",
+      "(Brain)-LOCATION_OF->(Headache)",
+      "(Vasodilation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Vasodilation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Infection)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Vasodilation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Endothelial dysfunction)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Disease)-CAUSES->(Headache)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Stable angina treatment\" -> \"possible vasodilatory effects\" -> \"cerebral artery dilation\" -> \"intermittent throbbing headaches\" -> 85%",
+    "CHAIN: \"Stable angina treatment\" -> \"use of nitrates or calcium channel blockers\" -> \"vasodilation\" -> \"increased blood flow to the brain\" -> \"intermittent throbbing headaches\" -> 80%",
+    "CHAIN: \"Intermittent throbbing headaches\" -> \"possible cerebral vasodilation\" -> \"increased intracranial pressure\" -> \"headache symptoms\" -> 75%",
+    "CHAIN: \"Intermittent throbbing headaches\" -> \"not consistent with transient ischemic attack\" -> \"no neurological deficits\" -> \"less likely to be TIA\" -> 70%",
+    "CHAIN: \"Intermittent throbbing headaches\" -> \"not indicative of acute hemorrhage\" -> \"no sudden onset or severe symptoms\" -> \"less likely to be hemorrhage\" -> 70%"
+  ],
+  "enhanced_information": "The most likely cause of intermittent throbbing headaches in a 62-year-old male receiving treatment for stable angina is vasodilation of cerebral arteries. Treatment for stable angina often includes nitrates or calcium channel blockers, which can lead to vasodilation. This vasodilation can increase blood flow to the brain, potentially resulting in headaches. The reasoning chain indicating that headaches are not consistent with transient ischemic attack (TIA) is supported by the absence of neurological deficits, making TIA less likely. Additionally, the lack of sudden onset or severe symptoms makes acute hemorrhage unlikely. Therefore, the headaches are most consistent with the effects of vasodilation related to the treatment for stable angina.",
+  "analysis": "The patient is a 62-year-old male with stable angina, which is commonly treated with medications such as nitrates or calcium channel blockers. These medications can cause vasodilation, leading to increased blood flow and potentially resulting in headaches due to the dilation of cerebral arteries. The intermittent nature of the headaches and the absence of neurological deficits make transient ischemic attack (TIA) and acute hemorrhage less likely. Elevated creatine kinase is typically associated with muscle damage and is not directly related to headache symptoms. Beta adrenergic inactivation does not typically cause headaches. Therefore, the most likely cause of the intermittent throbbing headaches in this patient is vasodilation of cerebral arteries due to the treatment for stable angina.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      5,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      100.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

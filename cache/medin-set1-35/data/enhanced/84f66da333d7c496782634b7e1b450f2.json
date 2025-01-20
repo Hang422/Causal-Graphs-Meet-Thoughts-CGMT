@@ -1,0 +1,115 @@
+{
+  "question": "A 76-year-old man is brought to the hospital after having a stroke. Head CT is done in the emergency department and shows intracranial hemorrhage. Upon arrival to the ED he is verbally non-responsive and withdraws only to pain. He does not open his eyes. He is transferred to the medical ICU for further management and intubated for airway protection. During his second day in the ICU, his blood pressure is measured as 91/54 mmHg and pulse is 120/min. He is given fluids and antibiotics, but he progresses to renal failure and his mental status deteriorates. The physicians in the ICU ask the patient’s family what his wishes are for end-of-life care. His wife tells the team that she is durable power of attorney for the patient and provides appropriate documentation. She mentions that he did not have a living will, but she believes that he would want care withdrawn in this situation, and therefore asks the team to withdraw care at this point. The patient’s daughter vehemently disagrees and believes it is in the best interest of her father, the patient, to continue all care. Based on this information, what is the best course of action for the physician team?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Listen to the patient’s wife’s wishes and withdraw care",
+    "opb": "Listen to the patient’s daughter’s wishes and continue all care",
+    "opc": "Compromise between the wife and daughter and withdraw the fluids and antibiotics but keep the patient intubated",
+    "opd": "Consult the hospital ethics committee and continue all care until a decision is reached",
+    "ope": "Call other family members and consult them for their opinions"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fluid resuscitation",
+        "Disease",
+        "Disease Progression"
+      ],
+      [
+        "Fluid resuscitation",
+        "Obesity",
+        "Disease Progression"
+      ],
+      [
+        "Fluid resuscitation",
+        "Infection",
+        "Disease Progression"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Fluid resuscitation)-TREATS->(Disease)-CAUSES->(Disease Progression)",
+      "(Fluid resuscitation)-TREATS->(Obesity)-CAUSES->(Disease Progression)",
+      "(Fluid resuscitation)-TREATS->(Infection)-CAUSES->(Disease Progression)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Tachycardia",
+        "Albumins",
+        "Muscle",
+        "Fluid resuscitation"
+      ],
+      [
+        "Tachycardia",
+        "AES",
+        "Muscle",
+        "Fluid resuscitation"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Tachycardia)-ASSOCIATED_WITH->(Albumins)-PART_OF->(Muscle)-LOCATION_OF->(Fluid resuscitation)",
+      "(Tachycardia)-ASSOCIATED_WITH->(AES)-PART_OF->(Muscle)-LOCATION_OF->(Fluid resuscitation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fluid resuscitation)-TREATS->(Disease)-CAUSES->(Disease Progression)",
+      "(Fluid resuscitation)-TREATS->(Obesity)-CAUSES->(Disease Progression)",
+      "(Fluid resuscitation)-TREATS->(Infection)-CAUSES->(Disease Progression)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Intracranial hemorrhage -> decreased level of consciousness -> intubation for airway protection -> 85% CHAIN: Low blood pressure and tachycardia -> fluid resuscitation -> renal failure progression -> 80% CHAIN: Family disagreement on end-of-life care -> consult hospital ethics committee -> 70% CHAIN: Family disagreement on end-of-life care -> consider patient's best interest -> 75% CHAIN: Family disagreement on end-of-life care -> involve other family members for consensus -> 85%"
+  ],
+  "enhanced_information": "In this situation, the best course of action for the physician team would be to consult the hospital ethics committee and continue all care until a decision is reached. This aligns with standard practice in cases of family disagreement on end-of-life care. The evidence paths related to fluid resuscitation treating disease progression are not directly relevant to the decision-making process in this scenario.",
+  "analysis": "In cases of family disagreement on end-of-life care, the standard practice is to consult the hospital ethics committee to help mediate and reach a decision. This approach ensures that all perspectives are considered, and the patient's best interests are prioritized. Continuing all care until a decision is reached is the most appropriate course of action in this scenario.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

@@ -1,0 +1,185 @@
+{
+  "question": "In which of the following pathologies does a multineuropathy occur ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Mellitus diabetes.",
+    "opb": "Vasculitis of the vasa nervorum.",
+    "opc": "Multiple sclerosis.",
+    "opd": "Carpal tunnel syndrome."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Diabetes Mellitus",
+        "Chronic hyperglycemia"
+      ],
+      [
+        "Vasculitis",
+        "Antiinflammatory Effect",
+        "Blood Vessels"
+      ],
+      [
+        "Inflammation",
+        "Fibrinolysis",
+        "Nerve"
+      ],
+      [
+        "Inflammation",
+        "Musculoskeletal torsion, function",
+        "Nerve"
+      ],
+      [
+        "Inflammation",
+        "physiological aspects",
+        "Nerve"
+      ],
+      [
+        "Multiple Sclerosis",
+        "Demyelination"
+      ],
+      [
+        "Carpal Tunnel Syndrome",
+        "Disease",
+        "Myocardial Ischemia",
+        "Physiologic pulse",
+        "Structure of median nerve"
+      ],
+      [
+        "Carpal Tunnel Syndrome",
+        "Obesity",
+        "Myocardial Ischemia",
+        "Physiologic pulse",
+        "Structure of median nerve"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Diabetes Mellitus)-CAUSES->(Chronic hyperglycemia)",
+      "(Vasculitis)-MANIFESTATION_OF->(Antiinflammatory Effect)-PROCESS_OF->(Blood Vessels)",
+      "(Inflammation)-MANIFESTATION_OF->(Fibrinolysis)-PROCESS_OF->(Nerve)",
+      "(Inflammation)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(Nerve)",
+      "(Inflammation)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Nerve)",
+      "(Multiple Sclerosis)-CAUSES->(Demyelination)",
+      "(Carpal Tunnel Syndrome)-CAUSES->(Disease)-CAUSES->(Myocardial Ischemia)-MANIFESTATION_OF->(Physiologic pulse)-PROCESS_OF->(Structure of median nerve)",
+      "(Carpal Tunnel Syndrome)-CAUSES->(Obesity)-CAUSES->(Myocardial Ischemia)-MANIFESTATION_OF->(Physiologic pulse)-PROCESS_OF->(Structure of median nerve)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Vasa Nervorum",
+        "Facial nerve structure",
+        "Blood Vessels"
+      ],
+      [
+        "Vasa Nervorum",
+        "Peripheral Nerves",
+        "Blood Vessels"
+      ],
+      [
+        "Blood Vessels",
+        "Nerve"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Vasa Nervorum)-PART_OF->(Facial nerve structure)-PART_OF->(Blood Vessels)",
+      "(Vasa Nervorum)-PART_OF->(Peripheral Nerves)-PART_OF->(Blood Vessels)",
+      "(Blood Vessels)-PART_OF->(Nerve)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vasculitis)-MANIFESTATION_OF->(Antiinflammatory Effect)-PROCESS_OF->(Blood Vessels)",
+      "(Carpal Tunnel Syndrome)-CAUSES->(Disease)-CAUSES->(Myocardial Ischemia)-MANIFESTATION_OF->(Physiologic pulse)-PROCESS_OF->(Structure of median nerve)",
+      "(Carpal Tunnel Syndrome)-CAUSES->(Obesity)-CAUSES->(Myocardial Ischemia)-MANIFESTATION_OF->(Physiologic pulse)-PROCESS_OF->(Structure of median nerve)",
+      "(Diabetes Mellitus)-CAUSES->(Chronic hyperglycemia)",
+      "(Multiple Sclerosis)-CAUSES->(Demyelination)",
+      "(Vasa Nervorum)-PART_OF->(Facial nerve structure)-PART_OF->(Blood Vessels)",
+      "(Vasa Nervorum)-PART_OF->(Peripheral Nerves)-PART_OF->(Blood Vessels)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Mellitus diabetes\" -> \"chronic hyperglycemia\" -> \"nerve damage\" -> \"multineuropathy\" -> 85%",
+    "CHAIN: \"Vasculitis of the vasa nervorum\" -> \"inflammation of blood vessels\" -> \"ischemia of nerves\" -> \"multineuropathy\" -> 90%",
+    "CHAIN: \"Multiple sclerosis\" -> \"demyelination of CNS\" -> \"central nervous system symptoms\" -> \"not typically multineuropathy\" -> 40%",
+    "CHAIN: \"Carpal tunnel syndrome\" -> \"compression of median nerve\" -> \"localized neuropathy\" -> \"not multineuropathy\" -> 30%"
+  ],
+  "enhanced_information": "Multineuropathy, also known as multiple mononeuropathy, is a condition where multiple peripheral nerves are affected. In diabetes mellitus, chronic hyperglycemia can lead to nerve damage, resulting in diabetic neuropathy, which often presents as a multineuropathy. This aligns with the consensus that diabetes can cause multineuropathy. Vasculitis of the vasa nervorum involves inflammation of the blood vessels supplying nerves, leading to ischemia and subsequent nerve damage, which can manifest as multineuropathy. This is supported by the evidence path showing vasculitis affecting blood vessels. Multiple sclerosis primarily affects the central nervous system through demyelination and does not typically cause multineuropathy, which is a peripheral nervous system condition. Carpal tunnel syndrome involves compression of the median nerve, leading to localized neuropathy, not multineuropathy. The evidence paths related to carpal tunnel syndrome and myocardial ischemia are not directly relevant to multineuropathy. Therefore, the pathologies most associated with multineuropathy are diabetes mellitus and vasculitis of the vasa nervorum.",
+  "analysis": "Multineuropathy, or multiple mononeuropathy, involves damage to multiple peripheral nerves. Diabetes mellitus can lead to diabetic neuropathy, which often presents as a multineuropathy due to chronic hyperglycemia affecting multiple nerves. Vasculitis of the vasa nervorum causes inflammation of the blood vessels supplying nerves, leading to ischemic damage and multineuropathy. Multiple sclerosis primarily affects the central nervous system and does not typically cause multineuropathy, which is a peripheral nervous system condition. Carpal tunnel syndrome is a localized neuropathy affecting the median nerve and does not result in multineuropathy. Therefore, the pathologies most associated with multineuropathy are diabetes mellitus and vasculitis of the vasa nervorum. Given the options, vasculitis of the vasa nervorum is more directly associated with multineuropathy due to its mechanism of affecting multiple nerves through vascular inflammation.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      4,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      14.285714285714285,
+      57.14285714285714,
+      14.285714285714285,
+      14.285714285714285
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

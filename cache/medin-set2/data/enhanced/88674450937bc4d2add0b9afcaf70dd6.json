@@ -1,0 +1,224 @@
+{
+  "question": "A 55-year-old man presents to urgent care for weakness and weight loss. He states for the past several months he has felt progressively weaker and has lost 25 pounds. The patient also endorses intermittent abdominal pain. The patient has not seen a physician in 30 years and recalls being current on most of his vaccinations. He says that a few years ago, he went to the emergency department due to abdominal pain and was found to have increased liver enzymes due to excessive alcohol use and incidental gallstones. The patient has a 50 pack-year smoking history. His temperature is 99.5°F (37.5°C), blood pressure is 161/108 mmHg, pulse is 90/min, respirations are 17/min, and oxygen saturation is 95% on room air. Physical exam reveals an emaciated man. The patient has a negative Murphy's sign and his abdomen is non-tender. Cardiopulmonary exam is within normal limits. Which of the following is the next best step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "CT scan of the abdomen",
+    "opb": "CT scan of the liver",
+    "opc": "HIDA scan",
+    "opd": "Right upper quadrant ultrasound",
+    "ope": "Smoking cessation advice and primary care follow up"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Abdominal Pain",
+        "Disease",
+        "Chronic Disease"
+      ],
+      [
+        "X-Ray Computed Tomography",
+        "Symptoms",
+        "Ultrasonography"
+      ],
+      [
+        "X-Ray Computed Tomography",
+        "Flank Pain",
+        "Ultrasonography"
+      ],
+      [
+        "Diagnostic Imaging",
+        "Symptoms",
+        "Ultrasonography"
+      ],
+      [
+        "Diagnostic Imaging",
+        "Infection",
+        "Ultrasonography"
+      ],
+      [
+        "Liver diseases",
+        "Asthenia"
+      ],
+      [
+        "Asthenia",
+        "uptake",
+        "Gallbladder"
+      ],
+      [
+        "Abdominal Pain",
+        "Musculoskeletal torsion, function",
+        "Liver"
+      ],
+      [
+        "Abdominal Pain",
+        "uptake",
+        "Liver"
+      ],
+      [
+        "Cholelithiasis",
+        "Disease",
+        "physiological aspects",
+        "Gallbladder"
+      ],
+      [
+        "Cholelithiasis",
+        "Disease",
+        "Excretory function",
+        "Gallbladder"
+      ],
+      [
+        "Cholelithiasis",
+        "Disease",
+        "Blood Circulation",
+        "Gallbladder"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Abdominal Pain)-CAUSES->(Disease)-CAUSES->(Chronic Disease)",
+      "(X-Ray Computed Tomography)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(X-Ray Computed Tomography)-CAUSES->(Flank Pain)-CAUSES->(Ultrasonography)",
+      "(Diagnostic Imaging)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(Diagnostic Imaging)-TREATS->(Infection)-CAUSES->(Ultrasonography)",
+      "(Liver diseases)-CAUSES->(Asthenia)",
+      "(Asthenia)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Gallbladder)",
+      "(Abdominal Pain)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(Liver)",
+      "(Abdominal Pain)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Liver)",
+      "(Cholelithiasis)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Gallbladder)",
+      "(Cholelithiasis)-CAUSES->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(Gallbladder)",
+      "(Cholelithiasis)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)-PROCESS_OF->(Gallbladder)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Ultrasonography",
+        "Diagnostic Imaging"
+      ],
+      [
+        "Liver",
+        "Cholelithiasis"
+      ],
+      [
+        "Gallbladder",
+        "Cholelithiasis"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Ultrasonography)-ISA->(Diagnostic Imaging)",
+      "(Liver)-LOCATION_OF->(Cholelithiasis)",
+      "(Gallbladder)-LOCATION_OF->(Cholelithiasis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Abdominal Pain)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(Liver)",
+      "(Abdominal Pain)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Liver)",
+      "(Asthenia)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Gallbladder)",
+      "(Liver diseases)-CAUSES->(Asthenia)",
+      "(Liver)-LOCATION_OF->(Cholelithiasis)",
+      "(Ultrasonography)-ISA->(Diagnostic Imaging)",
+      "(Gallbladder)-LOCATION_OF->(Cholelithiasis)",
+      "(X-Ray Computed Tomography)-CAUSES->(Flank Pain)-CAUSES->(Ultrasonography)",
+      "(Abdominal Pain)-CAUSES->(Disease)-CAUSES->(Chronic Disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient presents with weakness and weight loss\" -> \"Possible underlying pathology affecting health\" -> \"History of increased liver enzymes and gallstones\" -> \"Risk factors include alcohol use and smoking\" -> \"Need to assess liver and biliary system\" -> \"Right upper quadrant ultrasound is non-invasive\" -> \"Can evaluate gallstones and liver pathology\" -> 85%",
+    "CHAIN: \"Patient has significant weight loss and abdominal pain\" -> \"Suggestive of possible malignancy or chronic disease\" -> \"History of liver issues raises concern for liver pathology\" -> \"CT scan of the abdomen can provide detailed imaging\" -> \"However, ultrasound is safer and less invasive\" -> \"Right upper quadrant ultrasound is preferred initial imaging\" -> 80%",
+    "CHAIN: \"Patient has a long history of smoking and alcohol use\" -> \"Increased risk for liver disease and malignancies\" -> \"Weight loss and weakness could indicate serious conditions\" -> \"Need to rule out gallbladder or liver issues\" -> \"Right upper quadrant ultrasound is a good first step\" -> \"Less risk than CT scan\" -> 75%",
+    "CHAIN: \"Patient's symptoms include abdominal pain and weight loss\" -> \"Possible gallbladder or liver involvement\" -> \"Previous gallstones noted in history\" -> \"Right upper quadrant ultrasound can assess gallbladder\" -> \"Non-invasive and effective for initial evaluation\" -> 90%"
+  ],
+  "enhanced_information": "The patient presents with significant weight loss, weakness, and a history of liver issues, raising concern for possible malignancy or chronic liver disease. Given the patient's history of gallstones and increased liver enzymes, a non-invasive imaging study is warranted to assess the liver and biliary system. The right upper quadrant ultrasound is preferred as the initial imaging modality due to its safety, effectiveness in evaluating gallstones, and ability to assess liver pathology without the risks associated with CT scans. This aligns with the consensus that ultrasound is the first-line imaging for suspected gallbladder and liver conditions in similar clinical scenarios.",
+  "analysis": "The patient presents with significant weight loss, weakness, and a history of liver issues, which raises concern for possible malignancy or chronic liver disease. Given the patient's history of gallstones and increased liver enzymes, it is crucial to assess the liver and biliary system. The right upper quadrant ultrasound is the preferred initial imaging modality due to its safety, effectiveness in evaluating gallstones, and ability to assess liver pathology without the risks associated with CT scans. This aligns with the consensus that ultrasound is the first-line imaging for suspected gallbladder and liver conditions in similar clinical scenarios. Therefore, the next best step in management is to perform a right upper quadrant ultrasound to evaluate the liver and biliary system for any abnormalities, such as gallstones or liver lesions.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      4,
+      2,
+      4
+    ],
+    "coverage_rates": [
+      0.0,
+      40.0,
+      20.0,
+      40.0
+    ],
+    "total_successes": 10
+  },
+  "normal_results": []
+}

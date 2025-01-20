@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250112_154041",
+  "model": "gpt-4o",
+  "interaction_type": "reasoning_chain",
+  "question_id": "d9545864",
+  "question_text": "We serve a patient who has just suffered a traffic accident. She is conscious and when taking the constants she has a systolic blood pressure of 70 mmHg and a heart rate of 45 beats / minute. In addition, the skin of the extremities is hot. What is the most likely cause of the shock?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            We serve a patient who has just suffered a traffic accident. She is conscious and when taking the constants she has a systolic blood pressure of 70 mmHg and a heart rate of 45 beats / minute. In addition, the skin of the extremities is hot. What is the most likely cause of the shock?\n\n            ### Options\n    opa. Hypovolemic shock\nopb. Intrinsic cardiogenic shock.\nopc. Neurogenic shock\nopd. Septic shock.\nope. Obstructive cardiogenic shock.\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Traffic accident\" -> \"spinal cord injury\" -> \"loss of sympathetic tone\" -> \"decreased heart rate\" -> \"decreased blood pressure\" -> \"warm extremities\" -> \"neurogenic shock\" -> 85%\n\nCHAIN: \"Traffic accident\" -> \"blood loss\" -> \"decreased blood volume\" -> \"decreased blood pressure\" -> \"increased heart rate\" -> \"cool extremities\" -> \"hypovolemic shock\" -> 60%\n\nCHAIN: \"Traffic accident\" -> \"heart damage\" -> \"decreased cardiac output\" -> \"decreased blood pressure\" -> \"increased heart rate\" -> \"cool extremities\" -> \"intrinsic cardiogenic shock\" -> 50%\n\nCHAIN: \"Traffic accident\" -> \"infection\" -> \"systemic inflammatory response\" -> \"vasodilation\" -> \"decreased blood pressure\" -> \"increased heart rate\" -> \"warm extremities\" -> \"septic shock\" -> 55%\n\nCHAIN: \"Traffic accident\" -> \"cardiac tamponade\" -> \"decreased cardiac output\" -> \"decreased blood pressure\" -> \"increased heart rate\" -> \"cool extremities\" -> \"obstructive cardiogenic shock\" -> 50%",
+  "metadata": {
+    "topic": "Medicine",
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-4o",
+    "temperature": 0.0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250112_205732",
+  "model": "gpt-4o-mini",
+  "interaction_type": "reasoning_chain",
+  "question_id": "46f7bc61",
+  "question_text": "A 31-year-old woman is brought to the emergency department for a severe throbbing headache, nausea, and photophobia for 3 hours. She has severe occipital pain and chest tightness. Prior to onset of symptoms, she had attended a networking event where she had red wine and, shortly after, a snack consisting of salami and some dried fruits. The patient has recurrent migraine headaches and depression, for which she takes medication daily. She is mildly distressed, diaphoretic, and her face is flushed. Her temperature is 37.0°C (98.6 F), pulse is 90/min, respirations are 20/min, and blood pressure is 195/130 mmHg. She is alert and oriented. Deep-tendon reflexes are 2+ bilaterally. This patient's symptoms are most likely caused by a side effect of which of the following medications?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 31-year-old woman is brought to the emergency department for a severe throbbing headache, nausea, and photophobia for 3 hours. She has severe occipital pain and chest tightness. Prior to onset of symptoms, she had attended a networking event where she had red wine and, shortly after, a snack consisting of salami and some dried fruits. The patient has recurrent migraine headaches and depression, for which she takes medication daily. She is mildly distressed, diaphoretic, and her face is flushed. Her temperature is 37.0°C (98.6 F), pulse is 90/min, respirations are 20/min, and blood pressure is 195/130 mmHg. She is alert and oriented. Deep-tendon reflexes are 2+ bilaterally. This patient's symptoms are most likely caused by a side effect of which of the following medications?\n\n            ### Options\n    opa. Ibuprofen\nopb. Verapamil\nopc. Phenelzine\nopd. Topiramate\nope. Valproic acid\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Patient has severe headache, nausea, and photophobia\" -> \"Symptoms suggest possible migraine or hypertensive crisis\" -> \"Blood pressure is significantly elevated at 195/130 mmHg\" -> \"Possible medication side effect causing hypertension\" -> \"Phenelzine is an MAOI that can cause hypertensive crisis with tyramine-rich foods\" -> \"Patient consumed salami and dried fruits, which may contain tyramine\" -> \"Symptoms consistent with phenelzine side effect\" -> 85%\n\nCHAIN: \"Patient presents with severe occipital pain and chest tightness\" -> \"Chest tightness may indicate cardiovascular involvement\" -> \"Elevated blood pressure suggests possible drug interaction\" -> \"Verapamil is a calcium channel blocker that can lower blood pressure\" -> \"Patient's symptoms do not align with verapamil side effects\" -> \"Less likely to be the cause\" -> 60%\n\nCHAIN: \"Patient has recurrent migraines and is on daily medication\" -> \"Topiramate is commonly used for migraine prevention\" -> \"Topiramate can cause cognitive side effects but not typically hypertension\" -> \"Symptoms do not align with topiramate side effects\" -> \"Less likely to be the cause\" -> 70%\n\nCHAIN: \"Patient is diaphoretic and has a flushed face\" -> \"These symptoms can indicate a sympathomimetic effect\" -> \"Ibuprofen is an NSAID and does not typically cause these symptoms\" -> \"Unlikely to be the cause\" -> 50%\n\nCHAIN: \"Patient's symptoms include severe headache and chest tightness\" -> \"Valproic acid is used for mood stabilization and seizure control\" -> \"Valproic acid does not typically cause hypertensive crises\" -> \"Unlikely to be the cause\" -> 50%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-4o-mini",
+    "temperature": 0.0
+  }
+}

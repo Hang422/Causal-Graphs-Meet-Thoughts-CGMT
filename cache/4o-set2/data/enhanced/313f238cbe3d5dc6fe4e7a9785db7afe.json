@@ -1,0 +1,120 @@
+{
+  "question": "Which of the following alterations in amino acid metabolism is caused by a deficit of vitamin B12 ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Methyl-malonic acidemia.",
+    "opb": "Phenylketonuric hyperphenylalaninemia.",
+    "opc": "Hypertirosinemia type I.",
+    "opd": "Alcaptonuria."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "homocysteine",
+        "Disease",
+        "Hyperphenylalaninaemia",
+        "6-Pyruvoyl tetrahydropterin synthase deficiency",
+        "Hyperphenylalaninemia, Non-Phenylketonuric"
+      ],
+      [
+        "homocysteine",
+        "Disease",
+        "Alkaptonuria"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(homocysteine)-CAUSES->(Disease)-CAUSES->(Hyperphenylalaninaemia)-MANIFESTATION_OF->(6-Pyruvoyl tetrahydropterin synthase deficiency)-CAUSES->(Hyperphenylalaninemia, Non-Phenylketonuric)",
+      "(homocysteine)-CAUSES->(Disease)-CAUSES->(Alkaptonuria)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Vitamin B 12 Deficiency",
+        "Obstruction",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "succinyl-coenzyme A"
+      ],
+      [
+        "Vitamin B 12 Deficiency",
+        "Insulin Resistance",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "succinyl-coenzyme A"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Vitamin B 12 Deficiency)-CAUSES->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(succinyl-coenzyme A)",
+      "(Vitamin B 12 Deficiency)-PREDISPOSES->(Insulin Resistance)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(succinyl-coenzyme A)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(homocysteine)-CAUSES->(Disease)-CAUSES->(Alkaptonuria)",
+      "(Vitamin B 12 Deficiency)-PREDISPOSES->(Insulin Resistance)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(succinyl-coenzyme A)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Vitamin B12 deficiency\" -> \"impaired conversion of methylmalonyl-CoA to succinyl-CoA\" -> \"accumulation of methylmalonic acid\" -> \"methyl-malonic acidemia\" -> 95%",
+    "CHAIN: \"Vitamin B12 deficiency\" -> \"impaired methionine synthesis\" -> \"possible homocysteine accumulation\" -> \"unclear link to phenylketonuric hyperphenylalaninemia\" -> 40%",
+    "CHAIN: \"Vitamin B12 deficiency\" -> \"impaired methionine synthesis\" -> \"possible homocysteine accumulation\" -> \"unclear link to hypertirosinemia type I\" -> 30%",
+    "CHAIN: \"Vitamin B12 deficiency\" -> \"impaired methionine synthesis\" -> \"possible homocysteine accumulation\" -> \"unclear link to alcaptonuria\" -> 30%"
+  ],
+  "enhanced_information": "Vitamin B12 deficiency leads to impaired conversion of methylmalonyl-CoA to succinyl-CoA, resulting in the accumulation of methylmalonic acid, which causes methyl-malonic acidemia. This is a well-established biochemical pathway and aligns with standard medical consensus. The other options, such as phenylketonuric hyperphenylalaninemia, hypertirosinemia type I, and alcaptonuria, are not directly linked to vitamin B12 deficiency. The retrieved evidence paths do not provide relevant support for these conditions in the context of vitamin B12 deficiency. Therefore, the correct alteration in amino acid metabolism caused by a deficit of vitamin B12 is methyl-malonic acidemia.",
+  "analysis": "Vitamin B12 plays a crucial role in the conversion of methylmalonyl-CoA to succinyl-CoA. A deficiency in vitamin B12 leads to the accumulation of methylmalonic acid, resulting in methyl-malonic acidemia. This is a well-documented biochemical pathway and is widely accepted in medical literature. The other conditions listed, such as phenylketonuric hyperphenylalaninemia, hypertirosinemia type I, and alcaptonuria, are not associated with vitamin B12 deficiency. Therefore, based on standard medical knowledge and consensus, the alteration in amino acid metabolism caused by a deficit of vitamin B12 is methyl-malonic acidemia.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      33.33333333333333,
+      0.0,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

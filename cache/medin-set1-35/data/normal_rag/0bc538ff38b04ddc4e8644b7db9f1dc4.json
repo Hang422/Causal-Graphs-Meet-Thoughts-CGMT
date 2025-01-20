@@ -1,0 +1,124 @@
+{
+  "question": "A 2-year-old boy is brought to the physician for the evaluation of fever, breathing difficulty, and cough during the past week. In the past year, the patient was diagnosed with four sinus infections, 3 upper respiratory tract infections, and an episode of severe bronchiolitis requiring hospitalization. Since birth, he has had multiple episodes of oral thrush treated with nystatin, as well as chronic diarrhea and failure to thrive. His temperature is 38.0°C (100.4°F), pulse is 130/min, respirations are 38/min, and blood pressure is 106/63 mm Hg. Pulse oximetry at room air shows an oxygen saturation of 88%. Pulmonary auscultation shows bilateral crackles and wheezing. Physical examination indicates a prominent nasal bridge, hypoplastic nasal wing, a shortened chin, and dysplastic ears. An X-ray of the chest shows hyperinflation of the lungs, interstitial infiltrates, and atelectasis. The patient tests positive for respiratory syncytial virus (RSV) in the nasopharyngeal aspirate. This patient most likely has a deficiency of which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "B cells",
+    "opb": "B and T cells",
+    "opc": "Immunoglobulin A",
+    "opd": "Interleukin-12 receptor",
+    "ope": "T cells"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Chronic diarrhea",
+        "Malabsorption Syndromes"
+      ],
+      [
+        "Thrive",
+        "Virus",
+        "Malabsorption Syndromes"
+      ],
+      [
+        "Malabsorption Syndromes",
+        "Malnutrition"
+      ],
+      [
+        "Malnutrition",
+        "Immunologic Deficiency Syndromes"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Chronic diarrhea)-CAUSES->(Malabsorption Syndromes)",
+      "(Thrive)-TREATS->(Virus)-CAUSES->(Malabsorption Syndromes)",
+      "(Malabsorption Syndromes)-CAUSES->(Malnutrition)",
+      "(Malnutrition)-CAUSES->(Immunologic Deficiency Syndromes)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Immunologic Deficiency Syndromes",
+        "Pathogenesis",
+        "Immunoglobulin A"
+      ],
+      [
+        "Immunologic Deficiency Syndromes",
+        "Pathogenesis",
+        "Immunoglobulin A"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Immunologic Deficiency Syndromes)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Immunoglobulin A)",
+      "(Immunologic Deficiency Syndromes)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Immunoglobulin A)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Thrive)-TREATS->(Virus)-CAUSES->(Malabsorption Syndromes)",
+      "(Immunologic Deficiency Syndromes)-MANIFESTATION_OF/PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Immunoglobulin A)",
+      "(Chronic diarrhea)-CAUSES->(Malabsorption Syndromes)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Chronic diarrhea and failure to thrive -> possible malabsorption -> possible nutritional deficiencies -> immunodeficiency -> deficiency of immunoglobulin A -> 80% CHAIN: Recurrent infections (sinus, upper respiratory tract, bronchiolitis) -> possible immune system dysfunction -> deficiency of B and T cells -> 70% CHAIN: Dysmorphic features (prominent nasal bridge, hypoplastic nasal wing, shortened chin, dysplastic ears) -> possible genetic syndrome -> immune system abnormalities -> deficiency of B cells -> 80%"
+  ],
+  "enhanced_information": "The patient most likely has a deficiency of B cells, indicated by the dysmorphic features and the possibility of a genetic syndrome leading to immune system abnormalities. The evidence paths support the presence of immunodeficiency and immune system dysfunction, aligning with the consensus that points towards a deficiency of B cells.",
+  "analysis": "The patient's recurrent infections, chronic diarrhea, failure to thrive, and dysmorphic features suggest an underlying primary immunodeficiency disorder. The presence of respiratory syncytial virus (RSV) infection and the clinical presentation point towards a deficiency in B cells, which are crucial for antibody production and defense against viral infections.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "WDR60 ASSOCIATED_WITH Schizophrenia",
+    "Antidepressive Agents TREATS Unstable angina",
+    "KDM5A INTERACTS_WITH Tumor Suppressor Genes",
+    "Disease PREDISPOSES Respiratory Insufficiency",
+    "Estrogens INTERACTS_WITH SATB1",
+    "GPI gene|GPI PREDISPOSES Diabetes",
+    "Disease PREDISPOSES Respiratory Tract Infections",
+    "Epidermal cell LOCATION_OF Computerized tomography, 3 dimensional reconstruction"
+  ]
+}

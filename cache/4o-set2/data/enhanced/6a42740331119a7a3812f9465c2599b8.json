@@ -1,0 +1,143 @@
+{
+  "question": "A 60-year-old man who suffered a myocardial infarction 1 year ago. They send it to evaluate their treatment. You are taking gemfibrozil 900 mg, lisinopril 20 mg, aspirin 100 mg and carvedilol 25 mg. In his analyzes he has LDL-C 162 mg / dL, HDL-C 46 mg / dL, triglycerides 132 mg / dL, total cholesterol 220 mg / dL. What therapeutic attitude seems more reasonable?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Insist on lifestyle changes and maintain the same treatment.",
+    "opb": "It is a priority to increase HDL cholesterol with nicotinic acid.",
+    "opc": "LDLc should be decreased by changing gemfibrozil to atorvastatin.",
+    "opd": "Remove the beta blocker if it alters the lipids."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Statin prophylaxis",
+        "Rhabdomyolysis",
+        "Gemfibrozil"
+      ],
+      [
+        "Current Therapy",
+        "Virus",
+        "Lipids",
+        "Gemfibrozil"
+      ],
+      [
+        "Current Therapy",
+        "Virus",
+        "Homologous Gene",
+        "Gemfibrozil"
+      ],
+      [
+        "Gemfibrozil",
+        "Pharmaceutical Preparations",
+        "Triglycerides"
+      ],
+      [
+        "Gemfibrozil",
+        "Pharmaceutical Preparations",
+        "Triglycerides"
+      ],
+      [
+        "Adrenergic beta-Antagonists",
+        "Pharmaceutical Preparations",
+        "carvedilol"
+      ],
+      [
+        "Adrenergic beta-Antagonists",
+        "Pharmaceutical Preparations",
+        "carvedilol"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "TREATS",
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Statin prophylaxis)-CAUSES->(Rhabdomyolysis)-ASSOCIATED_WITH->(Gemfibrozil)",
+      "(Current Therapy)-TREATS->(Virus)-LOCATION_OF->(Lipids)-INTERACTS_WITH->(Gemfibrozil)",
+      "(Current Therapy)-TREATS->(Virus)-LOCATION_OF->(Homologous Gene)-INTERACTS_WITH->(Gemfibrozil)",
+      "(Gemfibrozil)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Triglycerides)",
+      "(Gemfibrozil)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Triglycerides)",
+      "(Adrenergic beta-Antagonists)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(carvedilol)",
+      "(Adrenergic beta-Antagonists)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(carvedilol)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Gemfibrozil)-INTERACTS_WITH/ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Triglycerides)",
+      "(Statin prophylaxis)-CAUSES->(Rhabdomyolysis)-ASSOCIATED_WITH->(Gemfibrozil)",
+      "(Adrenergic beta-Antagonists)-Antagonists)->(Pharmaceutical Preparations)-INTERACTS_WITH->(carvedilol)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"LDL-C 162 mg/dL\" -> \"elevated LDL-C\" -> \"increased cardiovascular risk\" -> \"need to lower LDL-C\" -> \"consider statin therapy\" -> \"change gemfibrozil to atorvastatin\" -> 95%",
+    "CHAIN: \"current treatment\" -> \"gemfibrozil\" -> \"primarily affects triglycerides\" -> \"LDL-C still high\" -> \"insufficient LDL-C control\" -> \"consider statin for LDL-C\" -> 90%",
+    "CHAIN: \"beta blocker\" -> \"carvedilol\" -> \"potential lipid alteration\" -> \"remove beta blocker\" -> \"possible lipid improvement\" -> \"risk of worsening heart condition\" -> 40%",
+    "CHAIN: \"HDL-C 46 mg/dL\" -> \"moderate HDL-C\" -> \"nicotinic acid increases HDL\" -> \"focus on LDL-C more critical\" -> \"not a priority to increase HDL\" -> 50%",
+    "CHAIN: \"lifestyle changes\" -> \"diet and exercise\" -> \"potential LDL-C reduction\" -> \"current LDL-C high\" -> \"lifestyle changes alone insufficient\" -> \"maintain current treatment\" -> 60%"
+  ],
+  "enhanced_information": "The patient's LDL-C level is elevated at 162 mg/dL, which increases cardiovascular risk, especially post-myocardial infarction. Standard medical consensus prioritizes lowering LDL-C to reduce this risk. Gemfibrozil primarily affects triglycerides and is not effective for significant LDL-C reduction. Therefore, switching from gemfibrozil to a statin like atorvastatin is recommended to effectively lower LDL-C. While carvedilol, a beta-blocker, can potentially alter lipid profiles, its cardiovascular benefits post-myocardial infarction outweigh the risks, and it should not be removed without strong indication. Increasing HDL-C with nicotinic acid is not a priority given the more critical need to address LDL-C. Lifestyle changes, while beneficial, are unlikely to sufficiently lower LDL-C on their own. Thus, the most reasonable therapeutic adjustment is to replace gemfibrozil with atorvastatin to better manage LDL-C levels.",
+  "analysis": "The patient has an elevated LDL-C level of 162 mg/dL, which is a significant risk factor for further cardiovascular events, especially given his history of myocardial infarction. The current treatment includes gemfibrozil, which is more effective for lowering triglycerides rather than LDL-C. Standard medical practice emphasizes the importance of lowering LDL-C to reduce cardiovascular risk. Statins, such as atorvastatin, are the first-line treatment for lowering LDL-C and have proven benefits in reducing cardiovascular events. Therefore, switching from gemfibrozil to atorvastatin is the most appropriate action to effectively lower LDL-C levels. While lifestyle changes are important, they are unlikely to achieve the necessary reduction in LDL-C on their own. Increasing HDL-C with nicotinic acid is not a priority in this context, and removing the beta-blocker carvedilol is not advisable due to its cardiovascular benefits post-myocardial infarction. Thus, the most reasonable therapeutic adjustment is to replace gemfibrozil with atorvastatin.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      25.0,
+      50.0,
+      25.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

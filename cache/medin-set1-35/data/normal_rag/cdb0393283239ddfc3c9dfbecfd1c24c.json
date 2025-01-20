@@ -1,0 +1,154 @@
+{
+  "question": "A 3-year-old boy is brought to the physician because of recurrent nosebleeds and fatigue for the past 2 months. He also frequently complains his head hurts. The patient has met all motoric milestones for his age but does not like to run because his legs start to hurt if he does. He is at the 40th percentile for both height and weight. His temperature is 37.0°C (98.6°F), pulse is 125/min, respirations are 32/min, and blood pressure in the right arm is 130/85 mm Hg. A grade 2/6 systolic murmur is heard in the left paravertebral region. Further evaluation of this patient is most likely to show which of the following findings?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Inferior rib notching",
+    "opb": "Interarm difference in tissue oxygenation",
+    "opc": "Pulmonary valve stenosis",
+    "opd": "Left-axis deviation on ECG",
+    "ope": "Delayed pulse in lower extremities"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fatigue",
+        "Anemia"
+      ],
+      [
+        "Headache",
+        "Disease",
+        "Pain in lower limb"
+      ],
+      [
+        "Headache",
+        "Symptoms",
+        "Pain in lower limb"
+      ],
+      [
+        "Headache",
+        "Claudication",
+        "Pain in lower limb"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Fatigue)-CAUSES->(Anemia)",
+      "(Headache)-CAUSES->(Disease)-CAUSES->(Pain in lower limb)",
+      "(Headache)-CAUSES->(Symptoms)-CAUSES->(Pain in lower limb)",
+      "(Headache)-CAUSES->(Claudication)-CAUSES->(Pain in lower limb)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Spontaneous, recurrent epistaxis",
+        "Hereditary hemorrhagic telangiectasia",
+        "Anemia"
+      ],
+      [
+        "Upper Extremity",
+        "Lower Extremity"
+      ],
+      [
+        "Lower Extremity",
+        "Bone structure of ischium",
+        "Pulse taking"
+      ],
+      [
+        "Lower Extremity",
+        "Upper Extremity",
+        "Pulse taking"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Spontaneous, recurrent epistaxis)-ASSOCIATED_WITH->(Hereditary hemorrhagic telangiectasia)-CAUSES->(Anemia)",
+      "(Upper Extremity)-PART_OF->(Lower Extremity)",
+      "(Lower Extremity)-PART_OF->(Bone structure of ischium)-LOCATION_OF->(Pulse taking)",
+      "(Lower Extremity)-PART_OF->(Upper Extremity)-LOCATION_OF->(Pulse taking)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fatigue)-CAUSES->(Anemia)",
+      "(Headache)-CAUSES->(Disease)-CAUSES->(Pain in lower limb)",
+      "(Headache)-CAUSES->(Symptoms)-CAUSES->(Pain in lower limb)",
+      "(Headache)-CAUSES->(Claudication)-CAUSES->(Pain in lower limb)",
+      "(Spontaneous, recurrent epistaxis)-ASSOCIATED_WITH->(Hereditary hemorrhagic telangiectasia)-CAUSES->(Anemia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Recurrent nosebleeds and fatigue\" -> \"Possible anemia\" -> \"Increased heart rate to compensate for decreased oxygen-carrying capacity\" -> \"Tissue hypoxia\" -> \"Headaches due to tissue hypoxia\" -> \"Leg pain due to poor tissue oxygenation\" -> \"Interarm difference in tissue oxygenation\" -> 70%",
+    "CHAIN: \"Grade 2/6 systolic murmur in left paravertebral region\" -> \"Possible aortic coarctation\" -> \"Increased blood pressure in upper extremities\" -> \"Decreased blood pressure in lower extremities\" -> \"Delayed pulse in lower extremities\" -> 80%"
+  ],
+  "enhanced_information": "The patient's symptoms of recurrent nosebleeds, fatigue, headaches, and leg pain suggest tissue hypoxia, likely due to anemia. The presence of a grade 2/6 systolic murmur in the left paravertebral region raises suspicion for aortic coarctation, leading to increased blood pressure in the upper extremities and decreased blood pressure in the lower extremities, potentially causing a delayed pulse in the lower extremities.",
+  "analysis": "The patient's presentation with recurrent nosebleeds, fatigue, headache, leg pain on running, and a systolic murmur in the left paravertebral region suggests a high suspicion for coarctation of the aorta. The finding most likely to be seen in further evaluation is inferior rib notching, which is a classic radiographic sign of long-standing coarctation of the aorta.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      2
+    ],
+    "coverage_rates": [
+      60.0,
+      40.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "chimeric gene PART_OF expression vector",
+    "Haemodynamic instability CAUSES Physical findings",
+    "Fibrocartilage LOCATION_OF Electron Microscopy",
+    "TFF3 INTERACTS_WITH Motor Neurons",
+    "Physical findings ASSOCIATED_WITH Systolic hypertension",
+    "Plethysmography DIAGNOSES Physical findings",
+    "Endoplasmic Reticulum PART_OF envelope",
+    "Bacillus cereus INTERACTS_WITH Bacillus anthracis",
+    "Tuber LOCATION_OF TSC1 gene|TSC1|CCL26",
+    "Cardiography DIAGNOSES Systolic dysfunction",
+    "Medical exam DIAGNOSES Physical findings"
+  ]
+}

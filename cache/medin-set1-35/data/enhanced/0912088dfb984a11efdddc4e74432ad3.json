@@ -1,0 +1,161 @@
+{
+  "question": "A 31-year-old African American woman presents to her primary care provider complaining of stiff, painful fingers. She reports that her symptoms started 2 years ago and have gradually worsened. Her pain is not relieved by ibuprofen or acetaminophen. She is most concerned about having occasional episodes in which her fingers become extremely painful and turn white then pale blue. Her past medical history is notable for hypertension but she has previously refused to take any medication. She works as a postal worker and spends most of her time outside. Physical examination reveals induration of her digits with loss of skin fold wrinkles. She has limited finger range of motion. She would like to know if she can do anything to address her intermittent finger pain as it is affecting her ability to work outside in the cold. Which of the following medications is most appropriate to address this patient’s concerns?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Ambrisentan",
+    "opb": "Diltiazem",
+    "opc": "Enalapril",
+    "opd": "Methotrexate",
+    "ope": "Nifedipine"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Phenomenon",
+        "Disease",
+        "uptake",
+        "Fingers"
+      ],
+      [
+        "Phenomenon",
+        "Obesity",
+        "uptake",
+        "Fingers"
+      ],
+      [
+        "Phenomenon",
+        "Hypertensive disease",
+        "uptake",
+        "Fingers"
+      ],
+      [
+        "Vasospasm",
+        "Disease",
+        "Emotional Stress"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Phenomenon)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Fingers)",
+      "(Phenomenon)-CAUSES->(Obesity)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Fingers)",
+      "(Phenomenon)-CAUSES->(Hypertensive disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Fingers)",
+      "(Vasospasm)-CAUSES->(Disease)-PREDISPOSES->(Emotional Stress)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Fingers",
+        "Disease",
+        "Emotional Stress"
+      ],
+      [
+        "Fingers",
+        "Symptoms",
+        "Emotional Stress"
+      ],
+      [
+        "Emotional Stress",
+        "Disease",
+        "Blood Circulation",
+        "Vasodilator Agents"
+      ],
+      [
+        "Emotional Stress",
+        "Disease",
+        "Blood Circulation",
+        "Vasodilator Agents"
+      ],
+      [
+        "Vasodilator Agents",
+        "Nifedipine"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ],
+      [
+        "LOCATION_OF",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Fingers)-LOCATION_OF->(Disease)-PREDISPOSES->(Emotional Stress)",
+      "(Fingers)-LOCATION_OF->(Symptoms)-MANIFESTATION_OF->(Emotional Stress)",
+      "(Emotional Stress)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)-ASSOCIATED_WITH->(Vasodilator Agents)",
+      "(Emotional Stress)-COMPLICATES->(Disease)-MANIFESTATION_OF->(Blood Circulation)-ASSOCIATED_WITH->(Vasodilator Agents)",
+      "(Vasodilator Agents)-INTERACTS_WITH->(Nifedipine)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vasodilator Agents)-INTERACTS_WITH->(Nifedipine)",
+      "(Fingers)-LOCATION_OF->(Symptoms)-MANIFESTATION_OF->(Emotional Stress)",
+      "(Fingers)-LOCATION_OF->(Disease)-PREDISPOSES->(Emotional Stress)",
+      "(Phenomenon)-CAUSES->(Hypertensive disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Fingers)",
+      "(Vasospasm)-CAUSES->(Disease)-PREDISPOSES->(Emotional Stress)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Symptoms of stiff, painful fingers\" -> \"Started 2 years ago and gradually worsened\" -> \"Not relieved by ibuprofen or acetaminophen\" -> \"Episodes of extreme pain with white and pale blue fingers\" -> \"Induration of digits with loss of skin fold wrinkles on physical examination\" -> \"Limited finger range of motion\" -> \"Likely diagnosis of Raynaud's phenomenon\" -> 80% CHAIN: \"Raynaud's phenomenon\" -> \"Episodes of vasospasm leading to color changes in fingers\" -> \"Associated with cold exposure and emotional stress\" -> \"Treatment involves vasodilators\" -> \"Most appropriate medication: Nifedipine\" -> 80%"
+  ],
+  "enhanced_information": "The patient likely has Raynaud's phenomenon based on symptoms of stiff, painful fingers, color changes, and physical exam findings. The most appropriate medication for this condition is Nifedipine, a vasodilator. Evidence supports the use of vasodilators in Raynaud's phenomenon, making Nifedipine the best choice for addressing the patient's intermittent finger pain exacerbated by cold exposure.",
+  "analysis": "The patient's presentation is consistent with Raynaud's phenomenon, characterized by episodic color changes in the fingers due to vasospasm. Nifedipine, a vasodilator, is the most appropriate medication for managing Raynaud's phenomenon. It helps dilate blood vessels, improving blood flow and reducing symptoms like intermittent finger pain exacerbated by cold exposure.",
+  "answer": "ope",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

@@ -1,0 +1,88 @@
+{
+  "question": "Which gene is most frequently associated with acquired mutations in breast cancer?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "p53.",
+    "opb": "PTEN.",
+    "opc": "BRCA-2.",
+    "opd": "BRCA-1.",
+    "ope": "Her2 / neu."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "erbB-2 Receptor",
+        "Pharmaceutical Preparations",
+        "Oncogenes"
+      ],
+      [
+        "erbB-2 Receptor",
+        "Cells",
+        "Oncogenes"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(erbB-2 Receptor)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Oncogenes)",
+      "(erbB-2 Receptor)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Oncogenes)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(erbB-2 Receptor)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Oncogenes)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"p53\" -> \"tumor suppressor gene\" -> \"frequent mutations in cancers\" -> \"common in breast cancer\" -> 95%",
+    "CHAIN: \"PTEN\" -> \"tumor suppressor gene\" -> \"mutations in various cancers\" -> \"less common in breast cancer\" -> 60%",
+    "CHAIN: \"BRCA-2\" -> \"DNA repair gene\" -> \"germline mutations\" -> \"hereditary breast cancer\" -> \"less common acquired mutations\" -> 50%",
+    "CHAIN: \"BRCA-1\" -> \"DNA repair gene\" -> \"germline mutations\" -> \"hereditary breast cancer\" -> \"less common acquired mutations\" -> 50%",
+    "CHAIN: \"Her2 / neu\" -> \"oncogene\" -> \"overexpression in breast cancer\" -> \"not typically acquired mutations\" -> 40%"
+  ],
+  "enhanced_information": "The gene most frequently associated with acquired mutations in breast cancer is p53. p53 is a tumor suppressor gene that is commonly mutated in various cancers, including breast cancer, making it the most frequently acquired mutation in this context. PTEN, while also a tumor suppressor gene, is less commonly mutated in breast cancer. BRCA-1 and BRCA-2 are primarily associated with hereditary breast cancer due to germline mutations, not acquired mutations. Her2/neu is an oncogene often overexpressed in breast cancer, but this is typically due to amplification rather than acquired mutations. The retrieved evidence path involving erbB-2 (Her2/neu) and oncogenes does not directly address acquired mutations, thus is not relevant to determining the most frequently mutated gene in acquired breast cancer cases.",
+  "analysis": "In breast cancer, the gene most frequently associated with acquired mutations is p53. This is based on the understanding that p53 is a tumor suppressor gene that is commonly mutated in various types of cancers, including breast cancer. While BRCA-1 and BRCA-2 are well-known for their role in hereditary breast cancer due to germline mutations, they are not typically associated with acquired mutations. PTEN mutations are less common in breast cancer compared to p53. Her2/neu is often overexpressed due to gene amplification rather than mutation. Therefore, considering the standard medical knowledge and the enhanced information provided, p53 is the most likely correct answer for the gene most frequently associated with acquired mutations in breast cancer.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      100.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": []
+}

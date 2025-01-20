@@ -1,0 +1,192 @@
+{
+  "question": "A 3175-g (7-lb) female newborn is delivered at term. Initial examination shows a distended abdomen and a flat perineal region without an opening. A dark green discharge is coming out of the vulva. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Meconium ileus",
+    "opb": "Hirschsprung disease",
+    "opc": "Imperforate anus",
+    "opd": "Colonic atresia",
+    "ope": "Meconium plug syndrome\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Obstruction",
+        "Obesity",
+        "Anus, Imperforate"
+      ],
+      [
+        "Obstruction",
+        "Infection",
+        "Anus, Imperforate"
+      ],
+      [
+        "Perinatal Meconium Obstruction",
+        "Disease",
+        "Obesity",
+        "Anus, Imperforate"
+      ],
+      [
+        "Perinatal Meconium Obstruction",
+        "Liver diseases",
+        "Obesity",
+        "Anus, Imperforate"
+      ],
+      [
+        "Perinatal Meconium Obstruction",
+        "Disease",
+        "Infection",
+        "Anus, Imperforate"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Obstruction)-CAUSES->(Obesity)-PREDISPOSES->(Anus, Imperforate)",
+      "(Obstruction)-CAUSES->(Infection)-PREDISPOSES->(Anus, Imperforate)",
+      "(Perinatal Meconium Obstruction)-PREDISPOSES->(Disease)-CAUSES->(Obesity)-PREDISPOSES->(Anus, Imperforate)",
+      "(Perinatal Meconium Obstruction)-PREDISPOSES->(Liver diseases)-CAUSES->(Obesity)-PREDISPOSES->(Anus, Imperforate)",
+      "(Perinatal Meconium Obstruction)-PREDISPOSES->(Disease)-CAUSES->(Infection)-PREDISPOSES->(Anus, Imperforate)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Vulva",
+        "Infection",
+        "Anus, Imperforate"
+      ],
+      [
+        "Vulva",
+        "Constipation",
+        "Anus, Imperforate"
+      ],
+      [
+        "Vulva",
+        "Obstruction"
+      ],
+      [
+        "Vulva",
+        "Disease",
+        "Perinatal Meconium Obstruction"
+      ],
+      [
+        "Vulva",
+        "Ultrasonography",
+        "Perinatal Meconium Obstruction"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ],
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "DIAGNOSES"
+      ]
+    ],
+    "paths": [
+      "(Vulva)-LOCATION_OF->(Infection)-PREDISPOSES->(Anus, Imperforate)",
+      "(Vulva)-LOCATION_OF->(Constipation)-ASSOCIATED_WITH->(Anus, Imperforate)",
+      "(Vulva)-LOCATION_OF->(Obstruction)",
+      "(Vulva)-LOCATION_OF->(Disease)-CAUSES->(Perinatal Meconium Obstruction)",
+      "(Vulva)-LOCATION_OF->(Ultrasonography)-DIAGNOSES->(Perinatal Meconium Obstruction)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Obstruction)-CAUSES->(Obesity)-PREDISPOSES->(Anus, Imperforate)",
+      "(Obstruction)-CAUSES->(Infection)-PREDISPOSES->(Anus, Imperforate)",
+      "(Vulva)-LOCATION_OF->(Infection)-PREDISPOSES->(Anus, Imperforate)",
+      "(Vulva)-LOCATION_OF->(Ultrasonography)-DIAGNOSES->(Perinatal Meconium Obstruction)",
+      "(Perinatal Meconium Obstruction)-PREDISPOSES->(Disease)-CAUSES->(Obesity)-PREDISPOSES->(Anus, Imperforate)",
+      "(Perinatal Meconium Obstruction)-PREDISPOSES->(Liver diseases)-CAUSES->(Obesity)-PREDISPOSES->(Anus, Imperforate)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Distended abdomen\" -> \"Flat perineal region without an opening\" -> \"Dark green discharge from vulva\" -> \"Imperforate anus\" -> 95%",
+    "CHAIN: \"Distended abdomen\" -> \"Flat perineal region without an opening\" -> \"Dark green discharge from vulva\" -> \"Meconium passing through alternative route\" -> \"Imperforate anus\" -> 90%",
+    "CHAIN: \"Distended abdomen\" -> \"Flat perineal region without an opening\" -> \"Dark green discharge from vulva\" -> \"Possible obstruction\" -> \"Imperforate anus\" -> 85%",
+    "CHAIN: \"Distended abdomen\" -> \"Flat perineal region without an opening\" -> \"Dark green discharge from vulva\" -> \"Meconium obstruction\" -> \"Imperforate anus\" -> 80%"
+  ],
+  "enhanced_information": "The clinical presentation of a distended abdomen, flat perineal region without an opening, and dark green discharge from the vulva in a newborn is most consistent with an imperforate anus. This condition occurs when the anal opening is absent or blocked, leading to the passage of meconium through alternative routes, such as the vulva, due to the obstruction. The retrieved evidence paths, while broad, suggest that obstruction can lead to conditions like imperforate anus, aligning with the consensus that the absence of an anal opening results in meconium discharge through other routes. Other options like meconium ileus, Hirschsprung disease, colonic atresia, and meconium plug syndrome do not typically present with a flat perineal region without an opening and meconium discharge from the vulva. Therefore, the most likely diagnosis is imperforate anus.",
+  "analysis": "The newborn presents with a distended abdomen and a flat perineal region without an opening, along with a dark green discharge from the vulva. These findings are indicative of an imperforate anus, which is a congenital defect where the opening to the anus is missing or blocked. The dark green discharge is likely meconium, which is being expelled through the vulva due to the lack of a normal anal opening. This presentation aligns with the diagnosis of an imperforate anus, as the absence of an anal opening would cause meconium to be expelled through other routes, such as the vulva.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      2,
+      2
+    ],
+    "coverage_rates": [
+      20.0,
+      0.0,
+      40.0,
+      40.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "Adipose tissue sample LOCATION_OF Diastasis",
+    "Meconium ileus CAUSES Obstruction",
+    "Perinatal Meconium Obstruction CAUSES Neonatal intestinal obstruction",
+    "Biopsy DIAGNOSES Fasciculation, Tongue",
+    "Diagnosis DIAGNOSES Hirschsprung Disease",
+    "Vaginal Discharge PREDISPOSES Premature Birth",
+    "Intestinal Atresia CAUSES Obstruction",
+    "Cells INTERACTS_WITH repair enzyme",
+    "Fetal Distress CAUSES Meconium stain",
+    "Hirschsprung Disease CAUSES Neonatal intestinal obstruction",
+    "Ligation of patent ductus arteriosus CAUSES Premature Birth",
+    "Detection CAUSES Neonatal intestinal obstruction",
+    "Vaginal delivery procedure PREDISPOSES Fecal Incontinence",
+    "Newborn Examination DIAGNOSES Disease"
+  ]
+}

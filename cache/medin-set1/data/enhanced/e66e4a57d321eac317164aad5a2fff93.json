@@ -1,0 +1,179 @@
+{
+  "question": "A 29-year-old man is brought to the emergency department 20 minutes after sustaining a gunshot wound to the abdomen. On arrival, he is awake and oriented to person, place, and time. He appears agitated. His pulse is 102/min, respirations are 20/min, and blood pressure is 115/70 mm Hg. The pupils are equal and reactive to light. Abdominal examination shows an entrance wound in the right upper quadrant above the umbilicus. There is an exit wound on the right lower back next to the lumbar spine. Breath sounds are normal bilaterally. There is diffuse mild tenderness to palpation with no guarding or rebound. Cardiac examination shows no abnormalities. Intravenous fluid therapy is begun. Which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "CT scan of the abdomen",
+    "opb": "Close observation",
+    "opc": "Diagnostic laparoscopy",
+    "opd": "Immediate laparotomy",
+    "ope": "Diagnostic peritoneal lavage"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Internal hemorrhage",
+        "Anemia",
+        "Splenomegaly",
+        "Left upper quadrant pain",
+        "X-Ray Computed Tomography"
+      ],
+      [
+        "Internal hemorrhage",
+        "Anemia",
+        "Splenic Infarction",
+        "Left upper quadrant pain",
+        "X-Ray Computed Tomography"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Internal hemorrhage)-CAUSES->(Anemia)-CAUSES->(Splenomegaly)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)",
+      "(Internal hemorrhage)-CAUSES->(Anemia)-PREDISPOSES->(Splenic Infarction)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Abdominal organ",
+        "Kidney",
+        "Skeletal muscle structure",
+        "Laparotomy"
+      ],
+      [
+        "Abdominal organ",
+        "Kidney",
+        "Peritoneum",
+        "Laparotomy"
+      ],
+      [
+        "Laparoscopy",
+        "Pathogenesis",
+        "Genes",
+        "Epithelium",
+        "Laparotomy"
+      ],
+      [
+        "Laparoscopy",
+        "Inflammation",
+        "Genes",
+        "Epithelium",
+        "Laparotomy"
+      ],
+      [
+        "Pain",
+        "Diastasis",
+        "TFPI",
+        "Blood"
+      ],
+      [
+        "Pain",
+        "Diastasis",
+        "Edetic Acid",
+        "Blood"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Abdominal organ)-PART_OF->(Kidney)-PART_OF->(Skeletal muscle structure)-LOCATION_OF->(Laparotomy)",
+      "(Abdominal organ)-PART_OF->(Kidney)-PART_OF->(Peritoneum)-LOCATION_OF->(Laparotomy)",
+      "(Laparoscopy)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Laparotomy)",
+      "(Laparoscopy)-DIAGNOSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Laparotomy)",
+      "(Pain)-MANIFESTATION_OF->(Diastasis)-ASSOCIATED_WITH->(TFPI)-PART_OF->(Blood)",
+      "(Pain)-MANIFESTATION_OF->(Diastasis)-ASSOCIATED_WITH->(Edetic Acid)-PART_OF->(Blood)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Internal hemorrhage)-CAUSES->(Anemia)-CAUSES->(Splenomegaly)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)",
+      "(Abdominal organ)-PART_OF->(Kidney)-PART_OF->(Skeletal muscle structure)-LOCATION_OF->(Laparotomy)",
+      "(Internal hemorrhage)-CAUSES->(Anemia)-PREDISPOSES->(Splenic Infarction)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)",
+      "(Laparoscopy)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Laparotomy)",
+      "(Laparoscopy)-DIAGNOSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Laparotomy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Gunshot wound to abdomen\" -> \"Risk of internal organ injury\" -> \"Need for further evaluation\" -> \"CT scan can assess for internal bleeding and organ damage\" -> \"CT scan of the abdomen is appropriate\" -> 85%",
+    "CHAIN: \"Gunshot wound to abdomen\" -> \"Possible intra-abdominal hemorrhage\" -> \"Patient is stable but requires assessment\" -> \"Diagnostic laparoscopy can visualize abdominal organs\" -> \"Laparoscopy is less invasive than laparotomy\" -> \"Considered if no immediate life-threatening injuries\" -> 75%",
+    "CHAIN: \"Gunshot wound to abdomen\" -> \"Signs of potential internal injury\" -> \"Patient is hemodynamically stable\" -> \"Close observation may miss significant injuries\" -> \"Immediate laparotomy is warranted for suspected major injury\" -> 90%",
+    "CHAIN: \"Gunshot wound to abdomen\" -> \"Entrance and exit wounds suggest potential organ damage\" -> \"Patient is agitated, indicating possible pain or distress\" -> \"Diagnostic peritoneal lavage can assess for blood in the abdomen\" -> \"Less commonly used now with CT availability\" -> 70%",
+    "CHAIN: \"Gunshot wound to abdomen\" -> \"Stable vital signs but risk of internal injury\" -> \"CT scan is non-invasive and provides detailed imaging\" -> \"Immediate laparotomy is more invasive and reserved for unstable patients\" -> \"CT scan of the abdomen is the most appropriate next step\" -> 80%"
+  ],
+  "enhanced_information": "In the case of a gunshot wound to the abdomen, there is a significant risk of internal organ injury and hemorrhage. The patient is currently stable with a heart rate of 102/min and blood pressure of 115/70 mm Hg, but the presence of entrance and exit wounds indicates potential serious injuries. While a CT scan of the abdomen is a non-invasive method to assess for internal bleeding and organ damage, it is generally more appropriate for stable patients without signs of major injury. Given the mechanism of injury and the potential for significant internal damage, immediate laparotomy is warranted for suspected major injury, especially since close observation may miss critical injuries. Diagnostic laparoscopy is less invasive but is typically reserved for cases where there is no immediate life-threatening concern. Therefore, the most appropriate next step in management is immediate laparotomy.",
+  "analysis": "In this case, the patient has sustained a gunshot wound to the abdomen, which raises significant concern for internal organ injury and potential hemorrhage. The presence of both an entrance and exit wound suggests a high likelihood of serious injury. Although the patient is currently stable with a heart rate of 102/min and blood pressure of 115/70 mm Hg, the mechanism of injury necessitates a thorough evaluation to rule out life-threatening conditions. While a CT scan could provide valuable information, it is generally reserved for stable patients without signs of major injury. Given the potential for significant internal damage and the risk of rapid deterioration, immediate laparotomy is the most appropriate next step in management. This approach allows for direct visualization and intervention if necessary, addressing any critical injuries that may not be apparent through non-invasive imaging. Therefore, the best-supported option is immediate laparotomy.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2,
+      0,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      25.0,
+      50.0,
+      0.0,
+      25.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

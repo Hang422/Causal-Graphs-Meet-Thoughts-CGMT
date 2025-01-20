@@ -1,0 +1,111 @@
+{
+  "question": "A 16-year-old man presents to the emergency department with a 2-hour history of sudden-onset abdominal pain. He was playing football when his symptoms started. The patient’s past medical history is notable only for asthma. Social history is notable for unprotected sex with 4 women in the past month. His temperature is 99.3°F (37.4°C), blood pressure is 120/88 mmHg, pulse is 117/min, respirations are 14/min, and oxygen saturation is 99% on room air. Physical exam is noted for a non-tender abdomen. Testicular exam reveals a right testicle which is elevated with a horizontal lie and the scrotum is neither swollen nor discolored. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Appendicitis",
+    "opb": "Epididymitis",
+    "opc": "Seminoma",
+    "opd": "Testicular torsion",
+    "ope": "Traumatic urethral injury"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Sexually Transmitted Diseases",
+        "Infection",
+        "Epididymitis"
+      ],
+      [
+        "Sexually Transmitted Diseases",
+        "Urinary tract infection",
+        "Epididymitis"
+      ],
+      [
+        "Sexually Transmitted Diseases",
+        "Genital infection",
+        "Epididymitis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Sexually Transmitted Diseases)-CAUSES->(Infection)-CAUSES->(Epididymitis)",
+      "(Sexually Transmitted Diseases)-CAUSES->(Urinary tract infection)-CAUSES->(Epididymitis)",
+      "(Sexually Transmitted Diseases)-CAUSES->(Genital infection)-CAUSES->(Epididymitis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Structure of right testis",
+        "Pain in scrotum",
+        "Spermatic Cord Torsion"
+      ],
+      [
+        "Structure of right testis",
+        "Ischemia",
+        "Spermatic Cord Torsion"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Structure of right testis)-LOCATION_OF->(Pain in scrotum)-ASSOCIATED_WITH->(Spermatic Cord Torsion)",
+      "(Structure of right testis)-LOCATION_OF->(Ischemia)-CAUSES->(Spermatic Cord Torsion)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Structure of right testis)-LOCATION_OF->(Pain in scrotum)-ASSOCIATED_WITH->(Spermatic Cord Torsion)",
+      "(Structure of right testis)-LOCATION_OF->(Ischemia)-CAUSES->(Spermatic Cord Torsion)",
+      "(Sexually Transmitted Diseases)-CAUSES->(Infection)-CAUSES->(Epididymitis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Traumatic event during football game -> Right testicle elevated with horizontal lie -> Testicular torsion -> 80% CHAIN: Unprotected sex -> Possible sexually transmitted infection -> Epididymitis -> 70% CHAIN: Abdominal pain with non-tender abdomen -> Unlikely appendicitis -> Less likely to be appendicitis -> 60% CHAIN: Elevated right testicle with horizontal lie -> Testicular torsion more likely than other causes -> Testicular torsion -> 80%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 16-year-old man presenting with sudden-onset abdominal pain and an elevated right testicle with a horizontal lie is testicular torsion. This is supported by the physical exam findings and the reasoning chain indicating a high likelihood of testicular torsion. The evidence paths linking the location of the right testis to spermatic cord torsion and ischemia further support this diagnosis.",
+  "analysis": "The most likely diagnosis for the 16-year-old man with sudden-onset abdominal pain and an elevated right testicle with a horizontal lie is testicular torsion. The physical exam findings of an elevated testicle with a horizontal lie are classic for testicular torsion, a surgical emergency. This presentation is not consistent with appendicitis, epididymitis, seminoma, or traumatic urethral injury.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

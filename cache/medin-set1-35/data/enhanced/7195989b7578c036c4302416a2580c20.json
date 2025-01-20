@@ -1,0 +1,113 @@
+{
+  "question": "A 22-year-old woman comes to the physician for gradual worsening of her vision. Her father died at 40 years of age. She is 181 cm (5 ft 11 in) tall and weighs 69 kg (152 lb); BMI is 21 kg/m2. A standard vision test shows severe myopia. Genetic analysis shows an FBN1 gene mutation on chromosome 15. This patient is at greatest risk of mortality due to which of the following causes?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Obstruction of the superior vena cava lumen",
+    "opb": "Increased pressure in the pulmonary arteries",
+    "opc": "Eccentric ventricular hypertrophy",
+    "opd": "Supraventricular tachyarrhythmia",
+    "ope": "Intimal tear of the aortic root"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Myopia",
+        "Disease",
+        "Marfan Syndrome"
+      ],
+      [
+        "Myopia",
+        "Syndrome",
+        "Marfan Syndrome"
+      ],
+      [
+        "Myopia",
+        "Asthenia",
+        "Marfan Syndrome"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Myopia)-CAUSES->(Disease)-CAUSES->(Marfan Syndrome)",
+      "(Myopia)-CAUSES->(Syndrome)-CAUSES->(Marfan Syndrome)",
+      "(Myopia)-CAUSES->(Asthenia)-CAUSES->(Marfan Syndrome)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Chromosomes, Human, Pair 15",
+        "genetic analysis",
+        "Marfan Syndrome"
+      ],
+      [
+        "Chromosomes, Human, Pair 15",
+        "genetic analysis",
+        "Marfan Syndrome"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "DIAGNOSES"
+      ]
+    ],
+    "paths": [
+      "(Chromosomes, Human, Pair 15)-LOCATION_OF->(genetic analysis)-CAUSES->(Marfan Syndrome)",
+      "(Chromosomes, Human, Pair 15)-LOCATION_OF->(genetic analysis)-DIAGNOSES->(Marfan Syndrome)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Chromosomes, Human, Pair 15)-LOCATION_OF->(genetic analysis)-CAUSES/DIAGNOSES->(Marfan Syndrome)",
+      "(Myopia)-CAUSES->(Disease)-CAUSES->(Marfan Syndrome)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: FBN1 gene mutation on chromosome 15 -> Marfan syndrome -> aortic root abnormalities -> intimal tear of the aortic root -> mortality due to an intimal tear of the aortic root -> 95%",
+    "CHAIN: Severe myopia -> Marfan syndrome -> aortic root abnormalities -> intimal tear of the aortic root -> mortality due to an intimal tear of the aortic root -> 90%"
+  ],
+  "enhanced_information": "The patient with an FBN1 gene mutation on chromosome 15 and severe myopia is at greatest risk of mortality due to an intimal tear of the aortic root, which is a common complication in Marfan syndrome. The presence of aortic root abnormalities increases the likelihood of this outcome.",
+  "analysis": "Marfan syndrome, characterized by an FBN1 gene mutation and severe myopia, is associated with aortic root abnormalities and an increased risk of aortic dissection. Intimal tear of the aortic root is a common complication in Marfan syndrome, leading to mortality. This patient is at greatest risk of mortality due to an intimal tear of the aortic root.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

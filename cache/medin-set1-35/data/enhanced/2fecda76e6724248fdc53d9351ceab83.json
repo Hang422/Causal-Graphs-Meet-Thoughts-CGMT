@@ -1,0 +1,172 @@
+{
+  "question": "A patient is hospitalized for pneumonia. Gram-positive cocci in clusters are seen on sputum gram stain. Which of the following clinical scenarios is most commonly associated with this form of pneumonia?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Elderly patient who has trouble swallowing and poor dentition",
+    "opb": "HIV positive adult with a CD4 count less than 150 and an impaired diffusion capacity",
+    "opc": "An otherwise healthy young adult with a week of mild fatigue, chills, and cough",
+    "opd": "Hospitalized adult with development of pneumonia symptoms 2 weeks following a viral illness",
+    "ope": "An alcoholic with evidence of empyema and \"currant jelly sputum\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Gram-Positive Cocci",
+        "Infection",
+        "Staphylococcus aureus"
+      ],
+      [
+        "Gram-Positive Cocci",
+        "Endocarditis",
+        "Staphylococcus aureus"
+      ],
+      [
+        "Gram-Positive Cocci",
+        "Superinfection",
+        "Staphylococcus aureus"
+      ],
+      [
+        "Gram-Positive Cocci",
+        "Infection",
+        "Staphylococcus aureus"
+      ],
+      [
+        "Gram-Positive Cocci",
+        "Endocarditis",
+        "Staphylococcus aureus"
+      ],
+      [
+        "Gram-Positive Cocci",
+        "Superinfection",
+        "Staphylococcus aureus"
+      ],
+      [
+        "Staphylococcus aureus",
+        "Empyema"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Gram-Positive Cocci)-CAUSES->(Infection)-PROCESS_OF->(Staphylococcus aureus)",
+      "(Gram-Positive Cocci)-CAUSES->(Endocarditis)-PROCESS_OF->(Staphylococcus aureus)",
+      "(Gram-Positive Cocci)-CAUSES->(Superinfection)-PROCESS_OF->(Staphylococcus aureus)",
+      "(Gram-Positive Cocci)-CAUSES->(Infection)-PROCESS_OF->(Staphylococcus aureus)",
+      "(Gram-Positive Cocci)-CAUSES->(Endocarditis)-PROCESS_OF->(Staphylococcus aureus)",
+      "(Gram-Positive Cocci)-CAUSES->(Superinfection)-PROCESS_OF->(Staphylococcus aureus)",
+      "(Staphylococcus aureus)-CAUSES->(Empyema)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "SPUTUM GRAM STAIN",
+        "Infection",
+        "Staphylococcus aureus"
+      ],
+      [
+        "SPUTUM GRAM STAIN",
+        "Infection",
+        "Staphylococcus aureus"
+      ],
+      [
+        "SPUTUM GRAM STAIN",
+        "Infection",
+        "Staphylococcus aureus"
+      ],
+      [
+        "SPUTUM GRAM STAIN",
+        "Infection",
+        "Staphylococcus aureus"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "PROCESS_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(SPUTUM GRAM STAIN)-DIAGNOSES->(Infection)-ASSOCIATED_WITH->(Staphylococcus aureus)",
+      "(SPUTUM GRAM STAIN)-DIAGNOSES->(Infection)-PROCESS_OF->(Staphylococcus aureus)",
+      "(SPUTUM GRAM STAIN)-DIAGNOSES->(Infection)-ASSOCIATED_WITH->(Staphylococcus aureus)",
+      "(SPUTUM GRAM STAIN)-DIAGNOSES->(Infection)-PROCESS_OF->(Staphylococcus aureus)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Staphylococcus aureus)-CAUSES->(Empyema)",
+      "(SPUTUM GRAM STAIN)-DIAGNOSES->(Infection)-ASSOCIATED_WITH/PROCESS_OF->(Staphylococcus aureus)",
+      "(Gram-Positive Cocci)-Positive Cocci)->(Infection)-PROCESS_OF->(Staphylococcus aureus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Gram-positive cocci in clusters on sputum gram stain -> Staphylococcus aureus infection -> Elderly patient with trouble swallowing and poor dentition -> 70%",
+    "CHAIN: Gram-positive cocci in clusters on sputum gram stain -> Staphylococcus aureus infection -> Alcoholic patient with evidence of empyema and \"currant jelly sputum\" -> 80%"
+  ],
+  "enhanced_information": "Gram-positive cocci in clusters on sputum gram stain are commonly associated with Staphylococcus aureus infection. The most commonly associated clinical scenarios are in elderly patients with trouble swallowing and poor dentition, and in alcoholics with evidence of empyema and 'currant jelly sputum'. Evidence paths confirm the association of Staphylococcus aureus with empyema and the diagnosis of Staphylococcus aureus from sputum gram stain. Therefore, options opa and ope are more likely to be associated with this form of pneumonia.",
+  "analysis": "Gram-positive cocci in clusters on sputum gram stain are commonly associated with Staphylococcus aureus infection. The most commonly associated clinical scenarios are in elderly patients with trouble swallowing and poor dentition, and in alcoholics with evidence of empyema and 'currant jelly sputum'. Both options opa and ope align with this enhanced information.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      3
+    ],
+    "coverage_rates": [
+      40.0,
+      60.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

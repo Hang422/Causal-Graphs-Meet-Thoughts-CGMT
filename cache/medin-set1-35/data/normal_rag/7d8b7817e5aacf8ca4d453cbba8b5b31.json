@@ -1,0 +1,136 @@
+{
+  "question": "A 32-year-old woman comes to the physician because of weight gain, generalized weakness, and irregular menstrual cycles for the past 16 months. She began having symptoms of insomnia and depression 10 months ago. More recently, she has been having difficulties rising from a chair. She has a 2-year history of hypertension. Current medications include citalopram and hydrochlorothiazide. She is 168 cm (5 ft 6 in) tall and weighs 100 kg (220 lb). BMI is 36 kg/m2. Her pulse is 92/min, respirations are 18/min, and blood pressure is 134/76 mm Hg. She appears tired and has a full, plethoric face and central obesity. Examination of the skin shows violaceous linear striations on her lower abdomen. Two midnight serum cortisol studies show measurements of 288 μg/L and 253 μg/L (N < 90); a 24-hour urinary cortisol measurement was 395 μg (N < 300). Upon follow-up laboratory examination, the patient's serum ACTH levels were also elevated at 136 pg/mL (N = 7–50). Which of the following is the most appropriate next step in evaluation?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "MRI of the head with contrast",
+    "opb": "Measure ACTH levels in inferior petrosal sinuses",
+    "opc": "High-dose dexamethasone suppression test",
+    "opd": "CT scan of the abdomen with contrast",
+    "ope": "Bilateral adrenalectomy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Serum cortisol",
+        "Cushing Syndrome"
+      ],
+      [
+        "Corticotropin",
+        "ACTH-dependent Cushing's syndrome"
+      ],
+      [
+        "Providing presence (regime/therapy)",
+        "Infiltration",
+        "Cushing Syndrome"
+      ],
+      [
+        "Providing presence (regime/therapy)",
+        "COVID-19",
+        "Cushing Syndrome"
+      ],
+      [
+        "Corticotropin",
+        "Pituitary Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Serum cortisol)-CAUSES->(Cushing Syndrome)",
+      "(Corticotropin)-TREATS->(ACTH-dependent Cushing's syndrome)",
+      "(Providing presence (regime/therapy))-CAUSES->(Infiltration)-CAUSES->(Cushing Syndrome)",
+      "(Providing presence (regime/therapy))-TREATS->(COVID-19)-CAUSES->(Cushing Syndrome)",
+      "(Corticotropin)-TREATS->(Pituitary Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Skin Specimen",
+        "Symptoms",
+        "Cushing Syndrome"
+      ],
+      [
+        "Skin Specimen",
+        "Eye",
+        "Cushing Syndrome"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Skin Specimen)-LOCATION_OF->(Symptoms)-ASSOCIATED_WITH->(Cushing Syndrome)",
+      "(Skin Specimen)-PART_OF->(Eye)-LOCATION_OF->(Cushing Syndrome)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Corticotropin)-TREATS->(ACTH-dependent Cushing's syndrome)",
+      "(Corticotropin)-TREATS->(Pituitary Diseases)",
+      "(Serum cortisol)-CAUSES->(Cushing Syndrome)",
+      "(Skin Specimen)-LOCATION_OF->(Symptoms)-ASSOCIATED_WITH->(Cushing Syndrome)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Elevated midnight serum cortisol and 24-hour urinary cortisol -> Suspicion of Cushing's syndrome -> 80% CHAIN: Elevated serum ACTH levels -> Suggestive of ACTH-dependent Cushing's syndrome -> 75% CHAIN: Presence of violaceous linear striations on the skin -> Suggestive of Cushing's syndrome -> 70% CHAIN: Full, plethoric face and central obesity -> Features of Cushing's syndrome -> 65% CHAIN: Measure ACTH levels in inferior petrosal sinuses -> Differentiate between pituitary and ectopic ACTH production -> 80%"
+  ],
+  "enhanced_information": "The patient presents with signs and symptoms suggestive of Cushing's syndrome, including elevated midnight serum cortisol, 24-hour urinary cortisol, and serum ACTH levels, along with physical features like violaceous linear striations, full face, and central obesity. The most appropriate next step in evaluation is to measure ACTH levels in the inferior petrosal sinuses to differentiate between pituitary and ectopic ACTH production, as this aligns with the standard approach in suspected ACTH-dependent Cushing's syndrome.",
+  "analysis": "The patient's presentation is consistent with Cushing's syndrome, likely due to an ACTH-secreting pituitary adenoma. Given the elevated ACTH levels and the clinical picture, the most appropriate next step in evaluation would be to measure ACTH levels in the inferior petrosal sinuses to confirm the source of ACTH secretion.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "Endocrine studies DIAGNOSES Syndrome",
+    "PDE1A PART_OF cell body (neuron)",
+    "Cortisol level PREDISPOSES Disease",
+    "Inflammation CAUSES Hypothalamic-adrenal dysfunction",
+    "Medical exam DIAGNOSES METABOLIC DISTURBANCE",
+    "Medical exam DIAGNOSES Obesity",
+    "Antidepressive Agents PREDISPOSES Inappropriate ADH Syndrome",
+    "Autogenic Training TREATS physical symptom",
+    "Aldosterone ASSOCIATED_WITH Bilateral hyperplasia"
+  ]
+}

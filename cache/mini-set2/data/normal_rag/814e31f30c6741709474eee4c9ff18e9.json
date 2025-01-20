@@ -1,0 +1,138 @@
+{
+  "question": "An 80-year-old man is admitted with a sudden picture of aphasia and right hemiparesis. As background highlights, hypertension, well controlled diet and cognitive impairment in the last year under study by his neurologist. Emergency cranial CT demonstrates a left frontal lobar hematoma without contrast enhancement. What is the most likely cause of the hematoma?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Arteriovenous malformation masked by the acute hematoma.",
+    "opb": "Chronic arterial hypertension.",
+    "opc": "Vasculitis isolated from the nervous system.",
+    "opd": "Brain tumor.",
+    "ope": "Amyloid cerebral angiopathy (congophilic angiopathy)."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Emergency Situation",
+        "Disease",
+        "uptake",
+        "Left frontal lobe structure"
+      ],
+      [
+        "Emergency Situation",
+        "Septicemia",
+        "uptake",
+        "Left frontal lobe structure"
+      ],
+      [
+        "Emergency Situation",
+        "Heart failure",
+        "uptake",
+        "Left frontal lobe structure"
+      ],
+      [
+        "Vascular Diseases",
+        "Hypertensive disease"
+      ],
+      [
+        "Hypertensive disease",
+        "Hematoma"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Emergency Situation)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Left frontal lobe structure)",
+      "(Emergency Situation)-CAUSES->(Septicemia)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Left frontal lobe structure)",
+      "(Emergency Situation)-CAUSES->(Heart failure)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Left frontal lobe structure)",
+      "(Vascular Diseases)-CAUSES->(Hypertensive disease)",
+      "(Hypertensive disease)-CAUSES->(Hematoma)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Hematoma)",
+      "(Vascular Diseases)-CAUSES->(Hypertensive disease)",
+      "(Emergency Situation)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Left frontal lobe structure)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"80-year-old man\" -> \"sudden aphasia and right hemiparesis\" -> \"suggestive of a cerebrovascular event\" -> \"emergency cranial CT shows left frontal lobar hematoma\" -> \"left frontal lobe affected\" -> \"chronic arterial hypertension is a common risk factor\" -> \"likely cause of hematoma\" -> 85%",
+    "CHAIN: \"Left frontal lobar hematoma\" -> \"could be due to various causes\" -> \"arteriovenous malformation possible\" -> \"but usually presents differently\" -> \"chronic arterial hypertension more common in elderly\" -> \"consistent with patient's history\" -> 90%",
+    "CHAIN: \"Patient has cognitive impairment\" -> \"could indicate chronic vascular issues\" -> \"chronic arterial hypertension leads to small vessel disease\" -> \"increased risk of hemorrhagic events\" -> \"most likely cause of hematoma\" -> 80%",
+    "CHAIN: \"Emergency cranial CT shows hematoma\" -> \"no contrast enhancement\" -> \"suggests a non-tumor related cause\" -> \"brain tumor less likely\" -> \"amyloid cerebral angiopathy possible\" -> \"but less common than chronic hypertension\" -> 75%",
+    "CHAIN: \"Patient's age and history\" -> \"increased risk for vascular diseases\" -> \"hypertension leads to vessel rupture\" -> \"resulting in hematoma\" -> \"most likely cause\" -> 90%"
+  ],
+  "enhanced_information": "The 80-year-old man presents with sudden aphasia and right hemiparesis, indicative of a cerebrovascular event. The emergency cranial CT reveals a left frontal lobar hematoma, which is most commonly associated with chronic arterial hypertension, especially in the elderly population. Chronic hypertension can lead to small vessel disease and increased risk of hemorrhagic events, making it the most likely cause of the hematoma in this patient. While arteriovenous malformations and amyloid cerebral angiopathy are possible causes, they are less common in this context. The absence of contrast enhancement on the CT further suggests a non-tumor related cause, reinforcing the likelihood of chronic hypertension as the primary etiology.",
+  "analysis": "The patient's sudden onset of aphasia and right hemiparesis, combined with the CT findings of a left frontal lobar hematoma, suggests a vascular cause. Given the patient's age and history of well-controlled hypertension, chronic arterial hypertension is a common risk factor for intracerebral hemorrhages. While amyloid cerebral angiopathy could also be a consideration in an elderly patient, the acute presentation and the absence of prior symptoms lean more towards chronic hypertension as the underlying cause of the hematoma. Other options like arteriovenous malformation, vasculitis, and brain tumors are less likely given the acute nature of the presentation and the CT findings. Therefore, chronic arterial hypertension is the most likely cause of the hematoma.",
+  "answer": "opb",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      0,
+      2
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      0.0,
+      0.0,
+      0.0,
+      66.66666666666666
+    ],
+    "total_successes": 3
+  },
+  "normal_results": [
+    "Tissue membrane PART_OF Bacillus licheniformis",
+    "Hepatectomy TREATS Vomiting",
+    "Bone specimen LOCATION_OF Pulse taking",
+    "Hematoma CAUSES Cerebral Embolism",
+    "Tumor Necrosis Factor Receptor INTERACTS_WITH Lymphoid Cells",
+    "Hematoma PREDISPOSES Cerebrovascular accident",
+    "Large Luteal Cells INTERACTS_WITH Ephrin Receptor EphB1",
+    "Periosteum PART_OF Entire clavicle",
+    "Surgical procedure on eye proper PREDISPOSES Retinal Detachment",
+    "PRPF4B INTERACTS_WITH PRPF6 gene|PRPF6",
+    "Endovascular radiological intervention TREATS Thromboembolic stroke",
+    "Structure of intracranial artery PART_OF CAROTID",
+    "Brain Edema CAUSES Hematoma",
+    "Epithelial Cells INTERACTS_WITH beta-Defensins",
+    "Laminectomy PREDISPOSES Meralgia paresthetica"
+  ]
+}

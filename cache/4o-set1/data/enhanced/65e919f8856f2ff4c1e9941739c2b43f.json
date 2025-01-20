@@ -1,0 +1,108 @@
+{
+  "question": "A 59-year-old woman with epileptic seizures of recent onset who went to the emergency room. On examination, it shows left pyramidal signs and papilledema. A brain MRI was performed showing a right hemispherical mass with edema, deviation from the midline and signs of tentorial herniation. He says that for a week he has had a headache that has progressed in intensity. Which of the following characteristics associated with headache seems most likely in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Morning dominance.",
+    "opb": "It does not change with effort.",
+    "opc": "Photophobia.",
+    "opd": "Sonophobia"
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Papilledema",
+        "Symptoms",
+        "Morning headache"
+      ],
+      [
+        "Headache",
+        "Disease",
+        "Photophobia"
+      ],
+      [
+        "Headache",
+        "Symptoms",
+        "Photophobia"
+      ],
+      [
+        "Headache",
+        "Pain",
+        "Photophobia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Papilledema)-CAUSES->(Symptoms)-CAUSES->(Morning headache)",
+      "(Headache)-CAUSES->(Disease)-CAUSES->(Photophobia)",
+      "(Headache)-CAUSES->(Symptoms)-CAUSES->(Photophobia)",
+      "(Headache)-CAUSES->(Pain)-CAUSES->(Photophobia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Papilledema)-CAUSES->(Symptoms)-CAUSES->(Morning headache)",
+      "(Headache)-CAUSES->(Disease)-CAUSES->(Photophobia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Right hemispherical mass\" -> \"increased intracranial pressure\" -> \"worse in the morning due to lying flat\" -> \"morning dominance of headache\" -> 95%",
+    "CHAIN: \"Right hemispherical mass\" -> \"increased intracranial pressure\" -> \"headache worsens with changes in position\" -> \"morning dominance of headache\" -> 90%",
+    "CHAIN: \"Right hemispherical mass\" -> \"increased intracranial pressure\" -> \"papilledema\" -> \"morning headache due to increased pressure\" -> 92%",
+    "CHAIN: \"Right hemispherical mass\" -> \"increased intracranial pressure\" -> \"headache\" -> \"possible photophobia\" -> 60%",
+    "CHAIN: \"Right hemispherical mass\" -> \"increased intracranial pressure\" -> \"headache\" -> \"possible sonophobia\" -> 60%"
+  ],
+  "enhanced_information": "The patient's symptoms and MRI findings suggest increased intracranial pressure due to a right hemispherical mass. Standard medical consensus indicates that headaches associated with increased intracranial pressure are often worse in the morning. This is due to the effects of lying flat overnight, which can exacerbate intracranial pressure. The retrieved evidence path supports this by linking papilledema, a sign of increased intracranial pressure, to morning headaches. Therefore, the characteristic of 'morning dominance' of the headache is most likely in this patient. Other symptoms like photophobia and sonophobia are less directly associated with increased intracranial pressure and are not as strongly supported by the evidence or consensus in this context.",
+  "analysis": "The patient's symptoms and MRI findings indicate increased intracranial pressure due to a right hemispherical mass. This is evidenced by the presence of papilledema, left pyramidal signs, and signs of tentorial herniation. In cases of increased intracranial pressure, headaches are often worse in the morning. This is because lying flat during sleep can lead to increased intracranial pressure, which is relieved somewhat by standing up. Therefore, the characteristic of 'morning dominance' of the headache is most likely in this patient. Other symptoms like photophobia and sonophobia are less directly associated with increased intracranial pressure and are not as strongly supported by the evidence or consensus in this context.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      50.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

@@ -1,0 +1,100 @@
+{
+  "question": "Infant of 5 months of age fed with exclusive breastfeeding until the moment that for maternal work motive is introduced bottle with formula of beginning and a few days ago it is added with cereals with and without gluten. As a family history, a 28-year-old asthmatic mother, a healthy 32-year-old father and a 5-year-old brother with celiac disease and atopic dermatitis stood out. As a personal history, pregnancy without incidences and delivery by caesarean section, having been offered a bottle with formula to start the first day of life in maternity. From a few days ago, she began with abdominal distension, diarrheic stools, rejection of feeds, perioral erythema with longer duration in time after taking the bottle and lately vomiting after ingestion, tolerating the breast well. What is your most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Celiac Disease.",
+    "opb": "Acute gastroenteritis",
+    "opc": "Allergy to the proteins of cow's milk.",
+    "opd": "Allergy to baby bottles."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Vomiting",
+        "Disease",
+        "Celiac Disease"
+      ],
+      [
+        "Vomiting",
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Celiac Disease"
+      ],
+      [
+        "Vomiting",
+        "Infection",
+        "Celiac Disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Vomiting)-CAUSES->(Disease)-CAUSES->(Celiac Disease)",
+      "(Vomiting)-CAUSES->(Diabetes Mellitus, Insulin-Dependent)-PREDISPOSES->(Celiac Disease)",
+      "(Vomiting)-PREDISPOSES->(Infection)-CAUSES->(Celiac Disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vomiting)-CAUSES->(Disease)-CAUSES->(Celiac Disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Introduction of formula\" -> \"exposure to cow's milk proteins\" -> \"immune response\" -> \"perioral erythema\" -> \"vomiting after ingestion\" -> \"tolerates breast milk\" -> \"allergy to cow's milk proteins\" -> 85%",
+    "CHAIN: \"Introduction of cereals\" -> \"exposure to gluten\" -> \"family history of celiac disease\" -> \"abdominal distension\" -> \"diarrheic stools\" -> \"possible celiac disease\" -> 60%",
+    "CHAIN: \"Introduction of formula\" -> \"exposure to cow's milk proteins\" -> \"immune response\" -> \"diarrheic stools\" -> \"vomiting after ingestion\" -> \"allergy to cow's milk proteins\" -> 80%",
+    "CHAIN: \"Introduction of cereals\" -> \"exposure to gluten\" -> \"family history of celiac disease\" -> \"rejection of feeds\" -> \"possible celiac disease\" -> 55%",
+    "CHAIN: \"Introduction of formula\" -> \"exposure to cow's milk proteins\" -> \"immune response\" -> \"perioral erythema\" -> \"rejection of feeds\" -> \"allergy to cow's milk proteins\" -> 90%",
+    "CHAIN: \"Introduction of cereals\" -> \"exposure to gluten\" -> \"family history of celiac disease\" -> \"vomiting after ingestion\" -> \"possible celiac disease\" -> 50%"
+  ],
+  "enhanced_information": "The most likely diagnosis is an allergy to cow's milk proteins. The reasoning chains supporting this diagnosis are consistent with standard medical consensus: the introduction of formula exposes the infant to cow's milk proteins, which can trigger an immune response leading to symptoms such as perioral erythema, vomiting after ingestion, and rejection of feeds, while the infant tolerates breast milk well. These symptoms align with a cow's milk protein allergy. The evidence path linking vomiting to diseases, including celiac disease, is too broad and not directly relevant, as the symptoms and timing are more indicative of a cow's milk protein allergy rather than celiac disease, especially given the infant's age and recent dietary changes. Celiac disease typically presents later in life and is less likely to cause immediate reactions like perioral erythema and vomiting after formula ingestion. Acute gastroenteritis and allergy to baby bottles are less likely given the specific symptom pattern and timing related to formula introduction.",
+  "analysis": "The infant, previously exclusively breastfed, began experiencing symptoms such as abdominal distension, diarrheic stools, rejection of feeds, perioral erythema, and vomiting after the introduction of formula and cereals. These symptoms are consistent with an allergy to cow's milk proteins, which is a common issue when infants are introduced to formula containing cow's milk. The infant tolerates breast milk well, which further supports this diagnosis, as breast milk does not contain cow's milk proteins. Celiac disease is less likely given the infant's age and the immediate reaction to formula, as celiac disease typically presents later and is associated with gluten exposure. Acute gastroenteritis would likely present with more systemic symptoms and is not directly linked to formula introduction. An allergy to baby bottles is not a recognized medical condition. Therefore, the most likely diagnosis is an allergy to the proteins of cow's milk.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      100.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": []
+}

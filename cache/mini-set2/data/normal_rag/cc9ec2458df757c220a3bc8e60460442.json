@@ -1,0 +1,115 @@
+{
+  "question": "The human being CAN NOT:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Convert glucose to lactate.",
+    "opb": "Transform carbohydrates into fatty acids.",
+    "opc": "Transform fatty acids into carbohydrates.",
+    "opd": "Convert pyruvate into glucose."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Fatty Acids",
+        "Genes",
+        "Carbohydrates"
+      ],
+      [
+        "Fatty Acids",
+        "Brain",
+        "Carbohydrates"
+      ],
+      [
+        "Carbohydrates",
+        "Pharmaceutical Preparations",
+        "Fatty Acids"
+      ],
+      [
+        "Carbohydrates",
+        "Genes",
+        "Fatty Acids"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Fatty Acids)-INTERACTS_WITH->(Genes)-INTERACTS_WITH->(Carbohydrates)",
+      "(Fatty Acids)-PART_OF->(Brain)-LOCATION_OF->(Carbohydrates)",
+      "(Carbohydrates)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Fatty Acids)",
+      "(Carbohydrates)-INTERACTS_WITH->(Genes)-INTERACTS_WITH->(Fatty Acids)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fatty Acids)-INTERACTS_WITH->(Genes)-INTERACTS_WITH->(Carbohydrates)",
+      "(Carbohydrates)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Fatty Acids)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Fatty acids\" -> \"cannot be converted into carbohydrates\" -> \"due to lack of gluconeogenesis pathway\" -> 85%",
+    "CHAIN: \"Pyruvate\" -> \"can be converted into glucose\" -> \"through gluconeogenesis\" -> 90%",
+    "CHAIN: \"Glucose\" -> \"can be converted to lactate\" -> \"via anaerobic glycolysis\" -> 95%",
+    "CHAIN: \"Carbohydrates\" -> \"can be transformed into fatty acids\" -> \"through lipogenesis\" -> 90%"
+  ],
+  "enhanced_information": "The human body cannot transform fatty acids into carbohydrates due to the absence of a gluconeogenesis pathway for fatty acids. This aligns with the consensus that while glucose can be converted to lactate via anaerobic glycolysis, carbohydrates can be transformed into fatty acids through lipogenesis, and pyruvate can indeed be converted into glucose through gluconeogenesis. Therefore, the correct answer is option 'opc': Transform fatty acids into carbohydrates.",
+  "analysis": "The human body can convert glucose to lactate through anaerobic glycolysis, transform carbohydrates into fatty acids via lipogenesis, and convert pyruvate into glucose through gluconeogenesis. However, humans cannot transform fatty acids into carbohydrates, as this process is not feasible due to the lack of the necessary enzymes to convert acetyl-CoA (derived from fatty acids) back into glucose. Therefore, option 'opc' is the correct answer.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Glucose PREVENTS EXERTIONAL",
+    "Lactate ASSOCIATED_WITH Hyperglycemia",
+    "Pyonephrosis CAUSES Obstruction",
+    "Vomiting ASSOCIATED_WITH Epilepsies, Partial",
+    "Nosocomial pneumonia PROCESS_OF Stenotrophomonas maltophilia",
+    "Pestalotiopsis disseminata ISA fungus",
+    "Dendritic Cells PART_OF Tongue",
+    "Oils INTERACTS_WITH Carbohydrates",
+    "Ovral ISA Ethinyl Estradiol"
+  ]
+}

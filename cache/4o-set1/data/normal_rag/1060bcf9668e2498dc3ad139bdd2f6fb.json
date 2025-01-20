@@ -1,0 +1,127 @@
+{
+  "question": "Selective immunosuppression by the administration of drugs such as cyclosporin A is frequently used in post-transplant treatment with the aim of:",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Increase the levels of helper T cells and suppressors in the periphery.",
+    "opb": "Decrease levels of circulating immunoglobulins of the IgG and IgM isotypes in the receptor.",
+    "opc": "Decrease activation of CD4 + and CD8 + T lymphocytes.",
+    "opd": "Increase the levels of alloreactivity of cytotoxic T lymphocytes."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Cyclosporine",
+        "Cells",
+        "Calcineurin"
+      ],
+      [
+        "Cyclosporine",
+        "Cells",
+        "Calcineurin"
+      ],
+      [
+        "Interleukin-2",
+        "CD8-Positive T-Lymphocytes"
+      ],
+      [
+        "Proliferation (morphologic abnormality)",
+        "FLVCR1",
+        "Immunoglobulins"
+      ],
+      [
+        "T-Lymphocyte",
+        "Immunoglobulins"
+      ],
+      [
+        "T-Lymphocyte",
+        "Immunoglobulins"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Cyclosporine)-PART_OF->(Cells)-INTERACTS_WITH->(Calcineurin)",
+      "(Cyclosporine)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Calcineurin)",
+      "(Interleukin-2)-INTERACTS_WITH->(CD8-Positive T-Lymphocytes)",
+      "(Proliferation (morphologic abnormality))-ASSOCIATED_WITH->(FLVCR1)-INTERACTS_WITH->(Immunoglobulins)",
+      "(T-Lymphocyte)-INTERACTS_WITH->(Immunoglobulins)",
+      "(T-Lymphocyte)-LOCATION_OF->(Immunoglobulins)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Interleukin-2)-INTERACTS_WITH->(CD8-Positive T-Lymphocytes)",
+      "(T-Lymphocyte)-Lymphocyte)->(Immunoglobulins)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Cyclosporin A\" -> \"inhibition of calcineurin\" -> \"decreased activation of NFAT\" -> \"reduced transcription of IL-2\" -> \"decreased activation of CD4+ and CD8+ T lymphocytes\" -> 95%",
+    "CHAIN: \"Cyclosporin A\" -> \"inhibition of T cell activation\" -> \"reduced proliferation of T cells\" -> \"decreased levels of circulating immunoglobulins\" -> \"possible\" -> 60%",
+    "CHAIN: \"Cyclosporin A\" -> \"inhibition of T cell activation\" -> \"decreased alloreactivity of cytotoxic T lymphocytes\" -> \"reduced transplant rejection\" -> 85%",
+    "CHAIN: \"Cyclosporin A\" -> \"inhibition of T cell activation\" -> \"decreased helper T cell activity\" -> \"decreased levels of helper T cells and suppressors\" -> \"unclear\" -> 50%"
+  ],
+  "enhanced_information": "Cyclosporin A is a selective immunosuppressant that primarily functions by inhibiting calcineurin, which leads to decreased activation of NFAT (nuclear factor of activated T-cells). This results in reduced transcription of interleukin-2 (IL-2), a crucial cytokine for T cell proliferation and activation. Consequently, there is a decreased activation of both CD4+ and CD8+ T lymphocytes, aligning with standard medical consensus. This mechanism effectively reduces the immune response, particularly the activation and proliferation of T cells, which is critical in preventing transplant rejection. The retrieved evidence path supports the role of IL-2 in T cell activation, reinforcing the consensus that cyclosporin A decreases T cell activity. Therefore, the most accurate option is that cyclosporin A decreases the activation of CD4+ and CD8+ T lymphocytes, making option 'opc' the correct choice.",
+  "analysis": "Cyclosporin A is a well-known immunosuppressive drug used primarily to prevent organ rejection in transplant patients. Its mechanism of action involves the inhibition of calcineurin, which is crucial for the activation of T cells, particularly CD4+ helper T cells and CD8+ cytotoxic T cells. By inhibiting calcineurin, cyclosporin A effectively decreases the activation of these T lymphocytes, thereby reducing the immune response against the transplanted organ. This aligns with the goal of selective immunosuppression in post-transplant treatment, which is to prevent the immune system from attacking the transplanted organ while maintaining some level of immune function. Therefore, the most likely correct option is to decrease activation of CD4+ and CD8+ T lymphocytes.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      2,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": [
+    "Treatment Protocols TREATS Hamman-Rich syndrome",
+    "ERAP1 ASSOCIATED_WITH Spondylarthritis",
+    "Cells PART_OF Lactococcus lactis subsp. cremoris",
+    "Butyric Acid ASSOCIATED_WITH Symptoms",
+    "Autonomic nervous system imbalance CAUSES Alcohol withdrawal syndrome",
+    "Indicator Dilution Techniques DIAGNOSES Heart valve regurgitation",
+    "Immunosuppressive Agents TREATS Disease"
+  ]
+}

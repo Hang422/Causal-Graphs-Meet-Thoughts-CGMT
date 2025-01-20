@@ -1,0 +1,192 @@
+{
+  "question": "The third generation cephalosporins:",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Your representative is cefepima.",
+    "opb": "They should be avoided in Enterobacter infections.",
+    "opc": "They are not useful in meningitis secondary to pneumococcus.",
+    "opd": "They are of choice in meningitis due to Listeria.",
+    "ope": "They should never be associated with an aminoglycoside."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Gram-Negative Bacteria",
+        "Infection",
+        "Enterobacter"
+      ],
+      [
+        "Gram-Negative Bacteria",
+        "Endophthalmitis",
+        "Enterobacter"
+      ],
+      [
+        "Gram-Negative Bacteria",
+        "Endocarditis",
+        "Enterobacter"
+      ],
+      [
+        "Meningitis",
+        "Streptococcus pneumoniae"
+      ],
+      [
+        "Streptococcus pneumoniae",
+        "Meningitis"
+      ],
+      [
+        "Listeria",
+        "Disease",
+        "Clostridium difficile infection",
+        "Meningitis, Listeria"
+      ],
+      [
+        "Listeria",
+        "Disease",
+        "Hydrocephalus",
+        "Meningitis, Listeria"
+      ],
+      [
+        "Listeria",
+        "Disease",
+        "Cervical cord compression",
+        "Meningitis, Listeria"
+      ],
+      [
+        "Meningitis, Listeria",
+        "Meningitis",
+        "Listeria"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Gram-Negative Bacteria)-CAUSES->(Infection)-PROCESS_OF->(Enterobacter)",
+      "(Gram-Negative Bacteria)-CAUSES->(Endophthalmitis)-PROCESS_OF->(Enterobacter)",
+      "(Gram-Negative Bacteria)-CAUSES->(Endocarditis)-PROCESS_OF->(Enterobacter)",
+      "(Meningitis)-PROCESS_OF->(Streptococcus pneumoniae)",
+      "(Streptococcus pneumoniae)-CAUSES->(Meningitis)",
+      "(Listeria)-CAUSES->(Disease)-CAUSES->(Clostridium difficile infection)-CAUSES->(Meningitis, Listeria)",
+      "(Listeria)-CAUSES->(Disease)-CAUSES->(Hydrocephalus)-COMPLICATES->(Meningitis, Listeria)",
+      "(Listeria)-CAUSES->(Disease)-CAUSES->(Cervical cord compression)-COMPLICATES->(Meningitis, Listeria)",
+      "(Meningitis, Listeria)-CAUSES->(Meningitis)-PROCESS_OF->(Listeria)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Blood - brain barrier anatomy",
+        "Meningitis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Blood - brain barrier anatomy)-LOCATION_OF->(Meningitis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Meningitis)-PROCESS_OF->(Streptococcus pneumoniae)",
+      "(Streptococcus pneumoniae)-CAUSES->(Meningitis)",
+      "(Meningitis, Listeria)-CAUSES->(Meningitis)-PROCESS_OF->(Listeria)",
+      "(Listeria)-CAUSES->(Disease)-CAUSES->(Clostridium difficile infection)-CAUSES->(Meningitis, Listeria)",
+      "(Listeria)-CAUSES->(Disease)-CAUSES->(Hydrocephalus)-COMPLICATES->(Meningitis, Listeria)",
+      "(Listeria)-CAUSES->(Disease)-CAUSES->(Cervical cord compression)-COMPLICATES->(Meningitis, Listeria)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Third generation cephalosporins\" -> \"broad spectrum activity\" -> \"effective against many Gram-negative bacteria\" -> \"not typically effective against Enterobacter\" -> \"resistance concerns\" -> \"avoid in Enterobacter infections\" -> 85%",
+    "CHAIN: \"Third generation cephalosporins\" -> \"penetrate blood-brain barrier\" -> \"effective in meningitis\" -> \"useful against pneumococcus\" -> \"useful in meningitis secondary to pneumococcus\" -> 90%",
+    "CHAIN: \"Third generation cephalosporins\" -> \"do not cover Listeria\" -> \"ineffective in Listeria meningitis\" -> \"not of choice in meningitis due to Listeria\" -> 95%",
+    "CHAIN: \"Third generation cephalosporins\" -> \"can be combined with aminoglycosides\" -> \"synergistic effect in some infections\" -> \"combination sometimes used\" -> \"not contraindicated\" -> 80%",
+    "CHAIN: \"Cefepime\" -> \"fourth generation cephalosporin\" -> \"not third generation\" -> \"not representative of third generation\" -> 95%"
+  ],
+  "enhanced_information": "Third generation cephalosporins are broad-spectrum antibiotics effective against many Gram-negative bacteria but are not typically effective against Enterobacter due to resistance concerns, thus they should be avoided in Enterobacter infections. They penetrate the blood-brain barrier and are effective in treating meningitis, including cases caused by Streptococcus pneumoniae, making them useful in meningitis secondary to pneumococcus. However, they do not cover Listeria monocytogenes, and therefore are not the treatment of choice for meningitis due to Listeria, where ampicillin is preferred. Third generation cephalosporins can be combined with aminoglycosides for a synergistic effect in certain infections, and such combinations are not contraindicated. Cefepime is a fourth generation cephalosporin and not representative of the third generation. The retrieved evidence paths confirm the role of Streptococcus pneumoniae in causing meningitis, supporting the use of third generation cephalosporins in such cases, but do not provide relevant information regarding Listeria or Enterobacter infections.",
+  "analysis": "Third generation cephalosporins, such as ceftriaxone and cefotaxime, are commonly used to treat meningitis caused by pneumococcus due to their ability to penetrate the blood-brain barrier effectively. They are not the drugs of choice for Listeria meningitis, as ampicillin is preferred for Listeria infections. Additionally, third generation cephalosporins should be used with caution in Enterobacter infections due to the potential for resistance development. Therefore, option opb is correct as third generation cephalosporins should be avoided in Enterobacter infections.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      3,
+      2,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      16.666666666666664,
+      50.0,
+      33.33333333333333,
+      0.0,
+      0.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": [
+    "HSD11B2 gene|HSD11B2 INTERACTS_WITH Hydrocortisone",
+    "Gastroesophageal reflux disease CAUSES Night sweats",
+    "Listeria CAUSES Meningitis",
+    "Multiple drug-resistant Acinetobacter baumannii INTERACTS_WITH Extended spectrum beta-lactamase producing Klebsiella pneumoniae",
+    "Venous occlusion CAUSES Postmastectomy lymphedema",
+    "Glucosamine TREATS Arthritic pains",
+    "Enterobacteriaceae ASSOCIATED_WITH Late onset neonatal sepsis",
+    "Sulfonamides ASSOCIATED_WITH Adverse effects",
+    "Entire iris LOCATION_OF stereophotography",
+    "Communicable Diseases PROCESS_OF Carbapenem resistant Klebsiella pneumoniae",
+    "Carbapenem resistant Klebsiella pneumoniae ASSOCIATED_WITH Communicable Diseases",
+    "Listeriosis COMPLICATES Meningitis",
+    "Epinephrine ASSOCIATED_WITH social stress",
+    "Borrelia burgdorferi CAUSES Inflammatory disorder",
+    "Enterobacteriaceae ASSOCIATED_WITH Pleural effusion disorder"
+  ]
+}

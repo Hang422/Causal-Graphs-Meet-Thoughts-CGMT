@@ -1,0 +1,123 @@
+{
+  "question": "Which of the following bacterial species is intrinsically resistant to many antibiotics widely used clinically?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Klebsiella pneumoniae.",
+    "opb": "Haemophilus influenzae.",
+    "opc": "Streptococcus pneumoniae.",
+    "opd": "Pseudomonas aeruginosa."
+  },
+  "topic_name": "Biology",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pseudomonas aeruginosa",
+        "beta-Lactamase"
+      ],
+      [
+        "Haemophilus influenzae",
+        "Pseudomonas aeruginosa",
+        "beta-Lactamase"
+      ],
+      [
+        "Haemophilus influenzae",
+        "Infection",
+        "beta-Lactamase"
+      ],
+      [
+        "Streptococcus pneumoniae",
+        "Genes",
+        "Cells",
+        "Penicillin-Binding Proteins"
+      ],
+      [
+        "Streptococcus pneumoniae",
+        "Genes",
+        "Cells",
+        "Penicillin-Binding Proteins"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Pseudomonas aeruginosa)-LOCATION_OF->(beta-Lactamase)",
+      "(Haemophilus influenzae)-INTERACTS_WITH->(Pseudomonas aeruginosa)-LOCATION_OF->(beta-Lactamase)",
+      "(Haemophilus influenzae)-CAUSES->(Infection)-ASSOCIATED_WITH->(beta-Lactamase)",
+      "(Streptococcus pneumoniae)-LOCATION_OF->(Genes)-PART_OF->(Cells)-INTERACTS_WITH->(Penicillin-Binding Proteins)",
+      "(Streptococcus pneumoniae)-LOCATION_OF->(Genes)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Penicillin-Binding Proteins)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Haemophilus influenzae)-INTERACTS_WITH->(Pseudomonas aeruginosa)-LOCATION_OF->(beta-Lactamase)",
+      "(Pseudomonas aeruginosa)-LOCATION_OF->(beta-Lactamase)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Pseudomonas aeruginosa\" -> \"intrinsic resistance mechanisms\" -> \"efflux pumps\" -> \"antibiotic resistance\" -> 95%",
+    "CHAIN: \"Pseudomonas aeruginosa\" -> \"low outer membrane permeability\" -> \"reduced antibiotic uptake\" -> \"antibiotic resistance\" -> 90%",
+    "CHAIN: \"Pseudomonas aeruginosa\" -> \"production of beta-lactamases\" -> \"breakdown of beta-lactam antibiotics\" -> \"antibiotic resistance\" -> 85%",
+    "CHAIN: \"Klebsiella pneumoniae\" -> \"acquired resistance mechanisms\" -> \"beta-lactamase production\" -> \"antibiotic resistance\" -> 70%",
+    "CHAIN: \"Haemophilus influenzae\" -> \"beta-lactamase production\" -> \"resistance to penicillins\" -> \"limited antibiotic resistance\" -> 60%",
+    "CHAIN: \"Streptococcus pneumoniae\" -> \"altered penicillin-binding proteins\" -> \"resistance to penicillin\" -> \"limited antibiotic resistance\" -> 55%"
+  ],
+  "enhanced_information": "Pseudomonas aeruginosa is intrinsically resistant to many antibiotics due to several mechanisms. It possesses efflux pumps that actively expel antibiotics, reducing their intracellular concentration and effectiveness. Additionally, Pseudomonas aeruginosa has a low outer membrane permeability, which limits antibiotic uptake. It also produces beta-lactamases, enzymes that degrade beta-lactam antibiotics, further contributing to its resistance. These intrinsic mechanisms are well-documented and align with the consensus that Pseudomonas aeruginosa is highly resistant to many clinically used antibiotics. In contrast, Klebsiella pneumoniae, Haemophilus influenzae, and Streptococcus pneumoniae primarily exhibit acquired resistance mechanisms, such as beta-lactamase production or altered penicillin-binding proteins, which confer resistance to specific antibiotics but do not provide the broad intrinsic resistance seen in Pseudomonas aeruginosa.",
+  "analysis": "Pseudomonas aeruginosa is known for its intrinsic resistance to many antibiotics, which is a well-documented phenomenon in medical literature. This resistance is due to several mechanisms, including the presence of efflux pumps, low outer membrane permeability, and the production of beta-lactamases. These mechanisms allow Pseudomonas aeruginosa to resist a wide range of antibiotics without the need for acquired resistance mechanisms. In contrast, Klebsiella pneumoniae, Haemophilus influenzae, and Streptococcus pneumoniae primarily rely on acquired resistance mechanisms, which are specific to certain antibiotics and do not confer the broad intrinsic resistance seen in Pseudomonas aeruginosa. Therefore, based on the consensus and the enhanced information provided, Pseudomonas aeruginosa is the bacterial species that is intrinsically resistant to many antibiotics widely used clinically.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      33.33333333333333,
+      0.0,
+      33.33333333333333,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

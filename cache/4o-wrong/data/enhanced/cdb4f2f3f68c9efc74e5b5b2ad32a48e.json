@@ -1,0 +1,139 @@
+{
+  "question": "80-year-old woman who consults for presenting, for 1 month, progressive increase of the abdominal perimeter. During the previous 4-5 months note asthenia, anorexia and weight loss not specified. On physical examination, tension ascites and malleolar edema are seen, with no other relevant signs. Ultrasonography and CT scan of the abdomen demonstrate the presence of ascites, of homogeneous density, without appreciating peritoneal implants or abdominal or pelvic masses. Liver, pancreas, adrenal glands, spleen and kidneys without significant findings. Paracentesis is performed through a thick needle, obtaining a somewhat yellowish, dense and gelatinous fluid with difficulty. What is the most likely etiology?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Hydropic decompensation secondary to liver cirrhosis.",
+    "opb": "Chylose ascites due to non-Hodgkin's lymphoma.",
+    "opc": "Peritoneal tuberculosis.",
+    "opd": "Peritoneal metastasis of adenocarcinoma.",
+    "ope": "Ascites secondary to constrictive pericarditis."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ascites",
+        "Postoperative Complications",
+        "Liver Cirrhosis"
+      ],
+      [
+        "Ascites",
+        "Disease Progression",
+        "Liver Cirrhosis"
+      ],
+      [
+        "Ascites",
+        "Infection",
+        "Liver Cirrhosis"
+      ],
+      [
+        "Ascites",
+        "Symptoms",
+        "Tuberculosis"
+      ],
+      [
+        "Ascites",
+        "Respiratory Failure",
+        "Tuberculosis"
+      ],
+      [
+        "Ascites",
+        "Macrophage activation syndrome",
+        "Tuberculosis"
+      ],
+      [
+        "Tuberculosis",
+        "Peritonitis, Tuberculous"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Ascites)-CAUSES->(Postoperative Complications)-COMPLICATES->(Liver Cirrhosis)",
+      "(Ascites)-PREDISPOSES->(Disease Progression)-CAUSES->(Liver Cirrhosis)",
+      "(Ascites)-PREDISPOSES->(Infection)-CAUSES->(Liver Cirrhosis)",
+      "(Ascites)-CAUSES->(Symptoms)-CAUSES->(Tuberculosis)",
+      "(Ascites)-CAUSES->(Respiratory Failure)-CAUSES->(Tuberculosis)",
+      "(Ascites)-PREDISPOSES->(Macrophage activation syndrome)-CAUSES->(Tuberculosis)",
+      "(Tuberculosis)-CAUSES->(Peritonitis, Tuberculous)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ascites)-CAUSES->(Postoperative Complications)-COMPLICATES->(Liver Cirrhosis)",
+      "(Ascites)-CAUSES->(Symptoms)-CAUSES->(Tuberculosis)",
+      "(Tuberculosis)-CAUSES->(Peritonitis, Tuberculous)",
+      "(Ascites)-PREDISPOSES->(Disease Progression)-CAUSES->(Liver Cirrhosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Progressive abdominal distension\" -> \"Ascites with gelatinous fluid\" -> \"No peritoneal implants or masses\" -> \"Possible peritoneal metastasis\" -> 70%",
+    "CHAIN: \"Progressive abdominal distension\" -> \"Ascites with gelatinous fluid\" -> \"No liver cirrhosis signs\" -> \"Unlikely hydropic decompensation\" -> 60%",
+    "CHAIN: \"Progressive abdominal distension\" -> \"Ascites with gelatinous fluid\" -> \"No lymphadenopathy or masses\" -> \"Unlikely chylose ascites\" -> 50%",
+    "CHAIN: \"Progressive abdominal distension\" -> \"Ascites with gelatinous fluid\" -> \"No tuberculosis signs\" -> \"Unlikely peritoneal tuberculosis\" -> 55%",
+    "CHAIN: \"Progressive abdominal distension\" -> \"Ascites with gelatinous fluid\" -> \"No cardiac signs\" -> \"Unlikely constrictive pericarditis\" -> 60%"
+  ],
+  "enhanced_information": "The patient's presentation of progressive abdominal distension, ascites with a gelatinous fluid, and absence of peritoneal implants or masses suggests a less common cause of ascites. The fluid's characteristics are not typical for liver cirrhosis, which usually presents with clear or straw-colored ascitic fluid, and the absence of liver abnormalities on imaging further supports this. Chylous ascites, often associated with lymphatic obstruction or non-Hodgkin's lymphoma, typically presents with milky fluid, not gelatinous. Peritoneal tuberculosis would likely show signs of infection or granulomas, which are not present. Constrictive pericarditis would present with cardiac signs, which are absent. The gelatinous nature of the fluid is more suggestive of peritoneal metastasis of adenocarcinoma, as mucinous ascites can occur with certain types of cancer, such as ovarian or gastrointestinal adenocarcinomas. Therefore, the most likely etiology is peritoneal metastasis of adenocarcinoma.",
+  "analysis": "The patient's presentation includes progressive abdominal distension, ascites with a gelatinous fluid, and no detectable peritoneal implants or masses on imaging. The characteristics of the ascitic fluid are crucial in determining the etiology. The yellowish, dense, and gelatinous nature of the fluid is atypical for ascites due to liver cirrhosis, which usually presents with clear or straw-colored fluid. Chylous ascites, often associated with lymphatic obstruction or non-Hodgkin's lymphoma, typically presents with a milky appearance, not gelatinous. Peritoneal tuberculosis would likely present with signs of infection or granulomas, which are not observed here. Constrictive pericarditis would present with cardiac signs, which are absent in this case. The gelatinous nature of the fluid is more suggestive of peritoneal metastasis of adenocarcinoma, as mucinous ascites can occur with certain types of cancer, such as ovarian or gastrointestinal adenocarcinomas. Therefore, based on the fluid characteristics and the absence of other findings, peritoneal metastasis of adenocarcinoma is the most likely etiology.",
+  "answer": "opd",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      0,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      33.33333333333333,
+      0.0,
+      66.66666666666666,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

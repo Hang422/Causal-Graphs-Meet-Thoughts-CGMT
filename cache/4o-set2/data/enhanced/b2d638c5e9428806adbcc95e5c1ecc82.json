@@ -1,0 +1,185 @@
+{
+  "question": "Indicate which of the following deficits leads to a glycogenosis:",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Hexokinase.",
+    "opb": "Hexosaminidase.",
+    "opc": "Glucose 6-phosphatase.",
+    "opd": "Fructose 1,6-bisphosphatase",
+    "ope": "Fructokinase"
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Glycogen",
+        "Myocardial necrosis",
+        "Inflammation",
+        "Cerebral atrophy",
+        "Glycogen Storage Disease"
+      ],
+      [
+        "Glycogen",
+        "Myocardial necrosis",
+        "Hyperglycemia",
+        "Cerebral atrophy",
+        "Glycogen Storage Disease"
+      ],
+      [
+        "Glycogen",
+        "Myocardial necrosis",
+        "Inflammatory Response",
+        "Cerebral atrophy",
+        "Glycogen Storage Disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Glycogen)-CAUSES->(Myocardial necrosis)-CAUSES->(Inflammation)-CAUSES->(Cerebral atrophy)-CAUSES->(Glycogen Storage Disease)",
+      "(Glycogen)-CAUSES->(Myocardial necrosis)-CAUSES->(Hyperglycemia)-CAUSES->(Cerebral atrophy)-CAUSES->(Glycogen Storage Disease)",
+      "(Glycogen)-CAUSES->(Myocardial necrosis)-CAUSES->(Inflammatory Response)-CAUSES->(Cerebral atrophy)-CAUSES->(Glycogen Storage Disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Glycogen Storage Disease Type I",
+        "Disease",
+        "Virus",
+        "Liposomes",
+        "Glucose-6-Phosphate"
+      ],
+      [
+        "Glycogen Storage Disease Type I",
+        "Disease",
+        "Virus",
+        "Liposomes",
+        "Glucose-6-Phosphate"
+      ],
+      [
+        "Glucose-6-Phosphate",
+        "ascorbate",
+        "Cells",
+        "Kidney"
+      ],
+      [
+        "Glucose-6-Phosphate",
+        "Cholecalciferol",
+        "Cells",
+        "Kidney"
+      ],
+      [
+        "Kidney",
+        "Glycogen Storage Disease"
+      ],
+      [
+        "Liver",
+        "Glycogen Storage Disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "INTERACTS_WITH",
+        "LOCATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "LOCATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH",
+        "PART_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Glycogen Storage Disease Type I)-CAUSES->(Disease)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Liposomes)-LOCATION_OF->(Glucose-6-Phosphate)",
+      "(Glycogen Storage Disease Type I)-ISA->(Disease)-ASSOCIATED_WITH->(Virus)-LOCATION_OF->(Liposomes)-LOCATION_OF->(Glucose-6-Phosphate)",
+      "(Glucose-6-Phosphate)-INTERACTS_WITH->(ascorbate)-INTERACTS_WITH->(Cells)-PART_OF->(Kidney)",
+      "(Glucose-6-Phosphate)-INTERACTS_WITH->(Cholecalciferol)-PART_OF->(Cells)-PART_OF->(Kidney)",
+      "(Kidney)-LOCATION_OF->(Glycogen Storage Disease)",
+      "(Liver)-LOCATION_OF->(Glycogen Storage Disease)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Kidney)-LOCATION_OF->(Glycogen Storage Disease)",
+      "(Liver)-LOCATION_OF->(Glycogen Storage Disease)",
+      "(Glycogen)-CAUSES->(Myocardial necrosis)-CAUSES->(Inflammation)-CAUSES->(Cerebral atrophy)-CAUSES->(Glycogen Storage Disease)",
+      "(Glycogen)-CAUSES->(Myocardial necrosis)-CAUSES->(Hyperglycemia)-CAUSES->(Cerebral atrophy)-CAUSES->(Glycogen Storage Disease)",
+      "(Glycogen)-CAUSES->(Myocardial necrosis)-CAUSES->(Inflammatory Response)-CAUSES->(Cerebral atrophy)-CAUSES->(Glycogen Storage Disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Glucose 6-phosphatase deficiency\" -> \"impaired conversion of glucose-6-phosphate to glucose\" -> \"accumulation of glycogen in liver and kidneys\" -> \"glycogen storage disease type I (Von Gierke's disease)\" -> 95%",
+    "CHAIN: \"Hexokinase deficiency\" -> \"impaired phosphorylation of glucose\" -> \"reduced glycolysis\" -> \"possible metabolic issues\" -> 40%",
+    "CHAIN: \"Hexosaminidase deficiency\" -> \"accumulation of GM2 gangliosides\" -> \"Tay-Sachs disease\" -> \"not related to glycogen storage\" -> 10%",
+    "CHAIN: \"Fructose 1,6-bisphosphatase deficiency\" -> \"impaired gluconeogenesis\" -> \"hypoglycemia\" -> \"not directly related to glycogen storage\" -> 30%",
+    "CHAIN: \"Fructokinase deficiency\" -> \"impaired fructose metabolism\" -> \"essential fructosuria\" -> \"not related to glycogen storage\" -> 20%"
+  ],
+  "enhanced_information": "Glucose 6-phosphatase deficiency leads to glycogenosis, specifically glycogen storage disease type I (Von Gierke's disease), due to impaired conversion of glucose-6-phosphate to glucose, resulting in glycogen accumulation in the liver and kidneys. This aligns with the consensus that glycogen storage diseases are often associated with enzyme deficiencies affecting glycogen metabolism. The retrieved evidence paths indicating the liver and kidney as locations of glycogen storage disease support this conclusion. Other options, such as hexokinase, hexosaminidase, fructose 1,6-bisphosphatase, and fructokinase deficiencies, do not directly lead to glycogen storage diseases, as they are associated with different metabolic pathways or conditions.",
+  "analysis": "Glycogen storage diseases, or glycogenoses, are typically caused by enzyme deficiencies that affect glycogen metabolism. Glucose 6-phosphatase deficiency is known to cause glycogen storage disease type I (Von Gierke's disease), which is characterized by the accumulation of glycogen in the liver and kidneys due to the inability to convert glucose-6-phosphate to glucose. This aligns with the consensus that glycogen storage diseases are linked to specific enzyme deficiencies in glycogen metabolism. The other options, such as hexokinase, hexosaminidase, fructose 1,6-bisphosphatase, and fructokinase, are associated with different metabolic pathways and do not directly lead to glycogen storage diseases. Therefore, the most likely correct option is glucose 6-phosphatase deficiency.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5,
+      0,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      100.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

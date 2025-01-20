@@ -1,0 +1,190 @@
+{
+  "question": "Three days after undergoing coronary artery bypass surgery, a 72-year-old man has severe right upper quadrant pain, fever, nausea, and vomiting. He has type 2 diabetes mellitus, benign prostatic hyperplasia, peripheral vascular disease, and chronic mesenteric ischemia. He had smoked one pack of cigarettes daily for 30 years but quit 10 years ago. He drinks 8 cans of beer a week. His preoperative medications include metformin, aspirin, simvastatin, and finasteride. His temperature is 38.9°C (102°F), pulse is 102/min, respirations are 18/min, and blood pressure is 110/60 mmHg. Auscultation of the lungs shows bilateral inspiratory crackles. Cardiac examination shows no murmurs, rubs or gallops. Abdominal examination shows soft abdomen with tenderness and sudden inspiratory arrest upon palpation in the right upper quadrant. There is no rebound tenderness or guarding. Laboratory studies show the following:\nHemoglobin 13.1 g/dL\nHematocrit 42%\nLeukocyte count 15,700/mm3\nSegmented neutrophils 65%\nBands 10%\nLymphocytes 20%\nMonocytes 3%\nEosinophils 1%\nBasophils 0.5%\nAST 40 U/L\nALT 100 U/L\nAlkaline phosphatase 85 U/L\nTotal bilirubin 1.5 mg/dL\nDirect 0.9 mg/dL\nAmylase 90 U/L\nAbdominal ultrasonography shows a distended gallbladder, thickened gallbladder wall with pericholecystic fluid, and no stones. Which of the following is the most appropriate next step in management?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Intravenous heparin therapy followed by embolectomy",
+    "opb": "Careful observation with serial abdominal examinations",
+    "opc": "Immediate cholecystectomy",
+    "opd": "Intravenous piperacillin-tazobactam therapy and percutaneous cholecystostomy",
+    "ope": "Endoscopic retrograde cholangiopancreatography with papillotomy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Leukocytosis",
+        "Infection",
+        "Ultrasonography"
+      ],
+      [
+        "Fever",
+        "Symptoms",
+        "Ultrasonography"
+      ],
+      [
+        "Fever",
+        "Symptoms",
+        "Ultrasonography"
+      ],
+      [
+        "Ultrasonography",
+        "Communicable Diseases"
+      ],
+      [
+        "Communicable Diseases",
+        "Abscess"
+      ],
+      [
+        "Inflammation",
+        "Abscess"
+      ],
+      [
+        "Inflammation",
+        "Obesity",
+        "Ultrasonography"
+      ],
+      [
+        "Inflammation",
+        "Infection",
+        "Ultrasonography"
+      ],
+      [
+        "Inflammation",
+        "Symptoms",
+        "Ultrasonography"
+      ],
+      [
+        "Leukocytosis",
+        "Infection",
+        "Ultrasonography"
+      ],
+      [
+        "Fever",
+        "Symptoms",
+        "Ultrasonography"
+      ],
+      [
+        "Ultrasonography",
+        "Cholecystitis, Acute"
+      ],
+      [
+        "Cholecystitis, Acute",
+        "Complication"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Leukocytosis)-PREDISPOSES->(Infection)-CAUSES->(Ultrasonography)",
+      "(Fever)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(Fever)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(Ultrasonography)-CAUSES->(Communicable Diseases)",
+      "(Communicable Diseases)-CAUSES->(Abscess)",
+      "(Inflammation)-CAUSES->(Abscess)",
+      "(Inflammation)-CAUSES->(Obesity)-CAUSES->(Ultrasonography)",
+      "(Inflammation)-CAUSES->(Infection)-CAUSES->(Ultrasonography)",
+      "(Inflammation)-PREDISPOSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(Leukocytosis)-PREDISPOSES->(Infection)-CAUSES->(Ultrasonography)",
+      "(Fever)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(Ultrasonography)-CAUSES->(Cholecystitis, Acute)",
+      "(Cholecystitis, Acute)-CAUSES->(Complication)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ultrasonography)-CAUSES->(Cholecystitis, Acute)",
+      "(Cholecystitis, Acute)-CAUSES->(Complication)",
+      "(Ultrasonography)-CAUSES->(Communicable Diseases)",
+      "(Inflammation)-CAUSES->(Abscess)",
+      "(Communicable Diseases)-CAUSES->(Abscess)",
+      "(Inflammation)-CAUSES->(Obesity)-CAUSES->(Ultrasonography)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Postoperative patient with RUQ pain\" -> \"Fever and leukocytosis present\" -> \"Ultrasound shows distended gallbladder and thickened wall\" -> \"Indicates acute cholecystitis\" -> \"Patient is at risk for complications\" -> \"Immediate cholecystectomy is indicated\" -> 95%",
+    "CHAIN: \"Postoperative patient with RUQ pain\" -> \"Fever and elevated liver enzymes\" -> \"Ultrasound shows distended gallbladder\" -> \"Suggests possible infection or inflammation\" -> \"Risk of perforation or abscess\" -> \"Immediate cholecystectomy is the most appropriate management\" -> 90%",
+    "CHAIN: \"Postoperative patient with RUQ pain\" -> \"Signs of infection and inflammation\" -> \"Ultrasound reveals thickened gallbladder wall\" -> \"Indicates acute cholecystitis\" -> \"Surgical intervention is typically required\" -> \"Immediate cholecystectomy is warranted\" -> 92%",
+    "CHAIN: \"Postoperative patient with RUQ pain\" -> \"Fever and leukocytosis noted\" -> \"Ultrasound shows gallbladder distension and wall thickening\" -> \"Suggests acute cholecystitis\" -> \"Surgical intervention is necessary to prevent complications\" -> \"Immediate cholecystectomy is the best option\" -> 93%"
+  ],
+  "enhanced_information": "The patient presents with severe right upper quadrant pain, fever, and leukocytosis, alongside ultrasound findings of a distended gallbladder with thickened walls, indicating acute cholecystitis. Given the postoperative context and the risk of complications such as perforation or abscess, immediate surgical intervention is warranted. The consensus in managing acute cholecystitis, especially in a postoperative patient, supports immediate cholecystectomy as the most appropriate next step. Other options, such as observation or medical management, are less suitable due to the high risk of complications associated with delayed treatment.",
+  "analysis": "The patient exhibits classic signs of acute cholecystitis, including severe right upper quadrant pain, fever, leukocytosis, and ultrasound findings of a distended gallbladder with thickened walls and pericholecystic fluid. In the context of recent coronary artery bypass surgery, the risk of complications such as perforation or abscess formation is heightened. The standard management for acute cholecystitis, particularly in a postoperative patient, is immediate cholecystectomy. While other options like percutaneous cholecystostomy and antibiotic therapy may be considered in high-risk patients or those who are not surgical candidates, the presence of significant symptoms and ultrasound findings strongly supports the need for surgical intervention. Therefore, the most appropriate next step in management is immediate cholecystectomy.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      4,
+      1,
+      4
+    ],
+    "coverage_rates": [
+      18.181818181818183,
+      36.36363636363637,
+      9.090909090909092,
+      36.36363636363637
+    ],
+    "total_successes": 11
+  },
+  "normal_results": []
+}

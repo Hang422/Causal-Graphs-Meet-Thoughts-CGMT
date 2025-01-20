@@ -1,0 +1,183 @@
+{
+  "question": "A 79-year-old man with aortic stenosis comes to the emergency room because of worsening fatigue for 5 months. During this time, he has also had intermittent bright red blood mixed in with his stool. He has not had any abdominal pain or weight loss. Physical examination shows pale conjunctivae and a crescendo-decrescendo systolic murmur best heard at the second right intercostal space. The abdomen is soft and non-tender. Laboratory studies show a hemoglobin of 8 g/dL and a mean corpuscular volume of 71 μm3. Colonoscopy shows no abnormalities. Which of the following is the most likely underlying mechanism of this patient's bleeding?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Thrombus in the superior mesenteric artery",
+    "opb": "Transmural inflammation of the large bowel",
+    "opc": "Atherosclerotic narrowing of the mesenteric arteries",
+    "opd": "Tortuous submucosal blood vessels",
+    "ope": "Inherited factor VIII deficiency"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Aortic Valve Stenosis",
+        "Disease",
+        "paracrine",
+        "Blood Vessels"
+      ],
+      [
+        "Aortic Valve Stenosis",
+        "Disease",
+        "Neutrophil Infiltration",
+        "Blood Vessels"
+      ],
+      [
+        "Aortic Valve Stenosis",
+        "Disease",
+        "uptake",
+        "Blood Vessels"
+      ],
+      [
+        "Pressure- physical agent",
+        "Disease",
+        "arterial stiffness",
+        "Blood Vessels"
+      ],
+      [
+        "Pressure- physical agent",
+        "Disease",
+        "Neutrophil Infiltration",
+        "Blood Vessels"
+      ],
+      [
+        "Pressure- physical agent",
+        "Disease",
+        "uptake",
+        "Blood Vessels"
+      ],
+      [
+        "Acquired von Willebrand's disease",
+        "Blood Coagulation Disorders"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Aortic Valve Stenosis)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Blood Vessels)",
+      "(Aortic Valve Stenosis)-CAUSES->(Disease)-MANIFESTATION_OF->(Neutrophil Infiltration)-PROCESS_OF->(Blood Vessels)",
+      "(Aortic Valve Stenosis)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Blood Vessels)",
+      "(Pressure- physical agent)-CAUSES->(Disease)-CAUSES->(arterial stiffness)-PROCESS_OF->(Blood Vessels)",
+      "(Pressure- physical agent)-CAUSES->(Disease)-MANIFESTATION_OF->(Neutrophil Infiltration)-PROCESS_OF->(Blood Vessels)",
+      "(Pressure- physical agent)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Blood Vessels)",
+      "(Acquired von Willebrand's disease)-CAUSES->(Blood Coagulation Disorders)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Blood Vessels",
+        "Angiodysplasia"
+      ],
+      [
+        "Blood Vessels",
+        "Angiodysplasia"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Blood Vessels)-LOCATION_OF->(Angiodysplasia)",
+      "(Blood Vessels)-LOCATION_OF->(Angiodysplasia)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Blood Vessels)-LOCATION_OF->(Angiodysplasia)",
+      "(Acquired von Willebrand's disease)-CAUSES->(Blood Coagulation Disorders)",
+      "(Aortic Valve Stenosis)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Blood Vessels)",
+      "(Aortic Valve Stenosis)-CAUSES->(Disease)-MANIFESTATION_OF->(Neutrophil Infiltration)-PROCESS_OF->(Blood Vessels)",
+      "(Aortic Valve Stenosis)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Blood Vessels)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Aortic stenosis\" -> \"Shear stress on blood vessels\" -> \"Development of angiodysplasia\" -> \"Tortuous submucosal blood vessels\" -> \"Intermittent bleeding\" -> 85%",
+    "CHAIN: \"Aortic stenosis\" -> \"Increased shear stress\" -> \"Von Willebrand factor deficiency\" -> \"Bleeding tendency\" -> \"Intermittent bright red blood in stool\" -> 80%",
+    "CHAIN: \"Aortic stenosis\" -> \"Increased pressure gradient\" -> \"Mechanical stress on blood vessels\" -> \"Formation of angiodysplasia\" -> \"Tortuous submucosal blood vessels\" -> 75%",
+    "CHAIN: \"Aortic stenosis\" -> \"Altered blood flow dynamics\" -> \"Vascular fragility\" -> \"Tortuous submucosal blood vessels\" -> \"Intermittent gastrointestinal bleeding\" -> 70%",
+    "CHAIN: \"Aortic stenosis\" -> \"Increased shear stress\" -> \"Acquired von Willebrand syndrome\" -> \"Bleeding tendency\" -> \"Intermittent bright red blood in stool\" -> 65%"
+  ],
+  "enhanced_information": "The patient's aortic stenosis is associated with increased shear stress on blood vessels, which can lead to the development of angiodysplasia, characterized by tortuous submucosal blood vessels. This condition is known to cause intermittent gastrointestinal bleeding, which aligns with the patient's symptoms of bright red blood in the stool and anemia. Additionally, aortic stenosis can lead to acquired von Willebrand syndrome due to the destruction of von Willebrand factor by high shear stress, contributing to a bleeding tendency. The retrieved evidence supports the link between aortic stenosis and blood vessel-related disorders, such as angiodysplasia and acquired von Willebrand syndrome. Therefore, the most likely underlying mechanism of this patient's bleeding is the presence of tortuous submucosal blood vessels due to angiodysplasia, exacerbated by the hemodynamic changes associated with aortic stenosis.",
+  "analysis": "The patient's symptoms and findings are suggestive of Heyde's syndrome, which is characterized by the association of aortic stenosis and gastrointestinal bleeding due to angiodysplasia. The presence of aortic stenosis and the negative colonoscopy, along with the description of the bleeding, point towards bleeding from angiodysplastic lesions, which are tortuous submucosal blood vessels. This is a known complication in patients with aortic stenosis due to acquired von Willebrand factor deficiency, which leads to bleeding from these fragile vessels.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      2,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      40.0,
+      0.0,
+      40.0,
+      0.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "Generalized ischemic myocardial dysfunction PREDISPOSES Gastrointestinal Hemorrhage",
+    "Intestinal angina ASSOCIATED_WITH Arteriosclerosis",
+    "Cardiovascular Diseases PREDISPOSES Hemorrhage",
+    "Coronary Arteriosclerosis COMPLICATES Gastrointestinal Hemorrhage",
+    "Aortic Diseases CAUSES Hemorrhage",
+    "Dyslipidemias PREDISPOSES Urolithiasis",
+    "Stem cells PART_OF Entire renal tubule",
+    "Arteriosclerosis CAUSES Gastrointestinal Hemorrhage",
+    "Coronary Arteriosclerosis PREDISPOSES Upper gastrointestinal hemorrhage",
+    "Oral Glucose Tolerance Test DIAGNOSES Reactive hypoglycemia",
+    "Emollients ISA Therapeutic Intervention"
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "question": "A medicalized ambulance is mobilized to care for a young man who is traumatized by a traffic accident. On physical examination, right anisocoria with arreactive mydriatic pupil, coma with 4 points on the Glasgow coma scale (eye response 1, motor response 2, verbal response 1), blood pressure 180/100 mmHg, heart rate 56 beats per minute , respiratory rate 8 breaths per minute, oxygen saturation by pulse oximetry 90% breathing room air. What should be the first action of the out-of-hospital emergency team?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Insert a laryngeal mask.",
+    "opb": "Channel a peripheral venous line and administer intravenous mannitol.",
+    "opc": "Endotracheal intubation with control of the cervical spine.",
+    "opd": "Oxygen therapy with ventimask-type mask and immediate transfer to a hospital with a neurosurgeon on duty."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "comatose",
+        "Disease",
+        "Respiration",
+        "Brain Stem"
+      ],
+      [
+        "comatose",
+        "Disease",
+        "Physiologic Function",
+        "Brain Stem"
+      ],
+      [
+        "comatose",
+        "Disease",
+        "Hearing",
+        "Brain Stem"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(comatose)-CAUSES->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Brain Stem)",
+      "(comatose)-CAUSES->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Brain Stem)",
+      "(comatose)-CAUSES->(Disease)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Brain Stem)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Airway device",
+        "Pathogenesis",
+        "Genes",
+        "Cartilage",
+        "Intubation, Intratracheal"
+      ],
+      [
+        "Airway device",
+        "Inflammation",
+        "Genes",
+        "Cartilage",
+        "Intubation, Intratracheal"
+      ],
+      [
+        "Brain Stem",
+        "Trachea",
+        "Airway device"
+      ],
+      [
+        "Brain Stem",
+        "Kidney",
+        "Airway device"
+      ],
+      [
+        "Airway device",
+        "Pathogenesis",
+        "Genes",
+        "Cartilage",
+        "Intubation, Intratracheal"
+      ],
+      [
+        "Airway device",
+        "Inflammation",
+        "Genes",
+        "Cartilage",
+        "Intubation, Intratracheal"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Airway device)-TREATS->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage)-LOCATION_OF->(Intubation, Intratracheal)",
+      "(Airway device)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage)-LOCATION_OF->(Intubation, Intratracheal)",
+      "(Brain Stem)-PART_OF->(Trachea)-LOCATION_OF->(Airway device)",
+      "(Brain Stem)-PART_OF->(Kidney)-LOCATION_OF->(Airway device)",
+      "(Airway device)-TREATS->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage)-LOCATION_OF->(Intubation, Intratracheal)",
+      "(Airway device)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage)-LOCATION_OF->(Intubation, Intratracheal)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Brain Stem)-PART_OF->(Trachea)-LOCATION_OF->(Airway device)",
+      "(Brain Stem)-PART_OF->(Kidney)-LOCATION_OF->(Airway device)",
+      "(Airway device)-TREATS->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage)-LOCATION_OF->(Intubation, Intratracheal)",
+      "(Airway device)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage)-LOCATION_OF->(Intubation, Intratracheal)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Coma with low Glasgow coma scale\" -> \"Severe brain injury suspected\" -> \"Need to secure airway\" -> \"Endotracheal intubation\" -> 95%",
+    "CHAIN: \"Right anisocoria with arreactive mydriatic pupil\" -> \"Possible increased intracranial pressure\" -> \"Need to reduce intracranial pressure\" -> \"Administer intravenous mannitol\" -> 70%",
+    "CHAIN: \"Low respiratory rate and oxygen saturation\" -> \"Hypoventilation\" -> \"Need to improve oxygenation\" -> \"Oxygen therapy with ventimask\" -> 60%",
+    "CHAIN: \"Coma and low heart rate\" -> \"Possible brainstem involvement\" -> \"Need to secure airway and support breathing\" -> \"Endotracheal intubation\" -> 90%",
+    "CHAIN: \"High blood pressure and low heart rate\" -> \"Cushing's triad\" -> \"Increased intracranial pressure\" -> \"Need to reduce intracranial pressure\" -> \"Administer intravenous mannitol\" -> 75%"
+  ],
+  "enhanced_information": "The patient presents with signs of severe traumatic brain injury, including a low Glasgow Coma Scale score, right anisocoria with an arreactive mydriatic pupil, and Cushing's triad (high blood pressure, low heart rate, and irregular respirations). The primary concern is securing the airway due to the patient's coma and hypoventilation, which is critical to prevent further hypoxia and potential brain damage. Endotracheal intubation with control of the cervical spine is the most appropriate first action to ensure airway protection and adequate ventilation. While increased intracranial pressure is a concern, the immediate priority is airway management. The retrieved evidence paths, although broad, support the use of airway devices in managing severe brain injuries, aligning with the consensus that securing the airway is paramount in such scenarios.",
+  "analysis": "The patient presents with signs of severe traumatic brain injury, including a very low Glasgow Coma Scale score, anisocoria with an arreactive mydriatic pupil, and Cushing's triad (hypertension, bradycardia, and irregular respirations). These signs indicate increased intracranial pressure and potential brain herniation. The most immediate threat to the patient's life is the compromised airway and inadequate ventilation, as evidenced by the low respiratory rate and decreased oxygen saturation. In such cases, the primary medical principle is to secure the airway to prevent hypoxia and further brain injury. Endotracheal intubation is the gold standard for airway management in patients with a GCS of 8 or less, especially when there are signs of brain injury. Additionally, cervical spine control is crucial due to the mechanism of injury (traffic accident). Therefore, the most appropriate first action is endotracheal intubation with control of the cervical spine. This aligns with standard emergency protocols for managing severe traumatic brain injury.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      3,
+      0
+    ],
+    "coverage_rates": [
+      25.0,
+      0.0,
+      0.0,
+      75.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

@@ -1,0 +1,200 @@
+{
+  "question": "Which of the following antiarrhythmic drugs can produce thyroid alterations as an adverse effect ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Vernakalant.",
+    "opb": "Amiodarone",
+    "opc": "Lidocaine",
+    "opd": "Diltiazem."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Iodine",
+        "Mental Retardation",
+        "thyroid function"
+      ],
+      [
+        "thyroid function",
+        "Thyroid Gland"
+      ],
+      [
+        "vernakalant",
+        "Atrial Fibrillation",
+        "Heart failure",
+        "thyroid function"
+      ],
+      [
+        "vernakalant",
+        "Rapid atrial fibrillation",
+        "Heart failure",
+        "thyroid function"
+      ],
+      [
+        "Calcium Channel Blockers",
+        "uptake",
+        "Thyroid Gland"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREVENTS",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Iodine)-PREVENTS->(Mental Retardation)-MANIFESTATION_OF->(thyroid function)",
+      "(thyroid function)-PROCESS_OF->(Thyroid Gland)",
+      "(vernakalant)-TREATS->(Atrial Fibrillation)-CAUSES->(Heart failure)-MANIFESTATION_OF->(thyroid function)",
+      "(vernakalant)-TREATS->(Rapid atrial fibrillation)-CAUSES->(Heart failure)-MANIFESTATION_OF->(thyroid function)",
+      "(Calcium Channel Blockers)-CAUSES->(uptake)-PROCESS_OF->(Thyroid Gland)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Amiodarone",
+        "Disease",
+        "oral bacteria",
+        "Iodine"
+      ],
+      [
+        "Amiodarone",
+        "Disease",
+        "Hearing",
+        "Iodine"
+      ],
+      [
+        "Lidocaine",
+        "Pharmaceutical Preparations",
+        "Thyroid Hormones"
+      ],
+      [
+        "Lidocaine",
+        "Pharmaceutical Preparations",
+        "Thyroid Hormones"
+      ],
+      [
+        "Diltiazem",
+        "Pharmaceutical Preparations",
+        "Calcium Channel Blockers"
+      ],
+      [
+        "Diltiazem",
+        "Cells",
+        "Calcium Channel Blockers"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Amiodarone)-TREATS->(Disease)-PROCESS_OF->(oral bacteria)-LOCATION_OF->(Iodine)",
+      "(Amiodarone)-TREATS->(Disease)-MANIFESTATION_OF->(Hearing)-ASSOCIATED_WITH->(Iodine)",
+      "(Lidocaine)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Thyroid Hormones)",
+      "(Lidocaine)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Thyroid Hormones)",
+      "(Diltiazem)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Calcium Channel Blockers)",
+      "(Diltiazem)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Calcium Channel Blockers)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Lidocaine)-INTERACTS_WITH/ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Thyroid Hormones)",
+      "(Diltiazem)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Calcium Channel Blockers)",
+      "(Diltiazem)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Calcium Channel Blockers)",
+      "(vernakalant)-TREATS->(Atrial Fibrillation)-CAUSES->(Heart failure)-MANIFESTATION_OF->(thyroid function)",
+      "(vernakalant)-TREATS->(Rapid atrial fibrillation)-CAUSES->(Heart failure)-MANIFESTATION_OF->(thyroid function)",
+      "(Amiodarone)-TREATS->(Disease)-PROCESS_OF->(oral bacteria)-LOCATION_OF->(Iodine)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Amiodarone\" -> \"contains iodine\" -> \"can affect thyroid function\" -> \"produces thyroid alterations\" -> 95%",
+    "CHAIN: \"Vernakalant\" -> \"not associated with thyroid function\" -> \"no thyroid alterations reported\" -> 85%",
+    "CHAIN: \"Lidocaine\" -> \"does not affect thyroid hormones\" -> \"no thyroid alterations reported\" -> 90%",
+    "CHAIN: \"Diltiazem\" -> \"calcium channel blocker\" -> \"not linked to thyroid alterations\" -> 80%"
+  ],
+  "enhanced_information": "Amiodarone is known to contain iodine, which can significantly affect thyroid function, leading to both hyperthyroidism and hypothyroidism, thus producing thyroid alterations as an adverse effect. Vernakalant, on the other hand, has not been associated with thyroid function alterations, and no thyroid-related adverse effects have been reported. Lidocaine does not affect thyroid hormones and is not linked to thyroid alterations. Diltiazem, a calcium channel blocker, is also not associated with thyroid alterations. Therefore, the only antiarrhythmic drug among the options that can produce thyroid alterations is Amiodarone.",
+  "analysis": "Amiodarone is well-documented to cause thyroid alterations, including both hypothyroidism and hyperthyroidism, due to its high iodine content and effects on thyroid hormone metabolism. The retrieved knowledge explicitly states that amiodarone therapy can lead to thyrotoxicosis and hyperthyroidism secondary to its use. The other options (Vernakalant, Lidocaine, and Diltiazem) do not have a significant association with thyroid alterations as an adverse effect. Therefore, the best-supported option is amiodarone.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      1,
+      1,
+      2
+    ],
+    "coverage_rates": [
+      42.857142857142854,
+      14.285714285714285,
+      14.285714285714285,
+      28.57142857142857
+    ],
+    "total_successes": 7
+  },
+  "normal_results": [
+    "CD160|B3GAT1 ASSOCIATED_WITH depolarization",
+    "Hypoxia ASSOCIATED_WITH estrogen receptor alpha, human",
+    "Amiodarone therapy CAUSES Thyrotoxicosis",
+    "Broncho-esophageal fistula COMPLICATES Tuberculosis",
+    "Hyperthyroidism secondary to amiodarone CAUSES Shock, Cardiogenic",
+    "Structure of inguinal ring LOCATION_OF Complication",
+    "Anti-Arrhythmia Agents CAUSES Thyroid Diseases",
+    "Anti-Arrhythmia Agents TREATS Thyroid dysfunction",
+    "Plastic repair of aortic valve NOS TREATS Left main coronary artery disease",
+    "Internal carotid artery structure LOCATION_OF Abducens Nerve Diseases",
+    "Mirtazapine TREATS Steroid withdrawal syndrome"
+  ]
+}

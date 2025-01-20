@@ -1,0 +1,171 @@
+{
+  "question": "Infant of 1 month of life who goes to the hospital emergency department referred by his pediatrician for jaundice. He has been referring for 10 days and has been increasing. In the blood test, a total bilirubin of 7 mg / dl stands out, with indirect bilirubin being 1.5 mg / dl. The most likely cause, among the following, of this jaundice is:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Biliary tract atresia",
+    "opb": "Jaundice due to breastfeeding.",
+    "opc": "Isoimmunization 0-A late onset.",
+    "opd": "Gilbert's disease.",
+    "ope": "Hereditary spherocytosis."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hyperbilirubinemia",
+        "Functional disorder",
+        "Obstruction of biliary tree"
+      ],
+      [
+        "Hyperbilirubinemia",
+        "Obstruction",
+        "Obstruction of biliary tree"
+      ],
+      [
+        "Hyperbilirubinemia",
+        "Appendicitis",
+        "Obstruction of biliary tree"
+      ],
+      [
+        "Hyperbilirubinemia",
+        "Disease",
+        "Hydrops Fetalis",
+        "Isoimmunization"
+      ],
+      [
+        "Hyperbilirubinemia",
+        "Disease",
+        "Erythroblastosis, Fetal",
+        "Isoimmunization"
+      ],
+      [
+        "Hyperbilirubinemia",
+        "Anemia, Hemolytic",
+        "Hydrops Fetalis",
+        "Isoimmunization"
+      ],
+      [
+        "Hyperbilirubinemia",
+        "Gilbert Disease"
+      ],
+      [
+        "Gilbert Disease",
+        "Hyperbilirubinemia"
+      ],
+      [
+        "Hyperbilirubinemia",
+        "Spherocytosis, Hereditary"
+      ],
+      [
+        "Spherocytosis, Hereditary",
+        "Hyperbilirubinemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hyperbilirubinemia)-CAUSES->(Functional disorder)-CAUSES->(Obstruction of biliary tree)",
+      "(Hyperbilirubinemia)-PREDISPOSES->(Obstruction)-CAUSES->(Obstruction of biliary tree)",
+      "(Hyperbilirubinemia)-PREDISPOSES->(Appendicitis)-COMPLICATES->(Obstruction of biliary tree)",
+      "(Hyperbilirubinemia)-CAUSES->(Disease)-CAUSES->(Hydrops Fetalis)-MANIFESTATION_OF->(Isoimmunization)",
+      "(Hyperbilirubinemia)-CAUSES->(Disease)-CAUSES->(Erythroblastosis, Fetal)-MANIFESTATION_OF->(Isoimmunization)",
+      "(Hyperbilirubinemia)-CAUSES->(Anemia, Hemolytic)-CAUSES->(Hydrops Fetalis)-MANIFESTATION_OF->(Isoimmunization)",
+      "(Hyperbilirubinemia)-CAUSES->(Gilbert Disease)",
+      "(Gilbert Disease)-CAUSES->(Hyperbilirubinemia)",
+      "(Hyperbilirubinemia)-CAUSES->(Spherocytosis, Hereditary)",
+      "(Spherocytosis, Hereditary)-CAUSES->(Hyperbilirubinemia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hyperbilirubinemia)-CAUSES->(Spherocytosis, Hereditary)",
+      "(Spherocytosis, Hereditary)-CAUSES->(Hyperbilirubinemia)",
+      "(Hyperbilirubinemia)-CAUSES->(Gilbert Disease)",
+      "(Gilbert Disease)-CAUSES->(Hyperbilirubinemia)",
+      "(Hyperbilirubinemia)-CAUSES->(Anemia, Hemolytic)-CAUSES->(Hydrops Fetalis)-MANIFESTATION_OF->(Isoimmunization)",
+      "(Hyperbilirubinemia)-CAUSES->(Functional disorder)-CAUSES->(Obstruction of biliary tree)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Infant jaundice\" -> \"10 days duration\" -> \"increasing jaundice\" -> \"total bilirubin 7 mg/dL\" -> \"indirect bilirubin 1.5 mg/dL\" -> \"direct hyperbilirubinemia\" -> \"biliary tract obstruction\" -> \"Biliary tract atresia\" -> 85%",
+    "CHAIN: \"Infant jaundice\" -> \"10 days duration\" -> \"increasing jaundice\" -> \"total bilirubin 7 mg/dL\" -> \"indirect bilirubin 1.5 mg/dL\" -> \"direct hyperbilirubinemia\" -> \"breastfeeding jaundice\" -> \"possible but less likely\" -> 60%",
+    "CHAIN: \"Infant jaundice\" -> \"10 days duration\" -> \"increasing jaundice\" -> \"total bilirubin 7 mg/dL\" -> \"indirect bilirubin 1.5 mg/dL\" -> \"direct hyperbilirubinemia\" -> \"isoimmunization unlikely\" -> \"late onset\" -> 50%",
+    "CHAIN: \"Infant jaundice\" -> \"10 days duration\" -> \"increasing jaundice\" -> \"total bilirubin 7 mg/dL\" -> \"indirect bilirubin 1.5 mg/dL\" -> \"direct hyperbilirubinemia\" -> \"Gilbert's disease unlikely\" -> \"usually indirect hyperbilirubinemia\" -> 40%",
+    "CHAIN: \"Infant jaundice\" -> \"10 days duration\" -> \"increasing jaundice\" -> \"total bilirubin 7 mg/dL\" -> \"indirect bilirubin 1.5 mg/dL\" -> \"direct hyperbilirubinemia\" -> \"Hereditary spherocytosis unlikely\" -> \"usually indirect hyperbilirubinemia\" -> 45%"
+  ],
+  "enhanced_information": "In evaluating the cause of jaundice in a 1-month-old infant with a total bilirubin of 7 mg/dL and indirect bilirubin of 1.5 mg/dL, the presence of direct hyperbilirubinemia suggests an obstructive or cholestatic process. Biliary tract atresia is a common cause of direct hyperbilirubinemia in infants and aligns with the increasing jaundice over 10 days. Breastfeeding jaundice typically presents with indirect hyperbilirubinemia, making it less likely. Isoimmunization and hereditary spherocytosis usually cause indirect hyperbilirubinemia, not direct, and are less likely given the bilirubin profile. Gilbert's disease also typically results in indirect hyperbilirubinemia and is unlikely in this context. The evidence paths confirm that hereditary spherocytosis and Gilbert's disease cause indirect hyperbilirubinemia, supporting their exclusion. Therefore, the most likely cause of the jaundice in this infant is biliary tract atresia.",
+  "analysis": "In evaluating the cause of jaundice in a 1-month-old infant, the key factor is the type of hyperbilirubinemia present. The blood test shows a total bilirubin of 7 mg/dL with an indirect bilirubin of 1.5 mg/dL, indicating that the majority of the bilirubin is direct (conjugated). This suggests a cholestatic or obstructive process. Biliary tract atresia is a common cause of direct hyperbilirubinemia in infants and is characterized by progressive jaundice, which aligns with the clinical presentation of increasing jaundice over 10 days. Breastfeeding jaundice, isoimmunization, Gilbert's disease, and hereditary spherocytosis typically cause indirect hyperbilirubinemia, making them less likely in this scenario. Therefore, based on the bilirubin profile and the clinical presentation, biliary tract atresia is the most likely cause of the jaundice in this infant.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      1,
+      2,
+      2
+    ],
+    "coverage_rates": [
+      16.666666666666664,
+      0.0,
+      16.666666666666664,
+      33.33333333333333,
+      33.33333333333333
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

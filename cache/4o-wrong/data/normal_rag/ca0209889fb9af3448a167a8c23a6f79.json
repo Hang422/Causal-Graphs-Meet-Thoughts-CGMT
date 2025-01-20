@@ -1,0 +1,145 @@
+{
+  "question": "Which of the activity deficits in the following enzymes of the urea cycle can cause an orotic aciduria, in addition to hyperammonemia ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Ornithine transcarbamylase.",
+    "opb": "Arginase.",
+    "opc": "Arginine succinate synthase.",
+    "opd": "Carbamoyl phosphate synthetase."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Orotic Acid",
+        "Myocardial Infarction",
+        "Hypertensive disease",
+        "Deficiency of orotate phosphoribosyltransferase"
+      ],
+      [
+        "Orotic Acid",
+        "BILIARY DISEASE",
+        "Hypertensive disease",
+        "Deficiency of orotate phosphoribosyltransferase"
+      ],
+      [
+        "Orotic Acid",
+        "Gout",
+        "Hypertensive disease",
+        "Deficiency of orotate phosphoribosyltransferase"
+      ],
+      [
+        "Arginine",
+        "Hypertensive disease",
+        "Deficiency of orotate phosphoribosyltransferase"
+      ],
+      [
+        "Citrulline",
+        "Hypertensive disease",
+        "Deficiency of orotate phosphoribosyltransferase"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Orotic Acid)-TREATS->(Myocardial Infarction)-CAUSES->(Hypertensive disease)-CAUSES->(Deficiency of orotate phosphoribosyltransferase)",
+      "(Orotic Acid)-TREATS->(BILIARY DISEASE)-CAUSES->(Hypertensive disease)-CAUSES->(Deficiency of orotate phosphoribosyltransferase)",
+      "(Orotic Acid)-TREATS->(Gout)-COMPLICATES->(Hypertensive disease)-CAUSES->(Deficiency of orotate phosphoribosyltransferase)",
+      "(Arginine)-PREVENTS->(Hypertensive disease)-CAUSES->(Deficiency of orotate phosphoribosyltransferase)",
+      "(Citrulline)-TREATS->(Hypertensive disease)-CAUSES->(Deficiency of orotate phosphoribosyltransferase)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hyperargininemia",
+        "Inflammatory Response",
+        "Arginine"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hyperargininemia)-PREDISPOSES->(Inflammatory Response)-ASSOCIATED_WITH->(Arginine)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Arginine)-PREVENTS->(Hypertensive disease)-CAUSES->(Deficiency of orotate phosphoribosyltransferase)",
+      "(Citrulline)-TREATS->(Hypertensive disease)-CAUSES->(Deficiency of orotate phosphoribosyltransferase)",
+      "(Hyperargininemia)-PREDISPOSES->(Inflammatory Response)-ASSOCIATED_WITH->(Arginine)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Ornithine transcarbamylase deficiency\" -> \"accumulation of carbamoyl phosphate\" -> \"excess carbamoyl phosphate enters pyrimidine synthesis\" -> \"increased orotic acid production\" -> \"orotic aciduria\" -> 95%",
+    "CHAIN: \"Arginase deficiency\" -> \"accumulation of arginine\" -> \"no direct link to orotic aciduria\" -> \"unclear mechanism for orotic aciduria\" -> 20%",
+    "CHAIN: \"Arginine succinate synthase deficiency\" -> \"accumulation of citrulline\" -> \"no direct link to orotic aciduria\" -> \"unclear mechanism for orotic aciduria\" -> 20%",
+    "CHAIN: \"Carbamoyl phosphate synthetase deficiency\" -> \"decreased carbamoyl phosphate\" -> \"reduced substrate for pyrimidine synthesis\" -> \"unlikely orotic aciduria\" -> 10%"
+  ],
+  "enhanced_information": "Ornithine transcarbamylase (OTC) deficiency is the only urea cycle disorder that leads to orotic aciduria in addition to hyperammonemia. This is because the deficiency causes an accumulation of carbamoyl phosphate, which then enters the pyrimidine synthesis pathway, leading to increased production of orotic acid and resulting in orotic aciduria. Arginase deficiency leads to hyperargininemia but does not have a direct link to orotic aciduria. Arginine succinate synthase deficiency results in citrullinemia, which also does not directly cause orotic aciduria. Carbamoyl phosphate synthetase deficiency results in decreased carbamoyl phosphate, reducing the substrate for pyrimidine synthesis, making orotic aciduria unlikely. The retrieved evidence paths do not directly support or clarify the mechanisms of orotic aciduria in the context of these enzyme deficiencies and are therefore not incorporated into the final reasoning.",
+  "analysis": "Ornithine transcarbamylase (OTC) deficiency is known to cause both hyperammonemia and orotic aciduria. This is because the deficiency leads to an accumulation of carbamoyl phosphate, which then enters the pyrimidine synthesis pathway, resulting in excess orotic acid. Other enzyme deficiencies in the urea cycle, such as arginase, arginine succinate synthase, and carbamoyl phosphate synthetase, do not typically cause orotic aciduria. Therefore, the most likely correct answer is ornithine transcarbamylase deficiency.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      25.0,
+      50.0,
+      25.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": [
+    "Ornithine aminotransferase deficiency CAUSES Hyperammonemia",
+    "Cellular Membrane LOCATION_OF Oleic Acid",
+    "Enzymes ASSOCIATED_WITH Acidemia",
+    "Psychic disease CAUSES Dyssomnias",
+    "Argininosuccinate lyase deficiency CAUSES Hyperammonemia",
+    "Enzymes ASSOCIATED_WITH Argininosuccinate lyase deficiency",
+    "ARGINASE ASSOCIATED_WITH Hyperammonemia",
+    "Hypertrophic Cardiomyopathy ASSOCIATED_WITH Cardiomyopathy, Dilated",
+    "Flamin TREATS Ulcerative Colitis"
+  ]
+}

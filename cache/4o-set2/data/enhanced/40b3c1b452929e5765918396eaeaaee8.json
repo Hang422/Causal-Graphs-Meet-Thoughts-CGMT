@@ -1,0 +1,115 @@
+{
+  "question": "Being a medical guard in the Emergency Department of his hospital, he has to attend a 64-year-old patient with acute respiratory failure. His clinical condition is critical, with low oxygen saturation and hemodynamic instability. Urgent chest X-ray is performed showing atelectasis of 2/3 of the right lung. We proceed to orotracheal intubation and ventilation in assisted mode, with FiO2 of 1.0. In an arterial gasometry performed later we obtain these values: pH 7.23; PaO2 60 mmHg and PaCO2 30 mmHg. What is the cause of hypoxemia ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Short circuit.",
+    "opb": "Hypoventilation.",
+    "opc": "Low O2 inspired pressure.",
+    "opd": "Neuromuscular disease"
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Alkalosis, Respiratory",
+        "Disease",
+        "Hypoventilation"
+      ],
+      [
+        "Alkalosis, Respiratory",
+        "Alkalosis",
+        "Hypoventilation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Alkalosis, Respiratory)-CAUSES->(Disease)-CAUSES->(Hypoventilation)",
+      "(Alkalosis, Respiratory)-CAUSES->(Alkalosis)-CAUSES->(Hypoventilation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "PO2 measurement",
+        "Cystic Fibrosis",
+        "Hypertension, Pulmonary",
+        "Cardiac shunt"
+      ],
+      [
+        "PO2 measurement",
+        "Respiratory Distress Syndrome, Adult",
+        "Hypertension, Pulmonary",
+        "Cardiac shunt"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(PO2 measurement)-DIAGNOSES->(Cystic Fibrosis)-CAUSES->(Hypertension, Pulmonary)-CAUSES->(Cardiac shunt)",
+      "(PO2 measurement)-DIAGNOSES->(Respiratory Distress Syndrome, Adult)-CAUSES->(Hypertension, Pulmonary)-CAUSES->(Cardiac shunt)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(PO2 measurement)-DIAGNOSES->(Cystic Fibrosis)-CAUSES->(Hypertension, Pulmonary)-CAUSES->(Cardiac shunt)",
+      "(PO2 measurement)-DIAGNOSES->(Respiratory Distress Syndrome, Adult)-CAUSES->(Hypertension, Pulmonary)-CAUSES->(Cardiac shunt)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Atelectasis\" -> \"V/Q mismatch\" -> \"Impaired gas exchange\" -> \"Hypoxemia\" -> 85%",
+    "CHAIN: \"FiO2 of 1.0\" -> \"High inspired O2\" -> \"Low PaO2\" -> \"Possible shunt or V/Q mismatch\" -> \"Hypoxemia\" -> 80%",
+    "CHAIN: \"Low PaCO2\" -> \"Hyperventilation\" -> \"Respiratory alkalosis\" -> \"Unlikely hypoventilation\" -> 70%",
+    "CHAIN: \"Orotracheal intubation\" -> \"Ensured airway\" -> \"High FiO2\" -> \"Persistent hypoxemia\" -> \"Possible shunt\" -> 75%",
+    "CHAIN: \"Critical condition\" -> \"Hemodynamic instability\" -> \"Possible shunt\" -> \"Hypoxemia\" -> 80%"
+  ],
+  "enhanced_information": "The patient's hypoxemia is most likely due to a ventilation-perfusion (V/Q) mismatch caused by the atelectasis of 2/3 of the right lung. Atelectasis leads to areas of the lung being perfused but not ventilated, resulting in impaired gas exchange and hypoxemia. The arterial blood gas values show a low PaO2 and a low PaCO2, indicating that hypoventilation is unlikely, as hypoventilation would typically result in elevated PaCO2. The use of a high FiO2 (1.0) without significant improvement in PaO2 suggests a possible shunt, where blood bypasses ventilated alveoli, further supporting the V/Q mismatch hypothesis. The retrieved evidence paths mention cardiac shunts, which can also cause hypoxemia, but the immediate clinical context of atelectasis and the patient's critical condition with hemodynamic instability point more directly to a V/Q mismatch as the primary cause. Therefore, the most consensus-aligned cause of hypoxemia in this scenario is a V/Q mismatch due to atelectasis, rather than hypoventilation, low inspired O2 pressure, or neuromuscular disease.",
+  "analysis": "The patient's hypoxemia is primarily due to a ventilation-perfusion (V/Q) mismatch caused by the significant atelectasis of 2/3 of the right lung. Atelectasis results in areas of the lung being perfused but not ventilated, leading to impaired gas exchange and hypoxemia. The arterial blood gas values show a low PaO2 and a low PaCO2, which indicates that hypoventilation is unlikely, as hypoventilation would typically result in elevated PaCO2. The use of a high FiO2 (1.0) without significant improvement in PaO2 suggests a possible shunt, where blood bypasses ventilated alveoli, further supporting the V/Q mismatch hypothesis. The immediate clinical context of atelectasis and the patient's critical condition with hemodynamic instability point more directly to a V/Q mismatch as the primary cause. Therefore, the most consensus-aligned cause of hypoxemia in this scenario is a V/Q mismatch due to atelectasis, rather than hypoventilation, low inspired O2 pressure, or neuromuscular disease.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      50.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

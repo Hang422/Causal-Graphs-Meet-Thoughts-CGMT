@@ -1,0 +1,123 @@
+{
+  "question": "A 40-year-old pregnant woman, G4 P3, visits your office at week 30 of gestation. She is very excited about her pregnancy and wants to be the healthiest she can be in preparation for labor and for her baby. What vaccination should she receive at this visit?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Live attenuated influenza vaccine",
+    "opb": "Tetanus, diphtheria, and acellular pertussis (Tdap)",
+    "opc": "Varicella vaccine",
+    "opd": "Herpes zoster vaccine",
+    "ope": "Measles, mumps, and rubella (MMR)"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Vaccines",
+        "Chickenpox"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Vaccines)-TREATS->(Chickenpox)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "diphtheria, tetanus toxoids and acellular pertussis vaccine",
+        "Symptoms",
+        "Immunity",
+        "Pertussis Vaccine"
+      ],
+      [
+        "Vaccines",
+        "uptake",
+        "Influenza virus vaccine"
+      ],
+      [
+        "Vaccines",
+        "Increased Immunologic Activity [PE]",
+        "Influenza virus vaccine"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREVENTS",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(diphtheria, tetanus toxoids and acellular pertussis vaccine)-PREVENTS->(Symptoms)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Pertussis Vaccine)",
+      "(Vaccines)-CAUSES->(uptake)-ASSOCIATED_WITH->(Influenza virus vaccine)",
+      "(Vaccines)-CAUSES->(Increased Immunologic Activity [PE])-ASSOCIATED_WITH->(Influenza virus vaccine)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vaccines)-TREATS->(Chickenpox)",
+      "(diphtheria, tetanus toxoids and acellular pertussis vaccine)-PREVENTS->(Symptoms)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Pertussis Vaccine)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"30 weeks gestation\" -> \"Tdap recommended in third trimester\" -> \"protects newborn from pertussis\" -> 95%",
+    "CHAIN: \"30 weeks gestation\" -> \"live vaccines contraindicated in pregnancy\" -> \"avoid live attenuated influenza vaccine\" -> 90%",
+    "CHAIN: \"30 weeks gestation\" -> \"live vaccines contraindicated in pregnancy\" -> \"avoid varicella vaccine\" -> 90%",
+    "CHAIN: \"30 weeks gestation\" -> \"live vaccines contraindicated in pregnancy\" -> \"avoid herpes zoster vaccine\" -> 90%",
+    "CHAIN: \"30 weeks gestation\" -> \"live vaccines contraindicated in pregnancy\" -> \"avoid MMR vaccine\" -> 90%"
+  ],
+  "enhanced_information": "At 30 weeks of gestation, the Tetanus, diphtheria, and acellular pertussis (Tdap) vaccine is recommended for pregnant women. This aligns with the consensus that Tdap should be administered during the third trimester to protect the newborn from pertussis. Live vaccines, such as the live attenuated influenza vaccine, varicella vaccine, herpes zoster vaccine, and MMR vaccine, are contraindicated during pregnancy due to potential risks to the fetus. The retrieved evidence supports the prevention of pertussis through the Tdap vaccine, which is crucial for neonatal protection. Therefore, the Tdap vaccine is the appropriate choice for this patient at her current stage of pregnancy.",
+  "analysis": "The Tetanus, diphtheria, and acellular pertussis (Tdap) vaccine is recommended during each pregnancy, ideally between 27 and 36 weeks of gestation, to protect the newborn from pertussis. This aligns with standard medical guidelines. Live attenuated vaccines, such as the influenza vaccine, varicella vaccine, and MMR, are contraindicated during pregnancy. The herpes zoster vaccine is not indicated for pregnant women. Therefore, the Tdap vaccine is the most appropriate choice for this patient at 30 weeks of gestation.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      33.33333333333333,
+      33.33333333333333,
+      0.0,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": [
+    "jejunum LOCATION_OF Gangrene",
+    "Vaccination TREATS Pre-Eclampsia",
+    "Lymphocyte Count DIAGNOSES Chronic urticaria",
+    "Vaccination TREATS Tetanus",
+    "Vaccination TREATS Late pregnancy",
+    "Microscopy, Electron, Scanning DIAGNOSES Pulmonary Emphysema",
+    "Vaccination TREATS genital herpes",
+    "Vaccination TREATS Hypertension induced by pregnancy",
+    "Hyaline Cartilage PART_OF Structure of articular cartilage",
+    "Tongue LOCATION_OF Ligature"
+  ]
+}

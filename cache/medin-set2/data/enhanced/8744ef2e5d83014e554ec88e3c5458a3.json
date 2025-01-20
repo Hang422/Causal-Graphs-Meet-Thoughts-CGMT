@@ -1,0 +1,184 @@
+{
+  "question": "A 24-year-old man presents to the emergency department after an altercation at a local bar. The patient was stabbed in the abdomen with a 6 inch kitchen knife in the epigastric region. His temperature is 97°F (36.1°C), blood pressure is 97/68 mmHg, pulse is 127/min, respirations are 19/min, and oxygen saturation is 99% on room air. Physical exam is notable for the knife in the patient’s abdomen in the location where he was initially stabbed. The patient is started on blood products and IV fluids. Which of the following is the best next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "CT scan of the abdomen",
+    "opb": "Diagnostic peritoneal lavage",
+    "opc": "Exploratory laparoscopy",
+    "opd": "Exploratory laparotomy",
+    "ope": "Focused assessment with sonography in trauma (FAST) exam"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Assault by stabbing",
+        "Cardiac Tamponade",
+        "Shock, Hemorrhagic"
+      ],
+      [
+        "Assault by stabbing",
+        "Ocular-Ophthalmoplegia, Sympathetic",
+        "Shock, Hemorrhagic"
+      ],
+      [
+        "Assault by stabbing",
+        "Inflammatory disorder",
+        "Hypertension, Portal",
+        "Internal hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Assault by stabbing)-CAUSES->(Cardiac Tamponade)-CAUSES->(Shock, Hemorrhagic)",
+      "(Assault by stabbing)-CAUSES->(Ocular-Ophthalmoplegia, Sympathetic)-CAUSES->(Shock, Hemorrhagic)",
+      "(Assault by stabbing)-CAUSES->(Inflammatory disorder)-CAUSES->(Hypertension, Portal)-CAUSES->(Internal hemorrhage)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Shock, Hemorrhagic",
+        "Human serum albumin",
+        "Cells",
+        "Pulse taking"
+      ],
+      [
+        "Shock, Hemorrhagic",
+        "vascular factor",
+        "Cells",
+        "Pulse taking"
+      ],
+      [
+        "X-Ray Computed Tomography",
+        "Disease",
+        "Human Development",
+        "Liver parenchyma",
+        "laparoscopy exploratory"
+      ],
+      [
+        "X-Ray Computed Tomography",
+        "Disease",
+        "Blood Circulation",
+        "Liver parenchyma",
+        "laparoscopy exploratory"
+      ],
+      [
+        "laparoscopy exploratory",
+        "Ischemia",
+        "Genes",
+        "Entire diaphragm",
+        "Exploratory laparotomy"
+      ],
+      [
+        "laparoscopy exploratory",
+        "Obstruction",
+        "Genes",
+        "Entire diaphragm",
+        "Exploratory laparotomy"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Shock, Hemorrhagic)-ASSOCIATED_WITH->(Human serum albumin)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Pulse taking)",
+      "(Shock, Hemorrhagic)-ASSOCIATED_WITH->(vascular factor)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Pulse taking)",
+      "(X-Ray Computed Tomography)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Human Development)-PROCESS_OF->(Liver parenchyma)-LOCATION_OF->(laparoscopy exploratory)",
+      "(X-Ray Computed Tomography)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)-PROCESS_OF->(Liver parenchyma)-LOCATION_OF->(laparoscopy exploratory)",
+      "(laparoscopy exploratory)-DIAGNOSES->(Ischemia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Entire diaphragm)-LOCATION_OF->(Exploratory laparotomy)",
+      "(laparoscopy exploratory)-DIAGNOSES->(Obstruction)-ASSOCIATED_WITH->(Genes)-PART_OF->(Entire diaphragm)-LOCATION_OF->(Exploratory laparotomy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Shock, Hemorrhagic)-ASSOCIATED_WITH->(Human serum albumin)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Pulse taking)",
+      "(X-Ray Computed Tomography)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)-PROCESS_OF->(Liver parenchyma)-LOCATION_OF->(laparoscopy exploratory)",
+      "(laparoscopy exploratory)-DIAGNOSES->(Obstruction)-ASSOCIATED_WITH->(Genes)-PART_OF->(Entire diaphragm)-LOCATION_OF->(Exploratory laparotomy)",
+      "(Assault by stabbing)-CAUSES->(Inflammatory disorder)-CAUSES->(Hypertension, Portal)-CAUSES->(Internal hemorrhage)",
+      "(Assault by stabbing)-CAUSES->(Cardiac Tamponade)-CAUSES->(Shock, Hemorrhagic)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient presents with stab wound\" -> \"High risk of intra-abdominal injury\" -> \"Need for rapid assessment of abdominal contents\" -> \"FAST exam is a quick bedside ultrasound\" -> \"FAST exam can identify free fluid or organ injury\" -> \"If positive, may indicate need for surgical intervention\" -> 85%",
+    "CHAIN: \"Patient presents with stab wound\" -> \"Signs of potential hemorrhagic shock\" -> \"Blood pressure is low and pulse is high\" -> \"Immediate intervention required to assess internal injuries\" -> \"Exploratory laparotomy is definitive for intra-abdominal injuries\" -> \"Allows for direct visualization and repair of injuries\" -> 90%",
+    "CHAIN: \"Patient presents with stab wound\" -> \"Physical exam shows knife still in abdomen\" -> \"Indicates possible significant internal injury\" -> \"CT scan may delay necessary intervention\" -> \"Exploratory laparoscopy is less invasive but may not be sufficient\" -> \"Exploratory laparotomy is preferred for stab wounds\" -> 80%",
+    "CHAIN: \"Patient presents with stab wound\" -> \"Vital signs indicate possible internal bleeding\" -> \"Need for immediate evaluation of abdominal injury\" -> \"Diagnostic peritoneal lavage is invasive and less commonly used now\" -> \"FAST exam is less invasive and quicker\" -> \"If FAST is positive, exploratory laparotomy is warranted\" -> 75%"
+  ],
+  "enhanced_information": "The patient presents with a stab wound to the abdomen, indicating a high risk of intra-abdominal injury. His vital signs suggest possible hemorrhagic shock, necessitating immediate evaluation of internal injuries. The presence of the knife in the abdomen suggests significant internal damage, making exploratory laparotomy the preferred management option, as it allows for direct visualization and repair of any injuries. While the FAST exam is a quick and less invasive method to assess for free fluid or organ injury, in cases of penetrating trauma with signs of shock, exploratory laparotomy is the definitive approach. Diagnostic peritoneal lavage is now less commonly used due to its invasiveness and the availability of faster imaging techniques. Therefore, the best next step in management is exploratory laparotomy.",
+  "analysis": "The patient presents with a stab wound to the abdomen, which is a clear indication of potential intra-abdominal injury. His vital signs indicate possible hemorrhagic shock, which is a critical situation requiring immediate intervention. The presence of the knife in the abdomen suggests significant internal damage, and exploratory laparotomy is the most appropriate next step in management. This procedure allows for direct visualization and repair of any injuries sustained from the stab wound. While the FAST exam could provide some information about free fluid or organ injury, it is less definitive than exploratory laparotomy in cases of penetrating trauma with signs of shock. Other options like CT scan and diagnostic peritoneal lavage are less suitable in this acute setting. Therefore, the best next step in management is exploratory laparotomy, as it addresses the immediate need for surgical intervention in a patient with a stab wound and signs of shock.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      40.0,
+      40.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

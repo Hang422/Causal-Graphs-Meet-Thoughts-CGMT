@@ -1,0 +1,94 @@
+{
+  "question": "A 25-year-old man, a military man by profession, is found in a coma with a temperature of 41ºC after vigorous physical exercise at noon on a hot day. His blood pressure despite the contribution of 3 liters of crystalloids is 80 mm Hg, with oliguria and lactate rise. His heart rate is 125 bpm with ECG showing a supraventricular tachycardia. In the analytical one highlights a prothrombin activity of 30% and INR of 3. Indicate the true answer:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "The elevation of muscle enzymes is higher in the classic heat stroke than in heat stroke by exercise.",
+    "opb": "A lumbar puncture should be performed to diagnose the condition.",
+    "opc": "Digoxin must be administered to control the heart rate.",
+    "opd": "Peripheral vasoconstrictors should be avoided for the treatment of hypotension."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "comatose",
+        "Disease",
+        "Fever"
+      ],
+      [
+        "comatose",
+        "Hypertensive disease",
+        "Fever"
+      ],
+      [
+        "comatose",
+        "hypoglycemia",
+        "Fever"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(comatose)-CAUSES->(Disease)-CAUSES->(Fever)",
+      "(comatose)-CAUSES->(Hypertensive disease)-CAUSES->(Fever)",
+      "(comatose)-CAUSES->(hypoglycemia)-CAUSES->(Fever)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(comatose)-CAUSES->(Disease)-CAUSES->(Fever)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Military man\" -> \"vigorous exercise\" -> \"hot day\" -> \"heat stroke by exercise\" -> \"elevation of muscle enzymes\" -> \"higher than classic heat stroke\" -> 70%",
+    "CHAIN: \"Coma\" -> \"high temperature\" -> \"vigorous exercise\" -> \"heat stroke\" -> \"lumbar puncture\" -> \"not typically required\" -> 80%",
+    "CHAIN: \"Supraventricular tachycardia\" -> \"heart rate control needed\" -> \"digoxin\" -> \"not first-line for acute rate control\" -> 85%",
+    "CHAIN: \"Hypotension\" -> \"peripheral vasoconstrictors\" -> \"avoid in heat stroke\" -> \"risk of worsening condition\" -> 90%"
+  ],
+  "enhanced_information": "In the context of a 25-year-old military man found in a coma with hyperthermia after vigorous exercise, the scenario is consistent with exertional heat stroke. For option opa, exertional heat stroke typically results in higher elevation of muscle enzymes compared to classic heat stroke due to rhabdomyolysis, aligning with consensus. For option opb, a lumbar puncture is not typically required to diagnose heat stroke, as the diagnosis is clinical based on history and presentation. For option opc, digoxin is not the first-line treatment for acute rate control in supraventricular tachycardia; beta-blockers or calcium channel blockers are preferred. For option opd, peripheral vasoconstrictors should be avoided in treating hypotension in heat stroke, as they can worsen the condition by increasing core temperature and reducing skin blood flow needed for heat dissipation. The evidence path regarding coma and fever supports the understanding of heat stroke as a cause of these symptoms, but does not directly impact the decision-making for the options provided.",
+  "analysis": "The scenario described is consistent with exertional heat stroke, a condition characterized by hyperthermia, central nervous system dysfunction, and often rhabdomyolysis, which leads to elevated muscle enzymes. In exertional heat stroke, muscle enzyme elevation is typically higher than in classic heat stroke due to the intense physical activity and muscle breakdown. Therefore, option opa is incorrect. A lumbar puncture (option opb) is not necessary for diagnosing heat stroke, as it is a clinical diagnosis based on history and presentation. Digoxin (option opc) is not appropriate for acute rate control in supraventricular tachycardia; instead, beta-blockers or calcium channel blockers are preferred. Peripheral vasoconstrictors (option opd) should be avoided in treating hypotension in heat stroke because they can exacerbate the condition by increasing core temperature and reducing skin blood flow, which is crucial for heat dissipation. Therefore, the most medically sound option is to avoid peripheral vasoconstrictors in this context.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      100.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": []
+}

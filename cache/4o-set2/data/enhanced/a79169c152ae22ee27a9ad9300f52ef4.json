@@ -1,0 +1,157 @@
+{
+  "question": "Question linked to image # 4 What would be the most likely radiological diagnosis to justify this finding?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Central bronchogenic carcinoma.",
+    "opb": "Left phrenic paralysis.",
+    "opc": "Anterior thoracic wall abscess.",
+    "opd": "Left pleural mesothelioma.",
+    "ope": "Anterior mediastinal lymphoma."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Obstruction",
+        "Disease",
+        "Atelectasis"
+      ],
+      [
+        "Obstruction",
+        "Obesity",
+        "Atelectasis"
+      ],
+      [
+        "Obstruction",
+        "Hypertensive disease",
+        "Atelectasis"
+      ],
+      [
+        "Thickening of pleura",
+        "Pleural effusion disorder"
+      ],
+      [
+        "Pleural effusion disorder",
+        "Disease",
+        "Physiological stress",
+        "Lung"
+      ],
+      [
+        "Pleural effusion disorder",
+        "Disease",
+        "paracrine",
+        "Lung"
+      ],
+      [
+        "Pleural effusion disorder",
+        "Disease",
+        "Hearing",
+        "Lung"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Obstruction)-CAUSES->(Disease)-CAUSES->(Atelectasis)",
+      "(Obstruction)-CAUSES->(Obesity)-CAUSES->(Atelectasis)",
+      "(Obstruction)-CAUSES->(Hypertensive disease)-CAUSES->(Atelectasis)",
+      "(Thickening of pleura)-CAUSES->(Pleural effusion disorder)",
+      "(Pleural effusion disorder)-PREDISPOSES->(Disease)-CAUSES->(Physiological stress)-PROCESS_OF->(Lung)",
+      "(Pleural effusion disorder)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Lung)",
+      "(Pleural effusion disorder)-CAUSES->(Disease)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Lung)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Bronchi",
+        "Atelectasis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Bronchi)-LOCATION_OF->(Atelectasis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Thickening of pleura)-CAUSES->(Pleural effusion disorder)",
+      "(Bronchi)-LOCATION_OF->(Atelectasis)",
+      "(Obstruction)-CAUSES->(Disease)-CAUSES->(Atelectasis)",
+      "(Obstruction)-CAUSES->(Obesity)-CAUSES->(Atelectasis)",
+      "(Obstruction)-CAUSES->(Hypertensive disease)-CAUSES->(Atelectasis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Central bronchogenic carcinoma\" -> \"mass in central lung region\" -> \"obstruction of bronchus\" -> \"atelectasis or post-obstructive pneumonia\" -> 75%",
+    "CHAIN: \"Left phrenic paralysis\" -> \"elevated left hemidiaphragm\" -> \"reduced lung volume on left\" -> \"shift of mediastinum to left\" -> 70%",
+    "CHAIN: \"Anterior thoracic wall abscess\" -> \"localized soft tissue swelling\" -> \"possible air-fluid level\" -> \"displacement of adjacent structures\" -> 60%",
+    "CHAIN: \"Left pleural mesothelioma\" -> \"pleural thickening\" -> \"pleural effusion\" -> \"encasement of lung\" -> 80%",
+    "CHAIN: \"Anterior mediastinal lymphoma\" -> \"mass in anterior mediastinum\" -> \"compression of adjacent structures\" -> \"possible superior vena cava syndrome\" -> 85%"
+  ],
+  "enhanced_information": "For the radiological diagnosis, the reasoning for 'Central bronchogenic carcinoma' aligns with consensus as it involves a mass in the central lung region potentially causing bronchial obstruction, leading to atelectasis or post-obstructive pneumonia. The evidence path supports this by linking bronchial obstruction to atelectasis. 'Left phrenic paralysis' is consistent with an elevated left hemidiaphragm and reduced lung volume, but the mediastinal shift is less typical without additional findings. 'Anterior thoracic wall abscess' involves localized swelling and possible air-fluid levels, but this is less likely to be the primary radiological finding without specific imaging details. 'Left pleural mesothelioma' is supported by pleural thickening and effusion, with the evidence path confirming pleural effusion disorders, making it a strong candidate. 'Anterior mediastinal lymphoma' involves a mass in the anterior mediastinum with potential compression effects, which is plausible but less directly supported by the evidence paths. Overall, 'Left pleural mesothelioma' is the most likely diagnosis given the pleural thickening and effusion, supported by the evidence path.",
+  "analysis": "To determine the most likely radiological diagnosis, we need to consider the typical radiological findings associated with each condition. 'Central bronchogenic carcinoma' often presents with a central mass, possibly causing bronchial obstruction, leading to atelectasis or post-obstructive pneumonia. 'Left phrenic paralysis' would typically show an elevated left hemidiaphragm, but without specific mention of diaphragm elevation, this is less likely. 'Anterior thoracic wall abscess' would show localized swelling and possibly air-fluid levels, but this is less likely without specific imaging details. 'Left pleural mesothelioma' is characterized by pleural thickening and effusion, which aligns with the evidence path supporting pleural effusion disorders. 'Anterior mediastinal lymphoma' would present as a mass in the anterior mediastinum, but without specific mention of mediastinal mass, this is less likely. Given the enhanced information and typical radiological findings, 'Left pleural mesothelioma' is the most likely diagnosis due to the presence of pleural thickening and effusion.",
+  "answer": "opd",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      0,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      0.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

@@ -452,11 +452,11 @@ if __name__ == "__main__":
     # # compare_enhanced_with_baseline(path)
     # filter_by_coverage('1-final-4o-mini', threshold=0.5)  # 覆盖率过滤
     # compare_enhanced_with_baseline(path)
-    # extract_wrong_questions('4o-intersection','enhanced')
+    extract_wrong_questions('original-35','derelict')
     # filter_by_enhanced_paths('4o-mini-intersection', '4o-mini-t')
     # path = Path(config.paths["cache"], 'total')
     # output = Path(config.paths["cache"], 'total_filtered')
     # filter_by_enhanced_paths('total_filtered_3.5', 'final-3.5')
-    filter_by_enhanced_paths('random', 'final-4o')
+    # filter_by_enhanced_paths('random', 'final-4o')
     # clean_original_files('4o-mini-ultra')
 

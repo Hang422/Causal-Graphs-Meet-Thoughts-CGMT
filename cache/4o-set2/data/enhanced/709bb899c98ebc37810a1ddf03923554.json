@@ -1,0 +1,95 @@
+{
+  "question": "Which of the following antiarrhythmic drugs can produce thyroid alterations as an adverse effect ?:",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Vernakalant.",
+    "opb": "Amiodarone",
+    "opc": "Lidocaine",
+    "opd": "Diltiazem."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Thyroid Hormones",
+        "Thyroid dysfunction"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Thyroid Hormones)-CAUSES->(Thyroid dysfunction)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Diltiazem",
+        "Pharmaceutical Preparations",
+        "Calcium Channel Blockers"
+      ],
+      [
+        "Diltiazem",
+        "Cells",
+        "Calcium Channel Blockers"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Diltiazem)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Calcium Channel Blockers)",
+      "(Diltiazem)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Calcium Channel Blockers)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Diltiazem)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Calcium Channel Blockers)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Amiodarone\" -> \"iodine content\" -> \"thyroid hormone synthesis alteration\" -> \"thyroid dysfunction\" -> 95%",
+    "CHAIN: \"Vernakalant\" -> \"no significant iodine content\" -> \"unlikely thyroid alteration\" -> 20%",
+    "CHAIN: \"Lidocaine\" -> \"local anesthetic properties\" -> \"no effect on thyroid\" -> 10%",
+    "CHAIN: \"Diltiazem\" -> \"calcium channel blocker\" -> \"no direct thyroid effect\" -> 15%"
+  ],
+  "enhanced_information": "Amiodarone is known to cause thyroid alterations due to its high iodine content, which can interfere with thyroid hormone synthesis, leading to thyroid dysfunction. This is a well-documented adverse effect and aligns with medical consensus. Vernakalant, Lidocaine, and Diltiazem do not have significant iodine content or mechanisms that affect thyroid function, making them unlikely to cause thyroid alterations. The evidence path related to Diltiazem confirms its role as a calcium channel blocker, which does not directly impact thyroid function, supporting the consensus that it is unlikely to cause thyroid alterations.",
+  "analysis": "Amiodarone is a well-known antiarrhythmic drug that can cause thyroid alterations due to its high iodine content. This iodine can interfere with thyroid hormone synthesis, leading to conditions such as hypothyroidism or hyperthyroidism. This adverse effect is well-documented and widely recognized in medical literature. In contrast, Vernakalant, Lidocaine, and Diltiazem do not have significant iodine content or mechanisms that would typically affect thyroid function. Therefore, based on standard medical knowledge and consensus, Amiodarone is the most likely drug among the options to cause thyroid alterations.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

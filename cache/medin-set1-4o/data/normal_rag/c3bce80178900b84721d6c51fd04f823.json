@@ -1,0 +1,136 @@
+{
+  "question": "A 23-year-old woman presents to the emergency department complaining of nausea, vomiting, and abdominal pain. She has a 10-year history of type I diabetes mellitus treated with lispro and glargine. Upon questioning, she mentions that she stopped taking her insulin 3 days ago due to recent malaise and decreased appetite. She denies recent weight change, illicit drug use, or sexual activity. She does not take any other medications and she does not use tobacco products or alcohol. Upon physical examination she is afebrile. Her blood pressure is 105/70 mm Hg, pulse is 108/min and respiratory rate is 25/min. She appears lethargic, with clear breath sounds bilateral and a soft, nontender and nondistended abdomen. Laboratory results are as follows:\nSodium 130 mEq/L\nPotassium 5.6 mEq/L\nChloride 91 mEq/L\nBicarbonate 12 mEq/L\nGlucose 450 mg/dL\nWhich of the following is most likely to be found in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Signs of hypocalcemia",
+    "opb": "Suppression of antidiuretic hormone (ADH) secretion",
+    "opc": "Normal-to-high phosphate levels",
+    "opd": "Total body potassium depletion",
+    "ope": "Loss of sodium in urine is greater than free water loss"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Alcohol dehydrogenase",
+        "Parkinson Disease",
+        "Disease",
+        "Exotropia",
+        "Visual Suppression"
+      ],
+      [
+        "Alcohol dehydrogenase",
+        "Parkinson Disease",
+        "Pathogenesis",
+        "Exotropia",
+        "Visual Suppression"
+      ],
+      [
+        "calcium",
+        "Hypocalcemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Alcohol dehydrogenase)-PREDISPOSES->(Parkinson Disease)-CAUSES->(Disease)-CAUSES->(Exotropia)-MANIFESTATION_OF->(Visual Suppression)",
+      "(Alcohol dehydrogenase)-PREDISPOSES->(Parkinson Disease)-CAUSES->(Pathogenesis)-CAUSES->(Exotropia)-MANIFESTATION_OF->(Visual Suppression)",
+      "(calcium)-CAUSES->(Hypocalcemia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Dehydration",
+        "Diastasis",
+        "Alcohol dehydrogenase"
+      ],
+      [
+        "Dehydration",
+        "Diastasis",
+        "Alcohol dehydrogenase"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Dehydration)-CAUSES->(Diastasis)-ASSOCIATED_WITH->(Alcohol dehydrogenase)",
+      "(Dehydration)-PREDISPOSES->(Diastasis)-ASSOCIATED_WITH->(Alcohol dehydrogenase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(calcium)-CAUSES->(Hypocalcemia)",
+      "(Dehydration)-CAUSES/PREDISPOSES->(Diastasis)-ASSOCIATED_WITH->(Alcohol dehydrogenase)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Stopped insulin\" -> \"increased blood glucose\" -> \"osmotic diuresis\" -> \"loss of electrolytes\" -> \"total body potassium depletion\" -> 90%",
+    "CHAIN: \"Stopped insulin\" -> \"increased blood glucose\" -> \"osmotic diuresis\" -> \"loss of sodium in urine\" -> \"greater than free water loss\" -> 85%",
+    "CHAIN: \"Stopped insulin\" -> \"increased blood glucose\" -> \"osmotic diuresis\" -> \"dehydration\" -> \"increased ADH secretion\" -> \"suppression of ADH unlikely\" -> 80%",
+    "CHAIN: \"Stopped insulin\" -> \"increased blood glucose\" -> \"osmotic diuresis\" -> \"loss of electrolytes\" -> \"normal-to-high phosphate levels possible\" -> 70%",
+    "CHAIN: \"Stopped insulin\" -> \"increased blood glucose\" -> \"osmotic diuresis\" -> \"loss of calcium possible\" -> \"signs of hypocalcemia possible\" -> 60%"
+  ],
+  "enhanced_information": "The patient presents with symptoms and laboratory findings consistent with diabetic ketoacidosis (DKA), a common complication of type I diabetes when insulin is not administered. In DKA, the lack of insulin leads to increased blood glucose levels, causing osmotic diuresis and significant electrolyte loss. Despite the elevated serum potassium level, total body potassium is typically depleted due to urinary losses and intracellular shifts. Therefore, 'total body potassium depletion' is the most likely finding. The reasoning chain for this option aligns with medical consensus. The other options are less likely: 'loss of sodium in urine greater than free water loss' is possible but not as definitive as potassium depletion; 'suppression of ADH secretion' is unlikely as dehydration typically increases ADH; 'normal-to-high phosphate levels' can occur but are not as characteristic; and 'signs of hypocalcemia' are not typically associated with DKA. The retrieved evidence paths do not directly support the key points and are not incorporated.",
+  "analysis": "The patient presents with symptoms and laboratory findings consistent with diabetic ketoacidosis (DKA), a common complication in type 1 diabetes when insulin is not administered. In DKA, there is a significant loss of potassium from the body due to osmotic diuresis, despite the serum potassium level being normal or elevated due to acidosis and insulin deficiency. This results in total body potassium depletion. The other options do not align with the typical pathophysiology of DKA: hypocalcemia is not a feature, ADH secretion is typically increased due to dehydration, phosphate levels can be variable but are not a primary concern, and sodium loss is not greater than free water loss in the context of DKA.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      2,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      66.66666666666666,
+      0.0,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": [
+    "Fibroblasts INTERACTS_WITH MYB gene|MYB",
+    "Nausea PREDISPOSES hypoglycemia",
+    "Pathogenesis ASSOCIATED_WITH Hormone Receptor",
+    "spacer device PREVENTS Adhesions",
+    "Abdominal Pain PREDISPOSES hypoglycemia",
+    "Transplanted tissue LOCATION_OF Cell Culture",
+    "Vomiting PREDISPOSES hypoglycemia"
+  ]
+}

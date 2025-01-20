@@ -1,0 +1,216 @@
+{
+  "question": "What disease would we suspect in a young patient who reported a frequent history of dysphagia to solids and liquids with impaired food repeated, without clinical symptoms of pyrosis and in which multiple oral esophageal rings with normal mucosa (trachealized appearance) are observed in oral endoscopy?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Herpetic esophagitis.",
+    "opb": "Eosinophilic esophagitis.",
+    "opc": "Candidiasic esophagitis.",
+    "opd": "Cytomegalovirus esophagitis.",
+    "ope": "Adenocarcinoma of the esophagus."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Deglutition Disorders",
+        "Sarcopenia",
+        "Swallowing problem"
+      ],
+      [
+        "Deglutition Disorders",
+        "Malnutrition",
+        "Swallowing problem"
+      ],
+      [
+        "Deglutition Disorders",
+        "Voice Disorders",
+        "Swallowing problem"
+      ],
+      [
+        "Swallowing problem",
+        "Symptoms",
+        "Heartburn"
+      ],
+      [
+        "Swallowing problem",
+        "Deglutition Disorders",
+        "Heartburn"
+      ],
+      [
+        "Deglutition Disorders",
+        "Heartburn"
+      ],
+      [
+        "Heartburn",
+        "Symptoms",
+        "Peptic Esophagitis",
+        "Terminal esophageal web"
+      ],
+      [
+        "Heartburn",
+        "Disease",
+        "Reflux",
+        "Terminal esophageal web"
+      ],
+      [
+        "Heartburn",
+        "Disease",
+        "Peptic Esophagitis",
+        "Terminal esophageal web"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Deglutition Disorders)-CAUSES->(Sarcopenia)-CAUSES->(Swallowing problem)",
+      "(Deglutition Disorders)-CAUSES->(Malnutrition)-CAUSES->(Swallowing problem)",
+      "(Deglutition Disorders)-CAUSES->(Voice Disorders)-CAUSES->(Swallowing problem)",
+      "(Swallowing problem)-CAUSES->(Symptoms)-CAUSES->(Heartburn)",
+      "(Swallowing problem)-CAUSES->(Deglutition Disorders)-CAUSES->(Heartburn)",
+      "(Deglutition Disorders)-CAUSES->(Heartburn)",
+      "(Heartburn)-CAUSES->(Symptoms)-CAUSES->(Peptic Esophagitis)-CAUSES->(Terminal esophageal web)",
+      "(Heartburn)-PREDISPOSES->(Disease)-CAUSES->(Reflux)-CAUSES->(Terminal esophageal web)",
+      "(Heartburn)-PREDISPOSES->(Disease)-CAUSES->(Peptic Esophagitis)-CAUSES->(Terminal esophageal web)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Heartburn",
+        "Pain",
+        "Endoscopic Retrograde Cholangiopancreatography",
+        "endoscopy"
+      ],
+      [
+        "Deglutition Disorders",
+        "Pain",
+        "Endoscopic Retrograde Cholangiopancreatography",
+        "endoscopy"
+      ],
+      [
+        "Deglutition Disorders",
+        "Physical findings",
+        "Laparoscopy",
+        "endoscopy"
+      ],
+      [
+        "Heartburn",
+        "Pain",
+        "Endoscopic Retrograde Cholangiopancreatography",
+        "endoscopy"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "CAUSES",
+        "ISA"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "ISA"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "ISA"
+      ],
+      [
+        "ISA",
+        "CAUSES",
+        "ISA"
+      ]
+    ],
+    "paths": [
+      "(Heartburn)-ISA->(Pain)-CAUSES->(Endoscopic Retrograde Cholangiopancreatography)-ISA->(endoscopy)",
+      "(Deglutition Disorders)-CAUSES->(Pain)-CAUSES->(Endoscopic Retrograde Cholangiopancreatography)-ISA->(endoscopy)",
+      "(Deglutition Disorders)-CAUSES->(Physical findings)-CAUSES->(Laparoscopy)-ISA->(endoscopy)",
+      "(Heartburn)-ISA->(Pain)-CAUSES->(Endoscopic Retrograde Cholangiopancreatography)-ISA->(endoscopy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Heartburn)-CAUSES->(Symptoms)-CAUSES->(Peptic Esophagitis)-CAUSES->(Terminal esophageal web)",
+      "(Deglutition Disorders)-CAUSES->(Heartburn)",
+      "(Heartburn)-PREDISPOSES->(Disease)-CAUSES->(Reflux)-CAUSES->(Terminal esophageal web)",
+      "(Heartburn)-PREDISPOSES->(Disease)-CAUSES->(Peptic Esophagitis)-CAUSES->(Terminal esophageal web)",
+      "(Swallowing problem)-CAUSES->(Deglutition Disorders)-CAUSES->(Heartburn)",
+      "(Deglutition Disorders)-CAUSES->(Sarcopenia)-CAUSES->(Swallowing problem)",
+      "(Deglutition Disorders)-CAUSES->(Malnutrition)-CAUSES->(Swallowing problem)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Young patient with dysphagia\" -> \"Impaired swallowing of solids and liquids\" -> \"No symptoms of pyrosis\" -> \"Multiple oral esophageal rings observed\" -> \"Normal mucosa with trachealized appearance\" -> \"Suggestive of eosinophilic esophagitis\" -> 85%",
+    "CHAIN: \"Dysphagia to solids and liquids\" -> \"Absence of pyrosis\" -> \"Endoscopy shows esophageal rings\" -> \"Normal mucosa\" -> \"Trachealized appearance indicates possible eosinophilic esophagitis\" -> 80%",
+    "CHAIN: \"Frequent dysphagia\" -> \"Impaired food passage\" -> \"No pyrosis symptoms\" -> \"Endoscopic findings of esophageal rings\" -> \"Normal mucosa suggests non-infectious etiology\" -> \"Eosinophilic esophagitis is a likely diagnosis\" -> 90%",
+    "CHAIN: \"Young patient with esophageal symptoms\" -> \"Dysphagia without pyrosis\" -> \"Endoscopy reveals multiple rings\" -> \"Normal mucosa\" -> \"Trachealized appearance aligns with eosinophilic esophagitis\" -> 88%"
+  ],
+  "enhanced_information": "In a young patient presenting with dysphagia to solids and liquids, absence of pyrosis, and endoscopic findings of multiple esophageal rings with normal mucosa and a trachealized appearance, eosinophilic esophagitis (EoE) is the most likely diagnosis. The presence of esophageal rings and normal mucosa is characteristic of EoE, which is a non-infectious inflammatory condition often associated with food allergies. Other options such as herpetic esophagitis, candidiasis, cytomegalovirus esophagitis, and adenocarcinoma are less likely due to the specific endoscopic findings and the patient's age. The reasoning chains consistently point towards EoE, supported by the absence of pyrosis and the specific endoscopic appearance.",
+  "analysis": "In this case, the young patient presents with dysphagia to both solids and liquids, which is a significant symptom indicating esophageal dysfunction. The absence of pyrosis (heartburn) suggests that the dysphagia is not due to gastroesophageal reflux disease (GERD). The endoscopic findings of multiple esophageal rings with normal mucosa and a trachealized appearance are particularly indicative of eosinophilic esophagitis (EoE). EoE is characterized by esophageal rings and strictures due to eosinophilic infiltration, often related to food allergies. Other conditions such as herpetic esophagitis, candidiasis, cytomegalovirus esophagitis, and adenocarcinoma typically present with different endoscopic findings or symptoms, making them less likely in this scenario. Therefore, based on the clinical presentation and endoscopic findings, eosinophilic esophagitis is the most likely diagnosis. The reasoning aligns with current medical consensus regarding the presentation of EoE in young patients. Thus, the best-supported option is eosinophilic esophagitis.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      2,
+      1,
+      2
+    ],
+    "coverage_rates": [
+      28.57142857142857,
+      28.57142857142857,
+      14.285714285714285,
+      28.57142857142857
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

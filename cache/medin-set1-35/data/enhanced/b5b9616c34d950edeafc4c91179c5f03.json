@@ -1,0 +1,125 @@
+{
+  "question": "A 70-year-old male with a 10-year history of COPD visits his pulmonologist for a checkup. Physical examination reveals cyanosis, digital clubbing, and bilateral lung wheezes are heard upon auscultation. The patient has a cough productive of thick yellow sputum. Which of the following findings is most likely present in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Decreased arterial carbon dioxide content",
+    "opb": "Increased pulmonary arterial resistance",
+    "opc": "Increased pH of the arterial blood",
+    "opd": "Increased cerebral vascular resistance",
+    "ope": "Increased right ventricle compliance"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Chronic Obstructive Airway Disease",
+        "Hypercapnia",
+        "Chronic respiratory acidosis"
+      ],
+      [
+        "Chronic Obstructive Airway Disease",
+        "Lung diseases",
+        "Chronic respiratory acidosis"
+      ],
+      [
+        "Chronic Obstructive Airway Disease",
+        "Vitamin D Deficiency",
+        "Chronic respiratory acidosis"
+      ],
+      [
+        "Chronic respiratory acidosis",
+        "Hypercapnic respiratory failure",
+        "Metabolic alkalosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Chronic Obstructive Airway Disease)-CAUSES->(Hypercapnia)-CAUSES->(Chronic respiratory acidosis)",
+      "(Chronic Obstructive Airway Disease)-CAUSES->(Lung diseases)-CAUSES->(Chronic respiratory acidosis)",
+      "(Chronic Obstructive Airway Disease)-PREDISPOSES->(Vitamin D Deficiency)-CAUSES->(Chronic respiratory acidosis)",
+      "(Chronic respiratory acidosis)-CAUSES->(Hypercapnic respiratory failure)-COMPLICATES->(Metabolic alkalosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Metabolic alkalosis",
+        "Metabolic acidosis",
+        "PCOS1",
+        "Blood arterial"
+      ],
+      [
+        "Metabolic alkalosis",
+        "Apnea",
+        "IGKV1D-39",
+        "Blood arterial"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Metabolic alkalosis)-CAUSES->(Metabolic acidosis)-ASSOCIATED_WITH->(PCOS1)-PART_OF->(Blood arterial)",
+      "(Metabolic alkalosis)-CAUSES->(Apnea)-ASSOCIATED_WITH->(IGKV1D-39)-PART_OF->(Blood arterial)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Chronic Obstructive Airway Disease)-CAUSES->(Hypercapnia)-CAUSES->(Chronic respiratory acidosis)",
+      "(Metabolic alkalosis)-CAUSES->(Metabolic acidosis)-ASSOCIATED_WITH->(PCOS1)-PART_OF->(Blood arterial)",
+      "(Metabolic alkalosis)-CAUSES->(Apnea)-ASSOCIATED_WITH->(IGKV1D-39)-PART_OF->(Blood arterial)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"COPD\" -> \"chronic hypoxemia\" -> \"pulmonary vasoconstriction\" -> \"increased pulmonary arterial resistance\" -> 80% CHAIN: \"COPD\" -> \"chronic respiratory acidosis\" -> \"compensatory metabolic alkalosis\" -> \"increased pH of the arterial blood\" -> 80%"
+  ],
+  "enhanced_information": "In a patient with COPD, the most likely finding is increased pulmonary arterial resistance due to chronic hypoxemia leading to pulmonary vasoconstriction. The evidence paths support the chain of events from COPD to chronic hypoxemia and subsequent vasoconstriction, aligning with standard medical knowledge.",
+  "analysis": "In a patient with COPD, the most likely finding is increased pulmonary arterial resistance due to chronic hypoxemia leading to pulmonary vasoconstriction. This leads to pulmonary hypertension, which can manifest as cyanosis, digital clubbing, and bilateral lung wheezes. The cough productive of thick yellow sputum is indicative of chronic bronchitis often seen in COPD patients. The combination of these symptoms and physical exam findings strongly suggests increased pulmonary arterial resistance.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

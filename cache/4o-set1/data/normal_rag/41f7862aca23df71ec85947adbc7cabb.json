@@ -1,0 +1,187 @@
+{
+  "question": "A patient undergoing surgery for a femur fracture develops a postoperative pulmonary embolism. A treatment with unfractionated heparin is started. After 7 days the platelets (previously normal) decrease to 45,000. What is the most likely picture of this thrombocytopenia?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Induction of antiplatelet antibodies.",
+    "opb": "Splenomegaly due to platelet sequestration.",
+    "opc": "Heparin-induced marrow suppression acting on megakaryocytes.",
+    "opd": "Formation of antibodies against the heparin-platelet factor 4 complex."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Heparin",
+        "Disease",
+        "Splenomegaly"
+      ],
+      [
+        "Heparin",
+        "Infection",
+        "Splenomegaly"
+      ],
+      [
+        "Heparin",
+        "Hypertensive disease",
+        "Splenomegaly"
+      ],
+      [
+        "Splenomegaly",
+        "Hypersplenism",
+        "Thrombocytopenia due to sequestration"
+      ],
+      [
+        "Thrombocytopenia due to sequestration",
+        "Thrombocytopenia"
+      ],
+      [
+        "Heparin",
+        "Virus",
+        "Bone Marrow Suppression"
+      ],
+      [
+        "Heparin",
+        "Disease",
+        "Bone Marrow Suppression"
+      ],
+      [
+        "Heparin",
+        "Pathogenesis",
+        "Bone Marrow Suppression"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Heparin)-TREATS->(Disease)-CAUSES->(Splenomegaly)",
+      "(Heparin)-PREVENTS->(Infection)-CAUSES->(Splenomegaly)",
+      "(Heparin)-PREVENTS->(Hypertensive disease)-CAUSES->(Splenomegaly)",
+      "(Splenomegaly)-CAUSES->(Hypersplenism)-CAUSES->(Thrombocytopenia due to sequestration)",
+      "(Thrombocytopenia due to sequestration)-CAUSES->(Thrombocytopenia)",
+      "(Heparin)-TREATS->(Virus)-CAUSES->(Bone Marrow Suppression)",
+      "(Heparin)-PREVENTS->(Disease)-CAUSES->(Bone Marrow Suppression)",
+      "(Heparin)-TREATS->(Pathogenesis)-CAUSES->(Bone Marrow Suppression)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Heparin",
+        "Virus",
+        "Antibodies"
+      ],
+      [
+        "Heparin",
+        "Cells",
+        "Antibodies"
+      ],
+      [
+        "Spleen",
+        "Thrombocytopenia"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Heparin)-TREATS->(Virus)-LOCATION_OF->(Antibodies)",
+      "(Heparin)-PART_OF->(Cells)-LOCATION_OF->(Antibodies)",
+      "(Spleen)-LOCATION_OF->(Thrombocytopenia)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Heparin)-PART_OF->(Cells)-LOCATION_OF->(Antibodies)",
+      "(Heparin)-TREATS->(Disease)-CAUSES->(Splenomegaly)",
+      "(Heparin)-PREVENTS->(Infection)-CAUSES->(Splenomegaly)",
+      "(Heparin)-PREVENTS->(Hypertensive disease)-CAUSES->(Splenomegaly)",
+      "(Heparin)-TREATS->(Virus)-LOCATION_OF->(Antibodies)",
+      "(Heparin)-PREVENTS->(Disease)-CAUSES->(Bone Marrow Suppression)",
+      "(Heparin)-TREATS->(Virus)-CAUSES->(Bone Marrow Suppression)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Unfractionated heparin\" -> \"Heparin binds platelet factor 4\" -> \"Formation of antibodies against heparin-platelet factor 4 complex\" -> \"Platelet activation and consumption\" -> \"Thrombocytopenia\" -> 95%",
+    "CHAIN: \"Unfractionated heparin\" -> \"Possible induction of antiplatelet antibodies\" -> \"Platelet destruction\" -> \"Thrombocytopenia\" -> 60%",
+    "CHAIN: \"Unfractionated heparin\" -> \"Possible splenomegaly\" -> \"Platelet sequestration in spleen\" -> \"Thrombocytopenia\" -> 50%",
+    "CHAIN: \"Unfractionated heparin\" -> \"Possible marrow suppression\" -> \"Decreased megakaryocyte activity\" -> \"Thrombocytopenia\" -> 40%"
+  ],
+  "enhanced_information": "The most likely picture of thrombocytopenia in this scenario is heparin-induced thrombocytopenia (HIT), which is characterized by the formation of antibodies against the heparin-platelet factor 4 complex. This leads to platelet activation and consumption, resulting in thrombocytopenia. This aligns with the standard medical consensus that unfractionated heparin can cause HIT, a well-documented immune-mediated adverse effect. The reasoning chain for option 'Formation of antibodies against the heparin-platelet factor 4 complex' is correct and supported by consensus. Other options, such as induction of antiplatelet antibodies, splenomegaly due to platelet sequestration, and marrow suppression, are less likely and not typically associated with heparin use in this context. The retrieved evidence paths, while broad, do not contradict this consensus and do not provide additional relevant support for the other options.",
+  "analysis": "The scenario described is consistent with heparin-induced thrombocytopenia (HIT), which is a well-known complication of heparin therapy. HIT is caused by the formation of antibodies against the heparin-platelet factor 4 complex. This immune-mediated reaction leads to platelet activation and a paradoxical risk of thrombosis despite the low platelet count. The decrease in platelets after 7 days of heparin therapy aligns with the typical onset of HIT, which usually occurs 5-10 days after starting heparin. The other options do not fit the clinical picture as well: induction of antiplatelet antibodies is more typical of other drug-induced thrombocytopenias, splenomegaly causing sequestration is not a common acute postoperative issue, and marrow suppression by heparin is not a recognized mechanism.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      4,
+      1
+    ],
+    "coverage_rates": [
+      16.666666666666664,
+      0.0,
+      66.66666666666666,
+      16.666666666666664
+    ],
+    "total_successes": 6
+  },
+  "normal_results": [
+    "Hepatocyte LOCATION_OF Factor VIII-Related Antigen|VWF",
+    "Genes CAUSES Porphyria Cutanea Tarda",
+    "Spleen LOCATION_OF Ruptured simple cyst",
+    "Pharmaceutical Preparations TREATS Epilepsy, Frontal Lobe",
+    "White blood cell scan CAUSES Inflammatory disorder",
+    "beta-Glucosidase CAUSES Respiration",
+    "Thrombocytopenia PREDISPOSES Postoperative Hemorrhage"
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "question": "A previously healthy 46-year-old man comes to the physician for an 8-month history of headache that is more severe in the mornings. His blood pressure is 151/92 mm Hg. Examination shows enlargement of the nose, forehead, and jaw as well as the hands, fingers, and feet. Ophthalmologic examination shows impaired vision in the outer peripheral fields of both eyes. Laboratory studies show a serum glucose concentration of 225 mg/dL. Which of the following findings is most likely to confirm the diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Low serum growth hormone level",
+    "opb": "Elevated urine cortisol level",
+    "opc": "Low serum insulin level",
+    "opd": "Elevated serum prolactin level",
+    "ope": "Elevated serum insulin-like growth factor-1 level"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Somatotropin",
+        "Acromegaly"
+      ],
+      [
+        "Hypertensive disease",
+        "Secondary hypertension NOS"
+      ],
+      [
+        "Secondary hypertension NOS",
+        "Disease",
+        "Endocrine System Diseases"
+      ],
+      [
+        "Secondary hypertension NOS",
+        "Hypertensive disease",
+        "Endocrine System Diseases"
+      ],
+      [
+        "Secondary hypertension NOS",
+        "Kidney Failure",
+        "Endocrine System Diseases"
+      ],
+      [
+        "Endocrine System Diseases",
+        "Disease",
+        "Acromegaly"
+      ],
+      [
+        "Endocrine System Diseases",
+        "Obesity",
+        "Acromegaly"
+      ],
+      [
+        "Somatotropin",
+        "Acromegaly"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Somatotropin)-TREATS->(Acromegaly)",
+      "(Hypertensive disease)-CAUSES->(Secondary hypertension NOS)",
+      "(Secondary hypertension NOS)-CAUSES->(Disease)-CAUSES->(Endocrine System Diseases)",
+      "(Secondary hypertension NOS)-CAUSES->(Hypertensive disease)-CAUSES->(Endocrine System Diseases)",
+      "(Secondary hypertension NOS)-CAUSES->(Kidney Failure)-CAUSES->(Endocrine System Diseases)",
+      "(Endocrine System Diseases)-CAUSES->(Disease)-CAUSES->(Acromegaly)",
+      "(Endocrine System Diseases)-PREDISPOSES->(Obesity)-CAUSES->(Acromegaly)",
+      "(Somatotropin)-TREATS->(Acromegaly)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Fingers",
+        "Complication",
+        "Somatotropin"
+      ],
+      [
+        "Fingers",
+        "Functional disorder",
+        "Somatotropin"
+      ],
+      [
+        "Pes",
+        "Brain",
+        "Somatotropin"
+      ],
+      [
+        "Pes",
+        "Fibrosis",
+        "Somatotropin"
+      ],
+      [
+        "Insulin Resistance",
+        "Somatotropin"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Fingers)-LOCATION_OF->(Complication)-ASSOCIATED_WITH->(Somatotropin)",
+      "(Fingers)-LOCATION_OF->(Functional disorder)-ASSOCIATED_WITH->(Somatotropin)",
+      "(Pes)-PART_OF->(Brain)-LOCATION_OF->(Somatotropin)",
+      "(Pes)-LOCATION_OF->(Fibrosis)-ASSOCIATED_WITH->(Somatotropin)",
+      "(Insulin Resistance)-ASSOCIATED_WITH->(Somatotropin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fingers)-LOCATION_OF->(Complication)-ASSOCIATED_WITH->(Somatotropin)",
+      "(Fingers)-LOCATION_OF->(Functional disorder)-ASSOCIATED_WITH->(Somatotropin)",
+      "(Pes)-LOCATION_OF->(Fibrosis)-ASSOCIATED_WITH->(Somatotropin)",
+      "(Pes)-PART_OF->(Brain)-LOCATION_OF->(Somatotropin)",
+      "(Somatotropin)-TREATS->(Acromegaly)",
+      "(Hypertensive disease)-CAUSES->(Secondary hypertension NOS)",
+      "(Insulin Resistance)-ASSOCIATED_WITH->(Somatotropin)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Morning headaches\" -> \"increased intracranial pressure\" -> \"pituitary tumor\" -> \"compression of optic chiasm\" -> \"bitemporal hemianopsia\" -> \"acromegaly\" -> \"elevated serum insulin-like growth factor-1 level\" -> 95%",
+    "CHAIN: \"Enlargement of nose, forehead, jaw, hands, fingers, feet\" -> \"excess growth hormone\" -> \"acromegaly\" -> \"elevated serum insulin-like growth factor-1 level\" -> 95%",
+    "CHAIN: \"Impaired vision in outer peripheral fields\" -> \"bitemporal hemianopsia\" -> \"pituitary adenoma\" -> \"excess growth hormone\" -> \"elevated serum insulin-like growth factor-1 level\" -> 90%",
+    "CHAIN: \"High blood pressure\" -> \"possible secondary hypertension\" -> \"endocrine disorder\" -> \"acromegaly\" -> \"elevated serum insulin-like growth factor-1 level\" -> 85%",
+    "CHAIN: \"Serum glucose concentration of 225 mg/dL\" -> \"insulin resistance\" -> \"excess growth hormone\" -> \"acromegaly\" -> \"elevated serum insulin-like growth factor-1 level\" -> 90%"
+  ],
+  "enhanced_information": "The clinical presentation of the patient, including morning headaches, bitemporal hemianopsia, and enlargement of facial and extremity features, is consistent with acromegaly, which is typically caused by a pituitary adenoma secreting excess growth hormone. This excess growth hormone leads to elevated levels of insulin-like growth factor-1 (IGF-1), which is a reliable marker for diagnosing acromegaly. The patient's hypertension and hyperglycemia can also be explained by the effects of excess growth hormone, which is known to cause insulin resistance and secondary hypertension. The retrieved evidence paths, such as the association of somatotropin (growth hormone) with insulin resistance and its role in treating acromegaly, support the consensus that elevated serum IGF-1 is the most likely finding to confirm the diagnosis of acromegaly. Therefore, option 'ope. Elevated serum insulin-like growth factor-1 level' is the correct choice.",
+  "analysis": "The clinical presentation of the patient, including the enlargement of facial features and extremities, morning headaches, hypertension, hyperglycemia, and bitemporal hemianopsia, is highly suggestive of acromegaly. Acromegaly is caused by excessive secretion of growth hormone, usually due to a pituitary adenoma. The most reliable laboratory test to confirm acromegaly is the measurement of serum insulin-like growth factor-1 (IGF-1) levels, which are elevated in this condition. IGF-1 is a more stable marker than growth hormone itself, which can fluctuate throughout the day.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      3,
+      0,
+      3,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      37.5,
+      0.0,
+      37.5,
+      25.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": [
+    "monocyte LOCATION_OF CD69",
+    "HIV-1 CAUSES Candidiasis",
+    "Physical findings ASSOCIATED_WITH Hyperglycemia",
+    "Nose LOCATION_OF Facial edema",
+    "Headache ASSOCIATED_WITH Metabolic Diseases",
+    "Entire lateral patellar retinaculum LOCATION_OF Sore to touch",
+    "Contraceptives, Oral CAUSES Headache",
+    "Headache ASSOCIATED_WITH Genital infection",
+    "Splenocyte LOCATION_OF eicosapentaenoic Acid ethanolamide",
+    "disease characteristic PREDISPOSES hypoglycemia",
+    "Biopsy CAUSES Herpes Simplex Infections",
+    "Tonometry DIAGNOSES Hyperglycemia",
+    "SPLEEN TISSUE LOCATION_OF Gram-Positive Cocci"
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "question": "What is the treatment of choice for a 38-year-old man diagnosed with Cushing's disease in relation to a pituitary macroadenoma 22 mm in diameter?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Initially try medical treatment and, if it is not effective, resort to surgery.",
+    "opb": "Adrenalectomy",
+    "opc": "Selective surgical resection of the adenoma.",
+    "opd": "Radiation therapy to try to decrease the tumor size."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "removal technique",
+        "Disease",
+        "Diabetic Nephropathy",
+        "physiologic resolution"
+      ],
+      [
+        "removal technique",
+        "Disease",
+        "Secondary hypocortisolism"
+      ],
+      [
+        "removal technique",
+        "Adverse effects",
+        "Secondary hypocortisolism"
+      ],
+      [
+        "removal technique",
+        "Symptoms",
+        "Secondary hypocortisolism"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(removal technique)-CAUSES->(Disease)-CAUSES->(Diabetic Nephropathy)-PREDISPOSES->(physiologic resolution)",
+      "(removal technique)-CAUSES->(Disease)-CAUSES->(Secondary hypocortisolism)",
+      "(removal technique)-CAUSES->(Adverse effects)-CAUSES->(Secondary hypocortisolism)",
+      "(removal technique)-TREATS->(Symptoms)-PREDISPOSES->(Secondary hypocortisolism)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Adrenalectomy",
+        "Excision",
+        "removal technique"
+      ],
+      [
+        "Adrenal Glands",
+        "Symptoms",
+        "Secondary hypocortisolism"
+      ],
+      [
+        "Adrenal Glands",
+        "Symptoms",
+        "Secondary hypocortisolism"
+      ],
+      [
+        "Secondary hypocortisolism",
+        "Adverse effects",
+        "Genes",
+        "Mucous Membrane",
+        "First line treatment"
+      ],
+      [
+        "Secondary hypocortisolism",
+        "Adverse effects",
+        "Genes",
+        "Skeletal muscle structure",
+        "First line treatment"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "ISA"
+      ],
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Adrenalectomy)-ISA->(Excision)-ISA->(removal technique)",
+      "(Adrenal Glands)-LOCATION_OF->(Symptoms)-ASSOCIATED_WITH->(Secondary hypocortisolism)",
+      "(Adrenal Glands)-LOCATION_OF->(Symptoms)-PREDISPOSES->(Secondary hypocortisolism)",
+      "(Secondary hypocortisolism)-PREDISPOSES->(Adverse effects)-ASSOCIATED_WITH->(Genes)-PART_OF->(Mucous Membrane)-LOCATION_OF->(First line treatment)",
+      "(Secondary hypocortisolism)-PREDISPOSES->(Adverse effects)-ASSOCIATED_WITH->(Genes)-PART_OF->(Skeletal muscle structure)-LOCATION_OF->(First line treatment)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(removal technique)-CAUSES->(Disease)-CAUSES->(Secondary hypocortisolism)",
+      "(removal technique)-CAUSES->(Adverse effects)-CAUSES->(Secondary hypocortisolism)",
+      "(removal technique)-TREATS->(Symptoms)-PREDISPOSES->(Secondary hypocortisolism)",
+      "(Adrenalectomy)-ISA->(Excision)-ISA->(removal technique)",
+      "(removal technique)-CAUSES->(Disease)-CAUSES->(Diabetic Nephropathy)-PREDISPOSES->(physiologic resolution)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Cushing's disease\" -> \"pituitary macroadenoma\" -> \"surgical resection\" -> \"removal of adenoma\" -> \"resolution of symptoms\" -> 95%",
+    "CHAIN: \"Cushing's disease\" -> \"pituitary macroadenoma\" -> \"medical treatment\" -> \"possible symptom control\" -> \"surgery if ineffective\" -> \"removal of adenoma\" -> 70%",
+    "CHAIN: \"Cushing's disease\" -> \"pituitary macroadenoma\" -> \"adrenalectomy\" -> \"removal of adrenal glands\" -> \"secondary adrenal insufficiency\" -> \"not first-line treatment\" -> 40%",
+    "CHAIN: \"Cushing's disease\" -> \"pituitary macroadenoma\" -> \"radiation therapy\" -> \"slow tumor shrinkage\" -> \"delayed symptom relief\" -> \"not primary treatment\" -> 50%"
+  ],
+  "enhanced_information": "The treatment of choice for a 38-year-old man with Cushing's disease due to a pituitary macroadenoma is selective surgical resection of the adenoma. This aligns with standard medical consensus, which prioritizes surgical removal of the adenoma as the first-line treatment to directly address the source of excess ACTH production, leading to resolution of symptoms. Medical treatment is typically reserved for cases where surgery is not possible or as an adjunct to manage symptoms preoperatively. Adrenalectomy is not a first-line treatment for Cushing's disease as it addresses the adrenal glands rather than the pituitary source and can lead to secondary adrenal insufficiency. Radiation therapy is generally considered when surgery is not feasible or as a postoperative adjunct, due to its slower onset of action. The evidence paths related to removal techniques causing secondary hypocortisolism are more relevant to adrenalectomy and not directly applicable to the primary treatment of pituitary adenomas in Cushing's disease.",
+  "analysis": "Cushing's disease is caused by an ACTH-secreting pituitary adenoma, and the primary treatment goal is to remove the source of excess hormone production. The standard treatment of choice for a pituitary adenoma causing Cushing's disease is selective surgical resection of the adenoma. This approach directly addresses the source of the problem and is typically the first-line treatment. Medical therapy is usually reserved for cases where surgery is not possible or as a temporary measure before surgery. Adrenalectomy is not the first-line treatment for Cushing's disease because it does not address the pituitary source and can lead to complications such as adrenal insufficiency. Radiation therapy is generally considered when surgery is not feasible or as an adjunctive treatment postoperatively. Therefore, the most likely correct option, based on standard medical consensus, is selective surgical resection of the adenoma.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      4,
+      0
+    ],
+    "coverage_rates": [
+      20.0,
+      0.0,
+      80.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

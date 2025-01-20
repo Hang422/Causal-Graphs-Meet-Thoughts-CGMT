@@ -1,0 +1,185 @@
+{
+  "question": "A 17-year-old girl is brought to the physician because of amenorrhea for 4 months. Menses previously occurred at regular 28-day intervals and last for 3 to 4 days. There is no family history of serious illness. She receives good grades in school and is on the high school track team. She is sexually active with one male partner and uses condoms consistently. She appears thin. Examination shows bilateral parotid gland enlargement. There is fine hair over the trunk. Serum studies show:\nThyroid-stimulating hormone 3.7 μU/mL\nProlactin 16 ng/mL\nEstradiol 23 pg/mL (N > 40)\nFollicle-stimulating hormone 1.6 mIU/mL\nLuteinizing hormone 2.8 mIU/mL\nA urine pregnancy test is negative. Which of the following is the most likely cause of these findings?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Exogenous steroid use",
+    "opb": "Defective androgen receptors",
+    "opc": "Gonadal dysgenesis",
+    "opd": "Abnormal neuronal cell migration",
+    "ope": "Nutritional deficiency"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Amenorrhea",
+        "Infection",
+        "imbalance"
+      ],
+      [
+        "Amenorrhea",
+        "Symptoms",
+        "imbalance"
+      ],
+      [
+        "Amenorrhea",
+        "Syndrome",
+        "imbalance"
+      ],
+      [
+        "Hypertrophy",
+        "Disease",
+        "Eating Disorders"
+      ],
+      [
+        "Hypertrophy",
+        "Obesity",
+        "Eating Disorders"
+      ],
+      [
+        "Luteinizing Hormone",
+        "Klinefelter's Syndrome"
+      ],
+      [
+        "Klinefelter's Syndrome",
+        "Disease",
+        "Malnutrition"
+      ],
+      [
+        "Klinefelter's Syndrome",
+        "Symptoms",
+        "Malnutrition"
+      ],
+      [
+        "Klinefelter's Syndrome",
+        "Infantile spasms",
+        "Malnutrition"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Amenorrhea)-CAUSES->(Infection)-CAUSES->(imbalance)",
+      "(Amenorrhea)-CAUSES->(Symptoms)-CAUSES->(imbalance)",
+      "(Amenorrhea)-CAUSES->(Syndrome)-CAUSES->(imbalance)",
+      "(Hypertrophy)-CAUSES->(Disease)-PREDISPOSES->(Eating Disorders)",
+      "(Hypertrophy)-CAUSES->(Obesity)-PREDISPOSES->(Eating Disorders)",
+      "(Luteinizing Hormone)-TREATS->(Klinefelter's Syndrome)",
+      "(Klinefelter's Syndrome)-CAUSES->(Disease)-CAUSES->(Malnutrition)",
+      "(Klinefelter's Syndrome)-CAUSES->(Symptoms)-CAUSES->(Malnutrition)",
+      "(Klinefelter's Syndrome)-COMPLICATES->(Infantile spasms)-CAUSES->(Malnutrition)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Parotid Gland",
+        "Disease",
+        "Eating Disorders"
+      ],
+      [
+        "Parotid Gland",
+        "Symptoms",
+        "Eating Disorders"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Parotid Gland)-LOCATION_OF->(Disease)-MANIFESTATION_OF->(Eating Disorders)",
+      "(Parotid Gland)-LOCATION_OF->(Symptoms)-PREDISPOSES->(Eating Disorders)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Luteinizing Hormone)-TREATS->(Klinefelter's Syndrome)",
+      "(Amenorrhea)-CAUSES->(Infection)-CAUSES->(imbalance)",
+      "(Amenorrhea)-CAUSES->(Symptoms)-CAUSES->(imbalance)",
+      "(Amenorrhea)-CAUSES->(Syndrome)-CAUSES->(imbalance)",
+      "(Hypertrophy)-CAUSES->(Disease)-PREDISPOSES->(Eating Disorders)",
+      "(Hypertrophy)-CAUSES->(Obesity)-PREDISPOSES->(Eating Disorders)",
+      "(Klinefelter's Syndrome)-CAUSES->(Symptoms)-CAUSES->(Malnutrition)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Amenorrhea for 4 months\" -> \"Possible hormonal imbalance\" -> \"Low estradiol levels\" -> \"Inadequate ovarian function\" -> \"Possible nutritional deficiency\" -> 85%",
+    "CHAIN: \"Bilateral parotid gland enlargement\" -> \"Possible association with eating disorders\" -> \"Thin appearance\" -> \"Possible nutritional deficiency\" -> \"Low estradiol levels\" -> 80%",
+    "CHAIN: \"Negative urine pregnancy test\" -> \"Excludes pregnancy-related amenorrhea\" -> \"Low FSH and LH levels\" -> \"Hypogonadotropic hypogonadism\" -> \"Possible nutritional deficiency\" -> 75%",
+    "CHAIN: \"Fine hair over the trunk\" -> \"Possible androgen excess\" -> \"Low estradiol levels\" -> \"Inadequate ovarian function\" -> \"Possible nutritional deficiency\" -> 70%",
+    "CHAIN: \"Consistent condom use\" -> \"Excludes pregnancy\" -> \"Amenorrhea\" -> \"Low estradiol and FSH\" -> \"Possible nutritional deficiency\" -> 75%"
+  ],
+  "enhanced_information": "The 17-year-old girl presents with amenorrhea, bilateral parotid gland enlargement, and low estradiol levels, indicating a possible hormonal imbalance. The negative pregnancy test and low levels of FSH and LH suggest hypogonadotropic hypogonadism, which can be associated with nutritional deficiencies, particularly in athletes who may have inadequate caloric intake. The parotid gland enlargement and thin appearance further support the possibility of an eating disorder, which is often linked to nutritional deficiencies. The presence of fine hair over the trunk may indicate androgen excess, but in this context, it aligns more with the hormonal imbalance due to nutritional issues rather than exogenous steroid use or other conditions. Therefore, the most likely cause of these findings is nutritional deficiency, particularly given the patient's athletic status and physical presentation.",
+  "analysis": "The patient presents with amenorrhea, bilateral parotid gland enlargement, low estradiol levels, and signs suggestive of hormonal imbalance. The negative pregnancy test and low levels of FSH and LH indicate hypogonadotropic hypogonadism. Given her athletic involvement and thin appearance, there is a strong suspicion of nutritional deficiency, which is common in athletes who may not consume adequate calories. The parotid gland enlargement could be indicative of sialadenosis, often associated with eating disorders or malnutrition. The presence of fine hair over the trunk may suggest androgen excess, but in this context, it is more likely a result of hormonal imbalance due to nutritional issues rather than other conditions like exogenous steroid use or gonadal dysgenesis. Therefore, the most likely cause of these findings is nutritional deficiency, particularly in the context of her athletic status and physical presentation.",
+  "answer": "ope",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2,
+      2,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      20.0,
+      40.0,
+      40.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

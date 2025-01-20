@@ -1,0 +1,108 @@
+{
+  "question": "Type II diabetes mellitus:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "It frequently occurs with ketoacidosis.",
+    "opb": "It is usually of juvenile appearance.",
+    "opc": "It is not related to obesity.",
+    "opd": "It is independent insulin."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Insulin Resistance"
+      ],
+      [
+        "Hyperglycemia",
+        "Ketosis"
+      ],
+      [
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Obesity"
+      ],
+      [
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Insulin Resistance"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Insulin Resistance)",
+      "(Hyperglycemia)-CAUSES->(Ketosis)",
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Obesity)",
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Insulin Resistance)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Insulin Resistance",
+        "Insulin"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Insulin Resistance)-ASSOCIATED_WITH->(Insulin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-Insulin->(Insulin Resistance)",
+      "(Insulin Resistance)-ASSOCIATED_WITH->(Insulin)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Type II diabetes mellitus\" -> \"insulin resistance\" -> \"insulin production\" -> \"not enough to overcome resistance\" -> \"hyperglycemia\" -> \"not typically ketoacidosis\" -> 95%",
+    "CHAIN: \"Type II diabetes mellitus\" -> \"adult onset\" -> \"not juvenile appearance\" -> 90%",
+    "CHAIN: \"Type II diabetes mellitus\" -> \"strong association with obesity\" -> \"obesity-related insulin resistance\" -> \"related to obesity\" -> 95%",
+    "CHAIN: \"Type II diabetes mellitus\" -> \"insulin resistance\" -> \"initially managed without insulin\" -> \"independent insulin\" -> 85%"
+  ],
+  "enhanced_information": "Type II diabetes mellitus is characterized by insulin resistance, where the body does not use insulin effectively, leading to hyperglycemia. It is not typically associated with ketoacidosis, which is more common in Type I diabetes. Type II diabetes usually presents in adults, not juveniles, and is strongly associated with obesity, as obesity contributes to insulin resistance. Initially, it can often be managed without insulin, making it non-insulin-dependent at the onset. The retrieved evidence supports the association between insulin resistance and non-insulin-dependent diabetes, confirming the consensus that Type II diabetes is primarily related to insulin resistance and obesity, and is typically managed without insulin initially.",
+  "analysis": "Type II diabetes mellitus is primarily characterized by insulin resistance and is strongly associated with obesity. It is not typically associated with ketoacidosis, which is more common in Type I diabetes. Type II diabetes usually presents in adults, not juveniles, and is often initially managed without insulin, making it non-insulin-dependent at the onset. Therefore, the most accurate description of Type II diabetes mellitus from the given options is that it is independent of insulin, particularly at the onset.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      1,
+      2
+    ],
+    "coverage_rates": [
+      40.0,
+      0.0,
+      20.0,
+      40.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

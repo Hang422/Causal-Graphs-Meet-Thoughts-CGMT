@@ -1,0 +1,113 @@
+{
+  "question": "Type II diabetes mellitus:",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "It frequently occurs with ketoacidosis.",
+    "opb": "It is usually of juvenile appearance.",
+    "opc": "It is not related to obesity.",
+    "opd": "It is independent insulin."
+  },
+  "topic_name": "Pharmacy",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Insulin Resistance"
+      ],
+      [
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Obesity"
+      ],
+      [
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Disease",
+        "Ketosis"
+      ],
+      [
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Ketosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Insulin Resistance)",
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Obesity)",
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Disease)-CAUSES->(Ketosis)",
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Diabetes Mellitus, Insulin-Dependent)-COMPLICATES->(Ketosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Insulin Resistance",
+        "Insulin"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Insulin Resistance)-ASSOCIATED_WITH->(Insulin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Insulin Resistance)",
+      "(Insulin Resistance)-ASSOCIATED_WITH->(Insulin)",
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Obesity)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Type II diabetes mellitus\" -> \"insulin resistance\" -> \"insulin production still present\" -> \"not independent insulin\" -> 90%",
+    "CHAIN: \"Type II diabetes mellitus\" -> \"adult onset\" -> \"not juvenile appearance\" -> 90%",
+    "CHAIN: \"Type II diabetes mellitus\" -> \"associated with obesity\" -> \"related to obesity\" -> 90%",
+    "CHAIN: \"Type II diabetes mellitus\" -> \"rarely associated with ketoacidosis\" -> \"ketoacidosis uncommon\" -> 80%"
+  ],
+  "enhanced_information": "Type II diabetes mellitus is characterized by insulin resistance, where the body still produces insulin but is less effective at using it, making it not independent of insulin. It typically presents in adults, not juveniles, and is strongly associated with obesity. Ketoacidosis is uncommon in Type II diabetes, as it is more frequently associated with Type I diabetes. The retrieved evidence supports the association of Type II diabetes with insulin resistance and obesity, aligning with the consensus that it is not independent of insulin and is related to obesity.",
+  "analysis": "Type II diabetes mellitus is primarily characterized by insulin resistance, where the body produces insulin but cannot use it effectively. This condition is strongly associated with obesity and typically presents in adults, not juveniles. Ketoacidosis is more commonly associated with Type I diabetes, where there is an absolute deficiency of insulin. Therefore, Type II diabetes is not independent of insulin, as insulin is still produced and plays a role in the disease's pathophysiology. Given these considerations, the most accurate option is that Type II diabetes is not independent of insulin.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      25.0,
+      25.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

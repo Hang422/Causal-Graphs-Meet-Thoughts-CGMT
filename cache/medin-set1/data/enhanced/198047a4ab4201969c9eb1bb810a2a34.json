@@ -1,0 +1,123 @@
+{
+  "question": "A 2-year-old boy is brought to the physician because of fever, productive cough, and shortness of breath. Since birth, he has had multiple respiratory infections requiring treatment with antibiotics. His immunizations are up-to-date. He is in the 10th percentile for height and weight. His temperature is 38°C (100.3°F). Examination detects diffuse bilateral wheezing and cervical lymphadenopathy. Flow cytometric analysis of a serum sample from the patient fails to fluoresce after incubation with dihydrorhodamine. This patient is at greatest risk of infection with which of the following organisms?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Enterococcus faecium",
+    "opb": "Serratia marcescens",
+    "opc": "Streptococcus pneumoniae",
+    "opd": "Clostridioides difficile",
+    "ope": "Streptococcus pyogenes"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Granulomatous Disease, Chronic",
+        "Serratia marcescens"
+      ],
+      [
+        "Bacterial Infections",
+        "Disease",
+        "Serratia marcescens"
+      ],
+      [
+        "Bacterial Infections",
+        "Lung Abscess",
+        "Serratia marcescens"
+      ],
+      [
+        "Bacterial Infections",
+        "Endocarditis",
+        "Serratia marcescens"
+      ],
+      [
+        "Granulomatous Disease, Chronic",
+        "Serratia marcescens"
+      ],
+      [
+        "Flow Cytometry",
+        "Disease",
+        "Immunity"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Granulomatous Disease, Chronic)-PROCESS_OF->(Serratia marcescens)",
+      "(Bacterial Infections)-CAUSES->(Disease)-PROCESS_OF->(Serratia marcescens)",
+      "(Bacterial Infections)-CAUSES->(Lung Abscess)-PROCESS_OF->(Serratia marcescens)",
+      "(Bacterial Infections)-CAUSES->(Endocarditis)-PROCESS_OF->(Serratia marcescens)",
+      "(Granulomatous Disease, Chronic)-PROCESS_OF->(Serratia marcescens)",
+      "(Flow Cytometry)-TREATS->(Disease)-MANIFESTATION_OF->(Immunity)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Granulomatous Disease, Chronic)-PROCESS_OF->(Serratia marcescens)",
+      "(Bacterial Infections)-CAUSES->(Disease)-PROCESS_OF->(Serratia marcescens)",
+      "(Bacterial Infections)-CAUSES->(Lung Abscess)-PROCESS_OF->(Serratia marcescens)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"2-year-old boy with recurrent respiratory infections\" -> \"possible underlying immunodeficiency\" -> \"flow cytometric analysis shows failure to fluoresce\" -> \"suggests chronic granulomatous disease (CGD)\" -> \"CGD patients are at risk for catalase-positive organisms\" -> \"Serratia marcescens is a catalase-positive organism\" -> 85%",
+    "CHAIN: \"2-year-old boy with fever and wheezing\" -> \"history of multiple respiratory infections\" -> \"indicates possible immunocompromised state\" -> \"flow cytometric analysis fails to fluoresce\" -> \"suggests defect in oxidative burst\" -> \"increased risk for certain bacterial infections\" -> \"Serratia marcescens is known to cause infections in immunocompromised patients\" -> 80%",
+    "CHAIN: \"Child with cervical lymphadenopathy and wheezing\" -> \"recurrent infections since birth\" -> \"indicates possible immunodeficiency\" -> \"dihydrorhodamine test failure\" -> \"suggests chronic granulomatous disease\" -> \"CGD patients are particularly susceptible to specific organisms\" -> \"Serratia marcescens is a common pathogen in CGD\" -> 90%",
+    "CHAIN: \"2-year-old boy with productive cough and fever\" -> \"multiple respiratory infections requiring antibiotics\" -> \"indicates possible underlying condition\" -> \"flow cytometry shows no fluorescence\" -> \"suggests defect in immune response\" -> \"increased risk for catalase-positive bacteria\" -> \"Serratia marcescens is a known risk\" -> 75%"
+  ],
+  "enhanced_information": "The 2-year-old boy presents with recurrent respiratory infections, fever, productive cough, and wheezing, indicating a possible underlying immunodeficiency. The flow cytometric analysis shows failure to fluoresce after incubation with dihydrorhodamine, suggesting a defect in the oxidative burst, consistent with chronic granulomatous disease (CGD). Patients with CGD are particularly susceptible to catalase-positive organisms due to their impaired ability to kill these pathogens. Among the options provided, Serratia marcescens is a catalase-positive organism and is known to cause infections in patients with CGD. Therefore, the patient is at greatest risk of infection with Serratia marcescens.",
+  "analysis": "The clinical presentation of the 2-year-old boy, including recurrent respiratory infections, wheezing, and the specific flow cytometric analysis results indicating a failure to fluoresce after incubation with dihydrorhodamine, suggests a defect in the oxidative burst. This is characteristic of chronic granulomatous disease (CGD), which leads to increased susceptibility to certain infections. Patients with CGD are particularly at risk for infections caused by catalase-positive organisms due to their impaired ability to kill these pathogens. Among the options provided, Serratia marcescens is a catalase-positive organism and is known to be a common pathogen in patients with CGD. The other organisms listed, while they can cause infections, are not specifically associated with the immunodeficiency indicated in this case. Therefore, the most likely correct answer is that this patient is at greatest risk of infection with Serratia marcescens.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      25.0,
+      25.0,
+      25.0,
+      25.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

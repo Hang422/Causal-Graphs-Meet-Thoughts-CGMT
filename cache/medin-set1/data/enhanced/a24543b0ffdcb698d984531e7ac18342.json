@@ -1,0 +1,149 @@
+{
+  "question": "A 51-year-old woman with a history of palpitations is being evaluated by a surgeon for epigastric pain. It is discovered that she has an epigastric hernia that needs repair. During her preoperative evaluation, she is ordered to receive lab testing, an electrocardiogram (ECG), and a chest X-ray. These screening studies are unremarkable except for her chest X-ray, which shows a 2 cm isolated pulmonary nodule in the middle lobe of the right lung. The nodule has poorly defined margins, and it shows a dense, irregular pattern of calcification. The patient is immediately referred to a pulmonologist for evaluation of the lesion. The patient denies any recent illnesses and states that she has not traveled outside of the country since she was a child. She has had no sick contacts or respiratory symptoms, and she does not currently take any medications. She does, however, admit to a 20-pack-year history of smoking. Which of the following is the most appropriate next step in evaluating this patient’s diagnosis with regard to the pulmonary nodule?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Obtain a contrast-enhanced CT scan of the chest",
+    "opb": "Send sputum for cytology",
+    "opc": "Order a positron emission tomography scan of the chest",
+    "opd": "Perform a flexible bronchoscopy with biopsy",
+    "ope": "Try to obtain previous chest radiographs for comparison"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Illness (finding)",
+        "Communicable Diseases"
+      ],
+      [
+        "Signs and Symptoms, Respiratory",
+        "Disease",
+        "Communicable Diseases"
+      ],
+      [
+        "Signs and Symptoms, Respiratory",
+        "Infection",
+        "Communicable Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Illness (finding))-CAUSES->(Communicable Diseases)",
+      "(Signs and Symptoms, Respiratory)-CAUSES->(Disease)-CAUSES->(Communicable Diseases)",
+      "(Signs and Symptoms, Respiratory)-PREDISPOSES->(Infection)-MANIFESTATION_OF->(Communicable Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Bronchoscopy",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Bronchoscopy",
+        "Symptoms",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Biopsy",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Biopsy",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Bronchoscopy)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Bronchoscopy)-CAUSES->(Symptoms)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Biopsy)-CAUSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Biopsy)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Illness (finding))-CAUSES->(Communicable Diseases)",
+      "(Bronchoscopy)-CAUSES->(Symptoms)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Bronchoscopy)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient has a 2 cm pulmonary nodule\" -> \"Nodule has poorly defined margins\" -> \"Nodule shows dense, irregular calcification\" -> \"Increased suspicion for malignancy\" -> \"Need for further evaluation of the nodule\" -> \"Obtain a contrast-enhanced CT scan of the chest\" -> 85%",
+    "CHAIN: \"Patient is a smoker with a 20-pack-year history\" -> \"Increased risk for lung cancer\" -> \"Nodule characteristics raise concern\" -> \"Need for further imaging to assess nodule\" -> \"Obtain a contrast-enhanced CT scan of the chest\" -> 90%",
+    "CHAIN: \"Nodule is isolated and asymptomatic\" -> \"Previous imaging may provide context\" -> \"Try to obtain previous chest radiographs for comparison\" -> \"May help determine stability or change over time\" -> 70%",
+    "CHAIN: \"Nodule has irregular features\" -> \"Suggests potential malignancy\" -> \"Need for definitive diagnosis\" -> \"Perform a flexible bronchoscopy with biopsy\" -> \"Invasive but necessary for diagnosis\" -> 75%",
+    "CHAIN: \"Patient denies recent illnesses and has no respiratory symptoms\" -> \"Less likely to be infectious\" -> \"Focus on malignancy evaluation\" -> \"Order a positron emission tomography scan of the chest\" -> \"Useful for assessing metabolic activity of the nodule\" -> 80%"
+  ],
+  "enhanced_information": "The patient presents with a 2 cm pulmonary nodule with poorly defined margins and irregular calcification, raising suspicion for malignancy, especially given her 20-pack-year smoking history. The most appropriate next step in evaluating this nodule is to obtain a contrast-enhanced CT scan of the chest, as it provides detailed imaging to assess the characteristics of the nodule and helps in determining the need for further intervention. While bronchoscopy could be considered for biopsy, it is more invasive and typically reserved for cases where imaging suggests a high likelihood of malignancy or when the nodule is centrally located. Previous chest radiographs may provide context but are less critical than obtaining a CT scan for immediate evaluation. A PET scan is useful for assessing metabolic activity but is not the first-line imaging modality in this scenario. Therefore, the consensus supports obtaining a contrast-enhanced CT scan as the most appropriate next step.",
+  "analysis": "The patient presents with a 2 cm pulmonary nodule that has poorly defined margins and irregular calcification, which raises significant concern for malignancy, especially given her smoking history. The most appropriate next step in evaluating this pulmonary nodule is to obtain a contrast-enhanced CT scan of the chest. This imaging modality provides detailed information about the nodule's characteristics, including size, shape, and any associated lymphadenopathy, which are critical for assessing the risk of malignancy and planning further management. While bronchoscopy could be considered for biopsy, it is more invasive and typically reserved for cases where imaging suggests a high likelihood of malignancy or when the nodule is centrally located. Previous chest radiographs may provide context but are less critical than obtaining a CT scan for immediate evaluation. A PET scan is useful for assessing metabolic activity but is not the first-line imaging modality in this scenario. Therefore, the consensus supports obtaining a contrast-enhanced CT scan as the most appropriate next step.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      2,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

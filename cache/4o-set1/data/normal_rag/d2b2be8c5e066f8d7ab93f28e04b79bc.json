@@ -1,0 +1,118 @@
+{
+  "question": "An 18-year-old boy who went to the emergency room due to pain and functional impotence in the right knee. After the biopsy study, the diagnosis of osteoblastic osteosarcoma of the distal femur is established. Given the type of tumor and the location, what treatment protocol is usually performed in most cases?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Amputation of the extremity.",
+    "opb": "Neoadjuvant chemotherapy - Surgery Adjuvant chemotherapy.",
+    "opc": "Radiation therapy and chemotherapy.",
+    "opd": "Surgery and radiotherapy."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Diagnosis",
+        "Philadelphia Chromosome",
+        "Bone Marrow",
+        "Treatment Protocols"
+      ],
+      [
+        "Treatment Protocols",
+        "Virus",
+        "Plant Growth Regulators",
+        "Body tissue",
+        "Neoadjuvant Chemotherapy"
+      ],
+      [
+        "Treatment Protocols",
+        "Virus",
+        "RUNX3 gene|RUNX3",
+        "Body tissue",
+        "Neoadjuvant Chemotherapy"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREVENTS",
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Diagnosis)-DIAGNOSES->(Philadelphia Chromosome)-PART_OF->(Bone Marrow)-LOCATION_OF->(Treatment Protocols)",
+      "(Treatment Protocols)-TREATS->(Virus)-LOCATION_OF->(Plant Growth Regulators)-PART_OF->(Body tissue)-LOCATION_OF->(Neoadjuvant Chemotherapy)",
+      "(Treatment Protocols)-PREVENTS->(Virus)-LOCATION_OF->(RUNX3 gene|RUNX3)-PART_OF->(Body tissue)-LOCATION_OF->(Neoadjuvant Chemotherapy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Diagnosis)-DIAGNOSES->(Philadelphia Chromosome)-PART_OF->(Bone Marrow)-LOCATION_OF->(Treatment Protocols)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Osteoblastic osteosarcoma diagnosis\" -> \"Common treatment protocol\" -> \"Neoadjuvant chemotherapy\" -> \"Surgery\" -> \"Adjuvant chemotherapy\" -> 95%",
+    "CHAIN: \"Osteoblastic osteosarcoma diagnosis\" -> \"Consider limb-sparing options\" -> \"Neoadjuvant chemotherapy\" -> \"Surgery\" -> \"Adjuvant chemotherapy\" -> 90%",
+    "CHAIN: \"Osteoblastic osteosarcoma diagnosis\" -> \"Evaluate tumor resectability\" -> \"Surgery\" -> \"Radiotherapy\" -> \"Possible\" -> 60%",
+    "CHAIN: \"Osteoblastic osteosarcoma diagnosis\" -> \"Assess need for limb preservation\" -> \"Amputation\" -> \"Possible\" -> 50%",
+    "CHAIN: \"Osteoblastic osteosarcoma diagnosis\" -> \"Consider radiation therapy\" -> \"Radiation therapy and chemotherapy\" -> \"Unclear\" -> 40%"
+  ],
+  "enhanced_information": "The standard treatment protocol for osteoblastic osteosarcoma, particularly in the distal femur, typically involves a combination of neoadjuvant chemotherapy, surgical resection, and adjuvant chemotherapy. This approach aims to shrink the tumor preoperatively, allow for limb-sparing surgery, and eliminate any remaining cancer cells postoperatively. Amputation is less common and usually considered only when limb-sparing surgery is not feasible. Radiation therapy is not a standard treatment for osteosarcoma due to its relative radioresistance. The retrieved evidence paths do not directly support the treatment protocols for osteosarcoma and are not relevant to the specific question. Therefore, the most consensus-aligned treatment option is neoadjuvant chemotherapy followed by surgery and adjuvant chemotherapy.",
+  "analysis": "The standard treatment protocol for osteoblastic osteosarcoma, especially in the distal femur, typically involves a combination of neoadjuvant chemotherapy, surgical resection, and adjuvant chemotherapy. This approach aims to shrink the tumor before surgery, remove it surgically, and then eliminate any remaining cancer cells with additional chemotherapy. Amputation is less common now due to advances in limb-sparing surgeries. Radiation therapy is not typically used as a primary treatment for osteosarcoma due to its relative resistance to radiation.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      100.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Leukocyte - Monocyte - Macrophage (MMHCC) INTERACTS_WITH CD47",
+    "Surgical Procedures, Elective TREATS ACID BASE STATUS",
+    "Nerve PART_OF Blood",
+    "Tegmen tympani LOCATION_OF Extravasation",
+    "TBATA gene|TBATA ASSOCIATED_WITH Memory impairment",
+    "Progesterone INTERACTS_WITH Testosterone",
+    "BSG ASSOCIATED_WITH Alzheimer's Disease",
+    "Fluid Management TREATS Tumor Lysis Syndrome",
+    "Chemotherapy Regimen TREATS Bone lesion",
+    "Neoadjuvant Chemotherapy TREATS Complication"
+  ]
+}

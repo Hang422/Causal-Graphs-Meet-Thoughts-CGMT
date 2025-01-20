@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250112_021620",
+  "model": "gpt-4o",
+  "interaction_type": "reasoning_chain",
+  "question_id": "c530feea",
+  "question_text": "A 25-year-old man, a military man by profession, is found in a coma with a temperature of 41ºC after vigorous physical exercise at noon on a hot day. His blood pressure despite the contribution of 3 liters of crystalloids is 80 mm Hg, with oliguria and lactate rise. His heart rate is 125 bpm with ECG showing a supraventricular tachycardia. In the analytical one highlights a prothrombin activity of 30% and INR of 3. Indicate the true answer:",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 25-year-old man, a military man by profession, is found in a coma with a temperature of 41ºC after vigorous physical exercise at noon on a hot day. His blood pressure despite the contribution of 3 liters of crystalloids is 80 mm Hg, with oliguria and lactate rise. His heart rate is 125 bpm with ECG showing a supraventricular tachycardia. In the analytical one highlights a prothrombin activity of 30% and INR of 3. Indicate the true answer:\n\n            ### Options\n    opa. The elevation of muscle enzymes is higher in the classic heat stroke than in heat stroke by exercise.\nopb. A lumbar puncture should be performed to diagnose the condition.\nopc. Digoxin must be administered to control the heart rate.\nopd. Peripheral vasoconstrictors should be avoided for the treatment of hypotension.\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Vigorous exercise\" -> \"increased body temperature\" -> \"heat stroke\" -> \"elevated muscle enzymes\" -> \"exercise-induced heat stroke\" -> \"higher muscle enzyme elevation than classic heat stroke\" -> 70%\n\nCHAIN: \"Coma\" -> \"high temperature\" -> \"possible heat stroke\" -> \"lumbar puncture\" -> \"not typically required for heat stroke diagnosis\" -> 60%\n\nCHAIN: \"Supraventricular tachycardia\" -> \"heart rate control needed\" -> \"digoxin\" -> \"not first-line for acute rate control\" -> \"beta-blockers or calcium channel blockers preferred\" -> 65%\n\nCHAIN: \"Hypotension\" -> \"peripheral vasoconstrictors\" -> \"risk of worsening heat stroke\" -> \"avoidance recommended\" -> 85%",
+  "metadata": {
+    "topic": "Medicine",
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-4o",
+    "temperature": 0.0
+  }
+}

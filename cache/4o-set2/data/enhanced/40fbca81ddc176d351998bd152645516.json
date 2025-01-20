@@ -1,0 +1,83 @@
+{
+  "question": "A patient consulted for a prominent cervical vascular beat. When listening to him, a high frequency diastolic murmur is heard. What is the cause?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Persistent ductus",
+    "opb": "Papillary muscle dysfunction.",
+    "opc": "Mitral stenosis",
+    "opd": "Aortic insufficiency"
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Diastolic murmur",
+        "Mitral Valve Stenosis"
+      ],
+      [
+        "Diastolic murmur",
+        "Aortic Valve Insufficiency"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Diastolic murmur)-ASSOCIATED_WITH->(Mitral Valve Stenosis)",
+      "(Diastolic murmur)-ASSOCIATED_WITH->(Aortic Valve Insufficiency)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Diastolic murmur)-ASSOCIATED_WITH->(Mitral Valve Stenosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Prominent cervical vascular beat\" -> \"increased pulse pressure\" -> \"aortic regurgitation\" -> \"high frequency diastolic murmur\" -> \"aortic insufficiency\" -> 95%",
+    "CHAIN: \"Prominent cervical vascular beat\" -> \"increased left atrial pressure\" -> \"mitral valve dysfunction\" -> \"diastolic murmur\" -> \"mitral stenosis\" -> 60%",
+    "CHAIN: \"Prominent cervical vascular beat\" -> \"left ventricular overload\" -> \"aortic valve dysfunction\" -> \"diastolic murmur\" -> \"aortic insufficiency\" -> 90%",
+    "CHAIN: \"Prominent cervical vascular beat\" -> \"continuous murmur\" -> \"persistent ductus arteriosus\" -> \"diastolic component\" -> \"possible\" -> 50%",
+    "CHAIN: \"Prominent cervical vascular beat\" -> \"increased left atrial pressure\" -> \"papillary muscle dysfunction\" -> \"systolic murmur\" -> \"unclear\" -> 40%"
+  ],
+  "enhanced_information": "The prominent cervical vascular beat and high frequency diastolic murmur are most consistent with aortic insufficiency (aortic regurgitation). This condition is characterized by increased pulse pressure due to the backflow of blood from the aorta into the left ventricle during diastole, leading to a high frequency diastolic murmur. The reasoning chain for aortic insufficiency aligns with standard medical consensus and is supported by the evidence of a diastolic murmur. Other options, such as mitral stenosis and persistent ductus arteriosus, do not typically present with a prominent cervical vascular beat or the specific type of murmur described. Papillary muscle dysfunction is associated with systolic murmurs, not diastolic. Therefore, the most likely cause of the symptoms is aortic insufficiency.",
+  "analysis": "The patient presents with a prominent cervical vascular beat and a high frequency diastolic murmur. These clinical findings are most consistent with aortic insufficiency (aortic regurgitation). Aortic insufficiency is characterized by the backflow of blood from the aorta into the left ventricle during diastole, leading to a high frequency diastolic murmur. The prominent cervical vascular beat is due to increased pulse pressure, a hallmark of aortic insufficiency. Other options, such as mitral stenosis, typically present with a low-pitched diastolic murmur and do not cause a prominent cervical vascular beat. Persistent ductus arteriosus usually presents with a continuous 'machinery' murmur, and papillary muscle dysfunction is associated with systolic murmurs. Therefore, the most likely cause of the symptoms is aortic insufficiency.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      50.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

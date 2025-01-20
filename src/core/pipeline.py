@@ -216,7 +216,7 @@ class QuestionProcessor:
 
                 if not self.complete_process_question(question, False):
                     continue
-                #
+
                 # self.compare_experiments(question)
                 self.normal_rag(question)
 
@@ -406,7 +406,7 @@ def compare_models(process_path):
     try:
         processor = QuestionProcessor(process_path)
         processor.process_from_cache(process_path)
-        # processor.batch_process_file('test2',10)
+        # processor.batch_process_file('test2',1000)
 
         STAGES = ['derelict', 'enhanced', 'knowledge_graph', 'remove_llm_enhanced', 'normal_rag', 'remove_enhancer']
         base_dir = process_path
@@ -466,7 +466,7 @@ def random_copy_json_files(src_dir: str, dest_dir: str, num_files: int) -> None:
 
 
 # Example usage:
-# random_copy_json_files("../../cache/set1/data/original", "../../cache/test4o/data/original", 100)
+# random_copy_json_files("../../cache/medinstruct/original", "../../cache/medinstruct1/data/original", 200)
 
 if __name__ == "__main__":
     # models = ['4', '4o', '4o-mini']
@@ -475,7 +475,9 @@ if __name__ == "__main__":
     # compare_models('set2')
     # compare_models('set3')
     config.openai['model'] = 'gpt-4o'
-    compare_models('test4o')
+    compare_models('4o-wrong')
+    # config.openai['model'] = 'gpt-3.5-turbo'
+    # compare_models('original-35')
     # config.openai['model'] = 'gpt-4-turbo'
     # compare_models('4-intersection')
     # compare_models('2-mini_1-4o')

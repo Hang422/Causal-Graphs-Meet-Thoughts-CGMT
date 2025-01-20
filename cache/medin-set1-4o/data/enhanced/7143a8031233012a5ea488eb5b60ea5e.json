@@ -1,0 +1,200 @@
+{
+  "question": "A 3-week old boy is brought to the physician for the evaluation of lethargy, recurrent vomiting, and poor weight gain since birth. Physical examination shows decreased skin turgor and a bulging frontal fontanelle. Serum studies show an ammonia concentration of 170 μmol/L (N < 30) and low serum citrulline levels. The oral intake of which of the following nutrients should be restricted in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Fructose",
+    "opb": "Protein",
+    "opc": "Vitamin A",
+    "opd": "Gluten",
+    "ope": "Lactose"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Vomiting, recurrent",
+        "Aspiration Pneumonia",
+        "Disease",
+        "Hyperammonemia"
+      ],
+      [
+        "Vomiting, recurrent",
+        "Failure to Thrive",
+        "Disease",
+        "Hyperammonemia"
+      ],
+      [
+        "Vomiting, recurrent",
+        "Aspiration Pneumonia",
+        "Infection",
+        "Hyperammonemia"
+      ],
+      [
+        "[D]Failure to gain weight",
+        "Infection",
+        "Hyperammonemia"
+      ],
+      [
+        "[D]Failure to gain weight",
+        "Respiratory Failure",
+        "Hyperammonemia"
+      ],
+      [
+        "[D]Failure to gain weight",
+        "Malnutrition",
+        "Hyperammonemia"
+      ],
+      [
+        "Lethargy",
+        "Single organ dysfunction",
+        "Disease",
+        "Hyperammonemia"
+      ],
+      [
+        "Lethargy",
+        "Intussusception",
+        "Disease",
+        "Hyperammonemia"
+      ],
+      [
+        "Hyperammonemia",
+        "Urea Cycle Disorders, Inborn"
+      ],
+      [
+        "Dehydration",
+        "Disease",
+        "Metabolic Diseases"
+      ],
+      [
+        "Metabolic Diseases",
+        "Hyperammonemia"
+      ],
+      [
+        "Ornithine carbamoyltransferase deficiency",
+        "Hyperammonemia",
+        "Urea Cycle Disorders, Inborn"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Vomiting, recurrent)-CAUSES->(Aspiration Pneumonia)-CAUSES->(Disease)-CAUSES->(Hyperammonemia)",
+      "(Vomiting, recurrent)-CAUSES->(Failure to Thrive)-CAUSES->(Disease)-CAUSES->(Hyperammonemia)",
+      "(Vomiting, recurrent)-CAUSES->(Aspiration Pneumonia)-CAUSES->(Infection)-CAUSES->(Hyperammonemia)",
+      "([D]Failure to gain weight)-CAUSES->(Infection)-CAUSES->(Hyperammonemia)",
+      "([D]Failure to gain weight)-CAUSES->(Respiratory Failure)-CAUSES->(Hyperammonemia)",
+      "([D]Failure to gain weight)-PREDISPOSES->(Malnutrition)-CAUSES->(Hyperammonemia)",
+      "(Lethargy)-CAUSES->(Single organ dysfunction)-CAUSES->(Disease)-CAUSES->(Hyperammonemia)",
+      "(Lethargy)-MANIFESTATION_OF->(Intussusception)-CAUSES->(Disease)-CAUSES->(Hyperammonemia)",
+      "(Hyperammonemia)-CAUSES->(Urea Cycle Disorders, Inborn)",
+      "(Dehydration)-CAUSES->(Disease)-CAUSES->(Metabolic Diseases)",
+      "(Metabolic Diseases)-CAUSES->(Hyperammonemia)",
+      "(Ornithine carbamoyltransferase deficiency)-CAUSES->(Hyperammonemia)-CAUSES->(Urea Cycle Disorders, Inborn)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vomiting, recurrent)-CAUSES->(Failure to Thrive)-CAUSES->(Disease)-CAUSES->(Hyperammonemia)",
+      "(Lethargy)-CAUSES->(Single organ dysfunction)-CAUSES->(Disease)-CAUSES->(Hyperammonemia)",
+      "(Lethargy)-MANIFESTATION_OF->(Intussusception)-CAUSES->(Disease)-CAUSES->(Hyperammonemia)",
+      "(Hyperammonemia)-CAUSES->(Urea Cycle Disorders, Inborn)",
+      "(Metabolic Diseases)-CAUSES->(Hyperammonemia)",
+      "(Vomiting, recurrent)-CAUSES->(Aspiration Pneumonia)-CAUSES->(Disease)-CAUSES->(Hyperammonemia)",
+      "(Vomiting, recurrent)-CAUSES->(Aspiration Pneumonia)-CAUSES->(Infection)-CAUSES->(Hyperammonemia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Lethargy, recurrent vomiting, poor weight gain\" -> \"Hyperammonemia\" -> \"Low serum citrulline\" -> \"Urea cycle disorder\" -> \"Protein intake restriction\" -> 95%",
+    "CHAIN: \"Bulging frontal fontanelle\" -> \"Increased intracranial pressure\" -> \"Hyperammonemia\" -> \"Urea cycle disorder\" -> \"Protein intake restriction\" -> 90%",
+    "CHAIN: \"Decreased skin turgor\" -> \"Dehydration\" -> \"Metabolic disorder\" -> \"Hyperammonemia\" -> \"Protein intake restriction\" -> 85%",
+    "CHAIN: \"Ammonia concentration 170 μmol/L\" -> \"Normal < 30 μmol/L\" -> \"Severe hyperammonemia\" -> \"Urea cycle defect\" -> \"Protein intake restriction\" -> 95%",
+    "CHAIN: \"Low serum citrulline\" -> \"Possible ornithine transcarbamylase deficiency\" -> \"Urea cycle disorder\" -> \"Protein intake restriction\" -> 90%"
+  ],
+  "enhanced_information": "The clinical presentation of lethargy, recurrent vomiting, poor weight gain, decreased skin turgor, and a bulging frontal fontanelle in a 3-week-old boy, along with laboratory findings of severe hyperammonemia (ammonia concentration of 170 μmol/L) and low serum citrulline levels, strongly suggests a urea cycle disorder. The most likely specific disorder is ornithine transcarbamylase deficiency, which is characterized by low citrulline levels. In urea cycle disorders, the body's ability to process nitrogen is impaired, leading to the accumulation of ammonia. The standard medical consensus for managing urea cycle disorders includes restricting protein intake to reduce the nitrogen load and prevent further hyperammonemia. The retrieved evidence paths support the link between hyperammonemia and urea cycle disorders, confirming the need for protein restriction. Other options such as fructose, vitamin A, gluten, and lactose are not directly related to the management of urea cycle disorders. Therefore, the nutrient that should be restricted in this patient is protein.",
+  "analysis": "The clinical presentation of lethargy, recurrent vomiting, poor weight gain, decreased skin turgor, and a bulging frontal fontanelle in a 3-week-old boy, along with laboratory findings of severe hyperammonemia and low serum citrulline levels, strongly suggests a urea cycle disorder. Specifically, the low citrulline levels point towards ornithine transcarbamylase deficiency, a common urea cycle disorder. In such disorders, the body's ability to process nitrogen is impaired, leading to the accumulation of ammonia. The standard medical management for urea cycle disorders includes restricting protein intake to reduce the nitrogen load and prevent further hyperammonemia. This is because proteins are the primary source of nitrogen in the diet. Other options such as fructose, vitamin A, gluten, and lactose are not directly related to the management of urea cycle disorders. Therefore, the nutrient that should be restricted in this patient is protein.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      1,
+      2,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      42.857142857142854,
+      14.285714285714285,
+      28.57142857142857,
+      0.0,
+      14.285714285714285
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

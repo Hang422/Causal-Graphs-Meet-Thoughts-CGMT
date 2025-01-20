@@ -1,0 +1,109 @@
+{
+  "question": "33-year-old man without a history of interest. He comes for a picture of anxiety and decreased mood that presents a couple of months that he relates to the difficulties he is having at work and at home. She says that her life has always been very chaotic, with frequent changes of employment, with difficulties in carrying out the tasks that she begins. His work is very messy, he makes constant mistakes due to absurd oversights and this leads to problems at work and in his family. He is forgetful, very distracted and is only able to concentrate on the things that really interest him. He has been drinking alcohol for years but in recent months this consumption has become more important and is causing problems at work and at home. It also recognizes having lost control with the game to the machines; every time he plays more, he has more difficulty stopping playing and he is not doing important things because he is playing. As far as his way of being is concerned, he is extroverted, sociable, somewhat stubborn and with frequent mood swings, and can go from being very euphoric to feeling very sad in a few minutes and several times a day, usually conditioned by the level of stimulation or gratification you have at that moment. Which of the following diagnoses is unlikely in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Adaptive disorder",
+    "opb": "Attention deficit disorder with hyperactivity.",
+    "opc": "Bipolar disorder.",
+    "opd": "Alcohol abuse."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Forgetful",
+        "Alzheimer's Disease",
+        "Disease",
+        "Hyperactive behavior"
+      ],
+      [
+        "Forgetful",
+        "Delirium",
+        "Disease",
+        "Hyperactive behavior"
+      ],
+      [
+        "Stimulation procedure",
+        "Disease",
+        "Bipolar Disorder"
+      ],
+      [
+        "Stimulation procedure",
+        "Obesity",
+        "Bipolar Disorder"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "TREATS",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Forgetful)-CAUSES->(Alzheimer's Disease)-CAUSES->(Disease)-PREDISPOSES->(Hyperactive behavior)",
+      "(Forgetful)-MANIFESTATION_OF->(Delirium)-MANIFESTATION_OF->(Disease)-PREDISPOSES->(Hyperactive behavior)",
+      "(Stimulation procedure)-CAUSES->(Disease)-COMPLICATES->(Bipolar Disorder)",
+      "(Stimulation procedure)-TREATS->(Obesity)-PREDISPOSES->(Bipolar Disorder)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Stimulation procedure)-CAUSES->(Disease)-COMPLICATES->(Bipolar Disorder)",
+      "(Stimulation procedure)-TREATS->(Obesity)-PREDISPOSES->(Bipolar Disorder)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Anxiety and decreased mood\" -> \"related to work and home difficulties\" -> \"adaptive disorder\" -> 70%",
+    "CHAIN: \"Frequent job changes\" -> \"difficulty completing tasks\" -> \"distracted and forgetful\" -> \"attention deficit disorder with hyperactivity\" -> 85%",
+    "CHAIN: \"Mood swings\" -> \"euphoria to sadness quickly\" -> \"conditioned by stimulation\" -> \"bipolar disorder\" -> 60%",
+    "CHAIN: \"Increased alcohol consumption\" -> \"problems at work and home\" -> \"alcohol abuse\" -> 90%"
+  ],
+  "enhanced_information": "In evaluating the likelihood of each diagnosis, we consider the following: 1) Adaptive disorder is characterized by emotional or behavioral symptoms in response to identifiable stressors, which aligns with the patient's anxiety and mood issues related to work and home difficulties. However, the presence of long-standing chaotic life patterns and impulsivity suggests a more chronic condition, making adaptive disorder less likely. 2) Attention deficit disorder with hyperactivity (ADHD) is supported by the patient's history of frequent job changes, difficulty completing tasks, distractibility, and forgetfulness. These symptoms are consistent with ADHD. 3) Bipolar disorder involves mood swings from euphoria to sadness, but these are typically not as rapid as described. The mood changes conditioned by stimulation suggest a different etiology, possibly related to ADHD or personality traits, rather than classic bipolar disorder. 4) Alcohol abuse is supported by the patient's increased alcohol consumption leading to problems at work and home. The retrieved evidence paths regarding stimulation and bipolar disorder are too broad and do not directly support or refute the diagnosis in this context. Therefore, the diagnosis of adaptive disorder is the least likely given the chronic nature of the patient's symptoms and behaviors.",
+  "analysis": "The patient's symptoms include anxiety, mood swings, impulsivity, distractibility, and a history of chaotic life patterns. These symptoms align with Attention Deficit Disorder with Hyperactivity (ADHD), as they include difficulty completing tasks, forgetfulness, and distractibility. The mood swings described are rapid and conditioned by external stimulation, which is more characteristic of ADHD or personality traits rather than classic Bipolar Disorder, where mood changes are typically more prolonged. Alcohol abuse is supported by the patient's increased consumption and related problems. Adaptive disorder is characterized by a response to identifiable stressors, but the chronic nature of the patient's symptoms and behaviors suggests a more ingrained condition, making adaptive disorder less likely. Therefore, based on the chronicity and nature of the symptoms, adaptive disorder is the least likely diagnosis.",
+  "answer": "opa",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

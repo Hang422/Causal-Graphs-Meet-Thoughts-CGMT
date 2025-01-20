@@ -1,0 +1,102 @@
+{
+  "question": "A 55-year-old woman, type 2 diabetic and obese, on treatment with metformin, with 8% Hb A1c, tells a story of recurrent urinary tract infections. Which of the following therapeutic options to associate with metformin considers the LESS adequate?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "DPP4 inhibitors.",
+    "opb": "GLP1 analogs.",
+    "opc": "Basal insulin",
+    "opd": "SGLT2 inhibitors."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Glycemic Control",
+        "Disease",
+        "Urinary tract infection"
+      ],
+      [
+        "Glycemic Control",
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Urinary tract infection"
+      ],
+      [
+        "Glycemic Control",
+        "Virus",
+        "Urinary tract infection"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Glycemic Control)-PREDISPOSES->(Disease)-CAUSES->(Urinary tract infection)",
+      "(Glycemic Control)-CAUSES->(Diabetes Mellitus, Insulin-Dependent)-PREDISPOSES->(Urinary tract infection)",
+      "(Glycemic Control)-TREATS->(Virus)-CAUSES->(Urinary tract infection)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Glycemic Control)-PREDISPOSES->(Disease)-CAUSES->(Urinary tract infection)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"SGLT2 inhibitors\" -> \"increased glucose excretion in urine\" -> \"higher urinary glucose levels\" -> \"increased risk of urinary tract infections\" -> 95%",
+    "CHAIN: \"DPP4 inhibitors\" -> \"increased incretin levels\" -> \"improved insulin secretion\" -> \"lower blood glucose\" -> \"no direct effect on urinary tract infections\" -> 85%",
+    "CHAIN: \"GLP1 analogs\" -> \"increased insulin secretion\" -> \"decreased appetite\" -> \"weight loss\" -> \"improved blood glucose control\" -> \"no direct effect on urinary tract infections\" -> 85%",
+    "CHAIN: \"Basal insulin\" -> \"increased insulin levels\" -> \"lower blood glucose\" -> \"no direct effect on urinary tract infections\" -> 80%"
+  ],
+  "enhanced_information": "In evaluating the therapeutic options for a type 2 diabetic patient with recurrent urinary tract infections, SGLT2 inhibitors are the least adequate choice. This is because SGLT2 inhibitors work by increasing glucose excretion in the urine, which raises urinary glucose levels and consequently increases the risk of urinary tract infections. This aligns with the consensus that higher urinary glucose predisposes individuals to infections. In contrast, DPP4 inhibitors, GLP1 analogs, and basal insulin primarily focus on improving blood glucose control without directly affecting urinary tract infection risk. DPP4 inhibitors enhance incretin levels to improve insulin secretion, GLP1 analogs promote weight loss and better glucose control, and basal insulin lowers blood glucose levels, none of which directly increase the risk of urinary tract infections. Therefore, SGLT2 inhibitors are the least suitable option for this patient due to their mechanism of action that predisposes to urinary tract infections.",
+  "analysis": "The patient is a 55-year-old woman with type 2 diabetes, obesity, and recurrent urinary tract infections (UTIs). Metformin is already part of her treatment. Among the options, SGLT2 inhibitors are known to increase the risk of genital and urinary tract infections due to their mechanism of action, which involves increasing glucose excretion in the urine. This makes them less suitable for a patient with recurrent UTIs. DPP4 inhibitors, GLP1 analogs, and basal insulin do not have this specific side effect profile related to UTIs. Therefore, SGLT2 inhibitors are the least adequate option to add to her treatment.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      100.0,
+      0.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": [
+    "Hyperglycemia PREDISPOSES Pneumonia",
+    "Metformin TREATS Diabetes",
+    "Diabetes Mellitus COMPLICATES Urinary tract infection",
+    "LHX1 gene|LHX1 CAUSES Myopathy",
+    "Structure of fascial sheath of eyeball LOCATION_OF Refractive Errors",
+    "NEB CAUSES Myopathies, Nemaline",
+    "Crural artery LOCATION_OF Medial calcification"
+  ]
+}

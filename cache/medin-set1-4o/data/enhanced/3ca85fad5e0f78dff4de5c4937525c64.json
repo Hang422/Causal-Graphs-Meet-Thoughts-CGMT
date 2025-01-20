@@ -1,0 +1,169 @@
+{
+  "question": "A 59-year-old man presents to his primary care provider with the complaint of daytime fatigue. He often has a headache that is worse in the morning and feels tired when he awakes. He perpetually feels fatigued even when he sleeps in. The patient lives alone, drinks 2-3 beers daily, drinks coffee regularly, and has a 10 pack-year smoking history. His temperature is 99.0°F (37.2°C), blood pressure is 180/110 mm Hg, pulse is 80/min, respirations are 13/min, and oxygen saturation is 98% on room air. Physical exam is notable for a BMI of 39 kg/m^2. The rest of the patient's pulmonary and neurological exams are unremarkable. Which of the following is the best next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Alcohol avoidance in the evening",
+    "opb": "Caffeine avoidance",
+    "opc": "CT head",
+    "opd": "Screening for depression",
+    "ope": "Weight loss"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Morning headache",
+        "Symptoms",
+        "Sleep Disorders"
+      ],
+      [
+        "Obesity",
+        "Sleep Apnea Syndromes"
+      ],
+      [
+        "Hypertensive disease",
+        "Obesity"
+      ],
+      [
+        "Caffeine",
+        "Disease",
+        "Sleep disturbances"
+      ],
+      [
+        "Caffeine",
+        "Hypertensive disease",
+        "Sleep disturbances"
+      ],
+      [
+        "Caffeine",
+        "Obesity",
+        "Sleep disturbances"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Morning headache)-CAUSES->(Symptoms)-CAUSES->(Sleep Disorders)",
+      "(Obesity)-CAUSES->(Sleep Apnea Syndromes)",
+      "(Hypertensive disease)-CAUSES->(Obesity)",
+      "(Caffeine)-PREDISPOSES->(Disease)-CAUSES->(Sleep disturbances)",
+      "(Caffeine)-TREATS->(Hypertensive disease)-CAUSES->(Sleep disturbances)",
+      "(Caffeine)-PREVENTS->(Obesity)-PREDISPOSES->(Sleep disturbances)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Sleep disturbances",
+        "Disease",
+        "Growth Disorders",
+        "Caffeine"
+      ],
+      [
+        "Sleep disturbances",
+        "Disease",
+        "Growth Disorders",
+        "Caffeine"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Sleep disturbances)-PREDISPOSES->(Disease)-CAUSES->(Growth Disorders)-ASSOCIATED_WITH->(Caffeine)",
+      "(Sleep disturbances)-CAUSES->(Disease)-CAUSES->(Growth Disorders)-ASSOCIATED_WITH->(Caffeine)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Caffeine)-PREDISPOSES->(Disease)-CAUSES->(Sleep disturbances)",
+      "(Caffeine)-TREATS->(Hypertensive disease)-CAUSES->(Sleep disturbances)",
+      "(Caffeine)-PREVENTS->(Obesity)-PREDISPOSES->(Sleep disturbances)",
+      "(Sleep disturbances)-CAUSES/PREDISPOSES->(Disease)-CAUSES->(Growth Disorders)-ASSOCIATED_WITH->(Caffeine)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Daytime fatigue\" -> \"Obstructive sleep apnea suspicion\" -> \"Weight loss recommended\" -> 80%",
+    "CHAIN: \"Daytime fatigue\" -> \"Morning headaches\" -> \"Possible sleep disorder\" -> \"Weight loss\" -> 75%",
+    "CHAIN: \"Daytime fatigue\" -> \"Obesity\" -> \"Increased risk of sleep apnea\" -> \"Weight loss\" -> 85%",
+    "CHAIN: \"Daytime fatigue\" -> \"Hypertension\" -> \"Obesity\" -> \"Weight loss\" -> 80%",
+    "CHAIN: \"Daytime fatigue\" -> \"Alcohol use\" -> \"Possible sleep disturbance\" -> \"Alcohol avoidance in the evening\" -> 60%",
+    "CHAIN: \"Daytime fatigue\" -> \"Caffeine use\" -> \"Possible sleep disturbance\" -> \"Caffeine avoidance\" -> 55%",
+    "CHAIN: \"Daytime fatigue\" -> \"Smoking history\" -> \"Possible sleep disturbance\" -> \"Weight loss\" -> 70%",
+    "CHAIN: \"Daytime fatigue\" -> \"Obesity\" -> \"Increased cardiovascular risk\" -> \"Weight loss\" -> 85%",
+    "CHAIN: \"Daytime fatigue\" -> \"Hypertension\" -> \"Possible secondary cause\" -> \"CT head\" -> 50%",
+    "CHAIN: \"Daytime fatigue\" -> \"Obesity\" -> \"Lifestyle modification\" -> \"Weight loss\" -> 80%"
+  ],
+  "enhanced_information": "The patient's symptoms of daytime fatigue, morning headaches, and obesity strongly suggest obstructive sleep apnea (OSA), a condition commonly associated with obesity and hypertension. Weight loss is a well-established management strategy for OSA, as it can reduce the severity of the condition and improve symptoms. The reasoning chains supporting weight loss are consistent with medical consensus, as obesity is a major risk factor for OSA and related cardiovascular issues. While alcohol and caffeine can contribute to sleep disturbances, the primary focus should be on addressing the underlying obesity, which is the most significant modifiable risk factor in this case. The retrieved evidence paths regarding caffeine are not directly relevant to the primary issue of OSA and obesity. Therefore, the best next step in management is weight loss, as it addresses the root cause of the patient's symptoms and associated health risks.",
+  "analysis": "The patient's symptoms of daytime fatigue, morning headaches, and obesity are highly suggestive of obstructive sleep apnea (OSA). OSA is commonly associated with obesity, hypertension, and lifestyle factors such as alcohol consumption. In this case, the patient's high BMI of 39 kg/m^2 is a significant risk factor for OSA. While alcohol and caffeine can contribute to sleep disturbances, the most effective long-term management strategy for OSA is weight loss, as it directly addresses the underlying obesity. Weight loss can lead to a reduction in the severity of OSA and improve related symptoms. Other options, such as alcohol or caffeine avoidance, may provide some benefit but do not address the primary issue. Screening for depression or a CT head is not immediately indicated based on the presented symptoms. Therefore, the best next step in management is weight loss.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      20.0,
+      20.0,
+      20.0,
+      0.0,
+      40.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

@@ -293,6 +293,7 @@ def merge_group(paths: List[str]) -> str:
 def main():
     """测试增强器功能"""
     # 创建测试用例
+    reasoning_chain = ["CHAIN: \"Ulcerative colitis\" -> \"chronic inflammation of colon\" -> \"bloody diarrhea\" -> \"abdominal pain\" -> \"increased risk of colon cancer\" -> 60%"]
     question = MedicalQuestion(
         question= "All of the following are true about Sickle cell disease, Except:",
     is_multi_choice= True,
@@ -302,50 +303,19 @@ def main():
         "opb": "RFLP results from a single base change",
         "opc": "'Sticky patch' is generated as a result of replacement of a non polar residue with a polar residue",
         "opd": "HbS confers resistance against malaria in heterozygotes"
-    }
+    },
+    reasoning_chain=reasoning_chain
     )
-
-    # 添加测试路径
-    question.causal_graph.paths = [
-      "(Mandibular right second primary molar)-LOCATION_OF->(Infection)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Valine)",
-      "(Mandibular right second primary molar)-LOCATION_OF->(Infection)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Valine)",
-      "(Mandibular right second primary molar)-LOCATION_OF->(Infection)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Valine)",
-      "(Mandibular right second primary molar)-LOCATION_OF->(Infection)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Glutamic Acid)",
-      "(Mandibular right second primary molar)-LOCATION_OF->(Infection)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Glutamic Acid)",
-      "(Mandibular right second primary molar)-LOCATION_OF->(Infection)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Glutamic Acid)",
-      "(Valine)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Glutamine)",
-      "(Valine)-TREATS->(Functional disorder)-ASSOCIATED_WITH->(Glutamine)",
-      "(Valine)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Glutamine)",
-      "(Glutamic Acid)-INTERACTS_WITH->(Cells and Chinese Hamster Ovary Cell)-INTERACTS_WITH->(Valine)",
-      "(Glutamic Acid)-CAUSES->(Excretory function)-ASSOCIATED_WITH->(Valine)",
-      "(Glutamic Acid)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Glutamine)",
-      "(Glutamic Acid)-INTERACTS_WITH->(Cells and PC12 Cells)-INTERACTS_WITH->(Glutamine)",
-      "(Sickle Cell Anemia)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Valine)",
-      "(Sickle Cell Anemia)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Valine)",
-      "(Sickle Cell Anemia)-ISA->(Pathogenesis)-ASSOCIATED_WITH->(Valine)",
-      "(Sickle Cell Anemia)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Glutamic Acid)",
-      "(Sickle Cell Anemia)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Glutamic Acid)",
-      "(Sickle Cell Anemia)-ISA->(Pathogenesis)-ASSOCIATED_WITH->(Glutamic Acid)",
-      "(Sickle Hemoglobin)-INTERACTS_WITH->(Cells and Hematopoietic stem cells)-PART_OF->(Arterial Media and Fetal Tissue)-LOCATION_OF->(Surgical Replantation)",
-      "(Polymerization)-CAUSES->(Adhesions and Thrombus)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage and Ligaments)-LOCATION_OF->(Surgical Replantation)",
-      "(Sickle Hemoglobin)-CAUSES->(Sickle Cell Anemia)",
-      "(Sickle Cell Anemia)-CAUSES->(Hypoxia)-ASSOCIATED_WITH->(Sickle Hemoglobin)",
-      "(Sickle Cell Anemia)-ISA->(Complication)-ASSOCIATED_WITH->(Sickle Hemoglobin)",
-      "(Sickle Cell Anemia)-PREDISPOSES->(Hypoxia)-ASSOCIATED_WITH->(Sickle Hemoglobin)",
-      "(Sickle Cell Anemia)-CAUSES->(Sickle Cell Trait)",
-      "(Abnormal Hemoglobins)-INTERACTS_WITH->(Erythrocytes)-INTERACTS_WITH->(Sickle Hemoglobin)",
-      "(Abnormal Hemoglobins)-CAUSES->(Symptoms)-CAUSES->(Malaria)-CAUSES->(Sickle Cell Trait)",
-      "(Sickle Hemoglobin)-CAUSES->(Symptoms)-CAUSES->(Malaria)",
-      "(Sickle Cell Trait)-PREDISPOSES->(Malaria)",
-      "(Malaria)-CAUSES->(Complication and Hypoxia)-ASSOCIATED_WITH->(Sickle Hemoglobin)",
-      "(Malaria)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(Sickle Hemoglobin)"
-    ]
+    from src.graphrag.query_processor import QueryProcessor
+    processor = QueryProcessor()
+    processor.process_chain_of_thoughts(question,'both',True)
 
     # 创建并运行增强器
     enhancer = EnhancedGraphEnhancer(keep_ratio=0.6)
+    print(f"Chain:{question.reasoning_chain}")
     print("\nBefore enhancement:")
-    print(f"Number of causal graph paths: {len(question.causal_graph.paths)}")
-    print(f"Number of knowledge graph paths: {len(question.knowledge_graph.paths)}")
+    print(f"Number of causal graph paths: {question.causal_graph.paths}")
+    print(f"Number of knowledge graph paths: {question.knowledge_graph.paths}")
 
     enhancer.enhance_graphs(question)
 

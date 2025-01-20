@@ -1,0 +1,150 @@
+{
+  "question": "A 28-year-old graduate student visits the university health clinic for 3-weeks of epigastric pain that worsens with meals, associated with retrosternal pain, early satiety, and bloating. She denies vomiting blood or blood in her stool. She has been consuming large volumes of caffeinated-drinks and fast-food for a month, as she has been studying for her tests. Her family and personal history are unremarkable with no history of gastrointestinal cancer. Her vital signs are within normal limits. Physical examination is only positive for a mild epigastric tenderness. Which of the following is the most appropriate approach in this case?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Upper endoscopy",
+    "opb": "Barium swallow radiograph",
+    "opc": "Fecal antigen testing for Helicobacter pylori",
+    "opd": "Treatment with omeprazole",
+    "ope": "Treatment with metoclopramide"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Early satiety",
+        "Gastroparesis",
+        "Gastritis"
+      ],
+      [
+        "[D]Epigastric pain",
+        "Disease",
+        "Gastritis"
+      ],
+      [
+        "[D]Epigastric pain",
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Gastritis"
+      ],
+      [
+        "[D]Epigastric pain",
+        "Iron deficiency anemia",
+        "Gastritis"
+      ],
+      [
+        "[D]Retrosternal chest pain",
+        "Cardiomyopathies",
+        "Disease",
+        "Gastritis"
+      ],
+      [
+        "[D]Retrosternal chest pain",
+        "Migraine Disorders",
+        "Disease",
+        "Gastritis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Early satiety)-CAUSES->(Gastroparesis)-PREDISPOSES->(Gastritis)",
+      "([D]Epigastric pain)-CAUSES->(Disease)-CAUSES->(Gastritis)",
+      "([D]Epigastric pain)-CAUSES->(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Gastritis)",
+      "([D]Epigastric pain)-CAUSES->(Iron deficiency anemia)-CAUSES->(Gastritis)",
+      "([D]Retrosternal chest pain)-CAUSES->(Cardiomyopathies)-CAUSES->(Disease)-CAUSES->(Gastritis)",
+      "([D]Retrosternal chest pain)-CAUSES->(Migraine Disorders)-MANIFESTATION_OF->(Disease)-CAUSES->(Gastritis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Tenderness epigastric",
+        "Symptoms",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Tenderness epigastric",
+        "Symptoms",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "CAUSES",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Tenderness epigastric)-ISA->(Symptoms)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Tenderness epigastric)-ISA->(Symptoms)-ASSOCIATED_WITH->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Early satiety)-CAUSES->(Gastroparesis)-PREDISPOSES->(Gastritis)",
+      "([D]Retrosternal chest pain)-CAUSES->(Cardiomyopathies)-CAUSES->(Disease)-CAUSES->(Gastritis)",
+      "([D]Retrosternal chest pain)-CAUSES->(Migraine Disorders)-MANIFESTATION_OF->(Disease)-CAUSES->(Gastritis)",
+      "(Tenderness epigastric)-ISA->(Symptoms)-ASSOCIATED_WITH/CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Caffeinated-drinks and fast-food consumption -> increased risk of gastritis -> 70% CHAIN: Gastritis symptoms (epigastric pain, retrosternal pain, early satiety, bloating) -> suggestive of gastritis -> 80% CHAIN: Epigastric tenderness on physical examination -> supports the diagnosis of gastritis -> 85% CHAIN: Symptoms worsening with meals -> indicative of gastritis -> 80% CHAIN: Absence of alarming symptoms (vomiting blood, blood in stool) -> less likely to have serious pathology -> 75% CHAIN: Upper endoscopy -> gold standard for diagnosing gastritis -> 70%"
+  ],
+  "enhanced_information": "The most appropriate approach in this case is upper endoscopy as the patient's symptoms, physical examination findings, and risk factors suggest gastritis. The absence of alarming symptoms makes serious pathology less likely, supporting a less invasive initial diagnostic approach.",
+  "analysis": "The core medical principle here is to consider the most appropriate initial diagnostic approach for a young patient with symptoms suggestive of gastritis. Given the patient's age, symptoms, risk factors, and absence of alarming symptoms, upper endoscopy is the most appropriate choice to directly visualize the gastric mucosa and potentially confirm the diagnosis of gastritis. This approach aligns with consensus guidelines for evaluating upper gastrointestinal symptoms.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

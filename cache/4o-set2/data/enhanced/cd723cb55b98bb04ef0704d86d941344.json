@@ -1,0 +1,146 @@
+{
+  "question": "What is the treatment of choice for a 38-year-old man diagnosed with Cushing's disease in relation to a pituitary macroadenoma 22 mm in diameter?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Initially try medical treatment and, if it is not effective, resort to surgery.",
+    "opb": "Adrenalectomy",
+    "opc": "Selective surgical resection of the adenoma.",
+    "opd": "Radiation therapy to try to decrease the tumor size."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "removal technique",
+        "Disease",
+        "Diabetic Nephropathy",
+        "physiologic resolution"
+      ],
+      [
+        "Adrenalectomy",
+        "Disease",
+        "paracrine",
+        "Adrenal Glands"
+      ],
+      [
+        "Adrenalectomy",
+        "Disease",
+        "Respiration",
+        "Adrenal Glands"
+      ],
+      [
+        "Adrenalectomy",
+        "Disease",
+        "Immunity",
+        "Adrenal Glands"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(removal technique)-CAUSES->(Disease)-CAUSES->(Diabetic Nephropathy)-PREDISPOSES->(physiologic resolution)",
+      "(Adrenalectomy)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Adrenal Glands)",
+      "(Adrenalectomy)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Adrenal Glands)",
+      "(Adrenalectomy)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Adrenal Glands)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Adrenal Glands",
+        "Hydrocortisone"
+      ],
+      [
+        "removal technique",
+        "Adverse effects",
+        "Hydrocortisone"
+      ],
+      [
+        "removal technique",
+        "Subgroup A Nepoviruses",
+        "Hydrocortisone"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Adrenal Glands)-LOCATION_OF->(Hydrocortisone)",
+      "(removal technique)-TREATS->(Adverse effects)-ASSOCIATED_WITH->(Hydrocortisone)",
+      "(removal technique)-TREATS->(Subgroup A Nepoviruses)-LOCATION_OF->(Hydrocortisone)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Adrenalectomy)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Adrenal Glands)",
+      "(Adrenalectomy)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Adrenal Glands)",
+      "(Adrenalectomy)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Adrenal Glands)",
+      "(removal technique)-CAUSES->(Disease)-CAUSES->(Diabetic Nephropathy)-PREDISPOSES->(physiologic resolution)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Cushing's disease\" -> \"pituitary macroadenoma\" -> \"surgical resection\" -> \"removal of adenoma\" -> \"resolution of hypercortisolism\" -> 95%",
+    "CHAIN: \"Cushing's disease\" -> \"pituitary macroadenoma\" -> \"medical treatment\" -> \"possible reduction in cortisol\" -> \"surgery if ineffective\" -> \"removal of adenoma\" -> 70%",
+    "CHAIN: \"Cushing's disease\" -> \"pituitary macroadenoma\" -> \"adrenalectomy\" -> \"removal of adrenal glands\" -> \"control of cortisol\" -> \"risk of Nelson's syndrome\" -> 60%",
+    "CHAIN: \"Cushing's disease\" -> \"pituitary macroadenoma\" -> \"radiation therapy\" -> \"possible tumor size reduction\" -> \"delayed effect\" -> \"surgery often preferred\" -> 50%"
+  ],
+  "enhanced_information": "The treatment of choice for a 38-year-old man with Cushing's disease due to a 22 mm pituitary macroadenoma is selective surgical resection of the adenoma. This approach directly addresses the source of excess ACTH production, leading to resolution of hypercortisolism, and is supported by standard medical consensus as the first-line treatment. Medical treatment can be considered as an adjunct or if surgery is contraindicated, but it is not the primary choice. Adrenalectomy is generally reserved for cases where pituitary surgery is not possible or has failed, due to the risk of Nelson's syndrome. Radiation therapy is typically used as an adjunctive treatment when surgery is not fully effective or feasible, due to its delayed effects. The evidence paths related to adrenalectomy and other processes do not directly support the primary treatment choice and are not relevant to the immediate management of a pituitary macroadenoma in Cushing's disease.",
+  "analysis": "Cushing's disease is caused by an ACTH-secreting pituitary adenoma, and the primary goal of treatment is to remove the source of excess ACTH production. The standard and most effective treatment for a pituitary adenoma causing Cushing's disease is selective surgical resection of the adenoma. This approach directly targets the tumor, offering the potential for a cure and resolution of hypercortisolism. Medical treatment is typically reserved for cases where surgery is contraindicated or as an adjunct to surgery. Adrenalectomy is not the first-line treatment due to the risk of Nelson's syndrome and is usually considered when pituitary surgery is not possible or has failed. Radiation therapy is generally used as an adjunctive treatment when surgery is not fully effective or feasible, due to its delayed effects. Therefore, the most likely correct option, based on medical consensus, is selective surgical resection of the adenoma.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      3,
+      0
+    ],
+    "coverage_rates": [
+      25.0,
+      0.0,
+      75.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

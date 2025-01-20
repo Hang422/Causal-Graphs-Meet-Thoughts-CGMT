@@ -837,17 +837,18 @@ Question: {question.question}
             bool: 是否是多跳问题
         """
         prompt = f"""
-        You are a system designed to determine if a question requires single-hop or multi-hop reasoning.
-
+        You are a system designed to determine whether a user question benefits from a multi-hop (multi-step) reasoning framework 
+        (Graph RAG + chain-of-thought). If a question can be answered by a single fact lookup, it does NOT require enhancement. 
+        
         Definitions:
         - Single-hop question:
-          1. Can be answered by recalling or looking up a single piece of knowledge.
-          2. Does not require multi-step reasoning or chaining multiple facts.
-
+          1. Answered by recalling or looking up a single piece of knowledge,
+          2. No need for chaining multiple facts.
+        
         - Multi-hop question:
-          1. Requires combining multiple pieces of knowledge.
-          2. Involves multi-step reasoning or inference.
-          3. Cannot be answered by a single fact lookup.
+          1. Must combine multiple pieces of knowledge or evidence,
+          2. Involves multi-step reasoning,
+          3. Cannot be answered by a single lookup.
 
         Question:
         {question.question}

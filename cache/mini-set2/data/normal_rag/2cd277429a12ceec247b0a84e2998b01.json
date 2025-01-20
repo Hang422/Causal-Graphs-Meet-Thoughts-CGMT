@@ -1,0 +1,242 @@
+{
+  "question": "A 24-year-old student of mathematics, who comes to the clinic to confirm the diagnostic suspicion after a consultation in Google. Since childhood he has episodes of intense pain, lancinating, in hands and feet, lasting between minutes and days. He relates them to physical exercise, stress or fever, and was diagnosed with \"growing pains\". Later he notes that he does not have sweating after playing sports. He has also observed punctate skin lesions, of a dark red color, in \"the swimsuit zone\", considered non-specific. Get the diagnosis after collecting three keys (painful neuropathy, hypohidrosis and angiokeratomas). What do you think is the diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Fabry disease.",
+    "opb": "Pompe disease.",
+    "opc": "Hereditary amyloidotic polyneuropathy.",
+    "opd": "Gaucher disease."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Neuralgia",
+        "Symptoms",
+        "Fabry Disease"
+      ],
+      [
+        "Neuralgia",
+        "Neuropathic pain",
+        "Fabry Disease"
+      ],
+      [
+        "Neuralgia",
+        "Pain",
+        "Fabry Disease"
+      ],
+      [
+        "Fabry Disease",
+        "Obstruction",
+        "Hypohidrosis"
+      ],
+      [
+        "Fabry Disease",
+        "Functional disorder",
+        "Hypohidrosis"
+      ],
+      [
+        "Pain",
+        "Metabolic Diseases"
+      ],
+      [
+        "Metabolic Diseases",
+        "Disease",
+        "Dysautonomia"
+      ],
+      [
+        "Metabolic Diseases",
+        "Hypertensive disease",
+        "Dysautonomia"
+      ],
+      [
+        "Chronic pain",
+        "Disease",
+        "Hereditary Diseases"
+      ],
+      [
+        "Chronic pain",
+        "Infection",
+        "Hereditary Diseases"
+      ],
+      [
+        "Hereditary Diseases",
+        "Symptoms"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Neuralgia)-CAUSES->(Symptoms)-CAUSES->(Fabry Disease)",
+      "(Neuralgia)-CAUSES->(Neuropathic pain)-CAUSES->(Fabry Disease)",
+      "(Neuralgia)-CAUSES->(Pain)-CAUSES->(Fabry Disease)",
+      "(Fabry Disease)-CAUSES->(Obstruction)-CAUSES->(Hypohidrosis)",
+      "(Fabry Disease)-CAUSES->(Functional disorder)-CAUSES->(Hypohidrosis)",
+      "(Pain)-CAUSES->(Metabolic Diseases)",
+      "(Metabolic Diseases)-CAUSES->(Disease)-CAUSES->(Dysautonomia)",
+      "(Metabolic Diseases)-CAUSES->(Hypertensive disease)-CAUSES->(Dysautonomia)",
+      "(Chronic pain)-CAUSES->(Disease)-CAUSES->(Hereditary Diseases)",
+      "(Chronic pain)-PREDISPOSES->(Infection)-COMPLICATES->(Hereditary Diseases)",
+      "(Hereditary Diseases)-CAUSES->(Symptoms)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pes",
+        "Neuralgia"
+      ],
+      [
+        "Hand",
+        "Neuralgia"
+      ],
+      [
+        "Lancinating pain",
+        "Neuropathy"
+      ],
+      [
+        "Fabry Disease",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Fabry Disease",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Pes)-LOCATION_OF->(Neuralgia)",
+      "(Hand)-LOCATION_OF->(Neuralgia)",
+      "(Lancinating pain)-ASSOCIATED_WITH->(Neuropathy)",
+      "(Fabry Disease)-CAUSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Fabry Disease)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pes)-LOCATION_OF->(Neuralgia)",
+      "(Fabry Disease)-CAUSES/PREDISPOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Pain)-CAUSES->(Metabolic Diseases)",
+      "(Lancinating pain)-ASSOCIATED_WITH->(Neuropathy)",
+      "(Fabry Disease)-CAUSES->(Obstruction)-CAUSES->(Hypohidrosis)",
+      "(Neuralgia)-CAUSES->(Symptoms)-CAUSES->(Fabry Disease)",
+      "(Neuralgia)-CAUSES->(Neuropathic pain)-CAUSES->(Fabry Disease)",
+      "(Neuralgia)-CAUSES->(Pain)-CAUSES->(Fabry Disease)",
+      "(Hereditary Diseases)-CAUSES->(Symptoms)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Intense pain in hands and feet\" -> \"suggestive of neuropathic pain\" -> \"associated with Fabry disease\" -> \"hypohidrosis noted\" -> \"angiokeratomas present\" -> \"diagnosis of Fabry disease\" -> 95%",
+    "CHAIN: \"Episodes of lancinating pain\" -> \"possible neuropathy\" -> \"lack of sweating after exercise\" -> \"hypohidrosis indicates autonomic dysfunction\" -> \"punctate dark red skin lesions\" -> \"angiokeratomas are characteristic of Fabry disease\" -> \"high likelihood of Fabry disease\" -> 90%",
+    "CHAIN: \"Painful episodes related to stress and exercise\" -> \"could indicate a metabolic disorder\" -> \"absence of sweating suggests dysautonomia\" -> \"dark red skin lesions observed\" -> \"angiokeratomas are a key feature\" -> \"Fabry disease is a strong candidate\" -> 85%",
+    "CHAIN: \"Chronic pain episodes since childhood\" -> \"suggests a genetic condition\" -> \"hypohidrosis is a symptom\" -> \"punctate lesions in the swimsuit area\" -> \"angiokeratomas align with Fabry disease\" -> \"high confidence in Fabry disease diagnosis\" -> 92%"
+  ],
+  "enhanced_information": "The patient's symptoms of intense, lancinating pain in the hands and feet, hypohidrosis (lack of sweating), and the presence of punctate dark red skin lesions (angiokeratomas) strongly suggest Fabry disease. Fabry disease is a genetic lysosomal storage disorder caused by a deficiency in the enzyme alpha-galactosidase A, leading to neuropathic pain, autonomic dysfunction (evidenced by hypohidrosis), and characteristic skin lesions. The reasoning chains consistently point to Fabry disease as the most likely diagnosis, supported by the specific symptoms presented. Other options like Pompe disease, hereditary amyloidotic polyneuropathy, and Gaucher disease do not align as closely with the combination of symptoms observed in this patient.",
+  "analysis": "The symptoms described in the vignette align closely with Fabry disease, which is characterized by episodes of intense pain (often neuropathic), hypohidrosis (reduced sweating), and angiokeratomas (punctate skin lesions). The patient's history of pain associated with physical exertion, stress, or fever, along with the specific skin lesions in the 'swimsuit zone', further supports this diagnosis. The other options, such as Pompe disease, hereditary amyloidotic polyneuropathy, and Gaucher disease, do not typically present with this specific combination of symptoms. Therefore, Fabry disease is the most likely diagnosis.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4,
+      1,
+      2,
+      3
+    ],
+    "coverage_rates": [
+      40.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "total_successes": 10
+  },
+  "normal_results": [
+    "Pain ASSOCIATED_WITH Skin lesion",
+    "Chronic pain MANIFESTATION_OF Fibromyalgia",
+    "Ventral Tegmental Area PART_OF Olfactory tubercle",
+    "Pain CAUSES Fabry Disease",
+    "Pain ASSOCIATED_WITH Fabry Disease",
+    "Endoscopy of ileum ISA Biopsy",
+    "Blood iron DIAGNOSES Icterus",
+    "Edema MANIFESTATION_OF Capillary Leak Syndrome",
+    "Asthma CAUSES Early Awakening",
+    "Pain PREDISPOSES Neuropathy",
+    "multiple pathologies CAUSES Pain",
+    "Heat and moisture exchanger PREVENTS Dehydration"
+  ]
+}

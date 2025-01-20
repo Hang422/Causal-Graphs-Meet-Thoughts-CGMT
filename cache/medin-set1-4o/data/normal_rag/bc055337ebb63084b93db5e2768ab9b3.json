@@ -1,0 +1,145 @@
+{
+  "question": "A 35-year-old man, with a history of neurofibromatosis type 2 (NF2) diagnosed 2 years ago, presents with hearing loss in the right ear and tinnitus. Patient says that symptoms have been gradually progressive. He has difficulty hearing speech as well as loud sounds. He also gives a history of occasional headaches and vertigo on and off for 1 month, which is unresponsive to paracetamol. His vitals include: blood pressure 110/78 mm Hg, temperature 36.5°C (97.8°F), pulse 78/min and respiratory rate 11/min. Tuning fork tests reveal the following:\n  Left Right\nRinne’s test  Air conduction > bone conduction  Air conduction > bone conduction\nWeber test Lateralized to left ear \nOther physical examination findings are within normal limits. An MRI of the head is ordered which is as shown in image 1. A biopsy is done which shows cells staining positive for S100 but negative for glial fibrillary acidic protein (GFAP). The histopathological slide is shown in image 2. What is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Glioblastoma multiforme",
+    "opb": "Hemangioblastoma",
+    "opc": "Schwannoma",
+    "opd": "Meningioma",
+    "ope": "Craniopharyngioma"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Deafness",
+        "Disease",
+        "Adhesions",
+        "Magnetic Resonance Imaging"
+      ],
+      [
+        "Tinnitus",
+        "Headache",
+        "Magnetic Resonance Imaging"
+      ],
+      [
+        "Tinnitus",
+        "Vertigo"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Deafness)-CAUSES->(Disease)-CAUSES->(Adhesions)-CAUSES->(Magnetic Resonance Imaging)",
+      "(Tinnitus)-CAUSES->(Headache)-CAUSES->(Magnetic Resonance Imaging)",
+      "(Tinnitus)-CAUSES->(Vertigo)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Deafness",
+        "Hearing",
+        "Entire ear",
+        "Weber's test"
+      ],
+      [
+        "Tinnitus",
+        "Hearing",
+        "Entire ear",
+        "Weber's test"
+      ],
+      [
+        "Tinnitus",
+        "physiological aspects",
+        "Hand",
+        "Weber's test"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Deafness)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Entire ear)-LOCATION_OF->(Weber's test)",
+      "(Tinnitus)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Entire ear)-LOCATION_OF->(Weber's test)",
+      "(Tinnitus)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Hand)-LOCATION_OF->(Weber's test)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Tinnitus)-CAUSES->(Vertigo)",
+      "(Deafness)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Entire ear)-LOCATION_OF->(Weber's test)",
+      "(Tinnitus)-CAUSES->(Headache)-CAUSES->(Magnetic Resonance Imaging)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Neurofibromatosis type 2\" -> \"bilateral vestibular schwannomas common\" -> \"hearing loss and tinnitus\" -> \"MRI shows mass at cerebellopontine angle\" -> \"biopsy positive for S100\" -> \"negative for GFAP\" -> \"Schwannoma\" -> 95%",
+    "CHAIN: \"Hearing loss and tinnitus\" -> \"Weber test lateralized to left ear\" -> \"right ear sensorineural hearing loss\" -> \"common in vestibular schwannoma\" -> \"biopsy positive for S100\" -> \"Schwannoma\" -> 90%",
+    "CHAIN: \"Gradual progressive symptoms\" -> \"right ear hearing loss and tinnitus\" -> \"occasional headaches and vertigo\" -> \"consistent with vestibular schwannoma\" -> \"biopsy positive for S100\" -> \"Schwannoma\" -> 92%",
+    "CHAIN: \"Neurofibromatosis type 2\" -> \"predisposition to schwannomas\" -> \"MRI shows mass\" -> \"biopsy positive for S100\" -> \"negative for GFAP\" -> \"Schwannoma\" -> 93%"
+  ],
+  "enhanced_information": "The patient has neurofibromatosis type 2 (NF2), which is strongly associated with bilateral vestibular schwannomas. The symptoms of hearing loss, tinnitus, headaches, and vertigo are consistent with a vestibular schwannoma. The tuning fork tests indicate right ear sensorineural hearing loss, which aligns with the common presentation of vestibular schwannomas. The MRI likely shows a mass at the cerebellopontine angle, a typical location for schwannomas. The biopsy results, positive for S100 and negative for GFAP, further support the diagnosis of schwannoma, as S100 is a marker for neural crest-derived tumors like schwannomas, while GFAP is typically negative in these tumors. The retrieved evidence paths, while broad, do not contradict this reasoning. Therefore, the most likely diagnosis is schwannoma.",
+  "analysis": "The patient's symptoms and history are consistent with a vestibular schwannoma, which is common in neurofibromatosis type 2 (NF2). The hearing loss, tinnitus, and vertigo are typical symptoms of a schwannoma affecting the vestibulocochlear nerve. The tuning fork tests indicate sensorineural hearing loss in the right ear, which aligns with a schwannoma. The biopsy results showing cells positive for S100 but negative for GFAP further support the diagnosis of schwannoma, as S100 is a marker for neural crest-derived cells, including Schwann cells, while GFAP is a marker for glial cells. Therefore, the most likely diagnosis is schwannoma.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      2,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      40.0,
+      40.0,
+      20.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "Disease CAUSES Neural hearing loss",
+    "Disease PREDISPOSES Deafness",
+    "Neonatal Jaundice PREDISPOSES Hearing problem",
+    "Hearing Tests DIAGNOSES Disease",
+    "voltage gated channel PROCESS_OF Dorsal column",
+    "Disease PREDISPOSES Sensorineural Hearing Loss",
+    "Rare Diseases PREDISPOSES Cataract",
+    "Tinnitus PREDISPOSES Disease"
+  ]
+}

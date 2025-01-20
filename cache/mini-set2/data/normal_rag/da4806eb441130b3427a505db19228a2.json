@@ -1,0 +1,132 @@
+{
+  "question": "A 35-year-old woman undergoes a Pap smear after 5 years without prior control and the diagnosis is SIL (high-grade intraepithelial lesion). The correct behavior to follow is:",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Make colposcopy. If it is normal, schedule a conization.",
+    "opb": "Confirm the cytology with a biopsy of the cervix under colposcopic control.",
+    "opc": "Repeat cytology to confirm diagnosis.",
+    "opd": "Make HPV virus typing. Perform conization if the HPV test is positive for high-risk virus."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Colposcopy",
+        "Inflammation",
+        "Genes",
+        "Entire diaphragm",
+        "Conization"
+      ],
+      [
+        "Colposcopy",
+        "Inflammation",
+        "Genes",
+        "Entire diaphragm",
+        "Conization"
+      ],
+      [
+        "Cytological Techniques",
+        "Recurrence (disease attribute)",
+        "Genes",
+        "Epithelium",
+        "Colposcopy"
+      ],
+      [
+        "Cytological Techniques",
+        "Complication",
+        "Genes",
+        "Epithelium",
+        "Colposcopy"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Colposcopy)-DIAGNOSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Entire diaphragm)-LOCATION_OF->(Conization)",
+      "(Colposcopy)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Entire diaphragm)-LOCATION_OF->(Conization)",
+      "(Cytological Techniques)-DIAGNOSES->(Recurrence (disease attribute))-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Colposcopy)",
+      "(Cytological Techniques)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Colposcopy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Colposcopy)-DIAGNOSES/PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Entire diaphragm)-LOCATION_OF->(Conization)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"High-grade intraepithelial lesion (SIL) detected\" -> \"Need for further evaluation\" -> \"Colposcopy is indicated\" -> \"If colposcopy is normal, conization may be necessary\" -> 85%",
+    "CHAIN: \"High-grade intraepithelial lesion (SIL) detected\" -> \"Confirmatory biopsy is required\" -> \"Biopsy performed under colposcopic control\" -> \"Results will guide further management\" -> 90%",
+    "CHAIN: \"High-grade intraepithelial lesion (SIL) detected\" -> \"Repeat cytology is not standard practice\" -> \"Management typically involves colposcopy\" -> \"Confidence in this approach is high\" -> 75%",
+    "CHAIN: \"High-grade intraepithelial lesion (SIL) detected\" -> \"HPV typing may be considered\" -> \"If high-risk HPV is positive, conization is indicated\" -> \"This approach is supported by guidelines\" -> 80%"
+  ],
+  "enhanced_information": "In the case of a 35-year-old woman with a diagnosis of high-grade intraepithelial lesion (SIL) from a Pap smear, the standard management involves further evaluation through colposcopy. This is supported by guidelines which indicate that colposcopy is necessary to assess the extent of the lesion and to obtain a biopsy if indicated. If the colposcopy results are normal, conization may be considered, but this is not the first step. Confirmatory biopsy under colposcopic control is also a critical step to guide further management, as it provides definitive histological diagnosis. Repeating cytology is not standard practice in this scenario, as it delays necessary intervention. HPV typing can be useful, particularly if high-risk HPV is detected, as it may influence the decision for conization. Therefore, the most appropriate option is to confirm the cytology with a biopsy under colposcopic control, as this aligns best with current medical consensus.",
+  "analysis": "The diagnosis of a high-grade intraepithelial lesion (SIL) from a Pap smear indicates a significant risk for cervical cancer. The standard approach following such a diagnosis is to confirm the cytological findings with a biopsy under colposcopic control. This allows for direct visualization of the cervix and targeted biopsy of any abnormal areas. Options that suggest merely repeating cytology or HPV typing without confirming the diagnosis through biopsy are not aligned with current guidelines. Therefore, the best-supported option is to confirm the cytology with a biopsy under colposcopic control.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Colposcopy DIAGNOSES Disease",
+    "Prophylactic treatment TREATS Chronic Disease",
+    "Pap smear DIAGNOSES Disease Progression",
+    "Pap smear DIAGNOSES Symptoms",
+    "Pap smear DIAGNOSES Hyperplasia",
+    "Screening Method DIAGNOSES HPV-High Risk",
+    "Biopsy DIAGNOSES HPV-High Risk",
+    "Chemotherapeutic agent TREATS Ototoxicity",
+    "Early Diagnosis DIAGNOSES HPV-High Risk",
+    "Colposcopy TREATS Symptoms",
+    "Lectin INTERACTS_WITH thymocyte"
+  ]
+}

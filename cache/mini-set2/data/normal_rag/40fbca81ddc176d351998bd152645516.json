@@ -1,0 +1,137 @@
+{
+  "question": "A patient consulted for a prominent cervical vascular beat. When listening to him, a high frequency diastolic murmur is heard. What is the cause?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Persistent ductus",
+    "opb": "Papillary muscle dysfunction.",
+    "opc": "Mitral stenosis",
+    "opd": "Aortic insufficiency"
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Blood Circulation",
+        "Pancreas",
+        "Pancreatitis",
+        "Disease",
+        "Aortic Valve Insufficiency"
+      ],
+      [
+        "Blood Circulation",
+        "Pancreas",
+        "Pancreatitis",
+        "Infection",
+        "Aortic Valve Insufficiency"
+      ],
+      [
+        "Aortic Valve Insufficiency",
+        "Disease",
+        "Mitral Valve Stenosis"
+      ],
+      [
+        "Aortic Valve Insufficiency",
+        "Endocarditis",
+        "Mitral Valve Stenosis"
+      ],
+      [
+        "Aortic Valve Insufficiency",
+        "Obstruction",
+        "Mitral Valve Stenosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Disease)-CAUSES->(Aortic Valve Insufficiency)",
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Infection)-CAUSES->(Aortic Valve Insufficiency)",
+      "(Aortic Valve Insufficiency)-CAUSES->(Disease)-CAUSES->(Mitral Valve Stenosis)",
+      "(Aortic Valve Insufficiency)-CAUSES->(Endocarditis)-CAUSES->(Mitral Valve Stenosis)",
+      "(Aortic Valve Insufficiency)-CAUSES->(Obstruction)-CAUSES->(Mitral Valve Stenosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Aortic Valve Insufficiency)-CAUSES->(Disease)-CAUSES->(Mitral Valve Stenosis)",
+      "(Aortic Valve Insufficiency)-CAUSES->(Endocarditis)-CAUSES->(Mitral Valve Stenosis)",
+      "(Aortic Valve Insufficiency)-CAUSES->(Obstruction)-CAUSES->(Mitral Valve Stenosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Prominent cervical vascular beat\" -> \"suggests increased blood flow\" -> \"high frequency diastolic murmur\" -> \"indicates regurgitant flow\" -> \"consistent with aortic insufficiency\" -> 85%",
+    "CHAIN: \"High frequency diastolic murmur\" -> \"suggests abnormal blood flow during diastole\" -> \"could indicate aortic regurgitation\" -> \"aortic insufficiency is a common cause\" -> 90%",
+    "CHAIN: \"Cervical vascular beat\" -> \"may indicate increased stroke volume\" -> \"high frequency diastolic murmur\" -> \"often associated with aortic insufficiency\" -> 80%",
+    "CHAIN: \"Diastolic murmur\" -> \"suggests backward flow of blood\" -> \"common in aortic insufficiency\" -> \"less likely in mitral stenosis\" -> 75%"
+  ],
+  "enhanced_information": "The prominent cervical vascular beat and high frequency diastolic murmur are indicative of aortic insufficiency (aortic regurgitation). The reasoning chains consistently point to the association between increased stroke volume and the characteristic diastolic murmur, which is common in aortic insufficiency. The evidence paths regarding aortic valve insufficiency do not contradict the consensus but rather reinforce the understanding that aortic insufficiency is a primary cause of such clinical findings. Mitral stenosis is less likely to present with a high frequency diastolic murmur, making aortic insufficiency the most plausible cause.",
+  "analysis": "The presence of a prominent cervical vascular beat and a high frequency diastolic murmur suggests a hemodynamic condition related to the heart valves. Aortic insufficiency is known to cause a diastolic murmur due to the backflow of blood from the aorta into the left ventricle during diastole. This is consistent with the symptoms described. Other options like mitral stenosis typically present with a diastolic murmur but are not associated with a prominent cervical vascular beat. Therefore, aortic insufficiency is the most likely cause.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Antiinflammatory therapy TREATS Crohn's disease",
+    "Mumps CAUSES Hypogonadism",
+    "SUPPLY, NOT OTHERWISE SPECIFIED CAUSES Hepatitis",
+    "Symptoms CAUSES Diabetes Mellitus",
+    "Diastolic dysfunction PREDISPOSES Symptoms",
+    "Aortic Valve Insufficiency CAUSES Heart murmur",
+    "Vasopressin Antagonist TREATS Hypernatremia",
+    "Coronary Stenosis CAUSES Diastolic murmur",
+    "Lafora Disease CAUSES Epilepsies, Myoclonic",
+    "Disease PREDISPOSES Diastolic dysfunction",
+    "Tomography, Emission-Computed, Single-Photon DIAGNOSES Coronary Stenosis",
+    "Ganglionic Blockers INTERACTS_WITH Anesthetics"
+  ]
+}

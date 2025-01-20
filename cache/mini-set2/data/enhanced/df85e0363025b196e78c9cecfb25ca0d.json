@@ -1,0 +1,148 @@
+{
+  "question": "Point out the INCORRECT response regarding infection by human immunodeficiency virus (HIV) and pregnancy:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "The scheduled cesarean does not reduce the vertical transmission rate of the virus.",
+    "opb": "The pregnant woman will be offered the possibility of performing antiretroviral treatment whatever her stage of the disease, in order to prevent the vertical transmission of the virus.",
+    "opc": "Vertical transmission of the virus is associated with maternal viral load.",
+    "opd": "HIV serology must be offered to every pregnant woman at the first consultation, whatever the time of pregnancy.",
+    "ope": "Women infected with HIV have an increased risk of spontaneous abortions, intrauterine fetal death and intrauterine growth retardation."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "disease stage",
+        "Disease",
+        "Vertical Disease Transmission"
+      ],
+      [
+        "disease stage",
+        "Hepatitis B, Chronic",
+        "Vertical Disease Transmission"
+      ],
+      [
+        "disease stage",
+        "Infection",
+        "Vertical Disease Transmission"
+      ],
+      [
+        "HIV",
+        "Disease",
+        "Spontaneous abortion"
+      ],
+      [
+        "HIV",
+        "Infection",
+        "Spontaneous abortion"
+      ],
+      [
+        "HIV",
+        "Hypertensive disease",
+        "Spontaneous abortion"
+      ],
+      [
+        "Spontaneous abortion",
+        "Fetal Death"
+      ],
+      [
+        "Fetal Death",
+        "Fetal Growth Retardation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(disease stage)-CAUSES->(Disease)-CAUSES->(Vertical Disease Transmission)",
+      "(disease stage)-CAUSES->(Hepatitis B, Chronic)-CAUSES->(Vertical Disease Transmission)",
+      "(disease stage)-TREATS->(Infection)-CAUSES->(Vertical Disease Transmission)",
+      "(HIV)-CAUSES->(Disease)-CAUSES->(Spontaneous abortion)",
+      "(HIV)-CAUSES->(Infection)-CAUSES->(Spontaneous abortion)",
+      "(HIV)-CAUSES->(Hypertensive disease)-CAUSES->(Spontaneous abortion)",
+      "(Spontaneous abortion)-CAUSES->(Fetal Death)",
+      "(Fetal Death)-COMPLICATES->(Fetal Growth Retardation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fetal Death)-COMPLICATES->(Fetal Growth Retardation)",
+      "(HIV)-CAUSES->(Disease)-CAUSES->(Spontaneous abortion)",
+      "(HIV)-CAUSES->(Infection)-CAUSES->(Spontaneous abortion)",
+      "(Spontaneous abortion)-CAUSES->(Fetal Death)",
+      "(disease stage)-CAUSES->(Hepatitis B, Chronic)-CAUSES->(Vertical Disease Transmission)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Scheduled cesarean\" -> \"reduces vertical transmission rate\" -> \"contradicts statement\" -> 85%",
+    "CHAIN: \"Antiretroviral treatment\" -> \"offered to pregnant women\" -> \"regardless of disease stage\" -> \"prevents vertical transmission\" -> 90%",
+    "CHAIN: \"Maternal viral load\" -> \"associated with vertical transmission\" -> \"higher viral load increases risk\" -> 95%",
+    "CHAIN: \"HIV serology\" -> \"must be offered to every pregnant woman\" -> \"at first consultation\" -> \"regardless of pregnancy stage\" -> \"unclear\" -> 70%",
+    "CHAIN: \"Women infected with HIV\" -> \"increased risk of spontaneous abortions\" -> \"increased risk of intrauterine fetal death\" -> \"increased risk of intrauterine growth retardation\" -> 90%"
+  ],
+  "enhanced_information": "The incorrect response regarding HIV infection and pregnancy is option 'opa': 'The scheduled cesarean does not reduce the vertical transmission rate of the virus.' This statement contradicts consensus, as scheduled cesarean delivery is known to reduce the risk of vertical transmission of HIV, particularly when the maternal viral load is high. Option 'opb' is correct; antiretroviral treatment is indeed offered to all pregnant women with HIV, regardless of disease stage, to prevent vertical transmission. Option 'opc' is also correct; vertical transmission is associated with maternal viral load, with higher viral loads increasing the risk. Option 'opd' is correct; HIV serology should be offered to every pregnant woman at the first consultation, regardless of the timing in pregnancy. Lastly, option 'ope' is correct; women infected with HIV do have an increased risk of spontaneous abortions, intrauterine fetal death, and intrauterine growth retardation. Therefore, the correct identification of the incorrect statement is option 'opa'.",
+  "analysis": "The question asks to identify the incorrect statement regarding HIV infection and pregnancy. Option 'opa' states that 'The scheduled cesarean does not reduce the vertical transmission rate of the virus.' This is incorrect because scheduled cesarean delivery is known to significantly reduce the risk of vertical transmission, especially when the maternal viral load is high. The other options are consistent with established medical guidelines: 'opb' correctly states that antiretroviral treatment is offered to all pregnant women with HIV to prevent vertical transmission; 'opc' correctly notes that vertical transmission is associated with maternal viral load; 'opd' correctly indicates that HIV serology should be offered to every pregnant woman; and 'ope' correctly states that women with HIV have an increased risk of adverse pregnancy outcomes. Therefore, the incorrect response is clearly option 'opa'.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      0,
+      0,
+      3
+    ],
+    "coverage_rates": [
+      0.0,
+      25.0,
+      0.0,
+      0.0,
+      75.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

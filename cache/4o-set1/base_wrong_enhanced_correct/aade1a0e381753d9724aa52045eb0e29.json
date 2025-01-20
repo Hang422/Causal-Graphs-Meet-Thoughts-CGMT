@@ -1,0 +1,153 @@
+{
+  "question": "Question linked to the image nº24 Brain CT scan performed as a matter of urgency in the case of cranioencephalic traumatism. What is your diagnosis?:",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Acute subdural hematoma.",
+    "opb": "Epidural hematoma.",
+    "opc": "Cortical injury (cerebral contusion).",
+    "opd": "Intraventricular hemorrhage."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ventricular dilatation",
+        "Hydrocephalus",
+        "Ventricular hemorrhage"
+      ],
+      [
+        "Ventricular dilatation",
+        "Hypertrophy",
+        "Ventricular hemorrhage"
+      ],
+      [
+        "Ventricular dilatation",
+        "Disease",
+        "Ventricular hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Ventricular dilatation)-CAUSES->(Hydrocephalus)-CAUSES->(Ventricular hemorrhage)",
+      "(Ventricular dilatation)-CAUSES->(Hypertrophy)-COMPLICATES->(Ventricular hemorrhage)",
+      "(Ventricular dilatation)-PREDISPOSES->(Disease)-CAUSES->(Ventricular hemorrhage)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "CAT scan of brain",
+        "Diffuse atrophy",
+        "Genes",
+        "Blood"
+      ],
+      [
+        "CAT scan of brain",
+        "Hypertrophy",
+        "Genes",
+        "Blood"
+      ],
+      [
+        "Blood",
+        "Infection",
+        "Ventricular dilatation"
+      ],
+      [
+        "Blood",
+        "Pharmaceutical Preparations",
+        "Ventricular dilatation"
+      ],
+      [
+        "Heart Ventricle",
+        "Ventricular dilatation"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "PREVENTS"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(CAT scan of brain)-DIAGNOSES->(Diffuse atrophy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(CAT scan of brain)-DIAGNOSES->(Hypertrophy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Blood)-LOCATION_OF->(Infection)-CAUSES->(Ventricular dilatation)",
+      "(Blood)-LOCATION_OF->(Pharmaceutical Preparations)-PREVENTS->(Ventricular dilatation)",
+      "(Heart Ventricle)-LOCATION_OF->(Ventricular dilatation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(CAT scan of brain)-DIAGNOSES->(Diffuse atrophy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(CAT scan of brain)-DIAGNOSES->(Hypertrophy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Ventricular dilatation)-CAUSES->(Hydrocephalus)-CAUSES->(Ventricular hemorrhage)",
+      "(Ventricular dilatation)-CAUSES->(Hypertrophy)-COMPLICATES->(Ventricular hemorrhage)",
+      "(Ventricular dilatation)-PREDISPOSES->(Disease)-CAUSES->(Ventricular hemorrhage)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Brain CT scan\" -> \"crescent-shaped hyperdensity\" -> \"crosses suture lines\" -> \"Acute subdural hematoma\" -> 85%",
+    "CHAIN: \"Brain CT scan\" -> \"biconvex hyperdensity\" -> \"does not cross suture lines\" -> \"Epidural hematoma\" -> 85%",
+    "CHAIN: \"Brain CT scan\" -> \"punctate hemorrhages\" -> \"edema around injury\" -> \"Cortical injury (cerebral contusion)\" -> 75%",
+    "CHAIN: \"Brain CT scan\" -> \"blood in ventricles\" -> \"dilated ventricles\" -> \"Intraventricular hemorrhage\" -> 80%"
+  ],
+  "enhanced_information": "In evaluating the brain CT scan for cranioencephalic trauma, the following consensus-aligned interpretations are made: 1) Acute subdural hematoma is characterized by a crescent-shaped hyperdensity that crosses suture lines, which aligns with standard diagnostic criteria. 2) Epidural hematoma presents as a biconvex hyperdensity that does not cross suture lines, consistent with typical findings. 3) Cortical injury or cerebral contusion is indicated by punctate hemorrhages and surrounding edema, which is a recognized pattern. 4) Intraventricular hemorrhage is identified by the presence of blood in the ventricles, potentially leading to ventricular dilatation, which can be associated with hydrocephalus. The retrieved evidence paths related to ventricular dilatation and hemorrhage support the possibility of intraventricular hemorrhage but are not directly relevant to distinguishing between the other types of hematomas or contusions. Therefore, the most relevant and consensus-supported interpretation should focus on the specific CT scan findings described for each condition.",
+  "analysis": "In evaluating a brain CT scan for cranioencephalic trauma, it is crucial to identify the characteristic patterns of different types of hemorrhages and injuries. An acute subdural hematoma typically appears as a crescent-shaped hyperdensity that can cross suture lines. An epidural hematoma is usually a biconvex (lens-shaped) hyperdensity that does not cross suture lines. A cortical injury or cerebral contusion is marked by punctate hemorrhages and surrounding edema. Intraventricular hemorrhage is identified by the presence of blood within the ventricles. Given the enhanced information, the most likely diagnosis based on the description of the CT scan findings would be an acute subdural hematoma, as it is characterized by a crescent-shaped hyperdensity that crosses suture lines, which aligns with the standard diagnostic criteria. This is the most consensus-supported interpretation for the described scenario.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      4
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

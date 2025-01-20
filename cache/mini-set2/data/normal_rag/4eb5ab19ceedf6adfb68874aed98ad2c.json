@@ -1,0 +1,203 @@
+{
+  "question": "A 68-year-old man with a history of diabetes of 20 years of evolution, hypertension and prostatism in treatment, consulted for repeated episodes of syncope. The episodes have occurred while standing, after meals and have been preceded by an oppressive pain in the nape, neck and shoulder girdle. Which of these complementary tests is essential?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Brain and cervical MRI.",
+    "opb": "Angio-MR of the supra-aortic trunks.",
+    "opc": "Nuclear medicine study of cerebral dopamine transporter (SPECT with ioflupane).",
+    "opd": "Measurement of blood pressure in decubitus and standing.",
+    "ope": "24-hour Holter record of the electrocardiogram."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypotension, Orthostatic",
+        "Complication",
+        "Decubitus ulcer"
+      ],
+      [
+        "Hypotension, Orthostatic",
+        "Malnutrition",
+        "Decubitus ulcer"
+      ],
+      [
+        "Hypotension, Orthostatic",
+        "Hypertensive disease",
+        "Decubitus ulcer"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Hypotension, Orthostatic)-CAUSES->(Complication)-CAUSES->(Decubitus ulcer)",
+      "(Hypotension, Orthostatic)-PREDISPOSES->(Malnutrition)-CAUSES->(Decubitus ulcer)",
+      "(Hypotension, Orthostatic)-PREDISPOSES->(Hypertensive disease)-PREDISPOSES->(Decubitus ulcer)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pectoral girdle structure",
+        "Diastasis",
+        "ROM1",
+        "Cervical spine"
+      ],
+      [
+        "Pectoral girdle structure",
+        "Shoulder",
+        "Bone structure of cranium",
+        "Cervical spine"
+      ],
+      [
+        "cardiac arrhythmia",
+        "Genes",
+        "Tail",
+        "Blood pressure determination"
+      ],
+      [
+        "cardiac arrhythmia",
+        "Genes",
+        "Limb structure",
+        "Blood pressure determination"
+      ],
+      [
+        "Holter Electrocardiography",
+        "Infarction",
+        "Genes",
+        "Eye",
+        "Blood pressure determination"
+      ],
+      [
+        "Holter Electrocardiography",
+        "Ischemia",
+        "Genes",
+        "Eye",
+        "Blood pressure determination"
+      ],
+      [
+        "Brain",
+        "Syncope"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Pectoral girdle structure)-LOCATION_OF->(Diastasis)-ASSOCIATED_WITH->(ROM1)-PART_OF->(Cervical spine)",
+      "(Pectoral girdle structure)-PART_OF->(Shoulder)-PART_OF->(Bone structure of cranium)-PART_OF->(Cervical spine)",
+      "(cardiac arrhythmia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Tail)-LOCATION_OF->(Blood pressure determination)",
+      "(cardiac arrhythmia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Limb structure)-LOCATION_OF->(Blood pressure determination)",
+      "(Holter Electrocardiography)-DIAGNOSES->(Infarction)-ASSOCIATED_WITH->(Genes)-PART_OF->(Eye)-LOCATION_OF->(Blood pressure determination)",
+      "(Holter Electrocardiography)-CAUSES->(Ischemia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Eye)-LOCATION_OF->(Blood pressure determination)",
+      "(Brain)-LOCATION_OF->(Syncope)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Brain)-LOCATION_OF->(Syncope)",
+      "(Hypotension, Orthostatic)-PREDISPOSES->(Hypertensive disease)-PREDISPOSES->(Decubitus ulcer)",
+      "(Hypotension, Orthostatic)-CAUSES->(Complication)-CAUSES->(Decubitus ulcer)",
+      "(Hypotension, Orthostatic)-PREDISPOSES->(Malnutrition)-CAUSES->(Decubitus ulcer)",
+      "(cardiac arrhythmia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Tail)-LOCATION_OF->(Blood pressure determination)",
+      "(cardiac arrhythmia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Limb structure)-LOCATION_OF->(Blood pressure determination)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient has history of diabetes and hypertension\" -> \"Increased risk of cardiovascular issues\" -> \"Syncope episodes may be related to orthostatic hypotension\" -> \"Measurement of blood pressure in decubitus and standing can assess for orthostatic changes\" -> 85%",
+    "CHAIN: \"Patient experiences syncope after meals\" -> \"Possible postprandial hypotension\" -> \"Measurement of blood pressure in decubitus and standing can help diagnose this\" -> 80%",
+    "CHAIN: \"Patient has oppressive pain in nape, neck, and shoulder girdle\" -> \"Could indicate cervical spine or vascular issues\" -> \"Angio-MR of the supra-aortic trunks may be considered\" -> \"However, blood pressure measurement is more directly related to syncope\" -> 75%",
+    "CHAIN: \"Syncope episodes are recurrent\" -> \"Need to identify underlying cause\" -> \"Holter monitor can detect arrhythmias\" -> \"However, blood pressure measurement is more relevant to the symptoms described\" -> 70%",
+    "CHAIN: \"Patient's age and comorbidities increase risk of cerebrovascular events\" -> \"Brain and cervical MRI could rule out structural causes\" -> \"But not essential for immediate assessment of syncope\" -> 65%"
+  ],
+  "enhanced_information": "The patient presents with recurrent syncope, particularly after meals, which raises the suspicion of postprandial hypotension and orthostatic hypotension due to his history of diabetes and hypertension. Measurement of blood pressure in decubitus and standing positions is essential to assess for these conditions, as it directly correlates with the symptoms described. While other tests like Holter monitoring and imaging studies may provide additional information, they are not as immediately relevant for diagnosing the cause of syncope in this context. Therefore, the most critical test is the measurement of blood pressure in different positions.",
+  "analysis": "The patient's history of diabetes, hypertension, and syncope episodes suggests a potential autonomic dysfunction, particularly orthostatic hypotension, which is common in older adults and those with diabetes. The episodes occurring while standing and after meals further support this possibility. Measuring blood pressure in decubitus and standing positions is essential to evaluate for orthostatic hypotension, which could explain the syncope. Other tests, while potentially useful, do not directly address the immediate concern of syncope related to blood pressure changes. Therefore, the most appropriate and essential test in this scenario is the measurement of blood pressure in different positions.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      1,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      20.0,
+      0.0,
+      20.0,
+      40.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "Syncope ASSOCIATED_WITH Diabetes Mellitus",
+    "Signal CAUSES Malnutrition",
+    "neuroimaging DIAGNOSES Syncope",
+    "Autonomic dysfunction PREDISPOSES Symptoms",
+    "Scanning DIAGNOSES Syncope",
+    "Cell Nucleus PART_OF PERIPHERAL VESSELS",
+    "Recombinant Interferon-gamma INTERACTS_WITH Adipocytes",
+    "Syncope PREDISPOSES Coronary Arteriosclerosis",
+    "Hydrophthalmos PREDISPOSES Retinal Detachment",
+    "Neurally-mediated syncope CAUSES Symptoms",
+    "OM 89 TREATS Spondylarthropathies",
+    "GRIK4 ASSOCIATED_WITH Degenerative polyarthritis"
+  ]
+}

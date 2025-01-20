@@ -1,0 +1,165 @@
+{
+  "question": "A 50-year-old man with a chronic bronchitis who was admitted for a pneumonic episode with a blood culture positive for Streptococcus pneumoniae, with a CMI at penicillin of 0.0125 mg / l. Treatment with 2 million penicillin is started every 4 hours. On the fifth day it continues with a fever of 38ºC. Which of the following decisions do you think is right?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "I would change the treatment to ceftriaxone because of its greater efficacy.",
+    "opb": "I would add a quinolone to the treatment.",
+    "opc": "I would switch to amoxicillin / clavulanic acid.",
+    "opd": "It would rule out the presence of a pleural empyema.",
+    "ope": "I would continue with the same treatment, assuming that it is simply a problem of time."
+  },
+  "topic_name": "Medicine",
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Streptococcus pneumoniae",
+        "Hypersensitivity"
+      ],
+      [
+        "Hypersensitivity",
+        "Fever"
+      ],
+      [
+        "Streptococcus pneumoniae",
+        "Hypersensitivity"
+      ],
+      [
+        "Hypersensitivity",
+        "Fever"
+      ],
+      [
+        "Fever",
+        "Complication"
+      ],
+      [
+        "Streptococcus pneumoniae",
+        "Hypersensitivity"
+      ],
+      [
+        "Hypersensitivity",
+        "Fever"
+      ],
+      [
+        "Streptococcus pneumoniae",
+        "Hypersensitivity"
+      ],
+      [
+        "Hypersensitivity",
+        "Fever"
+      ],
+      [
+        "Streptococcus pneumoniae",
+        "Hypersensitivity"
+      ],
+      [
+        "Hypersensitivity",
+        "Fever"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Streptococcus pneumoniae)-CAUSES->(Hypersensitivity)",
+      "(Hypersensitivity)-PREDISPOSES->(Fever)",
+      "(Streptococcus pneumoniae)-CAUSES->(Hypersensitivity)",
+      "(Hypersensitivity)-PREDISPOSES->(Fever)",
+      "(Fever)-MANIFESTATION_OF->(Complication)",
+      "(Streptococcus pneumoniae)-CAUSES->(Hypersensitivity)",
+      "(Hypersensitivity)-PREDISPOSES->(Fever)",
+      "(Streptococcus pneumoniae)-CAUSES->(Hypersensitivity)",
+      "(Hypersensitivity)-PREDISPOSES->(Fever)",
+      "(Streptococcus pneumoniae)-CAUSES->(Hypersensitivity)",
+      "(Hypersensitivity)-PREDISPOSES->(Fever)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Streptococcus pneumoniae)-CAUSES->(Hypersensitivity)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Penicillin treatment\" -> \"effective against Streptococcus pneumoniae\" -> \"CMI indicates sensitivity\" -> \"fever persists\" -> \"consider other causes\" -> \"rule out pleural empyema\" -> 85%",
+    "CHAIN: \"Penicillin treatment\" -> \"effective against Streptococcus pneumoniae\" -> \"CMI indicates sensitivity\" -> \"fever persists\" -> \"possible resistance or complication\" -> \"consider adding quinolone\" -> 70%",
+    "CHAIN: \"Penicillin treatment\" -> \"effective against Streptococcus pneumoniae\" -> \"CMI indicates sensitivity\" -> \"fever persists\" -> \"consider time factor\" -> \"continue treatment\" -> 60%",
+    "CHAIN: \"Penicillin treatment\" -> \"effective against Streptococcus pneumoniae\" -> \"CMI indicates sensitivity\" -> \"fever persists\" -> \"consider broader spectrum\" -> \"switch to amoxicillin/clavulanic acid\" -> 65%",
+    "CHAIN: \"Penicillin treatment\" -> \"effective against Streptococcus pneumoniae\" -> \"CMI indicates sensitivity\" -> \"fever persists\" -> \"consider alternative antibiotic\" -> \"switch to ceftriaxone\" -> 55%"
+  ],
+  "enhanced_information": "The patient is being treated with penicillin, which is effective against Streptococcus pneumoniae, and the CMI indicates sensitivity, suggesting that the antibiotic should be effective. However, the persistence of fever on the fifth day suggests the need to consider other causes or complications. Standard medical consensus suggests ruling out complications such as pleural empyema, which can cause persistent fever despite appropriate antibiotic therapy. Therefore, option 'd' (ruling out pleural empyema) is a reasonable step. Adding a quinolone or switching to a broader-spectrum antibiotic like amoxicillin/clavulanic acid or ceftriaxone may be considered if a complication is ruled out and the fever persists, but these options are not the first step. Continuing the same treatment without further investigation is not advisable given the persistent fever. The retrieved evidence path regarding hypersensitivity is not directly relevant to the current clinical decision-making process.",
+  "analysis": "The patient has a blood culture positive for Streptococcus pneumoniae with a very low minimum inhibitory concentration (MIC) for penicillin, indicating high sensitivity to penicillin. The persistence of fever on the fifth day of treatment could be due to several factors, including the presence of a complication such as a pleural empyema, which is a known complication of pneumonia. Given the high sensitivity of the organism to penicillin, changing antibiotics is not immediately warranted without further investigation. Therefore, ruling out a pleural empyema is a logical step to ensure there is no underlying complication causing the persistent fever.",
+  "answer": "opd",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      3,
+      2,
+      2,
+      2
+    ],
+    "coverage_rates": [
+      18.181818181818183,
+      27.27272727272727,
+      18.181818181818183,
+      18.181818181818183,
+      18.181818181818183
+    ],
+    "total_successes": 11
+  },
+  "normal_results": [
+    "Antibiotic therapy TREATS Pneumococcal Infections",
+    "Infection CAUSES Pneumonia",
+    "Direct agglutination DIAGNOSES Leishmaniasis, Visceral",
+    "Embolism, Paradoxical PREDISPOSES Cerebrovascular accident",
+    "Autoimmune ASSOCIATED_WITH NELFCD",
+    "Yeasts CAUSES Brain Abscess",
+    "PENICILLIN SENSITIVITY CAUSES Pneumococcal Infections",
+    "Pneumococcal Infections CAUSES Bronchitis"
+  ]
+}
