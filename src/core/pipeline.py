@@ -187,21 +187,21 @@ class QuestionProcessor:
                 else:
                     question = cached_question
 
-                cached_question = MedicalQuestion.from_cache(
-                    self.cache_paths['reasoning'],
-                    question.question
-                )
-                if not cached_question:
-                    self.llm.generate_reasoning_chain(question)
-                    question.set_cache_paths(self.cache_paths['reasoning'])
-                    question.to_cache()
-                else:
-                    question = cached_question
-
-                if not self.complete_process_question(question, False):
-                    continue
-
-                self.compare_experiments(question)
+                # cached_question = MedicalQuestion.from_cache(
+                #     self.cache_paths['reasoning'],
+                #     question.question
+                # )
+                # if not cached_question:
+                #     self.llm.generate_reasoning_chain(question)
+                #     question.set_cache_paths(self.cache_paths['reasoning'])
+                #     question.to_cache()
+                # else:
+                #     question = cached_question
+                #
+                # if not self.complete_process_question(question, False):
+                #     continue
+                #
+                # self.compare_experiments(question)
 
             except Exception as e:
                 self.logger.error(f"Error processing question {i + 1}: {str(e)}")
@@ -386,8 +386,8 @@ class QuestionProcessor:
 def compare_models(process_path):
     """主函数示例"""
     try:
-        # processor = QuestionProcessor(process_path)
-        # processor.process_from_cache(process_path)
+        processor = QuestionProcessor(process_path)
+        processor.process_from_cache(process_path)
         # processor.batch_process_file('test1',1)
 
         STAGES = ['derelict', 'enhanced', 'knowledge_graph', 'remove_llm_enhanced', 'normal_rag', 'remove_enhancer']
@@ -410,10 +410,10 @@ def compare_models(process_path):
 
 
 if __name__ == "__main__":
-    # models = ['4', '4o', '4o-mini']
+    # models = ['4-filtered', '4o-filtered', '4o-mini-filtered']
     # intersect(models)
-    # config.openai['model'] = 'gpt-4o-mini'
-    compare_models('4-log')
+    config.openai['model'] = 'gpt-3.5-turbo'
+    compare_models('f1')
     # config.openai['model'] = 'gpt-4o'
     # compare_models('4o-intersection')
     # config.openai['model'] = 'gpt-4-turbo'

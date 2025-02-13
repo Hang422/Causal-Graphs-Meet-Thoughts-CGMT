@@ -16,147 +16,34 @@
     "paths": []
   },
   "causal_graph": {
-    "nodes": [
-      [
-        "Pharmaceutical Preparations",
-        "Respiration",
-        "Liver"
-      ],
-      [
-        "Pharmaceutical Preparations",
-        "metabolic effects",
-        "Liver"
-      ],
-      [
-        "Pharmaceutical Preparations",
-        "Autoimmune reaction",
-        "Liver"
-      ],
-      [
-        "Phenytoin",
-        "Disease",
-        "paracrine",
-        "Liver"
-      ],
-      [
-        "Phenytoin",
-        "Disease",
-        "drug clearance",
-        "Liver"
-      ],
-      [
-        "Phenytoin",
-        "Disease",
-        "Thermotolerance",
-        "Liver"
-      ]
-    ],
-    "relationships": [
-      [
-        "CAUSES",
-        "PROCESS_OF"
-      ],
-      [
-        "CAUSES",
-        "PROCESS_OF"
-      ],
-      [
-        "CAUSES",
-        "PROCESS_OF"
-      ],
-      [
-        "CAUSES",
-        "MANIFESTATION_OF",
-        "PROCESS_OF"
-      ],
-      [
-        "CAUSES",
-        "MANIFESTATION_OF",
-        "PROCESS_OF"
-      ],
-      [
-        "CAUSES",
-        "MANIFESTATION_OF",
-        "PROCESS_OF"
-      ]
-    ],
-    "paths": [
-      "(Pharmaceutical Preparations)-CAUSES->(Respiration)-PROCESS_OF->(Liver)",
-      "(Pharmaceutical Preparations)-CAUSES->(metabolic effects)-PROCESS_OF->(Liver)",
-      "(Pharmaceutical Preparations)-CAUSES->(Autoimmune reaction)-PROCESS_OF->(Liver)",
-      "(Phenytoin)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Liver)",
-      "(Phenytoin)-CAUSES->(Disease)-MANIFESTATION_OF->(drug clearance)-PROCESS_OF->(Liver)",
-      "(Phenytoin)-CAUSES->(Disease)-MANIFESTATION_OF->(Thermotolerance)-PROCESS_OF->(Liver)"
-    ]
+    "nodes": [],
+    "relationships": [],
+    "paths": []
   },
   "knowledge_graph": {
-    "nodes": [
-      [
-        "Measurement of liver enzyme",
-        "Virus",
-        "Pharmaceutical Preparations"
-      ],
-      [
-        "Phenytoin",
-        "Pharmaceutical Preparations"
-      ],
-      [
-        "Phenytoin",
-        "Pharmaceutical Preparations"
-      ]
-    ],
-    "relationships": [
-      [
-        "DIAGNOSES",
-        "LOCATION_OF"
-      ],
-      [
-        "ISA"
-      ],
-      [
-        "INTERACTS_WITH"
-      ]
-    ],
-    "paths": [
-      "(Measurement of liver enzyme)-DIAGNOSES->(Virus)-LOCATION_OF->(Pharmaceutical Preparations)",
-      "(Phenytoin)-ISA->(Pharmaceutical Preparations)",
-      "(Phenytoin)-INTERACTS_WITH->(Pharmaceutical Preparations)"
-    ]
+    "nodes": [],
+    "relationships": [],
+    "paths": []
   },
   "enhanced_graph": {
     "nodes": [],
     "relationships": [],
-    "paths": [
-      "(Phenytoin)-INTERACTS_WITH/ISA->(Pharmaceutical Preparations)",
-      "(Phenytoin)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Liver)",
-      "(Phenytoin)-CAUSES->(Disease)-MANIFESTATION_OF->(drug clearance)-PROCESS_OF->(Liver)",
-      "(Phenytoin)-CAUSES->(Disease)-MANIFESTATION_OF->(Thermotolerance)-PROCESS_OF->(Liver)"
-    ]
+    "paths": []
   },
   "reasoning_chain": [
-    "CHAIN: \"Phenytoin is a medication\" -> \"It is primarily metabolized by the liver\" -> \"It follows Michaelis-Menten kinetics at therapeutic doses\" -> \"At high doses, it exhibits zero order kinetics\" -> 85%",
-    "CHAIN: \"Phenytoin induces hepatic enzymes\" -> \"It increases the metabolism of other drugs\" -> \"It is classified as an enzyme inducer\" -> 90%",
-    "CHAIN: \"Phenytoin is metabolized in the liver\" -> \"Only a small fraction is excreted unchanged in urine\" -> \"Most is excreted as metabolites\" -> 80%",
-    "CHAIN: \"Phenytoin is known to cause fetal harm\" -> \"It is classified as teratogenic\" -> \"It can lead to fetal hydantoin syndrome\" -> 95%"
+    "CHAIN: \"Phenytoin is a medication used for seizures\" -> \"It is known to exhibit nonlinear pharmacokinetics\" -> \"This indicates it follows zero order kinetics at therapeutic levels\" -> 95%",
+    "CHAIN: \"Phenytoin is metabolized by the liver\" -> \"It induces hepatic enzymes\" -> \"This means it is an hepatic enzyme inducer\" -> 90%",
+    "CHAIN: \"Phenytoin is primarily metabolized in the liver\" -> \"Only a small fraction is excreted unchanged in urine\" -> \"Thus, it is not excreted unchanged in urine\" -> 85%",
+    "CHAIN: \"Phenytoin is known to have teratogenic effects\" -> \"It can cause fetal hydantoin syndrome\" -> \"Therefore, it is considered teratogenic\" -> 90%"
   ],
-  "enhanced_information": "Phenytoin is an antiepileptic medication that primarily undergoes hepatic metabolism. At therapeutic doses, it follows Michaelis-Menten kinetics, but at higher doses, it exhibits zero-order kinetics, making option 'opa' true. Phenytoin is a known hepatic enzyme inducer, which contradicts option 'opb', thus it is false. Regarding excretion, only a small fraction of phenytoin is excreted unchanged in urine, with most being metabolized, making option 'opc' false. Lastly, phenytoin is classified as teratogenic and can cause fetal hydantoin syndrome, rendering option 'opd' false. Therefore, the only true statement is that phenytoin follows zero-order kinetics at high doses.",
-  "analysis": "Phenytoin is an antiepileptic drug that exhibits unique pharmacokinetics. At therapeutic levels, it follows first-order kinetics, but at higher doses, it transitions to zero-order kinetics due to saturation of metabolic pathways, making option 'opa' true. Phenytoin is also a known hepatic enzyme inducer, which makes option 'opb' false. The majority of phenytoin is metabolized in the liver, with only a small fraction excreted unchanged in urine, thus option 'opc' is also false. Furthermore, phenytoin is classified as teratogenic, associated with fetal hydantoin syndrome, which makes option 'opd' false. Therefore, the only accurate statement is that phenytoin follows zero-order kinetics at high doses, confirming option 'opa' as the correct choice.",
+  "enhanced_information": "",
+  "analysis": "Phenytoin is an anticonvulsant that is well-known for its nonlinear pharmacokinetics, specifically exhibiting zero-order kinetics at therapeutic levels. This means that as the drug concentration increases, the rate of metabolism does not increase proportionally, leading to potential toxicity. Therefore, option 'opa' is true. Option 'opb' is false because phenytoin is indeed a hepatic enzyme inducer, which can affect the metabolism of other drugs. Option 'opc' is also false, as phenytoin is primarily metabolized in the liver, with only a small amount excreted unchanged in urine. Lastly, option 'opd' is incorrect because phenytoin is teratogenic and can lead to fetal hydantoin syndrome. Thus, the only accurate statement is that phenytoin follows zero-order kinetics, supporting option 'opa' as the correct answer.",
   "answer": "opa",
   "confidence": 95.0,
   "chain_coverage": {
-    "success_counts": [
-      2,
-      2,
-      0,
-      0
-    ],
-    "coverage_rates": [
-      50.0,
-      50.0,
-      0.0,
-      0.0
-    ],
-    "total_successes": 4
+    "success_counts": [],
+    "coverage_rates": [],
+    "total_successes": 0
   },
   "normal_results": []
 }

@@ -151,12 +151,12 @@ class EnhancedGraphEnhancer:
         question_cuis = self.entity_processor.extract_cuis_from_text(question.question)
         for option_text in question.options.values():
             question_cuis.update(self.entity_processor.extract_cuis_from_text(option_text))
-
+        print(f"cuis:{question_cuis}")
         question_semantic_types = set()
         for cui in question_cuis:
             question_semantic_types.update(
                 self.entity_processor.get_semantic_types_for_cui(cui))
-
+        print(question_semantic_types)
         # Score paths
         path_scores = []
         for path in paths:
@@ -201,6 +201,8 @@ class EnhancedGraphEnhancer:
         if not set1 or not set2:
             return 0.0
         return len(set1.intersection(set2)) / len(set2)
+
+
 
 
 def extract_path_elements(path: str) -> Tuple[List[str], List[str], List[str]]:
@@ -290,57 +292,35 @@ def merge_group(paths: List[str]) -> str:
 
 
 
-def main():
+def main1():
     """测试增强器功能"""
     # 创建测试用例
     question = MedicalQuestion(
-        question= "All of the following are true about Sickle cell disease, Except:",
+        question= "Glycogen storage diseases include all the following except:",
     is_multi_choice= True,
     correct_answer= "opc",
     options= {
-        "opa": "Single nucleotide change results in change of Glutamine to Valine",
-        "opb": "RFLP results from a single base change",
-        "opc": "'Sticky patch' is generated as a result of replacement of a non polar residue with a polar residue",
-        "opd": "HbS confers resistance against malaria in heterozygotes"
-    }
+        "opa": "Amyloidosis associated with multiple myeloma has the poorest prognosis",
+        "opb": "Fine - needle biopsy of subcutaneous abdominal fat is a simple & reliable method for diagnosing secondary systemic amyloidosis",
+        "opc": "Hepatic amyloid disease produces hepatomegaly but rarely jaundice",
+        "opd": "Amyloidosis of the spleen is associated with severe anemia"
+        }
     )
 
     # 添加测试路径
     question.causal_graph.paths = [
-      "(Mandibular right second primary molar)-LOCATION_OF->(Infection)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Valine)",
-      "(Mandibular right second primary molar)-LOCATION_OF->(Infection)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Valine)",
-      "(Mandibular right second primary molar)-LOCATION_OF->(Infection)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Valine)",
-      "(Mandibular right second primary molar)-LOCATION_OF->(Infection)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Glutamic Acid)",
-      "(Mandibular right second primary molar)-LOCATION_OF->(Infection)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Glutamic Acid)",
-      "(Mandibular right second primary molar)-LOCATION_OF->(Infection)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Glutamic Acid)",
-      "(Valine)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Glutamine)",
-      "(Valine)-TREATS->(Functional disorder)-ASSOCIATED_WITH->(Glutamine)",
-      "(Valine)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Glutamine)",
-      "(Glutamic Acid)-INTERACTS_WITH->(Cells and Chinese Hamster Ovary Cell)-INTERACTS_WITH->(Valine)",
-      "(Glutamic Acid)-CAUSES->(Excretory function)-ASSOCIATED_WITH->(Valine)",
-      "(Glutamic Acid)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Glutamine)",
-      "(Glutamic Acid)-INTERACTS_WITH->(Cells and PC12 Cells)-INTERACTS_WITH->(Glutamine)",
-      "(Sickle Cell Anemia)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Valine)",
-      "(Sickle Cell Anemia)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Valine)",
-      "(Sickle Cell Anemia)-ISA->(Pathogenesis)-ASSOCIATED_WITH->(Valine)",
-      "(Sickle Cell Anemia)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Glutamic Acid)",
-      "(Sickle Cell Anemia)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Glutamic Acid)",
-      "(Sickle Cell Anemia)-ISA->(Pathogenesis)-ASSOCIATED_WITH->(Glutamic Acid)",
-      "(Sickle Hemoglobin)-INTERACTS_WITH->(Cells and Hematopoietic stem cells)-PART_OF->(Arterial Media and Fetal Tissue)-LOCATION_OF->(Surgical Replantation)",
-      "(Polymerization)-CAUSES->(Adhesions and Thrombus)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage and Ligaments)-LOCATION_OF->(Surgical Replantation)",
-      "(Sickle Hemoglobin)-CAUSES->(Sickle Cell Anemia)",
-      "(Sickle Cell Anemia)-CAUSES->(Hypoxia)-ASSOCIATED_WITH->(Sickle Hemoglobin)",
-      "(Sickle Cell Anemia)-ISA->(Complication)-ASSOCIATED_WITH->(Sickle Hemoglobin)",
-      "(Sickle Cell Anemia)-PREDISPOSES->(Hypoxia)-ASSOCIATED_WITH->(Sickle Hemoglobin)",
-      "(Sickle Cell Anemia)-CAUSES->(Sickle Cell Trait)",
-      "(Abnormal Hemoglobins)-INTERACTS_WITH->(Erythrocytes)-INTERACTS_WITH->(Sickle Hemoglobin)",
-      "(Abnormal Hemoglobins)-CAUSES->(Symptoms)-CAUSES->(Malaria)-CAUSES->(Sickle Cell Trait)",
-      "(Sickle Hemoglobin)-CAUSES->(Symptoms)-CAUSES->(Malaria)",
-      "(Sickle Cell Trait)-PREDISPOSES->(Malaria)",
-      "(Malaria)-CAUSES->(Complication and Hypoxia)-ASSOCIATED_WITH->(Sickle Hemoglobin)",
-      "(Malaria)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(Sickle Hemoglobin)"
+        "(Amyloidosis)-CAUSES->(Disease)-CAUSES->(Splenomegaly)",
+        "(Amyloidosis)-CAUSES->(Infection)-CAUSES->(Splenomegaly)",
+        "(Amyloidosis)-CAUSES->(Hypertensive disease)-CAUSES->(Splenomegaly)",
+        "(Splenomegaly)-CAUSES->(Anemia)",
+        "(Spleen)-LOCATION_OF->(Splenomegaly)"
     ]
 
+    question.reasoning_chain = [  "CHAIN: \"Amyloidosis associated with multiple myeloma\" -> \"generally poor prognosis\" -> \"widely accepted in medical literature\" -> 95%",
+    "CHAIN: \"Fine-needle biopsy of subcutaneous abdominal fat\" -> \"used for diagnosing secondary systemic amyloidosis\" -> \"considered simple and reliable\" -> 90%",
+    "CHAIN: \"Hepatic amyloid disease\" -> \"can cause hepatomegaly\" -> \"jaundice is uncommon\" -> 85%",
+    "CHAIN: \"Amyloidosis of the spleen\" -> \"can lead to splenomegaly\" -> \"not typically associated with severe anemia\" -> \"conflict with known associations\" -> 70%"
+    ]
     # 创建并运行增强器
     enhancer = EnhancedGraphEnhancer(keep_ratio=0.6)
     print("\nBefore enhancement:")
@@ -356,5 +336,162 @@ def main():
         print(path)
 
 
+def analyze_reasoning_chains(reasoning_chains: List[str], entity_processor: EntityProcessor) -> None:
+    """分析思维链中的实体及其语义类型"""
+    print("=== 思维链分析 ===\n")
+
+    # 存储所有发现的CUI和语义类型
+    all_cuis = set()
+    all_semantic_types = set()
+
+    for i, chain in enumerate(reasoning_chains, 1):
+        print(f"\n分析推理链 {i}:")
+        print(f"原始链: {chain}")
+
+        # 移除"CHAIN:"前缀和置信度
+        chain = chain.replace("CHAIN:", "").strip()
+        steps = chain.split("->")
+        steps = [step.strip() for step in steps[:-1]]  # 移除最后的置信度部分
+
+        print("\n步骤分析:")
+        for j, step in enumerate(steps, 1):
+            # 清理步骤文本（移除引号等）
+            step = step.strip('" ')
+            print(f"\n步骤 {j}: {step}")
+
+            # 使用extract_cuis_from_text提取CUIs
+            step_cuis = entity_processor.extract_cuis_from_text(step)
+            if step_cuis:
+                print("发现的CUIs:")
+                for cui in step_cuis:
+                    all_cuis.add(cui)
+                    print(f"  CUI: {cui}")
+
+                    # 获取每个CUI的语义类型
+                    semantic_types = entity_processor.get_semantic_types_for_cui(cui)
+                    if semantic_types:
+                        print(f"  语义类型: {semantic_types}")
+                        all_semantic_types.update(semantic_types)
+            else:
+                print("  未发现CUIs")
+
+            # 直接从文本中提取语义类型
+            step_types = entity_processor.extract_semantic_types_from_text(step)
+            if step_types:
+                print(f"  直接从文本提取的语义类型: {step_types}")
+                all_semantic_types.update(step_types)
+
+    print("\n=== 总结 ===")
+    print(f"\n发现的所有CUIs ({len(all_cuis)}):")
+    for cui in sorted(all_cuis):
+        print(f"CUI: {cui}")
+
+    print(f"\n发现的所有语义类型 ({len(all_semantic_types)}):")
+    for sem_type in sorted(all_semantic_types):
+        print(f"语义类型: {sem_type}")
+
+
+def analyze_paths(paths: List[str], entity_processor: EntityProcessor) -> None:
+    """分析路径中的实体及其语义类型"""
+    print("=== 路径分析 ===\n")
+
+    # 存储所有唯一的实体及其信息
+    entity_info = {}  # 用于保存每个实体名称的CUI和语义类型信息
+
+    for i, path in enumerate(paths, 1):
+        print(f"\n路径 {i}:")
+        print(f"原始路径: {path}")
+
+        # 提取和分析该路径中的所有实体
+        entities = []
+        parts = path.split('->')
+        for part in parts:
+            if '(' in part and ')' in part:
+                entity_group = part[part.find('(') + 1:part.find(')')].strip()
+                # 处理可能的多个实体
+                for single_entity in entity_group.split(' and '):
+                    entity = single_entity.strip()
+                    entities.append(entity)
+
+                    # 如果这个实体还没有被分析过
+                    if entity not in entity_info:
+                        cuis = entity_processor.extract_cuis_from_text(entity)
+                        entity_info[entity] = {
+                            'cuis': {},
+                            'semantic_types': set()
+                        }
+                        # 对每个CUI获取语义类型
+                        for cui in cuis:
+                            semantic_types = entity_processor.get_semantic_types_for_cui(cui)
+                            entity_info[entity]['cuis'][cui] = semantic_types
+                            entity_info[entity]['semantic_types'].update(semantic_types)
+
+        print("\n实体分析:")
+        for entity in entities:
+            print(f"\n实体: {entity}")
+            if entity in entity_info and entity_info[entity]['cuis']:
+                for cui, semantic_types in entity_info[entity]['cuis'].items():
+                    print(f"  CUI: {cui}")
+                    print(f"  语义类型: {semantic_types}")
+            else:
+                print("  未找到CUI和语义类型")
+
+    # 打印总体统计
+    print("\n=== 总体实体统计 ===")
+    print(f"\n发现的所有独特实体 ({len(entity_info)}):")
+
+    for entity, info in sorted(entity_info.items()):
+        print(f"\n实体名称: {entity}")
+        if info['cuis']:
+            for cui, semantic_types in info['cuis'].items():
+                print(f"  CUI: {cui}")
+                print(f"  语义类型: {semantic_types}")
+        else:
+            print("  未找到CUI和语义类型")
+
+    # 计算总的CUI和语义类型数量
+    all_cuis = set()
+    all_semantic_types = set()
+    for info in entity_info.values():
+        all_cuis.update(info['cuis'].keys())
+        all_semantic_types.update(info['semantic_types'])
+
+    print(f"\n总计:")
+    print(f"独特实体总数: {len(entity_info)}")
+    print(f"独特CUI总数: {len(all_cuis)}")
+    print(f"独特语义类型总数: {len(all_semantic_types)}")
+
+    print("\n所有发现的独特语义类型:")
+    for sem_type in sorted(all_semantic_types):
+        print(f"类型: {sem_type}")
+
+
+# 使用示例
+def main2():
+    entity_processor = EntityProcessor(threshold=0.9)
+    paths = [
+      "(Hepatomegaly)-CAUSES->(Disease)-CAUSES->(Icterus)",
+      "(Hepatomegaly)-CAUSES->(Respiratory distress)-CAUSES->(Icterus)",
+      "(Hepatomegaly)-CAUSES->(Syndrome)-CAUSES->(Icterus)",
+      "(Amyloidosis)-CAUSES->(Disease)-CAUSES->(Splenomegaly)",
+      "(Amyloidosis)-CAUSES->(Infection)-CAUSES->(Splenomegaly)",
+      "(Amyloidosis)-CAUSES->(Hypertensive disease)-CAUSES->(Splenomegaly)",
+      "(Splenomegaly)-CAUSES->(Anemia)",
+        "(Subcutaneous Fat, Abdominal)-PART_OF->(Subcutaneous Fat)-LOCATION_OF->(Diagnosis)",
+        "(Fine-needle biopsy)-TREATS->(Symptoms)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)",
+        "(Fine-needle biopsy)-TREATS->(Symptoms)-ASSOCIATED_WITH->(Sphincter)-LOCATION_OF->(Diagnosis)",
+        "(Spleen)-LOCATION_OF->(Splenomegaly)"
+    ]
+    analyze_paths(paths, entity_processor)
+
+
 if __name__ == "__main__":
-    main()
+
+    """语义类型: T044
+语义类型: T047
+语义类型: T169"""
+
+    """类型: T046
+类型: T047
+类型: T079"""
+    main2()

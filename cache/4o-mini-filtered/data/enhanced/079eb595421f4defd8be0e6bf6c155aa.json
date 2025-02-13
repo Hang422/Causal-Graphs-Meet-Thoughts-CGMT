@@ -16,171 +16,33 @@
     "paths": []
   },
   "causal_graph": {
-    "nodes": [
-      [
-        "Indinavir",
-        "Tuberculosis"
-      ],
-      [
-        "Zidovudine",
-        "Tuberculosis"
-      ],
-      [
-        "Lamivudine",
-        "Tuberculosis"
-      ],
-      [
-        "Antiretroviral therapy",
-        "Tuberculosis"
-      ],
-      [
-        "Tuberculosis",
-        "HIV"
-      ]
-    ],
-    "relationships": [
-      [
-        "TREATS"
-      ],
-      [
-        "TREATS"
-      ],
-      [
-        "TREATS"
-      ],
-      [
-        "PREDISPOSES"
-      ],
-      [
-        "PROCESS_OF"
-      ]
-    ],
-    "paths": [
-      "(Indinavir)-TREATS->(Tuberculosis)",
-      "(Zidovudine)-TREATS->(Tuberculosis)",
-      "(Lamivudine)-TREATS->(Tuberculosis)",
-      "(Antiretroviral therapy)-PREDISPOSES->(Tuberculosis)",
-      "(Tuberculosis)-PROCESS_OF->(HIV)"
-    ]
+    "nodes": [],
+    "relationships": [],
+    "paths": []
   },
   "knowledge_graph": {
-    "nodes": [
-      [
-        "HIV",
-        "Lipopolysaccharides",
-        "Zidovudine"
-      ],
-      [
-        "HIV",
-        "Retroviridae",
-        "Zidovudine"
-      ],
-      [
-        "HIV",
-        "Lipopolysaccharides",
-        "Lymphoid Tissue",
-        "Antiretroviral therapy"
-      ],
-      [
-        "HIV",
-        "Lipopolysaccharides",
-        "Endothelium",
-        "Antiretroviral therapy"
-      ],
-      [
-        "HIV",
-        "Lipopolysaccharides",
-        "Zidovudine"
-      ],
-      [
-        "HIV",
-        "Retroviridae",
-        "Zidovudine"
-      ],
-      [
-        "Drug Interactions",
-        "uptake",
-        "Zidovudine"
-      ]
-    ],
-    "relationships": [
-      [
-        "LOCATION_OF",
-        "INTERACTS_WITH"
-      ],
-      [
-        "ISA",
-        "LOCATION_OF"
-      ],
-      [
-        "LOCATION_OF",
-        "PART_OF",
-        "LOCATION_OF"
-      ],
-      [
-        "LOCATION_OF",
-        "PART_OF",
-        "LOCATION_OF"
-      ],
-      [
-        "LOCATION_OF",
-        "INTERACTS_WITH"
-      ],
-      [
-        "ISA",
-        "LOCATION_OF"
-      ],
-      [
-        "MANIFESTATION_OF",
-        "ASSOCIATED_WITH"
-      ]
-    ],
-    "paths": [
-      "(HIV)-LOCATION_OF->(Lipopolysaccharides)-INTERACTS_WITH->(Zidovudine)",
-      "(HIV)-ISA->(Retroviridae)-LOCATION_OF->(Zidovudine)",
-      "(HIV)-LOCATION_OF->(Lipopolysaccharides)-PART_OF->(Lymphoid Tissue)-LOCATION_OF->(Antiretroviral therapy)",
-      "(HIV)-LOCATION_OF->(Lipopolysaccharides)-PART_OF->(Endothelium)-LOCATION_OF->(Antiretroviral therapy)",
-      "(HIV)-LOCATION_OF->(Lipopolysaccharides)-INTERACTS_WITH->(Zidovudine)",
-      "(HIV)-ISA->(Retroviridae)-LOCATION_OF->(Zidovudine)",
-      "(Drug Interactions)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Zidovudine)"
-    ]
+    "nodes": [],
+    "relationships": [],
+    "paths": []
   },
   "enhanced_graph": {
     "nodes": [],
     "relationships": [],
-    "paths": [
-      "(HIV)-LOCATION_OF->(Lipopolysaccharides)-INTERACTS_WITH->(Zidovudine)",
-      "(Zidovudine)-TREATS->(Tuberculosis)",
-      "(Lamivudine)-TREATS->(Tuberculosis)",
-      "(HIV)-ISA->(Retroviridae)-LOCATION_OF->(Zidovudine)",
-      "(Indinavir)-TREATS->(Tuberculosis)",
-      "(Tuberculosis)-PROCESS_OF->(HIV)"
-    ]
+    "paths": []
   },
   "reasoning_chain": [
-    "CHAIN: \"HIV positive patient\" -> \"on zidovudine, lamivudine, and indinavir\" -> \"develops TB\" -> \"need for anti-tubercular therapy\" -> \"Rifampicin interacts with zidovudine\" -> \"potentially reduces efficacy of zidovudine\" -> \"Rifampicin is avoided\" -> 85%",
-    "CHAIN: \"HIV positive patient\" -> \"on antiretroviral therapy\" -> \"develops TB\" -> \"consideration of anti-tubercular drugs\" -> \"Rifampicin is a potent inducer\" -> \"induces metabolism of zidovudine\" -> \"may lead to subtherapeutic levels of zidovudine\" -> \"Rifampicin is avoided\" -> 90%",
-    "CHAIN: \"Patient with TB\" -> \"HIV positive\" -> \"on zidovudine, lamivudine, indinavir\" -> \"Rifampicin is a first-line TB drug\" -> \"Rifampicin can cause drug interactions\" -> \"specifically with zidovudine\" -> \"risk of reduced antiviral efficacy\" -> \"Rifampicin is avoided\" -> 80%",
-    "CHAIN: \"HIV positive patient\" -> \"receiving ART\" -> \"develops TB\" -> \"needs anti-tubercular treatment\" -> \"Rifampicin is contraindicated\" -> \"due to interactions with ART\" -> \"increased risk of treatment failure\" -> \"Rifampicin is avoided\" -> 90%"
+    "CHAIN: \"HIV positive patient\" -> \"on zidovudine, lamivudine, and indinavir\" -> \"develops TB\" -> \"requires anti-tubercular therapy\" -> \"Rifampicin is a potent inducer of CYP450 enzymes\" -> \"may decrease levels of zidovudine and lamivudine\" -> \"risk of treatment failure or toxicity\" -> 85%",
+    "CHAIN: \"HIV positive patient\" -> \"on zidovudine, lamivudine, and indinavir\" -> \"develops TB\" -> \"needs anti-tubercular drugs\" -> \"Isoniazid is generally safe\" -> \"Ethambutol is also safe\" -> \"Pyrazinamide may have some interactions\" -> \"but Rifampicin is the most concerning\" -> 90%",
+    "CHAIN: \"HIV positive patient\" -> \"on zidovudine, lamivudine, and indinavir\" -> \"develops TB\" -> \"consideration of drug interactions\" -> \"Rifampicin can reduce effectiveness of HIV medications\" -> \"increased risk of adverse effects\" -> \"therefore, Rifampicin is avoided\" -> 95%"
   ],
-  "enhanced_information": "In HIV positive patients receiving antiretroviral therapy with zidovudine, lamivudine, and indinavir, the use of Rifampicin is avoided when treating tuberculosis (TB). This is due to Rifampicin's potent enzyme-inducing properties, which can significantly reduce the plasma levels of zidovudine, leading to subtherapeutic effects and increased risk of treatment failure. The reasoning chains consistently highlight the interaction between Rifampicin and zidovudine, confirming that Rifampicin is contraindicated in this context. Other anti-tubercular drugs such as Pyrazinamide, Isoniazid, and Ethambutol do not have the same level of interaction with the mentioned antiretroviral drugs and are generally considered safer alternatives.",
-  "analysis": "In the context of treating tuberculosis (TB) in an HIV positive patient on zidovudine, lamivudine, and indinavir therapy, the primary concern is the drug-drug interaction between Rifampicin and zidovudine. Rifampicin is a potent enzyme inducer that can significantly lower the plasma levels of zidovudine, potentially leading to subtherapeutic levels and treatment failure. This interaction is well-documented and is a key reason why Rifampicin is avoided in this scenario. Other anti-tubercular drugs such as Pyrazinamide, Isoniazid, and Ethambutol do not have the same significant interactions with the antiretroviral regimen mentioned. Therefore, the most appropriate answer is to avoid Rifampicin in this patient. The reasoning aligns with established medical guidelines and consensus on drug interactions in HIV treatment.",
+  "enhanced_information": "",
+  "analysis": "In HIV positive patients receiving antiretroviral therapy, particularly with zidovudine, lamivudine, and indinavir, the choice of anti-tubercular drugs must consider potential drug interactions. Rifampicin is known to be a potent inducer of CYP450 enzymes, which can significantly lower the plasma concentrations of zidovudine and lamivudine, leading to reduced efficacy of the HIV treatment and potential treatment failure. While Isoniazid and Ethambutol are generally safe to use in this context, Pyrazinamide may have some interactions but is less concerning than Rifampicin. Therefore, the consensus is clear that Rifampicin should be avoided in this scenario due to its significant impact on the metabolism of the antiretroviral drugs. Thus, the most appropriate answer is that Rifampicin is the drug to avoid.",
   "answer": "opd",
   "confidence": 95.0,
   "chain_coverage": {
-    "success_counts": [
-      4,
-      2,
-      3,
-      0
-    ],
-    "coverage_rates": [
-      44.44444444444444,
-      22.22222222222222,
-      33.33333333333333,
-      0.0
-    ],
-    "total_successes": 9
+    "success_counts": [],
+    "coverage_rates": [],
+    "total_successes": 0
   },
   "normal_results": []
 }

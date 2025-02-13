@@ -16,125 +16,34 @@
     "paths": []
   },
   "causal_graph": {
-    "nodes": [
-      [
-        "Adrenergic beta-Antagonists",
-        "Bronchial Spasm"
-      ],
-      [
-        "Bronchial Spasm",
-        "Asthma"
-      ],
-      [
-        "Asthma",
-        "Disease",
-        "Glaucoma"
-      ],
-      [
-        "Diabetes",
-        "hypoglycemia"
-      ],
-      [
-        "Propranolol",
-        "Tremor"
-      ],
-      [
-        "Tremor",
-        "Essential Tremor"
-      ]
-    ],
-    "relationships": [
-      [
-        "CAUSES"
-      ],
-      [
-        "CAUSES"
-      ],
-      [
-        "CAUSES",
-        "CAUSES"
-      ],
-      [
-        "CAUSES"
-      ],
-      [
-        "CAUSES"
-      ],
-      [
-        "CAUSES"
-      ]
-    ],
-    "paths": [
-      "(Adrenergic beta-Antagonists)-CAUSES->(Bronchial Spasm)",
-      "(Bronchial Spasm)-CAUSES->(Asthma)",
-      "(Asthma)-CAUSES->(Disease)-CAUSES->(Glaucoma)",
-      "(Diabetes)-CAUSES->(hypoglycemia)",
-      "(Propranolol)-CAUSES->(Tremor)",
-      "(Tremor)-CAUSES->(Essential Tremor)"
-    ]
+    "nodes": [],
+    "relationships": [],
+    "paths": []
   },
   "knowledge_graph": {
-    "nodes": [
-      [
-        "Propranolol",
-        "Pharmaceutical Preparations",
-        "Adrenergic beta-Antagonists"
-      ],
-      [
-        "Propranolol",
-        "Pharmaceutical Preparations",
-        "Adrenergic beta-Antagonists"
-      ]
-    ],
-    "relationships": [
-      [
-        "ISA",
-        "INTERACTS_WITH"
-      ],
-      [
-        "INTERACTS_WITH",
-        "INTERACTS_WITH"
-      ]
-    ],
-    "paths": [
-      "(Propranolol)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Adrenergic beta-Antagonists)",
-      "(Propranolol)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Adrenergic beta-Antagonists)"
-    ]
+    "nodes": [],
+    "relationships": [],
+    "paths": []
   },
   "enhanced_graph": {
     "nodes": [],
     "relationships": [],
-    "paths": [
-      "(Propranolol)-INTERACTS_WITH/ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Adrenergic beta-Antagonists)-Antagonists)",
-      "(Propranolol)-CAUSES->(Tremor)",
-      "(Adrenergic beta-Antagonists)-CAUSES->(Bronchial Spasm)",
-      "(Diabetes)-CAUSES->(hypoglycemia)"
-    ]
+    "paths": []
   },
   "reasoning_chain": [
-    "CHAIN: \"Propranolol\" -> \"non-selective beta-blocker\" -> \"can exacerbate bronchospasm\" -> \"concern in patients with asthma\" -> \"possible concern in patients with glaucoma\" -> 80%",
-    "CHAIN: \"Propranolol\" -> \"reduces heart rate\" -> \"can mask hypoglycemia symptoms\" -> \"concern in patients with diabetes\" -> \"possible risk of severe hypoglycemia\" -> 75%",
-    "CHAIN: \"Propranolol\" -> \"reduces heart rate\" -> \"may worsen bradycardia\" -> \"concern in patients with supraventricular tachycardia\" -> \"potential for inadequate heart rate control\" -> 70%",
-    "CHAIN: \"Propranolol\" -> \"reduces tremors\" -> \"beneficial in essential tremor\" -> \"not a concern for treatment\" -> \"no significant risk\" -> 90%"
+    "CHAIN: \"Propranolol prescribed\" -> \"beta-blocker medication\" -> \"can cause bronchoconstriction\" -> \"concern in patients with asthma\" -> \"possible exacerbation of respiratory issues\" -> 85%",
+    "CHAIN: \"Propranolol prescribed\" -> \"beta-blocker medication\" -> \"can mask hypoglycemia symptoms\" -> \"concern in patients with diabetes\" -> \"risk of unrecognized low blood sugar\" -> 80%",
+    "CHAIN: \"Propranolol prescribed\" -> \"beta-blocker medication\" -> \"can lower heart rate\" -> \"concern in patients with supraventricular tachycardia\" -> \"may worsen bradycardia\" -> 75%",
+    "CHAIN: \"Propranolol prescribed\" -> \"beta-blocker medication\" -> \"not contraindicated in glaucoma\" -> \"can be used cautiously\" -> \"less concern compared to other conditions\" -> 90%"
   ],
-  "enhanced_information": "Propranolol is a non-selective beta-blocker that can mask hypoglycemia symptoms, which is a significant concern in patients with diabetes, as it may lead to severe hypoglycemia. In patients with glaucoma, while there is some concern due to potential systemic effects, the primary issue is more relevant to asthma patients due to bronchospasm risk. Propranolol is beneficial for essential tremor and does not pose a significant risk in this context. In patients with supraventricular tachycardia, propranolol can reduce heart rate, but it is not typically contraindicated unless bradycardia is present. Therefore, the most concerning comorbid condition when using propranolol prophylactically after a myocardial infarct is diabetes.",
-  "analysis": "Propranolol is a non-selective beta-blocker that can have significant effects on various comorbid conditions. In patients with diabetes, propranolol can mask the symptoms of hypoglycemia, which is a critical concern as it may lead to unrecognized severe hypoglycemia. This is particularly important in a post-myocardial infarction patient who may already be at risk for cardiovascular complications. In contrast, while glaucoma is a concern due to potential systemic effects, it is not as critical as the risk of hypoglycemia in diabetic patients. Essential tremor is often treated with propranolol, and it is not contraindicated. Supraventricular tachycardia can be managed with propranolol, but it is not a significant concern unless bradycardia is present. Therefore, the most concerning comorbid condition when using propranolol prophylactically after a myocardial infarct is diabetes, due to the risk of masking hypoglycemia symptoms.",
+  "enhanced_information": "",
+  "analysis": "Propranolol is a non-selective beta-blocker that can have various effects on comorbid conditions. In patients with diabetes, it can mask the symptoms of hypoglycemia, which is a significant concern as it may lead to unrecognized low blood sugar levels. This makes diabetes a particularly concerning comorbidity when prescribing propranolol. In contrast, while propranolol can affect heart rate in patients with supraventricular tachycardia, it is often used to manage this condition, albeit with caution. Glaucoma is not a contraindication for propranolol, and it can be used in these patients. Essential tremor is typically treated with propranolol, indicating no significant concern. Therefore, the most concerning comorbidity when using propranolol prophylactically after a myocardial infarct is diabetes due to the risk of masking hypoglycemia symptoms.",
   "answer": "opc",
-  "confidence": 90.0,
+  "confidence": 85.0,
   "chain_coverage": {
-    "success_counts": [
-      4,
-      1,
-      0,
-      2
-    ],
-    "coverage_rates": [
-      57.14285714285714,
-      14.285714285714285,
-      0.0,
-      28.57142857142857
-    ],
-    "total_successes": 7
+    "success_counts": [],
+    "coverage_rates": [],
+    "total_successes": 0
   },
   "normal_results": []
 }

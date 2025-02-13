@@ -4,19 +4,23 @@ from pathlib import Path
 from typing import Dict, List, Optional
 from datetime import datetime
 from dataclasses import dataclass
-
+import hashlib
 from src.modules.AccuracyAnalysis import calculate_common_accuracies, calculate_accuracies
 from src.modules.MedicalQuestion import MedicalQuestion
 from config import config
 from pathlib import Path
 import shutil
 from collections import defaultdict
+import pandas as pd
+from typing import Dict, List, Optional
+import logging
 import json
 from pathlib import Path
-from typing import Dict, List, Optional
-import pandas as pd
-import logging
-from dataclasses import asdict
+import hashlib
+
+from dataclasses import dataclass, field
+from typing import Dict, List
+
 
 @dataclass
 class LogEntry:
@@ -145,7 +149,7 @@ class DataRecovery:
 
     def save_question(self, question: MedicalQuestion, question_id: str, stage: str):
         """保存问题到指定目录"""
-        save_path = self.output_dir / stage / f"{question_id}.json"
+        save_path = self.output_dir / stage / f"{hashlib.md5(question.question.encode()).hexdigest()}.json"
         with open(save_path, 'w', encoding='utf-8') as f:
             json.dump(question.to_dict(), f, ensure_ascii=False, indent=2)
 

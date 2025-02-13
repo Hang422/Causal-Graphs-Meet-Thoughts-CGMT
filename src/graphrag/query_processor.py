@@ -217,8 +217,6 @@ class QueryProcessor:
 
                 for start_cui in start_cuis:
                     is_success = False
-                    if is_success:
-                        break
                     for end_cui in end_cuis:
                         if is_success:
                             continue
@@ -314,13 +312,24 @@ class QueryProcessor:
             question.normal_results = []
 
 
-def test_path_query_consistency():
+
+if __name__ == '__main__':
     processor = QueryProcessor()
-    entity_processor = EntityProcessor()
-    print(list(entity_processor.extract_cuis_from_text('CHAIN: "Substantia nigra"'))[0],list(entity_processor.extract_cuis_from_text('dopamine production'))[0])
-    print(processor.process_knowledge_graph_paths(list(entity_processor.extract_cuis_from_text('CHAIN: "Substantia nigra"'))[0],list(entity_processor.extract_cuis_from_text('dopamine production'))[0]))
-    print(list(entity_processor.extract_cuis_from_text('Substantia nigra structure'))[0],
-          list(entity_processor.extract_cuis_from_text('Dopamine'))[0])
-    print(processor.process_knowledge_graph_paths(
-        list(entity_processor.extract_cuis_from_text('Substantia nigra structure'))[0],
-        list(entity_processor.extract_cuis_from_text('Dopamine'))[0]))
+    question = MedicalQuestion(
+        question="Glycogen storage diseases include all the following except:",
+        is_multi_choice=True,
+        correct_answer="opc",
+        options={
+            "opa": "Amyloidosis associated with multiple myeloma has the poorest prognosis",
+            "opb": "Fine - needle biopsy of subcutaneous abdominal fat is a simple & reliable method for diagnosing secondary systemic amyloidosis",
+            "opc": "Hepatic amyloid disease produces hepatomegaly but rarely jaundice",
+            "opd": "Amyloidosis of the spleen is associated with severe anemia"
+        }
+    )
+
+    question.reasoning_chain = [
+        "CHAIN: \"Amyloidosis of the spleen\" -> \"can lead to splenomegaly\" -> \"not typically associated with severe anemia\" -> \"conflict with known associations\" -> 70%"
+    ]
+    processor.process_chain_of_thoughts(question,'both',True)
+    print(question.causal_graph.paths)
+    print(question.knowledge_graph.paths)

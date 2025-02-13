@@ -16,175 +16,35 @@
     "paths": []
   },
   "causal_graph": {
-    "nodes": [
-      [
-        "Subarachnoid Hemorrhage",
-        "Vasospasm"
-      ],
-      [
-        "Subarachnoid Hemorrhage",
-        "Vasospasm"
-      ],
-      [
-        "Nimodipine",
-        "Vasospasm"
-      ],
-      [
-        "Calcium Channel Blockers",
-        "Vasospasm"
-      ]
-    ],
-    "relationships": [
-      [
-        "CAUSES"
-      ],
-      [
-        "CAUSES"
-      ],
-      [
-        "TREATS"
-      ],
-      [
-        "TREATS"
-      ]
-    ],
-    "paths": [
-      "(Subarachnoid Hemorrhage)-CAUSES->(Vasospasm)",
-      "(Subarachnoid Hemorrhage)-CAUSES->(Vasospasm)",
-      "(Nimodipine)-TREATS->(Vasospasm)",
-      "(Calcium Channel Blockers)-TREATS->(Vasospasm)"
-    ]
+    "nodes": [],
+    "relationships": [],
+    "paths": []
   },
   "knowledge_graph": {
-    "nodes": [
-      [
-        "Vasospasm",
-        "ACSM3",
-        "Nimodipine"
-      ],
-      [
-        "Ischemia",
-        "Genes",
-        "PC12 Cells",
-        "Nimodipine"
-      ],
-      [
-        "Ischemia",
-        "Genes",
-        "ACSM3",
-        "Nimodipine"
-      ],
-      [
-        "Subarachnoid Hemorrhage",
-        "Complication",
-        "ACSM3",
-        "Nimodipine"
-      ],
-      [
-        "Subarachnoid Hemorrhage",
-        "Thrombosis",
-        "ACSM3",
-        "Nimodipine"
-      ],
-      [
-        "Nimodipine",
-        "Antioxidants",
-        "Calcium Channel Blockers"
-      ],
-      [
-        "Nimodipine",
-        "Vasodilation",
-        "Calcium Channel Blockers"
-      ],
-      [
-        "Calcium Channel Blockers",
-        "Verapamil"
-      ]
-    ],
-    "relationships": [
-      [
-        "ASSOCIATED_WITH",
-        "INTERACTS_WITH"
-      ],
-      [
-        "ASSOCIATED_WITH",
-        "INTERACTS_WITH",
-        "LOCATION_OF"
-      ],
-      [
-        "ASSOCIATED_WITH",
-        "INTERACTS_WITH",
-        "INTERACTS_WITH"
-      ],
-      [
-        "PREDISPOSES",
-        "ASSOCIATED_WITH",
-        "INTERACTS_WITH"
-      ],
-      [
-        "ISA",
-        "ASSOCIATED_WITH",
-        "INTERACTS_WITH"
-      ],
-      [
-        "INTERACTS_WITH",
-        "INTERACTS_WITH"
-      ],
-      [
-        "CAUSES",
-        "ASSOCIATED_WITH"
-      ],
-      [
-        "INTERACTS_WITH"
-      ]
-    ],
-    "paths": [
-      "(Vasospasm)-ASSOCIATED_WITH->(ACSM3)-INTERACTS_WITH->(Nimodipine)",
-      "(Ischemia)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(PC12 Cells)-LOCATION_OF->(Nimodipine)",
-      "(Ischemia)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(ACSM3)-INTERACTS_WITH->(Nimodipine)",
-      "(Subarachnoid Hemorrhage)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(ACSM3)-INTERACTS_WITH->(Nimodipine)",
-      "(Subarachnoid Hemorrhage)-ISA->(Thrombosis)-ASSOCIATED_WITH->(ACSM3)-INTERACTS_WITH->(Nimodipine)",
-      "(Nimodipine)-INTERACTS_WITH->(Antioxidants)-INTERACTS_WITH->(Calcium Channel Blockers)",
-      "(Nimodipine)-CAUSES->(Vasodilation)-ASSOCIATED_WITH->(Calcium Channel Blockers)",
-      "(Calcium Channel Blockers)-INTERACTS_WITH->(Verapamil)"
-    ]
+    "nodes": [],
+    "relationships": [],
+    "paths": []
   },
   "enhanced_graph": {
     "nodes": [],
     "relationships": [],
-    "paths": [
-      "(Nimodipine)-TREATS->(Vasospasm)",
-      "(Calcium Channel Blockers)-INTERACTS_WITH->(Verapamil)",
-      "(Vasospasm)-ASSOCIATED_WITH->(ACSM3)-INTERACTS_WITH->(Nimodipine)",
-      "(Nimodipine)-INTERACTS_WITH->(Antioxidants)-INTERACTS_WITH->(Calcium Channel Blockers)",
-      "(Nimodipine)-CAUSES->(Vasodilation)-ASSOCIATED_WITH->(Calcium Channel Blockers)",
-      "(Ischemia)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(PC12 Cells)-LOCATION_OF->(Nimodipine)"
-    ]
+    "paths": []
   },
   "reasoning_chain": [
     "CHAIN: \"Subarachnoid hemorrhage\" -> \"risk of vasospasm\" -> \"need for vasodilator therapy\" -> \"Nimodipine indicated\" -> 95%",
     "CHAIN: \"Subarachnoid hemorrhage\" -> \"increased intracranial pressure\" -> \"requirement for blood pressure management\" -> \"Nimodipine used to prevent complications\" -> 90%",
-    "CHAIN: \"Subarachnoid hemorrhage\" -> \"vasospasm can lead to ischemia\" -> \"Nimodipine is a calcium channel blocker\" -> \"Nimodipine reduces vasospasm\" -> 85%",
-    "CHAIN: \"Subarachnoid hemorrhage\" -> \"Nimodipine is specifically indicated\" -> \"other calcium channel blockers not indicated\" -> \"Amlodipine, Diltiazem, Verapamil not preferred\" -> 80%"
+    "CHAIN: \"Subarachnoid hemorrhage\" -> \"vasospasm occurs in 30-70% of cases\" -> \"Nimodipine reduces incidence of vasospasm\" -> \"improves outcomes\" -> 85%",
+    "CHAIN: \"Subarachnoid hemorrhage\" -> \"Nimodipine is a calcium channel blocker\" -> \"specifically indicated for cerebral vasospasm\" -> \"improves cerebral blood flow\" -> 90%",
+    "CHAIN: \"Subarachnoid hemorrhage\" -> \"Amlodipine, Diltiazem, and Verapamil are calcium channel blockers\" -> \"not specifically indicated for vasospasm prevention\" -> \"less effective than Nimodipine\" -> 80%"
   ],
-  "enhanced_information": "Nimodipine is specifically indicated for the prevention of vasospasm following subarachnoid hemorrhage (SAH). The risk of vasospasm after SAH can lead to ischemic complications, and Nimodipine, a calcium channel blocker, is effective in reducing this risk by promoting vasodilation. Other calcium channel blockers such as Amlodipine, Diltiazem, and Verapamil are not preferred for this indication. Evidence supports that Nimodipine directly treats vasospasm associated with SAH, confirming its role in clinical practice.",
-  "analysis": "Nimodipine is specifically indicated for the prevention of vasospasm following subarachnoid hemorrhage (SAH). This is a well-established use in clinical practice, supported by evidence that it effectively reduces the risk of ischemic complications associated with vasospasm. Other calcium channel blockers such as Amlodipine, Diltiazem, and Verapamil do not have the same indication or evidence supporting their use in this context. Therefore, based on the consensus in medical literature, Nimodipine is the most appropriate choice for this condition.",
+  "enhanced_information": "",
+  "analysis": "Subarachnoid hemorrhage (SAH) is a serious condition that can lead to complications such as cerebral vasospasm. Nimodipine is a calcium channel blocker that has been specifically studied and shown to be effective in preventing and treating cerebral vasospasm following SAH. Other calcium channel blockers like Amlodipine, Diltiazem, and Verapamil are not indicated for this specific purpose and do not have the same level of evidence supporting their use in this context. Therefore, based on the consensus in medical literature, Nimodipine is the most appropriate choice for managing complications associated with subarachnoid hemorrhage.",
   "answer": "opa",
   "confidence": 95.0,
   "chain_coverage": {
-    "success_counts": [
-      1,
-      0,
-      5,
-      3
-    ],
-    "coverage_rates": [
-      11.11111111111111,
-      0.0,
-      55.55555555555556,
-      33.33333333333333
-    ],
-    "total_successes": 9
+    "success_counts": [],
+    "coverage_rates": [],
+    "total_successes": 0
   },
   "normal_results": []
 }
