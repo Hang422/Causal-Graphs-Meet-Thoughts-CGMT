@@ -1,0 +1,128 @@
+{
+  "question": "A 12-year-old boy presents to the pediatrician for a routine checkup. He and his family immigrated from Pakistan to the United States when he was 9 years of age. Per his mother, he had measles when he was 4 years of age and a high fever following a sore throat at the age 7. He received all appropriate vaccinations when he arrived in the United States. He takes no medications. He does well academically and plays soccer in a recreational league. He was born at 38 weeks gestation. His temperature is 98.4°F (36.9°C), blood pressure is 115/65 mmHg, pulse is 80/min, and respirations are 18/min. On exam, he is a healthy boy in no apparent distress. Breath sounds are equal bilaterally with good aeration. Fixed splitting of the second heart sound is noted on auscultation. Without adequate treatment, this patient will be at increased risk for developing which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Acute endocarditis",
+    "opb": "Extra-cardiac left-to-right shunting",
+    "opc": "Mitral regurgitation",
+    "opd": "Mitral stenosis",
+    "ope": "Reversal of left-to-right shunting"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Blood Circulation",
+        "Pancreas",
+        "Pancreatitis",
+        "Disease",
+        "Hypertension, Pulmonary"
+      ],
+      [
+        "Hypertrophy, Right Ventricular",
+        "Disease",
+        "cardiac arrhythmia"
+      ],
+      [
+        "cardiac arrhythmia",
+        "Heart failure"
+      ],
+      [
+        "Heart failure",
+        "Acute endocarditis NOS"
+      ],
+      [
+        "Left heart failure",
+        "Mitral Valve Insufficiency"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Disease)-CAUSES->(Hypertension, Pulmonary)",
+      "(Hypertrophy, Right Ventricular)-CAUSES->(Disease)-CAUSES->(cardiac arrhythmia)",
+      "(cardiac arrhythmia)-CAUSES->(Heart failure)",
+      "(Heart failure)-COMPLICATES->(Acute endocarditis NOS)",
+      "(Left heart failure)-CAUSES->(Mitral Valve Insufficiency)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "development aspects",
+        "Heart",
+        "Acute endocarditis NOS"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(development aspects)-PROCESS_OF->(Heart)-LOCATION_OF->(Acute endocarditis NOS)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Heart failure)-COMPLICATES->(Acute endocarditis NOS)",
+      "(Left heart failure)-CAUSES->(Mitral Valve Insufficiency)",
+      "(cardiac arrhythmia)-CAUSES->(Heart failure)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Fixed splitting of the second heart sound\" -> \"possible atrial septal defect\" -> \"left-to-right shunt\" -> \"increased blood flow to the right heart\" -> \"increased risk of pulmonary hypertension\" -> \"possible reversal of left-to-right shunting\" -> 85%",
+    "CHAIN: \"Fixed splitting of the second heart sound\" -> \"indicates right heart volume overload\" -> \"can lead to right ventricular hypertrophy\" -> \"increased risk of arrhythmias\" -> \"possible development of heart failure\" -> \"increased risk for acute endocarditis\" -> 75%",
+    "CHAIN: \"Fixed splitting of the second heart sound\" -> \"suggests hemodynamic changes\" -> \"left-to-right shunt\" -> \"increased pulmonary blood flow\" -> \"potential for pulmonary vascular disease\" -> \"increased risk for reversal of left-to-right shunting\" -> 80%",
+    "CHAIN: \"Fixed splitting of the second heart sound\" -> \"indicates possible structural heart defect\" -> \"left-to-right shunt\" -> \"increased workload on the left heart\" -> \"potential for left heart failure\" -> \"increased risk for mitral regurgitation\" -> 70%"
+  ],
+  "enhanced_information": "The presence of fixed splitting of the second heart sound in this 12-year-old boy suggests a possible atrial septal defect (ASD), which is a common cause of left-to-right shunting. This condition leads to increased blood flow to the right heart, resulting in right heart volume overload and potential complications such as pulmonary hypertension. If left untreated, the increased pulmonary blood flow can lead to pulmonary vascular disease and eventually result in reversal of the left-to-right shunt (Eisenmenger syndrome). While acute endocarditis can occur in the context of heart failure, it is not a direct consequence of ASD. Mitral regurgitation may develop due to left heart overload, but it is not the primary concern in this scenario. Therefore, the most relevant risk associated with untreated ASD is the potential for reversal of left-to-right shunting, making option (ope) the most appropriate choice.",
+  "analysis": "The presence of fixed splitting of the second heart sound in this 12-year-old boy is indicative of an atrial septal defect (ASD). This condition leads to a left-to-right shunt, causing increased blood flow to the right heart and potential complications over time. If left untreated, the increased pulmonary blood flow can lead to pulmonary vascular disease and eventually result in the reversal of the left-to-right shunt, known as Eisenmenger syndrome. While acute endocarditis, mitral regurgitation, and mitral stenosis are potential complications of various cardiac conditions, they are not the primary risks associated with untreated ASD. The most relevant risk in this scenario is the potential for reversal of the left-to-right shunt, making option (ope) the most appropriate choice. Therefore, the best-supported option is (ope).",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      4,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      16.666666666666664,
+      66.66666666666666,
+      0.0,
+      16.666666666666664
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

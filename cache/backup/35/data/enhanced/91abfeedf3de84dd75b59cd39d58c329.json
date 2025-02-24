@@ -1,0 +1,166 @@
+{
+  "question": "A 42-year-old man comes to the emergency department complaining of chest pain. He states that he was at the grocery store when he developed severe, burning chest pain along with palpitations and nausea. He screamed for someone to call an ambulance. He says this has happened before, including at least 4 episodes in the past month that were all in different locations including once at home. He is worried that it could happen at work and affect his employment status. He has no significant past medical history, and reports that he does not like taking medications. He has had trouble in the past with compliance due to side effects. The patient’s temperature is 98.9°F (37.2°C), blood pressure is 133/74 mmHg, pulse is 110/min, and respirations are 20/min with an oxygen saturation of 99% on room air. On physical examination, the patient is tremulous and diaphoretic. He continually asks to be put on oxygen and something for his pain. An electrocardiogram is obtained that shows tachycardia. Initial troponin level is negative. A urine drug screen is negative. Thyroid stimulating hormone and free T4 levels are normal. Which of the following is first line therapy for the patient for long-term management?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Alprazolam",
+    "opb": "Buspirone",
+    "opc": "Cognitive behavioral therapy",
+    "opd": "Fluoxetine",
+    "ope": "Imipramine"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Anxiety symptoms",
+        "Symptoms",
+        "Chest Pain"
+      ],
+      [
+        "Anxiety symptoms",
+        "Fatigue",
+        "Chest Pain"
+      ],
+      [
+        "Anxiety symptoms",
+        "Disease",
+        "Chest Pain"
+      ],
+      [
+        "Pharmaceutical Preparations",
+        "Trembling"
+      ],
+      [
+        "Trembling",
+        "Essential Tremor",
+        "Disease",
+        "Tachycardia"
+      ],
+      [
+        "Trembling",
+        "Essential Tremor",
+        "Syndrome",
+        "Tachycardia"
+      ],
+      [
+        "Trembling",
+        "Essential Tremor",
+        "Symptoms",
+        "Tachycardia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Anxiety symptoms)-CAUSES->(Symptoms)-CAUSES->(Chest Pain)",
+      "(Anxiety symptoms)-CAUSES->(Fatigue)-CAUSES->(Chest Pain)",
+      "(Anxiety symptoms)-PREDISPOSES->(Disease)-CAUSES->(Chest Pain)",
+      "(Pharmaceutical Preparations)-TREATS->(Trembling)",
+      "(Trembling)-CAUSES->(Essential Tremor)-CAUSES->(Disease)-CAUSES->(Tachycardia)",
+      "(Trembling)-CAUSES->(Essential Tremor)-CAUSES->(Syndrome)-CAUSES->(Tachycardia)",
+      "(Trembling)-CAUSES->(Essential Tremor)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Tachycardia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Tachycardia",
+        "Troponin"
+      ],
+      [
+        "Electrocardiogram",
+        "Pathogenesis",
+        "Troponin"
+      ],
+      [
+        "Electrocardiogram",
+        "Silent myocardial ischemia",
+        "Troponin"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Tachycardia)-ASSOCIATED_WITH->(Troponin)",
+      "(Electrocardiogram)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Troponin)",
+      "(Electrocardiogram)-DIAGNOSES->(Silent myocardial ischemia)-ASSOCIATED_WITH->(Troponin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Tachycardia)-ASSOCIATED_WITH->(Troponin)",
+      "(Pharmaceutical Preparations)-TREATS->(Trembling)",
+      "(Electrocardiogram)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Troponin)",
+      "(Electrocardiogram)-DIAGNOSES->(Silent myocardial ischemia)-ASSOCIATED_WITH->(Troponin)",
+      "(Trembling)-CAUSES->(Essential Tremor)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Tachycardia)",
+      "(Trembling)-CAUSES->(Essential Tremor)-CAUSES->(Disease)-CAUSES->(Tachycardia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Anxiety symptoms -> Chest pain -> Palpitations -> Nausea -> Multiple episodes in different locations -> Concern for future episodes at work -> Non-compliance with medications -> Tremulous and diaphoretic on physical exam -> Tachycardia on ECG -> Negative troponin -> Negative urine drug screen -> Normal thyroid function tests -> Long-term management needed -> Cognitive behavioral therapy -> 85%"
+  ],
+  "enhanced_information": "Long-term management for the patient should involve cognitive behavioral therapy, considering the patient's non-compliance with medications and the need for a therapeutic approach that addresses his anxiety symptoms and associated physical manifestations. The evidence paths support the association between tachycardia and essential tremor, which could contribute to the patient's symptoms.",
+  "analysis": "The core medical principle in this case is to address the patient's anxiety symptoms and associated physical manifestations, considering his non-compliance with medications. Cognitive behavioral therapy (CBT) is the first-line therapy for long-term management in this scenario, as it can help the patient learn coping strategies and techniques to manage his anxiety without relying on medications. CBT has shown effectiveness in treating anxiety disorders and can be tailored to address the patient's specific symptoms and concerns.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

@@ -1,0 +1,128 @@
+{
+  "question": "A 27-year-old man presents to the clinic for his annual health check-up. He currently complains of fatigue for the past few months. He has no significant past medical history. He admits to being sexually active with men and also is an intravenous drug user. He has never received a hepatitis B vaccine. His blood pressure is 122/98 mm Hg, the respiratory rate is 16/min, the pulse is 68/min, and the temperature is 37.0°C (98.6°F). On physical examination, he appears fatigued and unkempt. His tongue and buccal mucosa appear moist and without ulcerations or lesions. There are no murmurs or gallops on cardiac auscultation. His lungs are clear bilaterally. No lesions are present on the surface of the skin nor skin discoloration. The physician proceeds to order a hepatitis B panel to assess the patient’s serologic status:\nHBV DNA positive\nHBsAg negative\nHBeAg  negative\nHBsAb negative\nHBcAb positive\nHBeAb negative\nWhich of the following disease states is the patient exhibiting?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Acute infection",
+    "opb": "Chronic infection",
+    "opc": "Immune from vaccine",
+    "opd": "Immune from natural infection",
+    "ope": "Convalescent (window) period"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Communicable Diseases",
+        "Chronic infectious disease"
+      ],
+      [
+        "Hepatitis B core antibody positive",
+        "Hepatitis B",
+        "Communicable Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Communicable Diseases)-CAUSES->(Chronic infectious disease)",
+      "(Hepatitis B core antibody positive)-PREDISPOSES->(Hepatitis B)-CAUSES->(Communicable Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hepatitis B core antibody positive",
+        "Hepatitis B",
+        "Hepatitis B Virus"
+      ],
+      [
+        "Hepatitis B Virus",
+        "Fibrosis",
+        "Antibody to hepatitis Be antigen"
+      ],
+      [
+        "Communicable Diseases",
+        "Fibrosis",
+        "Antibody to hepatitis Be antigen"
+      ],
+      [
+        "Communicable Diseases",
+        "Fibrosis",
+        "Antibody to hepatitis Be antigen"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hepatitis B core antibody positive)-PREDISPOSES->(Hepatitis B)-INTERACTS_WITH->(Hepatitis B Virus)",
+      "(Hepatitis B Virus)-CAUSES->(Fibrosis)-ASSOCIATED_WITH->(Antibody to hepatitis Be antigen)",
+      "(Communicable Diseases)-CAUSES->(Fibrosis)-ASSOCIATED_WITH->(Antibody to hepatitis Be antigen)",
+      "(Communicable Diseases)-PREDISPOSES->(Fibrosis)-ASSOCIATED_WITH->(Antibody to hepatitis Be antigen)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hepatitis B core antibody positive)-PREDISPOSES->(Hepatitis B)-CAUSES->(Communicable Diseases)",
+      "(Hepatitis B core antibody positive)-PREDISPOSES->(Hepatitis B)-INTERACTS_WITH->(Hepatitis B Virus)",
+      "(Communicable Diseases)-CAUSES/PREDISPOSES->(Fibrosis)-ASSOCIATED_WITH->(Antibody to hepatitis Be antigen)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"HBV DNA positive\" -> \"indicates active viral replication\" -> \"HBsAg negative\" -> \"suggests no active hepatitis B surface antigen\" -> \"HBcAb positive\" -> \"indicates past exposure to hepatitis B virus\" -> \"HBeAb negative\" -> \"suggests ongoing infection\" -> \"likely chronic infection\" -> 85%",
+    "CHAIN: \"HBV DNA positive\" -> \"indicates presence of hepatitis B virus\" -> \"HBsAg negative\" -> \"no current active infection\" -> \"HBcAb positive\" -> \"indicates previous exposure\" -> \"HBeAb negative\" -> \"suggests possible chronic infection\" -> \"unclear if acute or chronic\" -> 70%",
+    "CHAIN: \"HBV DNA positive\" -> \"indicates active hepatitis B virus\" -> \"HBsAg negative\" -> \"no active hepatitis B surface antigen\" -> \"HBcAb positive\" -> \"indicates past infection\" -> \"HBeAb negative\" -> \"suggests chronic infection\" -> 80%",
+    "CHAIN: \"HBV DNA positive\" -> \"indicates active infection\" -> \"HBsAg negative\" -> \"no active hepatitis B surface antigen\" -> \"HBcAb positive\" -> \"indicates previous exposure\" -> \"HBeAb negative\" -> \"suggests chronic infection\" -> 75%"
+  ],
+  "enhanced_information": "The patient's serologic profile indicates HBV DNA positive, HBsAg negative, HBcAb positive, and HBeAb negative. This suggests that there is active viral replication (HBV DNA positive) but no current active hepatitis B surface antigen (HBsAg negative). The presence of HBcAb indicates past exposure to the virus. The negative HBeAb suggests that the infection is likely chronic rather than acute, as acute infections typically present with positive HBsAg. Therefore, the most accurate interpretation of the patient's condition is chronic infection. The evidence paths regarding the hepatitis B core antibody being associated with past infection support this conclusion, confirming the chronic nature of the infection.",
+  "analysis": "The patient's serologic profile shows HBV DNA positive, HBsAg negative, HBcAb positive, and HBeAb negative. This indicates that there is active viral replication (as evidenced by the positive HBV DNA) but no current active hepatitis B surface antigen (HBsAg negative). The presence of HBcAb suggests past exposure to the virus, while the negative HBeAb indicates that the infection is likely chronic rather than acute. In acute hepatitis B infection, HBsAg would typically be positive. Therefore, the most accurate interpretation of the patient's condition is chronic infection, as the serologic markers align with this diagnosis. The evidence supports that the patient is not in the acute phase, nor is he immune from vaccination or natural infection, as indicated by the absence of HBsAb. Thus, the best-supported option is chronic infection.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      0,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      60.0,
+      0.0,
+      40.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

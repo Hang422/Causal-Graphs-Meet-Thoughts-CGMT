@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_225432",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "678e38a9",
+  "question_text": "A 68-year-old male with past history of hypertension, hyperlipidemia, and a 30 pack/year smoking history presents to his primary care physician for his annual physical. Because of his age and past smoking history, he is sent for screening abdominal ultrasound. He is found to have a 4 cm infrarenal abdominal aortic aneurysm. Surgical repair of his aneurysm is indicated if which of the following are present?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 68-year-old male with past history of hypertension, hyperlipidemia, and a 30 pack/year smoking history presents to his primary care physician for his annual physical. Because of his age and past smoking history, he is sent for screening abdominal ultrasound. He is found to have a 4 cm infrarenal abdominal aortic aneurysm. Surgical repair of his aneurysm is indicated if which of the following are present?\n\n            ### Options\n    opa. Abdominal, back, or groin pain\nopb. Smoking history\nopc. Diameter >3 cm\nopd. Growth of < 0.5 cm in one year\nope. Marfan's syndrome\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Abdominal, back, or groin pain\" -> \"indicative of potential rupture\" -> \"surgical repair indicated\" -> 95%\nCHAIN: \"Diameter >3 cm\" -> \"increased risk of rupture\" -> \"surgical repair indicated\" -> 90%\nCHAIN: \"Growth of < 0.5 cm in one year\" -> \"slow growth rate\" -> \"surgical repair not immediately indicated\" -> 80%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

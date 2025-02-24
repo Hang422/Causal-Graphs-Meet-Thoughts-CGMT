@@ -1,0 +1,107 @@
+{
+  "question": "Four days after undergoing a Whipple procedure for newly-diagnosed pancreatic cancer, a 65-year-old man has shortness of breath. His surgery was complicated by bleeding for which he required intraoperative transfusion with 4 units of packed red blood cells and 1 unit of platelets. His temperature is 38.8°C (101.8°F), pulse is 110/min, respirations are 26/min, and blood pressure is 95/55 mm Hg. Pulse oximetry on room air shows an oxygen saturation of 85%. Cardiac examination shows normal heart sounds and no jugular venous distention. Auscultation of the lungs shows diffuse crackles bilaterally. The extremities are warm and there is no edema. Laboratory studies show a leukocyte count of 17,000/mm3 and hemoglobin concentration of 9.8 g/dL. Arterial blood gas on room air shows:\npH 7.35\nPaO2 41 mm Hg\nPaCO2 38 mm Hg\nHCO3- 25 mEq/L\nThe patient is intubated and mechanical ventilation is initiated. An x-ray of the chest is shown. Transthoracic echocardiography shows a normally contracting left ventricle. Which of the following is the most likely cause of this patient's current condition?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Acute occlusion of a pulmonary artery",
+    "opb": "Decreased chest wall compliance",
+    "opc": "Formation of anti-leukocyte antibodies",
+    "opd": "Diffuse inflammatory alveolar damage",
+    "ope": "Increased left atrial pressures"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Blood Transfusion",
+        "Transfusion related acute lung injury"
+      ],
+      [
+        "Packed red blood cells",
+        "Gastrointestinal Hemorrhage",
+        "Transfusion related acute lung injury"
+      ],
+      [
+        "Dyspnea",
+        "Respiratory Distress Syndrome, Adult"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Blood Transfusion)-CAUSES->(Transfusion related acute lung injury)",
+      "(Packed red blood cells)-TREATS->(Gastrointestinal Hemorrhage)-PREDISPOSES->(Transfusion related acute lung injury)",
+      "(Dyspnea)-CAUSES->(Respiratory Distress Syndrome, Adult)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Blood Platelets",
+        "Liver",
+        "Transfusion related acute lung injury"
+      ],
+      [
+        "Blood Platelets",
+        "Lipids",
+        "Transfusion related acute lung injury"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Blood Platelets)-PART_OF->(Liver)-LOCATION_OF->(Transfusion related acute lung injury)",
+      "(Blood Platelets)-LOCATION_OF->(Lipids)-CAUSES->(Transfusion related acute lung injury)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Packed red blood cells)-TREATS->(Gastrointestinal Hemorrhage)-PREDISPOSES->(Transfusion related acute lung injury)",
+      "(Blood Platelets)-PART_OF->(Liver)-LOCATION_OF->(Transfusion related acute lung injury)",
+      "(Blood Platelets)-LOCATION_OF->(Lipids)-CAUSES->(Transfusion related acute lung injury)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Intraoperative transfusion with packed red blood cells and platelets -> possible transfusion-related lung injury -> 70% confidence CHAIN: Shortness of breath, low oxygen saturation, and diffuse crackles on lung auscultation -> possible acute respiratory distress syndrome (ARDS) -> 80% confidence CHAIN: ARDS can lead to hypoxemia and respiratory failure -> 90% confidence CHAIN: Hypoxemia and respiratory failure can result in intubation and mechanical ventilation -> 95% confidence CHAIN: ARDS can be caused by diffuse inflammatory alveolar damage -> 90% confidence CHAIN: Diffuse inflammatory alveolar damage can lead to decreased lung compliance -> 80% confidence CHAIN: Decreased lung compliance can result in increased work of breathing and hypoxemia -> 85% confidence CHAIN: ARDS can lead to increased left atrial pressures due to increased pulmonary vascular resistance -> 75% confidence CHAIN: Increased left atrial pressures can cause pulmonary edema and hypoxemia -> 70%"
+  ],
+  "enhanced_information": "The most likely cause of the patient's current condition is diffuse inflammatory alveolar damage leading to acute respiratory distress syndrome (ARDS), resulting in decreased lung compliance and hypoxemia. The evidence paths support the possibility of transfusion-related lung injury, which can contribute to ARDS. Increased left atrial pressures are less likely to be the primary cause in this scenario.",
+  "analysis": "The patient's presentation with shortness of breath, hypoxemia, diffuse crackles on lung auscultation, and bilateral infiltrates on chest X-ray is consistent with acute respiratory distress syndrome (ARDS). The history of intraoperative transfusion and the enhanced information suggesting transfusion-related lung injury further support the diagnosis of diffuse inflammatory alveolar damage leading to ARDS. Other options like acute occlusion of a pulmonary artery, decreased chest wall compliance, formation of anti-leukocyte antibodies, and increased left atrial pressures are less likely based on the clinical context provided.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

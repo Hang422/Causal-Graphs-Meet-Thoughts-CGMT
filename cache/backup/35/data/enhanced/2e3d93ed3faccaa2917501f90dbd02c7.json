@@ -1,0 +1,90 @@
+{
+  "question": "An 8-year-old boy presents to your office for a routine well-child visit. Upon physical examination, he is found to have a harsh-sounding, holosystolic murmur that is best appreciated at the left sternal border. The murmur becomes louder when you ask him to make fists with his hands. Which of the following is the most likely explanation for these findings?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Aortic stenosis",
+    "opb": "Tricuspid atresia",
+    "opc": "Pulmonary hypertension",
+    "opd": "Ventricular septal defect",
+    "ope": "Left ventricular hypertrophy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Left ventricular pressure",
+        "Heart failure",
+        "Ventricular Septal Defects"
+      ],
+      [
+        "Left ventricular pressure",
+        "Aortic Valve Stenosis",
+        "Ventricular Septal Defects"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Left ventricular pressure)-PREDISPOSES->(Heart failure)-CAUSES->(Ventricular Septal Defects)",
+      "(Left ventricular pressure)-PREDISPOSES->(Aortic Valve Stenosis)-CAUSES->(Ventricular Septal Defects)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Left ventricular structure",
+        "Hypertrophy, Left Ventricular"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Left ventricular structure)-LOCATION_OF->(Hypertrophy, Left Ventricular)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Left ventricular pressure)-PREDISPOSES->(Aortic Valve Stenosis)-CAUSES->(Ventricular Septal Defects)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Harsh-sounding, holosystolic murmur at left sternal border\" -> \"Murmur louder with fist clenching\" -> \"Increased systemic vascular resistance\" -> \"Increased left ventricular pressure\" -> \"Ventricular septal defect\" -> 80%",
+    "CHAIN: \"Harsh-sounding, holosystolic murmur at left sternal border\" -> \"Murmur louder with fist clenching\" -> \"Increased afterload on the left ventricle\" -> \"Left ventricular hypertrophy\" -> 70%"
+  ],
+  "enhanced_information": "The most likely explanation for the findings of a harsh-sounding, holosystolic murmur at the left sternal border that becomes louder with fist clenching in an 8-year-old boy is a ventricular septal defect. This is supported by the chain linking increased systemic vascular resistance to increased left ventricular pressure and ultimately to a ventricular septal defect. Additionally, the evidence path connecting left ventricular pressure to aortic valve stenosis, which can cause ventricular septal defects, further supports this conclusion.",
+  "analysis": "The core medical principle in this case is the association between a harsh-sounding, holosystolic murmur that increases with maneuvers increasing left ventricular pressure, suggesting a ventricular septal defect. The enhanced information further supports this conclusion by linking systemic vascular resistance to increased left ventricular pressure and ultimately to a ventricular septal defect. Aortic stenosis is less likely in this scenario. Tricuspid atresia, pulmonary hypertension, and left ventricular hypertrophy do not align well with the findings described.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

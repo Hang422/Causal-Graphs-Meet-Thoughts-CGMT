@@ -1,0 +1,95 @@
+{
+  "question": "A 4-year-old girl is brought to the physician for a well-child examination. She has been healthy apart from an episode of bronchiolitis as an infant. Her 6-year-old sister recently underwent surgery for ventricular septal defect closure. She is at the 60th percentile for height and weight. Her mother is concerned about the possibility of the patient having a cardiovascular anomaly. Which of the following is most likely to indicate a benign heart murmur in this child?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "A grade 3/6 systolic ejection murmur heard along the left lower sternal border that increases on valsalva",
+    "opb": "A grade 4/6 midsystolic murmur at the right upper sternal border that increases on rapid squatting",
+    "opc": "A grade 2/6 continuous murmur heard at the right supraclavicular region",
+    "opd": "A grade 4/6 holosytolic murmur heard along the left lower sternal border that increases on hand grip",
+    "ope": "A grade 3/6 holosytolic murmur at the apex that increases on hand grip"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Heart murmur",
+        "Symptoms",
+        "Heart failure",
+        "Continuous murmur"
+      ],
+      [
+        "Heart murmur",
+        "Congenital heart disease",
+        "Heart failure",
+        "Continuous murmur"
+      ],
+      [
+        "Heart murmur",
+        "Subaortic stenosis",
+        "Stenosis",
+        "Continuous murmur"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Heart murmur)-CAUSES->(Symptoms)-CAUSES->(Heart failure)-CAUSES->(Continuous murmur)",
+      "(Heart murmur)-CAUSES->(Congenital heart disease)-CAUSES->(Heart failure)-CAUSES->(Continuous murmur)",
+      "(Heart murmur)-PREDISPOSES->(Subaortic stenosis)-CAUSES->(Stenosis)-CAUSES->(Continuous murmur)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Heart murmur)-PREDISPOSES->(Subaortic stenosis)-CAUSES->(Stenosis)-CAUSES->(Continuous murmur)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Innocent heart murmurs are common in children -> Innocent heart murmurs are typically systolic -> Innocent heart murmurs are usually grade 1-2/6 -> A grade 2/6 continuous murmur heard at the right supraclavicular region is most likely benign -> 80%",
+    "CHAIN: Innocent heart murmurs are common in children -> Innocent heart murmurs are typically systolic -> Innocent heart murmurs are usually grade 1-2/6 -> A grade 3/6 systolic ejection murmur heard along the left lower sternal border that increases on valsalva is most likely benign -> 70%"
+  ],
+  "enhanced_information": "Innocent heart murmurs in children are typically systolic and grade 1-2/6. A grade 3/6 systolic ejection murmur heard along the left lower sternal border that increases on valsalva is more likely benign than a grade 2/6 continuous murmur at the right supraclavicular region. The presence of a continuous murmur is not indicative of a benign heart murmur in this case.",
+  "analysis": "Innocent heart murmurs in children are typically systolic and grade 1-2/6. The enhanced information provided indicates that a grade 3/6 systolic ejection murmur heard along the left lower sternal border that increases on valsalva is more likely benign than a grade 2/6 continuous murmur. Continuous murmurs are less likely to be benign. Therefore, the most likely correct option indicating a benign heart murmur in this child is a grade 3/6 systolic ejection murmur heard along the left lower sternal border that increases on valsalva.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0
+    ],
+    "coverage_rates": [
+      100.0,
+      0.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": []
+}

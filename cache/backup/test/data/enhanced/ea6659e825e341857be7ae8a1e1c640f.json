@@ -1,0 +1,183 @@
+{
+  "question": "A 74-year-old man is brought to the emergency department after he had copious amounts of blood-stained stools. Minutes later, he turned sweaty, felt light-headed, and collapsed into his wife’s arms. Upon admission, he is found to have a blood pressure of 78/40 mm Hg, a pulse of 140/min, and oxygen saturation of 98%. His family history is relevant for both gastric and colorectal cancer. His personal history is relevant for hypertension, for which he takes amlodipine. After an initial successful resuscitation with intravenous fluids, which of the following should be the first step in approaching this case?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Colonoscopy",
+    "opb": "Nasogastric lavage",
+    "opc": "Upper endoscopy",
+    "opd": "Mesenteric angiography",
+    "ope": "Radionuclide imaging"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Lower gastrointestinal hemorrhage",
+        "Pemphigus Vulgaris",
+        "Disease",
+        "Intestinal hemorrhage NOS",
+        "colonoscopy"
+      ],
+      [
+        "Lower gastrointestinal hemorrhage",
+        "anemia; profound",
+        "Disease",
+        "Intestinal hemorrhage NOS",
+        "colonoscopy"
+      ],
+      [
+        "Lower gastrointestinal hemorrhage",
+        "Systemic mycosis",
+        "Disease",
+        "Intestinal hemorrhage NOS",
+        "colonoscopy"
+      ],
+      [
+        "rapid diagnosis",
+        "Pneumonia",
+        "Chronic empyema",
+        "Radionuclide Imaging"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Lower gastrointestinal hemorrhage)-CAUSES->(Pemphigus Vulgaris)-CAUSES->(Disease)-CAUSES->(Intestinal hemorrhage NOS)-CAUSES->(colonoscopy)",
+      "(Lower gastrointestinal hemorrhage)-CAUSES->(anemia; profound)-CAUSES->(Disease)-CAUSES->(Intestinal hemorrhage NOS)-CAUSES->(colonoscopy)",
+      "(Lower gastrointestinal hemorrhage)-MANIFESTATION_OF->(Systemic mycosis)-CAUSES->(Disease)-CAUSES->(Intestinal hemorrhage NOS)-CAUSES->(colonoscopy)",
+      "(rapid diagnosis)-CAUSES->(Pneumonia)-CAUSES->(Chronic empyema)-CAUSES->(Radionuclide Imaging)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Haemodynamic instability",
+        "Pathogenesis",
+        "neuropeptide Y|NPY",
+        "T-Lymphocyte",
+        "rapid diagnosis"
+      ],
+      [
+        "Haemodynamic instability",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "T-Lymphocyte",
+        "rapid diagnosis"
+      ],
+      [
+        "Haemodynamic instability",
+        "Pathogenesis",
+        "neuropeptide Y|NPY",
+        "T-Lymphocyte",
+        "rapid diagnosis"
+      ],
+      [
+        "Haemodynamic instability",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "T-Lymphocyte",
+        "rapid diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Haemodynamic instability)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(T-Lymphocyte)-LOCATION_OF->(rapid diagnosis)",
+      "(Haemodynamic instability)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(T-Lymphocyte)-LOCATION_OF->(rapid diagnosis)",
+      "(Haemodynamic instability)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(T-Lymphocyte)-LOCATION_OF->(rapid diagnosis)",
+      "(Haemodynamic instability)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(T-Lymphocyte)-LOCATION_OF->(rapid diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(rapid diagnosis)-CAUSES->(Pneumonia)-CAUSES->(Chronic empyema)-CAUSES->(Radionuclide Imaging)",
+      "(Lower gastrointestinal hemorrhage)-CAUSES->(Pemphigus Vulgaris)-CAUSES->(Disease)-CAUSES->(Intestinal hemorrhage NOS)-CAUSES->(colonoscopy)",
+      "(Lower gastrointestinal hemorrhage)-CAUSES->(anemia; profound)-CAUSES->(Disease)-CAUSES->(Intestinal hemorrhage NOS)-CAUSES->(colonoscopy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Blood-stained stools\" -> \"Possible lower gastrointestinal bleed\" -> \"Colonoscopy\" -> 70%",
+    "CHAIN: \"Blood-stained stools\" -> \"Possible upper gastrointestinal bleed\" -> \"Nasogastric lavage\" -> 80%",
+    "CHAIN: \"Blood-stained stools\" -> \"Possible upper gastrointestinal bleed\" -> \"Upper endoscopy\" -> 60%",
+    "CHAIN: \"Blood-stained stools\" -> \"Severe hypotension\" -> \"Hemodynamic instability\" -> \"Need for rapid diagnosis\" -> \"Mesenteric angiography\" -> 50%",
+    "CHAIN: \"Blood-stained stools\" -> \"Severe hypotension\" -> \"Hemodynamic instability\" -> \"Need for rapid diagnosis\" -> \"Radionuclide imaging\" -> 40%"
+  ],
+  "enhanced_information": "In the case of a 74-year-old man presenting with copious blood-stained stools, severe hypotension, and a history of hypertension, the primary concern is to determine the source of the gastrointestinal bleed. The patient's hemodynamic instability, indicated by low blood pressure and high pulse rate, necessitates rapid diagnosis and management. Standard medical consensus suggests that in cases of suspected upper gastrointestinal bleeding, nasogastric lavage can be a useful initial step to differentiate between upper and lower GI sources. This aligns with the reasoning chain that suggests nasogastric lavage as the first step, given the possibility of an upper GI bleed. Colonoscopy is typically used for lower GI bleeds but is not the immediate step in an unstable patient. Upper endoscopy is another option for upper GI bleeds but is usually considered after nasogastric lavage if the source is confirmed to be upper GI. Mesenteric angiography and radionuclide imaging are more advanced diagnostic tools used when the source is not identified by initial procedures and the patient is stable enough for these interventions. Therefore, nasogastric lavage is the most appropriate first step in this scenario to quickly assess the source of bleeding and guide further management.",
+  "analysis": "In this scenario, the patient presents with severe hypotension and tachycardia following copious blood-stained stools, indicating a significant gastrointestinal bleed. The immediate priority is to stabilize the patient and identify the source of bleeding. Given the hemodynamic instability, it is crucial to quickly determine whether the bleed is from an upper or lower gastrointestinal source. Nasogastric lavage is a rapid bedside procedure that can help differentiate between upper and lower GI bleeding by checking for the presence of blood in the stomach. If the lavage returns blood, it suggests an upper GI source, prompting further investigation with upper endoscopy. If the lavage is clear, it suggests a lower GI source, and other diagnostic procedures can be considered. This approach aligns with standard medical practice for managing acute GI bleeds in unstable patients. Therefore, nasogastric lavage is the most appropriate first step in this case.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      1,
+      2
+    ],
+    "coverage_rates": [
+      25.0,
+      0.0,
+      0.0,
+      25.0,
+      50.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

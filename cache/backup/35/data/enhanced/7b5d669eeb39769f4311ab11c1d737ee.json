@@ -1,0 +1,133 @@
+{
+  "question": "A 46-year-old man is brought to the emergency department for the onset of severe pain in his right knee that occurred when he tripped while descending a staircase. As he landed, he heard and felt an immediate popping sensation in his right knee. His medical history is positive for obesity, hypertension, type 2 diabetes mellitus, severe asthma, and hyperlipidemia. He currently takes lisinopril, hydrochlorothiazide, metformin, atorvastatin, an albuterol inhaler, and a fluticasone inhaler. He recently completed a hospitalization and week-long regimen of systemic corticosteroids for a severe exacerbation of his asthma. The patient’s family history is not significant. In the emergency department, his vital signs are normal. On physical examination, his right knee is warm and swollen and he rates the pain as 9/10. He cannot stand or walk due to pain. He is unable to extend his right leg or flex his right thigh. A knee X-ray is ordered. Which of the following would best describe the cause of this presenting condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Meniscal tear",
+    "opb": "Femoral fracture",
+    "opc": "Quadriceps tendon tear",
+    "opd": "Avascular necrosis of the femur",
+    "ope": "Traction apophysitis of the tibia"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Tripping",
+        "Disease",
+        "Edema"
+      ],
+      [
+        "Tripping",
+        "Secondary infection",
+        "Edema"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Tripping)-CAUSES->(Disease)-CAUSES->(Edema)",
+      "(Tripping)-CAUSES->(Secondary infection)-CAUSES->(Edema)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Severe pain",
+        "Inflammation",
+        "Genes",
+        "Lung",
+        "Structure of right thigh"
+      ],
+      [
+        "Severe pain",
+        "Bone necrosis",
+        "Genes",
+        "Lung",
+        "Structure of right thigh"
+      ],
+      [
+        "Edema",
+        "Sodium Channel",
+        "Cell Line",
+        "Structure of right thigh"
+      ],
+      [
+        "Edema",
+        "CD2 gene|CD2",
+        "Cell Line",
+        "Structure of right thigh"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "PART_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Severe pain)-MANIFESTATION_OF->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Lung)-PART_OF->(Structure of right thigh)",
+      "(Severe pain)-ASSOCIATED_WITH->(Bone necrosis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Lung)-PART_OF->(Structure of right thigh)",
+      "(Edema)-ASSOCIATED_WITH->(Sodium Channel)-INTERACTS_WITH->(Cell Line)-PART_OF->(Structure of right thigh)",
+      "(Edema)-ASSOCIATED_WITH->(CD2 gene|CD2)-PART_OF->(Cell Line)-PART_OF->(Structure of right thigh)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Severe pain)-MANIFESTATION_OF->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Lung)-PART_OF->(Structure of right thigh)",
+      "(Severe pain)-ASSOCIATED_WITH->(Bone necrosis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Lung)-PART_OF->(Structure of right thigh)",
+      "(Edema)-ASSOCIATED_WITH->(Sodium Channel)-INTERACTS_WITH->(Cell Line)-PART_OF->(Structure of right thigh)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Trauma to the right knee -> Immediate popping sensation -> Severe pain and swelling -> Difficulty extending the right leg or flexing the right thigh -> Likely structural damage such as a meniscal tear -> 80% confidence. CHAIN: Obesity and hypertension -> Increased risk of joint injuries -> Tripping and falling -> Acute knee pain and swelling -> Possible meniscal tear -> 70% confidence. CHAIN: Lisinopril, hydrochlorothiazide, metformin, atorvastatin, albuterol, and fluticasone use -> No direct association with acute knee injury -> Unlikely to be the primary cause of the presenting condition -> 80%"
+  ],
+  "enhanced_information": "The presenting condition of a 46-year-old man with severe pain, swelling, and difficulty extending the right leg or flexing the right thigh is most likely due to a meniscal tear. The patient's history of trauma, immediate popping sensation, and risk factors such as obesity and hypertension support this diagnosis. Medications and recent corticosteroid use are unlikely to be directly related to the knee injury. No evidence from the retrieved paths directly supports or contradicts this conclusion.",
+  "analysis": "The core medical principle guiding this case is to consider the mechanism of injury, clinical presentation, and risk factors. In this scenario, the immediate popping sensation following trauma, along with the inability to extend the right leg or flex the right thigh, is highly suggestive of a meniscal tear. The patient's history of obesity and hypertension further increase the likelihood of this diagnosis. Other options like femoral fracture, quadriceps tendon tear, avascular necrosis of the femur, and traction apophysitis of the tibia are less likely based on the clinical presentation and context provided.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

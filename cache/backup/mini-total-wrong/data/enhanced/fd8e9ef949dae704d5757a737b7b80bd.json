@@ -1,0 +1,248 @@
+{
+  "question": "A 40-year-old woman comes to the physician because of a 1-week history of fatigue, dark urine, and a feeling of heaviness in her legs. Two weeks ago, she returned from a vacation to Brazil, where she spent most of her days exploring the city of Rio de Janeiro on foot. She also gained 3 kg (7 lb) during her vacation. She has systemic lupus erythematosus. Her only medication is hydroxychloroquine. Her temperature is 37.5°C (99.5°F), pulse is 78/min, and blood pressure is 162/98 mm Hg. Physical examination shows 2+ pretibial edema bilaterally. Urinalysis shows:\nBlood 3+\nProtein 1+\nRBC 6–8/hpf with dysmorphic features\nRBC casts numerous\nWBC 8/hpf\nWBC casts rare\nBacteria negative\nWhich of the following is the most likely cause of this patient's leg findings?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Venous insufficiency",
+    "opb": "Lymphatic obstruction",
+    "opc": "Increased capillary permeability",
+    "opd": "Renal protein loss",
+    "ope": "Salt retention"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Edema",
+        "Disease",
+        "Body fluid retention"
+      ],
+      [
+        "Edema",
+        "Hyponatremia",
+        "Body fluid retention"
+      ],
+      [
+        "Orthopedic Cast",
+        "Asthenopia",
+        "Disease",
+        "paracrine",
+        "Kidney Glomerulus"
+      ],
+      [
+        "Orthopedic Cast",
+        "Asthenopia",
+        "Disease",
+        "Excretory function",
+        "Kidney Glomerulus"
+      ],
+      [
+        "Orthopedic Cast",
+        "Asthenopia",
+        "Disease",
+        "Blood Circulation",
+        "Kidney Glomerulus"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Edema)-CAUSES->(Disease)-CAUSES->(Body fluid retention)",
+      "(Edema)-CAUSES->(Hyponatremia)-CAUSES->(Body fluid retention)",
+      "(Orthopedic Cast)-PREVENTS->(Asthenopia)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Kidney Glomerulus)",
+      "(Orthopedic Cast)-PREVENTS->(Asthenopia)-CAUSES->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(Kidney Glomerulus)",
+      "(Orthopedic Cast)-PREVENTS->(Asthenopia)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)-PROCESS_OF->(Kidney Glomerulus)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Fatigue",
+        "Pathogenesis",
+        "MCC gene|MCC",
+        "Surgical margins",
+        "Orthopedic Cast"
+      ],
+      [
+        "Fatigue",
+        "Pathogenesis",
+        "CDKN2A gene|CDKN2A",
+        "Surgical margins",
+        "Orthopedic Cast"
+      ],
+      [
+        "Urinalysis",
+        "Disease",
+        "Excretory function",
+        "Kidney Glomerulus"
+      ],
+      [
+        "Urinalysis",
+        "Disease",
+        "paracrine",
+        "Kidney Glomerulus"
+      ],
+      [
+        "Venous Insufficiency",
+        "Degenerative abnormality",
+        "Genes",
+        "Renal Tissue",
+        "Urinalysis"
+      ],
+      [
+        "Venous Insufficiency",
+        "Thrombosis",
+        "Genes",
+        "Renal Tissue",
+        "Urinalysis"
+      ],
+      [
+        "Urinalysis",
+        "Complication",
+        "IMPACT gene",
+        "Surgical margins",
+        "Orthopedic Cast"
+      ],
+      [
+        "Urinalysis",
+        "Complication",
+        "TP53 gene|TP53",
+        "Surgical margins",
+        "Orthopedic Cast"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Fatigue)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(MCC gene|MCC)-PART_OF->(Surgical margins)-LOCATION_OF->(Orthopedic Cast)",
+      "(Fatigue)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(CDKN2A gene|CDKN2A)-PART_OF->(Surgical margins)-LOCATION_OF->(Orthopedic Cast)",
+      "(Urinalysis)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(Kidney Glomerulus)",
+      "(Urinalysis)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Kidney Glomerulus)",
+      "(Venous Insufficiency)-CAUSES->(Degenerative abnormality)-ASSOCIATED_WITH->(Genes)-PART_OF->(Renal Tissue)-LOCATION_OF->(Urinalysis)",
+      "(Venous Insufficiency)-CAUSES->(Thrombosis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Renal Tissue)-LOCATION_OF->(Urinalysis)",
+      "(Urinalysis)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(IMPACT gene)-PART_OF->(Surgical margins)-LOCATION_OF->(Orthopedic Cast)",
+      "(Urinalysis)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(TP53 gene|TP53)-PART_OF->(Surgical margins)-LOCATION_OF->(Orthopedic Cast)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fatigue)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(MCC gene|MCC)-PART_OF->(Surgical margins)-LOCATION_OF->(Orthopedic Cast)",
+      "(Fatigue)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(CDKN2A gene|CDKN2A)-PART_OF->(Surgical margins)-LOCATION_OF->(Orthopedic Cast)",
+      "(Urinalysis)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(IMPACT gene)-PART_OF->(Surgical margins)-LOCATION_OF->(Orthopedic Cast)",
+      "(Urinalysis)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(TP53 gene|TP53)-PART_OF->(Surgical margins)-LOCATION_OF->(Orthopedic Cast)",
+      "(Venous Insufficiency)-CAUSES->(Degenerative abnormality)-ASSOCIATED_WITH->(Genes)-PART_OF->(Renal Tissue)-LOCATION_OF->(Urinalysis)",
+      "(Venous Insufficiency)-CAUSES->(Thrombosis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Renal Tissue)-LOCATION_OF->(Urinalysis)",
+      "(Urinalysis)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(Kidney Glomerulus)",
+      "(Urinalysis)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Kidney Glomerulus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient has systemic lupus erythematosus\" -> \"Increased risk of renal involvement\" -> \"Urinalysis shows protein and RBC casts\" -> \"Indicates possible glomerular damage\" -> \"Renal protein loss leads to edema\" -> \"Leg heaviness due to fluid retention\" -> 85%",
+    "CHAIN: \"Patient has hypertension (162/98 mm Hg)\" -> \"Possible salt retention due to kidney issues\" -> \"Increased fluid volume\" -> \"Contributes to pretibial edema\" -> \"Leg heaviness from fluid accumulation\" -> 80%",
+    "CHAIN: \"Patient recently returned from Brazil\" -> \"Possible exposure to infections\" -> \"Fatigue and dark urine may indicate renal issues\" -> \"Urinalysis shows dysmorphic RBCs and casts\" -> \"Suggests glomerular pathology\" -> \"Renal protein loss causing edema\" -> 75%",
+    "CHAIN: \"Patient has gained weight (3 kg) during vacation\" -> \"Possible salt and water retention\" -> \"Increased blood volume\" -> \"Contributes to pretibial edema\" -> \"Leg heaviness due to fluid overload\" -> 70%",
+    "CHAIN: \"Patient presents with bilateral pretibial edema\" -> \"Could be due to venous insufficiency\" -> \"However, urinalysis suggests renal involvement\" -> \"Dysmorphic RBCs and casts indicate glomerular damage\" -> \"More likely renal protein loss causing edema\" -> 80%"
+  ],
+  "enhanced_information": "The patient has systemic lupus erythematosus (SLE), which increases the risk of renal involvement, as evidenced by the urinalysis showing proteinuria and dysmorphic red blood cells (RBCs) with casts, indicating glomerular damage. This suggests renal protein loss as a likely cause of her pretibial edema and leg heaviness. While hypertension and recent weight gain could contribute to fluid retention, the urinalysis findings strongly point towards renal pathology as the primary cause of her symptoms. Therefore, renal protein loss is the most likely cause of the patient's leg findings.",
+  "analysis": "The patient presents with fatigue, dark urine, and bilateral pretibial edema, alongside significant findings in her urinalysis, including proteinuria, dysmorphic red blood cells, and RBC casts. These findings are indicative of glomerular damage, which is consistent with renal involvement in systemic lupus erythematosus (SLE). The presence of RBC casts suggests a glomerular process, likely leading to renal protein loss. While hypertension and recent weight gain could contribute to fluid retention, the urinalysis findings strongly indicate that the primary issue is related to renal pathology. Therefore, the most likely cause of the patient's leg findings is renal protein loss due to glomerular damage associated with her SLE. This aligns with the enhanced information provided, which emphasizes the renal implications of her condition. Thus, the best-supported option is renal protein loss.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      3,
+      0,
+      2
+    ],
+    "coverage_rates": [
+      16.666666666666664,
+      0.0,
+      50.0,
+      0.0,
+      33.33333333333333
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

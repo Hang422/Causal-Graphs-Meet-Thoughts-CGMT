@@ -1,0 +1,136 @@
+{
+  "question": "A 62-year-old man presents to the office because of painless rectal bleeding for the past 3 months. He describes intermittent streaks of bright red blood on the toilet paper after wiping and blood on but not mixed within the stool. Occasionally, he has noted a small volume of blood within the toilet bowl, and he associates this with straining. For the past 2 weeks, he has noticed an 'uncomfortable lump' in his anus when defecating, which goes away by itself immediately afterwards. He says he has no abdominal pain, weight loss, or fevers. He is a well-appearing man that is slightly obese. Digital rectal examination shows bright red blood on the examination glove following the procedure. Anoscopy shows enlarged blood vessels above the pectinate line. Which of the following is the most likely cause?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Grade 1 external hemorrhoids",
+    "opb": "Grade 1 internal hemorrhoids",
+    "opc": "Grade 2 external hemorrhoids",
+    "opd": "Grade 2 internal hemorrhoids",
+    "ope": "Grade 3 external hemorrhoids"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Blood",
+        "Virus",
+        "Antibodies",
+        "Straining"
+      ],
+      [
+        "Blood",
+        "Disease",
+        "Rectal hemorrhage",
+        "Straining"
+      ],
+      [
+        "Straining",
+        "Entire pelvic floor",
+        "Anus"
+      ],
+      [
+        "Straining",
+        "Entire nerve",
+        "Anus"
+      ],
+      [
+        "Blood",
+        "Anus"
+      ],
+      [
+        "Anus",
+        "Rectum",
+        "Anoscopy"
+      ],
+      [
+        "Rectal examination",
+        "Sphincter",
+        "Rectum",
+        "Anoscopy"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "PROCESS_OF",
+        "PART_OF"
+      ],
+      [
+        "PROCESS_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Blood)-LOCATION_OF->(Virus)-LOCATION_OF->(Antibodies)-CAUSES->(Straining)",
+      "(Blood)-LOCATION_OF->(Disease)-CAUSES->(Rectal hemorrhage)-MANIFESTATION_OF->(Straining)",
+      "(Straining)-PROCESS_OF->(Entire pelvic floor)-PART_OF->(Anus)",
+      "(Straining)-PROCESS_OF->(Entire nerve)-PART_OF->(Anus)",
+      "(Blood)-PART_OF->(Anus)",
+      "(Anus)-PART_OF->(Rectum)-LOCATION_OF->(Anoscopy)",
+      "(Rectal examination)-DIAGNOSES->(Sphincter)-PART_OF->(Rectum)-LOCATION_OF->(Anoscopy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Blood)-PART_OF->(Anus)",
+      "(Blood)-LOCATION_OF->(Disease)-CAUSES->(Rectal hemorrhage)-MANIFESTATION_OF->(Straining)",
+      "(Straining)-PROCESS_OF->(Entire pelvic floor)-PART_OF->(Anus)",
+      "(Straining)-PROCESS_OF->(Entire nerve)-PART_OF->(Anus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Bright red blood on toilet paper after wiping\" -> \"Blood on but not mixed within stool\" -> \"Small volume of blood in toilet bowl associated with straining\" -> \"Uncomfortable lump in anus when defecating\" -> \"Enlarged blood vessels above the pectinate line on anoscopy\" -> \"Grade 2 internal hemorrhoids\" -> 95%",
+    "CHAIN: \"Bright red blood on examination glove following digital rectal examination\" -> \"Enlarged blood vessels above the pectinate line on anoscopy\" -> \"Grade 2 internal hemorrhoids\" -> 90%"
+  ],
+  "enhanced_information": "The most likely cause of the patient's symptoms is Grade 2 internal hemorrhoids, supported by the presence of bright red blood on the toilet paper, blood on but not mixed within the stool, small volume of blood in the toilet bowl associated with straining, uncomfortable lump in the anus, and enlarged blood vessels above the pectinate line on anoscopy.",
+  "analysis": "The core medical principle in this case is the presentation of painless rectal bleeding with associated findings of bright red blood on the toilet paper, blood on but not mixed within the stool, small volume of blood in the toilet bowl associated with straining, uncomfortable lump in the anus, and enlarged blood vessels above the pectinate line on anoscopy. These findings are classic for Grade 2 internal hemorrhoids, which are located proximal to the dentate line and can prolapse during defecation. Grade 2 internal hemorrhoids are a common cause of painless rectal bleeding and are consistent with the patient's symptoms.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4,
+      1
+    ],
+    "coverage_rates": [
+      80.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

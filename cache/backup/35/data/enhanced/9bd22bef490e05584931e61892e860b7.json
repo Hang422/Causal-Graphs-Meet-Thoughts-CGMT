@@ -1,0 +1,94 @@
+{
+  "question": "A 32-year-old man presents to the physician for a check-up as part of his immigration application. On auscultation, there is a mild rumble heard at the cardiac apex preceded by an opening snap. His blood pressure is 132/76 and heart rate is 78/min. The patient suffers from occasional asthma attacks but has noticed that he cannot hold his breath on exertion over the past 2 years. He is otherwise healthy. He does not recall if he had any serious infections during childhood, and there is no family history of congenital diseases. Which of the following could have been used to prevent the development of this condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Penicillin",
+    "opb": "Alprostadil",
+    "opc": "Sulfasalazine",
+    "opd": "Indomethacin",
+    "ope": "PGE1 infusion"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Rheumatic Fever",
+        "Mitral Valve Stenosis"
+      ],
+      [
+        "Asthma attack NOS",
+        "Dyspnea"
+      ],
+      [
+        "Dyspnea",
+        "Hypertension, Pulmonary"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Rheumatic Fever)-CAUSES->(Mitral Valve Stenosis)",
+      "(Asthma attack NOS)-CAUSES->(Dyspnea)",
+      "(Dyspnea)-CAUSES->(Hypertension, Pulmonary)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hypertension, Pulmonary",
+        "Pulmonary Vascular Resistance",
+        "Alprostadil"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hypertension, Pulmonary)-MANIFESTATION_OF->(Pulmonary Vascular Resistance)-ASSOCIATED_WITH->(Alprostadil)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypertension, Pulmonary)-MANIFESTATION_OF->(Pulmonary Vascular Resistance)-ASSOCIATED_WITH->(Alprostadil)",
+      "(Asthma attack NOS)-CAUSES->(Dyspnea)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Possible childhood infection\" -> \"Rheumatic fever\" -> \"Mitral stenosis\" -> \"Symptoms described\" -> \"Opening snap heard at cardiac apex\" -> \"Mild rumble at cardiac apex\" -> \"132/76 blood pressure\" -> \"78/min heart rate\" -> \"Asthma attacks\" -> \"Dyspnea on exertion\" -> \"Possible pulmonary hypertension\" -> \"PGE1 infusion\" -> 70%"
+  ],
+  "enhanced_information": "The patient's symptoms suggest possible mitral stenosis, likely due to rheumatic fever. The use of PGE1 infusion could have been considered to prevent the development of this condition, as it may help manage pulmonary hypertension associated with mitral stenosis. The evidence path linking pulmonary hypertension to Alprostadil supports the potential benefit of PGE1 infusion in this context.",
+  "analysis": "The patient's presentation with a mild rumble at the cardiac apex preceded by an opening snap, along with a history suggestive of possible mitral stenosis due to rheumatic fever, indicates a cardiac pathology. The use of PGE1 infusion to manage pulmonary hypertension associated with mitral stenosis aligns with the enhanced information provided. While penicillin is crucial for preventing rheumatic fever, in this case, the focus is on managing the consequences of the condition. Alprostadil and PGE1 infusion are related, and the evidence path linking pulmonary hypertension to Alprostadil supports the potential benefit of PGE1 infusion in this context. Therefore, PGE1 infusion could have been used to prevent the development of this condition.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

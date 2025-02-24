@@ -1,0 +1,92 @@
+{
+  "question": "A 44-year-old female presents to her primary care physician complaining of fatigue. She reports a four-month history of increasing fatigue accompanied by occasional constipation. She also reports a 15-pound weight gain over the same time period. She is otherwise healthy and takes no medications. She has never been pregnant. On physical examination, her skin is dry and cracked. Patellar reflexes are 1+ bilaterally. Laboratory analysis reveals an elevated serum TSH and decreased serum and free T4. Her blood is positive for the presence of specific antibodies. A biopsy of this patient’s thyroid gland would most likely reveal which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Large pleomorphic cells with vascular invasion and necrosis",
+    "opb": "Randomly oriented papillae with pleomorphic cells and dense fibrosis",
+    "opc": "Spindle cells with stromal amyloid deposition",
+    "opd": "Lymphocytic infiltrate with germinal center formation",
+    "ope": "Hyperplasia and hypertrophy of follicular cells"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Antibodies",
+        "autoimmune thyroid disease"
+      ],
+      [
+        "autoimmune thyroid disease",
+        "Pathogenesis",
+        "Chronic lymphocytic inflammation"
+      ],
+      [
+        "Antibodies",
+        "autoimmune thyroid disease"
+      ],
+      [
+        "autoimmune thyroid disease",
+        "Disease",
+        "Hypertrophy"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Antibodies)-TREATS->(autoimmune thyroid disease)",
+      "(autoimmune thyroid disease)-PREDISPOSES->(Pathogenesis)-MANIFESTATION_OF->(Chronic lymphocytic inflammation)",
+      "(Antibodies)-TREATS->(autoimmune thyroid disease)",
+      "(autoimmune thyroid disease)-CAUSES->(Disease)-CAUSES->(Hypertrophy)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Antibodies)-TREATS->(autoimmune thyroid disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Elevated serum TSH -> decreased serum and free T4 -> positive antibodies -> autoimmune thyroid disease -> lymphocytic infiltrate with germinal center formation -> 85% CHAIN: Elevated serum TSH -> decreased serum and free T4 -> positive antibodies -> autoimmune thyroid disease -> hyperplasia and hypertrophy of follicular cells -> 85%"
+  ],
+  "enhanced_information": "In this case, the most likely finding on biopsy of the patient's thyroid gland would be lymphocytic infiltrate with germinal center formation, consistent with autoimmune thyroid disease. The presence of specific antibodies supports the diagnosis of autoimmune thyroid disease, leading to this characteristic histological feature.",
+  "analysis": "The patient's presentation of fatigue, weight gain, constipation, dry skin, elevated TSH, decreased T4, and positive antibodies points towards autoimmune thyroid disease, specifically Hashimoto's thyroiditis. The characteristic histological finding in Hashimoto's thyroiditis is a lymphocytic infiltrate with germinal center formation. This is consistent with the enhanced information provided.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

@@ -1,0 +1,120 @@
+{
+  "question": "A 14-month-old boy is brought to the clinic for evaluation of a rash. The rash started on the face and spread to the trunk. He also had a fever and cough for the past 2 days. His mother says that they recently immigrated from Asia and cannot provide vaccination records. The physical examination reveals a maculopapular rash on the face, trunk, and proximal limbs with no lymphadenopathy. Blue-white spots are noted on the oral mucosa and there is bilateral mild conjunctival injection. The causative agent of this condition belongs to which of the following virus families?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "ssDNA enveloped viruses",
+    "opb": "dsRNA enveloped viruses",
+    "opc": "ssRNA naked viruses",
+    "opd": "dsRNA naked viruses",
+    "ope": "ssRNA enveloped viruses"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Vaccination",
+        "Communicable Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Vaccination)-CAUSES->(Communicable Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Diagnosis",
+        "Mumps",
+        "Measles virus"
+      ],
+      [
+        "Diagnosis",
+        "Visna-maedi virus",
+        "Measles virus"
+      ],
+      [
+        "Measles",
+        "Measles virus"
+      ],
+      [
+        "Communicable Diseases",
+        "Infection",
+        "Measles virus"
+      ],
+      [
+        "Communicable Diseases",
+        "Infection",
+        "Measles virus"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "INTERACTS_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Diagnosis)-DIAGNOSES->(Mumps)-INTERACTS_WITH->(Measles virus)",
+      "(Diagnosis)-DIAGNOSES->(Visna-maedi virus)-INTERACTS_WITH->(Measles virus)",
+      "(Measles)-INTERACTS_WITH->(Measles virus)",
+      "(Communicable Diseases)-MANIFESTATION_OF->(Infection)-INTERACTS_WITH->(Measles virus)",
+      "(Communicable Diseases)-CAUSES->(Infection)-INTERACTS_WITH->(Measles virus)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vaccination)-CAUSES->(Communicable Diseases)",
+      "(Measles)-INTERACTS_WITH->(Measles virus)",
+      "(Diagnosis)-DIAGNOSES->(Mumps)-INTERACTS_WITH->(Measles virus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Maculopapular rash on face, trunk, and proximal limbs\" -> \"Blue-white spots on oral mucosa\" -> \"Bilateral mild conjunctival injection\" -> \"No lymphadenopathy\" -> \"Likely diagnosis of measles\" -> \"Measles virus belongs to ssRNA enveloped viruses\" -> 95%",
+    "CHAIN: \"Fever and cough for the past 2 days\" -> \"Recent immigration from Asia\" -> \"Cannot provide vaccination records\" -> \"Increased risk for infectious diseases\" -> \"Likely exposure to measles virus\" -> \"Measles virus belongs to ssRNA enveloped viruses\" -> 90%"
+  ],
+  "enhanced_information": "The causative agent of the condition described, likely measles, belongs to the ssRNA enveloped viruses family. This conclusion is supported by the clinical presentation of maculopapular rash, blue-white spots on oral mucosa, bilateral mild conjunctival injection, and absence of lymphadenopathy, all characteristic of measles. The evidence paths mentioning measles virus further reinforce this association.",
+  "analysis": "The clinical presentation of a maculopapular rash, blue-white spots on oral mucosa, bilateral mild conjunctival injection, and absence of lymphadenopathy in a child with recent immigration history strongly suggests measles. Measles is caused by a virus belonging to the ssRNA enveloped viruses family.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      2
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

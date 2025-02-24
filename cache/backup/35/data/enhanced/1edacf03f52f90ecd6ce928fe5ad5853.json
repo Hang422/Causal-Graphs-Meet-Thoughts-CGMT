@@ -1,0 +1,220 @@
+{
+  "question": "A 57-year-old man is rushed to the emergency department by ambulance after being found on the floor gasping for air with severe shortness of breath by his partner. Past medical history is significant for congestive heart failure, hypertension, and hyperlipidemia. He normally takes chlorthalidone, atorvastatin, metoprolol, and valsartan, but he recently lost his job and insurance and has not been able to afford his medication in 2 months. Upon arrival at the hospital, his blood pressure is 85/50 mm Hg, heart rate is 110/min, respiratory rate is 24/min, oxygen saturation 90% on 100% oxygen, and temperature is 37.7°C (99.9°F). On physical exam, he appears obese and can only answer questions in short gasps as he struggles to breathe. His heart rate is tachycardic with a mildly irregular rhythm and auscultation of his lungs reveal crackles in the lower lobes, bilaterally. Which of the following physiologic changes is currently seen in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "↓ Plasma renin and angiotensin II activity, ↑ blood pressure, normal renal perfusion pressure, ↑ serum pH",
+    "opb": "↑ Plasma renin and angiotensin II activity, ↑ blood pressure, normal renal perfusion pressure, ↓ serum pH",
+    "opc": "Normal plasma renin and angiotensin II activity, ↓ blood pressure, ↓ renal perfusion pressure, ↓ serum pH",
+    "opd": "↑ Plasma renin and angiotensin II activity, ↓ blood pressure, ↓ renal perfusion pressure, ↑ serum pH",
+    "ope": "↑ Plasma renin and angiotensin II activity, ↑ blood pressure,↓ renal perfusion pressure, ↑ serum pH"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Metoprolol",
+        "Hyperlipidemia"
+      ],
+      [
+        "atorvastatin",
+        "Hyperlipidemia"
+      ],
+      [
+        "valsartan",
+        "Disease",
+        "Hyperlipidemia"
+      ],
+      [
+        "valsartan",
+        "Obesity",
+        "Hyperlipidemia"
+      ],
+      [
+        "valsartan",
+        "Hypertensive disease",
+        "Hyperlipidemia"
+      ],
+      [
+        "Chlorthalidone",
+        "Obesity",
+        "Hyperlipidemia"
+      ],
+      [
+        "Chlorthalidone",
+        "Hypertensive disease",
+        "Hyperlipidemia"
+      ],
+      [
+        "Chlorthalidone",
+        "Cardiovascular Diseases",
+        "Hyperlipidemia"
+      ],
+      [
+        "Hyperlipidemia",
+        "Disease",
+        "Respiratory distress"
+      ],
+      [
+        "Hyperlipidemia",
+        "Obesity",
+        "Respiratory distress"
+      ],
+      [
+        "Hyperlipidemia",
+        "Symptoms",
+        "Respiratory distress"
+      ],
+      [
+        "Heart failure",
+        "Respiratory distress"
+      ],
+      [
+        "Hypertensive disease",
+        "Disease",
+        "Respiratory distress"
+      ],
+      [
+        "Hypertensive disease",
+        "Obesity",
+        "Respiratory distress"
+      ],
+      [
+        "Hypertensive disease",
+        "Symptoms",
+        "Respiratory distress"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Metoprolol)-TREATS->(Hyperlipidemia)",
+      "(atorvastatin)-TREATS->(Hyperlipidemia)",
+      "(valsartan)-TREATS->(Disease)-CAUSES->(Hyperlipidemia)",
+      "(valsartan)-TREATS->(Obesity)-CAUSES->(Hyperlipidemia)",
+      "(valsartan)-TREATS->(Hypertensive disease)-CAUSES->(Hyperlipidemia)",
+      "(Chlorthalidone)-TREATS->(Obesity)-CAUSES->(Hyperlipidemia)",
+      "(Chlorthalidone)-TREATS->(Hypertensive disease)-CAUSES->(Hyperlipidemia)",
+      "(Chlorthalidone)-TREATS->(Cardiovascular Diseases)-CAUSES->(Hyperlipidemia)",
+      "(Hyperlipidemia)-CAUSES->(Disease)-CAUSES->(Respiratory distress)",
+      "(Hyperlipidemia)-CAUSES->(Obesity)-CAUSES->(Respiratory distress)",
+      "(Hyperlipidemia)-CAUSES->(Symptoms)-CAUSES->(Respiratory distress)",
+      "(Heart failure)-CAUSES->(Respiratory distress)",
+      "(Hypertensive disease)-CAUSES->(Disease)-CAUSES->(Respiratory distress)",
+      "(Hypertensive disease)-CAUSES->(Obesity)-CAUSES->(Respiratory distress)",
+      "(Hypertensive disease)-CAUSES->(Symptoms)-CAUSES->(Respiratory distress)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pharmaceutical Preparations",
+        "Metoprolol"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Pharmaceutical Preparations)-INTERACTS_WITH->(Metoprolol)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Metoprolol)-TREATS->(Hyperlipidemia)",
+      "(atorvastatin)-TREATS->(Hyperlipidemia)",
+      "(Pharmaceutical Preparations)-INTERACTS_WITH->(Metoprolol)",
+      "(valsartan)-TREATS->(Obesity)-CAUSES->(Hyperlipidemia)",
+      "(valsartan)-TREATS->(Hypertensive disease)-CAUSES->(Hyperlipidemia)",
+      "(Chlorthalidone)-TREATS->(Obesity)-CAUSES->(Hyperlipidemia)",
+      "(Chlorthalidone)-TREATS->(Hypertensive disease)-CAUSES->(Hyperlipidemia)",
+      "(valsartan)-TREATS->(Disease)-CAUSES->(Hyperlipidemia)",
+      "(Chlorthalidone)-TREATS->(Cardiovascular Diseases)-CAUSES->(Hyperlipidemia)",
+      "(Heart failure)-CAUSES->(Respiratory distress)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Non-adherence to medications -> discontinuation of chlorthalidone, atorvastatin, metoprolol, and valsartan -> uncontrolled hypertension, hyperlipidemia, and heart failure exacerbation -> hypotension, tachycardia, and respiratory distress -> possible shock state -> compensatory mechanisms activation -> increased plasma renin and angiotensin II activity -> decreased blood pressure, decreased renal perfusion pressure, increased serum pH -> opd. ↑ Plasma renin and angiotensin II activity, ↓ blood pressure, ↓ renal perfusion pressure, ↑ serum pH -> 80%"
+  ],
+  "enhanced_information": "Non-adherence to medications led to uncontrolled hypertension, hyperlipidemia, and heart failure exacerbation, resulting in hypotension, tachycardia, and respiratory distress in the patient. This cascade may progress to a shock state, activating compensatory mechanisms including increased plasma renin and angiotensin II activity. This leads to increased serum pH, decreased blood pressure, and decreased renal perfusion pressure, aligning with option opd.",
+  "analysis": "The patient's presentation with hypotension, tachycardia, respiratory distress, and history of non-adherence to medications suggests a decompensated state of congestive heart failure and shock. This leads to activation of compensatory mechanisms including increased plasma renin and angiotensin II activity. The resulting physiological changes include decreased blood pressure, increased serum pH, and decreased renal perfusion pressure. This aligns with the enhanced information provided, supporting option opd.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      8
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

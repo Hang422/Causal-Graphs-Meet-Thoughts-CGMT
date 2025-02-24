@@ -1,0 +1,181 @@
+{
+  "question": "An 87-year-old woman is brought to the emergency department 30 minutes after a fall onto a hardwood floor. She landed on her left side and hit the left side of her head. She did not lose consciousness. She has a mild headache over the left temple and severe left hip pain. She has had nasal congestion, a sore throat, and a productive cough for the last 2 days. She has a history of atrial fibrillation, coronary artery disease, hypertension, and osteoporosis. She underwent two coronary artery bypass grafts 5 years ago. She had smoked one pack of cigarettes daily for 30 years but quit 30 years ago. Her current medications include aspirin, apixaban, diltiazem, omeprazole, and vitamin D supplementation. The patient is oriented to person, place, and time. There is a 2-cm ecchymosis over the left temple. Examination of the left hip shows swelling and tenderness; range of motion is limited. Intravenous morphine 2 mg is started. During further examination, the patient complains of dizziness and palpitations. She is diaphoretic and pale. Her skin is cold and clammy. Her pulse is 110/min and faint, respirations are 20/min, and blood pressure is 70/30 mm Hg. Cranial nerves are intact. Cardiac examinations shows no murmurs, rubs, or gallops. An ECG shows absent P waves and nonspecific changes of the ST segment and the T wave. Which of the following is the most likely underlying mechanism for the patient's sudden decline in her condition?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Pulmonary embolism",
+    "opb": "Cardiac tamponade",
+    "opc": "Brain herniation",
+    "opd": "Sepsis",
+    "ope": "Blood loss"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Dizziness",
+        "Symptoms",
+        "Increased sweating"
+      ],
+      [
+        "Dizziness",
+        "hypoglycemia",
+        "Increased sweating"
+      ],
+      [
+        "Dizziness",
+        "Disease",
+        "Asthenia",
+        "Electrocardiogram"
+      ],
+      [
+        "Dizziness",
+        "Disease",
+        "Conduction disorder of the heart",
+        "Electrocardiogram"
+      ],
+      [
+        "Dizziness",
+        "Hypertensive disease",
+        "Asthenia",
+        "Electrocardiogram"
+      ],
+      [
+        "Dizziness",
+        "Disease",
+        "Asthenia",
+        "Electrocardiogram"
+      ],
+      [
+        "Dizziness",
+        "Disease",
+        "Conduction disorder of the heart",
+        "Electrocardiogram"
+      ],
+      [
+        "Dizziness",
+        "Hypertensive disease",
+        "Asthenia",
+        "Electrocardiogram"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Dizziness)-CAUSES->(Symptoms)-CAUSES->(Increased sweating)",
+      "(Dizziness)-CAUSES->(hypoglycemia)-CAUSES->(Increased sweating)",
+      "(Dizziness)-CAUSES->(Disease)-CAUSES->(Asthenia)-CAUSES->(Electrocardiogram)",
+      "(Dizziness)-CAUSES->(Disease)-CAUSES->(Conduction disorder of the heart)-CAUSES->(Electrocardiogram)",
+      "(Dizziness)-CAUSES->(Hypertensive disease)-CAUSES->(Asthenia)-CAUSES->(Electrocardiogram)",
+      "(Dizziness)-CAUSES->(Disease)-CAUSES->(Asthenia)-CAUSES->(Electrocardiogram)",
+      "(Dizziness)-CAUSES->(Disease)-CAUSES->(Conduction disorder of the heart)-CAUSES->(Electrocardiogram)",
+      "(Dizziness)-CAUSES->(Hypertensive disease)-CAUSES->(Asthenia)-CAUSES->(Electrocardiogram)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Increased sweating",
+        "Disease",
+        "Virus",
+        "Pharmaceutical Preparations",
+        "Clammy skin"
+      ],
+      [
+        "Increased sweating",
+        "Disease",
+        "Virus",
+        "Pharmaceutical Preparations",
+        "Clammy skin"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "INTERACTS_WITH",
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Increased sweating)-CAUSES->(Disease)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Clammy skin)",
+      "(Increased sweating)-ASSOCIATED_WITH->(Disease)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Clammy skin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Dizziness)-CAUSES->(Disease)-CAUSES->(Conduction disorder of the heart)-CAUSES->(Electrocardiogram)",
+      "(Increased sweating)-ASSOCIATED_WITH/CAUSES->(Disease)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Clammy skin)",
+      "(Dizziness)-CAUSES->(Symptoms)-CAUSES->(Increased sweating)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Fall onto left side -> Head injury -> Mild headache over left temple -> 70% CHAIN: Fall onto left side -> Left hip pain -> Swelling and tenderness on examination -> Limited range of motion -> 60% CHAIN: Fall onto left side -> Left hip pain -> Intravenous morphine started -> Dizziness and palpitations -> Diaphoresis -> Cold and clammy skin -> Tachycardia -> Hypotension -> 80% CHAIN: Fall onto left side -> Left hip pain -> Dizziness and palpitations -> Absent P waves on ECG -> Nonspecific ST segment and T wave changes -> 90% CHAIN: Fall onto left side -> Left hip pain -> Dizziness and palpitations -> Absent P waves on ECG -> Nonspecific ST segment and T wave changes -> Hypotension -> Cardiac tamponade -> 70%"
+  ],
+  "enhanced_information": "The most likely underlying mechanism for the patient's sudden decline in her condition is cardiac tamponade. The chain of events starting from the fall onto her left side, leading to left hip pain, dizziness, palpitations, absent P waves on ECG, nonspecific ST segment and T wave changes, and ultimately hypotension, strongly suggests cardiac tamponade as the cause of her deterioration. The evidence paths supporting conduction disorder of the heart leading to ECG changes align with this conclusion.",
+  "analysis": "The patient's sudden decline in condition, with symptoms of dizziness, palpitations, absent P waves on ECG, nonspecific ST segment and T wave changes, and hypotension, is highly suggestive of cardiac tamponade. The history of trauma, along with the ECG findings and hemodynamic instability, point towards this diagnosis.",
+  "answer": "opb. cardiac tamponade",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

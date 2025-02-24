@@ -1,0 +1,138 @@
+{
+  "question": "A 57-year-old woman comes to the physician for evaluation of a lump in the right breast that she first noticed a week ago. Biopsy of the mass confirms a diagnosis of a pleomorphic lobular carcinoma-in-situ that is estrogen receptor-positive. The patient undergoes lumpectomy, and treatment with tamoxifen is initiated. Which of the following conditions is most likely to occur as a result of tamoxifen therapy?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Endometrial cancer",
+    "opb": "Osteoporosis",
+    "opc": "Myelosuppression",
+    "opd": "Ovarian cancer",
+    "ope": "Cardiotoxicity"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Estrogen Receptors",
+        "Disease",
+        "Asthenia",
+        "Estrogenic effect"
+      ],
+      [
+        "Estrogen Receptors",
+        "Atrophic",
+        "Asthenia",
+        "Estrogenic effect"
+      ],
+      [
+        "Estrogen Receptors",
+        "Inflammatory Bowel Diseases",
+        "Functional disorder",
+        "Estrogenic effect"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Estrogen Receptors)-PREDISPOSES->(Disease)-CAUSES->(Asthenia)-CAUSES->(Estrogenic effect)",
+      "(Estrogen Receptors)-CAUSES->(Atrophic)-PREDISPOSES->(Asthenia)-CAUSES->(Estrogenic effect)",
+      "(Estrogen Receptors)-CAUSES->(Inflammatory Bowel Diseases)-CAUSES->(Functional disorder)-MANIFESTATION_OF->(Estrogenic effect)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Tamoxifen",
+        "Cells",
+        "Estrogen Receptors"
+      ],
+      [
+        "Tamoxifen",
+        "Pathogenesis",
+        "Estrogen Receptors"
+      ],
+      [
+        "Tamoxifen",
+        "Cells",
+        "Selective Estrogen Receptor Modulators"
+      ],
+      [
+        "Tamoxifen",
+        "Genes",
+        "Selective Estrogen Receptor Modulators"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Tamoxifen)-PART_OF->(Cells)-LOCATION_OF->(Estrogen Receptors)",
+      "(Tamoxifen)-TREATS->(Pathogenesis)-ASSOCIATED_WITH->(Estrogen Receptors)",
+      "(Tamoxifen)-PART_OF->(Cells)-LOCATION_OF->(Selective Estrogen Receptor Modulators)",
+      "(Tamoxifen)-INTERACTS_WITH->(Genes)-INTERACTS_WITH->(Selective Estrogen Receptor Modulators)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Tamoxifen)-PART_OF->(Cells)-LOCATION_OF->(Estrogen Receptors)",
+      "(Tamoxifen)-TREATS->(Pathogenesis)-ASSOCIATED_WITH->(Estrogen Receptors)",
+      "(Tamoxifen)-PART_OF->(Cells)-LOCATION_OF->(Selective Estrogen Receptor Modulators)",
+      "(Tamoxifen)-INTERACTS_WITH->(Genes)-INTERACTS_WITH->(Selective Estrogen Receptor Modulators)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Tamoxifen\" -> \"Estrogen receptor blockade\" -> \"Inhibition of estrogen effects on breast tissue\" -> \"Reduction in breast cancer recurrence risk\" -> 80% CHAIN: \"Tamoxifen\" -> \"Selective estrogen receptor modulator (SERM)\" -> \"Decreased risk of invasive breast cancer\" -> \"Improved survival outcomes\" -> 75% CHAIN: \"Tamoxifen\" -> \"Estrogen receptor-positive breast cancer\" -> \"Inhibition of tumor growth\" -> \"Reduced risk of disease progression\" -> 80%"
+  ],
+  "enhanced_information": "Tamoxifen, a selective estrogen receptor modulator, inhibits estrogen effects on breast tissue, reducing the risk of breast cancer recurrence and inhibiting tumor growth in estrogen receptor-positive breast cancer. The most likely condition to occur as a result of tamoxifen therapy is endometrial cancer due to its estrogen agonist effects on the endometrium.",
+  "analysis": "Tamoxifen, as a selective estrogen receptor modulator, can have estrogen agonist effects on the endometrium, potentially leading to an increased risk of endometrial cancer. This is a well-known side effect of tamoxifen therapy in estrogen receptor-positive breast cancer patients.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

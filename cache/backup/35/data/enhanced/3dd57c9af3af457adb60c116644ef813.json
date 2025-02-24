@@ -1,0 +1,127 @@
+{
+  "question": "A 45-year-old man presents to the emergency department with upper abdominal pain. He reports vomiting blood 2 times at home. He has smoked 30–40 cigarettes daily for 15 years. He is otherwise well, takes no medications, and abstains from the use of alcohol. While in the emergency department, he vomits bright red blood into a bedside basin and becomes light-headed. Blood pressure is 86/40 mm Hg, pulse 120/min, and respiratory rate 24/min. His skin is cool to touch, pale, and mottled. Which of the following is a feature of this patient’s condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "↑ pulmonary capillary wedge pressure",
+    "opb": "↑ peripheral vascular resistance",
+    "opc": "↓ peripheral vascular resistance  ",
+    "opd": "Initial ↓ of hemoglobin and hematocrit concentration",
+    "ope": "Inspiratory ↑ of jugular venous pressure"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Peptic Ulcer",
+        "[D] Upper abdominal pain"
+      ],
+      [
+        "[D] Upper abdominal pain",
+        "Pancreatitis",
+        "Hematemesis"
+      ],
+      [
+        "Hematemesis",
+        "Diabetic Ketoacidosis",
+        "Hypovolemic Shock"
+      ],
+      [
+        "Hematemesis",
+        "Upper gastrointestinal hemorrhage",
+        "Hypovolemic Shock"
+      ],
+      [
+        "Hematemesis",
+        "Disease",
+        "Hypovolemic Shock"
+      ],
+      [
+        "Hypovolemic Shock",
+        "Ischemia",
+        "Pallor"
+      ],
+      [
+        "Hypovolemic Shock",
+        "Infection",
+        "Pallor"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Peptic Ulcer)-CAUSES->([D] Upper abdominal pain)",
+      "([D] Upper abdominal pain)-MANIFESTATION_OF->(Pancreatitis)-CAUSES->(Hematemesis)",
+      "(Hematemesis)-COMPLICATES->(Diabetic Ketoacidosis)-CAUSES->(Hypovolemic Shock)",
+      "(Hematemesis)-PREDISPOSES->(Upper gastrointestinal hemorrhage)-CAUSES->(Hypovolemic Shock)",
+      "(Hematemesis)-MANIFESTATION_OF->(Disease)-CAUSES->(Hypovolemic Shock)",
+      "(Hypovolemic Shock)-CAUSES->(Ischemia)-CAUSES->(Pallor)",
+      "(Hypovolemic Shock)-PREDISPOSES->(Infection)-CAUSES->(Pallor)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Peptic Ulcer)-CAUSES->([D] Upper abdominal pain)",
+      "(Hematemesis)-COMPLICATES->(Diabetic Ketoacidosis)-CAUSES->(Hypovolemic Shock)",
+      "(Hypovolemic Shock)-CAUSES->(Ischemia)-CAUSES->(Pallor)",
+      "(Hypovolemic Shock)-PREDISPOSES->(Infection)-CAUSES->(Pallor)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Smoking -> increased risk of peptic ulcer disease -> upper abdominal pain -> vomiting blood -> hematemesis -> hypovolemic shock -> cool, pale, mottled skin -> possible ↑ peripheral vascular resistance -> possible ↑ pulmonary capillary wedge pressure -> possible initial ↓ of hemoglobin and hematocrit concentration -> possible inspiratory ↑ of jugular venous pressure -> 70%"
+  ],
+  "enhanced_information": "The patient's condition likely involves hypovolemic shock due to upper gastrointestinal bleeding, leading to cool, pale, and mottled skin. This can result in increased peripheral vascular resistance and possibly an initial decrease in hemoglobin and hematocrit concentration. Inspiratory increase in jugular venous pressure may also be present.",
+  "analysis": "The patient's presentation with upper abdominal pain, vomiting bright red blood, and hemodynamic instability is consistent with hypovolemic shock likely due to upper gastrointestinal bleeding. In this scenario, there would be a decrease in peripheral vascular resistance as the body tries to compensate for the reduced blood volume by dilating peripheral vessels to maintain perfusion. The initial decrease in hemoglobin and hematocrit concentration is expected due to acute blood loss. Inspiratory increase in jugular venous pressure may also be present as a sign of fluid overload or right heart failure, but it is less likely to be a prominent feature in this acute hypovolemic shock setting.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

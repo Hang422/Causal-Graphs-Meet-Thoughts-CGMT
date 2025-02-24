@@ -1,0 +1,150 @@
+{
+  "question": "A clinical study is studying new genetic gene-based therapies for children and adults with sickle cell disease. The patients were informed that they were divided into two age groups since younger patients suffer from different complications of the disease. The pediatric group is more likely to suffer from which of the complications?\nI. Splenic sequestration\nII. Avascular necrosis\nIII. Pulmonary hypertension\nIV. Acute chest syndrome\nV. Nephropathy?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "I, II",
+    "opb": "I, IV, V",
+    "opc": "I, II, IV",
+    "opd": "III, IV",
+    "ope": "I, IV"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Sickle Cell Anemia",
+        "Pain",
+        "Splenic sequestration"
+      ],
+      [
+        "Sickle Cell Anemia",
+        "Fibrosis",
+        "Splenic sequestration"
+      ],
+      [
+        "Sickle Cell Anemia",
+        "Obstruction",
+        "Splenic sequestration"
+      ],
+      [
+        "Splenic sequestration",
+        "Disease",
+        "Acute chest syndrome"
+      ],
+      [
+        "Splenic sequestration",
+        "Pain",
+        "Acute chest syndrome"
+      ],
+      [
+        "Splenic sequestration",
+        "Sickle Cell Anemia",
+        "Acute chest syndrome"
+      ],
+      [
+        "Acute chest syndrome",
+        "Symptoms",
+        "Kidney Diseases"
+      ],
+      [
+        "Acute chest syndrome",
+        "Sickle Cell Anemia",
+        "Kidney Diseases"
+      ],
+      [
+        "Acute chest syndrome",
+        "Infection",
+        "Kidney Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Sickle Cell Anemia)-CAUSES->(Pain)-CAUSES->(Splenic sequestration)",
+      "(Sickle Cell Anemia)-CAUSES->(Fibrosis)-CAUSES->(Splenic sequestration)",
+      "(Sickle Cell Anemia)-CAUSES->(Obstruction)-CAUSES->(Splenic sequestration)",
+      "(Splenic sequestration)-CAUSES->(Disease)-CAUSES->(Acute chest syndrome)",
+      "(Splenic sequestration)-CAUSES->(Pain)-CAUSES->(Acute chest syndrome)",
+      "(Splenic sequestration)-COMPLICATES->(Sickle Cell Anemia)-CAUSES->(Acute chest syndrome)",
+      "(Acute chest syndrome)-CAUSES->(Symptoms)-CAUSES->(Kidney Diseases)",
+      "(Acute chest syndrome)-CAUSES->(Sickle Cell Anemia)-CAUSES->(Kidney Diseases)",
+      "(Acute chest syndrome)-PREDISPOSES->(Infection)-CAUSES->(Kidney Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Sickle Cell Anemia)-CAUSES->(Fibrosis)-CAUSES->(Splenic sequestration)",
+      "(Splenic sequestration)-CAUSES->(Disease)-CAUSES->(Acute chest syndrome)",
+      "(Acute chest syndrome)-CAUSES->(Symptoms)-CAUSES->(Kidney Diseases)",
+      "(Acute chest syndrome)-CAUSES->(Sickle Cell Anemia)-CAUSES->(Kidney Diseases)",
+      "(Acute chest syndrome)-PREDISPOSES->(Infection)-CAUSES->(Kidney Diseases)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Younger patients with sickle cell disease -> more likely to suffer from splenic sequestration -> 80% CHAIN: Splenic sequestration -> increased risk of acute chest syndrome -> 75% CHAIN: Acute chest syndrome -> potential nephropathy complications -> 80%"
+  ],
+  "enhanced_information": "Younger patients with sickle cell disease are more likely to suffer from splenic sequestration, which can lead to acute chest syndrome. Acute chest syndrome can potentially result in nephropathy complications. Therefore, the pediatric group is more likely to suffer from complications I (splenic sequestration), IV (acute chest syndrome), and V (nephropathy).",
+  "analysis": "Younger patients with sickle cell disease are more likely to suffer from splenic sequestration, acute chest syndrome, and nephropathy. Acute chest syndrome can potentially lead to nephropathy complications. Avascular necrosis and pulmonary hypertension are not specifically mentioned as more common in the pediatric group.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

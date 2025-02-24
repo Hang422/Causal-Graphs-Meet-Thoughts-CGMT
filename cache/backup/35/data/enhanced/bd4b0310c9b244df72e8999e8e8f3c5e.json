@@ -1,0 +1,161 @@
+{
+  "question": "A 57-year-old man is admitted to the ER due to an abrupt onset of abdominal pain that radiates to the back, nausea, and multiple vomiting episodes for the past 10 hours. He does not have any significant past medical history. He admits to drinking alcohol every night. During admission, he is found to have a body temperature of 37.5°C (99.5°F), a respiratory rate of 20/min, a pulse of 120/min, and a blood pressure of 120/76 mm Hg. He looks pale with sunken eyes and has significant epigastric tenderness and flank discoloration. An initial laboratory panel shows the following:\nTotal count (WBC) 10,000/mm3\nPlatelet count 140,000/mm3\nSerum glucose 160 mg/dL\nSerum LDH 500 IU/L\nAspartate aminotransferase 400 IU/dL\nSerum Amylase 500 IU/L\nSerum Lipase 300 IU/L\nWhich of the following combinations would best predict severity in this case?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Glucose, LDH, AST",
+    "opb": "Age, LDH, AST",
+    "opc": "WBC, platelet count, AST",
+    "opd": "Age, glucose, amylase",
+    "ope": "AST, amylase, lipase"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Abdominal Pain",
+        "Pancreatitis"
+      ],
+      [
+        "Tenderness epigastric",
+        "Eclampsia",
+        "Disease",
+        "Pancreatitis"
+      ],
+      [
+        "Tenderness epigastric",
+        "Eclampsia",
+        "Hypertensive disease",
+        "Pancreatitis"
+      ],
+      [
+        "Lipase",
+        "Pancreatitis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS"
+      ]
+    ],
+    "paths": [
+      "(Abdominal Pain)-CAUSES->(Pancreatitis)",
+      "(Tenderness epigastric)-PREDISPOSES->(Eclampsia)-CAUSES->(Disease)-CAUSES->(Pancreatitis)",
+      "(Tenderness epigastric)-PREDISPOSES->(Eclampsia)-PREDISPOSES->(Hypertensive disease)-CAUSES->(Pancreatitis)",
+      "(Lipase)-PREVENTS->(Pancreatitis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pancreatitis",
+        "Pathogenesis",
+        "Lipase"
+      ],
+      [
+        "Pancreatitis",
+        "Pathogenesis",
+        "Lipase"
+      ],
+      [
+        "Pancreatitis",
+        "Pathogenesis",
+        "Lipase"
+      ],
+      [
+        "Pancreatitis",
+        "Pathogenesis",
+        "Lipase"
+      ],
+      [
+        "Pancreatitis",
+        "Pathogenesis",
+        "Lipase"
+      ],
+      [
+        "Pancreatitis",
+        "Pathogenesis",
+        "Lipase"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Pancreatitis)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Lipase)",
+      "(Pancreatitis)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Lipase)",
+      "(Pancreatitis)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Lipase)",
+      "(Pancreatitis)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Lipase)",
+      "(Pancreatitis)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Lipase)",
+      "(Pancreatitis)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Lipase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Lipase)-PREVENTS->(Pancreatitis)",
+      "(Pancreatitis)-CAUSES/PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Lipase)",
+      "(Abdominal Pain)-CAUSES->(Pancreatitis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Alcohol consumption -> pancreatitis -> elevated serum amylase and lipase -> 70% CHAIN: Abdominal pain radiating to the back -> pancreatitis -> elevated serum amylase and lipase -> 80% CHAIN: Epigastric tenderness and flank discoloration -> pancreatitis -> elevated serum amylase and lipase -> 75% CHAIN: Elevated serum amylase and lipase -> pancreatic inflammation -> severity prediction -> 70%"
+  ],
+  "enhanced_information": "In this case, the best predictors of severity would be AST, amylase, and lipase levels. The patient's presentation with abdominal pain, elevated amylase and lipase, and significant symptoms of pancreatitis indicate a higher likelihood of severity. The evidence paths support the relationship between pancreatitis and elevated amylase/lipase levels, reinforcing the importance of these markers in predicting severity.",
+  "analysis": "The patient's presentation with abdominal pain, elevated amylase, and lipase levels, along with significant symptoms of pancreatitis, strongly suggest a higher likelihood of severity. Pancreatitis is a serious condition that can lead to complications, and elevated amylase and lipase are key markers in diagnosing and assessing the severity of pancreatitis.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

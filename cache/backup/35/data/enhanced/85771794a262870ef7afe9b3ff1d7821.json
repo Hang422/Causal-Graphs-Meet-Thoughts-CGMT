@@ -1,0 +1,228 @@
+{
+  "question": "A 56-year-old man comes to the clinic complaining of intermittent abdominal pain for the past 2 months. He reports that the pain improves with oral intake and is concentrated at the epigastric area. The pain is described as gnawing in quality and improves when he takes his wife’s ranitidine. He denies weight changes, fever, chest pain, or recent travel but endorses “brain fog” and decreased libido. An upper endoscopy reveals ulcerations at the duodenum and jejunum. Physical examination demonstrates bilateral hemianopsia, gynecomastia, and diffuse pain upon palpation at the epigastric area. Laboratory findings are demonstrated below:\n\nSerum:\nNa+: 137 mEq/dL\nCl-: 96 mEq/L\nK+: 3.9 mEq/dL\nHCO3-: 25 mEq/L\nGlucose: 110 mg/dL\nCreatinine: .7 mg/dL\nCa2+: 13.5 mg/dL\n\nWhat is the best explanation for this patient’s findings?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Gastrin secreting tumor of the pancreas",
+    "opb": "Infection with Helicobacter pylori",
+    "opc": "Mutation of the APC gene",
+    "opd": "Mutation of the MEN1 gene",
+    "ope": "Mutation of the RET gene"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ranitidine",
+        "Disease",
+        "Respiration",
+        "jejunum"
+      ],
+      [
+        "Ranitidine",
+        "Disease",
+        "Physiologic Function",
+        "jejunum"
+      ],
+      [
+        "Ranitidine",
+        "Disease",
+        "Excretory function",
+        "jejunum"
+      ],
+      [
+        "endoscopy",
+        "Disease",
+        "Gynecomastia"
+      ],
+      [
+        "endoscopy",
+        "Obesity",
+        "Gynecomastia"
+      ],
+      [
+        "Serum Calcium Level",
+        "Hypercalcemia"
+      ],
+      [
+        "Hypercalcemia",
+        "Disease",
+        "Gynecomastia"
+      ],
+      [
+        "Hypercalcemia",
+        "Adverse effects",
+        "Gynecomastia"
+      ],
+      [
+        "Hypercalcemia",
+        "Complication",
+        "Gynecomastia"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREVENTS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Ranitidine)-PREVENTS->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(jejunum)",
+      "(Ranitidine)-TREATS->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(jejunum)",
+      "(Ranitidine)-TREATS->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(jejunum)",
+      "(endoscopy)-CAUSES->(Disease)-CAUSES->(Gynecomastia)",
+      "(endoscopy)-CAUSES->(Obesity)-CAUSES->(Gynecomastia)",
+      "(Serum Calcium Level)-MANIFESTATION_OF->(Hypercalcemia)",
+      "(Hypercalcemia)-CAUSES->(Disease)-CAUSES->(Gynecomastia)",
+      "(Hypercalcemia)-CAUSES->(Adverse effects)-CAUSES->(Gynecomastia)",
+      "(Hypercalcemia)-CAUSES->(Complication)-PREDISPOSES->(Gynecomastia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "jejunum",
+        "Disease",
+        "Gynecomastia"
+      ],
+      [
+        "jejunum",
+        "Pharmaceutical Preparations",
+        "Gynecomastia"
+      ],
+      [
+        "Duodenum",
+        "Disease",
+        "Gynecomastia"
+      ],
+      [
+        "Duodenum",
+        "Lung",
+        "Gynecomastia"
+      ],
+      [
+        "Gynecomastia",
+        "Hyperplasia",
+        "PTH protein, human|PTH",
+        "Serum Calcium Level"
+      ],
+      [
+        "Gynecomastia",
+        "Hypertrophy",
+        "PTH gene|PTH",
+        "Serum Calcium Level"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(jejunum)-LOCATION_OF->(Disease)-PREDISPOSES->(Gynecomastia)",
+      "(jejunum)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Gynecomastia)",
+      "(Duodenum)-LOCATION_OF->(Disease)-PREDISPOSES->(Gynecomastia)",
+      "(Duodenum)-PART_OF->(Lung)-LOCATION_OF->(Gynecomastia)",
+      "(Gynecomastia)-CAUSES->(Hyperplasia)-ASSOCIATED_WITH->(PTH protein, human|PTH)-CAUSES->(Serum Calcium Level)",
+      "(Gynecomastia)-CAUSES->(Hypertrophy)-ASSOCIATED_WITH->(PTH gene|PTH)-CAUSES->(Serum Calcium Level)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(jejunum)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Gynecomastia)",
+      "(Ranitidine)-PREVENTS->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(jejunum)",
+      "(Ranitidine)-TREATS->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(jejunum)",
+      "(Ranitidine)-TREATS->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(jejunum)",
+      "(Gynecomastia)-CAUSES->(Hypertrophy)-ASSOCIATED_WITH->(PTH gene|PTH)-CAUSES->(Serum Calcium Level)",
+      "(Serum Calcium Level)-MANIFESTATION_OF->(Hypercalcemia)",
+      "(jejunum)-LOCATION_OF->(Disease)-PREDISPOSES->(Gynecomastia)",
+      "(Duodenum)-LOCATION_OF->(Disease)-PREDISPOSES->(Gynecomastia)",
+      "(Duodenum)-PART_OF->(Lung)-LOCATION_OF->(Gynecomastia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Intermittent abdominal pain improving with oral intake\" -> \"Epigastric area concentration of pain\" -> \"Gnawing quality of pain\" -> \"Improvement with ranitidine\" -> \"Duodenal and jejunal ulcerations on endoscopy\" -> \"Bilateral hemianopsia, gynecomastia, diffuse epigastric pain on physical exam\" -> \"High serum calcium levels\" -> \"Mutation of the MEN1 gene\" -> 85%",
+    "CHAIN: \"High serum calcium levels\" -> \"Hypercalcemia\" -> \"Bilateral hemianopsia, gynecomastia, diffuse epigastric pain\" -> \"Mutation of the MEN1 gene\" -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation of intermittent abdominal pain improving with oral intake, epigastric pain, duodenal and jejunal ulcerations, bilateral hemianopsia, gynecomastia, diffuse epigastric pain, and high serum calcium levels is most likely explained by a mutation of the MEN1 gene. The evidence of gynecomastia associated with hypercalcemia and the presence of jejunal and duodenal involvement support this conclusion.",
+  "analysis": "The patient's presentation of intermittent abdominal pain, epigastric ulcerations, gynecomastia, bilateral hemianopsia, and high serum calcium levels strongly suggest a diagnosis related to multiple endocrine neoplasia type 1 (MEN1) syndrome. MEN1 is characterized by the development of tumors in multiple endocrine glands, leading to hypercalcemia, which can manifest as abdominal pain, gynecomastia, and neurological symptoms like hemianopsia. The presence of duodenal and jejunal ulcerations further supports this diagnosis.",
+  "answer": "opd. mutation of the men1 gene",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5,
+      2
+    ],
+    "coverage_rates": [
+      71.42857142857143,
+      28.57142857142857
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

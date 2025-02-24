@@ -1,0 +1,151 @@
+{
+  "question": "An 18-year-old boy is brought to the emergency department by his parents because he suddenly collapsed while playing football. His parents mention that he had complained of dizziness while playing before, but never fainted in the middle of a game. On physical examination, the blood pressure is 130/90 mm Hg, the respirations are 15/min, and the pulse is 110/min. The chest is clear, but a systolic ejection murmur is present. The remainder of the examination revealed no significant findings. An electrocardiogram is ordered, along with an echocardiogram. He is diagnosed with hypertrophic cardiomyopathy and the physician lists all the precautions he must follow. Which of the following drugs will be on the list of contraindicated substances?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Βeta-blockers",
+    "opb": "Dobutamine",
+    "opc": "Potassium channel blockers",
+    "opd": "Nitrates",
+    "ope": "Calcium channel blockers"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypertrophic Cardiomyopathy",
+        "Death, Sudden, Cardiac"
+      ],
+      [
+        "Hypertrophic Cardiomyopathy",
+        "cardiac arrhythmia"
+      ],
+      [
+        "Hypertrophic Cardiomyopathy",
+        "Ventricular Outflow Obstruction, Left"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hypertrophic Cardiomyopathy)-CAUSES->(Death, Sudden, Cardiac)",
+      "(Hypertrophic Cardiomyopathy)-CAUSES->(cardiac arrhythmia)",
+      "(Hypertrophic Cardiomyopathy)-CAUSES->(Ventricular Outflow Obstruction, Left)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Death, Sudden, Cardiac",
+        "Genes",
+        "Pharmaceutical Preparations"
+      ],
+      [
+        "Death, Sudden, Cardiac",
+        "ADRB2 gene|ADRB2",
+        "Pharmaceutical Preparations"
+      ],
+      [
+        "cardiac arrhythmia",
+        "Genes",
+        "Pharmaceutical Preparations"
+      ],
+      [
+        "cardiac arrhythmia",
+        "KCNQ1",
+        "Pharmaceutical Preparations"
+      ],
+      [
+        "Ventricular Outflow Obstruction, Left",
+        "Death, Sudden",
+        "Genes",
+        "Pharmaceutical Preparations"
+      ],
+      [
+        "Ventricular Outflow Obstruction, Left",
+        "Death, Sudden",
+        "Genes",
+        "Pharmaceutical Preparations"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "ISA"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Death, Sudden, Cardiac)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Pharmaceutical Preparations)",
+      "(Death, Sudden, Cardiac)-ASSOCIATED_WITH->(ADRB2 gene|ADRB2)-INTERACTS_WITH->(Pharmaceutical Preparations)",
+      "(cardiac arrhythmia)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Pharmaceutical Preparations)",
+      "(cardiac arrhythmia)-ASSOCIATED_WITH->(KCNQ1)-INTERACTS_WITH->(Pharmaceutical Preparations)",
+      "(Ventricular Outflow Obstruction, Left)-CAUSES->(Death, Sudden)-ASSOCIATED_WITH->(Genes)-ISA->(Pharmaceutical Preparations)",
+      "(Ventricular Outflow Obstruction, Left)-CAUSES->(Death, Sudden)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Pharmaceutical Preparations)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypertrophic Cardiomyopathy)-CAUSES->(Death, Sudden, Cardiac)",
+      "(Ventricular Outflow Obstruction, Left)-CAUSES->(Death, Sudden)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH/ISA->(Pharmaceutical Preparations)",
+      "(Death, Sudden, Cardiac)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Pharmaceutical Preparations)",
+      "(Death, Sudden, Cardiac)-ASSOCIATED_WITH->(ADRB2 gene|ADRB2)-INTERACTS_WITH->(Pharmaceutical Preparations)",
+      "(Hypertrophic Cardiomyopathy)-CAUSES->(cardiac arrhythmia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Hypertrophic cardiomyopathy\" -> \"increased risk of sudden cardiac death\" -> \"avoid drugs that increase heart rate\" -> 80% CHAIN: \"Hypertrophic cardiomyopathy\" -> \"impaired diastolic filling\" -> \"avoid drugs that worsen diastolic function\" -> 75% CHAIN: \"Hypertrophic cardiomyopathy\" -> \"increased risk of arrhythmias\" -> \"avoid drugs that prolong QT interval\" -> 70% CHAIN: \"Hypertrophic cardiomyopathy\" -> \"increased myocardial oxygen demand\" -> \"avoid drugs that increase contractility\" -> 75% CHAIN: \"Hypertrophic cardiomyopathy\" -> \"increased left ventricular outflow tract obstruction\" -> \"avoid drugs that exacerbate obstruction\" -> 80%"
+  ],
+  "enhanced_information": "In hypertrophic cardiomyopathy, drugs that increase heart rate, worsen diastolic function, prolong QT interval, increase contractility, or exacerbate left ventricular outflow tract obstruction should be avoided. Beta-blockers are contraindicated due to their potential to increase heart rate. Dobutamine, a positive inotrope, should be avoided as it increases contractility. Potassium channel blockers and nitrates are not specifically contraindicated in this context. Calcium channel blockers should be avoided as they can exacerbate left ventricular outflow tract obstruction.",
+  "analysis": "Hypertrophic cardiomyopathy is a condition where drugs that increase heart rate, worsen diastolic function, prolong QT interval, increase contractility, or exacerbate left ventricular outflow tract obstruction should be avoided. Beta-blockers are contraindicated due to their potential to increase heart rate. Dobutamine is a positive inotrope and should be avoided as it increases contractility. Potassium channel blockers and nitrates are not specifically contraindicated in this context. Calcium channel blockers should be avoided as they can exacerbate left ventricular outflow tract obstruction.",
+  "answer": "ope",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

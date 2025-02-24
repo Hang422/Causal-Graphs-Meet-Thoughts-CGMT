@@ -1,0 +1,134 @@
+{
+  "question": "A 5-year-old boy with developmental delays presents to his pediatrician’s office with an ‘itchy rash’ on the flexor surfaces of his knees, elbows, and around his eyelids. The patient’s mother notes that the rashes have had a relapsing-remitting course since the child was an infant. Vital signs are within normal limits. Physical examination shows hypopigmentation of the patient’s skin and hair, as well as a musty odor in his sweat and urine. Based on the patient’s symptoms and history, which of the following is the most appropriate dietary recommendation?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Avoid fresh fruits",
+    "opb": "Avoid meat",
+    "opc": "Increase intake of bread",
+    "opd": "Increase intake of dairy products",
+    "ope": "Switch to diet soda"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Developmental delay (disorder)",
+        "Disease",
+        "Metabolic Diseases"
+      ],
+      [
+        "Developmental delay (disorder)",
+        "Syndrome",
+        "Metabolic Diseases"
+      ],
+      [
+        "Developmental delay (disorder)",
+        "Hypothyroidism",
+        "Metabolic Diseases"
+      ],
+      [
+        "Prurigo",
+        "Dermatitis, Atopic",
+        "Hypersensitivity"
+      ],
+      [
+        "Prurigo",
+        "Allergic rhinitis NOS",
+        "Hypersensitivity"
+      ],
+      [
+        "Prurigo",
+        "HIV Infections",
+        "Hypersensitivity"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Developmental delay (disorder))-CAUSES->(Disease)-CAUSES->(Metabolic Diseases)",
+      "(Developmental delay (disorder))-CAUSES->(Syndrome)-CAUSES->(Metabolic Diseases)",
+      "(Developmental delay (disorder))-MANIFESTATION_OF->(Hypothyroidism)-CAUSES->(Metabolic Diseases)",
+      "(Prurigo)-COMPLICATES->(Dermatitis, Atopic)-CAUSES->(Hypersensitivity)",
+      "(Prurigo)-PREDISPOSES->(Allergic rhinitis NOS)-CAUSES->(Hypersensitivity)",
+      "(Prurigo)-PREDISPOSES->(HIV Infections)-CAUSES->(Hypersensitivity)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Eyelid structure",
+        "Hypersensitivity"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Eyelid structure)-LOCATION_OF->(Hypersensitivity)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Eyelid structure)-LOCATION_OF->(Hypersensitivity)",
+      "(Developmental delay (disorder))-CAUSES->(Disease)-CAUSES->(Metabolic Diseases)",
+      "(Developmental delay (disorder))-CAUSES->(Syndrome)-CAUSES->(Metabolic Diseases)",
+      "(Developmental delay (disorder))-MANIFESTATION_OF->(Hypothyroidism)-CAUSES->(Metabolic Diseases)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Developmental delays\" -> \"Itchy rash on flexor surfaces\" -> \"Hypopigmentation\" -> \"Musty odor\" -> \"Phenylketonuria (PKU) suspected\" -> \"Avoid phenylalanine\" -> \"Avoid meat\" -> 95%",
+    "CHAIN: \"Developmental delays\" -> \"Itchy rash on flexor surfaces\" -> \"Hypopigmentation\" -> \"Musty odor\" -> \"Phenylketonuria (PKU) suspected\" -> \"Avoid phenylalanine\" -> \"Avoid fresh fruits\" -> 20%",
+    "CHAIN: \"Developmental delays\" -> \"Itchy rash on flexor surfaces\" -> \"Hypopigmentation\" -> \"Musty odor\" -> \"Phenylketonuria (PKU) suspected\" -> \"Avoid phenylalanine\" -> \"Increase intake of bread\" -> 10%",
+    "CHAIN: \"Developmental delays\" -> \"Itchy rash on flexor surfaces\" -> \"Hypopigmentation\" -> \"Musty odor\" -> \"Phenylketonuria (PKU) suspected\" -> \"Avoid phenylalanine\" -> \"Increase intake of dairy products\" -> 10%",
+    "CHAIN: \"Developmental delays\" -> \"Itchy rash on flexor surfaces\" -> \"Hypopigmentation\" -> \"Musty odor\" -> \"Phenylketonuria (PKU) suspected\" -> \"Avoid phenylalanine\" -> \"Switch to diet soda\" -> 15%"
+  ],
+  "enhanced_information": "The patient's symptoms and history suggest a possible metabolic disorder like phenylketonuria (PKU) due to developmental delays, musty odor in sweat and urine, and hypopigmentation. The most appropriate dietary recommendation would be to avoid meat to manage PKU. The evidence paths support the link between developmental delays and metabolic diseases, reinforcing the consideration of a metabolic disorder in this case.",
+  "analysis": "The symptoms and history described in the question are indicative of phenylketonuria (PKU), a metabolic disorder characterized by the inability to metabolize phenylalanine, leading to its accumulation. The musty odor, hypopigmentation, and developmental delays are classic signs of PKU. The most appropriate dietary recommendation for managing PKU is to avoid foods high in phenylalanine, such as meat, dairy, and other protein-rich foods. Therefore, the recommendation to avoid meat aligns with the dietary management of PKU.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

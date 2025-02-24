@@ -1,0 +1,197 @@
+{
+  "question": "A 30-year-old man comes to the physician because of an episode of bloody vomiting this morning and a 1-week history of burning upper abdominal pain. Two weeks ago, he sustained a head injury and was in a coma for 3 days. An endoscopy shows multiple, shallow hemorrhagic lesions predominantly in the gastric fundus and greater curvature. Biopsies show patchy loss of epithelium and an acute inflammatory infiltrate in the lamina propria that does not extend beyond the muscularis mucosa. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Type B gastritis",
+    "opb": "Dieulafoy lesion",
+    "opc": "Cushing ulcer",
+    "opd": "Penetrating ulcer",
+    "ope": "Erosive gastritis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "endoscopy",
+        "Disease",
+        "Biopsy"
+      ],
+      [
+        "endoscopy",
+        "Pain, Postoperative",
+        "Biopsy"
+      ],
+      [
+        "Biopsy",
+        "Obesity",
+        "Muscle Contraction",
+        "Muscularis Mucosae"
+      ],
+      [
+        "Biopsy",
+        "Pain",
+        "Muscle Contraction",
+        "Muscularis Mucosae"
+      ],
+      [
+        "Biopsy",
+        "Endometriosis, site unspecified",
+        "Muscle Contraction",
+        "Muscularis Mucosae"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(endoscopy)-CAUSES->(Disease)-CAUSES->(Biopsy)",
+      "(endoscopy)-CAUSES->(Pain, Postoperative)-CAUSES->(Biopsy)",
+      "(Biopsy)-CAUSES->(Obesity)-MANIFESTATION_OF->(Muscle Contraction)-PROCESS_OF->(Muscularis Mucosae)",
+      "(Biopsy)-CAUSES->(Pain)-MANIFESTATION_OF->(Muscle Contraction)-PROCESS_OF->(Muscularis Mucosae)",
+      "(Biopsy)-CAUSES->(Endometriosis, site unspecified)-MANIFESTATION_OF->(Muscle Contraction)-PROCESS_OF->(Muscularis Mucosae)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "endoscopy",
+        "Acute graft-versus-host disease",
+        "Genes",
+        "Epithelium"
+      ],
+      [
+        "endoscopy",
+        "Stenosis, unspecified",
+        "Genes",
+        "Epithelium"
+      ],
+      [
+        "Epithelium",
+        "Lamina Propria"
+      ],
+      [
+        "Biopsy",
+        "Virus",
+        "FAS",
+        "Lamina Propria"
+      ],
+      [
+        "Biopsy",
+        "Virus",
+        "Lipids",
+        "Lamina Propria"
+      ],
+      [
+        "gastric fundus",
+        "Biopsy"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "PART_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(endoscopy)-DIAGNOSES->(Acute graft-versus-host disease)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)",
+      "(endoscopy)-DIAGNOSES->(Stenosis, unspecified)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)",
+      "(Epithelium)-PART_OF->(Lamina Propria)",
+      "(Biopsy)-DIAGNOSES->(Virus)-LOCATION_OF->(FAS)-PART_OF->(Lamina Propria)",
+      "(Biopsy)-DIAGNOSES->(Virus)-LOCATION_OF->(Lipids)-PART_OF->(Lamina Propria)",
+      "(gastric fundus)-LOCATION_OF->(Biopsy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(gastric fundus)-LOCATION_OF->(Biopsy)",
+      "(endoscopy)-CAUSES->(Pain, Postoperative)-CAUSES->(Biopsy)",
+      "(Biopsy)-CAUSES->(Obesity)-MANIFESTATION_OF->(Muscle Contraction)-PROCESS_OF->(Muscularis Mucosae)",
+      "(Biopsy)-CAUSES->(Pain)-MANIFESTATION_OF->(Muscle Contraction)-PROCESS_OF->(Muscularis Mucosae)",
+      "(Biopsy)-CAUSES->(Endometriosis, site unspecified)-MANIFESTATION_OF->(Muscle Contraction)-PROCESS_OF->(Muscularis Mucosae)",
+      "(endoscopy)-DIAGNOSES->(Acute graft-versus-host disease)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)",
+      "(endoscopy)-DIAGNOSES->(Stenosis, unspecified)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Head injury\" -> \"coma for 3 days\" -> \"increased intracranial pressure\" -> \"vagal stimulation\" -> \"increased gastric acid secretion\" -> \"gastric mucosal damage\" -> \"multiple shallow hemorrhagic lesions\" -> \"Cushing ulcer\" -> 95%",
+    "CHAIN: \"1-week history of burning upper abdominal pain\" -> \"episode of bloody vomiting\" -> \"endoscopy shows multiple shallow hemorrhagic lesions\" -> \"biopsies show patchy loss of epithelium\" -> \"acute inflammatory infiltrate in lamina propria\" -> \"erosive gastritis\" -> 85%",
+    "CHAIN: \"Head injury\" -> \"stress response\" -> \"increased gastric acid production\" -> \"gastric mucosal damage\" -> \"multiple shallow hemorrhagic lesions\" -> \"Cushing ulcer\" -> 90%",
+    "CHAIN: \"Endoscopy shows lesions in gastric fundus and greater curvature\" -> \"biopsies show acute inflammatory infiltrate\" -> \"does not extend beyond muscularis mucosa\" -> \"erosive gastritis\" -> 80%",
+    "CHAIN: \"Head injury\" -> \"possible stress-related mucosal disease\" -> \"increased gastric acid secretion\" -> \"gastric mucosal damage\" -> \"multiple shallow hemorrhagic lesions\" -> \"Cushing ulcer\" -> 88%"
+  ],
+  "enhanced_information": "The patient's history of a head injury and subsequent coma suggests increased intracranial pressure, which can lead to Cushing ulcers due to vagal stimulation and increased gastric acid secretion. This aligns with the endoscopic findings of multiple shallow hemorrhagic lesions in the gastric fundus and greater curvature, and the biopsy results showing patchy loss of epithelium with acute inflammatory infiltrate confined to the lamina propria. Cushing ulcers are stress-related mucosal diseases that occur in the context of significant physiological stress, such as head trauma, and are characterized by these findings. Erosive gastritis could also present with similar endoscopic and histological findings, but the context of a recent head injury strongly supports the diagnosis of Cushing ulcer. The retrieved evidence paths do not directly contribute to the diagnosis but confirm the location and process of biopsy findings. Therefore, the most likely diagnosis is a Cushing ulcer.",
+  "analysis": "The patient presents with bloody vomiting and a history of burning upper abdominal pain following a head injury and coma. The endoscopic findings of multiple shallow hemorrhagic lesions in the gastric fundus and greater curvature, along with biopsy results showing patchy loss of epithelium and acute inflammatory infiltrate confined to the lamina propria, are indicative of stress-related mucosal disease. The context of a recent head injury and coma suggests increased intracranial pressure, which is associated with Cushing ulcers. Cushing ulcers are a type of stress ulcer that occurs due to increased vagal stimulation and gastric acid secretion following significant physiological stress, such as head trauma. While erosive gastritis could present similarly, the specific history of head injury strongly supports the diagnosis of Cushing ulcer. Therefore, the most likely diagnosis is a Cushing ulcer.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      3,
+      0,
+      3,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      0.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

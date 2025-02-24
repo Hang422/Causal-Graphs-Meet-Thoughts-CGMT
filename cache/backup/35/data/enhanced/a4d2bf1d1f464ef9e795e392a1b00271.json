@@ -1,0 +1,95 @@
+{
+  "question": "An otherwise healthy 31-year-old man presents to the emergency department with a several-day history of sharp, central chest pain, which is constant and unrelated to exertion. The pain gets worse on lying down and decreases with sitting forward. He has smoked 10–15 cigarettes daily for the past 7 years. His blood pressure is 120/50 mm Hg, the pulse is 92/min, and the temperature is 37.1°C (98.7°F). On physical examination, a scratching sound is heard at end-expiration with the patient leaning forward. ECG is shown in the image. Serum troponin is mildly elevated. Which of the following is the most likely diagnosis? ?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "ST-elevation myocardial infarction",
+    "opb": "Costochondritis",
+    "opc": "Pneumothorax",
+    "opd": "Acute pericarditis",
+    "ope": "Bacterial pneumonia"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Cardiovascular Diseases",
+        "Chest Pain"
+      ],
+      [
+        "Electrocardiogram",
+        "Chest Pain",
+        "Acute pericarditis NOS"
+      ],
+      [
+        "Electrocardiogram",
+        "Pain",
+        "Acute pericarditis NOS"
+      ],
+      [
+        "Electrocardiogram",
+        "COVID-19",
+        "Acute pericarditis NOS"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Cardiovascular Diseases)-CAUSES->(Chest Pain)",
+      "(Electrocardiogram)-CAUSES->(Chest Pain)-CAUSES->(Acute pericarditis NOS)",
+      "(Electrocardiogram)-CAUSES->(Pain)-CAUSES->(Acute pericarditis NOS)",
+      "(Electrocardiogram)-CAUSES->(COVID-19)-CAUSES->(Acute pericarditis NOS)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Electrocardiogram)-CAUSES->(Pain)-CAUSES->(Acute pericarditis NOS)",
+      "(Electrocardiogram)-CAUSES->(Chest Pain)-CAUSES->(Acute pericarditis NOS)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Smoking -> Increased risk of cardiovascular disease -> Chest pain presentation -> 80% CHAIN: Chest pain worsens on lying down -> Relieved by sitting forward -> Suggestive of pericarditis -> 85% CHAIN: Scratching sound at end-expiration -> Pericardial friction rub -> Classic finding in acute pericarditis -> 90% CHAIN: Elevated troponin -> Suggestive of myocardial injury -> Supports the diagnosis of acute pericarditis -> 85% CHAIN: ECG showing diffuse ST-segment elevations -> Classic finding in acute pericarditis -> 95% CHAIN: Most likely diagnosis is Acute pericarditis -> 80%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 31-year-old man with central chest pain, worsened on lying down and relieved by sitting forward, along with a scratching sound at end-expiration and elevated troponin, is acute pericarditis. This is supported by the ECG showing diffuse ST-segment elevations, which is a classic finding in acute pericarditis. The patient's smoking history increases the risk of cardiovascular disease, further supporting this diagnosis.",
+  "analysis": "The core medical principle here is to consider the patient's symptoms, physical exam findings, and test results to arrive at a diagnosis. In this case, the patient's presentation of central chest pain worsened by lying down and relieved by sitting forward, along with a scratching sound at end-expiration and elevated troponin levels, is highly suggestive of acute pericarditis. The ECG showing diffuse ST-segment elevations further supports this diagnosis. The patient's smoking history adds to the likelihood of cardiovascular involvement. Given the constellation of findings, acute pericarditis is the most likely diagnosis.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

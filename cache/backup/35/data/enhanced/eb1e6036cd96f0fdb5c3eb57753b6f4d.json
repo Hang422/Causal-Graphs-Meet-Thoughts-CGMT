@@ -1,0 +1,150 @@
+{
+  "question": "A plain CT scan of the patient's head is performed immediately and the result is shown. His temperature is 37.1°C (98.8°F), pulse is 101/min and blood pressure is 174/102 mm Hg. Which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Decompressive surgery",
+    "opb": "Intravenous labetalol therapy",
+    "opc": "Oral aspirin therapy",
+    "opd": "Intravenous alteplase therapy",
+    "ope": "Surgical clipping"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypertensive disease",
+        "Hypertensive emergency"
+      ],
+      [
+        "Hypertensive disease",
+        "Intracranial Hemorrhages"
+      ],
+      [
+        "Hypertensive disease",
+        "Intracranial Aneurysm"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Hypertensive emergency)",
+      "(Hypertensive disease)-CAUSES->(Intracranial Hemorrhages)",
+      "(Hypertensive disease)-CAUSES->(Intracranial Aneurysm)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hypertensive disease",
+        "Virus",
+        "Transgenes",
+        "Myocardium",
+        "Antihypertensive therapy"
+      ],
+      [
+        "Hypertensive disease",
+        "Virus",
+        "Homologous Gene",
+        "Myocardium",
+        "Antihypertensive therapy"
+      ],
+      [
+        "Intracranial Hemorrhages",
+        "Alteplase"
+      ],
+      [
+        "Intracranial Aneurysm",
+        "Hypertrophy",
+        "Genes",
+        "Brain",
+        "Surgical Clips"
+      ],
+      [
+        "Intracranial Aneurysm",
+        "Hypertrophy",
+        "Genes",
+        "Brain",
+        "Surgical Clips"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Hypertensive disease)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Transgenes)-PART_OF->(Myocardium)-LOCATION_OF->(Antihypertensive therapy)",
+      "(Hypertensive disease)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Homologous Gene)-PART_OF->(Myocardium)-LOCATION_OF->(Antihypertensive therapy)",
+      "(Intracranial Hemorrhages)-ASSOCIATED_WITH->(Alteplase)",
+      "(Intracranial Aneurysm)-PREDISPOSES->(Hypertrophy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Brain)-LOCATION_OF->(Surgical Clips)",
+      "(Intracranial Aneurysm)-CAUSES->(Hypertrophy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Brain)-LOCATION_OF->(Surgical Clips)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Intracranial Aneurysm)-CAUSES/PREDISPOSES->(Hypertrophy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Brain)-LOCATION_OF->(Surgical Clips)",
+      "(Hypertensive disease)-CAUSES->(Hypertensive emergency)",
+      "(Hypertensive disease)-CAUSES->(Intracranial Hemorrhages)",
+      "(Hypertensive disease)-CAUSES->(Intracranial Aneurysm)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Elevated blood pressure\" -> \"Consider initiating antihypertensive therapy\" -> \"Intravenous labetalol therapy\" -> 80% CHAIN: \"Elevated blood pressure\" -> \"Risk of hypertensive emergency\" -> \"Intravenous labetalol therapy\" -> 75% CHAIN: \"Elevated blood pressure\" -> \"Potential for intracranial hemorrhage\" -> \"Avoid thrombolytic therapy like alteplase\" -> 70% CHAIN: \"Elevated blood pressure\" -> \"Intracranial aneurysm suspected\" -> \"Consider surgical clipping\" -> 80%"
+  ],
+  "enhanced_information": "Given the patient's elevated blood pressure and suspicion of an intracranial aneurysm, the most appropriate next step in management would be to consider surgical clipping. Intravenous labetalol therapy may be considered to manage the elevated blood pressure, but surgical clipping is more directly indicated in this scenario due to the suspected aneurysm.",
+  "analysis": "Given the patient's elevated blood pressure and suspicion of an intracranial aneurysm, the most appropriate next step in management would be to consider surgical clipping. While intravenous labetalol therapy may be considered to manage the elevated blood pressure, surgical clipping is more directly indicated in this scenario due to the suspected aneurysm.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

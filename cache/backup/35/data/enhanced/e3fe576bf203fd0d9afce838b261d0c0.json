@@ -1,0 +1,194 @@
+{
+  "question": "A 42-year-old woman comes to the clinic with a complaint of a severely itchy and painful rash on her hands and legs for a day. On further questioning, she revealed that she loves nature and goes on trekking to the woods frequently. She just returned from a similar trip, 2 days ago. On physical examination, a prominent rash along with multiple blisters is noted on the ventral aspect of her right forearm. A photograph of the rash is shown. Which of the following is the most likely reaction that the patient is experiencing?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Type IV hypersensitivity reaction",
+    "opb": "Type III hypersensitivity reaction",
+    "opc": "Bullous pemphigoid",
+    "opd": "Type I hypersensitivity reaction",
+    "ope": "Type II hypersensitivity reaction"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Immunity",
+        "HIV",
+        "Inflammation"
+      ],
+      [
+        "Immunity",
+        "Candida albicans",
+        "Inflammation"
+      ],
+      [
+        "Inflammation",
+        "Disease",
+        "Bulla"
+      ],
+      [
+        "Inflammation",
+        "Infection",
+        "Bulla"
+      ],
+      [
+        "Bulla",
+        "Disease",
+        "Delayed Hypersensitivity"
+      ],
+      [
+        "Bulla",
+        "Infection",
+        "Delayed Hypersensitivity"
+      ],
+      [
+        "Autoantibodies",
+        "Bullous pemphigoid"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Immunity)-PROCESS_OF->(HIV)-CAUSES->(Inflammation)",
+      "(Immunity)-PROCESS_OF->(Candida albicans)-CAUSES->(Inflammation)",
+      "(Inflammation)-CAUSES->(Disease)-CAUSES->(Bulla)",
+      "(Inflammation)-CAUSES->(Infection)-COMPLICATES->(Bulla)",
+      "(Bulla)-CAUSES->(Disease)-CAUSES->(Delayed Hypersensitivity)",
+      "(Bulla)-CAUSES->(Infection)-CAUSES->(Delayed Hypersensitivity)",
+      "(Autoantibodies)-CAUSES->(Bullous pemphigoid)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Skin Specimen",
+        "Bulla"
+      ],
+      [
+        "Pain",
+        "Disease",
+        "Glutathione",
+        "mast cell"
+      ],
+      [
+        "Pain",
+        "Disease",
+        "Glutathione",
+        "mast cell"
+      ],
+      [
+        "Pruritus",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "mast cell"
+      ],
+      [
+        "Pruritus",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "mast cell"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Skin Specimen)-LOCATION_OF->(Bulla)",
+      "(Pain)-ISA->(Disease)-ASSOCIATED_WITH->(Glutathione)-INTERACTS_WITH->(mast cell)",
+      "(Pain)-CAUSES->(Disease)-ASSOCIATED_WITH->(Glutathione)-INTERACTS_WITH->(mast cell)",
+      "(Pruritus)-ISA->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(mast cell)",
+      "(Pruritus)-MANIFESTATION_OF->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(mast cell)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Autoantibodies)-CAUSES->(Bullous pemphigoid)",
+      "(Pain)-CAUSES/ISA->(Disease)-ASSOCIATED_WITH->(Glutathione)-INTERACTS_WITH->(mast cell)",
+      "(Bulla)-CAUSES->(Disease)-CAUSES->(Delayed Hypersensitivity)",
+      "(Bulla)-CAUSES->(Infection)-CAUSES->(Delayed Hypersensitivity)",
+      "(Skin Specimen)-LOCATION_OF->(Bulla)",
+      "(Pruritus)-ISA/MANIFESTATION_OF->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(mast cell)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Exposure to allergen during trekking -> Activation of immune response -> Inflammatory reaction in the skin -> Formation of blisters -> Type IV hypersensitivity reaction -> 80%",
+    "CHAIN: Presence of blisters on the ventral aspect of the right forearm -> Subepidermal blistering -> Autoantibodies against basement membrane proteins -> Bullous pemphigoid -> 70%",
+    "CHAIN: Rapid onset of severe itching and pain in the rash area -> Mast cell degranulation -> Release of histamine and other inflammatory mediators -> Type I hypersensitivity reaction (allergic reaction) -> 85%"
+  ],
+  "enhanced_information": "The patient is most likely experiencing a Type I hypersensitivity reaction due to the rapid onset of severe itching and pain, mast cell degranulation, and release of histamine and other inflammatory mediators. The presence of blisters on the ventral aspect of the right forearm is not indicative of Bullous pemphigoid. Evidence supporting mast cell involvement in pruritus and inflammation aligns with the Type I hypersensitivity reaction.",
+  "analysis": "The patient's symptoms of severe itching, pain, and blister formation following exposure to nature are indicative of a Type I hypersensitivity reaction. The enhanced information provided further supports this by highlighting mast cell degranulation and histamine release, aligning with the clinical presentation. Bullous pemphigoid is less likely given the acute onset and nature of the symptoms. Therefore, the most likely correct option is a Type I hypersensitivity reaction.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4,
+      1,
+      2
+    ],
+    "coverage_rates": [
+      57.14285714285714,
+      14.285714285714285,
+      28.57142857142857
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

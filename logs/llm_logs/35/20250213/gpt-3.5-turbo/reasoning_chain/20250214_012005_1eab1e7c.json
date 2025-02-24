@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_012005",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "1eab1e7c",
+  "question_text": "A 34-year-old female comes to the ED complaining of epigastric pain and intractable nausea and vomiting for the last 24 hours. Her vitals are as follows: Temperature 38.1 C, HR 97 beats/minute, BP 90/63 mm Hg, RR 12 breaths/minute. Arterial blood gas and labs are drawn. Which of the following sets of lab values is consistent with her presentation?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 34-year-old female comes to the ED complaining of epigastric pain and intractable nausea and vomiting for the last 24 hours. Her vitals are as follows: Temperature 38.1 C, HR 97 beats/minute, BP 90/63 mm Hg, RR 12 breaths/minute. Arterial blood gas and labs are drawn. Which of the following sets of lab values is consistent with her presentation?\n\n            ### Options\n    opa. pH 7.39, PaCO2 37 , serum chloride 102 mEq/L, serum bicarbonate 27 mEq/L\nopb. pH 7.36, PaCO2 75 , serum chloride 119 mEq/L, serum bicarbonate 42 mEq/L\nopc. pH 7.46, PaCO2 26 , serum chloride 102 mEq/L, serum bicarbonate 16 mEq/L\nopd. pH 7.51, PaCO2 50 , serum chloride 81 mEq/L, serum bicarbonate 38 mEq/L\nope. pH 7.31, PaCO2 30 , serum chloride 92 mEq/L, serum bicarbonate 15 mEq/L\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Metabolic acidosis -> Compensatory respiratory alkalosis -> pH 7.31, PaCO2 30, serum chloride 92 mEq/L, serum bicarbonate 15 mEq/L -> 80%  \nCHAIN: Sepsis or septic shock -> Lactic acidosis -> pH 7.31, PaCO2 30, serum chloride 92 mEq/L, serum bicarbonate 15 mEq/L -> 75%  \nCHAIN: Renal failure -> Metabolic acidosis -> pH 7.31, PaCO2 30, serum chloride 92 mEq/L, serum bicarbonate 15 mEq/L -> 70%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

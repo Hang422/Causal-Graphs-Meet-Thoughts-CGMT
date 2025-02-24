@@ -1,0 +1,112 @@
+{
+  "question": "A 3-year-old girl is brought to the physician because of a cough for 2 days. The cough occurs as paroxysmal spells, with vomiting sometimes occurring afterwards. She takes a deep breath after these spells that makes a whooping sound. She has been unable to sleep well because of the cough. She had a runny nose and low-grade fever 1 week ago. She was admitted at the age of 9 months for bronchiolitis. Her immunizations are incomplete, as her parents are afraid of vaccine-related complications. She attends a daycare center but there have been no other children who have similar symptoms. She appears well. Cardiopulmonary examination shows no abnormalities. Her hemoglobin concentration is 13.3 g/dL, leukocyte count is 41,000/mm3, platelet count is 230,000/mm3 and erythrocyte sedimentation rate is 31 mm/hr. An x-ray of the chest is unremarkable. The patient is at increased risk for which of the following complications?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Asthma",
+    "opb": "Hemolytic anemia",
+    "opc": "Hemoptysis",
+    "opd": "Pericarditis",
+    "ope": "Pneumothorax"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Immunization",
+        "Vaccine-Preventable Diseases"
+      ],
+      [
+        "Vaccine-Preventable Diseases",
+        "Complication"
+      ],
+      [
+        "Bronchiolitis",
+        "Disease",
+        "Respiratory Tract Infections"
+      ],
+      [
+        "Bronchiolitis",
+        "Infection",
+        "Respiratory Tract Infections"
+      ],
+      [
+        "Bronchiolitis",
+        "Respiratory Distress Syndrome, Adult",
+        "Respiratory Tract Infections"
+      ],
+      [
+        "Respiratory Tract Infections",
+        "Complication"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Immunization)-PREDISPOSES->(Vaccine-Preventable Diseases)",
+      "(Vaccine-Preventable Diseases)-CAUSES->(Complication)",
+      "(Bronchiolitis)-CAUSES->(Disease)-CAUSES->(Respiratory Tract Infections)",
+      "(Bronchiolitis)-CAUSES->(Infection)-CAUSES->(Respiratory Tract Infections)",
+      "(Bronchiolitis)-CAUSES->(Respiratory Distress Syndrome, Adult)-COMPLICATES->(Respiratory Tract Infections)",
+      "(Respiratory Tract Infections)-CAUSES->(Complication)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Immunization)-PREDISPOSES->(Vaccine-Preventable Diseases)",
+      "(Vaccine-Preventable Diseases)-CAUSES->(Complication)",
+      "(Respiratory Tract Infections)-CAUSES->(Complication)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Paroxysmal cough with whooping sound\" -> \"Possible pertussis infection\" -> \"Increased risk of complications\" -> 80% CHAIN: \"Incomplete immunizations\" -> \"Increased susceptibility to vaccine-preventable diseases\" -> \"Increased risk of complications\" -> 75% CHAIN: \"History of bronchiolitis at 9 months\" -> \"Increased susceptibility to respiratory infections\" -> \"Increased risk of complications\" -> 80%"
+  ],
+  "enhanced_information": "The 3-year-old girl is at increased risk for complications due to incomplete immunizations, which predispose her to vaccine-preventable diseases. Her history of bronchiolitis at 9 months also increases susceptibility to respiratory infections, further elevating the risk of complications. Given the presentation of paroxysmal cough with whooping sound, pertussis infection is a concern, aligning with the increased risk of complications associated with incomplete immunizations and susceptibility to respiratory infections.",
+  "analysis": "The patient's presentation of paroxysmal cough with a whooping sound, along with the history of incomplete immunizations and susceptibility to respiratory infections, raises concern for pertussis infection. Pertussis can lead to complications such as pneumonia, seizures, encephalopathy, and even death, especially in young children. Given the context, the patient is at increased risk for complications related to pertussis infection.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

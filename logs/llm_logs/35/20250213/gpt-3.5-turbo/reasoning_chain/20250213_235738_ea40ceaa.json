@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_235738",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "ea40ceaa",
+  "question_text": "A 63-year-old woman presents to the emergency department after being found unresponsive by her family. Upon presentation she is confused and does not answer questions that are addressed to her. An EKG is obtained and the result is provided here. Which of the following processes would be consistent with the findings seen on this patient's EKG?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 63-year-old woman presents to the emergency department after being found unresponsive by her family. Upon presentation she is confused and does not answer questions that are addressed to her. An EKG is obtained and the result is provided here. Which of the following processes would be consistent with the findings seen on this patient's EKG?\n\n            ### Options\n    opa. Acute kidney failure\nopb. Bundle branch conduction changes\nopc. Excessive use of thiazides\nopd. Failure of atrioventricular node conduction\nope. Interruption of pulmonary perfusion\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Failure of atrioventricular node conduction\" -> \"Abnormal EKG findings\" -> 80%\nCHAIN: \"Bundle branch conduction changes\" -> \"Abnormal EKG findings\" -> 75%\nCHAIN: \"Excessive use of thiazides\" -> \"Electrolyte abnormalities\" -> \"Abnormal EKG findings\" -> 70%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

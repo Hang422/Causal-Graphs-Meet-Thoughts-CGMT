@@ -1,0 +1,160 @@
+{
+  "question": "A 56-year-old man with substernal chest pain calls 911. When paramedics arrive, they administer drug X sublingually for the immediate relief of angina. What is the most likely site of action of drug X?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Large arteries",
+    "opb": "Large veins",
+    "opc": "Arterioles",
+    "opd": "Cardiac muscle",
+    "ope": "Pulmonary arteries"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Blood Circulation",
+        "Pancreas",
+        "Pancreatitis",
+        "Hypoxia",
+        "Energy Metabolism",
+        "Myocardium"
+      ],
+      [
+        "Blood Circulation",
+        "Pancreas",
+        "Pancreatitis",
+        "Heart failure",
+        "Energy Metabolism",
+        "Myocardium"
+      ],
+      [
+        "Blood Circulation",
+        "Pancreas",
+        "Pancreatitis",
+        "Insulin Resistance",
+        "Energy Metabolism",
+        "Myocardium"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Hypoxia)-MANIFESTATION_OF->(Energy Metabolism)-PROCESS_OF->(Myocardium)",
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Heart failure)-MANIFESTATION_OF->(Energy Metabolism)-PROCESS_OF->(Myocardium)",
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-COMPLICATES->(Insulin Resistance)-MANIFESTATION_OF->(Energy Metabolism)-PROCESS_OF->(Myocardium)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Structure of arteriole",
+        "Symptoms",
+        "Immunity",
+        "Oligomeric Procyanidin Complex"
+      ],
+      [
+        "Structure of arteriole",
+        "Symptoms",
+        "voltage gated channel",
+        "Oligomeric Procyanidin Complex"
+      ],
+      [
+        "Myocardium",
+        "Genes",
+        "Pharmaceutical Preparations",
+        "FLNA wt Allele"
+      ],
+      [
+        "Myocardium",
+        "Genes",
+        "Pharmaceutical Preparations",
+        "FLNA wt Allele"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Structure of arteriole)-LOCATION_OF->(Symptoms)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Oligomeric Procyanidin Complex)",
+      "(Structure of arteriole)-LOCATION_OF->(Symptoms)-MANIFESTATION_OF->(voltage gated channel)-ASSOCIATED_WITH->(Oligomeric Procyanidin Complex)",
+      "(Myocardium)-LOCATION_OF->(Genes)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(FLNA wt Allele)",
+      "(Myocardium)-LOCATION_OF->(Genes)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(FLNA wt Allele)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Structure of arteriole)-LOCATION_OF->(Symptoms)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Oligomeric Procyanidin Complex)",
+      "(Structure of arteriole)-LOCATION_OF->(Symptoms)-MANIFESTATION_OF->(voltage gated channel)-ASSOCIATED_WITH->(Oligomeric Procyanidin Complex)",
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Hypoxia)-MANIFESTATION_OF->(Energy Metabolism)-PROCESS_OF->(Myocardium)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Drug X\" -> \"Sublingual administration\" -> \"Rapid absorption through oral mucosa\" -> \"Systemic circulation\" -> \"Targeting arterioles to dilate and reduce cardiac workload\" -> opc. Arterioles -> 85%",
+    "CHAIN: \"Drug X\" -> \"Sublingual administration\" -> \"Rapid absorption through oral mucosa\" -> \"Systemic circulation\" -> \"Direct effect on cardiac muscle to improve blood flow\" -> opd. Cardiac muscle -> 80%"
+  ],
+  "enhanced_information": "The most likely site of action of drug X, administered sublingually for angina relief, is the arterioles. This is supported by the rapid absorption through oral mucosa leading to systemic circulation and targeting arterioles to dilate and reduce cardiac workload, aligning with standard consensus on drug actions in angina management.",
+  "analysis": "The core medical principle in this scenario is the rapid absorption of drug X administered sublingually for angina relief. The enhanced information supports the action of drug X targeting arterioles to dilate and reduce cardiac workload. This aligns with the standard consensus on drug actions in angina management, where arteriolar dilation helps improve blood flow and reduce myocardial oxygen demand. Therefore, the most likely site of action of drug X is the arterioles.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      66.66666666666666
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

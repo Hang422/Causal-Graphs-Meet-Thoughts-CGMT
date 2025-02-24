@@ -1,0 +1,198 @@
+{
+  "question": "A 47-year-old woman comes to the physician because of a 5-month history of insomnia. She frequently experiences leg discomfort when trying to fall asleep that is relieved temporarily by movement. Her husband tells her that she frequently flexes her ankles upward when she sleeps. She appears fatigued and anxious. Physical examination shows no abnormalities. Laboratory studies including a complete blood count and iron studies are within the reference range. Which of the following is the most appropriate pharmacotherapy?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Ropinirole",
+    "opb": "Zolpidem",
+    "opc": "Nortriptyline",
+    "opd": "Atenolol",
+    "ope": "Sertraline"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Leg discomfort",
+        "Symptoms",
+        "Restless Legs Syndrome"
+      ],
+      [
+        "Sleeplessness",
+        "Fatigue"
+      ],
+      [
+        "Fatigue",
+        "Disease",
+        "Mood Disorders"
+      ],
+      [
+        "Fatigue",
+        "Obesity",
+        "Mood Disorders"
+      ],
+      [
+        "Fatigue",
+        "Hypertensive disease",
+        "Mood Disorders"
+      ],
+      [
+        "Anxiety",
+        "Disease",
+        "Mood Disorders"
+      ],
+      [
+        "Anxiety",
+        "Obesity",
+        "Mood Disorders"
+      ],
+      [
+        "Anxiety",
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Mood Disorders"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Leg discomfort)-CAUSES->(Symptoms)-CAUSES->(Restless Legs Syndrome)",
+      "(Sleeplessness)-CAUSES->(Fatigue)",
+      "(Fatigue)-CAUSES->(Disease)-COMPLICATES->(Mood Disorders)",
+      "(Fatigue)-CAUSES->(Obesity)-PREDISPOSES->(Mood Disorders)",
+      "(Fatigue)-CAUSES->(Hypertensive disease)-PREDISPOSES->(Mood Disorders)",
+      "(Anxiety)-CAUSES->(Disease)-COMPLICATES->(Mood Disorders)",
+      "(Anxiety)-CAUSES->(Obesity)-PREDISPOSES->(Mood Disorders)",
+      "(Anxiety)-CAUSES->(Diabetes Mellitus, Insulin-Dependent)-PREDISPOSES->(Mood Disorders)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Restless Legs Syndrome",
+        "Disease",
+        "Adverse effects",
+        "ropinirole"
+      ],
+      [
+        "Restless Legs Syndrome",
+        "Disease",
+        "Adverse effects",
+        "ropinirole"
+      ],
+      [
+        "Mood Disorders",
+        "Energy Metabolism",
+        "Pharmaceutical Preparations",
+        "Antidepressive Agents",
+        "Sertraline"
+      ],
+      [
+        "Mood Disorders",
+        "Pathogenesis",
+        "Genes",
+        "Antidepressive Agents",
+        "Sertraline"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Restless Legs Syndrome)-PREDISPOSES->(Disease)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(ropinirole)",
+      "(Restless Legs Syndrome)-MANIFESTATION_OF->(Disease)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(ropinirole)",
+      "(Mood Disorders)-MANIFESTATION_OF->(Energy Metabolism)-ASSOCIATED_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Antidepressive Agents)-INTERACTS_WITH->(Sertraline)",
+      "(Mood Disorders)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Antidepressive Agents)-INTERACTS_WITH->(Sertraline)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Sleeplessness)-CAUSES->(Fatigue)",
+      "(Mood Disorders)-MANIFESTATION_OF->(Energy Metabolism)-ASSOCIATED_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Antidepressive Agents)-INTERACTS_WITH->(Sertraline)",
+      "(Mood Disorders)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Antidepressive Agents)-INTERACTS_WITH->(Sertraline)",
+      "(Fatigue)-CAUSES->(Disease)-COMPLICATES->(Mood Disorders)",
+      "(Fatigue)-CAUSES->(Obesity)-PREDISPOSES->(Mood Disorders)",
+      "(Fatigue)-CAUSES->(Hypertensive disease)-PREDISPOSES->(Mood Disorders)",
+      "(Restless Legs Syndrome)-MANIFESTATION_OF/PREDISPOSES->(Disease)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(ropinirole)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Leg discomfort relieved by movement\" -> \"Symptoms suggestive of restless legs syndrome\" -> \"Consider dopamine agonists like Ropinirole\" -> 80%",
+    "CHAIN: \"Insomnia for 5 months\" -> \"Fatigue and anxiety\" -> \"Possible underlying mood disorder\" -> \"Consider Sertraline\" -> 70%"
+  ],
+  "enhanced_information": "The patient's symptoms of leg discomfort relieved by movement suggest restless legs syndrome. Considering this, the most appropriate pharmacotherapy would be Ropinirole, a dopamine agonist commonly used for treating restless legs syndrome.",
+  "analysis": "The patient's symptoms of leg discomfort relieved by movement, along with the flexing of ankles during sleep, are classic features of restless legs syndrome. Given this context, the most appropriate pharmacotherapy for restless legs syndrome would be a dopamine agonist. Ropinirole is a commonly used dopamine agonist for treating restless legs syndrome.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      4
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      66.66666666666666
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

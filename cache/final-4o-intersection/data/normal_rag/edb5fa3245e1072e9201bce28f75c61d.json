@@ -1,0 +1,128 @@
+{
+  "question": "A 20-year-old woman visits the clinic for her annual physical examination. She does not have any complaints during this visit. The past medical history is insignificant. She follows a healthy lifestyle with a balanced diet and moderate exercise schedule. She does not smoke or drink alcohol. She does not take any medications currently. The family history is significant for her grandfather and uncle who had their parathyroid glands removed. The vital signs include: blood pressure:122/88 mm Hg, pulse 88/min, respirations 17/min, and temperature 36.7°C (98.0°F). The physical exam is within normal limits. The lab test results are as follows:\nBlood Urea Nitrogen 12 mg/dL\nSerum Creatinine 1.1 mg/dL\nSerum Glucose (Random) 88 mg/dL\nSerum chloride 107 mmol/L\nSerum potassium 4.5 mEq/L\nSerum sodium 140 mEq/L\nSerum calcium 14.5 mmol/L\nSerum albumin 4.4 gm/dL\nParathyroid Hormone (PTH) 70 pg/mL (Normal: 10-65 pg/mL)\n24-Hr urinary calcium 85 mg/day (Normal: 100–300 mg/day)\nWhich of the following is the next best step in the management of this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Parathyroidectomy",
+    "opb": "Start IV fluids to keep her hydrated",
+    "opc": "No treatment is necessary",
+    "opd": "Start her on pamidronate",
+    "ope": "Give glucocorticoids"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hypercalcemia",
+        "Hyperparathyroidism, Primary"
+      ],
+      [
+        "Hypercalcemia",
+        "Hyperparathyroidism, Primary"
+      ],
+      [
+        "Hyperparathyroidism, Primary",
+        "Pathogenesis",
+        "DMD",
+        "amidronate"
+      ],
+      [
+        "Hyperparathyroidism, Primary",
+        "Complication",
+        "DMD",
+        "amidronate"
+      ],
+      [
+        "Hyperparathyroidism, Primary",
+        "Pathogenesis",
+        "Glucocorticoids"
+      ]
+    ],
+    "relationships": [
+      [
+        "COMPLICATES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hypercalcemia)-COMPLICATES->(Hyperparathyroidism, Primary)",
+      "(Hypercalcemia)-MANIFESTATION_OF->(Hyperparathyroidism, Primary)",
+      "(Hyperparathyroidism, Primary)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(DMD)-INTERACTS_WITH->(amidronate)",
+      "(Hyperparathyroidism, Primary)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(DMD)-INTERACTS_WITH->(amidronate)",
+      "(Hyperparathyroidism, Primary)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Glucocorticoids)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hyperparathyroidism, Primary)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Glucocorticoids)",
+      "(Hypercalcemia)-COMPLICATES/MANIFESTATION_OF->(Hyperparathyroidism, Primary)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Possible primary hyperparathyroidism\" -> \"Family history of parathyroid issues\" -> \"Consider parathyroidectomy\" -> 85%",
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Increased PTH\" -> \"Primary hyperparathyroidism\" -> \"Start IV fluids for hydration\" -> 80%",
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Increased PTH\" -> \"Primary hyperparathyroidism\" -> \"Consider pamidronate for acute management\" -> 70%",
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Increased PTH\" -> \"Primary hyperparathyroidism\" -> \"No immediate treatment necessary\" -> 60%",
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Increased PTH\" -> \"Primary hyperparathyroidism\" -> \"Consider glucocorticoids if other treatments fail\" -> 50%"
+  ],
+  "enhanced_information": "The patient presents with hypercalcemia and elevated PTH levels, suggesting primary hyperparathyroidism. The family history of parathyroid gland removal supports a hereditary form of hyperparathyroidism, possibly familial hypocalciuric hypercalcemia (FHH) or multiple endocrine neoplasia (MEN). The low 24-hour urinary calcium excretion is more consistent with FHH, which typically does not require surgical intervention. However, primary hyperparathyroidism with significant hypercalcemia often requires initial management with IV fluids to prevent complications from hypercalcemia. Parathyroidectomy is considered if the condition is confirmed to be primary hyperparathyroidism and symptomatic or if there are complications. Glucocorticoids and pamidronate are not first-line treatments for primary hyperparathyroidism but may be considered in specific scenarios. Therefore, the next best step in management is to start IV fluids to keep her hydrated, addressing the acute hypercalcemia.",
+  "analysis": "The patient presents with hypercalcemia (elevated serum calcium) and elevated parathyroid hormone (PTH) levels, which suggests primary hyperparathyroidism. The family history of parathyroid gland removal further supports a hereditary form of hyperparathyroidism, possibly familial hypocalciuric hypercalcemia (FHH) or multiple endocrine neoplasia (MEN). However, the low urinary calcium excretion is more indicative of FHH, a condition where parathyroidectomy is not typically indicated. Instead, the immediate management of hypercalcemia involves hydration to prevent complications such as kidney stones or acute kidney injury. Therefore, starting IV fluids to keep her hydrated is the most appropriate next step in management.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      0.0,
+      33.33333333333333,
+      0.0,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": [
+    "Parathyroid hormone measurement DIAGNOSES Disease",
+    "Parathyroidectomy TREATS Disease",
+    "Bigelow operation, litholapaxy TREATS Pancreatic duct calculus",
+    "herpes simplex thymidine kinase INTERACTS_WITH Rat Cell Line",
+    "parathyroid hormone PREVENTS Imbalance",
+    "Type II Epithelial Receptor Cell INTERACTS_WITH ITGA5 wt Allele|ITGA5",
+    "Microtubules PART_OF Spindle Pole Body",
+    "Diabetes Mellitus, Non-Insulin-Dependent CAUSES Low Vision"
+  ]
+}

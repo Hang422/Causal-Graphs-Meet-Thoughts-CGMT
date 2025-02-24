@@ -1,0 +1,253 @@
+{
+  "question": "A 36-year-old woman is brought to the emergency department because of lightheadedness, weakness, and abdominal pain for 6 hours. Over the past 3 days, she has also had severe nausea, vomiting, and watery diarrhea. She was diagnosed with pulmonary sarcoidosis 2 years ago. Current medications include prednisone. Her temperature is 38.9°C (102.0°F), pulse is 112/min, and blood pressure is 85/50 mm Hg. Physical examination shows a round face with prominent preauricular fat pads. Her fingerstick blood glucose concentration is 48 mg/dL. Further evaluation is most likely to show which of the following laboratory changes?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Increased cortisol",
+    "opb": "Decreased corticotropin-releasing hormone",
+    "opc": "Decreased norepinephrine",
+    "opd": "Decreased aldosterone",
+    "ope": "Increased adrenocorticotropic hormone"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Watery diarrhoea",
+        "Dehydration"
+      ],
+      [
+        "Nausea",
+        "Dehydration"
+      ],
+      [
+        "Vomiting",
+        "Dehydration"
+      ],
+      [
+        "Dehydration",
+        "Hypovolemia"
+      ],
+      [
+        "Sarcoidosis, Pulmonary",
+        "Disease",
+        "Chronic inflammation"
+      ],
+      [
+        "Sarcoidosis, Pulmonary",
+        "Vasculitis",
+        "Chronic inflammation"
+      ],
+      [
+        "Sarcoidosis, Pulmonary",
+        "Pulmonary Fibrosis",
+        "Chronic inflammation"
+      ],
+      [
+        "Pharmaceutical Preparations",
+        "Disease",
+        "Exotropia",
+        "Visual Suppression"
+      ],
+      [
+        "Prednisone",
+        "Disease",
+        "Exotropia",
+        "Visual Suppression"
+      ],
+      [
+        "Prednisone",
+        "Diplopia",
+        "Exotropia",
+        "Visual Suppression"
+      ],
+      [
+        "Prednisone",
+        "Obstruction",
+        "Exotropia",
+        "Visual Suppression"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Watery diarrhoea)-CAUSES->(Dehydration)",
+      "(Nausea)-CAUSES->(Dehydration)",
+      "(Vomiting)-CAUSES->(Dehydration)",
+      "(Dehydration)-CAUSES->(Hypovolemia)",
+      "(Sarcoidosis, Pulmonary)-CAUSES->(Disease)-CAUSES->(Chronic inflammation)",
+      "(Sarcoidosis, Pulmonary)-CAUSES->(Vasculitis)-CAUSES->(Chronic inflammation)",
+      "(Sarcoidosis, Pulmonary)-CAUSES->(Pulmonary Fibrosis)-CAUSES->(Chronic inflammation)",
+      "(Pharmaceutical Preparations)-CAUSES->(Disease)-CAUSES->(Exotropia)-MANIFESTATION_OF->(Visual Suppression)",
+      "(Prednisone)-CAUSES->(Disease)-CAUSES->(Exotropia)-MANIFESTATION_OF->(Visual Suppression)",
+      "(Prednisone)-PREVENTS->(Diplopia)-CAUSES->(Exotropia)-MANIFESTATION_OF->(Visual Suppression)",
+      "(Prednisone)-TREATS->(Obstruction)-CAUSES->(Exotropia)-MANIFESTATION_OF->(Visual Suppression)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Tachycardia",
+        "Shock",
+        "Corticotropin"
+      ],
+      [
+        "Tachycardia",
+        "Obstruction",
+        "Corticotropin"
+      ],
+      [
+        "Visual Suppression",
+        "CACNA1A",
+        "Cells",
+        "Hydrocortisone",
+        "Cortisol level"
+      ],
+      [
+        "Visual Suppression",
+        "CACNA1A",
+        "Cells",
+        "Corticotropin|POMC",
+        "Cortisol level"
+      ],
+      [
+        "Cortisol level",
+        "Immunity",
+        "Hydrocortisone"
+      ],
+      [
+        "Cortisol level",
+        "biological adaptation to stress",
+        "Hydrocortisone"
+      ]
+    ],
+    "relationships": [
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "INTERACTS_WITH",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Tachycardia)-COMPLICATES->(Shock)-ASSOCIATED_WITH->(Corticotropin)",
+      "(Tachycardia)-COMPLICATES->(Obstruction)-ASSOCIATED_WITH->(Corticotropin)",
+      "(Visual Suppression)-ASSOCIATED_WITH->(CACNA1A)-PART_OF->(Cells)-LOCATION_OF->(Hydrocortisone)-CAUSES->(Cortisol level)",
+      "(Visual Suppression)-ASSOCIATED_WITH->(CACNA1A)-PART_OF->(Cells)-INTERACTS_WITH->(Corticotropin|POMC)-CAUSES->(Cortisol level)",
+      "(Cortisol level)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Hydrocortisone)",
+      "(Cortisol level)-MANIFESTATION_OF->(biological adaptation to stress)-ASSOCIATED_WITH->(Hydrocortisone)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cortisol level)-MANIFESTATION_OF->(biological adaptation to stress)-ASSOCIATED_WITH->(Hydrocortisone)",
+      "(Prednisone)-PREVENTS->(Diplopia)-CAUSES->(Exotropia)-MANIFESTATION_OF->(Visual Suppression)",
+      "(Prednisone)-TREATS->(Obstruction)-CAUSES->(Exotropia)-MANIFESTATION_OF->(Visual Suppression)",
+      "(Tachycardia)-COMPLICATES->(Shock)-ASSOCIATED_WITH->(Corticotropin)",
+      "(Tachycardia)-COMPLICATES->(Obstruction)-ASSOCIATED_WITH->(Corticotropin)",
+      "(Nausea)-CAUSES->(Dehydration)",
+      "(Vomiting)-CAUSES->(Dehydration)",
+      "(Prednisone)-CAUSES->(Disease)-CAUSES->(Exotropia)-MANIFESTATION_OF->(Visual Suppression)",
+      "(Cortisol level)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Hydrocortisone)",
+      "(Dehydration)-CAUSES->(Hypovolemia)",
+      "(Visual Suppression)-ASSOCIATED_WITH->(CACNA1A)-PART_OF->(Cells)-LOCATION_OF->(Hydrocortisone)-CAUSES->(Cortisol level)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Severe nausea, vomiting, and watery diarrhea\" -> \"Dehydration\" -> \"Hypovolemia\" -> \"Decreased blood pressure\" -> \"Tachycardia\" -> \"Compensatory increase in adrenocorticotropic hormone (ACTH)\" -> \"Increased adrenocorticotropic hormone\" -> 80%",
+    "CHAIN: \"Pulmonary sarcoidosis\" -> \"Chronic inflammation\" -> \"Increased cortisol production due to stress\" -> \"Increased cortisol levels\" -> 70%",
+    "CHAIN: \"Prednisone medication\" -> \"Suppression of endogenous cortisol production\" -> \"Decreased cortisol levels\" -> \"Possible decreased cortisol\" -> 60%"
+  ],
+  "enhanced_information": "The most likely laboratory change in the 36-year-old woman with lightheadedness, weakness, and abdominal pain, along with a history of pulmonary sarcoidosis and prednisone use, is increased adrenocorticotropic hormone (ACTH) due to dehydration-induced hypovolemia leading to compensatory increase in ACTH secretion.",
+  "analysis": "The patient's presentation with lightheadedness, weakness, abdominal pain, and hypotension along with a history of pulmonary sarcoidosis and prednisone use suggests adrenal insufficiency, likely secondary to dehydration-induced hypovolemia. This scenario would lead to decreased aldosterone production and increased adrenocorticotropic hormone (ACTH) secretion as a compensatory mechanism.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5,
+      1,
+      4
+    ],
+    "coverage_rates": [
+      50.0,
+      10.0,
+      40.0
+    ],
+    "total_successes": 10
+  },
+  "normal_results": []
+}

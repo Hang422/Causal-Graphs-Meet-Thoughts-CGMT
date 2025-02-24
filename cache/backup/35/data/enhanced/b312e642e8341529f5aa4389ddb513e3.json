@@ -1,0 +1,101 @@
+{
+  "question": "A 16-year-old male presents to the emergency department with a hematoma after falling during gym class. He claims that he has a history of prolonged nosebleeds and bruising/bleeding after minor injuries. Physical exam is unrevealing other than the hematoma. Labs are obtained showing an increased bleeding time and an abnormal ristocetin cofactor assay. Coagulation assays reveal an increased partial thromboplastin time (PTT) and but a normal prothrombin time (PT). The patient is given desmopressin and is asked to avoid aspirin. Which of the following findings is most likely directly involved in the etiology of this patient's presentation?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Decreased platelet count",
+    "opb": "Decreased levels of factor VIII",
+    "opc": "Decreased levels of factor IX",
+    "opd": "Decreased activity of ADAMTS13",
+    "ope": "Decreased plasma fibrinogen"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Bleeding time procedure",
+        "Thrombocytopenia",
+        "platelet dysfunction"
+      ],
+      [
+        "Bleeding time procedure",
+        "Platelet Function Tests",
+        "platelet dysfunction"
+      ],
+      [
+        "Aspirin",
+        "Pharmaceutical Preparations",
+        "Vitamin supplementation",
+        "Prophylactic treatment"
+      ],
+      [
+        "Aspirin",
+        "Pharmaceutical Preparations",
+        "Contraceptives, Oral",
+        "Prophylactic treatment"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "PREDISPOSES"
+      ],
+      [
+        "ISA",
+        "DIAGNOSES"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH",
+        "ISA"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH",
+        "ISA"
+      ]
+    ],
+    "paths": [
+      "(Bleeding time procedure)-DIAGNOSES->(Thrombocytopenia)-PREDISPOSES->(platelet dysfunction)",
+      "(Bleeding time procedure)-ISA->(Platelet Function Tests)-DIAGNOSES->(platelet dysfunction)",
+      "(Aspirin)-INTERACTS_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Vitamin supplementation)-ISA->(Prophylactic treatment)",
+      "(Aspirin)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Contraceptives, Oral)-ISA->(Prophylactic treatment)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Bleeding time procedure)-DIAGNOSES->(Thrombocytopenia)-PREDISPOSES->(platelet dysfunction)",
+      "(Bleeding time procedure)-ISA->(Platelet Function Tests)-DIAGNOSES->(platelet dysfunction)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Abnormal ristocetin cofactor assay -> von Willebrand disease -> 80% CHAIN: Increased bleeding time -> platelet dysfunction -> 75% CHAIN: Increased PTT -> intrinsic pathway coagulation factor deficiency -> 70% CHAIN: Desmopressin administration -> release of von Willebrand factor -> 60% CHAIN: Avoiding aspirin -> prevention of platelet dysfunction exacerbation -> 80%"
+  ],
+  "enhanced_information": "The most likely finding directly involved in this patient's presentation is decreased levels of factor VIII. The abnormal ristocetin cofactor assay and increased PTT suggest a deficiency in factor VIII, which is crucial for the intrinsic pathway of coagulation. The evidence paths supporting platelet dysfunction do not directly relate to the etiology of this patient's presentation.",
+  "analysis": "The patient's presentation with a history of prolonged nosebleeds, bruising/bleeding after minor injuries, increased bleeding time, abnormal ristocetin cofactor assay, and increased PTT strongly suggests a deficiency in factor VIII, which is essential for the intrinsic pathway of coagulation. The evidence provided aligns with the diagnosis of hemophilia A, a disorder characterized by decreased levels of factor VIII. Platelet dysfunction or other factors are less likely to be directly involved in this patient's presentation.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

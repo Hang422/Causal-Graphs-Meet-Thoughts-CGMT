@@ -1,0 +1,183 @@
+{
+  "question": "A 22-year-old woman presents to the emergency department because of agitation and sweating. History shows she is currently being treated for depression with citalopram. She also takes tramadol for back pain. Her temperature is 38.6°C (97.9°F), the pulse is 108/min, the respirations are 18/min, and the blood pressure is 165/110 mm Hg. Physical examination shows hyperreflexia and mild tremors in all 4 extremities. Which of the following should be used in the next step of management for this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Chlorpromazine",
+    "opb": "Cyproheptadine",
+    "opc": "Diazepam",
+    "opd": "Discontinue tramadol and citalopram",
+    "ope": "Selegiline"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Citalopram",
+        "Agitation"
+      ],
+      [
+        "Tramadol",
+        "Agitation"
+      ],
+      [
+        "Malignant Carcinoid Syndrome",
+        "Hyperinsulinism",
+        "Agitation"
+      ],
+      [
+        "Malignant Carcinoid Syndrome",
+        "Syndrome",
+        "Agitation"
+      ],
+      [
+        "Malignant Carcinoid Syndrome",
+        "Seizures",
+        "Agitation"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "PREVENTS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Citalopram)-TREATS->(Agitation)",
+      "(Tramadol)-PREVENTS->(Agitation)",
+      "(Malignant Carcinoid Syndrome)-CAUSES->(Hyperinsulinism)-CAUSES->(Agitation)",
+      "(Malignant Carcinoid Syndrome)-CAUSES->(Syndrome)-CAUSES->(Agitation)",
+      "(Malignant Carcinoid Syndrome)-CAUSES->(Seizures)-CAUSES->(Agitation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Agitation",
+        "Microbial Biofilms",
+        "Mannitol",
+        "Supportive care"
+      ],
+      [
+        "Agitation",
+        "Microbial Biofilms",
+        "Ascorbic Acid",
+        "Supportive care"
+      ],
+      [
+        "Tremor",
+        "Staphylococcus aureus",
+        "Mannitol",
+        "Supportive care"
+      ],
+      [
+        "Tremor",
+        "Staphylococcus aureus",
+        "Epinephrine",
+        "Supportive care"
+      ],
+      [
+        "Supportive care",
+        "Obstruction",
+        "Enzymes",
+        "Benzodiazepines"
+      ],
+      [
+        "Supportive care",
+        "HIV",
+        "Enzymes",
+        "Benzodiazepines"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "LOCATION_OF",
+        "ISA"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "LOCATION_OF",
+        "ISA"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "LOCATION_OF",
+        "ISA"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "LOCATION_OF",
+        "ISA"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "TREATS",
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Agitation)-ASSOCIATED_WITH->(Microbial Biofilms)-LOCATION_OF->(Mannitol)-ISA->(Supportive care)",
+      "(Agitation)-ASSOCIATED_WITH->(Microbial Biofilms)-LOCATION_OF->(Ascorbic Acid)-ISA->(Supportive care)",
+      "(Tremor)-ASSOCIATED_WITH->(Staphylococcus aureus)-LOCATION_OF->(Mannitol)-ISA->(Supportive care)",
+      "(Tremor)-ASSOCIATED_WITH->(Staphylococcus aureus)-LOCATION_OF->(Epinephrine)-ISA->(Supportive care)",
+      "(Supportive care)-TREATS->(Obstruction)-ASSOCIATED_WITH->(Enzymes)-INTERACTS_WITH->(Benzodiazepines)",
+      "(Supportive care)-TREATS->(HIV)-LOCATION_OF->(Enzymes)-INTERACTS_WITH->(Benzodiazepines)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Citalopram)-TREATS->(Agitation)",
+      "(Tramadol)-PREVENTS->(Agitation)",
+      "(Agitation)-ASSOCIATED_WITH->(Microbial Biofilms)-LOCATION_OF->(Mannitol)-ISA->(Supportive care)",
+      "(Agitation)-ASSOCIATED_WITH->(Microbial Biofilms)-LOCATION_OF->(Ascorbic Acid)-ISA->(Supportive care)",
+      "(Tremor)-ASSOCIATED_WITH->(Staphylococcus aureus)-LOCATION_OF->(Mannitol)-ISA->(Supportive care)",
+      "(Tremor)-ASSOCIATED_WITH->(Staphylococcus aureus)-LOCATION_OF->(Epinephrine)-ISA->(Supportive care)",
+      "(Supportive care)-TREATS->(Obstruction)-ASSOCIATED_WITH->(Enzymes)-INTERACTS_WITH->(Benzodiazepines)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Serotonin syndrome due to citalopram and tramadol\" -> \"Symptoms of agitation, sweating, hyperreflexia, tremors\" -> \"Management with supportive care and discontinuation of offending agents\" -> \"Consideration of benzodiazepines like diazepam for symptom control\" -> 80%"
+  ],
+  "enhanced_information": "In a 22-year-old woman with symptoms suggestive of serotonin syndrome due to citalopram and tramadol, the next step in management should involve supportive care and discontinuation of the offending agents. Considering the symptoms of agitation, sweating, hyperreflexia, and tremors, diazepam may be used for symptom control. There is no indication for the use of chlorpromazine, cyproheptadine, or selegiline in this scenario. Discontinuation of tramadol and citalopram is crucial in managing serotonin syndrome.",
+  "analysis": "The core medical principle in managing serotonin syndrome involves supportive care and discontinuation of the offending agents. In this case, the patient is likely experiencing serotonin syndrome due to citalopram and tramadol. The next step should involve discontinuing these medications and providing symptomatic relief. Diazepam can be used for symptom control, especially for agitation and tremors. There is no clear indication for the use of chlorpromazine, cyproheptadine, or selegiline in this scenario.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

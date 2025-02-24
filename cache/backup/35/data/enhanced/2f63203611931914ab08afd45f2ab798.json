@@ -1,0 +1,156 @@
+{
+  "question": "A 48-year-old man comes to the physician because of a 1-month history of a productive cough. He has daily yellowish sputum with occasional streaks of blood in it. Twelve years ago, he was treated for pulmonary tuberculosis for 6 months. He has hypertension and coronary artery disease. He does not smoke or drink alcohol. Current medications include metoprolol, clopidogrel, rosuvastatin, and enalapril. He appears thin. His temperature is 37.2°C (99°F), pulse is 98/min, and blood pressure is 138/92 mm Hg. Pulmonary examination shows inspiratory crackles at the right infraclavicular area. His hemoglobin concentration is 12.2 g/dL, leukocyte count is 11,300/mm3, and erythrocyte sedimentation rate is 38 mm/h. Urinalysis is normal. An x-ray of his chest is shown. Which of the following is most likely to be seen on further evaluation of the patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Exposure to asbestos",
+    "opb": "Repositioning the patient causes the mass to move",
+    "opc": "Clusters of gram-positive cocci in sputum",
+    "opd": "Multiple lytic foci on skeletal scintigraphy",
+    "ope": "Positive c-ANCA test\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Tuberculosis, Pulmonary",
+        "Disease",
+        "Productive cough NOS"
+      ],
+      [
+        "Tuberculosis, Pulmonary",
+        "Bronchiectasis",
+        "Productive cough NOS"
+      ],
+      [
+        "Tuberculosis, Pulmonary",
+        "Chronic Obstructive Airway Disease",
+        "Productive cough NOS"
+      ],
+      [
+        "Lung consolidation",
+        "Mixed infectious disease",
+        "Gram-Positive Cocci"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Tuberculosis, Pulmonary)-CAUSES->(Disease)-CAUSES->(Productive cough NOS)",
+      "(Tuberculosis, Pulmonary)-CAUSES->(Bronchiectasis)-CAUSES->(Productive cough NOS)",
+      "(Tuberculosis, Pulmonary)-CAUSES->(Chronic Obstructive Airway Disease)-CAUSES->(Productive cough NOS)",
+      "(Lung consolidation)-PREDISPOSES->(Mixed infectious disease)-PROCESS_OF->(Gram-Positive Cocci)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hypertensive disease",
+        "Stenosis, unspecified",
+        "COG2",
+        "rosuvastatin"
+      ],
+      [
+        "Hypertensive disease",
+        "Rhabdomyolysis",
+        "COG2",
+        "rosuvastatin"
+      ],
+      [
+        "Coronary Arteriosclerosis",
+        "Stenosis, unspecified",
+        "COG2",
+        "rosuvastatin"
+      ],
+      [
+        "Coronary Arteriosclerosis",
+        "Stenosis, unspecified",
+        "COG2",
+        "rosuvastatin"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hypertensive disease)-PREDISPOSES->(Stenosis, unspecified)-ASSOCIATED_WITH->(COG2)-INTERACTS_WITH->(rosuvastatin)",
+      "(Hypertensive disease)-CAUSES->(Rhabdomyolysis)-ASSOCIATED_WITH->(COG2)-INTERACTS_WITH->(rosuvastatin)",
+      "(Coronary Arteriosclerosis)-COMPLICATES->(Stenosis, unspecified)-ASSOCIATED_WITH->(COG2)-INTERACTS_WITH->(rosuvastatin)",
+      "(Coronary Arteriosclerosis)-PREDISPOSES->(Stenosis, unspecified)-ASSOCIATED_WITH->(COG2)-INTERACTS_WITH->(rosuvastatin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypertensive disease)-PREDISPOSES->(Stenosis, unspecified)-ASSOCIATED_WITH->(COG2)-INTERACTS_WITH->(rosuvastatin)",
+      "(Coronary Arteriosclerosis)-COMPLICATES/PREDISPOSES->(Stenosis, unspecified)-ASSOCIATED_WITH->(COG2)-INTERACTS_WITH->(rosuvastatin)",
+      "(Tuberculosis, Pulmonary)-CAUSES->(Disease)-CAUSES->(Productive cough NOS)",
+      "(Tuberculosis, Pulmonary)-CAUSES->(Bronchiectasis)-CAUSES->(Productive cough NOS)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"History of pulmonary tuberculosis\" -> \"Productive cough with yellowish sputum and occasional streaks of blood\" -> \"Inspiratory crackles on pulmonary examination\" -> \"Possible reactivation of tuberculosis\" -> 70%",
+    "CHAIN: \"Hypertension and coronary artery disease\" -> \"Metoprolol, clopidogrel, rosuvastatin, and enalapril medications\" -> \"Possible drug-induced pulmonary toxicity\" -> \"Inspiratory crackles on pulmonary examination\" -> 60%",
+    "CHAIN: \"Inspiratory crackles at the right infraclavicular area\" -> \"Suspicion of lung mass or consolidation\" -> \"Further evaluation may reveal clusters of gram-positive cocci in sputum\" -> 50%"
+  ],
+  "enhanced_information": "The patient's history of pulmonary tuberculosis, productive cough with yellowish sputum and occasional streaks of blood, and inspiratory crackles suggest possible reactivation of tuberculosis. Further evaluation may reveal clusters of gram-positive cocci in sputum, supporting the suspicion of lung mass or consolidation. Exposure to asbestos, repositioning causing mass movement, multiple lytic foci on skeletal scintigraphy, and positive c-ANCA test are less likely based on the clinical presentation and history.",
+  "analysis": "The patient's history of pulmonary tuberculosis, productive cough with yellowish sputum and occasional streaks of blood, and inspiratory crackles suggest possible reactivation of tuberculosis. Further evaluation may reveal clusters of gram-positive cocci in sputum, supporting the suspicion of lung mass or consolidation. Exposure to asbestos, repositioning causing mass movement, multiple lytic foci on skeletal scintigraphy, and positive c-ANCA test are less likely based on the clinical presentation and history.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      25.0,
+      50.0,
+      25.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

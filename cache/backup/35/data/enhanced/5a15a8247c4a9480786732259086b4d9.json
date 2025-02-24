@@ -1,0 +1,225 @@
+{
+  "question": "A 17-year-old girl is brought to the physician for the evaluation of fatigue for the past 6 months. During this period, she has had a 5-kg (11-lbs) weight loss. She states that she has no friends. When she is not in school, she spends most of her time in bed. She has no history of serious illness. Her mother has major depressive disorder. She appears pale and thin. She is at 25th percentile for height, 10th percentile for weight, and 20th percentile for BMI; her BMI is 19.0. Her temperature is 37°C (98.6°F), pulse is 65/min, and blood pressure is 110/70 mm Hg. Examination shows dry skin, brittle nails, and calluses on the knuckles. The remainder of the examination shows no abnormalities. Laboratory studies show:\nHemoglobin 12.3 g/dL\nSerum\nNa+ 133 mEq/L\nCl- 90 mEq/L\nK+ 3.2 mEq/L\nHCO3- 30 mEq/L\nCa+2 7.8 mg/dL\nWhich of the following is the most likely diagnosis?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Anemia",
+    "opb": "Milk-alkali syndrome",
+    "opc": "Anorexia nervosa",
+    "opd": "Major depressive disorder",
+    "ope": "Bulimia nervosa"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Depressive disorder",
+        "Disease",
+        "Pallor"
+      ],
+      [
+        "Depressive disorder",
+        "Malnutrition",
+        "Pallor"
+      ],
+      [
+        "Pallor",
+        "Infection",
+        "Disease",
+        "Dry skin"
+      ],
+      [
+        "Pallor",
+        "Vomiting",
+        "Disease",
+        "Dry skin"
+      ],
+      [
+        "Pallor",
+        "anemia; profound",
+        "Disease",
+        "Dry skin"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Depressive disorder)-CAUSES->(Disease)-CAUSES->(Pallor)",
+      "(Depressive disorder)-CAUSES->(Malnutrition)-CAUSES->(Pallor)",
+      "(Pallor)-CAUSES->(Infection)-CAUSES->(Disease)-CAUSES->(Dry skin)",
+      "(Pallor)-CAUSES->(Vomiting)-CAUSES->(Disease)-CAUSES->(Dry skin)",
+      "(Pallor)-PREDISPOSES->(anemia; profound)-CAUSES->(Disease)-CAUSES->(Dry skin)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Dry skin",
+        "Functional disorder",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "Body mass index procedure"
+      ],
+      [
+        "Dry skin",
+        "Functional disorder",
+        "neuropeptide Y|NPY",
+        "Leukocytes",
+        "Body mass index procedure"
+      ],
+      [
+        "Body mass index procedure",
+        "Complication",
+        "ARGINASE",
+        "Decreased hemoglobin"
+      ],
+      [
+        "Body mass index procedure",
+        "Complication",
+        "Erythropoietin",
+        "Decreased hemoglobin"
+      ],
+      [
+        "Decreased hemoglobin",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Decreased hemoglobin",
+        "Neuropathy",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Laboratory test finding",
+        "Thrombosis of cerebral veins",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Laboratory test finding",
+        "Thrombosis of cerebral veins",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ISA",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Dry skin)-MANIFESTATION_OF->(Functional disorder)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Body mass index procedure)",
+      "(Dry skin)-ISA->(Functional disorder)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Leukocytes)-LOCATION_OF->(Body mass index procedure)",
+      "(Body mass index procedure)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(ARGINASE)-CAUSES->(Decreased hemoglobin)",
+      "(Body mass index procedure)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(Erythropoietin)-CAUSES->(Decreased hemoglobin)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Neuropathy)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Laboratory test finding)-PREDISPOSES->(Thrombosis of cerebral veins)-ISA->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Laboratory test finding)-PREDISPOSES->(Thrombosis of cerebral veins)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Depressive disorder)-CAUSES->(Disease)-CAUSES->(Pallor)",
+      "(Depressive disorder)-CAUSES->(Malnutrition)-CAUSES->(Pallor)",
+      "(Pallor)-PREDISPOSES->(anemia; profound)-CAUSES->(Disease)-CAUSES->(Dry skin)",
+      "(Pallor)-CAUSES->(Infection)-CAUSES->(Disease)-CAUSES->(Dry skin)",
+      "(Pallor)-CAUSES->(Vomiting)-CAUSES->(Disease)-CAUSES->(Dry skin)",
+      "(Body mass index procedure)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(Erythropoietin)-CAUSES->(Decreased hemoglobin)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Fatigue for the past 6 months\" -> \"5-kg weight loss\" -> \"Social withdrawal and isolation\" -> \"Spends most of her time in bed\" -> \"No serious illness history\" -> \"Mother has major depressive disorder\" -> \"Pale and thin appearance\" -> \"Dry skin, brittle nails, calluses on knuckles\" -> \"Low BMI (19.0)\" -> \"Laboratory findings: low hemoglobin (12.3 g/dL), low serum Ca+2 (7.8 mg/dL), low K+ (3.2 mEq/L)\" -> \"Possible diagnosis of anorexia nervosa\" -> 80%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 17-year-old girl presenting with fatigue, weight loss, social withdrawal, low BMI, and laboratory findings of low hemoglobin and serum Ca+2 is anorexia nervosa. The presence of dry skin, brittle nails, and calluses on knuckles further support this diagnosis. Evidence paths linking depressive disorder to malnutrition and pallor, which can lead to anemia and dry skin, align with the clinical presentation and laboratory findings.",
+  "analysis": "The core medical principle guiding this case is the recognition of a constellation of symptoms and signs suggestive of an eating disorder, specifically anorexia nervosa. The clinical presentation of fatigue, weight loss, social withdrawal, low BMI, and physical exam findings of dry skin, brittle nails, and calluses on knuckles, along with laboratory findings of low hemoglobin and serum Ca+2, all point towards anorexia nervosa. The family history of major depressive disorder also adds to the likelihood of this diagnosis.",
+  "answer": "opc. anorexia nervosa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

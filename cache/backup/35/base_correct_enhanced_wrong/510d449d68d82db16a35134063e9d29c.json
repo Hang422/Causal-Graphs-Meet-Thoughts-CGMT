@@ -1,0 +1,140 @@
+{
+  "question": "A 2-year-old boy is brought to the physician because of an increasing productive cough with a moderate amount of white phlegm for the past week. He has been treated for pneumonia with antibiotic therapy four times over the past year. A chest x-ray performed 3 months ago showed no anatomical abnormalities. He has had multiple episodes of bulky greasy stools that don't flush easily. He is at 3rd percentile for height and at 5th percentile for weight. His temperature is 38°C (100.4°F), pulse is 132/min, and respirations are 44/min. A few inspiratory crackles are heard in the thorax. The abdomen is soft and nontender. The remainder of the examination shows no abnormalities. Which of the following is the best initial test to determine the underlying etiology of this patient's illness?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "X-ray of the chest",
+    "opb": "Serum immunoglobulin level",
+    "opc": "Sweat chloride test",
+    "opd": "Stool analysis",
+    "ope": "DNA phenotyping\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fever",
+        "Disease",
+        "Systemic disease"
+      ],
+      [
+        "Fever",
+        "Lymphohistiocytosis, Hemophagocytic",
+        "Systemic disease"
+      ],
+      [
+        "Fever",
+        "Hypertensive disease",
+        "Systemic disease"
+      ],
+      [
+        "Tachycardia",
+        "Hypertensive disease",
+        "Systemic disease"
+      ],
+      [
+        "Tachycardia",
+        "Myocardial Infarction",
+        "Systemic disease"
+      ],
+      [
+        "Tachycardia",
+        "Symptoms",
+        "Systemic disease"
+      ],
+      [
+        "[D]Tachypnea",
+        "Pneumonia",
+        "Systemic disease"
+      ],
+      [
+        "[D]Tachypnea",
+        "Bacteremia",
+        "Systemic disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Systemic disease)",
+      "(Fever)-CAUSES->(Lymphohistiocytosis, Hemophagocytic)-COMPLICATES->(Systemic disease)",
+      "(Fever)-CAUSES->(Hypertensive disease)-COMPLICATES->(Systemic disease)",
+      "(Tachycardia)-CAUSES->(Hypertensive disease)-COMPLICATES->(Systemic disease)",
+      "(Tachycardia)-CAUSES->(Myocardial Infarction)-PREDISPOSES->(Systemic disease)",
+      "(Tachycardia)-PREDISPOSES->(Symptoms)-CAUSES->(Systemic disease)",
+      "([D]Tachypnea)-PREDISPOSES->(Pneumonia)-CAUSES->(Systemic disease)",
+      "([D]Tachypnea)-PREDISPOSES->(Bacteremia)-CAUSES->(Systemic disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Tachycardia)-PREDISPOSES->(Symptoms)-CAUSES->(Systemic disease)",
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Systemic disease)",
+      "(Fever)-CAUSES->(Lymphohistiocytosis, Hemophagocytic)-COMPLICATES->(Systemic disease)",
+      "(Fever)-CAUSES->(Hypertensive disease)-COMPLICATES->(Systemic disease)",
+      "(Tachycardia)-CAUSES->(Hypertensive disease)-COMPLICATES->(Systemic disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: History of recurrent pneumonia -> Consideration of underlying etiology -> 70% CHAIN: Productive cough with white phlegm -> Chronic respiratory symptoms -> 60% CHAIN: Bulky greasy stools -> Malabsorption -> 50% CHAIN: Low height and weight percentiles -> Possible malnutrition -> 40% CHAIN: Elevated temperature, tachycardia, tachypnea -> Signs of systemic illness -> 50% CHAIN: Inspiratory crackles on thorax exam -> Pulmonary involvement -> 60% CHAIN: Abdomen soft and nontender -> No acute abdominal pathology -> 70% CHAIN: Best initial test for underlying etiology -> Sweat chloride test -> 70%"
+  ],
+  "enhanced_information": "The best initial test to determine the underlying etiology of this patient's illness is the sweat chloride test. The patient's history of recurrent pneumonia, chronic respiratory symptoms, malabsorption indicated by bulky greasy stools, low height and weight percentiles suggesting possible malnutrition, signs of systemic illness, pulmonary involvement, and absence of acute abdominal pathology all point towards a potential diagnosis of cystic fibrosis. The sweat chloride test is the gold standard for diagnosing cystic fibrosis in children with clinical features suggestive of the disease.",
+  "analysis": "The patient's clinical presentation with recurrent pneumonia, chronic respiratory symptoms, malabsorption, growth failure, and signs of systemic illness raises suspicion for cystic fibrosis. The sweat chloride test is the gold standard for diagnosing cystic fibrosis in children with these features. It is crucial to confirm or rule out this diagnosis early to initiate appropriate management.",
+  "answer": "opc. sweat chloride test",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

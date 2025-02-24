@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_001148",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "d3565f5f",
+  "question_text": "A neonate born at 33 weeks is transferred to the NICU after a complicated pregnancy and C-section. A week after being admitted, he developed a fever and become lethargic and minimally responsive to stimuli. A lumbar puncture is performed that reveals the following:\nAppearance  Cloudy\nProtein 64 mg/dL\nGlucose 22 mg/dL\nPressure 330 mm H20\nCells 295 cells/mm³ (> 90% PMN)\nA specimen is sent to microbiology and reveals gram-negative rods. Which of the following is the next appropriate step in management?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A neonate born at 33 weeks is transferred to the NICU after a complicated pregnancy and C-section. A week after being admitted, he developed a fever and become lethargic and minimally responsive to stimuli. A lumbar puncture is performed that reveals the following:\nAppearance  Cloudy\nProtein 64 mg/dL\nGlucose 22 mg/dL\nPressure 330 mm H20\nCells 295 cells/mm³ (> 90% PMN)\nA specimen is sent to microbiology and reveals gram-negative rods. Which of the following is the next appropriate step in management?\n\n            ### Options\n    opa. Provide supportive measures only\nopb. MRI scan of the head\nopc. Start the patient on IV ceftriaxone\nopd. Start the patient on IV cefotaxime\nope. Start the patient on oral rifampin\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Neonate born at 33 weeks -> Increased risk of infections due to prematurity -> Increased susceptibility to bacterial meningitis -> 80%\nCHAIN: Lumbar puncture findings: cloudy appearance, low glucose, high protein, high cell count with >90% PMN -> Suggestive of bacterial meningitis -> 90%\nCHAIN: Gram-negative rods identified in CSF culture -> Likely diagnosis of gram-negative bacterial meningitis -> 90%\nCHAIN: Management of gram-negative bacterial meningitis typically involves IV antibiotics -> IV antibiotics are necessary to target the infection -> 95%\nCHAIN: IV ceftriaxone is a commonly used antibiotic for gram-negative bacterial meningitis -> Starting IV ceftriaxone is the appropriate next step in management -> 95%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "question": "A 72-year-old man with longstanding history of diabetes mellitus and hypertension presents to the emergency department with sudden-onset numbness. On your neurological exam, you note that he has loss of sensation on the left side of his face, arm, and leg. His motor strength exam is normal, as are his cranial nerves. Which of the following is the most likely explanation for his presentation?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Anterior cerebral artery stroke",
+    "opb": "Middle cerebral artery stroke",
+    "opc": "Conversion disorder",
+    "opd": "Thalamic stroke",
+    "ope": "Basilar artery stroke"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypertensive disease",
+        "Cerebrovascular accident"
+      ],
+      [
+        "Diabetes Mellitus",
+        "Cerebrovascular accident"
+      ],
+      [
+        "Numbness",
+        "Disease",
+        "paracrine",
+        "Brain"
+      ],
+      [
+        "Numbness",
+        "Symptoms",
+        "paracrine",
+        "Brain"
+      ],
+      [
+        "Numbness",
+        "Pain",
+        "paracrine",
+        "Brain"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Cerebrovascular accident)",
+      "(Diabetes Mellitus)-CAUSES->(Cerebrovascular accident)",
+      "(Numbness)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Brain)",
+      "(Numbness)-CAUSES->(Symptoms)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Brain)",
+      "(Numbness)-CAUSES->(Pain)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Brain)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Lower Extremity",
+        "arterial stiffness",
+        "Brain"
+      ],
+      [
+        "Lower Extremity",
+        "Femur",
+        "Brain"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Lower Extremity)-LOCATION_OF->(arterial stiffness)-PROCESS_OF->(Brain)",
+      "(Lower Extremity)-PART_OF->(Femur)-PART_OF->(Brain)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Cerebrovascular accident)",
+      "(Diabetes Mellitus)-CAUSES->(Cerebrovascular accident)",
+      "(Lower Extremity)-LOCATION_OF->(arterial stiffness)-PROCESS_OF->(Brain)",
+      "(Lower Extremity)-PART_OF->(Femur)-PART_OF->(Brain)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Hypertension and diabetes mellitus -> increased risk of stroke -> sudden-onset numbness -> possible stroke etiology -> 70% confidence. CHAIN: Loss of sensation on the left side of the face, arm, and leg -> involvement of the right side of the brain -> likely cerebral artery stroke -> 80% confidence. CHAIN: Normal motor strength exam and cranial nerves -> focal sensory deficit -> suggestive of a thalamic stroke -> 70%"
+  ],
+  "enhanced_information": "The most likely explanation for the patient's presentation of sudden-onset numbness on the left side of his face, arm, and leg with normal motor strength and cranial nerves is a middle cerebral artery stroke. This is supported by the patient's history of hypertension and diabetes mellitus, which increase the risk of stroke. The involvement of the right side of the brain aligns with a cerebral artery stroke, and the focal sensory deficit is suggestive of this etiology. Evidence paths linking hypertensive disease and diabetes mellitus to cerebrovascular accidents further support this conclusion.",
+  "analysis": "The most likely explanation for the patient's presentation of sudden-onset numbness on the left side of his face, arm, and leg with normal motor strength and cranial nerves, in the context of his history of diabetes mellitus and hypertension, is a middle cerebral artery stroke. The enhanced information provided aligns with standard medical knowledge that these risk factors increase the likelihood of a stroke. The focal sensory deficit and the involvement of the right side of the brain further support this conclusion.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

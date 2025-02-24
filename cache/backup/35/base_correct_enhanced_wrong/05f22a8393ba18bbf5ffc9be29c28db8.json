@@ -1,0 +1,605 @@
+{
+  "question": "A 74-year-old woman is brought by ambulance to the emergency department and presents with a complaint of excruciating chest pain that started about 45 minutes ago. The patient was sitting in the garden when she 1st noticed the pain in the upper abdomen. The pain has persisted and now localizes underneath of the sternum and the left shoulder. Milk of magnesia and aspirin were tried with no relief. The patient had previous episodes of chest pain that were of lesser intensity and rarely lasted more than 10 minutes. She is diabetic and has been managed for hypertension and rheumatoid arthritis in the past. On examination, the patient is breathless and sweating profusely. The vital signs include blood pressure 140/90 mm Hg and heart rate 118/min. The electrocardiogram (ECG) shows Q waves in leads V2 and V3 and raised ST segments in leads V2, V3, V4, and V5. Laboratory studies (including cardiac enzymes at 6 hours after admission show:\nHematocrit 45%\nTroponin T 1.5 ng/mL\nTroponin I 0.28 ng/mL\nCreatine kinase (CK)-MB 0.25 ng/mL\nThe patient is admitted and started on analgesia and reperfusion therapy. She shows initial signs of recovery until the 6th day of hospitalization when she starts vomiting and complaining of dizziness. Physical examination findings at this time included heart rate 110/min, temperature 37.7°C (99.9°F), blood pressure 90/60 mm Hg. Jugular venous pressure is 8 cm. A harsh pansystolic murmur is present at the left lower sternal border. ECG shows sinus tachycardia and ST-segment elevation with terminal negative T waves. Laboratory studies show:\nHematocrit 38%\nTroponin T 1.15ng/mL\nTroponin I 0.18 ng/mL\nCK-MB 0.10 ng/mL\nWhich of the following best explains the patient's current clinical condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "A new myocardial infarction (re-infarction)",
+    "opb": "Acute pericarditis complicating myocardial infarction",
+    "opc": "Acute ventricular septal rupture complicating myocardial infarction",
+    "opd": "Aortic dissection complicating myocardial infarction",
+    "ope": "Cardiac tamponade complicating myocardial infarction"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Myocardial Infarction",
+        "Chest Pain"
+      ],
+      [
+        "Dizziness",
+        "Disease",
+        "Tachycardia"
+      ],
+      [
+        "Dizziness",
+        "Hypertensive disease",
+        "Tachycardia"
+      ],
+      [
+        "Dizziness",
+        "Symptoms",
+        "Tachycardia"
+      ],
+      [
+        "Vomiting",
+        "Disease",
+        "Tachycardia"
+      ],
+      [
+        "Vomiting",
+        "Hypertensive disease",
+        "Tachycardia"
+      ],
+      [
+        "Vomiting",
+        "hypoglycemia",
+        "Tachycardia"
+      ],
+      [
+        "Reperfusion Therapy",
+        "Complication"
+      ],
+      [
+        "Reperfusion Therapy",
+        "Complication"
+      ],
+      [
+        "Complication",
+        "Chest Pain",
+        "Acute pericarditis NOS"
+      ],
+      [
+        "Complication",
+        "Virus Diseases",
+        "Acute pericarditis NOS"
+      ],
+      [
+        "Complication",
+        "Inflammation",
+        "Acute pericarditis NOS"
+      ],
+      [
+        "Pansystolic murmur",
+        "Heart failure",
+        "Conduction disorder of the heart",
+        "Electrocardiogram"
+      ],
+      [
+        "Pansystolic murmur",
+        "Heart failure",
+        "Asthenia",
+        "Electrocardiogram"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Myocardial Infarction)-CAUSES->(Chest Pain)",
+      "(Dizziness)-CAUSES->(Disease)-CAUSES->(Tachycardia)",
+      "(Dizziness)-CAUSES->(Hypertensive disease)-CAUSES->(Tachycardia)",
+      "(Dizziness)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Tachycardia)",
+      "(Vomiting)-CAUSES->(Disease)-CAUSES->(Tachycardia)",
+      "(Vomiting)-CAUSES->(Hypertensive disease)-CAUSES->(Tachycardia)",
+      "(Vomiting)-CAUSES->(hypoglycemia)-CAUSES->(Tachycardia)",
+      "(Reperfusion Therapy)-CAUSES->(Complication)",
+      "(Reperfusion Therapy)-CAUSES->(Complication)",
+      "(Complication)-CAUSES->(Chest Pain)-CAUSES->(Acute pericarditis NOS)",
+      "(Complication)-CAUSES->(Virus Diseases)-CAUSES->(Acute pericarditis NOS)",
+      "(Complication)-COMPLICATES->(Inflammation)-CAUSES->(Acute pericarditis NOS)",
+      "(Pansystolic murmur)-CAUSES->(Heart failure)-CAUSES->(Conduction disorder of the heart)-CAUSES->(Electrocardiogram)",
+      "(Pansystolic murmur)-CAUSES->(Heart failure)-CAUSES->(Asthenia)-CAUSES->(Electrocardiogram)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Chest Pain",
+        "Pathogenesis",
+        "Genes",
+        "Anterior bronchopulmonary segment of superior pulmonary vein",
+        "Electrocardiogram Q waves test"
+      ],
+      [
+        "Chest Pain",
+        "Atherosclerosis",
+        "Genes",
+        "Anterior bronchopulmonary segment of superior pulmonary vein",
+        "Electrocardiogram Q waves test"
+      ],
+      [
+        "Electrocardiogram Q waves test",
+        "Myocarditis",
+        "Pathogenesis",
+        "Cardiac enzymes"
+      ],
+      [
+        "Electrocardiogram Q waves test",
+        "Myocarditis",
+        "Diastolic dysfunction",
+        "Cardiac enzymes"
+      ],
+      [
+        "Electrocardiogram",
+        "Pathogenesis",
+        "Cardiac enzymes"
+      ],
+      [
+        "Electrocardiogram",
+        "Diastolic dysfunction",
+        "Cardiac enzymes"
+      ],
+      [
+        "Cardiac enzymes",
+        "Symptoms",
+        "Tachycardia",
+        "B3GNT2|B3GNTL1",
+        "Myocardial tissue",
+        "Reperfusion Therapy"
+      ],
+      [
+        "Cardiac enzymes",
+        "Symptoms",
+        "Tachycardia",
+        "B3GNT2|B3GNTL1",
+        "Myocardium",
+        "Reperfusion Therapy"
+      ],
+      [
+        "Pansystolic murmur",
+        "Heart failure",
+        "Energy Metabolism",
+        "Nerve",
+        "Elevation procedure"
+      ],
+      [
+        "Pansystolic murmur",
+        "Heart failure",
+        "Energy Metabolism",
+        "Myocardium",
+        "Elevation procedure"
+      ],
+      [
+        "Elevation procedure",
+        "Pathogenesis",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Adipose tissue",
+        "Hematocrit procedure"
+      ],
+      [
+        "Elevation procedure",
+        "Diastasis",
+        "Genes",
+        "Epithelium",
+        "Hematocrit procedure"
+      ],
+      [
+        "Electrocardiogram",
+        "Tachycardia, Ventricular",
+        "Genes",
+        "Epithelium",
+        "Hematocrit procedure"
+      ],
+      [
+        "Electrocardiogram",
+        "Tachycardia, Ventricular",
+        "Genes",
+        "Epithelium",
+        "Hematocrit procedure"
+      ],
+      [
+        "Hematocrit procedure",
+        "Complication",
+        "Troponin"
+      ],
+      [
+        "Hematocrit procedure",
+        "Extravasation",
+        "Troponin"
+      ],
+      [
+        "Troponin",
+        "Leukocytosis",
+        "Complication",
+        "Creatine Kinase MB Isoenzyme"
+      ],
+      [
+        "Troponin",
+        "Chest Pain",
+        "Complication",
+        "Creatine Kinase MB Isoenzyme"
+      ],
+      [
+        "Myocardial Infarction",
+        "Diastasis",
+        "TFPI",
+        "Myocardium",
+        "Reperfusion Therapy"
+      ],
+      [
+        "Myocardial Infarction",
+        "Diastasis",
+        "Viral Genome",
+        "Myocardium",
+        "Reperfusion Therapy"
+      ],
+      [
+        "Pansystolic murmur",
+        "Heart failure",
+        "Tachycardia",
+        "Troponin"
+      ],
+      [
+        "Pansystolic murmur",
+        "Heart failure",
+        "Pathogenesis",
+        "Troponin"
+      ],
+      [
+        "Troponin",
+        "Leukocytosis",
+        "Complication",
+        "Creatine Kinase MB Isoenzyme"
+      ],
+      [
+        "Troponin",
+        "Chest Pain",
+        "Complication",
+        "Creatine Kinase MB Isoenzyme"
+      ],
+      [
+        "Myocardial Infarction",
+        "Diastasis",
+        "TFPI",
+        "Myocardium",
+        "Reperfusion Therapy"
+      ],
+      [
+        "Myocardial Infarction",
+        "Diastasis",
+        "Viral Genome",
+        "Myocardium",
+        "Reperfusion Therapy"
+      ],
+      [
+        "Electrocardiogram",
+        "Pathogenesis",
+        "Troponin"
+      ],
+      [
+        "Electrocardiogram",
+        "Silent myocardial ischemia",
+        "Troponin"
+      ],
+      [
+        "Troponin",
+        "Leukocytosis",
+        "Complication",
+        "Creatine Kinase MB Isoenzyme"
+      ],
+      [
+        "Troponin",
+        "Chest Pain",
+        "Complication",
+        "Creatine Kinase MB Isoenzyme"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREVENTS",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Chest Pain)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Anterior bronchopulmonary segment of superior pulmonary vein)-LOCATION_OF->(Electrocardiogram Q waves test)",
+      "(Chest Pain)-PREDISPOSES->(Atherosclerosis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Anterior bronchopulmonary segment of superior pulmonary vein)-LOCATION_OF->(Electrocardiogram Q waves test)",
+      "(Electrocardiogram Q waves test)-DIAGNOSES->(Myocarditis)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Cardiac enzymes)",
+      "(Electrocardiogram Q waves test)-DIAGNOSES->(Myocarditis)-CAUSES->(Diastolic dysfunction)-ASSOCIATED_WITH->(Cardiac enzymes)",
+      "(Electrocardiogram)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Cardiac enzymes)",
+      "(Electrocardiogram)-DIAGNOSES->(Diastolic dysfunction)-ASSOCIATED_WITH->(Cardiac enzymes)",
+      "(Cardiac enzymes)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Tachycardia)-ASSOCIATED_WITH->(B3GNT2|B3GNTL1)-PART_OF->(Myocardial tissue)-LOCATION_OF->(Reperfusion Therapy)",
+      "(Cardiac enzymes)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Tachycardia)-ASSOCIATED_WITH->(B3GNT2|B3GNTL1)-PART_OF->(Myocardium)-LOCATION_OF->(Reperfusion Therapy)",
+      "(Pansystolic murmur)-CAUSES->(Heart failure)-MANIFESTATION_OF->(Energy Metabolism)-PROCESS_OF->(Nerve)-LOCATION_OF->(Elevation procedure)",
+      "(Pansystolic murmur)-CAUSES->(Heart failure)-MANIFESTATION_OF->(Energy Metabolism)-PROCESS_OF->(Myocardium)-LOCATION_OF->(Elevation procedure)",
+      "(Elevation procedure)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)-LOCATION_OF->(Hematocrit procedure)",
+      "(Elevation procedure)-PREVENTS->(Diastasis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Hematocrit procedure)",
+      "(Electrocardiogram)-CAUSES->(Tachycardia, Ventricular)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Hematocrit procedure)",
+      "(Electrocardiogram)-DIAGNOSES->(Tachycardia, Ventricular)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Hematocrit procedure)",
+      "(Hematocrit procedure)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(Troponin)",
+      "(Hematocrit procedure)-DIAGNOSES->(Extravasation)-ASSOCIATED_WITH->(Troponin)",
+      "(Troponin)-CAUSES->(Leukocytosis)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(Creatine Kinase MB Isoenzyme)",
+      "(Troponin)-CAUSES->(Chest Pain)-MANIFESTATION_OF->(Complication)-ASSOCIATED_WITH->(Creatine Kinase MB Isoenzyme)",
+      "(Myocardial Infarction)-CAUSES->(Diastasis)-ASSOCIATED_WITH->(TFPI)-PART_OF->(Myocardium)-LOCATION_OF->(Reperfusion Therapy)",
+      "(Myocardial Infarction)-CAUSES->(Diastasis)-ASSOCIATED_WITH->(Viral Genome)-PART_OF->(Myocardium)-LOCATION_OF->(Reperfusion Therapy)",
+      "(Pansystolic murmur)-CAUSES->(Heart failure)-PREDISPOSES->(Tachycardia)-ASSOCIATED_WITH->(Troponin)",
+      "(Pansystolic murmur)-CAUSES->(Heart failure)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Troponin)",
+      "(Troponin)-CAUSES->(Leukocytosis)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(Creatine Kinase MB Isoenzyme)",
+      "(Troponin)-CAUSES->(Chest Pain)-MANIFESTATION_OF->(Complication)-ASSOCIATED_WITH->(Creatine Kinase MB Isoenzyme)",
+      "(Myocardial Infarction)-CAUSES->(Diastasis)-ASSOCIATED_WITH->(TFPI)-PART_OF->(Myocardium)-LOCATION_OF->(Reperfusion Therapy)",
+      "(Myocardial Infarction)-CAUSES->(Diastasis)-ASSOCIATED_WITH->(Viral Genome)-PART_OF->(Myocardium)-LOCATION_OF->(Reperfusion Therapy)",
+      "(Electrocardiogram)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Troponin)",
+      "(Electrocardiogram)-DIAGNOSES->(Silent myocardial ischemia)-ASSOCIATED_WITH->(Troponin)",
+      "(Troponin)-CAUSES->(Leukocytosis)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(Creatine Kinase MB Isoenzyme)",
+      "(Troponin)-CAUSES->(Chest Pain)-MANIFESTATION_OF->(Complication)-ASSOCIATED_WITH->(Creatine Kinase MB Isoenzyme)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Myocardial Infarction)-CAUSES->(Chest Pain)",
+      "(Complication)-CAUSES->(Chest Pain)-CAUSES->(Acute pericarditis NOS)",
+      "(Electrocardiogram)-DIAGNOSES->(Silent myocardial ischemia)-ASSOCIATED_WITH->(Troponin)",
+      "(Dizziness)-CAUSES->(Hypertensive disease)-CAUSES->(Tachycardia)",
+      "(Electrocardiogram)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Cardiac enzymes)",
+      "(Electrocardiogram)-DIAGNOSES->(Diastolic dysfunction)-ASSOCIATED_WITH->(Cardiac enzymes)",
+      "(Reperfusion Therapy)-CAUSES->(Complication)",
+      "(Pansystolic murmur)-CAUSES->(Heart failure)-CAUSES->(Conduction disorder of the heart)-CAUSES->(Electrocardiogram)",
+      "(Pansystolic murmur)-CAUSES->(Heart failure)-CAUSES->(Asthenia)-CAUSES->(Electrocardiogram)",
+      "(Electrocardiogram Q waves test)-DIAGNOSES->(Myocarditis)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Cardiac enzymes)",
+      "(Electrocardiogram Q waves test)-DIAGNOSES->(Myocarditis)-CAUSES->(Diastolic dysfunction)-ASSOCIATED_WITH->(Cardiac enzymes)",
+      "(Troponin)-CAUSES->(Chest Pain)-MANIFESTATION_OF->(Complication)-ASSOCIATED_WITH->(Creatine Kinase MB Isoenzyme)",
+      "(Cardiac enzymes)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Tachycardia)-ASSOCIATED_WITH->(B3GNT2|B3GNTL1)-PART_OF->(Myocardial tissue)-LOCATION_OF->(Reperfusion Therapy)",
+      "(Cardiac enzymes)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Tachycardia)-ASSOCIATED_WITH->(B3GNT2|B3GNTL1)-PART_OF->(Myocardium)-LOCATION_OF->(Reperfusion Therapy)",
+      "(Dizziness)-CAUSES->(Disease)-CAUSES->(Tachycardia)",
+      "(Dizziness)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Tachycardia)",
+      "(Vomiting)-CAUSES->(Hypertensive disease)-CAUSES->(Tachycardia)",
+      "(Complication)-CAUSES->(Virus Diseases)-CAUSES->(Acute pericarditis NOS)",
+      "(Complication)-COMPLICATES->(Inflammation)-CAUSES->(Acute pericarditis NOS)",
+      "(Hematocrit procedure)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(Troponin)",
+      "(Hematocrit procedure)-DIAGNOSES->(Extravasation)-ASSOCIATED_WITH->(Troponin)",
+      "(Electrocardiogram)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Troponin)",
+      "(Troponin)-CAUSES->(Leukocytosis)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(Creatine Kinase MB Isoenzyme)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Myocardial infarction -> Chest pain -> ECG changes (Q waves, ST segment elevation) -> Elevated cardiac enzymes -> Reperfusion therapy -> Initial signs of recovery -> Vomiting and dizziness -> Hypotension, tachycardia -> Jugular venous pressure elevation -> Harsh pansystolic murmur -> ST-segment elevation with terminal negative T waves on ECG -> Hematocrit drop -> Troponin levels rise -> CK-MB levels rise -> 95%",
+    "CHAIN: Myocardial infarction -> Reperfusion therapy -> Complications -> Clinical deterioration -> ECG changes (ST-segment elevation, T-wave changes) -> Hemodynamic instability -> Jugular venous pressure elevation -> Harsh pansystolic murmur -> Troponin levels rise -> CK-MB levels rise -> 90%",
+    "CHAIN: Myocardial infarction -> Reperfusion therapy -> Complications -> Acute pericarditis -> Jugular venous pressure elevation -> Harsh pansystolic murmur -> ECG changes (ST-segment elevation, T-wave changes) -> Troponin levels rise -> CK-MB levels rise -> 85%"
+  ],
+  "enhanced_information": "The patient's current clinical condition is most likely due to acute pericarditis complicating myocardial infarction. This is supported by the chain of events including reperfusion therapy, complications leading to clinical deterioration, ECG changes, hemodynamic instability, elevated troponin and CK-MB levels, and the presence of a harsh pansystolic murmur. The evidence paths also suggest a link between complications, acute pericarditis, and elevated cardiac enzymes, further supporting this conclusion.",
+  "analysis": "The patient's clinical presentation with chest pain, ECG changes, elevated cardiac enzymes, and the development of hemodynamic instability and a harsh pansystolic murmur suggest a complication following myocardial infarction. The most likely correct option based on consensus is acute pericarditis complicating myocardial infarction.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      12,
+      4,
+      6
+    ],
+    "coverage_rates": [
+      54.54545454545454,
+      18.181818181818183,
+      27.27272727272727
+    ],
+    "total_successes": 22
+  },
+  "normal_results": []
+}

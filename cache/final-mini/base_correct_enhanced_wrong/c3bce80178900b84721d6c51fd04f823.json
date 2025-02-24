@@ -1,0 +1,157 @@
+{
+  "question": "A 23-year-old woman presents to the emergency department complaining of nausea, vomiting, and abdominal pain. She has a 10-year history of type I diabetes mellitus treated with lispro and glargine. Upon questioning, she mentions that she stopped taking her insulin 3 days ago due to recent malaise and decreased appetite. She denies recent weight change, illicit drug use, or sexual activity. She does not take any other medications and she does not use tobacco products or alcohol. Upon physical examination she is afebrile. Her blood pressure is 105/70 mm Hg, pulse is 108/min and respiratory rate is 25/min. She appears lethargic, with clear breath sounds bilateral and a soft, nontender and nondistended abdomen. Laboratory results are as follows:\nSodium 130 mEq/L\nPotassium 5.6 mEq/L\nChloride 91 mEq/L\nBicarbonate 12 mEq/L\nGlucose 450 mg/dL\nWhich of the following is most likely to be found in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Signs of hypocalcemia",
+    "opb": "Suppression of antidiuretic hormone (ADH) secretion",
+    "opc": "Normal-to-high phosphate levels",
+    "opd": "Total body potassium depletion",
+    "ope": "Loss of sodium in urine is greater than free water loss"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Bicarbonates",
+        "Disease",
+        "Exotropia",
+        "Visual Suppression"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Bicarbonates)-TREATS->(Disease)-CAUSES->(Exotropia)-MANIFESTATION_OF->(Visual Suppression)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Metabolic acidosis",
+        "Disease",
+        "Physiological Processes",
+        "Bicarbonates"
+      ],
+      [
+        "Metabolic acidosis",
+        "Disease",
+        "Physiological Processes",
+        "Bicarbonates"
+      ],
+      [
+        "Serum potassium assay",
+        "Disease",
+        "uptake",
+        "potassium"
+      ],
+      [
+        "Serum potassium assay",
+        "Disease",
+        "Excretory function",
+        "potassium"
+      ],
+      [
+        "Hypovolemia",
+        "Disease",
+        "Diastasis",
+        "Alcohol dehydrogenase"
+      ],
+      [
+        "Hypovolemia",
+        "Disease",
+        "Diastasis",
+        "Alcohol dehydrogenase"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Metabolic acidosis)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Physiological Processes)-ASSOCIATED_WITH->(Bicarbonates)",
+      "(Metabolic acidosis)-CAUSES->(Disease)-MANIFESTATION_OF->(Physiological Processes)-ASSOCIATED_WITH->(Bicarbonates)",
+      "(Serum potassium assay)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(potassium)",
+      "(Serum potassium assay)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Excretory function)-ASSOCIATED_WITH->(potassium)",
+      "(Hypovolemia)-COMPLICATES->(Disease)-MANIFESTATION_OF->(Diastasis)-ASSOCIATED_WITH->(Alcohol dehydrogenase)",
+      "(Hypovolemia)-CAUSES->(Disease)-MANIFESTATION_OF->(Diastasis)-ASSOCIATED_WITH->(Alcohol dehydrogenase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Bicarbonates)-TREATS->(Disease)-CAUSES->(Exotropia)-MANIFESTATION_OF->(Visual Suppression)",
+      "(Metabolic acidosis)-CAUSES/PREDISPOSES->(Disease)-MANIFESTATION_OF->(Physiological Processes)-ASSOCIATED_WITH->(Bicarbonates)",
+      "(Serum potassium assay)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(potassium)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Type I diabetes mellitus\" -> \"insulin deficiency\" -> \"hyperglycemia\" -> \"glucose 450 mg/dL\" -> \"osmotic diuresis\" -> \"loss of sodium and water\" -> \"sodium 130 mEq/L\" -> \"possible loss of sodium in urine greater than free water loss\" -> 85%",
+    "CHAIN: \"Insulin deficiency\" -> \"increased lipolysis\" -> \"ketone body production\" -> \"possible metabolic acidosis\" -> \"bicarbonate 12 mEq/L\" -> \"possible suppression of ADH\" -> \"unclear\" -> 70%",
+    "CHAIN: \"Hyperglycemia\" -> \"increased serum osmolality\" -> \"increased potassium levels\" -> \"potassium 5.6 mEq/L\" -> \"total body potassium depletion unlikely\" -> 80%",
+    "CHAIN: \"Diabetic ketoacidosis\" -> \"increased phosphate levels\" -> \"normal-to-high phosphate levels likely\" -> 75%",
+    "CHAIN: \"Sodium 130 mEq/L\" -> \"possible hypovolemia\" -> \"increased ADH secretion\" -> \"loss of sodium in urine less than free water loss\" -> \"unclear\" -> 65%"
+  ],
+  "enhanced_information": "The patient presents with signs consistent with diabetic ketoacidosis (DKA), characterized by hyperglycemia (glucose 450 mg/dL), metabolic acidosis (bicarbonate 12 mEq/L), and electrolyte imbalances. In DKA, insulin deficiency leads to increased lipolysis and ketone body production, which can cause hyperkalemia (potassium 5.6 mEq/L) due to a shift of potassium from the intracellular to extracellular space. Therefore, total body potassium depletion is unlikely despite the elevated serum potassium. The low sodium level (130 mEq/L) suggests possible hypovolemia and osmotic diuresis, which typically results in loss of sodium and water. However, in this case, the loss of sodium in urine is likely less than free water loss due to the body's compensatory mechanisms in response to hyperglycemia. Thus, the most likely finding in this patient is that the loss of sodium in urine is greater than free water loss, aligning with the consensus on DKA management and fluid shifts. Other options, such as suppression of ADH secretion or normal-to-high phosphate levels, are less likely based on the current clinical picture.",
+  "analysis": "The patient presents with classic signs of diabetic ketoacidosis (DKA), including hyperglycemia, metabolic acidosis, and electrolyte imbalances. In DKA, insulin deficiency leads to increased lipolysis and ketone production, which can cause hyperkalemia due to potassium shifting from the intracellular to extracellular space. Although the serum potassium is elevated, this does not indicate total body potassium depletion; rather, it suggests that the total body potassium may actually be depleted despite the serum level. The low sodium level indicates possible hypovolemia and osmotic diuresis, which typically results in a loss of sodium and water. However, in DKA, the loss of sodium in urine is often greater than free water loss due to the osmotic effects of hyperglycemia. This aligns with the consensus that in DKA, the kidneys excrete more sodium relative to water due to the osmotic diuresis caused by high glucose levels. Therefore, the most likely finding in this patient is that the loss of sodium in urine is greater than free water loss. Other options, such as suppression of ADH secretion or normal-to-high phosphate levels, are less likely based on the current clinical picture. Thus, the best-supported option is that the loss of sodium in urine is greater than free water loss.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      25.0,
+      0.0,
+      25.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

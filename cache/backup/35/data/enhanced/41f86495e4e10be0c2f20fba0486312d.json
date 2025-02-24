@@ -1,0 +1,187 @@
+{
+  "question": "A 3-year-old boy is brought to a respiratory specialist. The family physician referred the child because of recurrent respiratory infections over the past 2 years. Chest X-rays showed a lesion of < 2 cm that includes glands and cysts in the upper lobe of the right lung. Diseases affecting the immune system were investigated and ruled out. No family history of any pulmonary disease or congenital malformations exists. He was born at full term via a normal vaginal delivery with an APGAR score of 10. Which of the following should be highly considered for effective management of this child’s condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Antibiotics",
+    "opb": "Bronchoscopy",
+    "opc": "Observance",
+    "opd": "Lobectomy",
+    "ope": "Pneumonectomy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Respiratory Tract Infections",
+        "Disease",
+        "paracrine",
+        "Gland structure"
+      ],
+      [
+        "Respiratory Tract Infections",
+        "Disease",
+        "Respiration",
+        "Gland structure"
+      ],
+      [
+        "Respiratory Tract Infections",
+        "Disease",
+        "Physiologic Function",
+        "Gland structure"
+      ],
+      [
+        "Disease",
+        "Primary immune deficiency disorder"
+      ],
+      [
+        "Primary immune deficiency disorder",
+        "Disease",
+        "Secondary immune deficiency disorder"
+      ],
+      [
+        "Primary immune deficiency disorder",
+        "Bacterial Infections",
+        "Secondary immune deficiency disorder"
+      ],
+      [
+        "Primary immune deficiency disorder",
+        "Virus Diseases",
+        "Secondary immune deficiency disorder"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Respiratory Tract Infections)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Gland structure)",
+      "(Respiratory Tract Infections)-CAUSES->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Gland structure)",
+      "(Respiratory Tract Infections)-COMPLICATES->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Gland structure)",
+      "(Disease)-CAUSES->(Primary immune deficiency disorder)",
+      "(Primary immune deficiency disorder)-CAUSES->(Disease)-CAUSES->(Secondary immune deficiency disorder)",
+      "(Primary immune deficiency disorder)-CAUSES->(Bacterial Infections)-CAUSES->(Secondary immune deficiency disorder)",
+      "(Primary immune deficiency disorder)-CAUSES->(Virus Diseases)-CAUSES->(Secondary immune deficiency disorder)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Immune system",
+        "Vaccination",
+        "Primary immune deficiency disorder"
+      ],
+      [
+        "Immune system",
+        "Transplantation",
+        "Primary immune deficiency disorder"
+      ],
+      [
+        "Definitive Treatment",
+        "Kidney Calculi",
+        "Genes",
+        "Transplanted tissue",
+        "Segmental Mastectomy"
+      ],
+      [
+        "Definitive Treatment",
+        "Adverse reaction to drug",
+        "Genes",
+        "Transplanted tissue",
+        "Segmental Mastectomy"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "TREATS"
+      ],
+      [
+        "LOCATION_OF",
+        "TREATS"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREVENTS",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Immune system)-LOCATION_OF->(Vaccination)-TREATS->(Primary immune deficiency disorder)",
+      "(Immune system)-LOCATION_OF->(Transplantation)-TREATS->(Primary immune deficiency disorder)",
+      "(Definitive Treatment)-TREATS->(Kidney Calculi)-ASSOCIATED_WITH->(Genes)-PART_OF->(Transplanted tissue)-LOCATION_OF->(Segmental Mastectomy)",
+      "(Definitive Treatment)-PREVENTS->(Adverse reaction to drug)-ASSOCIATED_WITH->(Genes)-PART_OF->(Transplanted tissue)-LOCATION_OF->(Segmental Mastectomy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Immune system)-LOCATION_OF->(Vaccination)-TREATS->(Primary immune deficiency disorder)",
+      "(Immune system)-LOCATION_OF->(Transplantation)-TREATS->(Primary immune deficiency disorder)",
+      "(Respiratory Tract Infections)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Gland structure)",
+      "(Respiratory Tract Infections)-CAUSES->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Gland structure)",
+      "(Respiratory Tract Infections)-COMPLICATES->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Gland structure)",
+      "(Disease)-CAUSES->(Primary immune deficiency disorder)",
+      "(Primary immune deficiency disorder)-CAUSES->(Disease)-CAUSES->(Secondary immune deficiency disorder)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Recurrent respiratory infections\" -> \"Lesion in upper lobe of right lung with glands and cysts\" -> \"Possible congenital pulmonary airway malformation (CPAM)\" -> 70% CHAIN: \"Normal vaginal delivery at full term with APGAR score of 10\" -> \"Less likely genetic or developmental lung abnormalities\" -> \"Less likely primary immune deficiency\" -> 80% CHAIN: \"Investigated and ruled out diseases affecting the immune system\" -> \"Less likely primary immunodeficiency disorders\" -> \"Less likely secondary immunodeficiency\" -> 90% CHAIN: \"Lesion < 2 cm in upper lobe of right lung\" -> \"Consider surgical intervention for definitive treatment\" -> \"Lobectomy or segmentectomy may be indicated\" -> 70%"
+  ],
+  "enhanced_information": "Considering the child's history of recurrent respiratory infections, the presence of a lesion in the upper lobe of the right lung with glands and cysts, and ruling out immune system disorders, the highly considered option for effective management would be Lobectomy or segmentectomy for surgical intervention as definitive treatment.",
+  "analysis": "Given the child's history of recurrent respiratory infections, the presence of a lesion in the upper lobe of the right lung with glands and cysts, and the ruling out of immune system disorders, the most likely correct option based on consensus would be to consider Lobectomy or segmentectomy for surgical intervention as definitive treatment. This approach aims to remove the affected part of the lung to prevent further infections and complications.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

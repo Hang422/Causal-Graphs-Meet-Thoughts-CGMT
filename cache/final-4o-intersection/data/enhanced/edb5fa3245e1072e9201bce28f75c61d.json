@@ -1,0 +1,114 @@
+{
+  "question": "A 20-year-old woman visits the clinic for her annual physical examination. She does not have any complaints during this visit. The past medical history is insignificant. She follows a healthy lifestyle with a balanced diet and moderate exercise schedule. She does not smoke or drink alcohol. She does not take any medications currently. The family history is significant for her grandfather and uncle who had their parathyroid glands removed. The vital signs include: blood pressure:122/88 mm Hg, pulse 88/min, respirations 17/min, and temperature 36.7°C (98.0°F). The physical exam is within normal limits. The lab test results are as follows:\nBlood Urea Nitrogen 12 mg/dL\nSerum Creatinine 1.1 mg/dL\nSerum Glucose (Random) 88 mg/dL\nSerum chloride 107 mmol/L\nSerum potassium 4.5 mEq/L\nSerum sodium 140 mEq/L\nSerum calcium 14.5 mmol/L\nSerum albumin 4.4 gm/dL\nParathyroid Hormone (PTH) 70 pg/mL (Normal: 10-65 pg/mL)\n24-Hr urinary calcium 85 mg/day (Normal: 100–300 mg/day)\nWhich of the following is the next best step in the management of this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Parathyroidectomy",
+    "opb": "Start IV fluids to keep her hydrated",
+    "opc": "No treatment is necessary",
+    "opd": "Start her on pamidronate",
+    "ope": "Give glucocorticoids"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypercalcemia",
+        "Hyperparathyroidism, Primary"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hypercalcemia)-CAUSES->(Hyperparathyroidism, Primary)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hyperparathyroidism, Primary",
+        "Pathogenesis",
+        "DMD",
+        "amidronate"
+      ],
+      [
+        "Hyperparathyroidism, Primary",
+        "Complication",
+        "DMD",
+        "amidronate"
+      ],
+      [
+        "Hyperparathyroidism, Primary",
+        "Pathogenesis",
+        "Glucocorticoids"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hyperparathyroidism, Primary)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(DMD)-INTERACTS_WITH->(amidronate)",
+      "(Hyperparathyroidism, Primary)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(DMD)-INTERACTS_WITH->(amidronate)",
+      "(Hyperparathyroidism, Primary)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Glucocorticoids)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hyperparathyroidism, Primary)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Glucocorticoids)",
+      "(Hypercalcemia)-CAUSES->(Hyperparathyroidism, Primary)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Possible primary hyperparathyroidism\" -> \"Family history of parathyroid issues\" -> \"Consider parathyroidectomy\" -> 85%",
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Increased PTH\" -> \"Primary hyperparathyroidism\" -> \"Start IV fluids for hydration\" -> 80%",
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Increased PTH\" -> \"Primary hyperparathyroidism\" -> \"Consider pamidronate for acute management\" -> 70%",
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Increased PTH\" -> \"Primary hyperparathyroidism\" -> \"No immediate treatment necessary\" -> 60%",
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Increased PTH\" -> \"Primary hyperparathyroidism\" -> \"Consider glucocorticoids if other treatments fail\" -> 50%"
+  ],
+  "enhanced_information": "The patient presents with hypercalcemia and elevated PTH levels, suggesting primary hyperparathyroidism. The family history of parathyroid gland removal supports a genetic predisposition to this condition. Standard medical consensus for managing primary hyperparathyroidism with significant hypercalcemia, especially in a young patient, is surgical intervention, such as parathyroidectomy, to address the underlying cause. While IV fluids can be used to manage acute hypercalcemia by promoting renal calcium excretion, they do not address the root cause. Pamidronate and glucocorticoids are typically reserved for cases where surgery is not immediately possible or in cases of severe hypercalcemia with symptoms. Given the patient's age, family history, and lab findings, parathyroidectomy is the most definitive treatment. Therefore, the next best step in management is parathyroidectomy.",
+  "analysis": "The patient presents with hypercalcemia and elevated PTH levels, which are indicative of primary hyperparathyroidism. The family history of parathyroid gland removal further supports a genetic predisposition to this condition. In young patients with significant hypercalcemia due to primary hyperparathyroidism, the standard and most definitive treatment is surgical intervention, specifically parathyroidectomy. While IV fluids can help manage acute hypercalcemia by promoting renal calcium excretion, they do not address the underlying cause. Pamidronate and glucocorticoids are typically used when surgery is not immediately feasible or in cases of severe symptomatic hypercalcemia. Given the patient's age, family history, and lab findings, parathyroidectomy is the most appropriate next step in management to address the root cause of the condition.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      0.0,
+      33.33333333333333,
+      0.0,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

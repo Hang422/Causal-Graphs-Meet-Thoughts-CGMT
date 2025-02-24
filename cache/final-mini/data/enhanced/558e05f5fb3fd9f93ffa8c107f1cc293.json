@@ -1,0 +1,125 @@
+{
+  "question": "A 68-year-old female presents to your office for her annual check-up. Her vitals are HR 85, T 98.8 F, RR 16, BP 125/70. She has a history of smoking 1 pack a day for 35 years, but states she quit five years ago. She had her last pap smear at age 64 and states all of her pap smears have been normal. She had her last colonoscopy at age 62, which was also normal. Which is the following is the next best test for this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Abdominal ultrasound",
+    "opb": "Chest CT scan",
+    "opc": "Pap smear",
+    "opd": "Colonoscopy",
+    "ope": "Chest radiograph"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Screening for cancer",
+        "Disease Progression",
+        "Genes",
+        "jejunum",
+        "Chest radiograph"
+      ],
+      [
+        "Screening for cancer",
+        "Hypersensitivity",
+        "Genes",
+        "Lung",
+        "Chest radiograph"
+      ],
+      [
+        "Abdominal symptom",
+        "Pregnancy Complications",
+        "Genes",
+        "Eye",
+        "Transabdominal Ultrasound"
+      ],
+      [
+        "Abdominal symptom",
+        "Food Allergy",
+        "Genes",
+        "Intestines",
+        "Transabdominal Ultrasound"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Screening for cancer)-DIAGNOSES->(Disease Progression)-ASSOCIATED_WITH->(Genes)-PART_OF->(jejunum)-LOCATION_OF->(Chest radiograph)",
+      "(Screening for cancer)-DIAGNOSES->(Hypersensitivity)-ASSOCIATED_WITH->(Genes)-PART_OF->(Lung)-LOCATION_OF->(Chest radiograph)",
+      "(Abdominal symptom)-CAUSES->(Pregnancy Complications)-ASSOCIATED_WITH->(Genes)-PART_OF->(Eye)-LOCATION_OF->(Transabdominal Ultrasound)",
+      "(Abdominal symptom)-ASSOCIATED_WITH->(Food Allergy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Intestines)-LOCATION_OF->(Transabdominal Ultrasound)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Screening for cancer)-DIAGNOSES->(Disease Progression)-ASSOCIATED_WITH->(Genes)-PART_OF->(jejunum)-LOCATION_OF->(Chest radiograph)",
+      "(Screening for cancer)-DIAGNOSES->(Hypersensitivity)-ASSOCIATED_WITH->(Genes)-PART_OF->(Lung)-LOCATION_OF->(Chest radiograph)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"68-year-old female\" -> \"history of smoking\" -> \"increased risk for lung cancer\" -> \"chest CT scan recommended for screening\" -> 85%",
+    "CHAIN: \"68-year-old female\" -> \"last pap smear at age 64\" -> \"normal pap smears\" -> \"next pap smear not needed yet\" -> \"not the best next test\" -> 80%",
+    "CHAIN: \"68-year-old female\" -> \"last colonoscopy at age 62\" -> \"normal colonoscopy\" -> \"next colonoscopy not needed yet\" -> \"not the best next test\" -> 80%",
+    "CHAIN: \"68-year-old female\" -> \"vital signs stable\" -> \"no acute issues\" -> \"screening for lung cancer appropriate\" -> \"chest radiograph as initial test\" -> 75%",
+    "CHAIN: \"68-year-old female\" -> \"no recent abdominal symptoms\" -> \"abdominal ultrasound not indicated\" -> \"not the best next test\" -> 90%"
+  ],
+  "enhanced_information": "The patient is a 68-year-old female with a significant smoking history, which increases her risk for lung cancer. Current guidelines recommend annual screening for lung cancer with low-dose chest CT in individuals aged 50-80 with a smoking history of 20 pack-years or more. Given her history of smoking 1 pack a day for 35 years, she qualifies for this screening. The last pap smear was at age 64, and since all previous results were normal, a pap smear is not immediately necessary. Similarly, her last colonoscopy was at age 62 and was normal, so another colonoscopy is not indicated at this time. An abdominal ultrasound is not warranted due to the absence of symptoms. A chest radiograph may be considered, but it is not the preferred method for lung cancer screening compared to a chest CT. Therefore, the best next test for this patient is a chest CT scan to screen for lung cancer.",
+  "analysis": "The patient is a 68-year-old female with a significant smoking history of 35 years, which places her at increased risk for lung cancer. Current guidelines recommend annual lung cancer screening with low-dose chest CT for individuals aged 50-80 who have a smoking history of 20 pack-years or more. This patient meets the criteria for screening due to her smoking history. Her last pap smear was at age 64, and all results were normal, indicating that she does not need another pap smear at this time. Similarly, her last colonoscopy was at age 62 and was normal, so another colonoscopy is not indicated. An abdominal ultrasound is not warranted as there are no symptoms suggesting abdominal pathology. A chest radiograph is less effective than a chest CT for lung cancer screening. Therefore, the most appropriate next step in her care is to perform a chest CT scan to screen for lung cancer, aligning with the current screening guidelines.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

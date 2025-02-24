@@ -1,0 +1,105 @@
+{
+  "question": "A 4-year-old boy is brought to the physician by his mother because of painless lesions on his face that he has had since shortly after birth. They recently moved to the USA from Indonesia where they had limited access to healthcare. A photograph of the lesions is shown. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Infantile hemangioma",
+    "opb": "Verruca vulgaris",
+    "opc": "Neurofibromas",
+    "opd": "Spider angioma",
+    "ope": "Molluscum contagiosum"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Liver diseases",
+        "Alcoholic Liver Diseases",
+        "Spider nevus"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Liver diseases)-CAUSES->(Alcoholic Liver Diseases)-CAUSES->(Spider nevus)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Molluscum Contagiosum",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Molluscum Contagiosum",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Molluscum Contagiosum)-ISA->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Molluscum Contagiosum)-CAUSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Molluscum Contagiosum)-CAUSES/ISA->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Painless lesions on the face\" -> \"Lesions present since shortly after birth\" -> \"Common in infants\" -> \"Infantile hemangioma is a common vascular tumor in infants\" -> 85%",
+    "CHAIN: \"Painless lesions on the face\" -> \"Lesions have been present since birth\" -> \"Verruca vulgaris typically appears later in childhood\" -> \"Less likely to be the diagnosis\" -> 70%",
+    "CHAIN: \"Painless lesions on the face\" -> \"Lesions present since shortly after birth\" -> \"Neurofibromas usually develop later in life\" -> \"Unlikely to be the diagnosis\" -> 60%",
+    "CHAIN: \"Painless lesions on the face\" -> \"Lesions are not spider-like or associated with liver disease\" -> \"Spider angioma typically occurs in adults\" -> \"Unlikely to be the diagnosis\" -> 65%",
+    "CHAIN: \"Painless lesions on the face\" -> \"Lesions present since birth\" -> \"Molluscum contagiosum usually has a viral etiology and appears later\" -> \"Less likely to be the diagnosis\" -> 70%"
+  ],
+  "enhanced_information": "The patient is a 4-year-old boy with painless facial lesions present since shortly after birth. Infantile hemangiomas are common vascular tumors in infants, typically appearing shortly after birth and often resolving spontaneously, making this the most likely diagnosis. Verruca vulgaris (warts) usually appears later in childhood, neurofibromas typically develop later in life, spider angiomas are more common in adults and associated with liver disease, and molluscum contagiosum usually has a viral etiology and appears later in childhood. Therefore, the reasoning supports that the most likely diagnosis is infantile hemangioma.",
+  "analysis": "The patient is a 4-year-old boy with painless facial lesions that have been present since shortly after birth. Based on the characteristics of the lesions and the age of the patient, the most likely diagnosis is infantile hemangioma. Infantile hemangiomas are common vascular tumors that typically appear shortly after birth and are known for their painless nature. They often resolve spontaneously over time. Other options such as verruca vulgaris (warts) usually appear later in childhood, neurofibromas typically develop later in life, spider angiomas are more common in adults and associated with liver disease, and molluscum contagiosum usually has a viral etiology and appears later in childhood. Given the information provided and the typical presentation of these conditions, infantile hemangioma aligns best with the clinical picture presented. Therefore, the most likely diagnosis is infantile hemangioma.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

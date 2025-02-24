@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_193453",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "4b92c91f",
+  "question_text": "A 49-year-old man is diagnosed with hypertension. He has asthma. The creatinine and potassium levels are both slightly elevated. Which of the following anti-hypertensive drugs would be appropriate in his case?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 49-year-old man is diagnosed with hypertension. He has asthma. The creatinine and potassium levels are both slightly elevated. Which of the following anti-hypertensive drugs would be appropriate in his case?\n\n            ### Options\n    opa. Amlodipine\nopb. Propranolol\nopc. Enalapril\nopd. Hydrochlorothiazide (HCT)\nope. Spironolactone\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Asthma -> caution with beta-blockers -> Propranolol not ideal -> 70%\nCHAIN: Elevated creatinine and potassium -> avoid drugs that may worsen renal function or increase potassium -> Propranolol and Spironolactone not ideal -> 80%\nCHAIN: Hypertension with elevated creatinine and potassium -> consider ACE inhibitors or ARBs -> Enalapril suitable -> 90%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

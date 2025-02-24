@@ -1,0 +1,131 @@
+{
+  "question": "A 27-year-old previously healthy man presents to the clinic complaining of bloody diarrhea and abdominal pain. Sexual history reveals that he has sex with men and women and uses protection most of the time. He is febrile with all other vital signs within normal limits. Physical exam demonstrates tenderness to palpation of the right upper quadrant. Subsequent ultrasound shows a uniform cyst in the liver. In addition to draining the potential abscess and sending it for culture, appropriate medical therapy would involve which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Amphotericin",
+    "opb": "Nifurtimox",
+    "opc": "Supportive therapy",
+    "opd": "Sulfadiazine and pyrimethamine",
+    "ope": "Metronidazole and iodoquinol"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ultrasonography",
+        "Liver Abscess"
+      ],
+      [
+        "Liver cyst",
+        "Acute cholangitis",
+        "Liver Abscess"
+      ],
+      [
+        "Liver cyst",
+        "Obstruction",
+        "Liver Abscess"
+      ],
+      [
+        "Liver cyst",
+        "Syndrome",
+        "Liver Abscess"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Ultrasonography)-CAUSES->(Liver Abscess)",
+      "(Liver cyst)-CAUSES->(Acute cholangitis)-CAUSES->(Liver Abscess)",
+      "(Liver cyst)-CAUSES->(Obstruction)-CAUSES->(Liver Abscess)",
+      "(Liver cyst)-CAUSES->(Syndrome)-CAUSES->(Liver Abscess)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Liver Abscess",
+        "Burkholderia",
+        "Genes",
+        "Cartilage",
+        "Enzyme-Linked Immunosorbent Assay",
+        "Entamoeba histolytica Infection"
+      ],
+      [
+        "Liver Abscess",
+        "Inflammation",
+        "Genes",
+        "Cartilage",
+        "Enzyme-Linked Immunosorbent Assay",
+        "Entamoeba histolytica Infection"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF",
+        "DIAGNOSES"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF",
+        "DIAGNOSES"
+      ]
+    ],
+    "paths": [
+      "(Liver Abscess)-PROCESS_OF->(Burkholderia)-LOCATION_OF->(Genes)-PART_OF->(Cartilage)-LOCATION_OF->(Enzyme-Linked Immunosorbent Assay)-DIAGNOSES->(Entamoeba histolytica Infection)",
+      "(Liver Abscess)-ISA->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage)-LOCATION_OF->(Enzyme-Linked Immunosorbent Assay)-DIAGNOSES->(Entamoeba histolytica Infection)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ultrasonography)-CAUSES->(Liver Abscess)",
+      "(Liver cyst)-CAUSES->(Obstruction)-CAUSES->(Liver Abscess)",
+      "(Liver cyst)-CAUSES->(Acute cholangitis)-CAUSES->(Liver Abscess)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Liver cyst identified on ultrasound -> Likely liver abscess -> Possible Entamoeba histolytica infection -> Sulfadiazine and pyrimethamine indicated for treatment -> 80%"
+  ],
+  "enhanced_information": "The patient likely has a liver abscess, possibly due to Entamoeba histolytica infection. Sulfadiazine and pyrimethamine are indicated for treatment based on standard consensus. The presence of a liver cyst on ultrasound supports this diagnosis. Supportive therapy alone may not be sufficient, and specific antimicrobial therapy is warranted.",
+  "analysis": "The patient's presentation of bloody diarrhea, abdominal pain, febrile illness, and a liver cyst on ultrasound is concerning for an Entamoeba histolytica liver abscess. The appropriate medical therapy for this condition is a combination of sulfadiazine and pyrimethamine. This regimen is the standard treatment for amoebic liver abscesses and aligns with the enhanced information provided.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

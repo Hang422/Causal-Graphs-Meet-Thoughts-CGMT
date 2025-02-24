@@ -1,0 +1,107 @@
+{
+  "question": "A 52-year-old man is brought to the emergency department while on vacation with a history of sudden onset vertigo and difficulty walking. He was in normal health since starting his vacation a week ago, but today he is suffering from a loss of balance, mild headache, and has had 5–6 episodes of vomiting over the last few hours. He denies fever, neck pain, head trauma, weakness, and diplopia. Past medical history is significant for hypertension and dyslipidemia. His medications include valsartan and atorvastatin, but he missed several doses since leaving for this trip. Blood pressure is 198/112 mm Hg, the heart rate is 76/min, the respiratory rate is 16/min, and the temperature is 37.0°C (98.6°F). The patient is awake and oriented to time, place, and person. Extraocular movements are within normal limits. Muscle strength is normal in all 4 extremities. An urgent head CT is ordered and shown in the picture. What additional clinical features be expected in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Inability to comprehend commands",
+    "opb": "Inability to perform repetitive alternating movements",
+    "opc": "Inability to speak fluently",
+    "opd": "Right-sided neglect",
+    "ope": "Right-sided visual field loss"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "CAT scan of head",
+        "Ischemic stroke"
+      ],
+      [
+        "Cerebellar Diseases",
+        "Seizures",
+        "Cerebellar lesion NOS"
+      ],
+      [
+        "Cerebellar Diseases",
+        "Ataxia",
+        "Cerebellar lesion NOS"
+      ],
+      [
+        "Visual Pathways",
+        "Cerebral cortex",
+        "Right occipital lobe structure"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(CAT scan of head)-DIAGNOSES->(Ischemic stroke)",
+      "(Cerebellar Diseases)-CAUSES->(Seizures)-ASSOCIATED_WITH->(Cerebellar lesion NOS)",
+      "(Cerebellar Diseases)-CAUSES->(Ataxia)-ASSOCIATED_WITH->(Cerebellar lesion NOS)",
+      "(Visual Pathways)-PART_OF->(Cerebral cortex)-PART_OF->(Right occipital lobe structure)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cerebellar Diseases)-CAUSES->(Seizures)-ASSOCIATED_WITH->(Cerebellar lesion NOS)",
+      "(Cerebellar Diseases)-CAUSES->(Ataxia)-ASSOCIATED_WITH->(Cerebellar lesion NOS)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient presents with sudden onset vertigo\" -> \"Possible central nervous system involvement\" -> \"Head CT may reveal ischemic stroke\" -> \"Ischemic stroke can cause language deficits\" -> \"Inability to speak fluently\" -> 85%",
+    "CHAIN: \"Patient has difficulty walking and loss of balance\" -> \"Suggests possible cerebellar dysfunction\" -> \"Cerebellar lesions can lead to coordination issues\" -> \"Inability to perform repetitive alternating movements\" -> 80%",
+    "CHAIN: \"Patient has hypertension and missed doses of medication\" -> \"Increased risk of cerebrovascular accident\" -> \"Cerebrovascular accident can lead to neglect\" -> \"Right-sided neglect if right hemisphere is affected\" -> 75%",
+    "CHAIN: \"Patient has episodes of vomiting and headache\" -> \"Possible increased intracranial pressure\" -> \"Increased intracranial pressure can affect visual pathways\" -> \"Right-sided visual field loss if right occipital lobe is involved\" -> 70%",
+    "CHAIN: \"Patient is awake and oriented\" -> \"Cognitive function appears intact\" -> \"Inability to comprehend commands is less likely\" -> \"Inability to comprehend commands is not expected\" -> 90%"
+  ],
+  "enhanced_information": "The patient presents with sudden onset vertigo, difficulty walking, and vomiting, which raises suspicion for a central nervous system event, such as an ischemic stroke. The reasoning chain indicating 'inability to speak fluently' is supported by the possibility of language deficits due to a stroke affecting the language centers, particularly if the left hemisphere is involved. The chain regarding 'inability to perform repetitive alternating movements' aligns with potential cerebellar dysfunction, which can occur with cerebellar lesions, leading to coordination issues. The mention of 'right-sided neglect' is plausible if there is a right hemisphere stroke, as neglect is often associated with right-sided lesions. However, the chain suggesting 'inability to comprehend commands' is less likely given the patient's intact cognitive function. The possibility of 'right-sided visual field loss' is also valid if the right occipital lobe is affected, but this is less directly supported by the current symptoms. Overall, the most likely additional clinical features expected in this patient include 'inability to speak fluently' and 'inability to perform repetitive alternating movements.'",
+  "analysis": "The patient presents with sudden onset vertigo, difficulty walking, and vomiting, which are suggestive of a central nervous system event, likely a stroke. Given the symptoms and the patient's age, a cerebrovascular accident (CVA) is a strong consideration. The options provided relate to potential neurological deficits that could arise from such an event. 'Inability to comprehend commands' (opa) is less likely since the patient is oriented and aware. 'Inability to perform repetitive alternating movements' (opb) could indicate cerebellar dysfunction, which is plausible but not the most direct consequence of a stroke. 'Inability to speak fluently' (opc) suggests aphasia, which is common with left hemisphere strokes affecting language centers. 'Right-sided neglect' (opd) is associated with right hemisphere strokes, but the patient's symptoms do not strongly indicate this. 'Right-sided visual field loss' (ope) could occur with occipital lobe involvement but is less directly supported by the current symptoms. Given the context of a potential left hemisphere stroke affecting language areas, the most likely additional clinical feature expected in this patient is 'inability to speak fluently.' Therefore, the best-supported option is opc.",
+  "answer": "opc",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      33.33333333333333,
+      0.0,
+      33.33333333333333,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

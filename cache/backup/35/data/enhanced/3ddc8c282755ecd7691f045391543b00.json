@@ -1,0 +1,86 @@
+{
+  "question": "A 15-year-old female is brought to the emergency room with high fever and confusion. She complains of chills and myalgias, and physical examination reveals a petechial rash. Petechial biopsy reveals a Gram-negative diplococcus. The patient is at greatest risk for which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Bilateral adrenal destruction",
+    "opb": "Pelvic inflammatory disease",
+    "opc": "Septic arthritis",
+    "opd": "Osteomyelitis",
+    "ope": "Acute endocarditis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Petechiae",
+        "Neisseria meningitidis",
+        "Gonorrhea",
+        "Gram-negative diplococcus"
+      ],
+      [
+        "Gram-negative diplococcus",
+        "Pneumonia",
+        "[X]Meningococcemia, unspecified"
+      ],
+      [
+        "[X]Meningococcemia, unspecified",
+        "Septicemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Petechiae)-PROCESS_OF->(Neisseria meningitidis)-CAUSES->(Gonorrhea)-PROCESS_OF->(Gram-negative diplococcus)",
+      "(Gram-negative diplococcus)-CAUSES->(Pneumonia)-CAUSES->([X]Meningococcemia, unspecified)",
+      "([X]Meningococcemia, unspecified)-CAUSES->(Septicemia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Petechiae)-PROCESS_OF->(Neisseria meningitidis)-CAUSES->(Gonorrhea)-PROCESS_OF->(Gram-negative diplococcus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Neisseria meningitidis infection -> petechial rash -> Gram-negative diplococcus -> possible meningococcal sepsis -> septicemia -> disseminated intravascular coagulation -> bilateral adrenal destruction -> 80%"
+  ],
+  "enhanced_information": "The patient with Neisseria meningitidis infection presenting with petechial rash and Gram-negative diplococcus on biopsy is at greatest risk for septicemia and disseminated intravascular coagulation, not bilateral adrenal destruction as previously suggested. The evidence path linking petechiae to Neisseria meningitidis supports the infectious etiology. Therefore, the patient is at risk for complications such as septicemia, disseminated intravascular coagulation, and potentially acute endocarditis.",
+  "analysis": "The core medical principle here is to recognize the clinical presentation of a 15-year-old female with high fever, confusion, chills, myalgias, and a petechial rash with a Gram-negative diplococcus on biopsy, indicative of Neisseria meningitidis infection. The enhanced information clarifies that the patient is at greatest risk for septicemia, disseminated intravascular coagulation, and potentially acute endocarditis. While bilateral adrenal destruction was initially suggested, the consensus now supports the higher risk of systemic complications associated with Neisseria meningitidis infection.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

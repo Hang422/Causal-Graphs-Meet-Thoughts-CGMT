@@ -1,0 +1,107 @@
+{
+  "question": "A 43-year-old type 1 diabetic woman who is poorly compliant with her diabetes medications presented to the emergency department with hemorrhage from her nose. On exam, you observe the findings shown in figure A. What is the most likely explanation for these findings?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Cryptococcal infection",
+    "opb": "Candida infection",
+    "opc": "Rhizopus infection",
+    "opd": "Sporothricosis",
+    "ope": "Gram negative bacterial infection"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hemorrhage",
+        "Disease",
+        "Mycoses"
+      ],
+      [
+        "Hemorrhage",
+        "Lupus Erythematosus, Systemic",
+        "Mycoses"
+      ],
+      [
+        "Hemorrhage",
+        "Pathogenesis",
+        "Mycoses"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "COMPLICATES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Hemorrhage)-CAUSES->(Disease)-CAUSES->(Mycoses)",
+      "(Hemorrhage)-PREDISPOSES->(Lupus Erythematosus, Systemic)-COMPLICATES->(Mycoses)",
+      "(Hemorrhage)-MANIFESTATION_OF->(Pathogenesis)-MANIFESTATION_OF->(Mycoses)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Nose",
+        "Mycoses"
+      ],
+      [
+        "Nose",
+        "Mucormycosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Nose)-LOCATION_OF->(Mycoses)",
+      "(Nose)-LOCATION_OF->(Mucormycosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hemorrhage)-PREDISPOSES->(Lupus Erythematosus, Systemic)-COMPLICATES->(Mycoses)",
+      "(Nose)-LOCATION_OF->(Mycoses)",
+      "(Nose)-LOCATION_OF->(Mucormycosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Poor compliance with diabetes medications -> uncontrolled blood sugar levels -> increased susceptibility to infections -> 80% CHAIN: Type 1 diabetes -> compromised immune function -> increased risk of opportunistic infections -> 75% CHAIN: Hemorrhage from the nose -> possible invasive fungal infection -> consider fungal etiology -> 70% CHAIN: Findings in figure A showing nasal involvement -> consider mucormycosis (Rhizopus infection) -> 80%"
+  ],
+  "enhanced_information": "The most likely explanation for the findings in the 43-year-old poorly compliant type 1 diabetic woman with hemorrhage from her nose is Rhizopus infection (mucormycosis). Poor compliance with diabetes medications can lead to uncontrolled blood sugar levels, increasing susceptibility to infections. Type 1 diabetes compromises immune function, raising the risk of opportunistic infections. The nasal involvement seen in the patient's exam findings aligns with mucormycosis, supported by the evidence path linking nasal location to mucormycosis.",
+  "analysis": "The most likely explanation for the findings in the 43-year-old poorly compliant type 1 diabetic woman with hemorrhage from her nose is Rhizopus infection (mucormycosis). Poor compliance with diabetes medications can lead to uncontrolled blood sugar levels, increasing susceptibility to infections. Type 1 diabetes compromises immune function, raising the risk of opportunistic infections. The nasal involvement aligns with mucormycosis, supported by the enhanced information provided.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

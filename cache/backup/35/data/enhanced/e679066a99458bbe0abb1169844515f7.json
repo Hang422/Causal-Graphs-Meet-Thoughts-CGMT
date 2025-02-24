@@ -1,0 +1,136 @@
+{
+  "question": "A 65-year-old homeless man with a history of hospitalization for alcohol intoxication is brought in confused. His serum glucose is 39mg/dl. Which of the following is likely true?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "He has also been using cocaine",
+    "opb": "He has decreased activity of alcohol dehydrogenase",
+    "opc": "Hepatic gluconeogenesis is elevated",
+    "opd": "The next step in management is glucose repletion",
+    "ope": "His hepatic NADH/NAD+ ratio is high"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "hypoglycemia",
+        "Disease",
+        "Confusion"
+      ],
+      [
+        "hypoglycemia",
+        "End stage renal failure",
+        "Confusion"
+      ],
+      [
+        "hypoglycemia",
+        "Infection",
+        "Confusion"
+      ],
+      [
+        "Confusion",
+        "Disease",
+        "hypoglycemia"
+      ],
+      [
+        "Confusion",
+        "Obesity",
+        "hypoglycemia"
+      ],
+      [
+        "Confusion",
+        "Myocardial Infarction",
+        "hypoglycemia"
+      ],
+      [
+        "Malnutrition",
+        "hypoglycemia"
+      ],
+      [
+        "hypoglycemia",
+        "Seizures"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(hypoglycemia)-CAUSES->(Disease)-COMPLICATES->(Confusion)",
+      "(hypoglycemia)-CAUSES->(End stage renal failure)-COMPLICATES->(Confusion)",
+      "(hypoglycemia)-PREDISPOSES->(Infection)-PREDISPOSES->(Confusion)",
+      "(Confusion)-CAUSES->(Disease)-CAUSES->(hypoglycemia)",
+      "(Confusion)-CAUSES->(Obesity)-CAUSES->(hypoglycemia)",
+      "(Confusion)-CAUSES->(Myocardial Infarction)-CAUSES->(hypoglycemia)",
+      "(Malnutrition)-CAUSES->(hypoglycemia)",
+      "(hypoglycemia)-CAUSES->(Seizures)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Malnutrition)-CAUSES->(hypoglycemia)",
+      "(hypoglycemia)-CAUSES->(Seizures)",
+      "(hypoglycemia)-CAUSES->(Disease)-COMPLICATES->(Confusion)",
+      "(hypoglycemia)-CAUSES->(End stage renal failure)-COMPLICATES->(Confusion)",
+      "(hypoglycemia)-PREDISPOSES->(Infection)-PREDISPOSES->(Confusion)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Low serum glucose (39mg/dl) -> Hypoglycemia -> Confusion -> 90% CHAIN: History of hospitalization for alcohol intoxication -> Possible alcohol-induced liver damage -> Impaired gluconeogenesis -> 70% CHAIN: Confusion -> Possible neurological impairment due to hypoglycemia -> 80% CHAIN: Homeless man -> Increased risk of malnutrition -> Hypoglycemia -> 80% CHAIN: Hypoglycemia -> Potential for seizures -> 70% CHAIN: Low serum glucose -> Need for immediate glucose repletion -> 90%"
+  ],
+  "enhanced_information": "The 65-year-old homeless man with low serum glucose likely has impaired gluconeogenesis due to possible alcohol-induced liver damage. The next step in management should involve glucose repletion. The presence of cocaine use or a high hepatic NADH/NAD+ ratio is not directly supported by the information provided.",
+  "analysis": "The core medical principle here is recognizing hypoglycemia in a patient with a history of alcohol intoxication, which can be due to impaired gluconeogenesis from alcohol-induced liver damage. The next step in management should involve glucose repletion to raise the low serum glucose levels. While the enhanced information does not directly support the presence of cocaine use or a high hepatic NADH/NAD+ ratio, it does emphasize the importance of addressing the low glucose levels promptly.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

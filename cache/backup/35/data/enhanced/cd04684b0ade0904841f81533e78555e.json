@@ -1,0 +1,119 @@
+{
+  "question": "A 9-month-old boy is brought to the physician because of abnormal crawling and inability to sit without support. A 2nd-trimester urinary tract infection that required antibiotic use and a spontaneous preterm birth via vaginal delivery at 36 weeks’ gestation both complicated the mother’s pregnancy. Physical examination shows a scissoring posture of the legs when the child is suspended by the axillae. Examination of the lower extremities shows brisk tendon reflexes, ankle clonus, and upward plantar reflexes bilaterally. When encouraged by his mother, the infant crawls forward by using normal reciprocal movements of his arms, while his legs drag behind. A brain MRI shows scarring and atrophy in the white matter around the ventricles with ventricular enlargement. Which of the following is most likely associated with the findings in this child?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Antenatal injury",
+    "opb": "Genetic defect",
+    "opc": "Intrapartum asphyxia",
+    "opd": "Postnatal head trauma",
+    "ope": "Preterm birth"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Premature Birth",
+        "Infection",
+        "Leukomalacia, Periventricular"
+      ],
+      [
+        "Premature Birth",
+        "Inflammation",
+        "Leukomalacia, Periventricular"
+      ],
+      [
+        "Premature Birth",
+        "Obesity",
+        "Leukomalacia, Periventricular"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Premature Birth)-CAUSES->(Infection)-CAUSES->(Leukomalacia, Periventricular)",
+      "(Premature Birth)-COMPLICATES->(Inflammation)-CAUSES->(Leukomalacia, Periventricular)",
+      "(Premature Birth)-PREDISPOSES->(Obesity)-PREDISPOSES->(Leukomalacia, Periventricular)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Leukomalacia, Periventricular",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "Lymphocyte",
+        "Nuclear magnetic resonance imaging brain"
+      ],
+      [
+        "Leukomalacia, Periventricular",
+        "Hypoxia",
+        "neuropeptide Y|NPY",
+        "Lymphocyte",
+        "Nuclear magnetic resonance imaging brain"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Leukomalacia, Periventricular)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Lymphocyte)-LOCATION_OF->(Nuclear magnetic resonance imaging brain)",
+      "(Leukomalacia, Periventricular)-ISA->(Hypoxia)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Lymphocyte)-LOCATION_OF->(Nuclear magnetic resonance imaging brain)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Leukomalacia, Periventricular)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Lymphocyte)-LOCATION_OF->(Nuclear magnetic resonance imaging brain)",
+      "(Leukomalacia, Periventricular)-ISA->(Hypoxia)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Lymphocyte)-LOCATION_OF->(Nuclear magnetic resonance imaging brain)",
+      "(Premature Birth)-CAUSES->(Infection)-CAUSES->(Leukomalacia, Periventricular)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Preterm birth -> Increased risk of periventricular leukomalacia -> Brain MRI findings -> 80% CHAIN: Intrapartum asphyxia -> Hypoxic-ischemic injury -> Brain MRI findings -> 70% CHAIN: Antenatal injury -> Abnormal brain development -> Brain MRI findings -> 80%"
+  ],
+  "enhanced_information": "The findings in this child are most likely associated with preterm birth, leading to an increased risk of periventricular leukomalacia. The brain MRI findings of scarring and atrophy in the white matter around the ventricles with ventricular enlargement are consistent with this. The evidence paths support the link between premature birth, infection, and periventricular leukomalacia, providing additional context to the chain of events.",
+  "analysis": "The core medical principle here is the association between preterm birth and periventricular leukomalacia, which is supported by the brain MRI findings of scarring and atrophy in the white matter around the ventricles with ventricular enlargement. The enhanced information provided aligns with the known risk factors and outcomes in premature infants. In this case, the most likely correct option is preterm birth (ope).",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

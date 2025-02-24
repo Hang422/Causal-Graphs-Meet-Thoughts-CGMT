@@ -1,0 +1,179 @@
+{
+  "question": "A potassium hydroxide preparation is conducted on a skin scraping of the hypopigmented area. Microscopy of the preparation shows long hyphae among clusters of yeast cells. Based on these findings, which of the following is the most appropriate pharmacotherapy?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Oral fluconazole",
+    "opb": "Topical corticosteroid",
+    "opc": "Oral ketoconazole",
+    "opd": "Topical selenium sulfide",
+    "ope": "Topical nystatin\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Focal Infection",
+        "Disease",
+        "Fungemia",
+        "Yeast infection"
+      ],
+      [
+        "Focal Infection",
+        "Disease",
+        "Diabetes",
+        "Yeast infection"
+      ],
+      [
+        "Focal Infection",
+        "Disease",
+        "Nephrotic Syndrome",
+        "Yeast infection"
+      ],
+      [
+        "ANTIFUNGAL,TOPICAL",
+        "Candidiasis",
+        "Fungemia",
+        "Yeast infection"
+      ],
+      [
+        "ANTIFUNGAL,TOPICAL",
+        "Mycoses",
+        "Fungemia",
+        "Yeast infection"
+      ],
+      [
+        "ANTIFUNGAL,TOPICAL",
+        "Oral candidiasis",
+        "Fungemia",
+        "Yeast infection"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Focal Infection)-CAUSES->(Disease)-CAUSES->(Fungemia)-CAUSES->(Yeast infection)",
+      "(Focal Infection)-CAUSES->(Disease)-CAUSES->(Diabetes)-PREDISPOSES->(Yeast infection)",
+      "(Focal Infection)-CAUSES->(Disease)-CAUSES->(Nephrotic Syndrome)-PREDISPOSES->(Yeast infection)",
+      "(ANTIFUNGAL,TOPICAL)-TREATS->(Candidiasis)-CAUSES->(Fungemia)-CAUSES->(Yeast infection)",
+      "(ANTIFUNGAL,TOPICAL)-TREATS->(Mycoses)-CAUSES->(Fungemia)-CAUSES->(Yeast infection)",
+      "(ANTIFUNGAL,TOPICAL)-TREATS->(Oral candidiasis)-CAUSES->(Fungemia)-CAUSES->(Yeast infection)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Cutaneous cytologic material",
+        "Onychomycosis",
+        "Dermatomycoses"
+      ],
+      [
+        "Cutaneous cytologic material",
+        "Nose",
+        "Dermatomycoses"
+      ],
+      [
+        "Yeast infection",
+        "Inflammation",
+        "Hydrocortisone",
+        "Pharmacotherapy"
+      ],
+      [
+        "Yeast infection",
+        "Inflammation",
+        "Hydrocortisone",
+        "Pharmacotherapy"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "ISA"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "ISA"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "ISA"
+      ]
+    ],
+    "paths": [
+      "(Cutaneous cytologic material)-LOCATION_OF->(Onychomycosis)-ISA->(Dermatomycoses)",
+      "(Cutaneous cytologic material)-PART_OF->(Nose)-LOCATION_OF->(Dermatomycoses)",
+      "(Yeast infection)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(Hydrocortisone)-ISA->(Pharmacotherapy)",
+      "(Yeast infection)-MANIFESTATION_OF->(Inflammation)-ASSOCIATED_WITH->(Hydrocortisone)-ISA->(Pharmacotherapy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Yeast infection)-CAUSES/MANIFESTATION_OF->(Inflammation)-ASSOCIATED_WITH->(Hydrocortisone)-ISA->(Pharmacotherapy)",
+      "(Cutaneous cytologic material)-LOCATION_OF->(Onychomycosis)-ISA->(Dermatomycoses)",
+      "(Cutaneous cytologic material)-PART_OF->(Nose)-LOCATION_OF->(Dermatomycoses)",
+      "(ANTIFUNGAL,TOPICAL)-TREATS->(Candidiasis)-CAUSES->(Fungemia)-CAUSES->(Yeast infection)",
+      "(ANTIFUNGAL,TOPICAL)-TREATS->(Mycoses)-CAUSES->(Fungemia)-CAUSES->(Yeast infection)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Skin scraping shows long hyphae among clusters of yeast cells -> Suggestive of dermatophyte infection -> Treat with antifungal medication -> Topical antifungals are usually effective for localized infections -> Topical nystatin is commonly used for yeast infections -> Topical nystatin is the most appropriate pharmacotherapy in this case -> 95%"
+  ],
+  "enhanced_information": "Skin scraping showing long hyphae among clusters of yeast cells suggests a dermatophyte infection, indicating the need for antifungal treatment. Topical nystatin, commonly used for yeast infections, is the most appropriate pharmacotherapy in this case. Evidence paths confirm the use of topical antifungals for localized infections and the effectiveness of nystatin for yeast infections.",
+  "analysis": "The presence of long hyphae among clusters of yeast cells in the skin scraping indicates a dermatophyte infection. Topical nystatin, known for its efficacy against yeast infections, is the most appropriate pharmacotherapy for this scenario. Nystatin targets fungal infections and is commonly used for superficial mycoses caused by Candida species. Oral fluconazole, oral ketoconazole, and topical selenium sulfide are more suitable for other types of fungal infections, not dermatophytes. Topical corticosteroids can exacerbate fungal infections and are not the appropriate treatment in this case.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

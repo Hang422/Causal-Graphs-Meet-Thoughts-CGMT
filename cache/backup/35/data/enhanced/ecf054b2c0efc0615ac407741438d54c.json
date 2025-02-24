@@ -1,0 +1,86 @@
+{
+  "question": "A 10-month-old boy with a seizure disorder is brought to the physician by his mother because of a 2-day history of vomiting and lethargy. Laboratory studies show a decreased serum glucose concentration. Further testing confirms a deficiency in an enzyme involved in lipid metabolism that is found in the liver but not in adipose tissue. Which of the following enzymes is most likely deficient in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Acyl-CoA dehydrogenase",
+    "opb": "Glycerol-3-phosphate dehydrogenase",
+    "opc": "Glycerol kinase",
+    "opd": "Acetyl-CoA carboxylase",
+    "ope": "HMG-CoA reductase"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Lethargy",
+        "Seizures",
+        "Metabolic acidosis"
+      ],
+      [
+        "Vomiting",
+        "Disease",
+        "Metabolic acidosis"
+      ],
+      [
+        "Vomiting",
+        "Infection",
+        "Metabolic acidosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Lethargy)-CAUSES->(Seizures)-MANIFESTATION_OF->(Metabolic acidosis)",
+      "(Vomiting)-CAUSES->(Disease)-CAUSES->(Metabolic acidosis)",
+      "(Vomiting)-CAUSES->(Infection)-CAUSES->(Metabolic acidosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vomiting)-CAUSES->(Disease)-CAUSES->(Metabolic acidosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Deficiency in enzyme involved in lipid metabolism -> decreased serum glucose concentration -> possible hypoglycemia -> 80% CHAIN: Enzyme deficiency in liver but not in adipose tissue -> specific to liver metabolism -> narrows down enzyme options -> 70% CHAIN: Vomiting and lethargy in a 10-month-old boy with seizure disorder -> metabolic crisis -> enzyme deficiency affecting energy production -> 75% CHAIN: Symptoms of vomiting and lethargy -> metabolic acidosis -> possible accumulation of toxic metabolites -> 70% CHAIN: Considering the symptoms and enzyme specificity, the most likely deficient enzyme is Acyl-CoA dehydrogenase -> 80%"
+  ],
+  "enhanced_information": "The most likely deficient enzyme in this patient, based on the symptoms of vomiting, lethargy, decreased serum glucose concentration, and enzyme specificity to the liver, is Acyl-CoA dehydrogenase. The presence of metabolic acidosis further supports this conclusion. The evidence path linking vomiting to metabolic acidosis aligns with the metabolic crisis caused by the enzyme deficiency affecting energy production.",
+  "analysis": "The core medical principle here is to identify the deficient enzyme based on the symptoms of vomiting, lethargy, decreased serum glucose concentration, and enzyme specificity to the liver. The enhanced information provided strongly suggests Acyl-CoA dehydrogenase deficiency as the most likely cause, supported by metabolic acidosis. This enzyme deficiency affects energy production, leading to the observed symptoms.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

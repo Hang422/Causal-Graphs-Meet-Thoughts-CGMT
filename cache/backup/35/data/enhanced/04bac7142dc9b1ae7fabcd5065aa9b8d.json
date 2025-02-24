@@ -1,0 +1,123 @@
+{
+  "question": "A 78-year-old male with history of coronary artery disease, status post coronary stent placement currently on aspirin and clopidogrel was found down in his bathroom by his wife. His GCS score was 3 and an accurate physical exam is limited. A stat non-contrast CT scan of his brain demonstrated a large right parietal intracranial hemorrhage with surrounding edema. He was promptly transferred to the intensive care unit (ICU) for monitoring. Over the next day, his mental status continues to worsen but repeat CT scan shows no new bleeding. In addition, the patient’s urinary output has been >200 cc/hr over the last several hours and increasing. His temperature is 99.0 deg F (37.2 deg C), blood pressure is 125/72 mmHg, pulse is 87/min, and respirations are 13/min. Which of the following values would most likely correspond to the patient’s urine specific gravity, urine osmolality, plasma osmolality, and serum sodium?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "High, High, Low, Low",
+    "opb": "Low, High, High, High",
+    "opc": "Low, Low, High, Low",
+    "opd": "Low, Low, High, High",
+    "ope": "High, Low, Low, High"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "X-Ray Computed Tomography",
+        "Disease",
+        "Intracranial Hemorrhages"
+      ],
+      [
+        "X-Ray Computed Tomography",
+        "Intestinal Obstruction",
+        "Intracranial Hemorrhages"
+      ],
+      [
+        "X-Ray Computed Tomography",
+        "Syndrome",
+        "Intracranial Hemorrhages"
+      ],
+      [
+        "Hemorrhage",
+        "Intracranial Hemorrhages"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(X-Ray Computed Tomography)-CAUSES->(Disease)-CAUSES->(Intracranial Hemorrhages)",
+      "(X-Ray Computed Tomography)-CAUSES->(Intestinal Obstruction)-CAUSES->(Intracranial Hemorrhages)",
+      "(X-Ray Computed Tomography)-CAUSES->(Syndrome)-CAUSES->(Intracranial Hemorrhages)",
+      "(Hemorrhage)-CAUSES->(Intracranial Hemorrhages)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Intracranial Hemorrhages",
+        "Genes",
+        "Blood",
+        "Serum sodium measurement"
+      ],
+      [
+        "Intracranial Hemorrhages",
+        "Genes",
+        "Body tissue",
+        "Serum sodium measurement"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Intracranial Hemorrhages)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)-LOCATION_OF->(Serum sodium measurement)",
+      "(Intracranial Hemorrhages)-ASSOCIATED_WITH->(Genes)-PART_OF->(Body tissue)-LOCATION_OF->(Serum sodium measurement)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(X-Ray Computed Tomography)-CAUSES->(Disease)-CAUSES->(Intracranial Hemorrhages)",
+      "(X-Ray Computed Tomography)-CAUSES->(Intestinal Obstruction)-CAUSES->(Intracranial Hemorrhages)",
+      "(X-Ray Computed Tomography)-CAUSES->(Syndrome)-CAUSES->(Intracranial Hemorrhages)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Decreased level of consciousness (GCS score of 3) -> Large right parietal intracranial hemorrhage with surrounding edema on CT scan -> Transfer to ICU for monitoring -> 85% CHAIN: Urinary output >200 cc/hr and increasing -> Possible diabetes insipidus -> Low urine specific gravity -> 70% CHAIN: No new bleeding on repeat CT scan -> Stable intracranial hemorrhage -> No change in serum sodium -> 80% CHAIN: Temperature of 99.0 deg F (37.2 deg C) -> Normal body temperature -> No significant impact on serum sodium -> 85%"
+  ],
+  "enhanced_information": "The patient's presentation with a large right parietal intracranial hemorrhage and increasing urinary output raises concern for diabetes insipidus, leading to low urine specific gravity. The stable intracranial hemorrhage indicates no significant change in serum sodium levels. The normal body temperature does not impact serum sodium. Therefore, the most likely values for the patient would be Low urine specific gravity, Low urine osmolality, High plasma osmolality, and Low serum sodium, corresponding to option opc.",
+  "analysis": "The patient's presentation with a large right parietal intracranial hemorrhage and increasing urinary output raises concern for diabetes insipidus, leading to low urine specific gravity. The stable intracranial hemorrhage indicates no significant change in serum sodium levels. The normal body temperature does not impact serum sodium. Therefore, the most likely values for the patient would be Low urine specific gravity, Low urine osmolality, High plasma osmolality, and Low serum sodium, corresponding to option opc.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

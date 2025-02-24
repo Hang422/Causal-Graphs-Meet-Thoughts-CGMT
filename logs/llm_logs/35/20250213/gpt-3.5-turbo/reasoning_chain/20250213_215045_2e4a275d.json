@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_215045",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "2e4a275d",
+  "question_text": "A 71-year-old woman comes to the physician because of an 8-month history of fatigue. Laboratory studies show a hemoglobin concentration of 13.3 g/dL, a serum creatinine concentration of 0.9 mg/dL, and a serum alkaline phosphatase concentration of 100 U/L. Laboratory evaluation of which of the following parameters would be most helpful in determining the cause of this patient's symptoms?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 71-year-old woman comes to the physician because of an 8-month history of fatigue. Laboratory studies show a hemoglobin concentration of 13.3 g/dL, a serum creatinine concentration of 0.9 mg/dL, and a serum alkaline phosphatase concentration of 100 U/L. Laboratory evaluation of which of the following parameters would be most helpful in determining the cause of this patient's symptoms?\n\n            ### Options\n    opa. Cancer antigen 27-29\nopb. Lactate dehydrogenase\nopc. Ferritin\nopd. Gamma-glutamyl transpeptidase\nope. Calcitriol\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Fatigue\" -> \"Anemia (Hemoglobin 13.3 g/dL)\" -> \"Iron deficiency\" -> \"Check Ferritin levels\" -> 80%  \nCHAIN: \"Fatigue\" -> \"Liver dysfunction (Alkaline phosphatase 100 U/L)\" -> \"Liver disease\" -> \"Check Gamma-glutamyl transpeptidase levels\" -> 75%  \nCHAIN: \"Fatigue\" -> \"Possible malignancy (Alkaline phosphatase 100 U/L)\" -> \"Check Cancer antigen 27-29 levels\" -> 70%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

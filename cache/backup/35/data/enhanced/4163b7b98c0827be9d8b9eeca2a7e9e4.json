@@ -1,0 +1,133 @@
+{
+  "question": "A 75-year-old man comes to the physician because of abdominal pain and nausea over the past 2 weeks and a 1-month history of pain in his knees and hips. He has smoked one pack of cigarettes daily for 30 years. Physical examination shows decreased muscle strength. Laboratory studies show:\nHemoglobin 11.0 mg/dL\nSerum\nCreatinine 1.5 mg/dL\nCalcium 12.2 mg/dL\nParathyroid hormone 115 pg/mL\nParathyroid hormone-related peptide elevated\nUrine\nBlood 2+\nUltrasonography of his abdomen shows a 6-cm mass in his right kidney. Nephrectomy is performed. A photograph of the resected specimen is shown. The patient's tumor most likely originated from which of the following locations?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Distal convoluted tubules",
+    "opb": "Proximal convoluted tubules",
+    "opc": "Glomerulus",
+    "opd": "Renal pelvis",
+    "ope": "Collecting tubules"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypercalciuria",
+        "Disease",
+        "Hypercalcemia"
+      ],
+      [
+        "Hypercalciuria",
+        "Renal Insufficiency",
+        "Hypercalcemia"
+      ],
+      [
+        "Hypercalciuria",
+        "Kidney Diseases",
+        "Hypercalcemia"
+      ],
+      [
+        "Hypercalcemia",
+        "Kidney Calculi"
+      ],
+      [
+        "Hyperparathyroidism",
+        "Disease",
+        "Physiological stress",
+        "Kidney"
+      ],
+      [
+        "Hyperparathyroidism",
+        "Disease",
+        "paracrine",
+        "Kidney"
+      ],
+      [
+        "Hyperparathyroidism",
+        "Disease",
+        "metabolic effects",
+        "Kidney"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Hypercalciuria)-CAUSES->(Disease)-CAUSES->(Hypercalcemia)",
+      "(Hypercalciuria)-CAUSES->(Renal Insufficiency)-CAUSES->(Hypercalcemia)",
+      "(Hypercalciuria)-PREDISPOSES->(Kidney Diseases)-CAUSES->(Hypercalcemia)",
+      "(Hypercalcemia)-CAUSES->(Kidney Calculi)",
+      "(Hyperparathyroidism)-CAUSES->(Disease)-CAUSES->(Physiological stress)-PROCESS_OF->(Kidney)",
+      "(Hyperparathyroidism)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Kidney)",
+      "(Hyperparathyroidism)-CAUSES->(Disease)-MANIFESTATION_OF->(metabolic effects)-PROCESS_OF->(Kidney)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypercalcemia)-CAUSES->(Kidney Calculi)",
+      "(Hyperparathyroidism)-CAUSES->(Disease)-MANIFESTATION_OF->(metabolic effects)-PROCESS_OF->(Kidney)",
+      "(Hypercalciuria)-CAUSES->(Disease)-CAUSES->(Hypercalcemia)",
+      "(Hypercalciuria)-CAUSES->(Renal Insufficiency)-CAUSES->(Hypercalcemia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Elevated calcium levels\" -> \"Hypercalcemia\" -> \"Increased risk of kidney stones\" -> \"Possible kidney tumor formation\" -> 70% CHAIN: \"Elevated parathyroid hormone\" -> \"Hyperparathyroidism\" -> \"Increased calcium reabsorption in the kidneys\" -> \"Possible kidney tumor formation\" -> 75% CHAIN: \"Abdominal mass in the right kidney\" -> \"Likely renal cell carcinoma\" -> \"Tumor originated from proximal convoluted tubules\" -> 70%"
+  ],
+  "enhanced_information": "The patient's tumor most likely originated from the proximal convoluted tubules based on the elevated calcium levels, hyperparathyroidism, and the presence of an abdominal mass in the right kidney, suggesting renal cell carcinoma. Evidence paths support the link between hypercalcemia, hyperparathyroidism, and kidney tumor formation, aligning with the consensus that the tumor likely arose from the proximal convoluted tubules.",
+  "analysis": "The patient's presentation with elevated calcium levels, hyperparathyroidism, and the presence of a kidney mass suggests a link to renal cell carcinoma. The consensus aligns with the tumor originating from the proximal convoluted tubules based on the enhanced information provided.",
+  "answer": "opb. proximal convoluted tubules",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

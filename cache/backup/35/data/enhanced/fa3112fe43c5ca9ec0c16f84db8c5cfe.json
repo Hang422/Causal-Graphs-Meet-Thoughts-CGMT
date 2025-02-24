@@ -1,0 +1,157 @@
+{
+  "question": "A 17-year-old girl presents to the emergency department with a severe headache. The patient has had headaches in the past, but she describes this as the worst headache of her life. Her symptoms started yesterday and have been getting progressively worse. The patient states that the pain is mostly on one side of her head. There has been a recent outbreak of measles at the patient’s school, and the patient’s mother has been trying to give her daughter medicine to prevent her from getting sick, but the mother fears that her daughter may have caught the measles. On physical exam, you note an obese young girl who is clutching her head with the light in the room turned off. Her neurological exam is within normal limits. Fundoscopic exam reveals mild bilateral papilledema. A MRI of the head is obtained and reveals cerebral edema. A lumbar puncture reveals an increased opening pressure with a normal glucose level. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Viral meningitis",
+    "opb": "Bacterial meningitis",
+    "opc": "Subarachnoid hemorrhage",
+    "opd": "Migraine headache",
+    "ope": "Fat-soluble vitamin overuse"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Complication",
+        "Disease",
+        "Headache"
+      ],
+      [
+        "Complication",
+        "Myocardial Infarction",
+        "Headache"
+      ],
+      [
+        "Complication",
+        "Infection",
+        "Headache"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Complication)-CAUSES->(Disease)-CAUSES->(Headache)",
+      "(Complication)-CAUSES->(Myocardial Infarction)-CAUSES->(Headache)",
+      "(Complication)-CAUSES->(Infection)-CAUSES->(Headache)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Measles",
+        "Measles virus"
+      ],
+      [
+        "Disease Outbreaks",
+        "Infection",
+        "Measles virus"
+      ],
+      [
+        "Disease Outbreaks",
+        "Mumps",
+        "Measles virus"
+      ],
+      [
+        "Cerebral Edema",
+        "physiological aspects",
+        "Hand",
+        "Spinal Puncture"
+      ],
+      [
+        "Cerebral Edema",
+        "physiological aspects",
+        "Brain",
+        "Spinal Puncture"
+      ],
+      [
+        "Magnetic Resonance Imaging",
+        "Sphincter",
+        "Eye",
+        "Spinal Puncture"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "INTERACTS_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Measles)-INTERACTS_WITH->(Measles virus)",
+      "(Disease Outbreaks)-CAUSES->(Infection)-INTERACTS_WITH->(Measles virus)",
+      "(Disease Outbreaks)-CAUSES->(Mumps)-INTERACTS_WITH->(Measles virus)",
+      "(Cerebral Edema)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Hand)-LOCATION_OF->(Spinal Puncture)",
+      "(Cerebral Edema)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Brain)-LOCATION_OF->(Spinal Puncture)",
+      "(Magnetic Resonance Imaging)-DIAGNOSES->(Sphincter)-PART_OF->(Eye)-LOCATION_OF->(Spinal Puncture)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Complication)-CAUSES->(Disease)-CAUSES->(Headache)",
+      "(Complication)-CAUSES->(Myocardial Infarction)-CAUSES->(Headache)",
+      "(Complication)-CAUSES->(Infection)-CAUSES->(Headache)",
+      "(Measles)-INTERACTS_WITH->(Measles virus)",
+      "(Disease Outbreaks)-CAUSES->(Infection)-INTERACTS_WITH->(Measles virus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Recent outbreak of measles at school -> Possible exposure to measles virus -> Risk of developing measles infection -> Possible complication of measles infection -> Severe headache, worst of her life, progressively worsening, mostly on one side of the head -> Concern for neurological involvement -> MRI reveals cerebral edema -> Lumbar puncture shows increased opening pressure with normal glucose level -> Signs of increased intracranial pressure -> Mild bilateral papilledema -> Diagnosis: Viral meningitis -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with severe headache, worst of her life, progressively worsening, mostly on one side of the head, along with neurological signs and MRI findings of cerebral edema, increased intracranial pressure, and mild bilateral papilledema, suggests a diagnosis of viral meningitis rather than other options like bacterial meningitis, subarachnoid hemorrhage, migraine headache, or fat-soluble vitamin overuse. The evidence paths support the link between recent measles exposure and the possibility of developing a viral infection like meningitis.",
+  "analysis": "The patient's presentation of severe headache, worst of her life, progressively worsening, mostly unilateral, along with neurological signs, MRI findings of cerebral edema, increased intracranial pressure, and mild bilateral papilledema, in the context of recent measles exposure, strongly suggests viral meningitis as the most likely diagnosis. Bacterial meningitis typically presents more acutely and with more severe systemic symptoms. Subarachnoid hemorrhage would typically have a sudden onset with a thunderclap headache. Migraine headaches usually have a recurrent pattern and are not associated with cerebral edema. Fat-soluble vitamin overuse does not fit the clinical picture.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

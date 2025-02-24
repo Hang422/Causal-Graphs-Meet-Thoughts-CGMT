@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250215_024041",
+  "model": "gpt-4-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "bca83a0f",
+  "question_text": "A researcher is studying how electrical activity propagates across the heart. In order to do this, he decides to measure the rate at which an action potential moves within various groups of cardiac muscle tissue. In particular, he isolates fibers from areas of the heart with the following characteristics:\n\nA) Dysfunction leads to fixed PR intervals prior to a dropped beat\nB) Dysfunction leads to increasing PR intervals prior to a dropped beat\nC) Dysfunction leads to tachycardia with a dramatically widened QRS complex\nD) Dysfunction leads to tachycardia with a sawtooth pattern on electrocardiogram\n\nWhich of the following is the proper order of these tissues from fastest action potential propagation to slowest action potential propagation.?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A researcher is studying how electrical activity propagates across the heart. In order to do this, he decides to measure the rate at which an action potential moves within various groups of cardiac muscle tissue. In particular, he isolates fibers from areas of the heart with the following characteristics:\n\nA) Dysfunction leads to fixed PR intervals prior to a dropped beat\nB) Dysfunction leads to increasing PR intervals prior to a dropped beat\nC) Dysfunction leads to tachycardia with a dramatically widened QRS complex\nD) Dysfunction leads to tachycardia with a sawtooth pattern on electrocardiogram\n\nWhich of the following is the proper order of these tissues from fastest action potential propagation to slowest action potential propagation.?\n\n            ### Options\n    opa. A > C > D > B\nopb. A > D > C > B\nopc. B > C > D > A\nopd. B > D > C > A\nope. D > C > A > B\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"A: Fixed PR intervals before dropped beat\" -> \"Indicative of AV nodal block\" -> \"Relatively normal conduction speed in atria and ventricles\" -> \"Fast action potential propagation\" -> 80%\n\nCHAIN: \"B: Increasing PR intervals before dropped beat\" -> \"Indicative of progressive AV nodal block\" -> \"Gradual slowing of conduction speed\" -> \"Slowest action potential propagation\" -> 85%\n\nCHAIN: \"C: Tachycardia with widened QRS complex\" -> \"Indicative of ventricular tachycardia\" -> \"Fast but abnormal ventricular conduction\" -> \"Moderately fast action potential propagation\" -> 75%\n\nCHAIN: \"D: Tachycardia with sawtooth pattern on ECG\" -> \"Indicative of atrial flutter\" -> \"Rapid atrial rate but variable ventricular response\" -> \"Moderate action potential propagation speed\" -> 70%\n\nCHAIN: \"Order of propagation speed\" -> \"A (fastest) -> C -> D -> B (slowest)\" -> 90%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-4-turbo",
+    "temperature": 0.0
+  }
+}

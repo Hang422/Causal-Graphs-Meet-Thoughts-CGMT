@@ -1,0 +1,182 @@
+{
+  "question": "A 62-year-old woman presents to her primary care physician for her annual check-up. She has no current complaints and says that she has been healthy over the last year. Her past medical history is significant for obesity and diabetes that is well controlled on metformin. She does not smoke and drinks socially. Selected lab results are shown below:\n\nHigh-density lipoprotein: 48 mg/dL\nLow-density lipoprotein: 192 mg/dL\nTriglycerides: 138 mg/dL\n\nGiven these results, the patient is placed on the drug that will be the best therapy for these findings. Which of the following is a potential side effect of this treatment?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Gallstones",
+    "opb": "Gastrointestinal upset",
+    "opc": "Hepatotoxicity",
+    "opd": "Malabsorption",
+    "ope": "Pruritus"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Low-Density Lipoproteins",
+        "Myocardial Infarction",
+        "Arteriosclerosis"
+      ],
+      [
+        "Low-Density Lipoproteins",
+        "Disease",
+        "Arteriosclerosis"
+      ],
+      [
+        "Low-Density Lipoproteins",
+        "Obesity",
+        "Arteriosclerosis"
+      ],
+      [
+        "Arteriosclerosis",
+        "Cardiovascular Diseases"
+      ],
+      [
+        "Hydroxymethylglutaryl-CoA Reductase Inhibitors",
+        "Adverse effects"
+      ],
+      [
+        "Low-Density Lipoproteins",
+        "Myocardial Infarction",
+        "Arteriosclerosis"
+      ],
+      [
+        "Low-Density Lipoproteins",
+        "Disease",
+        "Arteriosclerosis"
+      ],
+      [
+        "Low-Density Lipoproteins",
+        "Obesity",
+        "Arteriosclerosis"
+      ],
+      [
+        "Arteriosclerosis",
+        "Cardiovascular Diseases"
+      ],
+      [
+        "Fibrates",
+        "Cholelithiasis"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Low-Density Lipoproteins)-PREDISPOSES->(Myocardial Infarction)-CAUSES->(Arteriosclerosis)",
+      "(Low-Density Lipoproteins)-TREATS->(Disease)-CAUSES->(Arteriosclerosis)",
+      "(Low-Density Lipoproteins)-TREATS->(Obesity)-CAUSES->(Arteriosclerosis)",
+      "(Arteriosclerosis)-CAUSES->(Cardiovascular Diseases)",
+      "(Hydroxymethylglutaryl-CoA Reductase Inhibitors)-TREATS->(Adverse effects)",
+      "(Low-Density Lipoproteins)-PREDISPOSES->(Myocardial Infarction)-CAUSES->(Arteriosclerosis)",
+      "(Low-Density Lipoproteins)-TREATS->(Disease)-CAUSES->(Arteriosclerosis)",
+      "(Low-Density Lipoproteins)-TREATS->(Obesity)-CAUSES->(Arteriosclerosis)",
+      "(Arteriosclerosis)-CAUSES->(Cardiovascular Diseases)",
+      "(Fibrates)-TREATS->(Cholelithiasis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Cardiovascular Diseases",
+        "Virus",
+        "Lipids",
+        "Hydroxymethylglutaryl-CoA Reductase Inhibitors"
+      ],
+      [
+        "Cardiovascular Diseases",
+        "Tachycardia, Ventricular",
+        "APP gene",
+        "Hydroxymethylglutaryl-CoA Reductase Inhibitors"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Cardiovascular Diseases)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Lipids)-INTERACTS_WITH->(Hydroxymethylglutaryl-CoA Reductase Inhibitors)",
+      "(Cardiovascular Diseases)-CAUSES->(Tachycardia, Ventricular)-ASSOCIATED_WITH->(APP gene)-INTERACTS_WITH->(Hydroxymethylglutaryl-CoA Reductase Inhibitors)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fibrates)-TREATS->(Cholelithiasis)",
+      "(Hydroxymethylglutaryl-CoA Reductase Inhibitors)-TREATS->(Adverse effects)",
+      "(Low-Density Lipoproteins)-Density Lipoproteins)->(Obesity)-CAUSES->(Arteriosclerosis)",
+      "(Cardiovascular Diseases)-CAUSES->(Tachycardia, Ventricular)-ASSOCIATED_WITH->(APP gene)-INTERACTS_WITH->(Hydroxymethylglutaryl-CoA Reductase Inhibitors)",
+      "(Low-Density Lipoproteins)-Density Lipoproteins)->(Myocardial Infarction)-CAUSES->(Arteriosclerosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"High LDL levels\" -> \"Increased risk of atherosclerosis\" -> \"Increased risk of cardiovascular disease\" -> \"Potential treatment with statins\" -> \"Side effect of statins can include hepatotoxicity\" -> 80%",
+    "CHAIN: \"High LDL levels\" -> \"Increased risk of atherosclerosis\" -> \"Increased risk of cardiovascular disease\" -> \"Potential treatment with fibrates\" -> \"Side effect of fibrates can include gallstones\" -> 75%"
+  ],
+  "enhanced_information": "For a patient with high LDL levels, potential treatments include statins and fibrates. Statins can lead to hepatotoxicity as a side effect, while fibrates are associated with gallstones. The evidence path linking fibrates to cholelithiasis supports the potential side effect of gallstones with fibrates in this context.",
+  "analysis": "The core medical principle here is to consider the potential side effects of different lipid-lowering medications. Given the patient's high LDL levels, fibrates are a potential treatment option. Fibrates are associated with an increased risk of gallstones. While statins can lead to hepatotoxicity, the context of high LDL levels and the mention of fibrates in the enhanced information suggest that the patient is likely being considered for fibrates. Therefore, the potential side effect to watch for in this case is gallstones.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4,
+      3
+    ],
+    "coverage_rates": [
+      57.14285714285714,
+      42.857142857142854
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

@@ -1,0 +1,203 @@
+{
+  "question": "An 18-year-old man comes to the physician because of severe left shoulder pain after a basketball match. During the game, the patient sustained an injury to the posterior part of his outstretched arm after being blocked by a defender. Examination shows no gross deformity of the left shoulder. Palpation of the shoulder elicits mild tenderness. Internal rotation of the arm against resistance shows weakness. These findings are most specific for injury to which of the following muscles?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Supraspinatus",
+    "opb": "Deltoid",
+    "opc": "Subscapularis",
+    "opd": "Infraspinatus",
+    "ope": "Teres minor"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Rotators",
+        "Disease",
+        "Asthenia"
+      ],
+      [
+        "Rotators",
+        "Symptoms",
+        "Asthenia"
+      ],
+      [
+        "Rotators",
+        "Rotator cuff syndrome",
+        "Asthenia"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Rotators)-TREATS->(Disease)-CAUSES->(Asthenia)",
+      "(Rotators)-TREATS->(Symptoms)-CAUSES->(Asthenia)",
+      "(Rotators)-TREATS->(Rotator cuff syndrome)-CAUSES->(Asthenia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Asthenia",
+        "uptake",
+        "Nerve",
+        "Subscapularis muscle structure"
+      ],
+      [
+        "Asthenia",
+        "uptake",
+        "Entire tendon",
+        "Subscapularis muscle structure"
+      ],
+      [
+        "Infraspinatous muscle structure",
+        "Asthenia"
+      ],
+      [
+        "Teres Muscle",
+        "Electromyography",
+        "Asthenia"
+      ],
+      [
+        "Teres Muscle",
+        "Electromyography",
+        "Asthenia"
+      ],
+      [
+        "Asthenia",
+        "Complication",
+        "ADRBK1 gene|GRK2",
+        "Infraspinatous muscle structure"
+      ],
+      [
+        "Asthenia",
+        "Obstruction",
+        "ADRBK1 gene|GRK2",
+        "Infraspinatous muscle structure"
+      ],
+      [
+        "Muscle",
+        "Entire tendon",
+        "Infraspinatous muscle structure"
+      ],
+      [
+        "Muscle",
+        "Fascia",
+        "Infraspinatous muscle structure"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "PART_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "DIAGNOSES"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Asthenia)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Nerve)-PART_OF->(Subscapularis muscle structure)",
+      "(Asthenia)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Entire tendon)-PART_OF->(Subscapularis muscle structure)",
+      "(Infraspinatous muscle structure)-LOCATION_OF->(Asthenia)",
+      "(Teres Muscle)-LOCATION_OF->(Electromyography)-DIAGNOSES->(Asthenia)",
+      "(Teres Muscle)-LOCATION_OF->(Electromyography)-CAUSES->(Asthenia)",
+      "(Asthenia)-MANIFESTATION_OF->(Complication)-ASSOCIATED_WITH->(ADRBK1 gene|GRK2)-PART_OF->(Infraspinatous muscle structure)",
+      "(Asthenia)-MANIFESTATION_OF->(Obstruction)-ASSOCIATED_WITH->(ADRBK1 gene|GRK2)-PART_OF->(Infraspinatous muscle structure)",
+      "(Muscle)-PART_OF->(Entire tendon)-PART_OF->(Infraspinatous muscle structure)",
+      "(Muscle)-PART_OF->(Fascia)-PART_OF->(Infraspinatous muscle structure)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Infraspinatous muscle structure)-LOCATION_OF->(Asthenia)",
+      "(Teres Muscle)-LOCATION_OF->(Electromyography)-CAUSES/DIAGNOSES->(Asthenia)",
+      "(Asthenia)-MANIFESTATION_OF->(Obstruction)-ASSOCIATED_WITH->(ADRBK1 gene|GRK2)-PART_OF->(Infraspinatous muscle structure)",
+      "(Asthenia)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Nerve)-PART_OF->(Subscapularis muscle structure)",
+      "(Asthenia)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Entire tendon)-PART_OF->(Subscapularis muscle structure)",
+      "(Muscle)-PART_OF->(Entire tendon)-PART_OF->(Infraspinatous muscle structure)",
+      "(Muscle)-PART_OF->(Fascia)-PART_OF->(Infraspinatous muscle structure)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Injury to posterior part of outstretched arm\" -> \"Likely involves rotator cuff muscles\" -> \"Weakness in internal rotation\" -> \"Subscapularis is primary internal rotator of shoulder\" -> \"Subscapularis injury\" -> 85%",
+    "CHAIN: \"Injury during basketball game\" -> \"Contact with defender\" -> \"Force applied to posterior arm\" -> \"Posterior muscles more likely affected\" -> \"Infraspinatus and teres minor located posteriorly\" -> \"Weakness in internal rotation less typical for these muscles\" -> \"Infraspinatus and teres minor less likely\" -> 60%",
+    "CHAIN: \"No gross deformity observed\" -> \"Mild tenderness on palpation\" -> \"Localized injury rather than dislocation or fracture\" -> \"Internal rotation weakness\" -> \"Subscapularis facilitates internal rotation\" -> \"Injury likely to subscapularis\" -> 80%",
+    "CHAIN: \"Severe shoulder pain post-injury\" -> \"Involvement of shoulder stabilizing muscle\" -> \"Weakness in internal rotation\" -> \"Subscapularis major muscle for internal rotation\" -> \"Subscapularis likely injured\" -> 85%",
+    "CHAIN: \"Basketball injury with arm outstretched\" -> \"Impact likely affected shoulder muscles\" -> \"Internal rotation weakness noted\" -> \"Subscapularis responsible for internal rotation\" -> \"Probable subscapularis injury\" -> 85%"
+  ],
+  "enhanced_information": "The patient's symptoms of severe shoulder pain, weakness in internal rotation, and mild tenderness, combined with the injury mechanism, strongly suggest an injury to the subscapularis muscle. This muscle is the primary internal rotator of the shoulder, and its involvement is consistent with the nature of the injury and the specific symptoms reported. Other muscles like the infraspinatus and teres minor, primarily involved in external rotation, are less likely to be the source of the symptoms given their function and the type of injury described.",
+  "analysis": "The patient presents with severe shoulder pain following a basketball injury, specifically after an impact to the posterior part of his outstretched arm. The key symptoms include severe pain, weakness in internal rotation, and mild tenderness upon palpation, without gross deformity. These symptoms suggest a focus on the muscles involved in internal rotation of the shoulder. Among the options provided, the subscapularis muscle is the primary internal rotator of the shoulder. The weakness in internal rotation particularly points towards an issue with this muscle, as it aligns with its primary function. The other muscles listed (supraspinatus, deltoid, infraspinatus, teres minor) have different primary actions that do not primarily involve internal rotation. The supraspinatus assists in abduction, the deltoid in overall arm movement including abduction and rotation, the infraspinatus and teres minor in external rotation. Therefore, based on the symptoms described and the mechanism of injury, the subscapularis muscle is the most likely to be injured. This conclusion is supported by standard medical knowledge regarding the anatomy and function of shoulder muscles.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      4,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      66.66666666666666,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

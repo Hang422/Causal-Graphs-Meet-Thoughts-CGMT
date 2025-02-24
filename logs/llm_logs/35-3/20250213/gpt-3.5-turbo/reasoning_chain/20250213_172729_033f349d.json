@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_172729",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "033f349d",
+  "question_text": "A 23-year-old woman presents to the emergency department with a 3-day history of fever and headache. She says that the symptoms started suddenly after she woke up 3 days ago, though she has been feeling increasingly fatigued over the last 5 months. On presentation, her temperature is 102°F (38.9°C), blood pressure is 117/74 mmHg, pulse is 106/min, and respirations are 14/min. Physical exam reveals diffuse petechiae and conjunctival pallor and selected laboratory results are shown as follows:\n\nBleeding time: 11 minutes\nPlatelet count: 68,000/mm^3\nLactate dehydrogenase: 105 U/L\n\nWhich of the following would also most likely be true for this patient?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 23-year-old woman presents to the emergency department with a 3-day history of fever and headache. She says that the symptoms started suddenly after she woke up 3 days ago, though she has been feeling increasingly fatigued over the last 5 months. On presentation, her temperature is 102°F (38.9°C), blood pressure is 117/74 mmHg, pulse is 106/min, and respirations are 14/min. Physical exam reveals diffuse petechiae and conjunctival pallor and selected laboratory results are shown as follows:\n\nBleeding time: 11 minutes\nPlatelet count: 68,000/mm^3\nLactate dehydrogenase: 105 U/L\n\nWhich of the following would also most likely be true for this patient?\n\n            ### Options\n    opa. Decreased platelet aggregation on peripheral blood smear\nopb. Immune production of anti-platelet antibodies\nopc. Increased prothrombin time and partial thromboplastin time\nopd. Increased serum von Willebrand factor multimers\nope. Large platelets on peripheral blood smear\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Low platelet count\" -> \"Increased bleeding time\" -> \"Diffuse petechiae\" -> \"Conjunctival pallor\" -> \"Immune production of anti-platelet antibodies\" -> 80%\nCHAIN: \"Low platelet count\" -> \"Decreased platelet aggregation on peripheral blood smear\" -> 70%\nCHAIN: \"Low platelet count\" -> \"Large platelets on peripheral blood smear\" -> 60%\nCHAIN: \"Low platelet count\" -> \"Increased serum von Willebrand factor multimers\" -> 50%\nCHAIN: \"Low platelet count\" -> \"Increased prothrombin time and partial thromboplastin time\" -> 40%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

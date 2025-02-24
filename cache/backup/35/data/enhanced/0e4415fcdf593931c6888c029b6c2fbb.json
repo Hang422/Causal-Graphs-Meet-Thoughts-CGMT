@@ -1,0 +1,175 @@
+{
+  "question": "A 13-year-old girl presents with a 4-week history of unrelenting cough, night sweats, and fever. No known past medical history and no current medications. The patient recently immigrated to the country from a rural town in northern India. Vaccination status is unknown. Her temperature is 38.5°C (101.3°F), pulse is 115/min, blood pressure is 95/65 mm Hg, and respiratory rate is 22/min. Physical examination is significant for decreased breath sounds in the right upper lobe and multiple right cervical lymphadenopathies. A chest radiograph reveals multiple cavitations in the right upper lobe and right hilar lymphadenopathy. A sputum culture shows acid-fast bacilli. Which of the following compounds must be included in addition to the recommended antimicrobial therapy in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Thiamine",
+    "opb": "Riboflavin",
+    "opc": "Pyridoxine",
+    "opd": "Niacin",
+    "ope": "Folic acid"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fever",
+        "Tuberculosis"
+      ],
+      [
+        "Night sweats",
+        "Tuberculosis"
+      ],
+      [
+        "Coughing",
+        "Tuberculosis"
+      ],
+      [
+        "Tuberculosis",
+        "Tuberculosis, Pulmonary"
+      ],
+      [
+        "Malnutrition",
+        "Vitamin A Deficiency"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Fever)-MANIFESTATION_OF->(Tuberculosis)",
+      "(Night sweats)-PREDISPOSES->(Tuberculosis)",
+      "(Coughing)-CAUSES->(Tuberculosis)",
+      "(Tuberculosis)-CAUSES->(Tuberculosis, Pulmonary)",
+      "(Malnutrition)-CAUSES->(Vitamin A Deficiency)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Tuberculosis, Pulmonary",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Tuberculosis, Pulmonary",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Vitamin A Deficiency",
+        "Disease",
+        "uptake",
+        "Vitamin supplementation"
+      ],
+      [
+        "Vitamin A Deficiency",
+        "Disease",
+        "uptake",
+        "Vitamin supplementation"
+      ],
+      [
+        "Demand (clinical)",
+        "Disease",
+        "uptake",
+        "Vitamin supplementation"
+      ],
+      [
+        "Demand (clinical)",
+        "Disease",
+        "uptake",
+        "Vitamin supplementation"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREVENTS",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Tuberculosis, Pulmonary)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Tuberculosis, Pulmonary)-MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Vitamin A Deficiency)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Vitamin supplementation)",
+      "(Vitamin A Deficiency)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Vitamin supplementation)",
+      "(Demand (clinical))-TREATS->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Vitamin supplementation)",
+      "(Demand (clinical))-PREVENTS->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Vitamin supplementation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Malnutrition)-CAUSES->(Vitamin A Deficiency)",
+      "(Fever)-MANIFESTATION_OF->(Tuberculosis)",
+      "(Night sweats)-PREDISPOSES->(Tuberculosis)",
+      "(Coughing)-CAUSES->(Tuberculosis)",
+      "(Tuberculosis)-CAUSES->(Tuberculosis, Pulmonary)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient presents with unrelenting cough, night sweats, and fever\" -> \"Symptoms suggestive of tuberculosis\" -> \"High suspicion for pulmonary tuberculosis given radiographic findings\" -> \"Likely diagnosis of pulmonary tuberculosis\" -> 80% confidence. CHAIN: \"Positive sputum culture for acid-fast bacilli\" -> \"Confirmed diagnosis of tuberculosis\" -> \"Need for multidrug antimicrobial therapy\" -> \"Likely need for adjunctive therapy due to potential drug-induced deficiencies\" -> 70% confidence. CHAIN: \"Immigrated from rural town in northern India\" -> \"Possible nutritional deficiencies due to poor living conditions\" -> \"Increased risk for vitamin deficiencies\" -> \"Potential need for adjunctive vitamin supplementation\" -> 60% confidence. CHAIN: \"Presence of right upper lobe cavitations and right hilar lymphadenopathy on chest radiograph\" -> \"Severe pulmonary tuberculosis infection\" -> \"Increased metabolic demands and potential nutrient depletion\" -> \"Possible need for adjunctive vitamin supplementation\" -> 80%"
+  ],
+  "enhanced_information": "In a 13-year-old girl with confirmed pulmonary tuberculosis, adjunctive vitamin supplementation may be necessary due to potential drug-induced deficiencies and increased metabolic demands. The patient's presentation with symptoms suggestive of tuberculosis, positive sputum culture for acid-fast bacilli, and severe radiographic findings support the need for multidrug antimicrobial therapy and potential adjunctive vitamin therapy to address possible nutrient depletion.",
+  "analysis": "The patient's presentation with confirmed pulmonary tuberculosis and the need for adjunctive vitamin supplementation due to potential drug-induced deficiencies and increased metabolic demands suggest the importance of addressing nutrient depletion. Among the options provided, pyridoxine (Vitamin B6) is essential for patients on isoniazid therapy, a key component of tuberculosis treatment, to prevent peripheral neuropathy. Therefore, pyridoxine must be included in addition to the recommended antimicrobial therapy.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      8
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

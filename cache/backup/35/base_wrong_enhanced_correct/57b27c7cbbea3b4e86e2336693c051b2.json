@@ -1,0 +1,190 @@
+{
+  "question": "A 35-year-old African American man presents with fever, abdominal pain, and severe weakness since yesterday. On physical examination, the patient is jaundiced and shows a generalized pallor. Past medical history is significant for recently receiving anti-malaria prophylaxis before visiting Nigeria. Laboratory tests show normal glucose-6-phosphate dehydrogenase (G6PD) levels. Peripheral smear shows the presence of bite cells and Heinz bodies. Which of the following is the most likely diagnosis in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Autoimmune hemolytic anemia",
+    "opb": "Sickle cell disease",
+    "opc": "Microangiopathic hemolytic anemia",
+    "opd": "Paroxysmal nocturnal hemoglobinuria (PNH)",
+    "ope": "Glucose-6-phosphate-dehydrogenase (G6PD) deficiency"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fever",
+        "Disease",
+        "Icterus"
+      ],
+      [
+        "Fever",
+        "Lymphohistiocytosis, Hemophagocytic",
+        "Icterus"
+      ],
+      [
+        "Fever",
+        "hypoglycemia",
+        "Icterus"
+      ],
+      [
+        "Abdominal Pain",
+        "Icterus"
+      ],
+      [
+        "Fever",
+        "Disease",
+        "Icterus"
+      ],
+      [
+        "Fever",
+        "Lymphohistiocytosis, Hemophagocytic",
+        "Icterus"
+      ],
+      [
+        "Fever",
+        "hypoglycemia",
+        "Icterus"
+      ],
+      [
+        "Abdominal Pain",
+        "Icterus"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Icterus)",
+      "(Fever)-CAUSES->(Lymphohistiocytosis, Hemophagocytic)-CAUSES->(Icterus)",
+      "(Fever)-PREDISPOSES->(hypoglycemia)-CAUSES->(Icterus)",
+      "(Abdominal Pain)-CAUSES->(Icterus)",
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Icterus)",
+      "(Fever)-CAUSES->(Lymphohistiocytosis, Hemophagocytic)-CAUSES->(Icterus)",
+      "(Fever)-PREDISPOSES->(hypoglycemia)-CAUSES->(Icterus)",
+      "(Abdominal Pain)-CAUSES->(Icterus)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Heinz bodies",
+        "Cells",
+        "Diagnosis"
+      ],
+      [
+        "Heinz bodies",
+        "Erythrocytes",
+        "Diagnosis"
+      ],
+      [
+        "Heinz bodies",
+        "Cells",
+        "Genes",
+        "Trimethoprim-Sulfamethoxazole Combination",
+        "Hemolysis (disorder)"
+      ],
+      [
+        "Heinz bodies",
+        "Cells",
+        "BMP1|PRCP|PGPEP1",
+        "Trimethoprim-Sulfamethoxazole Combination",
+        "Hemolysis (disorder)"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "INTERACTS_WITH",
+        "INTERACTS_WITH",
+        "CAUSES"
+      ],
+      [
+        "PART_OF",
+        "INTERACTS_WITH",
+        "INTERACTS_WITH",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Heinz bodies)-PART_OF->(Cells)-LOCATION_OF->(Diagnosis)",
+      "(Heinz bodies)-PART_OF->(Erythrocytes)-LOCATION_OF->(Diagnosis)",
+      "(Heinz bodies)-PART_OF->(Cells)-INTERACTS_WITH->(Genes)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)-CAUSES->(Hemolysis (disorder))",
+      "(Heinz bodies)-PART_OF->(Cells)-INTERACTS_WITH->(BMP1|PRCP|PGPEP1)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)-CAUSES->(Hemolysis (disorder))"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Icterus)",
+      "(Fever)-CAUSES->(Lymphohistiocytosis, Hemophagocytic)-CAUSES->(Icterus)",
+      "(Fever)-PREDISPOSES->(hypoglycemia)-CAUSES->(Icterus)",
+      "(Abdominal Pain)-CAUSES->(Icterus)",
+      "(Heinz bodies)-PART_OF->(Cells)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Fever, abdominal pain, severe weakness\" -> \"Jaundice, generalized pallor\" -> \"Recently received anti-malaria prophylaxis\" -> \"Normal G6PD levels\" -> \"Bite cells, Heinz bodies on peripheral smear\" -> \"Possible diagnosis: Glucose-6-phosphate-dehydrogenase (G6PD) deficiency\" -> 70%",
+    "CHAIN: \"Fever, abdominal pain, severe weakness\" -> \"Jaundice, generalized pallor\" -> \"Recently received anti-malaria prophylaxis\" -> \"Normal G6PD levels\" -> \"Bite cells, Heinz bodies on peripheral smear\" -> \"Hemolysis due to oxidative stress\" -> \"Possible diagnosis: Glucose-6-phosphate-dehydrogenase (G6PD) deficiency\" -> 80%"
+  ],
+  "enhanced_information": "The most likely diagnosis in this patient is Glucose-6-phosphate-dehydrogenase (G6PD) deficiency. The presentation of fever, abdominal pain, severe weakness, jaundice, and generalized pallor along with the history of recently receiving anti-malaria prophylaxis, normal G6PD levels, and the presence of bite cells and Heinz bodies on peripheral smear strongly suggest G6PD deficiency as the cause of hemolysis in this case.",
+  "analysis": "The patient's presentation of fever, abdominal pain, severe weakness, jaundice, and generalized pallor along with the history of recently receiving anti-malaria prophylaxis, normal G6PD levels, and the presence of bite cells and Heinz bodies on peripheral smear strongly suggest Glucose-6-phosphate-dehydrogenase (G6PD) deficiency as the cause of hemolysis in this case.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      3
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

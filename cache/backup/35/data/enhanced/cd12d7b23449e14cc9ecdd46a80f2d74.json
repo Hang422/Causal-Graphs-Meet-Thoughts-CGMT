@@ -1,0 +1,182 @@
+{
+  "question": "Two days after admission to the hospital, a 74-year-old man develops confusion and headache. He has also been vomiting over the past hour. His temperature is 36.7°C (98°F), pulse is 98/min, respirations are 22/min, and blood pressure is 140/80 mm Hg. He is lethargic and oriented only to person. Examination shows flushed skin. Fundoscopic examination shows bright red retinal veins. Serum studies show:\nNa+ 138 mEq/L\nK+ 3.5 mEq/L\nCl- 100 mEq/L\nHCO3- 17 mEq/L\nCreatinine 1.2 mg/dL\nUrea nitrogen 19 mg/dL\nLactate 8.0 mEq/L (N = 0.5 - 2.2 mEq/L)\nGlucose 75 mg/dL\nArterial blood gas analysis on room air shows a pH of 7.13. This patient's current presentation is most likely due to treatment for which of the following conditions?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Alzheimer disease",
+    "opb": "Hypertensive crisis",
+    "opc": "Tension headache",
+    "opd": "Major depressive disorder",
+    "ope": "Acute dystonia"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypertensive crisis",
+        "Hypertensive disease",
+        "Cerebral Edema"
+      ],
+      [
+        "Hypertensive crisis",
+        "Syndrome",
+        "Cerebral Edema"
+      ],
+      [
+        "Hypertensive crisis",
+        "Heart Arrest",
+        "Cerebral Edema"
+      ],
+      [
+        "Cerebral Edema",
+        "Disease",
+        "Confusion"
+      ],
+      [
+        "Cerebral Edema",
+        "Ischemic stroke",
+        "Confusion"
+      ],
+      [
+        "Cerebral Edema",
+        "End stage renal failure",
+        "Confusion"
+      ],
+      [
+        "Hypertensive crisis",
+        "Hypertensive disease",
+        "Metabolic acidosis"
+      ],
+      [
+        "Hypertensive crisis",
+        "Kidney Failure, Chronic",
+        "Metabolic acidosis"
+      ],
+      [
+        "Hypertensive crisis",
+        "Disease",
+        "Metabolic acidosis"
+      ],
+      [
+        "Hypertensive crisis",
+        "Symptoms",
+        "Flushing"
+      ],
+      [
+        "Hypertensive crisis",
+        "Syndrome",
+        "Flushing"
+      ],
+      [
+        "Hypertensive crisis",
+        "Disease",
+        "Flushing"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "COMPLICATES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hypertensive crisis)-CAUSES->(Hypertensive disease)-CAUSES->(Cerebral Edema)",
+      "(Hypertensive crisis)-CAUSES->(Syndrome)-CAUSES->(Cerebral Edema)",
+      "(Hypertensive crisis)-CAUSES->(Heart Arrest)-CAUSES->(Cerebral Edema)",
+      "(Cerebral Edema)-CAUSES->(Disease)-COMPLICATES->(Confusion)",
+      "(Cerebral Edema)-CAUSES->(Ischemic stroke)-COMPLICATES->(Confusion)",
+      "(Cerebral Edema)-COMPLICATES->(End stage renal failure)-COMPLICATES->(Confusion)",
+      "(Hypertensive crisis)-CAUSES->(Hypertensive disease)-CAUSES->(Metabolic acidosis)",
+      "(Hypertensive crisis)-CAUSES->(Kidney Failure, Chronic)-CAUSES->(Metabolic acidosis)",
+      "(Hypertensive crisis)-COMPLICATES->(Disease)-CAUSES->(Metabolic acidosis)",
+      "(Hypertensive crisis)-CAUSES->(Symptoms)-CAUSES->(Flushing)",
+      "(Hypertensive crisis)-CAUSES->(Syndrome)-CAUSES->(Flushing)",
+      "(Hypertensive crisis)-COMPLICATES->(Disease)-CAUSES->(Flushing)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypertensive crisis)-CAUSES->(Syndrome)-CAUSES->(Flushing)",
+      "(Hypertensive crisis)-COMPLICATES->(Disease)-CAUSES->(Flushing)",
+      "(Cerebral Edema)-CAUSES->(Disease)-COMPLICATES->(Confusion)",
+      "(Cerebral Edema)-CAUSES->(Ischemic stroke)-COMPLICATES->(Confusion)",
+      "(Cerebral Edema)-COMPLICATES->(End stage renal failure)-COMPLICATES->(Confusion)",
+      "(Hypertensive crisis)-CAUSES->(Kidney Failure, Chronic)-CAUSES->(Metabolic acidosis)",
+      "(Hypertensive crisis)-CAUSES->(Symptoms)-CAUSES->(Flushing)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Hypertensive crisis\" -> increased blood pressure -> increased risk of end-organ damage -> 80% confidence. CHAIN: \"Hypertensive crisis\" -> cerebral edema -> confusion and headache -> 75% confidence. CHAIN: \"Hypertensive crisis\" -> retinal vein engorgement -> bright red retinal veins -> 70% confidence. CHAIN: \"Hypertensive crisis\" -> metabolic acidosis -> pH 7.13 -> 65% confidence. CHAIN: \"Hypertensive crisis\" -> flushed skin -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with confusion, headache, vomiting, bright red retinal veins, flushed skin, and metabolic acidosis (pH 7.13) is most likely due to a hypertensive crisis. The evidence paths support the relationship between hypertensive crisis and symptoms like flushing, confusion, and metabolic acidosis, aligning with the consensus that hypertensive crisis can lead to end-organ damage, cerebral edema, and metabolic disturbances.",
+  "analysis": "The patient's presentation with confusion, headache, vomiting, bright red retinal veins, flushed skin, and metabolic acidosis (pH 7.13) is most likely due to a hypertensive crisis. The enhanced information provided aligns with the known association between hypertensive crisis and end-organ damage, including cerebral edema and metabolic disturbances. The symptoms and laboratory findings are consistent with this diagnosis.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

@@ -1,0 +1,180 @@
+{
+  "question": "A 54-year-old woman comes to the physician because of paresthesias and weakness in her left leg for one year. Her symptoms have become progressively worse during this period and have led to some difficulty walking for the past month. She has had frequent headaches for the past 4 months. She has a history of hypertension and hypothyroidism. Current medications include amlodipine and levothyroxine. Her temperature is 37.3°C (99.1°F), pulse is 97/min, and blood pressure is 110/80 mm Hg. Neurologic examination shows decreased muscle strength in the left lower extremity. Deep tendon reflexes of the lower extremity are 4+ on the left and 2+ on the right side. The remainder of the examination shows no abnormalities. A complete blood count and serum concentrations of electrolytes, glucose, creatinine, and calcium are within the reference ranges. An MRI of the brain is shown. Which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Surgical resection",
+    "opb": "Whole brain radiotherapy",
+    "opc": "Stereotactic brain biopsy",
+    "opd": "Stereotactic radiosurgery",
+    "ope": "Intrathecal methotrexate therapy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Paresthesia",
+        "Infection",
+        "Neurologic Symptoms"
+      ],
+      [
+        "Paresthesia",
+        "Symptoms",
+        "Neurologic Symptoms"
+      ],
+      [
+        "Paresthesia",
+        "Rare Diseases",
+        "Neurologic Symptoms"
+      ],
+      [
+        "Asthenia",
+        "Neurologic Symptoms"
+      ],
+      [
+        "Neurologic Symptoms",
+        "Symptoms",
+        "voltage gated channel",
+        "Brain"
+      ],
+      [
+        "Neurologic Symptoms",
+        "Epilepsy",
+        "voltage gated channel",
+        "Brain"
+      ],
+      [
+        "Neurologic Symptoms",
+        "Chronic pain",
+        "voltage gated channel",
+        "Brain"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Paresthesia)-CAUSES->(Infection)-CAUSES->(Neurologic Symptoms)",
+      "(Paresthesia)-CAUSES->(Symptoms)-CAUSES->(Neurologic Symptoms)",
+      "(Paresthesia)-CAUSES->(Rare Diseases)-CAUSES->(Neurologic Symptoms)",
+      "(Asthenia)-CAUSES->(Neurologic Symptoms)",
+      "(Neurologic Symptoms)-CAUSES->(Symptoms)-MANIFESTATION_OF->(voltage gated channel)-PROCESS_OF->(Brain)",
+      "(Neurologic Symptoms)-CAUSES->(Epilepsy)-MANIFESTATION_OF->(voltage gated channel)-PROCESS_OF->(Brain)",
+      "(Neurologic Symptoms)-CAUSES->(Chronic pain)-MANIFESTATION_OF->(voltage gated channel)-PROCESS_OF->(Brain)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Structure of left lower leg",
+        "Hemiparesis",
+        "Neurologic Symptoms"
+      ],
+      [
+        "Magnetic Resonance Imaging",
+        "Pathogenesis",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "brain tissue surgical material",
+        "Providing presence (regime/therapy)"
+      ],
+      [
+        "Magnetic Resonance Imaging",
+        "Obstruction",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "brain tissue surgical material",
+        "Providing presence (regime/therapy)"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "ISA"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Structure of left lower leg)-LOCATION_OF->(Hemiparesis)-ISA->(Neurologic Symptoms)",
+      "(Magnetic Resonance Imaging)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy))",
+      "(Magnetic Resonance Imaging)-DIAGNOSES->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy))"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Paresthesia)-CAUSES->(Symptoms)-CAUSES->(Neurologic Symptoms)",
+      "(Magnetic Resonance Imaging)-DIAGNOSES->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy))",
+      "(Paresthesia)-CAUSES->(Rare Diseases)-CAUSES->(Neurologic Symptoms)",
+      "(Asthenia)-CAUSES->(Neurologic Symptoms)",
+      "(Neurologic Symptoms)-CAUSES->(Symptoms)-MANIFESTATION_OF->(voltage gated channel)-PROCESS_OF->(Brain)",
+      "(Magnetic Resonance Imaging)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy))"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Hypertension and hypothyroidism -> Increased risk of vascular events -> Possible cerebral vascular accident (CVA) -> 70% CHAIN: Paresthesias and weakness in left leg -> Neurologic symptoms -> Brain pathology -> 80% CHAIN: Neurologic examination findings -> Asymmetric muscle strength and reflexes -> Possible brain lesion -> 75% CHAIN: MRI findings -> Presence of brain lesion -> Need for tissue diagnosis -> 85% CHAIN: Need for tissue diagnosis -> Stereotactic brain biopsy -> 70%"
+  ],
+  "enhanced_information": "The most appropriate next step in management for the 54-year-old woman with paresthesias, weakness in her left leg, and brain lesion on MRI is stereotactic brain biopsy to obtain tissue diagnosis, given the need for further evaluation and confirmation of the brain pathology.",
+  "analysis": "The core medical principle in this case is the need for tissue diagnosis to further evaluate the brain lesion. Given the patient's symptoms and imaging findings, a stereotactic brain biopsy is the most appropriate next step to confirm the pathology and guide further management.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

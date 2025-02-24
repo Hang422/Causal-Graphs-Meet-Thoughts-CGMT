@@ -1,0 +1,212 @@
+{
+  "question": "A 55-year-old male is hospitalized for acute heart failure. The patient has a 20-year history of alcoholism and was diagnosed with diabetes mellitus type 2 (DM2) 5 years ago. Physical examination reveals ascites and engorged paraumbilical veins as well as 3+ pitting edema around both ankles. Liver function tests show elevations in gamma glutamyl transferase and aspartate transaminase (AST). Of the following medication, which most likely contributed to this patient's presentation?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Glargine",
+    "opb": "Glipizide",
+    "opc": "Metformin",
+    "opd": "Pioglitazone",
+    "ope": "Pramlintide"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Alcoholic Intoxication, Chronic",
+        "Disease",
+        "Liver Dysfunction"
+      ],
+      [
+        "Alcoholic Intoxication, Chronic",
+        "Chronic liver disease NOS",
+        "Liver Dysfunction"
+      ],
+      [
+        "Alcoholic Intoxication, Chronic",
+        "Syphilis",
+        "Liver Dysfunction"
+      ],
+      [
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Heart failure"
+      ],
+      [
+        "Heart failure",
+        "Acute heart failure"
+      ],
+      [
+        "Glipizide",
+        "Obesity",
+        "Disease",
+        "Body fluid retention"
+      ],
+      [
+        "Glipizide",
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Disease",
+        "Body fluid retention"
+      ],
+      [
+        "Glipizide",
+        "hypoglycemia",
+        "Disease",
+        "Body fluid retention"
+      ],
+      [
+        "Body fluid retention",
+        "Hypertensive disease",
+        "Heart failure"
+      ],
+      [
+        "Body fluid retention",
+        "Macrophage activation syndrome",
+        "Heart failure"
+      ],
+      [
+        "pioglitazone",
+        "Adverse effects"
+      ],
+      [
+        "Adverse effects",
+        "Heart failure"
+      ],
+      [
+        "Body fluid retention",
+        "Hypertensive disease",
+        "Heart failure"
+      ],
+      [
+        "Body fluid retention",
+        "Macrophage activation syndrome",
+        "Heart failure"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Alcoholic Intoxication, Chronic)-CAUSES->(Disease)-CAUSES->(Liver Dysfunction)",
+      "(Alcoholic Intoxication, Chronic)-CAUSES->(Chronic liver disease NOS)-CAUSES->(Liver Dysfunction)",
+      "(Alcoholic Intoxication, Chronic)-COMPLICATES->(Syphilis)-CAUSES->(Liver Dysfunction)",
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Heart failure)",
+      "(Heart failure)-CAUSES->(Acute heart failure)",
+      "(Glipizide)-TREATS->(Obesity)-CAUSES->(Disease)-CAUSES->(Body fluid retention)",
+      "(Glipizide)-TREATS->(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Disease)-CAUSES->(Body fluid retention)",
+      "(Glipizide)-TREATS->(hypoglycemia)-COMPLICATES->(Disease)-CAUSES->(Body fluid retention)",
+      "(Body fluid retention)-CAUSES->(Hypertensive disease)-CAUSES->(Heart failure)",
+      "(Body fluid retention)-CAUSES->(Macrophage activation syndrome)-CAUSES->(Heart failure)",
+      "(pioglitazone)-TREATS->(Adverse effects)",
+      "(Adverse effects)-CAUSES->(Heart failure)",
+      "(Body fluid retention)-CAUSES->(Hypertensive disease)-CAUSES->(Heart failure)",
+      "(Body fluid retention)-CAUSES->(Macrophage activation syndrome)-CAUSES->(Heart failure)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Liver Dysfunction",
+        "Aspartate Transaminase"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Liver Dysfunction)-ASSOCIATED_WITH->(Aspartate Transaminase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Alcoholic Intoxication, Chronic)-CAUSES->(Chronic liver disease NOS)-CAUSES->(Liver Dysfunction)",
+      "(Liver Dysfunction)-ASSOCIATED_WITH->(Aspartate Transaminase)",
+      "(pioglitazone)-TREATS->(Adverse effects)",
+      "(Alcoholic Intoxication, Chronic)-CAUSES->(Disease)-CAUSES->(Liver Dysfunction)",
+      "(Alcoholic Intoxication, Chronic)-COMPLICATES->(Syphilis)-CAUSES->(Liver Dysfunction)",
+      "(Heart failure)-CAUSES->(Acute heart failure)",
+      "(Glipizide)-TREATS->(Obesity)-CAUSES->(Disease)-CAUSES->(Body fluid retention)",
+      "(Glipizide)-TREATS->(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Disease)-CAUSES->(Body fluid retention)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Alcoholism -> liver dysfunction -> elevated gamma glutamyl transferase and AST levels -> 80% CHAIN: Diabetes mellitus type 2 -> increased risk of heart failure -> acute heart failure presentation -> 70% CHAIN: Glipizide -> potential for fluid retention -> exacerbation of heart failure symptoms -> 60% CHAIN: Pioglitazone -> known side effect of fluid retention -> exacerbation of heart failure symptoms -> 80%"
+  ],
+  "enhanced_information": "The medication most likely contributing to this patient's presentation of acute heart failure is Pioglitazone, as it is known to cause fluid retention which can exacerbate heart failure symptoms. The patient's history of alcoholism and diabetes mellitus type 2 also play a role in the development of heart failure. Liver dysfunction, indicated by elevated gamma glutamyl transferase and AST levels, is likely a result of chronic alcoholism rather than directly related to the medication.",
+  "analysis": "The patient's presentation of acute heart failure with fluid retention, ascites, and edema is likely exacerbated by a medication known to cause fluid retention. Pioglitazone is associated with fluid retention, which can worsen heart failure symptoms. The patient's history of alcoholism and diabetes mellitus type 2 also contribute to the development of heart failure. Liver dysfunction, indicated by elevated gamma glutamyl transferase and AST levels, is more likely due to chronic alcoholism rather than directly related to the medication.",
+  "answer": "opd. pioglitazone",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      9
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 9
+  },
+  "normal_results": []
+}

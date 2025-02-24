@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_015719",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "ecc38d62",
+  "question_text": "A 70-year-old male presents to his primary care physician for complaints of fatigue. The patient reports feeling tired during the day over the past 6 months. Past medical history is significant for moderately controlled type II diabetes. Family history is unremarkable. Thyroid stimulating hormone and testosterone levels are within normal limits. Complete blood cell count reveals the following: WBC 5.0, hemoglobin 9.0, hematocrit 27.0, and platelets 350. Mean corpuscular volume is 76. Iron studies demonstrate a ferritin of 15 ng/ml (nl 30-300). Of the following, which is the next best step?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 70-year-old male presents to his primary care physician for complaints of fatigue. The patient reports feeling tired during the day over the past 6 months. Past medical history is significant for moderately controlled type II diabetes. Family history is unremarkable. Thyroid stimulating hormone and testosterone levels are within normal limits. Complete blood cell count reveals the following: WBC 5.0, hemoglobin 9.0, hematocrit 27.0, and platelets 350. Mean corpuscular volume is 76. Iron studies demonstrate a ferritin of 15 ng/ml (nl 30-300). Of the following, which is the next best step?\n\n            ### Options\n    opa. MRI abdomen\nopb. Blood transfusion\nopc. CT abdomen\nopd. Gel electrophoresis\nope. Colonoscopy\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Fatigue\" -> \"Anemia (low hemoglobin and hematocrit)\" -> \"Microcytic anemia (low MCV)\" -> \"Low ferritin levels\" -> \"Iron deficiency anemia\" -> \"Likely cause of fatigue\" -> 80% confidence\n\nCHAIN: \"Low ferritin levels\" -> \"Iron deficiency anemia\" -> \"Possible gastrointestinal bleeding\" -> \"Colonoscopy to investigate source of bleeding\" -> 70% confidence",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "question": "A 30-year-old boxer seeks evaluation by his physician after he noticed swelling at the angle of his jaw a few days ago. He recalls a recent boxing match when he was punched in his face. He says that his jaw is very painful. On examination, a firm mass is palpated, measuring 4 x 4 cm. An ultrasound was performed, which shows a thin, encapsulated, well-circumscribed, predominantly solid mass with occasional cystic areas. The mass is surgically excised, after which he develops a hoarse voice for a few days, but recovers within 1 week. The histopathologic evaluation of the surgical specimen reports a pseudocapsule with a hypocellular stromal component consisting of a myxoid background and cartilage arranged in clusters and a hypercellular epithelial component with cells arranged in sheets and trabeculae. From which of the following structures did the mass most likely arise?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Minor salivary gland",
+    "opb": "Thyroid",
+    "opc": "Parotid gland",
+    "opd": "Salivary duct",
+    "ope": "Seventh cranial nerve"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pain",
+        "Obesity",
+        "Ultrasonography"
+      ],
+      [
+        "Pain",
+        "Infection",
+        "Ultrasonography"
+      ],
+      [
+        "Pain",
+        "Symptoms",
+        "Ultrasonography"
+      ],
+      [
+        "Edema",
+        "Infection",
+        "Ultrasonography"
+      ],
+      [
+        "Edema",
+        "Symptoms",
+        "Ultrasonography"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pain)-CAUSES->(Obesity)-CAUSES->(Ultrasonography)",
+      "(Pain)-CAUSES->(Infection)-CAUSES->(Ultrasonography)",
+      "(Pain)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(Edema)-CAUSES->(Infection)-CAUSES->(Ultrasonography)",
+      "(Edema)-PREDISPOSES->(Symptoms)-CAUSES->(Ultrasonography)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Ultrasonography",
+        "Diastasis",
+        "KLK3 gene|KLK3",
+        "Cartilage"
+      ],
+      [
+        "Ultrasonography",
+        "Diastasis",
+        "DHPS gene|DHPS",
+        "Cartilage"
+      ],
+      [
+        "Cartilage",
+        "Alveolar",
+        "Salivary Glands"
+      ],
+      [
+        "Cartilage",
+        "Lung",
+        "Salivary Glands"
+      ],
+      [
+        "Salivary Glands",
+        "Parotid Gland"
+      ],
+      [
+        "Salivary Glands",
+        "Parotid Gland"
+      ],
+      [
+        "Hoarseness",
+        "Abscess",
+        "MYD88",
+        "Bone Marrow",
+        "removal technique"
+      ],
+      [
+        "Hoarseness",
+        "Cerebrovascular Disorders",
+        "APP gene",
+        "Cartilage",
+        "removal technique"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF"
+      ],
+      [
+        "PART_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Ultrasonography)-DIAGNOSES->(Diastasis)-ASSOCIATED_WITH->(KLK3 gene|KLK3)-PART_OF->(Cartilage)",
+      "(Ultrasonography)-DIAGNOSES->(Diastasis)-ASSOCIATED_WITH->(DHPS gene|DHPS)-PART_OF->(Cartilage)",
+      "(Cartilage)-PART_OF->(Alveolar)-PART_OF->(Salivary Glands)",
+      "(Cartilage)-PART_OF->(Lung)-PART_OF->(Salivary Glands)",
+      "(Salivary Glands)-PART_OF->(Parotid Gland)",
+      "(Salivary Glands)-PART_OF->(Parotid Gland)",
+      "(Hoarseness)-ASSOCIATED_WITH->(Abscess)-ASSOCIATED_WITH->(MYD88)-PART_OF->(Bone Marrow)-LOCATION_OF->(removal technique)",
+      "(Hoarseness)-ISA->(Cerebrovascular Disorders)-ASSOCIATED_WITH->(APP gene)-PART_OF->(Cartilage)-LOCATION_OF->(removal technique)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ultrasonography)-DIAGNOSES->(Diastasis)-ASSOCIATED_WITH->(KLK3 gene|KLK3)-PART_OF->(Cartilage)",
+      "(Ultrasonography)-DIAGNOSES->(Diastasis)-ASSOCIATED_WITH->(DHPS gene|DHPS)-PART_OF->(Cartilage)",
+      "(Edema)-CAUSES->(Infection)-CAUSES->(Ultrasonography)",
+      "(Edema)-PREDISPOSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(Salivary Glands)-PART_OF->(Parotid Gland)",
+      "(Pain)-CAUSES->(Obesity)-CAUSES->(Ultrasonography)",
+      "(Pain)-CAUSES->(Infection)-CAUSES->(Ultrasonography)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Swelling at the angle of the jaw\" -> \"Possible mass in the salivary region\" -> \"Ultrasound shows a solid mass with cystic areas\" -> \"Histopathology reveals myxoid background and cartilage\" -> \"Characteristics suggest a salivary gland origin\" -> \"Most likely from the parotid gland\" -> 85%",
+    "CHAIN: \"Firm mass palpated in the jaw area\" -> \"Recent trauma from boxing match\" -> \"Painful swelling indicates possible injury or mass\" -> \"Ultrasound shows well-circumscribed mass\" -> \"Histopathology shows epithelial and stromal components\" -> \"Epithelial features suggest salivary gland tumor\" -> \"Parotid gland is the most common site for such tumors\" -> 90%",
+    "CHAIN: \"Patient has a hoarse voice post-surgery\" -> \"Possible involvement of nearby structures during excision\" -> \"Histopathology shows features consistent with a salivary gland tumor\" -> \"Mass is likely from a glandular structure\" -> \"Parotid gland is a common source for such tumors\" -> 80%",
+    "CHAIN: \"Encapsulated mass with cystic areas\" -> \"Indicates a benign process\" -> \"Histopathology shows myxoid and cartilage components\" -> \"These features are consistent with a pleomorphic adenoma\" -> \"Pleomorphic adenomas commonly arise from the parotid gland\" -> 90%"
+  ],
+  "enhanced_information": "The patient's presentation of a firm, encapsulated mass at the angle of the jaw, along with the ultrasound findings of a predominantly solid mass with cystic areas, aligns with characteristics of a salivary gland tumor. The histopathological features, including a myxoid background, cartilage, and hypercellular epithelial components, are consistent with a pleomorphic adenoma, which is the most common benign tumor of the salivary glands. Given the location and typical presentation, the mass most likely arose from the parotid gland, which is the primary site for such tumors. The hoarseness post-surgery suggests possible transient injury to the nearby structures, further supporting the parotid gland origin. Therefore, the best-supported conclusion is that the mass arose from the parotid gland.",
+  "analysis": "The patient's presentation of a firm, encapsulated mass at the angle of the jaw, along with ultrasound findings of a predominantly solid mass with cystic areas, is indicative of a salivary gland tumor. The histopathological features described, including a myxoid background, cartilage, and hypercellular epithelial components, are characteristic of a pleomorphic adenoma, which is the most common benign tumor of the salivary glands. Given the location of the mass and the typical presentation of pleomorphic adenoma, the most likely origin of the mass is the parotid gland. The transient hoarseness following surgery suggests possible injury to the nearby structures, which further supports the conclusion that the mass arose from the parotid gland, as it is in close proximity to the facial nerve (seventh cranial nerve). Therefore, the best-supported conclusion is that the mass arose from the parotid gland.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      3,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      42.857142857142854,
+      42.857142857142854,
+      14.285714285714285,
+      0.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

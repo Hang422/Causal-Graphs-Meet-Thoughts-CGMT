@@ -1,0 +1,185 @@
+{
+  "question": "A 53-year-old woman presents to her primary care physician in order to discuss the results of a biopsy. Two weeks ago, her mammogram revealed the presence of suspicious calcifications in her right breast, and she subsequently underwent biopsy of these lesions. Histology of the lesions revealed poorly cohesive cells growing in sheets with a nuclear to cytoplasmic ratio of 1:1. Furthermore, these cells were found to undergo invasion into the surrounding tissues. Given these findings, the patient is referred to an oncologist for further evaluation. Upon further imaging, the patient is found to have no lymph node adenopathy and no distant site metastases. Which of the following would most properly describe the lesions found in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "High grade and high stage",
+    "opb": "High grade and no stage",
+    "opc": "High grade and low stage",
+    "opd": "Low grade and high stage",
+    "ope": "Low grade and low stage"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Providing presence (regime/therapy)",
+        "CNS disorder",
+        "Disease",
+        "Biopsy"
+      ],
+      [
+        "Providing presence (regime/therapy)",
+        "Infiltration",
+        "Disease",
+        "Biopsy"
+      ],
+      [
+        "Providing presence (regime/therapy)",
+        "Aneurysm",
+        "Disease",
+        "Biopsy"
+      ],
+      [
+        "Mammography",
+        "Disease",
+        "Biopsy"
+      ],
+      [
+        "Mammography",
+        "Disease",
+        "Biopsy"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Providing presence (regime/therapy))-CAUSES->(CNS disorder)-CAUSES->(Disease)-CAUSES->(Biopsy)",
+      "(Providing presence (regime/therapy))-CAUSES->(Infiltration)-CAUSES->(Disease)-CAUSES->(Biopsy)",
+      "(Providing presence (regime/therapy))-TREATS->(Aneurysm)-CAUSES->(Disease)-CAUSES->(Biopsy)",
+      "(Mammography)-CAUSES->(Disease)-CAUSES->(Biopsy)",
+      "(Mammography)-CAUSES->(Disease)-CAUSES->(Biopsy)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Right breast",
+        "Biopsy"
+      ],
+      [
+        "Biopsy",
+        "Disease",
+        "uptake",
+        "Distal intermedial ridge of tibia",
+        "Bed sheets"
+      ],
+      [
+        "Biopsy",
+        "Disease",
+        "uptake",
+        "Distal intermedial ridge of tibia",
+        "Bed sheets"
+      ],
+      [
+        "Bed sheets",
+        "Malaria",
+        "Pathogenesis",
+        "Genes",
+        "Body tissue"
+      ],
+      [
+        "Bed sheets",
+        "Malaria",
+        "Pathogenesis",
+        "Genes",
+        "Body tissue"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "PREVENTS",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Right breast)-LOCATION_OF->(Biopsy)",
+      "(Biopsy)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Distal intermedial ridge of tibia)-LOCATION_OF->(Bed sheets)",
+      "(Biopsy)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Distal intermedial ridge of tibia)-LOCATION_OF->(Bed sheets)",
+      "(Bed sheets)-PREVENTS->(Malaria)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Body tissue)",
+      "(Bed sheets)-PREVENTS->(Malaria)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Body tissue)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Right breast)-LOCATION_OF->(Biopsy)",
+      "(Biopsy)-CAUSES/DIAGNOSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Distal intermedial ridge of tibia)-LOCATION_OF->(Bed sheets)",
+      "(Providing presence (regime/therapy))-CAUSES->(CNS disorder)-CAUSES->(Disease)-CAUSES->(Biopsy)",
+      "(Providing presence (regime/therapy))-CAUSES->(Infiltration)-CAUSES->(Disease)-CAUSES->(Biopsy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Presence of suspicious calcifications in right breast on mammogram -> Biopsy of lesions -> Histology reveals poorly cohesive cells growing in sheets with a 1:1 nuclear to cytoplasmic ratio -> Invasion into surrounding tissues -> No lymph node adenopathy or distant metastases -> High grade and low stage -> 80%",
+    "CHAIN: Suspicious calcifications on mammogram -> Biopsy -> Histology shows poorly cohesive cells with invasion -> No lymph node involvement or distant metastases -> Lesions are high grade and low stage -> 75%"
+  ],
+  "enhanced_information": "The lesions found in the patient are high grade and low stage based on the histological features of poorly cohesive cells growing in sheets with invasion into surrounding tissues, along with the absence of lymph node adenopathy and distant metastases.",
+  "analysis": "The core medical principle here is to assess the grade and stage of the cancer based on histological features and imaging findings. The histology of poorly cohesive cells growing in sheets with invasion into surrounding tissues indicates high grade. The absence of lymph node adenopathy and distant metastases suggests low stage. Therefore, the most likely correct option is high grade and low stage.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5,
+      1
+    ],
+    "coverage_rates": [
+      83.33333333333334,
+      16.666666666666664
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

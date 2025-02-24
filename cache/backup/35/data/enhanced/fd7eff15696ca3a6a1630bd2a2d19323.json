@@ -1,0 +1,118 @@
+{
+  "question": "A 42-year-old man presents to the emergency department with a 3-day history of fever and severe back pain. The fever is high-grade, continuous, without chills and rigors. The back pain is severe, localized to the thoracic region, and aggravated by deep breathing. The patient tried taking ibuprofen with little improvement. Past medical history is significant for essential hypertension, dyslipidemia, hyperuricemia, and bronchial asthma. Current medicines include allopurinol, amlodipine, atorvastatin, clopidogrel, montelukast, and a corticosteroid inhaler. The patient reports a 25-pack-year smoking history and drinks alcohol only socially. His vital signs include: blood pressure 152/94 mm Hg, pulse 101/min, temperature 39.5°C (103.1°F). BMI 36.8 kg/m2. On physical examination, the patient is alert and oriented. Multiple injection marks are visible around the left-sided cubital fossa and hand veins. The neck is supple on head flexion. Point tenderness is present in the thoracic region at the midline. Motor and sensory examinations are unremarkable with normal deep tendon reflexes. Laboratory findings are significant for the following:\nHemoglobin 14.5 mg/dL\nWhite blood cell 24,500/mm3\nPlatelets 480,000/mm3\nBUN 28 mg/dL\nCreatinine 1.1 mg/dL\nESR 45 mm/hr\nC-reactive protein 84 mg/dL\nSodium 144 mEq/L\nPotassium 4.1 mEq/L\nCalcium 9.7 mEq/L\nA contrast MRI of the spine reveals a peripherally enhancing dorsal epidural process compressing the thecal sac and causing a mild leftwards displacement. Which of the following is the most likely risk factor for this patient’s condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Alcohol use",
+    "opb": "Increased BMI",
+    "opc": "Inhaled steroid use",
+    "opd": "Intravenous drug use",
+    "ope": "Smoking"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "INTRAVENOUS DRUG",
+        "Infection",
+        "Epidural Abscess"
+      ],
+      [
+        "INTRAVENOUS DRUG",
+        "Disease",
+        "Epidural Abscess"
+      ],
+      [
+        "INTRAVENOUS DRUG",
+        "Acquired Immunodeficiency Syndrome",
+        "Epidural Abscess"
+      ],
+      [
+        "Body mass index procedure",
+        "Symptoms",
+        "Epidural Abscess, Spinal"
+      ],
+      [
+        "Body mass index procedure",
+        "Kidney Failure, Chronic",
+        "Epidural Abscess, Spinal"
+      ],
+      [
+        "Body mass index procedure",
+        "Diabetes Mellitus",
+        "Epidural Abscess, Spinal"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(INTRAVENOUS DRUG)-CAUSES->(Infection)-CAUSES->(Epidural Abscess)",
+      "(INTRAVENOUS DRUG)-CAUSES->(Disease)-COMPLICATES->(Epidural Abscess)",
+      "(INTRAVENOUS DRUG)-CAUSES->(Acquired Immunodeficiency Syndrome)-PREDISPOSES->(Epidural Abscess)",
+      "(Body mass index procedure)-CAUSES->(Symptoms)-PREDISPOSES->(Epidural Abscess, Spinal)",
+      "(Body mass index procedure)-CAUSES->(Kidney Failure, Chronic)-PREDISPOSES->(Epidural Abscess, Spinal)",
+      "(Body mass index procedure)-CAUSES->(Diabetes Mellitus)-PREDISPOSES->(Epidural Abscess, Spinal)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Body mass index procedure)-CAUSES->(Symptoms)-PREDISPOSES->(Epidural Abscess, Spinal)",
+      "(Body mass index procedure)-CAUSES->(Kidney Failure, Chronic)-PREDISPOSES->(Epidural Abscess, Spinal)",
+      "(Body mass index procedure)-CAUSES->(Diabetes Mellitus)-PREDISPOSES->(Epidural Abscess, Spinal)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Smoking -> Increased risk of developing infections and inflammatory conditions -> 80% CHAIN: Intravenous drug use -> Increased risk of epidural abscess formation due to injection-related infections -> 70% CHAIN: Increased BMI -> Higher likelihood of developing spinal epidural abscess due to mechanical stress on the spine -> 80%"
+  ],
+  "enhanced_information": "The most likely risk factor for this patient's condition is smoking. Smoking increases the risk of developing infections and inflammatory conditions, which can predispose to spinal epidural abscess formation. The evidence paths also suggest a link between increased BMI and spinal epidural abscess, but smoking remains the most relevant risk factor in this case.",
+  "analysis": "The core medical principle in this case is to identify the most relevant risk factor for the patient's spinal epidural abscess. While increased BMI can be a risk factor, the enhanced information provided clearly indicates that smoking is the most likely risk factor for this patient's condition. Smoking predisposes individuals to infections and inflammatory conditions, which can contribute to the development of spinal epidural abscesses.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

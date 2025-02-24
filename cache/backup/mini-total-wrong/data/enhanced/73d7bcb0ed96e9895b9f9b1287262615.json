@@ -1,0 +1,160 @@
+{
+  "question": "A 45-year-old woman from Mexico comes to your office due to recent shortness of breath. The patient states that she has recently started having trouble breathing when she is working out, but this resolves when she rests for a while. She states that she has no history of diabetes, heart disease, or hypertension, but does state that she had several colds when she was growing up that weren't treated with antibiotics. Furthermore, she has arthritis in one of her knees and both wrists. On exam, her vitals are normal, but there is a mid-diastolic rumble present at the apex. What is the best definitive treatment for this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Diuretics",
+    "opb": "Beta-blockers",
+    "opc": "Valve replacement",
+    "opd": "Percutaneous valve commissurotomy",
+    "ope": "Open valve commissurotomy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Dyspnea on exertion",
+        "Hypertension, Pulmonary",
+        "Mitral Valve Stenosis"
+      ],
+      [
+        "Dyspnea on exertion",
+        "Aortic Valve Stenosis",
+        "Mitral Valve Stenosis"
+      ],
+      [
+        "Dyspnea on exertion",
+        "Heart failure",
+        "Mitral Valve Stenosis"
+      ],
+      [
+        "Mitral Valve Stenosis",
+        "Heart failure",
+        "Dyspnea on exertion"
+      ],
+      [
+        "Mitral Valve Stenosis",
+        "Hypertension, Pulmonary",
+        "Dyspnea on exertion"
+      ],
+      [
+        "Mitral Valve Stenosis",
+        "Chronic Obstructive Airway Disease",
+        "Dyspnea on exertion"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Dyspnea on exertion)-CAUSES->(Hypertension, Pulmonary)-CAUSES->(Mitral Valve Stenosis)",
+      "(Dyspnea on exertion)-CAUSES->(Aortic Valve Stenosis)-CAUSES->(Mitral Valve Stenosis)",
+      "(Dyspnea on exertion)-CAUSES->(Heart failure)-COMPLICATES->(Mitral Valve Stenosis)",
+      "(Mitral Valve Stenosis)-CAUSES->(Heart failure)-CAUSES->(Dyspnea on exertion)",
+      "(Mitral Valve Stenosis)-CAUSES->(Hypertension, Pulmonary)-CAUSES->(Dyspnea on exertion)",
+      "(Mitral Valve Stenosis)-CAUSES->(Chronic Obstructive Airway Disease)-CAUSES->(Dyspnea on exertion)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Dyspnea on exertion",
+        "Ischemia",
+        "Genes",
+        "Body tissue",
+        "Valve Replacement"
+      ],
+      [
+        "Dyspnea on exertion",
+        "Cardiovascular Diseases",
+        "Genes",
+        "Body tissue",
+        "Valve Replacement"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Dyspnea on exertion)-ASSOCIATED_WITH->(Ischemia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Body tissue)-LOCATION_OF->(Valve Replacement)",
+      "(Dyspnea on exertion)-ISA->(Cardiovascular Diseases)-ASSOCIATED_WITH->(Genes)-PART_OF->(Body tissue)-LOCATION_OF->(Valve Replacement)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Dyspnea on exertion)-CAUSES->(Hypertension, Pulmonary)-CAUSES->(Mitral Valve Stenosis)",
+      "(Mitral Valve Stenosis)-CAUSES->(Hypertension, Pulmonary)-CAUSES->(Dyspnea on exertion)",
+      "(Dyspnea on exertion)-ISA->(Cardiovascular Diseases)-ASSOCIATED_WITH->(Genes)-PART_OF->(Body tissue)-LOCATION_OF->(Valve Replacement)",
+      "(Dyspnea on exertion)-CAUSES->(Aortic Valve Stenosis)-CAUSES->(Mitral Valve Stenosis)",
+      "(Dyspnea on exertion)-CAUSES->(Heart failure)-COMPLICATES->(Mitral Valve Stenosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Mid-diastolic rumble at the apex\" -> \"suggestive of mitral stenosis\" -> \"shortness of breath during exertion\" -> \"indicates possible heart valve issue\" -> \"valve replacement is definitive treatment\" -> 85%",
+    "CHAIN: \"Mid-diastolic rumble at the apex\" -> \"indicates mitral valve pathology\" -> \"patient has exertional dyspnea\" -> \"mitral stenosis likely due to untreated infections\" -> \"percutaneous valve commissurotomy is less invasive\" -> \"may not be definitive in severe cases\" -> \"valve replacement is more definitive\" -> 90%",
+    "CHAIN: \"Shortness of breath during exercise\" -> \"suggests cardiac involvement\" -> \"mid-diastolic rumble indicates mitral stenosis\" -> \"patient's history of untreated infections supports this\" -> \"valve replacement is the best definitive treatment\" -> 80%",
+    "CHAIN: \"Mid-diastolic rumble at the apex\" -> \"suggests mitral stenosis\" -> \"patient has exertional dyspnea\" -> \"valve replacement is definitive\" -> \"other options are less definitive\" -> 75%"
+  ],
+  "enhanced_information": "The mid-diastolic rumble at the apex is indicative of mitral stenosis, which is consistent with the patient's exertional dyspnea and history of untreated infections that could lead to rheumatic heart disease. The definitive treatment for mitral stenosis, especially in symptomatic patients, is valve replacement, as it addresses the underlying valve pathology effectively. While percutaneous valve commissurotomy is a less invasive option, it may not be definitive in severe cases, making valve replacement the preferred choice. Other options like diuretics and beta-blockers do not address the valve issue directly and are not considered definitive treatments for mitral stenosis. Therefore, the best definitive treatment for this patient is valve replacement.",
+  "analysis": "The patient's symptoms of exertional dyspnea, combined with the mid-diastolic rumble at the apex, strongly suggest mitral stenosis, likely due to rheumatic heart disease from her history of untreated infections. In symptomatic cases of mitral stenosis, the definitive treatment is typically valve replacement, as it directly addresses the underlying valve pathology. While percutaneous valve commissurotomy can be considered in certain cases, it is not always definitive, especially in severe cases. Diuretics and beta-blockers are supportive treatments that do not resolve the valve issue. Therefore, the best definitive treatment for this patient is valve replacement.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      0,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      33.33333333333333,
+      0.0,
+      66.66666666666666
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

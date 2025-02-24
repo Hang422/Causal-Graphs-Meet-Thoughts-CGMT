@@ -1,0 +1,147 @@
+{
+  "question": "A pulmonary autopsy specimen from a 58-year-old woman who died of acute hypoxic respiratory failure was examined. She had recently undergone surgery for a fractured femur 3 months ago. Initial hospital course was uncomplicated, and she was discharged to a rehab facility in good health. Shortly after discharge home from rehab, she developed sudden shortness of breath and had cardiac arrest. Resuscitation was unsuccessful. On histological examination of lung tissue, fibrous connective tissue around the lumen of the pulmonary artery is observed. Which of the following is the most likely pathogenesis for the present findings?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Thromboembolism",
+    "opb": "Pulmonary ischemia",
+    "opc": "Pulmonary hypertension",
+    "opd": "Pulmonary passive congestion",
+    "ope": "Pulmonary hemorrhage"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Deep Vein Thrombosis",
+        "Thromboembolism"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Deep Vein Thrombosis)-CAUSES->(Thromboembolism)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Connective Tissue",
+        "Hypertension, Pulmonary",
+        "Pulmonary Vascular Resistance"
+      ],
+      [
+        "Pulmonary Vascular Resistance",
+        "Heparin",
+        "Hypertension, Pulmonary"
+      ],
+      [
+        "Pulmonary Vascular Resistance",
+        "Lung",
+        "Hypertension, Pulmonary"
+      ],
+      [
+        "Connective Tissue",
+        "Adventitia",
+        "Pulmonary veins"
+      ],
+      [
+        "Connective Tissue",
+        "Pedicles",
+        "Pulmonary veins"
+      ],
+      [
+        "Pulmonary veins",
+        "Blood Vessels",
+        "Passive pulmonary congestion"
+      ],
+      [
+        "Connective Tissue",
+        "Blood Vessels"
+      ],
+      [
+        "Blood Vessels",
+        "[D]Pulmonary hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "TREATS"
+      ],
+      [
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Connective Tissue)-LOCATION_OF->(Hypertension, Pulmonary)-MANIFESTATION_OF->(Pulmonary Vascular Resistance)",
+      "(Pulmonary Vascular Resistance)-ASSOCIATED_WITH->(Heparin)-TREATS->(Hypertension, Pulmonary)",
+      "(Pulmonary Vascular Resistance)-PROCESS_OF->(Lung)-LOCATION_OF->(Hypertension, Pulmonary)",
+      "(Connective Tissue)-PART_OF->(Adventitia)-PART_OF->(Pulmonary veins)",
+      "(Connective Tissue)-PART_OF->(Pedicles)-PART_OF->(Pulmonary veins)",
+      "(Pulmonary veins)-PART_OF->(Blood Vessels)-LOCATION_OF->(Passive pulmonary congestion)",
+      "(Connective Tissue)-PART_OF->(Blood Vessels)",
+      "(Blood Vessels)-LOCATION_OF->([D]Pulmonary hemorrhage)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Connective Tissue)-LOCATION_OF->(Hypertension, Pulmonary)-MANIFESTATION_OF->(Pulmonary Vascular Resistance)",
+      "(Deep Vein Thrombosis)-CAUSES->(Thromboembolism)",
+      "(Connective Tissue)-PART_OF->(Blood Vessels)",
+      "(Blood Vessels)-LOCATION_OF->([D]Pulmonary hemorrhage)",
+      "(Pulmonary Vascular Resistance)-ASSOCIATED_WITH->(Heparin)-TREATS->(Hypertension, Pulmonary)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Fractured femur surgery\" -> \"increased risk of deep vein thrombosis\" -> \"thromboembolism\" -> 80% CHAIN: \"Pulmonary artery fibrous connective tissue\" -> \"increased pulmonary vascular resistance\" -> \"pulmonary hypertension\" -> 70% CHAIN: \"Pulmonary artery fibrous connective tissue\" -> \"obstructed blood flow\" -> \"pulmonary ischemia\" -> 60% CHAIN: \"Pulmonary artery fibrous connective tissue\" -> \"back pressure on pulmonary veins\" -> \"pulmonary passive congestion\" -> 50% CHAIN: \"Pulmonary artery fibrous connective tissue\" -> \"rupture of blood vessels\" -> \"pulmonary hemorrhage\" -> 80%"
+  ],
+  "enhanced_information": "The most likely pathogenesis for the findings of fibrous connective tissue around the lumen of the pulmonary artery in the autopsy specimen is pulmonary hypertension. This is supported by the chain linking the connective tissue to increased pulmonary vascular resistance, which is a characteristic feature of pulmonary hypertension. The evidence path showing the association between pulmonary vascular resistance and pulmonary hypertension further strengthens this conclusion.",
+  "analysis": "The presence of fibrous connective tissue around the lumen of the pulmonary artery in the autopsy specimen suggests vascular remodeling, which is a characteristic feature of pulmonary hypertension. Pulmonary hypertension leads to increased pulmonary vascular resistance, resulting in the development of fibrous tissue. Thromboembolism, pulmonary ischemia, pulmonary passive congestion, and pulmonary hemorrhage are less likely to cause this specific histological finding.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

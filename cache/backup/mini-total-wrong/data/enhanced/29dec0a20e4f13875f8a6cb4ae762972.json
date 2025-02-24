@@ -1,0 +1,178 @@
+{
+  "question": "A 53-year-old man presents to your office with a 2 month history of abdominal bloating. He states that he feels full after eating only a small amount and has experienced bloating, diarrhea, and occasionally vomiting when he tries to eat large amounts. He states his diarrhea has now become more profuse and is altering the quality of his life. One week ago, the patient was given antibiotics for an ear infection. He states he is trying to eat more healthy and has replaced full fat with fat free dairy and is reducing his consumption of meat. His temperature is 99.0°F (37.2°C), blood pressure is 164/99 mmHg, pulse is 85/min, respirations are 14/min, and oxygen saturation is 98% on room air. Laboratory values from a previous office visit are notable for a hemoglobin A1c of 13%. Which of the following is the best treatment of this patient's diarrhea?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Better glycemic control",
+    "opb": "Elimination of dairy from the diet",
+    "opc": "Metoclopramide",
+    "opd": "Rifaximin",
+    "ope": "Vancomycin"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Antibiotic-associated diarrhea",
+        "Diarrhea"
+      ],
+      [
+        "Diarrhea",
+        "Lactose Intolerance"
+      ],
+      [
+        "Lactose Intolerance",
+        "Disease",
+        "Excretory function"
+      ],
+      [
+        "Lactose Intolerance",
+        "Inflammation",
+        "Excretory function"
+      ],
+      [
+        "Nausea",
+        "Diarrhea"
+      ],
+      [
+        "Gastroparesis",
+        "Disease",
+        "Diarrhea"
+      ],
+      [
+        "Gastroparesis",
+        "Symptoms",
+        "Diarrhea"
+      ],
+      [
+        "Gastroparesis",
+        "Dyspepsia",
+        "Diarrhea"
+      ],
+      [
+        "Metoclopramide",
+        "Kidney Diseases",
+        "Diarrhea"
+      ],
+      [
+        "Metoclopramide",
+        "Symptoms",
+        "Diarrhea"
+      ],
+      [
+        "Metoclopramide",
+        "Dyspepsia",
+        "Diarrhea"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Antibiotic-associated diarrhea)-CAUSES->(Diarrhea)",
+      "(Diarrhea)-PREDISPOSES->(Lactose Intolerance)",
+      "(Lactose Intolerance)-CAUSES->(Disease)-MANIFESTATION_OF->(Excretory function)",
+      "(Lactose Intolerance)-CAUSES->(Inflammation)-MANIFESTATION_OF->(Excretory function)",
+      "(Nausea)-CAUSES->(Diarrhea)",
+      "(Gastroparesis)-CAUSES->(Disease)-CAUSES->(Diarrhea)",
+      "(Gastroparesis)-CAUSES->(Symptoms)-CAUSES->(Diarrhea)",
+      "(Gastroparesis)-CAUSES->(Dyspepsia)-CAUSES->(Diarrhea)",
+      "(Metoclopramide)-TREATS->(Kidney Diseases)-CAUSES->(Diarrhea)",
+      "(Metoclopramide)-PREVENTS->(Symptoms)-CAUSES->(Diarrhea)",
+      "(Metoclopramide)-TREATS->(Dyspepsia)-CAUSES->(Diarrhea)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Metoclopramide)-TREATS->(Kidney Diseases)-CAUSES->(Diarrhea)",
+      "(Antibiotic-associated diarrhea)-CAUSES->(Diarrhea)",
+      "(Diarrhea)-PREDISPOSES->(Lactose Intolerance)",
+      "(Metoclopramide)-PREVENTS->(Symptoms)-CAUSES->(Diarrhea)",
+      "(Metoclopramide)-TREATS->(Dyspepsia)-CAUSES->(Diarrhea)",
+      "(Nausea)-CAUSES->(Diarrhea)",
+      "(Lactose Intolerance)-CAUSES->(Disease)-MANIFESTATION_OF->(Excretory function)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient has diarrhea after antibiotic use\" -> \"Possible disruption of gut microbiota\" -> \"Increased risk of antibiotic-associated diarrhea\" -> \"Rifaximin is effective for treating diarrhea caused by gut dysbiosis\" -> 85%",
+    "CHAIN: \"Patient has a high hemoglobin A1c of -> 13%",
+    "CHAIN: \"Patient reports bloating and diarrhea\" -> \"Symptoms suggest possible lactose intolerance\" -> \"Elimination of dairy may alleviate symptoms\" -> \"However, not confirmed without testing\" -> 75%",
+    "CHAIN: \"Patient's diarrhea is profuse and affecting quality of life\" -> \"Metoclopramide is used for nausea and gastroparesis\" -> \"Not primarily indicated for diarrhea\" -> \"Less likely to be effective\" -> 60%",
+    "CHAIN: \"Patient has a recent history of antibiotic use\" -> \"Vancomycin is used for C. difficile infection\" -> \"No indication of C. difficile in this case\" -> \"Less appropriate choice\" -> 50%"
+  ],
+  "enhanced_information": "The patient presents with diarrhea following antibiotic use, suggesting a possible disruption of gut microbiota, which is a common cause of antibiotic-associated diarrhea. Rifaximin is an effective treatment for this condition, as it targets gut dysbiosis. While the patient's high hemoglobin A1c indicates poor glycemic control, improving glycemic levels does not directly address the diarrhea. The suggestion of lactose intolerance due to bloating and diarrhea is plausible, but elimination of dairy should be confirmed with testing before making dietary changes. Metoclopramide is primarily used for nausea and gastroparesis, not diarrhea, making it less appropriate in this case. Vancomycin is indicated for C. difficile infections, which are not suggested here. Therefore, the best treatment for this patient's diarrhea, considering the recent antibiotic use and symptoms, is Rifaximin.",
+  "analysis": "The patient presents with diarrhea and bloating after recent antibiotic use, which suggests a disruption of gut microbiota, commonly leading to antibiotic-associated diarrhea. Rifaximin is known to be effective in treating this condition by targeting gut dysbiosis. While the patient's high hemoglobin A1c indicates poor glycemic control, improving glycemic levels does not directly address the diarrhea. The option of eliminating dairy could be considered if lactose intolerance were confirmed, but this is not established in the current scenario. Metoclopramide is not appropriate for diarrhea, and vancomycin is specifically indicated for C. difficile infections, which are not indicated here. Therefore, Rifaximin is the most appropriate treatment for this patient's diarrhea, given the context of recent antibiotic use and the symptoms presented.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      2,
+      3,
+      0
+    ],
+    "coverage_rates": [
+      16.666666666666664,
+      0.0,
+      33.33333333333333,
+      50.0,
+      0.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

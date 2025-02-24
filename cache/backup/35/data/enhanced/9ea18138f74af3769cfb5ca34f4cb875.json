@@ -1,0 +1,104 @@
+{
+  "question": "A 38-year-old woman comes to the physician because of a 10-month history of nonbloody diarrhea and recurrent episodes of flushing and wheezing. She does not take any medications. Physical examination shows a hyperpigmented rash around the base of her neck. Cardiac examination shows a grade 4/6, holosystolic murmur in the 5th intercostal space at the left midclavicular line. Echocardiography shows left-sided endocardial and valvular fibrosis with moderate mitral regurgitation; there are no septal defects or right-sided valvular defects. Urinalysis shows increased 5-hydroxyindoleacetic acid concentration. Further evaluation of this patient is most likely to show which of the following findings?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Tumor in the pancreas without metastasis",
+    "opb": "Tumor in the lung without metastasis",
+    "opc": "Tumor in the left atrium with hepatic metastasis",
+    "opd": "Tumor in the appendix without metastasis",
+    "ope": "Tumor in the descending colon with hepatic metastasis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Malignant Carcinoid Syndrome",
+        "Diarrhea"
+      ],
+      [
+        "Malignant Carcinoid Syndrome",
+        "Syndrome",
+        "arterial stiffness",
+        "Heart"
+      ],
+      [
+        "Malignant Carcinoid Syndrome",
+        "Hyperinsulinism",
+        "arterial stiffness",
+        "Heart"
+      ],
+      [
+        "Malignant Carcinoid Syndrome",
+        "Dystonia",
+        "Energy Metabolism",
+        "Heart"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Malignant Carcinoid Syndrome)-CAUSES->(Diarrhea)",
+      "(Malignant Carcinoid Syndrome)-CAUSES->(Syndrome)-CAUSES->(arterial stiffness)-PROCESS_OF->(Heart)",
+      "(Malignant Carcinoid Syndrome)-CAUSES->(Hyperinsulinism)-PREDISPOSES->(arterial stiffness)-PROCESS_OF->(Heart)",
+      "(Malignant Carcinoid Syndrome)-CAUSES->(Dystonia)-MANIFESTATION_OF->(Energy Metabolism)-PROCESS_OF->(Heart)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Malignant Carcinoid Syndrome)-CAUSES->(Diarrhea)",
+      "(Malignant Carcinoid Syndrome)-CAUSES->(Dystonia)-MANIFESTATION_OF->(Energy Metabolism)-PROCESS_OF->(Heart)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Carcinoid syndrome -> flushing, wheezing, diarrhea -> hyperpigmented rash around the neck -> cardiac involvement with valvular fibrosis and regurgitation -> increased 5-hydroxyindoleacetic acid concentration -> tumor in the appendix without metastasis -> 80%",
+    "CHAIN: Carcinoid syndrome -> cardiac involvement with valvular fibrosis and regurgitation -> increased 5-hydroxyindoleacetic acid concentration -> tumor in the appendix without metastasis -> 75%"
+  ],
+  "enhanced_information": "The patient's presentation with carcinoid syndrome, including flushing, wheezing, diarrhea, hyperpigmented rash, and cardiac involvement with valvular fibrosis and regurgitation, along with increased 5-hydroxyindoleacetic acid concentration, suggests a tumor likely in the appendix without metastasis. The evidence path linking malignant carcinoid syndrome to diarrhea and cardiac manifestations supports this conclusion.",
+  "analysis": "The patient's presentation is consistent with carcinoid syndrome, characterized by flushing, wheezing, diarrhea, hyperpigmented rash, and cardiac involvement with valvular fibrosis and regurgitation. The increased 5-hydroxyindoleacetic acid concentration in the urine further supports the suspicion of a carcinoid tumor. Given the absence of right-sided valvular defects and the typical location of carcinoid tumors, the most likely primary site is the appendix without metastasis.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

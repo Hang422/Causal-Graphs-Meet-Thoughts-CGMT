@@ -1,0 +1,277 @@
+{
+  "question": "A 50-year-old man is brought to the emergency department with progressive retrosternal chest pain and shortness of breath that started the day before. The pain is severe, worsens with inspiration, and radiates to his neck. He has also had a sore throat and neck pain the last 4 days. He remained bed-bound during this time and had poor appetite. One week ago, he underwent an upper endoscopy for peptic ulcer disease. He has type 2 diabetes mellitus, peptic ulcer disease, hyperlipidemia, and hypertension. His only medication is omeprazole. He does not smoke or drink alcohol. He appears in significant distress. His temperature is 39.1°C (102.3°F), pulse is 108/min, respirations are 28/min, and blood pressure is 88/46 mm Hg. The lungs are clear to auscultation. Cardiac examinations shows tachycardia but is otherwise unremarkable. The abdomen is soft and nontender. Oropharyngeal examination is limited because the patient is unable to open his mouth due to pain. His hematocrit is 42%, leukocyte count is 13,800/mm3, and platelet count is 205,000/mm3. The patient is intubated in the emergency department and appropriate treatment is started. Chest x-ray shows a widened mediastinum. Which of the following is most likely to have prevented this patient's condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Pericardiocentesis",
+    "opb": "Intravenous methylprednisolone administration",
+    "opc": "Intravenous ampicillin-sulbactam administration",
+    "opd": "Blood pressure control",
+    "ope": "Intravenous levofloxacin administration\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Esophageal Perforation",
+        "Syndrome",
+        "[D]Retrosternal chest pain"
+      ],
+      [
+        "[D]Retrosternal chest pain",
+        "Cardiomyopathies",
+        "Communicable Diseases"
+      ],
+      [
+        "[D]Retrosternal chest pain",
+        "Hyperlipidemia",
+        "Communicable Diseases"
+      ],
+      [
+        "[D]Retrosternal chest pain",
+        "Ulcer of esophagus",
+        "Mediastinitis"
+      ],
+      [
+        "Mediastinitis",
+        "Infection",
+        "Inflammatory Response"
+      ],
+      [
+        "Mediastinitis",
+        "Myocardial Infarction",
+        "Inflammatory Response"
+      ],
+      [
+        "Inflammatory Response",
+        "Inflammation"
+      ],
+      [
+        "Intubation",
+        "Respiratory distress"
+      ],
+      [
+        "Respiratory distress",
+        "Septicemia"
+      ],
+      [
+        "Fever",
+        "Communicable Diseases"
+      ],
+      [
+        "Leukocytosis",
+        "Communicable Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Esophageal Perforation)-COMPLICATES->(Syndrome)-CAUSES->([D]Retrosternal chest pain)",
+      "([D]Retrosternal chest pain)-CAUSES->(Cardiomyopathies)-CAUSES->(Communicable Diseases)",
+      "([D]Retrosternal chest pain)-CAUSES->(Hyperlipidemia)-PREDISPOSES->(Communicable Diseases)",
+      "([D]Retrosternal chest pain)-PREDISPOSES->(Ulcer of esophagus)-CAUSES->(Mediastinitis)",
+      "(Mediastinitis)-CAUSES->(Infection)-CAUSES->(Inflammatory Response)",
+      "(Mediastinitis)-COMPLICATES->(Myocardial Infarction)-CAUSES->(Inflammatory Response)",
+      "(Inflammatory Response)-COMPLICATES->(Inflammation)",
+      "(Intubation)-PREDISPOSES->(Respiratory distress)",
+      "(Respiratory distress)-PREDISPOSES->(Septicemia)",
+      "(Fever)-CAUSES->(Communicable Diseases)",
+      "(Leukocytosis)-CAUSES->(Communicable Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Communicable Diseases",
+        "Microbial Biofilms",
+        "Ampicillin / Sulbactam"
+      ],
+      [
+        "Communicable Diseases",
+        "Microbial Biofilms",
+        "Ampicillin / Sulbactam"
+      ],
+      [
+        "Communicable Diseases",
+        "Infection",
+        "Bactericidal activity",
+        "Levofloxacin"
+      ],
+      [
+        "Communicable Diseases",
+        "Infection",
+        "Bactericidal activity",
+        "Levofloxacin"
+      ],
+      [
+        "Peptic Ulcer",
+        "uptake",
+        "Mammalian Oviducts",
+        "endoscopy"
+      ],
+      [
+        "Peptic Ulcer",
+        "uptake",
+        "Saphenous Vein",
+        "endoscopy"
+      ],
+      [
+        "endoscopy",
+        "Acute graft-versus-host disease",
+        "Genes",
+        "Blood",
+        "Pericardiocentesis"
+      ],
+      [
+        "endoscopy",
+        "Stenosis, unspecified",
+        "Genes",
+        "Blood",
+        "Pericardiocentesis"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Communicable Diseases)-PROCESS_OF->(Microbial Biofilms)-LOCATION_OF->(Ampicillin / Sulbactam)",
+      "(Communicable Diseases)-ASSOCIATED_WITH->(Microbial Biofilms)-LOCATION_OF->(Ampicillin / Sulbactam)",
+      "(Communicable Diseases)-MANIFESTATION_OF->(Infection)-MANIFESTATION_OF->(Bactericidal activity)-ASSOCIATED_WITH->(Levofloxacin)",
+      "(Communicable Diseases)-CAUSES->(Infection)-MANIFESTATION_OF->(Bactericidal activity)-ASSOCIATED_WITH->(Levofloxacin)",
+      "(Peptic Ulcer)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Mammalian Oviducts)-LOCATION_OF->(endoscopy)",
+      "(Peptic Ulcer)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Saphenous Vein)-LOCATION_OF->(endoscopy)",
+      "(endoscopy)-DIAGNOSES->(Acute graft-versus-host disease)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)-LOCATION_OF->(Pericardiocentesis)",
+      "(endoscopy)-DIAGNOSES->(Stenosis, unspecified)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)-LOCATION_OF->(Pericardiocentesis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Intubation)-PREDISPOSES->(Respiratory distress)",
+      "(Respiratory distress)-PREDISPOSES->(Septicemia)",
+      "(Fever)-CAUSES->(Communicable Diseases)",
+      "(Communicable Diseases)-CAUSES/MANIFESTATION_OF->(Infection)-MANIFESTATION_OF->(Bactericidal activity)-ASSOCIATED_WITH->(Levofloxacin)",
+      "(Peptic Ulcer)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Mammalian Oviducts)-LOCATION_OF->(endoscopy)",
+      "(Peptic Ulcer)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Saphenous Vein)-LOCATION_OF->(endoscopy)",
+      "(Leukocytosis)-CAUSES->(Communicable Diseases)",
+      "([D]Retrosternal chest pain)-PREDISPOSES->(Ulcer of esophagus)-CAUSES->(Mediastinitis)",
+      "(Communicable Diseases)-ASSOCIATED_WITH/PROCESS_OF->(Microbial Biofilms)-LOCATION_OF->(Ampicillin / Sulbactam)",
+      "([D]Retrosternal chest pain)-CAUSES->(Hyperlipidemia)-PREDISPOSES->(Communicable Diseases)",
+      "(Inflammatory Response)-COMPLICATES->(Inflammation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Widened mediastinum\" -> \"possible esophageal perforation\" -> \"severe retrosternal chest pain\" -> \"increased risk of infection\" -> \"intravenous ampicillin-sulbactam administration could have prevented infection\" -> 85%",
+    "CHAIN: \"Severe retrosternal chest pain\" -> \"possible mediastinitis\" -> \"increased inflammatory response\" -> \"intravenous methylprednisolone administration could have reduced inflammation\" -> 70%",
+    "CHAIN: \"Intubation in emergency department\" -> \"severe respiratory distress\" -> \"possible sepsis\" -> \"blood pressure control could have improved hemodynamics\" -> 60%",
+    "CHAIN: \"Fever and leukocytosis\" -> \"indicates infection\" -> \"intravenous levofloxacin administration could have targeted bacterial infection\" -> 75%",
+    "CHAIN: \"Patient's history of peptic ulcer disease\" -> \"risk of esophageal injury during endoscopy\" -> \"pericardiocentesis unlikely to prevent condition\" -> 40%"
+  ],
+  "enhanced_information": "The patient's presentation, including severe retrosternal chest pain, fever, leukocytosis, and a widened mediastinum, suggests a possible esophageal perforation leading to mediastinitis and subsequent infection. The chain indicating that 'intravenous ampicillin-sulbactam administration could have prevented infection' is supported by the evidence that infection is a common complication of esophageal perforation. Therefore, this option is the most relevant. The suggestion that 'intravenous methylprednisolone administration could have reduced inflammation' is less relevant as it does not directly address the prevention of the underlying condition. Blood pressure control is important but does not prevent the initial cause of the condition. Levofloxacin could target infection but is not the first-line treatment for this scenario. Pericardiocentesis is unlikely to prevent the condition as it does not address the esophageal issue. Thus, the most likely preventive measure for this patient's condition is intravenous ampicillin-sulbactam administration.",
+  "analysis": "The patient's symptoms and clinical findings suggest a serious condition, likely an esophageal perforation leading to mediastinitis. The presence of severe retrosternal chest pain, fever, leukocytosis, and a widened mediastinum on chest x-ray supports this diagnosis. In cases of esophageal perforation, the risk of infection is significant, and prompt antibiotic therapy is crucial to prevent the development of mediastinitis and sepsis. Among the options provided, intravenous ampicillin-sulbactam is a broad-spectrum antibiotic that would cover the polymicrobial flora typically involved in such infections. While other options like blood pressure control and corticosteroids may be important in managing the patient's overall condition, they do not directly address the prevention of the infection that arises from esophageal perforation. Therefore, the most relevant preventive measure in this scenario is the administration of intravenous ampicillin-sulbactam, as it targets the potential infectious complications directly associated with the underlying condition. Thus, the best-supported option is intravenous ampicillin-sulbactam administration.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      3,
+      2,
+      3,
+      2
+    ],
+    "coverage_rates": [
+      23.076923076923077,
+      23.076923076923077,
+      15.384615384615385,
+      23.076923076923077,
+      15.384615384615385
+    ],
+    "total_successes": 13
+  },
+  "normal_results": []
+}

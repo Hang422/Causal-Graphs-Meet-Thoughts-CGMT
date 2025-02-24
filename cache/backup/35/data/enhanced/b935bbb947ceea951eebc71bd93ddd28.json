@@ -1,0 +1,127 @@
+{
+  "question": "A 9-month-old girl is brought to the physician because of a 1-month history of poor feeding and irritability. She is at the 15th percentile for height and 5th percentile for weight. Examination shows hypotonia and wasting of skeletal muscles. Cardiopulmonary examination shows no abnormalities. There is hepatomegaly. Her serum glucose is 61 mg/dL, creatinine kinase is 100 U/L, and lactic acid is within the reference range. Urine ketone bodies are elevated. Which of the following enzymes is most likely deficient in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Muscle phosphorylase",
+    "opb": "Acid alpha-glucosidase",
+    "opc": "Glucose-6-phosphatase",
+    "opd": "Glucocerebrosidase",
+    "ope": "Glycogen debrancher"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Cachexia",
+        "Disease",
+        "Hepatomegaly"
+      ],
+      [
+        "Cachexia",
+        "Symptoms",
+        "Hepatomegaly"
+      ],
+      [
+        "Cachexia",
+        "Macrophage activation syndrome",
+        "Hepatomegaly"
+      ],
+      [
+        "Muscle hypotonia",
+        "Disease",
+        "Hepatomegaly"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Cachexia)-CAUSES->(Disease)-CAUSES->(Hepatomegaly)",
+      "(Cachexia)-CAUSES->(Symptoms)-CAUSES->(Hepatomegaly)",
+      "(Cachexia)-CAUSES->(Macrophage activation syndrome)-CAUSES->(Hepatomegaly)",
+      "(Muscle hypotonia)-PREDISPOSES->(Disease)-CAUSES->(Hepatomegaly)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Skeletal muscle structure",
+        "Symptoms",
+        "Hepatomegaly"
+      ],
+      [
+        "Skeletal muscle structure",
+        "Symptoms",
+        "Hepatomegaly"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Skeletal muscle structure)-LOCATION_OF->(Symptoms)-ASSOCIATED_WITH->(Hepatomegaly)",
+      "(Skeletal muscle structure)-LOCATION_OF->(Symptoms)-CAUSES->(Hepatomegaly)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cachexia)-CAUSES->(Symptoms)-CAUSES->(Hepatomegaly)",
+      "(Skeletal muscle structure)-LOCATION_OF->(Symptoms)-ASSOCIATED_WITH/CAUSES->(Hepatomegaly)",
+      "(Cachexia)-CAUSES->(Disease)-CAUSES->(Hepatomegaly)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Poor feeding and irritability\" -> \"Hypotonia and wasting of skeletal muscles\" -> \"Hepatomegaly\" -> \"Elevated urine ketone bodies\" -> \"Deficiency in glucose-6-phosphatase\" -> 95%",
+    "CHAIN: \"Low serum glucose (61 mg/dL)\" -> \"Elevated urine ketone bodies\" -> \"Deficiency in glucose-6-phosphatase\" -> 90%",
+    "CHAIN: \"Elevated urine ketone bodies\" -> \"Deficiency in glucose-6-phosphatase\" -> 85%"
+  ],
+  "enhanced_information": "The patient's presentation of poor feeding, irritability, hypotonia, wasting of skeletal muscles, hepatomegaly, low serum glucose, and elevated urine ketone bodies is indicative of a deficiency in glucose-6-phosphatase. This aligns with the consensus that glucose-6-phosphatase deficiency leads to hypoglycemia, hepatomegaly, and elevated ketone bodies. The evidence paths linking cachexia, symptoms, and hepatomegaly support the association between muscle wasting and hepatomegaly in this context.",
+  "analysis": "The patient's presentation of poor feeding, irritability, hypotonia, wasting of skeletal muscles, hepatomegaly, low serum glucose, and elevated urine ketone bodies is highly suggestive of a deficiency in glucose-6-phosphatase. Glucose-6-phosphatase deficiency leads to hypoglycemia, hepatomegaly, and elevated ketone bodies, which aligns with the patient's symptoms. This enzyme is crucial for gluconeogenesis and glycogenolysis, explaining the hypoglycemia and elevated ketone bodies in this case.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      100.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

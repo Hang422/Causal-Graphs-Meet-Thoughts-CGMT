@@ -1,0 +1,104 @@
+{
+  "question": "A 28-year-old woman G1P0 presents at 38 weeks of gestation for a standard prenatal visit. She endorses occasional mild lower back pain but otherwise remains asymptomatic. Her past medical history is significant for HIV for which she is treated with azidothymidine (AZT). Her vital signs and physical exam are unremarkable. Her current HIV viral titer level is 1,400 copies. If she were to go into labor today, what would be the next and most important step for the prevention of vertical HIV transmission to the newborn?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Increase AZT dose",
+    "opb": "Add nevirapine to the patient’s AZT",
+    "opc": "Treat the newborn with AZT following delivery",
+    "opd": "Avoid breastfeeding",
+    "ope": "Urge the patient to have a cesarean section delivery"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "HIV Infections",
+        "HIV"
+      ],
+      [
+        "Cesarean section",
+        "HIV"
+      ],
+      [
+        "Obstetric Delivery",
+        "Disease",
+        "HIV"
+      ],
+      [
+        "Obstetric Delivery",
+        "Acquired Immunodeficiency Syndrome",
+        "HIV"
+      ],
+      [
+        "Obstetric Delivery",
+        "Cardiovascular Diseases",
+        "HIV"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "TREATS",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(HIV Infections)-PROCESS_OF->(HIV)",
+      "(Cesarean section)-TREATS->(HIV)",
+      "(Obstetric Delivery)-TREATS->(Disease)-PROCESS_OF->(HIV)",
+      "(Obstetric Delivery)-TREATS->(Acquired Immunodeficiency Syndrome)-PROCESS_OF->(HIV)",
+      "(Obstetric Delivery)-TREATS->(Cardiovascular Diseases)-PROCESS_OF->(HIV)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cesarean section)-TREATS->(HIV)",
+      "(Obstetric Delivery)-TREATS->(Disease)-PROCESS_OF->(HIV)",
+      "(Obstetric Delivery)-TREATS->(Acquired Immunodeficiency Syndrome)-PROCESS_OF->(HIV)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Maternal HIV infection -> risk of vertical HIV transmission to the newborn -> 80% CHAIN: Maternal HIV viral titer level of 1,400 copies -> moderate risk of vertical HIV transmission -> 70% CHAIN: Avoid breastfeeding -> reduces risk of vertical HIV transmission -> 90% CHAIN: Urge the patient to have a cesarean section delivery -> further reduces risk of vertical HIV transmission -> 80%"
+  ],
+  "enhanced_information": "For the prevention of vertical HIV transmission to the newborn in a woman with a viral titer level of 1,400 copies, the most important steps include treating the newborn with AZT following delivery and avoiding breastfeeding. Cesarean section delivery may further reduce the risk of transmission. Adding nevirapine to the patient's AZT regimen is not the most crucial step in this scenario.",
+  "analysis": "In a pregnant woman with HIV and a viral titer level of 1,400 copies, the most important steps to prevent vertical HIV transmission to the newborn include treating the newborn with AZT following delivery and avoiding breastfeeding. Cesarean section delivery may further reduce the risk of transmission. Adding nevirapine to the patient's AZT regimen is not the most crucial step in this scenario.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

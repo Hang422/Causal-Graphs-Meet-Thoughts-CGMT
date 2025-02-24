@@ -1,0 +1,142 @@
+{
+  "question": "A 25-year-old woman presented to an urgent care center with a complaint of a cough for more than 3 weeks that was accompanied by night sweats, weight loss, and malaise. On physical examination, the patient had slightly pale palpebral conjunctivae bilateral posterior cervical lymphadenopathy, but with no adventitious breath sounds in the lung fields bilaterally. The remainder of the physical examination was routine. The patient was started on a drug regimen that was to be taken for 6 months. On follow-up after 2 months, the ALT and AST levels were elevated. Which of the following anti-tubercular drug could have contributed to this labor result?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Rifampicin",
+    "opb": "Pyrazinamide",
+    "opc": "Isoniazid",
+    "opd": "Streptomycin",
+    "ope": "Ethambutol"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "isoniazid",
+        "Disease",
+        "drug clearance",
+        "Liver"
+      ],
+      [
+        "isoniazid",
+        "Disease",
+        "Thermotolerance",
+        "Liver"
+      ],
+      [
+        "isoniazid",
+        "Disease",
+        "biological adaptation to stress",
+        "Liver"
+      ],
+      [
+        "Pyrazinamide",
+        "Complication",
+        "Biological Transport, Active",
+        "Liver"
+      ],
+      [
+        "Pyrazinamide",
+        "Disease",
+        "paracrine",
+        "Liver"
+      ],
+      [
+        "Pyrazinamide",
+        "Obesity",
+        "paracrine",
+        "Liver"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREVENTS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(drug clearance)-PROCESS_OF->(Liver)",
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(Thermotolerance)-PROCESS_OF->(Liver)",
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-PROCESS_OF->(Liver)",
+      "(Pyrazinamide)-PREVENTS->(Complication)-MANIFESTATION_OF->(Biological Transport, Active)-PROCESS_OF->(Liver)",
+      "(Pyrazinamide)-TREATS->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Liver)",
+      "(Pyrazinamide)-TREATS->(Obesity)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Liver)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-PROCESS_OF->(Liver)",
+      "(Pyrazinamide)-PREVENTS->(Complication)-MANIFESTATION_OF->(Biological Transport, Active)-PROCESS_OF->(Liver)",
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(drug clearance)-PROCESS_OF->(Liver)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Isoniazid\" -> \"metabolized in liver\" -> \"hepatotoxicity\" -> \"elevated ALT and AST\" -> 90%",
+    "CHAIN: \"Rifampicin\" -> \"metabolized in liver\" -> \"hepatotoxicity\" -> \"elevated ALT and AST\" -> 85%",
+    "CHAIN: \"Pyrazinamide\" -> \"metabolized in liver\" -> \"hepatotoxicity\" -> \"elevated ALT and AST\" -> 80%",
+    "CHAIN: \"Ethambutol\" -> \"less likely hepatotoxic\" -> \"unclear contribution to elevated ALT and AST\" -> 50%",
+    "CHAIN: \"Streptomycin\" -> \"not primarily hepatotoxic\" -> \"unlikely cause of elevated ALT and AST\" -> 40%"
+  ],
+  "enhanced_information": "In the context of anti-tubercular drugs and elevated liver enzymes, the standard medical consensus indicates that Isoniazid, Rifampicin, and Pyrazinamide are all metabolized in the liver and can cause hepatotoxicity, leading to elevated ALT and AST levels. Isoniazid is particularly known for its potential to cause liver damage, which aligns with the retrieved evidence showing its involvement in liver processes. Rifampicin and Pyrazinamide also contribute to hepatotoxicity, but to a slightly lesser extent than Isoniazid. Ethambutol is less likely to cause hepatotoxicity, and Streptomycin is not primarily associated with liver enzyme elevation. Therefore, Isoniazid is the most likely drug to have contributed to the elevated liver enzymes in this patient, supported by both consensus and evidence paths indicating its significant impact on liver function.",
+  "analysis": "The patient in question is being treated for tuberculosis, as indicated by the symptoms and the 6-month drug regimen. The elevation of ALT and AST levels suggests hepatotoxicity, which is a known side effect of several first-line anti-tubercular drugs. Isoniazid, Rifampicin, and Pyrazinamide are all known to cause liver enzyme elevation due to their metabolism in the liver. Among these, Isoniazid is particularly notorious for causing hepatotoxicity. While Rifampicin and Pyrazinamide can also contribute to liver enzyme elevation, Isoniazid is the most likely culprit given its strong association with liver damage. Ethambutol is less likely to cause hepatotoxicity, and Streptomycin is not typically associated with elevated liver enzymes. Therefore, based on standard medical knowledge and consensus, Isoniazid is the most likely drug to have contributed to the elevated liver enzymes in this patient.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      50.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

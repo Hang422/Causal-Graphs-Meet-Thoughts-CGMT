@@ -1,0 +1,91 @@
+{
+  "question": "A 71-year-old woman presents to the clinic after an X-ray that revealed compression fractures of her L1 and L2 vertebral bodies due to osteoporotic changes. The patient has a history of hypertension for which she takes hydrochlorothiazide, and rheumatoid arthritis, for which she has been taking prednisone for the last 2 years. The patient states that she had a dual-energy X-ray absorptiometry (DEXA) scan 3 years ago that was normal and attributes that finding to regularly taking calcium and vitamin D supplements since then. The patient states that her pain from the fractures is stopping her from participating in her regular activities, such as exercising and gardening. Which of the following is the main cause of her osteoporosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Decreased estrogen levels",
+    "opb": "Hydrochlorothiazide (HCTZ) therapy",
+    "opc": "Calcium malabsorption",
+    "opd": "Bone depletion due to chronic corticosteroid use",
+    "ope": "Undiagnosed hyperparathyroidism"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Bone Density",
+        "Osteoporosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Bone Density)-PREDISPOSES->(Osteoporosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Bone and Bones",
+        "PET/CT scan",
+        "Disease",
+        "Osteoporosis"
+      ],
+      [
+        "Bone and Bones",
+        "PET/CT scan",
+        "Disease",
+        "Osteoporosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Bone and Bones)-LOCATION_OF->(PET/CT scan)-CAUSES->(Disease)-CAUSES->(Osteoporosis)",
+      "(Bone and Bones)-LOCATION_OF->(PET/CT scan)-CAUSES->(Disease)-PREDISPOSES->(Osteoporosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Bone and Bones)-LOCATION_OF->(PET/CT scan)-CAUSES->(Disease)-CAUSES/PREDISPOSES->(Osteoporosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Chronic corticosteroid use -> bone depletion -> osteoporosis -> 80% CHAIN: Decreased estrogen levels -> increased bone resorption -> osteoporosis -> 70% CHAIN: Calcium malabsorption -> decreased bone mineral density -> osteoporosis -> 80%"
+  ],
+  "enhanced_information": "Chronic corticosteroid use is the main cause of osteoporosis in this patient due to bone depletion. The evidence path supports the link between bone issues and osteoporosis, reinforcing this conclusion.",
+  "analysis": "Chronic corticosteroid use is a well-known risk factor for osteoporosis due to its negative impact on bone density and quality. This patient has been taking prednisone for rheumatoid arthritis for the last 2 years, which significantly increases her risk of developing osteoporosis.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

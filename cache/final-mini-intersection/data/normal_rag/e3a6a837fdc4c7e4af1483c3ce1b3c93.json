@@ -1,0 +1,110 @@
+{
+  "question": "A 22-year-old primigravida is admitted to the obstetrics ward with leg swelling at 35 weeks gestation. She denies any other symptoms. Her pregnancy has been uneventful and she was compliant with the recommended prenatal care. Her vital signs were as follows: blood pressure, 168/95 mm Hg; heart rate, 86/min; respiratory rate, 16/min; and temperature, 36.7℃ (98℉). The fetal heart rate was 141/min. The physical examination was significant for 2+ pitting edema of the lower extremity. A dipstick test shows 1+ proteinuria. On reassessment 15 minutes later without administration of an antihypertensive, her blood pressure was 141/88 mm Hg, and the fetal heart rate was 147/min. A decision was made to observe the patient and continue the work-up without initiating antihypertensive therapy. Which of the following clinical features would make the suspected diagnosis into a more severe form?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "24-hour urinary protein of 5 g/L",
+    "opb": "Blood pressure of 165/90 mm Hg reassessed 4 hours later",
+    "opc": "Hematocrit of 0.55",
+    "opd": "Platelet count 133,000/μL",
+    "ope": "Serum creatinine 0.98 mg/dL"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Disease Progression",
+        "Disease",
+        "Pre-Eclampsia"
+      ],
+      [
+        "Disease Progression",
+        "Disease",
+        "Pre-Eclampsia"
+      ],
+      [
+        "Pre-Eclampsia",
+        "Complication"
+      ],
+      [
+        "Pre-Eclampsia",
+        "Complication"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "ISA"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Disease Progression)-MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Pre-Eclampsia)",
+      "(Disease Progression)-CAUSES->(Disease)-MANIFESTATION_OF->(Pre-Eclampsia)",
+      "(Pre-Eclampsia)-ISA->(Complication)",
+      "(Pre-Eclampsia)-MANIFESTATION_OF->(Complication)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pre-Eclampsia)-Eclampsia)->(Complication)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"24-hour urinary protein of 5 g/L\" -> \"indicates significant proteinuria\" -> \"suggests worsening renal function\" -> \"consistent with severe preeclampsia\" -> 85%",
+    "CHAIN: \"Blood pressure of 165/90 mm Hg reassessed 4 hours later\" -> \"indicates persistent hypertension\" -> \"suggests possible progression of condition\" -> \"may indicate severe preeclampsia\" -> 70%",
+    "CHAIN: \"Hematocrit of 0.55\" -> \"indicates hemoconcentration\" -> \"suggests possible severe preeclampsia\" -> \"associated with increased risk of complications\" -> 90%",
+    "CHAIN: \"Platelet count 133,000/μL\" -> \"indicates mild thrombocytopenia\" -> \"may suggest progression towards severe preeclampsia\" -> \"but not definitive for severe form\" -> 75%",
+    "CHAIN: \"Serum creatinine 0.98 mg/dL\" -> \"indicates normal renal function\" -> \"does not suggest severe preeclampsia\" -> \"less likely to indicate severity\" -> 50%"
+  ],
+  "enhanced_information": "In the context of suspected severe preeclampsia, the following clinical features are relevant: 1) A 24-hour urinary protein of 5 g/L indicates significant proteinuria, which is a key criterion for diagnosing severe preeclampsia, thus supporting the diagnosis (85% confidence). 2) A blood pressure of 165/90 mm Hg reassessed 4 hours later indicates persistent hypertension, which may suggest progression towards severe preeclampsia, but is less definitive (70% confidence). 3) A hematocrit of 0.55 indicates hemoconcentration, which is associated with severe preeclampsia and increased risk of complications (90% confidence). 4) A platelet count of 133,000/μL indicates mild thrombocytopenia, which may suggest progression towards severe preeclampsia but is not definitive (75% confidence). 5) A serum creatinine of 0.98 mg/dL indicates normal renal function and does not suggest severe preeclampsia (50% confidence). Therefore, the most significant indicators of severity in this case are the 24-hour urinary protein and hematocrit levels.",
+  "analysis": "The clinical scenario suggests the patient may be experiencing gestational hypertension or preeclampsia, given the elevated blood pressure and proteinuria. To classify the condition as more severe, we look for features that indicate worsening of the disease. A 24-hour urinary protein of 5 g/L (option opa) would indicate significant proteinuria, which is a criterion for severe preeclampsia. The other options, while they may indicate some level of concern, do not meet the criteria for severe preeclampsia as clearly as the proteinuria measurement. Therefore, option opa is the most indicative of a more severe form of the condition.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      50.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Therapeutic procedure TREATS Anosognosia",
+    "Urethritis PROCESS_OF Escherichia coli",
+    "Hypertensive disease COMPLICATES Late pregnancy",
+    "Selegiline TREATS Problem behavior",
+    "Edema PREDISPOSES Eclampsia"
+  ]
+}

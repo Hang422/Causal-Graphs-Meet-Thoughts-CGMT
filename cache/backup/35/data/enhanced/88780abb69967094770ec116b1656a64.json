@@ -1,0 +1,213 @@
+{
+  "question": "A 34-year-old female presents to her primary care physician complaining of fatigue. Over the last three months she has experienced decreased energy and gained 7 pounds. Review of systems is negative for symptoms of depression but is positive for constipation, myalgias, and cold intolerance. Physical exam is notable for delayed deep tendon reflex relaxation. Vital signs are as follows: T 37.1 C, HR 61, BP 132/88, RR 16, and SpO2 100%. Which of the following is the best initial screening test for this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Level of anti-thyroid peroxidase (TPO) antibodies",
+    "opb": "Morning cortisol and plasma ACTH",
+    "opc": "Serum Free T4",
+    "opd": "Serum TSH",
+    "ope": "Hemoglobin and hematocrit"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fatigue",
+        "Hypothyroidism"
+      ],
+      [
+        "Myalgia",
+        "Hypothyroidism"
+      ],
+      [
+        "Cold intolerance",
+        "Hypothyroidism"
+      ],
+      [
+        "Constipation",
+        "Disease",
+        "Hypothyroidism"
+      ],
+      [
+        "Constipation",
+        "Hypertensive disease",
+        "Hypothyroidism"
+      ],
+      [
+        "Constipation",
+        "Infection",
+        "Hypothyroidism"
+      ],
+      [
+        "Relaxation",
+        "Hypothyroidism"
+      ],
+      [
+        "Acute illness",
+        "Disease",
+        "Chronic Condition"
+      ],
+      [
+        "Acute illness",
+        "COVID-19",
+        "Chronic Condition"
+      ],
+      [
+        "Acute illness",
+        "Diabetes",
+        "Chronic Condition"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Fatigue)-CAUSES->(Hypothyroidism)",
+      "(Myalgia)-CAUSES->(Hypothyroidism)",
+      "(Cold intolerance)-PREDISPOSES->(Hypothyroidism)",
+      "(Constipation)-CAUSES->(Disease)-CAUSES->(Hypothyroidism)",
+      "(Constipation)-CAUSES->(Hypertensive disease)-COMPLICATES->(Hypothyroidism)",
+      "(Constipation)-PREDISPOSES->(Infection)-CAUSES->(Hypothyroidism)",
+      "(Relaxation)-TREATS->(Hypothyroidism)",
+      "(Acute illness)-CAUSES->(Disease)-CAUSES->(Chronic Condition)",
+      "(Acute illness)-CAUSES->(COVID-19)-CAUSES->(Chronic Condition)",
+      "(Acute illness)-CAUSES->(Diabetes)-PREDISPOSES->(Chronic Condition)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hypothyroidism",
+        "Pathogenesis",
+        "Genes",
+        "Liver tissue",
+        "Thyroid Function Tests"
+      ],
+      [
+        "Hypothyroidism",
+        "Inflammation",
+        "Genes",
+        "Liver tissue",
+        "Thyroid Function Tests"
+      ],
+      [
+        "Hypothyroidism",
+        "Pathogenesis",
+        "Genes",
+        "Liver tissue",
+        "Thyroid Function Tests"
+      ],
+      [
+        "Hypothyroidism",
+        "Inflammation",
+        "Genes",
+        "Liver tissue",
+        "Thyroid Function Tests"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Hypothyroidism)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Liver tissue)-LOCATION_OF->(Thyroid Function Tests)",
+      "(Hypothyroidism)-MANIFESTATION_OF->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Liver tissue)-LOCATION_OF->(Thyroid Function Tests)",
+      "(Hypothyroidism)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Liver tissue)-LOCATION_OF->(Thyroid Function Tests)",
+      "(Hypothyroidism)-MANIFESTATION_OF->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Liver tissue)-LOCATION_OF->(Thyroid Function Tests)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fatigue)-CAUSES->(Hypothyroidism)",
+      "(Myalgia)-CAUSES->(Hypothyroidism)",
+      "(Cold intolerance)-PREDISPOSES->(Hypothyroidism)",
+      "(Relaxation)-TREATS->(Hypothyroidism)",
+      "(Constipation)-CAUSES->(Disease)-CAUSES->(Hypothyroidism)",
+      "(Constipation)-CAUSES->(Hypertensive disease)-COMPLICATES->(Hypothyroidism)",
+      "(Constipation)-PREDISPOSES->(Infection)-CAUSES->(Hypothyroidism)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Fatigue, weight gain, constipation, myalgias, cold intolerance\" -> \"Symptoms suggestive of hypothyroidism\" -> \"Consider thyroid function tests\" -> 80% CHAIN: \"Delayed deep tendon reflex relaxation\" -> \"Possible hypothyroidism affecting neuromuscular function\" -> \"Consider thyroid function tests\" -> 70% CHAIN: \"Vital signs within normal limits\" -> \"Less likely acute illness\" -> \"Consider chronic condition like hypothyroidism\" -> 80%"
+  ],
+  "enhanced_information": "The patient's symptoms of fatigue, weight gain, constipation, myalgias, and cold intolerance are suggestive of hypothyroidism. The best initial screening test for this patient is serum TSH, as it is the most sensitive and specific test for diagnosing primary hypothyroidism.",
+  "analysis": "The patient's symptoms and physical exam findings are highly suggestive of hypothyroidism. The best initial screening test for hypothyroidism is serum TSH, as it is the most sensitive and specific test for diagnosing primary hypothyroidism.",
+  "answer": "opd. serum tsh",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      8
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

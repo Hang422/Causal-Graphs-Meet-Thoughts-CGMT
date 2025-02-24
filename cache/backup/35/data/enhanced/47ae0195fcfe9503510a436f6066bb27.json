@@ -1,0 +1,157 @@
+{
+  "question": "A 48-year-old man comes to the physician for the evaluation of dyspnea and cough. He was diagnosed with esophageal cancer 10 months ago, for which he received radiochemotherapy. He has a history of atopic dermatitis and has smoked one pack of cigarettes daily for 30 years. Auscultation of the lungs shows decreased breath sounds bilaterally. Spirometry shows an FVC of 78% and an FEV1/FVC ratio of 95%. Which of the following is the most likely underlying condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Chronic bronchitis",
+    "opb": "Pulmonary emphysema",
+    "opc": "Allergic asthma",
+    "opd": "Pulmonary fibrosis",
+    "ope": "Pulmonary embolism"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Dermatitis, Atopic",
+        "Hypersensitivity"
+      ],
+      [
+        "Hypersensitivity",
+        "Extrinsic asthma NOS"
+      ],
+      [
+        "Radiochemotherapy NOS",
+        "Disease",
+        "Pulmonary Fibrosis"
+      ],
+      [
+        "Radiochemotherapy NOS",
+        "Adverse effects",
+        "Pulmonary Fibrosis"
+      ],
+      [
+        "Bronchitis, Chronic",
+        "Pathological accumulation of air in tissues",
+        "Pulmonary Emphysema"
+      ],
+      [
+        "Bronchitis, Chronic",
+        "Hypertension, Pulmonary",
+        "Pulmonary Emphysema"
+      ],
+      [
+        "Bronchitis, Chronic",
+        "Chronic Obstructive Airway Disease",
+        "Pulmonary Emphysema"
+      ],
+      [
+        "Pulmonary Emphysema",
+        "Pathological accumulation of air in tissues",
+        "Bronchitis, Chronic"
+      ],
+      [
+        "Pulmonary Emphysema",
+        "Disease",
+        "Bronchitis, Chronic"
+      ],
+      [
+        "Pulmonary Emphysema",
+        "Infection",
+        "Bronchitis, Chronic"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Dermatitis, Atopic)-CAUSES->(Hypersensitivity)",
+      "(Hypersensitivity)-CAUSES->(Extrinsic asthma NOS)",
+      "(Radiochemotherapy NOS)-CAUSES->(Disease)-CAUSES->(Pulmonary Fibrosis)",
+      "(Radiochemotherapy NOS)-CAUSES->(Adverse effects)-CAUSES->(Pulmonary Fibrosis)",
+      "(Bronchitis, Chronic)-CAUSES->(Pathological accumulation of air in tissues)-CAUSES->(Pulmonary Emphysema)",
+      "(Bronchitis, Chronic)-CAUSES->(Hypertension, Pulmonary)-CAUSES->(Pulmonary Emphysema)",
+      "(Bronchitis, Chronic)-COMPLICATES->(Chronic Obstructive Airway Disease)-CAUSES->(Pulmonary Emphysema)",
+      "(Pulmonary Emphysema)-CAUSES->(Pathological accumulation of air in tissues)-CAUSES->(Bronchitis, Chronic)",
+      "(Pulmonary Emphysema)-COMPLICATES->(Disease)-CAUSES->(Bronchitis, Chronic)",
+      "(Pulmonary Emphysema)-COMPLICATES->(Infection)-CAUSES->(Bronchitis, Chronic)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Bronchitis, Chronic)-CAUSES->(Hypertension, Pulmonary)-CAUSES->(Pulmonary Emphysema)",
+      "(Hypersensitivity)-CAUSES->(Extrinsic asthma NOS)",
+      "(Radiochemotherapy NOS)-CAUSES->(Disease)-CAUSES->(Pulmonary Fibrosis)",
+      "(Radiochemotherapy NOS)-CAUSES->(Adverse effects)-CAUSES->(Pulmonary Fibrosis)",
+      "(Dermatitis, Atopic)-CAUSES->(Hypersensitivity)",
+      "(Bronchitis, Chronic)-CAUSES->(Pathological accumulation of air in tissues)-CAUSES->(Pulmonary Emphysema)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Smoking -> Chronic inflammation in the airways -> Increased mucus production -> Chronic bronchitis -> 80% CHAIN: Smoking -> Destruction of alveolar walls -> Loss of elastic recoil -> Pulmonary emphysema -> 70% CHAIN: History of atopic dermatitis -> Increased risk of allergic reactions -> Allergic asthma -> 60% CHAIN: History of esophageal cancer with radiochemotherapy -> Increased risk of pulmonary fibrosis due to radiation-induced lung damage -> Pulmonary fibrosis -> 50% CHAIN: Dyspnea and cough -> Decreased breath sounds bilaterally -> Suggestive of chronic bronchitis or pulmonary emphysema -> Chronic bronchitis or pulmonary emphysema -> 80%"
+  ],
+  "enhanced_information": "The most likely underlying condition in this patient is chronic bronchitis, supported by the chain of smoking leading to chronic inflammation in the airways, increased mucus production, and ultimately chronic bronchitis. The evidence path linking chronic bronchitis to pulmonary emphysema is not directly relevant in this case.",
+  "analysis": "The most likely underlying condition in this patient is chronic bronchitis, given his significant smoking history, symptoms of dyspnea and cough, and decreased breath sounds on auscultation. The spirometry findings of decreased FVC and a normal FEV1/FVC ratio are consistent with obstructive lung disease, which is commonly seen in chronic bronchitis due to airway inflammation and mucus production.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

@@ -1,0 +1,134 @@
+{
+  "question": "A 73-year-old woman arrives at the emergency department due to intense central chest pain for 30 minutes this morning. She says the pain was cramping in nature and radiated down her left arm. She has a history of atrial fibrillation and type 2 diabetes mellitus. Her pulse is 98/min, respiratory rate is 19/min, temperature is 36.8°C (98.2°F), and blood pressure is 160/91 mm Hg. Cardiovascular examination shows no abnormalities. ECG is shown below. Which of the following biochemical markers would most likely be elevated and remain elevated for a week after this acute event?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Alanine aminotransferase",
+    "opb": "Aspartate transaminase",
+    "opc": "Creatinine-kinase MB",
+    "opd": "Lactate dehydrogenase (LDH)",
+    "ope": "Troponin I"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Myocardial Infarction",
+        "Conduction disorder of the heart",
+        "Electrocardiogram"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Myocardial Infarction)-CAUSES->(Conduction disorder of the heart)-CAUSES->(Electrocardiogram)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Left upper arm structure",
+        "Arteriography",
+        "Myocardial Infarction"
+      ],
+      [
+        "Left upper arm structure",
+        "Arteriography",
+        "Myocardial Infarction"
+      ],
+      [
+        "Myocardial Infarction",
+        "Shock",
+        "Troponin I"
+      ],
+      [
+        "Myocardial Infarction",
+        "Shock",
+        "Troponin I"
+      ],
+      [
+        "Electrocardiogram",
+        "Shock",
+        "Troponin I"
+      ],
+      [
+        "Electrocardiogram",
+        "Edema",
+        "Troponin I"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "DIAGNOSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Left upper arm structure)-LOCATION_OF->(Arteriography)-CAUSES->(Myocardial Infarction)",
+      "(Left upper arm structure)-LOCATION_OF->(Arteriography)-DIAGNOSES->(Myocardial Infarction)",
+      "(Myocardial Infarction)-CAUSES->(Shock)-ASSOCIATED_WITH->(Troponin I)",
+      "(Myocardial Infarction)-COMPLICATES->(Shock)-ASSOCIATED_WITH->(Troponin I)",
+      "(Electrocardiogram)-DIAGNOSES->(Shock)-ASSOCIATED_WITH->(Troponin I)",
+      "(Electrocardiogram)-DIAGNOSES->(Edema)-ASSOCIATED_WITH->(Troponin I)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Electrocardiogram)-DIAGNOSES->(Shock)-ASSOCIATED_WITH->(Troponin I)",
+      "(Electrocardiogram)-DIAGNOSES->(Edema)-ASSOCIATED_WITH->(Troponin I)",
+      "(Myocardial Infarction)-CAUSES->(Conduction disorder of the heart)-CAUSES->(Electrocardiogram)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Intense central chest pain radiating to left arm\" -> \"Suspicion of myocardial infarction\" -> \"ECG changes consistent with myocardial infarction\" -> \"Elevated Troponin I levels\" -> \"Remains elevated for a week\" -> 95%",
+    "CHAIN: \"History of atrial fibrillation and type 2 diabetes mellitus\" -> \"Increased risk for cardiovascular events\" -> \"Likelihood of elevated Troponin I levels post-acute event\" -> \"Remains elevated for a week\" -> 90%"
+  ],
+  "enhanced_information": "The most likely biochemical marker to be elevated and remain elevated for a week after this acute event of suspected myocardial infarction in a 73-year-old woman with chest pain radiating to the left arm and a history of atrial fibrillation and type 2 diabetes mellitus is Troponin I. This is supported by the standard consensus that Troponin I levels are elevated in myocardial infarction and remain elevated for an extended period post-event.",
+  "analysis": "The core medical principle is that Troponin I is a highly specific marker for myocardial injury, particularly in the context of suspected myocardial infarction. Troponin I levels rise within hours of myocardial injury, peak within 12-48 hours, and can remain elevated for up to a week post-event. Given the patient's presentation with chest pain, ECG changes suggestive of myocardial infarction, and the enhanced information provided, Troponin I is the most likely elevated and persistently elevated biochemical marker in this scenario.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4,
+      0
+    ],
+    "coverage_rates": [
+      100.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

@@ -1,0 +1,95 @@
+{
+  "question": "A 23-year-old pregnant woman (gravida 1, para 0) presents during her 16th week of pregnancy for a check-up. The course of her current pregnancy is unremarkable. She had normal results on the previous ultrasound examination. Her human chorionic gonadotropin (hCG) level measured at week 12 of pregnancy was 0.9 multiples of the normal median (MoM). She is human immunodeficiency virus (HIV), hepatitis B virus (HBV), and hepatitis C virus (HCV)-negative. She undergoes a quadruple test which shows the following results:\nSerum alpha-fetoprotein Low\nUnconjugated estriol Low\nBeta-hCG High\nInhibin A High\nThe risk of which condition indicates these results?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Trisomy 21",
+    "opb": "Trisomy 18",
+    "opc": "Neural tube defect",
+    "opd": "Congenital toxoplasmosis",
+    "ope": "Trophoblastic disease"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Estriol",
+        "Down Syndrome"
+      ],
+      [
+        "Estriol",
+        "Ovarian hyperstimulation",
+        "Trisomy"
+      ],
+      [
+        "Estriol",
+        "Edward's syndrome NOS",
+        "Trisomy"
+      ],
+      [
+        "Estriol",
+        "Down Syndrome",
+        "Trisomy"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Estriol)-PREDISPOSES->(Down Syndrome)",
+      "(Estriol)-TREATS->(Ovarian hyperstimulation)-CAUSES->(Trisomy)",
+      "(Estriol)-PREDISPOSES->(Edward's syndrome NOS)-PREDISPOSES->(Trisomy)",
+      "(Estriol)-PREDISPOSES->(Down Syndrome)-PREDISPOSES->(Trisomy)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Estriol)-PREDISPOSES->(Edward's syndrome NOS)-PREDISPOSES->(Trisomy)",
+      "(Estriol)-PREDISPOSES->(Down Syndrome)-PREDISPOSES->(Trisomy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"High beta-hCG\" -> \"Increased risk of Trisomy 21\" -> 80% CHAIN: \"High inhibin A\" -> \"Increased risk of Trisomy 21\" -> 75% CHAIN: \"Low serum alpha-fetoprotein\" -> \"Increased risk of Trisomy 21\" -> 70% CHAIN: \"Low unconjugated estriol\" -> \"Increased risk of Trisomy 21\" -> 70% CHAIN: \"High beta-hCG\" -> \"Increased risk of Trisomy 18\" -> 60% CHAIN: \"High inhibin A\" -> \"Increased risk of Trisomy 18\" -> 55% CHAIN: \"Low serum alpha-fetoprotein\" -> \"Unlikely Trisomy 18\" -> 80% CHAIN: \"Low unconjugated estriol\" -> \"Unlikely Trisomy 18\" -> 80%"
+  ],
+  "enhanced_information": "The combination of low serum alpha-fetoprotein, low unconjugated estriol, high beta-hCG, and high inhibin A in the quadruple test indicates an increased risk of Trisomy 21 in the fetus.",
+  "analysis": "The combination of low serum alpha-fetoprotein, low unconjugated estriol, high beta-hCG, and high inhibin A in the quadruple test indicates an increased risk of Trisomy 21 in the fetus. Given the specific test results and the enhanced information provided, the most likely correct option is Trisomy 21 (opa).",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

@@ -1,0 +1,104 @@
+{
+  "question": "A 23-year-old G1P0 woman presents to the emergency department with regular and painful contractions that occur every 3 minutes. She was at home cooking dinner when she experienced a deluge of clear fluid between her legs followed by painful contractions. The patient has a past medical history of obesity. Her pregnancy was not followed by an obstetrician, but she notes that she experienced abdominal pain and headaches frequently towards the end of her pregnancy. Her temperature is 99.5°F (37.5°C), blood pressure is 187/128 mmHg, pulse is 110/min, respirations are 17/min, and oxygen saturation is 98% on room air. The patient is started on magnesium sulfate and labetalol. The patient delivers her baby vaginally 2 hours later. On the labor and delivery floor, the patient is notably somnolent. Vitals are notable for respirations of 6 per minute. Physical exam reveals a somnolent woman who is minimally responsive. Cardiopulmonary exam is notable for hypopnea. Neurological exam reveals absent deep tendon reflexes and 3/5 strength in her upper and lower extremities. Which of the following is the next best step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "CT scan of the head",
+    "opb": "Discontinue current drug infusion",
+    "opc": "Remove retained fetal parts",
+    "opd": "Supportive therapy",
+    "ope": "Ultrasound"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Magnesium Sulfate",
+        "Diabetes Mellitus",
+        "Respiratory Depression"
+      ],
+      [
+        "Magnesium Sulfate",
+        "Obesity",
+        "Respiratory Depression"
+      ],
+      [
+        "Magnesium Sulfate",
+        "Pulmonary Edema",
+        "Respiratory Depression"
+      ],
+      [
+        "Neuromuscular inhibition",
+        "Respiratory Depression"
+      ],
+      [
+        "Drowsiness",
+        "Respiratory Failure"
+      ]
+    ],
+    "relationships": [
+      [
+        "COMPLICATES",
+        "PREDISPOSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Magnesium Sulfate)-COMPLICATES->(Diabetes Mellitus)-PREDISPOSES->(Respiratory Depression)",
+      "(Magnesium Sulfate)-TREATS->(Obesity)-CAUSES->(Respiratory Depression)",
+      "(Magnesium Sulfate)-TREATS->(Pulmonary Edema)-CAUSES->(Respiratory Depression)",
+      "(Neuromuscular inhibition)-CAUSES->(Respiratory Depression)",
+      "(Drowsiness)-CAUSES->(Respiratory Failure)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Magnesium Sulfate)-TREATS->(Obesity)-CAUSES->(Respiratory Depression)",
+      "(Drowsiness)-CAUSES->(Respiratory Failure)",
+      "(Magnesium Sulfate)-COMPLICATES->(Diabetes Mellitus)-PREDISPOSES->(Respiratory Depression)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Magnesium sulfate administration -> respiratory depression -> decreased respiratory rate -> 80% CHAIN: Labetalol administration -> hypotension -> decreased perfusion to the brain -> altered mental status -> 75% CHAIN: Respiratory rate of 6 per minute -> respiratory acidosis -> altered mental status -> 70% CHAIN: Absent deep tendon reflexes -> neuromuscular blockade -> respiratory depression -> altered mental status -> 80% CHAIN: Somnolence and minimally responsive -> impending respiratory failure -> 75% CHAIN: Hypopnea on cardiopulmonary exam -> respiratory insufficiency -> 70% CHAIN: Supportive therapy -> respiratory support -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with somnolence, respiratory depression, and altered mental status is likely due to the combined effects of magnesium sulfate and labetalol leading to respiratory depression and impending respiratory failure. The next best step in management would be to discontinue the current drug infusion to address the respiratory depression and prevent further deterioration.",
+  "analysis": "The patient's presentation with somnolence, respiratory depression, altered mental status, absent deep tendon reflexes, and weakness in extremities is concerning for magnesium sulfate and labetalol toxicity. The enhanced information supports discontinuing the current drug infusion to address the respiratory depression and prevent further deterioration. This step aligns with the core medical principle of managing drug-induced respiratory depression.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

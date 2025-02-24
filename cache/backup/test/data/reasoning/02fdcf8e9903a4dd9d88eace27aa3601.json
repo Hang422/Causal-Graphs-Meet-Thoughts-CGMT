@@ -1,0 +1,166 @@
+{
+  "question": "A 67-year-old man presents to your office with a chief complaint of constipation and many other perturbing minor medical concerns. He reports tiring easily, which he attributes to old age and years of persistent pain in his back and ribs. A complete blood count shows low hemoglobin and elevated serum creatinine. A peripheral blood smear shows stacks of red blood cells among other findings, and serum electropheresis reveals an abnormal concentration of protein resulting in a spike. Which of the following additional findings would you expect to see in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Early satiety and splenomegaly",
+    "opb": "Smudge cells on peripheral smear",
+    "opc": "An elevated PSA and a nodular prostate",
+    "opd": "Bence-Jones proteins in the urine",
+    "ope": "No additional findings - normal aging explains symptoms"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Decreased hemoglobin",
+        "Disease",
+        "Abnormal renal function"
+      ],
+      [
+        "Decreased hemoglobin",
+        "Kidney Diseases",
+        "Abnormal renal function"
+      ],
+      [
+        "Decreased hemoglobin",
+        "Ischemia",
+        "Abnormal renal function"
+      ],
+      [
+        "Proteins",
+        "Disease",
+        "Hyperplasia",
+        "Benign Monoclonal Gammopathies"
+      ],
+      [
+        "Proteins",
+        "Anorexia",
+        "Hyperplasia",
+        "Benign Monoclonal Gammopathies"
+      ],
+      [
+        "Proteins",
+        "Disease",
+        "Leukocytosis",
+        "Benign Monoclonal Gammopathies"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Decreased hemoglobin)-PREDISPOSES->(Disease)-CAUSES->(Abnormal renal function)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Kidney Diseases)-CAUSES->(Abnormal renal function)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Ischemia)-CAUSES->(Abnormal renal function)",
+      "(Proteins)-CAUSES->(Disease)-CAUSES->(Hyperplasia)-CAUSES->(Benign Monoclonal Gammopathies)",
+      "(Proteins)-CAUSES->(Anorexia)-CAUSES->(Hyperplasia)-CAUSES->(Benign Monoclonal Gammopathies)",
+      "(Proteins)-CAUSES->(Disease)-CAUSES->(Leukocytosis)-CAUSES->(Benign Monoclonal Gammopathies)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "SERUM CREATININE TESTS",
+        "Abnormal renal function"
+      ],
+      [
+        "Serum protein electrophoresis",
+        "Disease",
+        "Systemic amyloidosis",
+        "Benign Monoclonal Gammopathies"
+      ],
+      [
+        "Serum protein electrophoresis",
+        "Disease",
+        "Systemic amyloidosis",
+        "Benign Monoclonal Gammopathies"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "DIAGNOSES",
+        "PREDISPOSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(SERUM CREATININE TESTS)-DIAGNOSES->(Abnormal renal function)",
+      "(Serum protein electrophoresis)-DIAGNOSES->(Disease)-CAUSES->(Systemic amyloidosis)-COMPLICATES->(Benign Monoclonal Gammopathies)",
+      "(Serum protein electrophoresis)-DIAGNOSES->(Disease)-PREDISPOSES->(Systemic amyloidosis)-COMPLICATES->(Benign Monoclonal Gammopathies)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(SERUM CREATININE TESTS)-DIAGNOSES->(Abnormal renal function)",
+      "(Proteins)-CAUSES->(Disease)-CAUSES->(Hyperplasia)-CAUSES->(Benign Monoclonal Gammopathies)",
+      "(Proteins)-CAUSES->(Anorexia)-CAUSES->(Hyperplasia)-CAUSES->(Benign Monoclonal Gammopathies)",
+      "(Proteins)-CAUSES->(Disease)-CAUSES->(Leukocytosis)-CAUSES->(Benign Monoclonal Gammopathies)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Disease)-CAUSES->(Abnormal renal function)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Constipation\" -> \"tiring easily\" -> \"persistent pain in back and ribs\" -> \"low hemoglobin\" -> \"elevated serum creatinine\" -> \"stacks of red blood cells\" -> \"abnormal protein spike\" -> \"multiple myeloma\" -> \"Bence-Jones proteins in the urine\" -> 95%",
+    "CHAIN: \"Constipation\" -> \"tiring easily\" -> \"persistent pain in back and ribs\" -> \"low hemoglobin\" -> \"elevated serum creatinine\" -> \"stacks of red blood cells\" -> \"abnormal protein spike\" -> \"possible multiple myeloma\" -> \"Bence-Jones proteins in the urine\" -> 90%",
+    "CHAIN: \"Constipation\" -> \"tiring easily\" -> \"persistent pain in back and ribs\" -> \"low hemoglobin\" -> \"elevated serum creatinine\" -> \"stacks of red blood cells\" -> \"abnormal protein spike\" -> \"possible multiple myeloma\" -> \"early satiety and splenomegaly\" -> 60%",
+    "CHAIN: \"Constipation\" -> \"tiring easily\" -> \"persistent pain in back and ribs\" -> \"low hemoglobin\" -> \"elevated serum creatinine\" -> \"stacks of red blood cells\" -> \"abnormal protein spike\" -> \"possible multiple myeloma\" -> \"smudge cells on peripheral smear\" -> 50%",
+    "CHAIN: \"Constipation\" -> \"tiring easily\" -> \"persistent pain in back and ribs\" -> \"low hemoglobin\" -> \"elevated serum creatinine\" -> \"stacks of red blood cells\" -> \"abnormal protein spike\" -> \"possible multiple myeloma\" -> \"elevated PSA and nodular prostate\" -> 40%",
+    "CHAIN: \"Constipation\" -> \"tiring easily\" -> \"persistent pain in back and ribs\" -> \"low hemoglobin\" -> \"elevated serum creatinine\" -> \"stacks of red blood cells\" -> \"abnormal protein spike\" -> \"normal aging\" -> \"no additional findings\" -> 20%"
+  ],
+  "enhanced_information": "The patient's presentation with low hemoglobin, elevated serum creatinine, abnormal protein spike on electrophoresis, and stacks of red blood cells on peripheral smear raises suspicion of multiple myeloma. Additional findings expected would include Bence-Jones proteins in the urine, supporting the diagnosis of multiple myeloma.",
+  "analysis": "The patient's symptoms and laboratory findings are suggestive of multiple myeloma. The presence of 'stacks of red blood cells' on the peripheral smear indicates rouleaux formation, which is common in multiple myeloma due to increased serum proteins. The abnormal protein spike on serum electrophoresis is likely due to a monoclonal gammopathy, also characteristic of multiple myeloma. The elevated serum creatinine suggests renal involvement, which can occur in multiple myeloma due to light chain deposition. Bence-Jones proteins, which are free light chains, are often found in the urine of patients with multiple myeloma.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

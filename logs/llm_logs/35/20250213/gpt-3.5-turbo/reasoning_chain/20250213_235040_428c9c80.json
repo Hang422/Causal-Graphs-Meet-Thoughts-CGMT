@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_235040",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "428c9c80",
+  "question_text": "A 32-year-old G6P1 woman presents to the obstetrician for a prenatal visit. She is 8 weeks pregnant. She has had 4 spontaneous abortions in the past, all during the first trimester. She tells you she is worried about having another miscarriage. She has been keeping to a strictly organic diet and takes a daily prenatal vitamin. She used to smoke a pack a day since she was 16 but quit after her first miscarriage. On a previous visit following fetal loss, the patient tested positive for VDRL and negative for FTA-ABS. Labs are drawn, as shown below:\n\nLeukocyte count: 7,800/mm^3\nPlatelet count: 230,000/mm^3\nHemoglobin: 12.6 g/dL\nProthrombin time: 13 seconds\nActivated partial thromboplastin time: 48 seconds\nInternational normalized ratio: 1.2\n\nWhich of the following is the best next step in management?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 32-year-old G6P1 woman presents to the obstetrician for a prenatal visit. She is 8 weeks pregnant. She has had 4 spontaneous abortions in the past, all during the first trimester. She tells you she is worried about having another miscarriage. She has been keeping to a strictly organic diet and takes a daily prenatal vitamin. She used to smoke a pack a day since she was 16 but quit after her first miscarriage. On a previous visit following fetal loss, the patient tested positive for VDRL and negative for FTA-ABS. Labs are drawn, as shown below:\n\nLeukocyte count: 7,800/mm^3\nPlatelet count: 230,000/mm^3\nHemoglobin: 12.6 g/dL\nProthrombin time: 13 seconds\nActivated partial thromboplastin time: 48 seconds\nInternational normalized ratio: 1.2\n\nWhich of the following is the best next step in management?\n\n            ### Options\n    opa. Corticosteroids\nopb. Low molecular weight heparin\nopc. Intramuscular benzathine penicillin G\nopd. Vitamin K\nope. Warfarin\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"History of spontaneous abortions\" -> \"Increased risk of miscarriage\" -> \"Concern for recurrent pregnancy loss\" -> 80%\nCHAIN: \"Positive VDRL\" -> \"Possible syphilis infection\" -> \"Risk of adverse pregnancy outcomes\" -> 70%\nCHAIN: \"Negative FTA-ABS\" -> \"Less likely to have syphilis\" -> \"Possible false-positive VDRL\" -> 60%\nCHAIN: \"Low platelet count\" -> \"Possible thrombocytopenia\" -> \"Risk of bleeding complications\" -> 70%\nCHAIN: \"Elevated activated partial thromboplastin time\" -> \"Possible coagulation disorder\" -> \"Increased risk of thrombosis\" -> 60%\nCHAIN: \"Normal prothrombin time\" -> \"Less likely to have a clotting factor deficiency\" -> \"Less risk of bleeding\" -> 70%\nCHAIN: \"Management decision based on underlying cause\" -> \"Tailored approach to prevent miscarriage\" -> 80%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

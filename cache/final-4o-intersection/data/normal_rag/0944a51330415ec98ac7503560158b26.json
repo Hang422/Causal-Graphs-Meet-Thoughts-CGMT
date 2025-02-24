@@ -1,0 +1,121 @@
+{
+  "question": "A 25-year-old G1P0 woman at 22 weeks’ gestation presents to the emergency department with persistent vomiting over the past 8 weeks which has resulted in 5.5 kg (12.1 lb) of unintentional weight loss. She has not received any routine prenatal care to this point. She reports having tried diet modification and over-the-counter remedies with no improvement. The patient's blood pressure is 103/75 mm Hg, pulse is 93/min, respiratory rate is 15/min, and temperature is 36.7°C (98.1°F). Physical examination reveals an anxious and fatigued-appearing young woman, but whose findings are otherwise within normal limits. What is the next and most important step in her management?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Obtain a basic electrolyte panel",
+    "opb": "Obtain a beta hCG and pelvic ultrasound",
+    "opc": "Begin treatment with vitamin B6",
+    "opd": "Begin treatment with metoclopramide",
+    "ope": "Admit and begin intravenous rehydration"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Persistent vomiting NOS",
+        "Symptoms",
+        "Hyperemesis Gravidarum"
+      ],
+      [
+        "Persistent vomiting NOS",
+        "Infection",
+        "Hyperemesis Gravidarum"
+      ],
+      [
+        "Hyperemesis Gravidarum",
+        "Pregnancy Complications",
+        "Chorionic Gonadotropin, beta Subunit, Human"
+      ],
+      [
+        "Hyperemesis Gravidarum",
+        "Placenta Diseases",
+        "Chorionic Gonadotropin, beta Subunit, Human"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "CAUSES"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Persistent vomiting NOS)-ISA->(Symptoms)-CAUSES->(Hyperemesis Gravidarum)",
+      "(Persistent vomiting NOS)-ASSOCIATED_WITH->(Infection)-CAUSES->(Hyperemesis Gravidarum)",
+      "(Hyperemesis Gravidarum)-ISA->(Pregnancy Complications)-ASSOCIATED_WITH->(Chorionic Gonadotropin, beta Subunit, Human)",
+      "(Hyperemesis Gravidarum)-ASSOCIATED_WITH->(Placenta Diseases)-ASSOCIATED_WITH->(Chorionic Gonadotropin, beta Subunit, Human)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hyperemesis Gravidarum)-ISA->(Pregnancy Complications)-ASSOCIATED_WITH->(Chorionic Gonadotropin, beta Subunit, Human)",
+      "(Hyperemesis Gravidarum)-ASSOCIATED_WITH->(Placenta Diseases)-ASSOCIATED_WITH->(Chorionic Gonadotropin, beta Subunit, Human)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Persistent vomiting\" -> \"Electrolyte imbalance risk\" -> \"Obtain a basic electrolyte panel\" -> 85%",
+    "CHAIN: \"Persistent vomiting\" -> \"Dehydration risk\" -> \"Admit and begin intravenous rehydration\" -> 90%",
+    "CHAIN: \"Persistent vomiting\" -> \"Hyperemesis gravidarum suspicion\" -> \"Obtain a beta hCG and pelvic ultrasound\" -> 75%",
+    "CHAIN: \"Persistent vomiting\" -> \"Nutritional deficiency risk\" -> \"Begin treatment with vitamin B6\" -> 70%",
+    "CHAIN: \"Persistent vomiting\" -> \"Nausea management needed\" -> \"Begin treatment with metoclopramide\" -> 65%"
+  ],
+  "enhanced_information": "The patient presents with persistent vomiting, significant weight loss, and dehydration risk, which are indicative of hyperemesis gravidarum, a severe form of nausea and vomiting in pregnancy. The most immediate concern is dehydration, which requires prompt management. Standard medical consensus prioritizes rehydration in such cases. Therefore, the most important next step is to admit the patient and begin intravenous rehydration. While obtaining a basic electrolyte panel is important to assess for imbalances, and vitamin B6 or metoclopramide can be considered for symptom management, these are secondary to addressing the acute dehydration. The retrieved evidence paths confirm the association of hyperemesis gravidarum with elevated beta hCG levels, but immediate rehydration takes precedence in acute management.",
+  "analysis": "The patient is presenting with symptoms consistent with hyperemesis gravidarum, which is characterized by severe and persistent nausea and vomiting during pregnancy, leading to weight loss and potential electrolyte imbalances. The most immediate concern in such cases is to address dehydration and electrolyte disturbances. While obtaining a basic electrolyte panel (opa) is important for assessing the extent of these imbalances, the most critical and immediate step is to stabilize the patient through intravenous rehydration (ope). This aligns with standard medical practice for managing hyperemesis gravidarum, where rehydration is prioritized to prevent complications from dehydration.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      2,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      100.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Diet therapy TREATS Proteinuria",
+    "Intracellular Membranes LOCATION_OF Microscopy, Immunoelectron",
+    "Medical therapy TREATS Hyperemesis Gravidarum",
+    "Infectious disease of lung COMPLICATES Influenza",
+    "ramucirumab PREVENTS Proliferation (morphologic abnormality)",
+    "Maternal hypertension COMPLICATES Disease",
+    "Obesity COMPLICATES Disorder of pregnancy",
+    "Tumor Burden DIAGNOSES Iron deficiency",
+    "Chinese herbs TREATS Cerebral disorder",
+    "Levodopa TREATS Stuttering, Developmental",
+    "Liver LOCATION_OF Aeromonas sobria"
+  ]
+}

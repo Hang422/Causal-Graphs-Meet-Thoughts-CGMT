@@ -1,0 +1,115 @@
+{
+  "question": "A 57-year-old man presents to his family physician for a routine exam. He feels well and reports no new complaints since his visit last year. Last year, he had a colonoscopy which showed no polyps, a low dose chest computerized tomography (CT) scan that showed no masses, and routine labs which showed a fasting glucose of 93 mg/dL. He is relatively sedentary and has a body mass index (BMI) of 24 kg/m^2. He has a history of using methamphetamines, alcohol (4-5 drinks per day since age 30), and tobacco (1 pack per day since age 18), but he joined Alcoholics Anonymous and has been in recovery, not using any of these for the past 7 years. Which of the following is indicated at this time?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Abdominal ultrasound",
+    "opb": "Chest computerized tomography (CT) scan",
+    "opc": "Colonoscopy",
+    "opd": "Chest radiograph",
+    "ope": "Fasting glucose"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Methamphetamine",
+        "Disease",
+        "Cardiovascular Diseases"
+      ],
+      [
+        "Methamphetamine",
+        "Syphilis",
+        "Cardiovascular Diseases"
+      ],
+      [
+        "Methamphetamine",
+        "Anxiety",
+        "Cardiovascular Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Methamphetamine)-TREATS->(Disease)-CAUSES->(Cardiovascular Diseases)",
+      "(Methamphetamine)-TREATS->(Syphilis)-CAUSES->(Cardiovascular Diseases)",
+      "(Methamphetamine)-TREATS->(Anxiety)-CAUSES->(Cardiovascular Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Cardiovascular Diseases",
+        "Genes",
+        "Lung",
+        "Chest radiograph"
+      ],
+      [
+        "Cardiovascular Diseases",
+        "Genes",
+        "Intestines, Small",
+        "Chest radiograph"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Cardiovascular Diseases)-ASSOCIATED_WITH->(Genes)-PART_OF->(Lung)-LOCATION_OF->(Chest radiograph)",
+      "(Cardiovascular Diseases)-ASSOCIATED_WITH->(Genes)-PART_OF->(Intestines, Small)-LOCATION_OF->(Chest radiograph)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Methamphetamine)-TREATS->(Disease)-CAUSES->(Cardiovascular Diseases)",
+      "(Methamphetamine)-TREATS->(Syphilis)-CAUSES->(Cardiovascular Diseases)",
+      "(Methamphetamine)-TREATS->(Anxiety)-CAUSES->(Cardiovascular Diseases)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"History of alcohol and tobacco use\" -> \"Increased risk for various cancers\" -> \"Indication for abdominal ultrasound\" -> 80% CHAIN: \"History of methamphetamine use\" -> \"Increased risk for cardiovascular diseases\" -> \"Indication for chest radiograph\" -> 75% CHAIN: \"History of alcohol and tobacco use\" -> \"Increased risk for lung cancer\" -> \"Indication for chest radiograph\" -> 70% CHAIN: \"History of alcohol and tobacco use\" -> \"Increased risk for diabetes\" -> \"Indication for fasting glucose test\" -> 85% CHAIN: \"History of alcohol and tobacco use\" -> \"Increased risk for colorectal cancer\" -> \"Indication for colonoscopy\" -> 80%"
+  ],
+  "enhanced_information": "The patient's history of alcohol and tobacco use puts him at increased risk for various conditions, including lung cancer, colorectal cancer, and diabetes. Given his history, an indication for a fasting glucose test is appropriate to assess for diabetes risk. Therefore, the fasting glucose test (ope) is indicated at this time.",
+  "analysis": "Given the patient's history of alcohol and tobacco use, he is at increased risk for diabetes. Considering his fasting glucose level from last year was 93 mg/dL, it is appropriate to reevaluate his fasting glucose at this time to assess for diabetes risk. This aligns with standard medical practice to monitor for diabetes in high-risk individuals.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

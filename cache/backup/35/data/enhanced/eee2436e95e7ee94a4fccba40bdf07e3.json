@@ -1,0 +1,152 @@
+{
+  "question": "A 62-year-old man with gastroesophageal reflux disease and osteoarthritis is brought to the emergency department because of a 1-hour history of severe, stabbing epigastric pain. For the last 6 months, he has had progressively worsening right knee pain, for which he takes ibuprofen several times a day. He has smoked half a pack of cigarettes daily for 25 years. The lungs are clear to auscultation. An ECG shows sinus tachycardia without ST-segment elevations or depressions. This patient is most likely to have referred pain in which of the following locations?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Right scapula",
+    "opb": "Left shoulder",
+    "opc": "Umbilicus",
+    "opd": "Left jaw",
+    "ope": "Right groin"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pain",
+        "Musculoskeletal torsion, function",
+        "Umbilicus (Anatomy)"
+      ],
+      [
+        "Ibuprofen",
+        "Pain"
+      ],
+      [
+        "Pain",
+        "Disease",
+        "uptake",
+        "Right scapula"
+      ],
+      [
+        "Pain",
+        "Obesity",
+        "uptake",
+        "Right scapula"
+      ],
+      [
+        "Pain",
+        "Infection",
+        "uptake",
+        "Right scapula"
+      ],
+      [
+        "Tachycardia, Sinus",
+        "Symptoms",
+        "Pain"
+      ],
+      [
+        "Tachycardia, Sinus",
+        "Ventricular Fibrillation",
+        "Pain"
+      ],
+      [
+        "Tachycardia, Sinus",
+        "Syncope",
+        "Pain"
+      ],
+      [
+        "Electrocardiogram",
+        "Pain"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREVENTS"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pain)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(Umbilicus (Anatomy))",
+      "(Ibuprofen)-PREVENTS->(Pain)",
+      "(Pain)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Right scapula)",
+      "(Pain)-CAUSES->(Obesity)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Right scapula)",
+      "(Pain)-CAUSES->(Infection)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Right scapula)",
+      "(Tachycardia, Sinus)-CAUSES->(Symptoms)-CAUSES->(Pain)",
+      "(Tachycardia, Sinus)-CAUSES->(Ventricular Fibrillation)-CAUSES->(Pain)",
+      "(Tachycardia, Sinus)-CAUSES->(Syncope)-CAUSES->(Pain)",
+      "(Electrocardiogram)-CAUSES->(Pain)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ibuprofen)-PREVENTS->(Pain)",
+      "(Electrocardiogram)-CAUSES->(Pain)",
+      "(Pain)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Right scapula)",
+      "(Pain)-CAUSES->(Obesity)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Right scapula)",
+      "(Pain)-CAUSES->(Infection)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Right scapula)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Severe, stabbing epigastric pain\" -> \"Possible referred pain from the abdomen\" -> \"Umbilicus\" -> 80% CHAIN: \"Right knee pain worsened by ibuprofen\" -> \"Possible referred pain from the knee joint\" -> \"Right scapula\" -> 70% CHAIN: \"Sinus tachycardia on ECG\" -> \"Possible referred pain from the heart\" -> \"Left shoulder\" -> 75% CHAIN: \"History of smoking\" -> \"Possible referred pain from the lungs or heart\" -> \"Left shoulder\" -> 80%"
+  ],
+  "enhanced_information": "The patient is most likely to have referred pain in the umbilicus region due to severe, stabbing epigastric pain. The reasoning chains and evidence paths support this conclusion, with the possibility of referred pain from the abdomen being a common cause of epigastric pain.",
+  "analysis": "The core medical principle guiding this scenario is understanding referred pain patterns. Given the patient's presentation of severe, stabbing epigastric pain, the most likely source of referred pain aligns with the enhanced information provided, indicating the umbilicus region as the probable location. Referred pain from the abdomen can often manifest in the epigastric area and radiate to the umbilicus. This is further supported by the absence of specific findings pointing to other locations in the clinical history provided.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

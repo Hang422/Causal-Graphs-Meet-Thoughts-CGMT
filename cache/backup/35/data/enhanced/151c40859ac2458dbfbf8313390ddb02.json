@@ -1,0 +1,174 @@
+{
+  "question": "A 8-month-old girl is brought to the emergency department because of fever, vomiting, and diarrhea for 3 days. Her parents report at least 10 watery stools daily. She has had three upper respiratory tract infections since she started daycare 2 months ago, but has otherwise been developing normally. Her mother has a history of celiac disease. The patient is at the 57th percentile for height and the 65th percentile for weight. Her immunizations are incomplete. Her temperature is 38.5°C (101.3°F), pulse is 145/min, and blood pressure is 92/54 mm Hg. Examination shows dry mucous membranes and decreased skin turgor. Bowel sounds are hyperactive. A complete blood count and serum concentrations of glucose, urea nitrogen, and creatinine are within the reference range; there is hypokalemia. In addition to intravenous fluid resuscitation, which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Sonography of the abdomen",
+    "opb": "Administration of antidiarrheal medication",
+    "opc": "Blood cultures",
+    "opd": "Examination of the stool for ova and parasites",
+    "ope": "Enzyme immunoassay of stool"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fever",
+        "Disease",
+        "Fluid loss"
+      ],
+      [
+        "Fever",
+        "Dehydration",
+        "Fluid loss"
+      ],
+      [
+        "Fever",
+        "Diarrhea",
+        "Fluid loss"
+      ],
+      [
+        "Diarrhea",
+        "Fluid loss"
+      ],
+      [
+        "Vomiting",
+        "Disease",
+        "Fluid loss"
+      ],
+      [
+        "Vomiting",
+        "Gastroenteritis",
+        "Fluid loss"
+      ],
+      [
+        "Vomiting",
+        "Diabetic Ketoacidosis",
+        "Fluid loss"
+      ],
+      [
+        "Celiac Disease",
+        "gluten-sensitivity"
+      ],
+      [
+        "Septicemia",
+        "Hypertension, Pulmonary",
+        "Rheumatic disease of heart valve",
+        "Blood culture"
+      ],
+      [
+        "Septicemia",
+        "Inflammation",
+        "Rheumatic disease of heart valve",
+        "Blood culture"
+      ],
+      [
+        "Septicemia",
+        "Rheumatic Fever",
+        "Rheumatic disease of heart valve",
+        "Blood culture"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Fluid loss)",
+      "(Fever)-CAUSES->(Dehydration)-CAUSES->(Fluid loss)",
+      "(Fever)-CAUSES->(Diarrhea)-MANIFESTATION_OF->(Fluid loss)",
+      "(Diarrhea)-MANIFESTATION_OF->(Fluid loss)",
+      "(Vomiting)-CAUSES->(Disease)-CAUSES->(Fluid loss)",
+      "(Vomiting)-CAUSES->(Gastroenteritis)-CAUSES->(Fluid loss)",
+      "(Vomiting)-CAUSES->(Diabetic Ketoacidosis)-CAUSES->(Fluid loss)",
+      "(Celiac Disease)-CAUSES->(gluten-sensitivity)",
+      "(Septicemia)-CAUSES->(Hypertension, Pulmonary)-CAUSES->(Rheumatic disease of heart valve)-CAUSES->(Blood culture)",
+      "(Septicemia)-CAUSES->(Inflammation)-CAUSES->(Rheumatic disease of heart valve)-CAUSES->(Blood culture)",
+      "(Septicemia)-CAUSES->(Rheumatic Fever)-CAUSES->(Rheumatic disease of heart valve)-CAUSES->(Blood culture)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Diarrhea)-MANIFESTATION_OF->(Fluid loss)",
+      "(Celiac Disease)-CAUSES->(gluten-sensitivity)",
+      "(Vomiting)-CAUSES->(Diabetic Ketoacidosis)-CAUSES->(Fluid loss)",
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Fluid loss)",
+      "(Fever)-CAUSES->(Dehydration)-CAUSES->(Fluid loss)",
+      "(Vomiting)-CAUSES->(Disease)-CAUSES->(Fluid loss)",
+      "(Vomiting)-CAUSES->(Gastroenteritis)-CAUSES->(Fluid loss)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Fever, vomiting, diarrhea\" -> \"Dehydration due to fluid loss\" -> \"Dry mucous membranes, decreased skin turgor\" -> \"Hypokalemia\" -> \"Intravenous fluid resuscitation indicated\" -> 95% CHAIN: \"History of celiac disease in mother\" -> \"Possible genetic predisposition\" -> \"Consideration for celiac disease in the patient\" -> \"Enzyme immunoassay of stool for gluten sensitivity\" -> 80% CHAIN: \"Incomplete immunizations\" -> \"Increased susceptibility to infections\" -> \"Consideration for sepsis\" -> \"Blood cultures to rule out systemic infection\" -> 95%"
+  ],
+  "enhanced_information": "The patient presents with fever, vomiting, and diarrhea leading to dehydration and hypokalemia, necessitating intravenous fluid resuscitation. Given the history of celiac disease in the mother, there is a consideration for celiac disease in the patient, supporting the use of an enzyme immunoassay of stool for gluten sensitivity. Blood cultures are indicated to rule out systemic infection due to incomplete immunizations and increased susceptibility to infections.",
+  "analysis": "The patient's presentation with fever, vomiting, diarrhea, and hypokalemia suggests a gastrointestinal issue, possibly related to celiac disease given the family history. The most appropriate next step would be to perform an enzyme immunoassay of stool to assess for gluten sensitivity, which aligns with the enhanced information provided. Blood cultures are also indicated to rule out systemic infection due to incomplete immunizations and increased susceptibility to infections.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

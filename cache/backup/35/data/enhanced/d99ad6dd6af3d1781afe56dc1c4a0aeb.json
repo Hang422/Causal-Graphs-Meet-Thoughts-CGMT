@@ -1,0 +1,160 @@
+{
+  "question": "A 50-year-old man presents to the emergency department with a severe headache. The patient reports that it started approx. 2 hours ago and has steadily worsened. He describes it as a stabbing pain localized behind his left eye. The patient reports that he has been having similar headaches several times a day for the past week, most often at night. He denies any nausea, vomiting, and visual or auditory disturbances. He has no significant past medical history. Current medications are a multivitamin and caffeine pills. The patient reports regular daily alcohol use but does not smoke. His temperature is 37.0°C (98.6°F), the blood pressure is 120/70 mm Hg, the pulse is 85/min, the respiratory rate is 18/min, and the oxygen saturation is 99% on room air. The patient is in moderate distress from the pain. The physical exam is significant for unilateral diaphoresis on the left forehead, left-sided rhinorrhea, and pronounced lacrimation of the left eye. The remainder of the physical exam is normal. Laboratory tests are normal. Non-contrast CT of the head shows no evidence of intracranial masses or hemorrhage. High flow oxygen and fluid resuscitation are initiated. Ibuprofen 200 mg orally is administered. Despite these interventions, the patient continues to be in significant pain. What is the next best step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Verapamil",
+    "opb": "CT angiography",
+    "opc": "Administer subcutaneous sumatriptan",
+    "opd": "RF ablation of the left trigeminal nerve",
+    "ope": "Deep brain stimulation of the posterior inferior hypothalamus"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Stabbing pain",
+        "Pain",
+        "Musculoskeletal torsion, function",
+        "Entire right hand",
+        "Left eye structure"
+      ],
+      [
+        "Stabbing pain",
+        "Pain",
+        "Vasodilation",
+        "Right cerebral hemisphere",
+        "Left eye structure"
+      ],
+      [
+        "Left eye structure",
+        "Eye",
+        "Cluster Headache"
+      ],
+      [
+        "Left eye structure",
+        "Headache",
+        "Cluster Headache"
+      ],
+      [
+        "Cluster Headache",
+        "Pathologic Processes",
+        "Genes",
+        "Body tissue",
+        "Fluid resuscitation"
+      ],
+      [
+        "Cluster Headache",
+        "Pathologic Processes",
+        "Genes",
+        "Muscle - Striated (Skeletal) (MMHCC)",
+        "Fluid resuscitation"
+      ],
+      [
+        "Fluid resuscitation",
+        "Disease",
+        "Escherichia coli",
+        "Ibuprofen"
+      ],
+      [
+        "Fluid resuscitation",
+        "Symptoms",
+        "Escherichia coli",
+        "Ibuprofen"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "PART_OF"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Stabbing pain)-ISA->(Pain)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(Entire right hand)-PART_OF->(Left eye structure)",
+      "(Stabbing pain)-ISA->(Pain)-MANIFESTATION_OF->(Vasodilation)-PROCESS_OF->(Right cerebral hemisphere)-PART_OF->(Left eye structure)",
+      "(Left eye structure)-PART_OF->(Eye)-LOCATION_OF->(Cluster Headache)",
+      "(Left eye structure)-LOCATION_OF->(Headache)-CAUSES->(Cluster Headache)",
+      "(Cluster Headache)-ISA->(Pathologic Processes)-ASSOCIATED_WITH->(Genes)-PART_OF->(Body tissue)-LOCATION_OF->(Fluid resuscitation)",
+      "(Cluster Headache)-ISA->(Pathologic Processes)-ASSOCIATED_WITH->(Genes)-PART_OF->(Muscle - Striated (Skeletal) (MMHCC))-LOCATION_OF->(Fluid resuscitation)",
+      "(Fluid resuscitation)-TREATS->(Disease)-PROCESS_OF->(Escherichia coli)-LOCATION_OF->(Ibuprofen)",
+      "(Fluid resuscitation)-TREATS->(Symptoms)-ASSOCIATED_WITH->(Escherichia coli)-LOCATION_OF->(Ibuprofen)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fluid resuscitation)-TREATS->(Symptoms)-ASSOCIATED_WITH->(Escherichia coli)-LOCATION_OF->(Ibuprofen)",
+      "(Left eye structure)-LOCATION_OF->(Headache)-CAUSES->(Cluster Headache)",
+      "(Fluid resuscitation)-TREATS->(Disease)-PROCESS_OF->(Escherichia coli)-LOCATION_OF->(Ibuprofen)",
+      "(Stabbing pain)-ISA->(Pain)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(Entire right hand)-PART_OF->(Left eye structure)",
+      "(Stabbing pain)-ISA->(Pain)-MANIFESTATION_OF->(Vasodilation)-PROCESS_OF->(Right cerebral hemisphere)-PART_OF->(Left eye structure)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Severe headache with stabbing pain behind the left eye\" -> \"Unilateral diaphoresis on the left forehead, left-sided rhinorrhea, and pronounced lacrimation of the left eye\" -> \"Cluster headache presentation\" -> 80% CHAIN: \"Cluster headache suspected\" -> \"Initial management with high flow oxygen and fluid resuscitation\" -> \"Ibuprofen 200 mg orally administered\" -> \"Persistent significant pain despite initial interventions\" -> 70% CHAIN: \"Persistent significant pain in cluster headache\" -> \"Consideration for specific cluster headache treatment\" -> \"Administer subcutaneous sumatriptan\" -> 75% CHAIN: \"Administer subcutaneous sumatriptan\" -> \"Potential relief of cluster headache pain\" -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with severe headache, stabbing pain behind the left eye, unilateral diaphoresis, rhinorrhea, and lacrimation is consistent with cluster headache. Initial management with high flow oxygen, fluid resuscitation, and ibuprofen has not provided relief. The next best step in management is to administer subcutaneous sumatriptan, a specific treatment for cluster headaches, which has a high likelihood of providing pain relief.",
+  "analysis": "The patient's presentation is consistent with cluster headache, characterized by severe unilateral pain, autonomic symptoms, and a pattern of attacks. Initial management with oxygen, fluids, and ibuprofen has not been effective. Subcutaneous sumatriptan is a specific treatment for cluster headaches and has a high likelihood of providing pain relief. Verapamil is a preventive medication for cluster headaches but is not the immediate next step in acute management. CT angiography is not indicated in this scenario. RF ablation and deep brain stimulation are not first-line treatments for cluster headaches.",
+  "answer": "opc",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

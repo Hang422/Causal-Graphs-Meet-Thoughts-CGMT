@@ -1,0 +1,175 @@
+{
+  "question": "A 71-year-old woman presents with a transient episode of right arm and hand weakness that resolved in approximately one hour. Her symptoms started while she was gardening. Her past medical history is notable for hypertension, diabetes, anxiety, and dyslipidemia. Her current medications include insulin, metformin, and fluoxetine. Examination reveals a left carotid bruit. Ultrasound duplex of her carotid arteries demonstrates right and left carotid stenosis of 35% and 50%, respectively. Which of the following is the best next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Aspirin",
+    "opb": "Bilateral carotid endarterectomy",
+    "opc": "Left carotid endarterectomy only",
+    "opd": "Observation",
+    "ope": "Warfarin"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Carotid Stenosis",
+        "Transient Ischemic Attack"
+      ],
+      [
+        "Anxiety",
+        "Disease",
+        "Arteriosclerosis"
+      ],
+      [
+        "Anxiety",
+        "Obesity",
+        "Arteriosclerosis"
+      ],
+      [
+        "Dyslipidemias",
+        "Arteriosclerosis"
+      ],
+      [
+        "Diabetes",
+        "Arteriosclerosis"
+      ],
+      [
+        "Insulin",
+        "Diabetes"
+      ],
+      [
+        "Metformin",
+        "Diabetes"
+      ],
+      [
+        "Fluoxetine",
+        "Irritable Bowel Syndrome",
+        "Anxiety"
+      ],
+      [
+        "Fluoxetine",
+        "Obesity",
+        "Anxiety"
+      ],
+      [
+        "Fluoxetine",
+        "Hypertensive disease",
+        "Anxiety"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "COMPLICATES"
+      ],
+      [
+        "TREATS",
+        "PREDISPOSES"
+      ],
+      [
+        "TREATS",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Carotid Stenosis)-CAUSES->(Transient Ischemic Attack)",
+      "(Anxiety)-CAUSES->(Disease)-CAUSES->(Arteriosclerosis)",
+      "(Anxiety)-CAUSES->(Obesity)-COMPLICATES->(Arteriosclerosis)",
+      "(Dyslipidemias)-CAUSES->(Arteriosclerosis)",
+      "(Diabetes)-CAUSES->(Arteriosclerosis)",
+      "(Insulin)-CAUSES->(Diabetes)",
+      "(Metformin)-CAUSES->(Diabetes)",
+      "(Fluoxetine)-TREATS->(Irritable Bowel Syndrome)-COMPLICATES->(Anxiety)",
+      "(Fluoxetine)-TREATS->(Obesity)-PREDISPOSES->(Anxiety)",
+      "(Fluoxetine)-TREATS->(Hypertensive disease)-PREDISPOSES->(Anxiety)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Right upper arm structure",
+        "Pain",
+        "Transient Ischemic Attack"
+      ],
+      [
+        "Right upper arm structure",
+        "Pain",
+        "Transient Ischemic Attack"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Right upper arm structure)-LOCATION_OF->(Pain)-CAUSES->(Transient Ischemic Attack)",
+      "(Right upper arm structure)-LOCATION_OF->(Pain)-PREDISPOSES->(Transient Ischemic Attack)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Insulin)-CAUSES->(Diabetes)",
+      "(Fluoxetine)-TREATS->(Hypertensive disease)-PREDISPOSES->(Anxiety)",
+      "(Metformin)-CAUSES->(Diabetes)",
+      "(Fluoxetine)-TREATS->(Irritable Bowel Syndrome)-COMPLICATES->(Anxiety)",
+      "(Fluoxetine)-TREATS->(Obesity)-PREDISPOSES->(Anxiety)",
+      "(Dyslipidemias)-CAUSES->(Arteriosclerosis)",
+      "(Diabetes)-CAUSES->(Arteriosclerosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Carotid stenosis -> increased risk of transient ischemic attack (TIA) -> 70% CHAIN: Left carotid bruit -> suggests carotid artery disease -> 80% CHAIN: Transient episode of right arm and hand weakness -> possible TIA -> 70% CHAIN: Gardening activity -> potential trigger for TIA in the setting of carotid stenosis -> 60% CHAIN: History of hypertension, diabetes, anxiety, and dyslipidemia -> risk factors for atherosclerosis -> 80% CHAIN: Insulin and metformin use -> management of diabetes -> 90% CHAIN: Fluoxetine use -> management of anxiety -> 80% CHAIN: Ultrasound duplex showing carotid stenosis -> confirms vascular pathology -> 90% CHAIN: Best next step in management -> depends on the severity of symptoms and degree of stenosis -> 70%"
+  ],
+  "enhanced_information": "The patient's presentation with a transient episode of right arm and hand weakness, along with a left carotid bruit and carotid stenosis, suggests a high risk of transient ischemic attack (TIA). Given the vascular pathology confirmed by ultrasound duplex, the best next step in management would be to consider Aspirin for antiplatelet therapy to reduce the risk of further TIAs or stroke.",
+  "analysis": "The patient's presentation with a transient episode of right arm and hand weakness, left carotid bruit, and carotid stenosis indicates a high risk of TIA. Aspirin is the best next step in management as it is a standard treatment for antiplatelet therapy to reduce the risk of further TIAs or stroke.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      8
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

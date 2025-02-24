@@ -1,0 +1,121 @@
+{
+  "question": "A 66-year-old man presents with severe respiratory distress. He was diagnosed with pulmonary hypertension secondary to occupational pneumoconiosis. Biopsy findings of the lung showed ferruginous bodies. What is the most likely etiology?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Coal",
+    "opb": "Iron",
+    "opc": "Asbestos",
+    "opd": "Beryllium",
+    "ope": "Silica"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Asbestosis",
+        "Disease",
+        "Hypertension, Pulmonary"
+      ],
+      [
+        "Asbestosis",
+        "Chronic respiratory failure",
+        "Hypertension, Pulmonary"
+      ],
+      [
+        "Asbestosis",
+        "Respiratory distress",
+        "Hypertension, Pulmonary"
+      ],
+      [
+        "Chronic lung disease",
+        "Respiratory distress"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Asbestosis)-CAUSES->(Disease)-CAUSES->(Hypertension, Pulmonary)",
+      "(Asbestosis)-CAUSES->(Chronic respiratory failure)-CAUSES->(Hypertension, Pulmonary)",
+      "(Asbestosis)-CAUSES->(Respiratory distress)-PREDISPOSES->(Hypertension, Pulmonary)",
+      "(Chronic lung disease)-CAUSES->(Respiratory distress)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Biopsy of lung",
+        "Bronchiolitis Obliterans",
+        "Hypertension, Pulmonary"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Biopsy of lung)-DIAGNOSES->(Bronchiolitis Obliterans)-CAUSES->(Hypertension, Pulmonary)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Asbestosis)-CAUSES->(Respiratory distress)-PREDISPOSES->(Hypertension, Pulmonary)",
+      "(Chronic lung disease)-CAUSES->(Respiratory distress)",
+      "(Biopsy of lung)-DIAGNOSES->(Bronchiolitis Obliterans)-CAUSES->(Hypertension, Pulmonary)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Ferruginous bodies\" -> \"asbestos exposure\" -> \"asbestosis\" -> \"pulmonary hypertension\" -> 95%",
+    "CHAIN: \"Ferruginous bodies\" -> \"iron coating\" -> \"asbestos fibers\" -> \"occupational exposure\" -> 90%",
+    "CHAIN: \"Ferruginous bodies\" -> \"asbestos\" -> \"occupational pneumoconiosis\" -> \"respiratory distress\" -> 92%",
+    "CHAIN: \"Ferruginous bodies\" -> \"asbestos\" -> \"lung biopsy\" -> \"pulmonary hypertension\" -> 93%",
+    "CHAIN: \"Ferruginous bodies\" -> \"asbestos\" -> \"chronic lung disease\" -> \"respiratory distress\" -> 91%"
+  ],
+  "enhanced_information": "Ferruginous bodies in lung biopsy are strongly associated with asbestos exposure. Asbestos fibers, when inhaled, can become coated with iron-containing proteinaceous material, forming ferruginous bodies. This is a hallmark of asbestos exposure and related diseases such as asbestosis. Asbestosis can lead to pulmonary hypertension due to chronic lung damage and respiratory distress. The retrieved evidence paths support this by linking asbestosis to pulmonary hypertension and respiratory distress. Other options like coal, iron, beryllium, and silica do not typically form ferruginous bodies, making asbestos the most likely etiology for the patient's condition.",
+  "analysis": "The presence of ferruginous bodies in a lung biopsy is a classic indicator of asbestos exposure. These bodies are formed when asbestos fibers are inhaled and become coated with iron-containing proteinaceous material. This is a well-established medical fact and is strongly associated with occupational exposure to asbestos. Asbestosis, a condition resulting from asbestos exposure, can lead to pulmonary hypertension due to chronic lung damage and respiratory distress. Other substances listed, such as coal, iron, beryllium, and silica, do not typically result in the formation of ferruginous bodies. Therefore, the most likely etiology for the patient's condition, given the biopsy findings and clinical presentation, is asbestos exposure.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      0.0,
+      0.0,
+      33.33333333333333,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

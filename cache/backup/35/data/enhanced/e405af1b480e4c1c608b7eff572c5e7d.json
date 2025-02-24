@@ -1,0 +1,215 @@
+{
+  "question": "A 47-year-old woman comes to the physician because of easy bruising and fatigue. She appears pale. Her temperature is 38°C (100.4°F). Examination shows a palm-sized hematoma on her left leg. Abdominal examination shows an enlarged liver and spleen. Her hemoglobin concentration is 9.5 g/dL, leukocyte count is 12,300/mm3, platelet count is 55,000/mm3, and fibrinogen concentration is 120 mg/dL (N = 150–400). Cytogenetic analysis of leukocytes shows a reciprocal translocation of chromosomes 15 and 17. Which of the following is the most appropriate treatment for this patient at this time?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Platelet transfusion",
+    "opb": "Rituximab",
+    "opc": "All-trans retinoic acid",
+    "opd": "Imatinib",
+    "ope": "Cyclophosphamide"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fatigue",
+        "Disease",
+        "Pallor"
+      ],
+      [
+        "Fatigue",
+        "Infection",
+        "Pallor"
+      ],
+      [
+        "Fatigue",
+        "Malnutrition",
+        "Pallor"
+      ],
+      [
+        "Pallor",
+        "Infection",
+        "Hepatomegaly"
+      ],
+      [
+        "Hepatomegaly",
+        "Syndrome",
+        "Hematoma"
+      ],
+      [
+        "Hepatomegaly",
+        "Septicemia",
+        "Hematoma"
+      ],
+      [
+        "Hepatomegaly",
+        "Blood Coagulation Disorders",
+        "Hematoma"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Fatigue)-CAUSES->(Disease)-CAUSES->(Pallor)",
+      "(Fatigue)-PREDISPOSES->(Infection)-CAUSES->(Pallor)",
+      "(Fatigue)-PREDISPOSES->(Malnutrition)-CAUSES->(Pallor)",
+      "(Pallor)-CAUSES->(Infection)-CAUSES->(Hepatomegaly)",
+      "(Hepatomegaly)-CAUSES->(Syndrome)-CAUSES->(Hematoma)",
+      "(Hepatomegaly)-CAUSES->(Septicemia)-CAUSES->(Hematoma)",
+      "(Hepatomegaly)-CAUSES->(Blood Coagulation Disorders)-CAUSES->(Hematoma)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Bruises easily",
+        "Disease",
+        "Pallor"
+      ],
+      [
+        "Spleen",
+        "Hematoma"
+      ],
+      [
+        "White Blood Cell Count procedure",
+        "Pathogenesis",
+        "Genes",
+        "Bone Marrow",
+        "Platelet Count measurement"
+      ],
+      [
+        "White Blood Cell Count procedure",
+        "Inflammation",
+        "Genes",
+        "Bone Marrow",
+        "Platelet Count measurement"
+      ],
+      [
+        "Chromosomes",
+        "Diagnosis"
+      ],
+      [
+        "Diagnosis",
+        "Tachycardia, Ventricular",
+        "Genes",
+        "Tretinoin"
+      ],
+      [
+        "Diagnosis",
+        "Pathogenesis",
+        "Genes",
+        "Tretinoin"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Bruises easily)-ASSOCIATED_WITH->(Disease)-CAUSES->(Pallor)",
+      "(Spleen)-LOCATION_OF->(Hematoma)",
+      "(White Blood Cell Count procedure)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Bone Marrow)-LOCATION_OF->(Platelet Count measurement)",
+      "(White Blood Cell Count procedure)-DIAGNOSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Bone Marrow)-LOCATION_OF->(Platelet Count measurement)",
+      "(Chromosomes)-LOCATION_OF->(Diagnosis)",
+      "(Diagnosis)-DIAGNOSES->(Tachycardia, Ventricular)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Tretinoin)",
+      "(Diagnosis)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Tretinoin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Diagnosis)-DIAGNOSES->(Tachycardia, Ventricular)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Tretinoin)",
+      "(Chromosomes)-LOCATION_OF->(Diagnosis)",
+      "(Diagnosis)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Tretinoin)",
+      "(Fatigue)-CAUSES->(Disease)-CAUSES->(Pallor)",
+      "(Fatigue)-PREDISPOSES->(Infection)-CAUSES->(Pallor)",
+      "(Fatigue)-PREDISPOSES->(Malnutrition)-CAUSES->(Pallor)",
+      "(Bruises easily)-ASSOCIATED_WITH->(Disease)-CAUSES->(Pallor)",
+      "(Spleen)-LOCATION_OF->(Hematoma)",
+      "(White Blood Cell Count procedure)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Bone Marrow)-LOCATION_OF->(Platelet Count measurement)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Easy bruising and fatigue\" -> \"Pallor\" -> \"Enlarged liver and spleen\" -> \"Hematoma on left leg\" -> \"Hemoglobin 9.5 g/dL\" -> \"Leukocyte count 12,300/mm3\" -> \"Platelet count 55,000/mm3\" -> \"Fibrinogen concentration 120 mg/dL\" -> \"Cytogenetic analysis shows reciprocal translocation of chromosomes 15 and 17\" -> \"Diagnosis of acute promyelocytic leukemia (APL)\" -> \"Treatment with all-trans retinoic acid (ATRA)\" -> 95%"
+  ],
+  "enhanced_information": "The patient presents with symptoms and laboratory findings consistent with acute promyelocytic leukemia (APL), supported by the cytogenetic analysis showing a reciprocal translocation of chromosomes 15 and 17. The most appropriate treatment for this patient at this time is all-trans retinoic acid (ATRA), which is the standard therapy for APL. Evidence paths confirm the association of ATRA with the genetic abnormalities seen in APL, supporting the choice of ATRA as the treatment option.",
+  "analysis": "The patient's presentation with easy bruising, fatigue, anemia, thrombocytopenia, and the cytogenetic analysis indicating a reciprocal translocation of chromosomes 15 and 17 is consistent with acute promyelocytic leukemia (APL). The standard treatment for APL is all-trans retinoic acid (ATRA), which has shown efficacy in inducing remission in APL patients. ATRA targets the genetic abnormality seen in APL, making it the most appropriate choice in this scenario.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      8
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

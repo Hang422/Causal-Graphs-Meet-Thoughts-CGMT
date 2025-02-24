@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_232839",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "8a80f8a8",
+  "question_text": "A 24-hour-old newborn presents to the emergency department after a home birth because of fever, irritability alternating with lethargy, and poor feeding. The patient’s mother says symptoms acutely onset 12 hours ago and have not improved. No significant past medical history. His mother did not receive any prenatal care, and she had rupture of membranes 20 hours prior to delivery. His vital signs include: heart rate 150/min, respiratory rate 65/min, temperature 39.0°C (102.2°F), and blood pressure 60/40 mm Hg. On physical examination, the patient has delayed capillary refill. Laboratory studies show a pleocytosis and a low glucose level in the patient’s cerebrospinal fluid. Which of the following is the most likely causative organism for this patient’s condition?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 24-hour-old newborn presents to the emergency department after a home birth because of fever, irritability alternating with lethargy, and poor feeding. The patient’s mother says symptoms acutely onset 12 hours ago and have not improved. No significant past medical history. His mother did not receive any prenatal care, and she had rupture of membranes 20 hours prior to delivery. His vital signs include: heart rate 150/min, respiratory rate 65/min, temperature 39.0°C (102.2°F), and blood pressure 60/40 mm Hg. On physical examination, the patient has delayed capillary refill. Laboratory studies show a pleocytosis and a low glucose level in the patient’s cerebrospinal fluid. Which of the following is the most likely causative organism for this patient’s condition?\n\n            ### Options\n    opa. Cryptococcus neoformans\nopb. Enterovirus\nopc. Group A Streptococcus\nopd. Group B Streptococcus\nope. Streptococcus pneumoniae\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Rupture of membranes -> increased risk of infection -> 80%\nCHAIN: Fever, irritability, poor feeding -> signs of infection -> 70%\nCHAIN: Low glucose level in CSF -> bacterial infection more likely than viral -> 80%\nCHAIN: Pleocytosis in CSF -> inflammatory response -> 70%\nCHAIN: Delayed capillary refill -> signs of sepsis -> 70%\nCHAIN: Vital signs: tachycardia, tachypnea, hypotension -> sepsis -> 80%\nCHAIN: Most likely causative organism for this presentation is Group B Streptococcus -> 90%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

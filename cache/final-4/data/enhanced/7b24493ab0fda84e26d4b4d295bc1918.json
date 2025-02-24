@@ -1,0 +1,198 @@
+{
+  "question": "A 22-year-old man volunteers for a research study on lung function. He has no history of lung disease or allergies and does not smoke. His pulmonary blood flow is measured in the various labeled segments of the lungs while standing. Then the volunteer, still standing, is given very low continuous positive airway pressure and the blood flow measured again. Which of the following sets of findings are most likely to be present in the second measurements relative to the first?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Reduced blood flow in zone 1",
+    "opb": "Increased blood flow in zone 1",
+    "opc": "Increased blood flow in zone 2",
+    "opd": "Reduced blood flow in zone 3",
+    "ope": "Increased blood flow in zone 3"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pulmonary arterial pressure",
+        "Hypertensive disease",
+        "Disease",
+        "Blood Circulation"
+      ],
+      [
+        "Pulmonary arterial pressure",
+        "Single organ dysfunction",
+        "Disease",
+        "Blood Circulation"
+      ],
+      [
+        "Pulmonary arterial pressure",
+        "Respiratory Distress Syndrome, Adult",
+        "Disease",
+        "Blood Circulation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Pulmonary arterial pressure)-CAUSES->(Hypertensive disease)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Pulmonary arterial pressure)-CAUSES->(Single organ dysfunction)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Pulmonary arterial pressure)-CAUSES->(Respiratory Distress Syndrome, Adult)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pressure- physical agent",
+        "Hypertrophy",
+        "Genes",
+        "Blood"
+      ],
+      [
+        "Pressure- physical agent",
+        "Ischemia",
+        "Genes",
+        "Blood"
+      ],
+      [
+        "Blood",
+        "Infection",
+        "Blood Circulation"
+      ],
+      [
+        "Blood",
+        "Pharmaceutical Preparations",
+        "Blood Circulation"
+      ],
+      [
+        "Pressure- physical agent",
+        "Hypertrophy",
+        "Genes",
+        "Blood"
+      ],
+      [
+        "Pressure- physical agent",
+        "Ischemia",
+        "Genes",
+        "Blood"
+      ],
+      [
+        "Blood",
+        "Infection",
+        "Blood Circulation"
+      ],
+      [
+        "Blood",
+        "Pharmaceutical Preparations",
+        "Blood Circulation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pressure- physical agent)-CAUSES->(Hypertrophy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Pressure- physical agent)-CAUSES->(Ischemia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Blood)-LOCATION_OF->(Infection)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Blood)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Blood Circulation)",
+      "(Pressure- physical agent)-CAUSES->(Hypertrophy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Pressure- physical agent)-CAUSES->(Ischemia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Blood)-LOCATION_OF->(Infection)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Blood)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Blood Circulation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Blood)-LOCATION_OF->(Infection)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Pulmonary arterial pressure)-CAUSES->(Hypertensive disease)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Pulmonary arterial pressure)-CAUSES->(Single organ dysfunction)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Pulmonary arterial pressure)-CAUSES->(Respiratory Distress Syndrome, Adult)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Continuous positive airway pressure (CPAP)\" -> \"increased intrathoracic pressure\" -> \"reduced venous return\" -> \"reduced right ventricular preload\" -> \"reduced pulmonary arterial pressure\" -> \"reduced blood flow in zone 1\" -> 85%",
+    "CHAIN: \"Continuous positive airway pressure (CPAP)\" -> \"increased intrathoracic pressure\" -> \"increased alveolar pressure\" -> \"compression of alveolar capillaries in zone 1\" -> \"reduced blood flow in zone 1\" -> 90%",
+    "CHAIN: \"Continuous positive airway pressure (CPAP)\" -> \"increased intrathoracic pressure\" -> \"increased pressure in zone 2 relative to zone 1\" -> \"redistribution of blood from zone 1 to zone 2\" -> \"increased blood flow in zone 2\" -> 80%",
+    "CHAIN: \"Continuous positive airway pressure (CPAP)\" -> \"increased intrathoracic pressure\" -> \"increased pressure gradient between zone 2 and zone 3\" -> \"redistribution of blood from zone 2 to zone 3\" -> \"increased blood flow in zone 3\" -> 75%",
+    "CHAIN: \"Continuous positive airway pressure (CPAP)\" -> \"increased intrathoracic pressure\" -> \"increased pressure in lower lung zones\" -> \"reduced venous return\" -> \"reduced blood flow in zone 3\" -> \"unclear\" -> 50%"
+  ],
+  "enhanced_information": "With the application of CPAP, increased intrathoracic pressure leads to reduced blood flow in Zone 1 due to further compression of alveolar capillaries. This pressure also redistributes blood to Zone 2 and Zone 3, potentially increasing flow in these areas. The reasoning chains for reduced flow in Zone 1 and increased flow in Zones 2 and 3 align with medical consensus on the physiological effects of CPAP in healthy lungs.",
+  "analysis": "The core medical principle involved in this scenario is the effect of continuous positive airway pressure (CPAP) on pulmonary blood flow distribution across different lung zones. In a standing individual, the lungs can be divided into three zones based on the relationship between alveolar pressure, arterial pressure, and venous pressure. Zone 1 is at the top where alveolar pressure exceeds blood pressure, leading to collapsed capillaries. Zone 2 has blood flow driven by the difference between arterial and alveolar pressures, and Zone 3, typically at the base, experiences the highest blood flow as both arterial and venous pressures exceed alveolar pressure. When CPAP is applied, it increases intrathoracic pressure, which can further compress alveolar capillaries in Zone 1, reducing blood flow there. Simultaneously, this increased pressure helps redistribute blood to lower zones (Zone 2 and Zone 3) where the arterial pressure is sufficient to overcome the increased alveolar pressure, potentially increasing blood flow in these areas. Given this understanding, the most likely correct option based on medical consensus and the physiological effects of CPAP is that there would be reduced blood flow in Zone 1 due to further compression of alveolar capillaries by the increased intrathoracic pressure.",
+  "answer": "opa",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      2,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      20.0,
+      0.0,
+      40.0,
+      40.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

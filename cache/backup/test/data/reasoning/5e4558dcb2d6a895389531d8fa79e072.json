@@ -1,0 +1,91 @@
+{
+  "question": "A 25-year-old woman presented to an urgent care center with a complaint of a cough for more than 3 weeks that was accompanied by night sweats, weight loss, and malaise. On physical examination, the patient had slightly pale palpebral conjunctivae bilateral posterior cervical lymphadenopathy, but with no adventitious breath sounds in the lung fields bilaterally. The remainder of the physical examination was routine. The patient was started on a drug regimen that was to be taken for 6 months. On follow-up after 2 months, the ALT and AST levels were elevated. Which of the following anti-tubercular drug could have contributed to this labor result?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Rifampicin",
+    "opb": "Pyrazinamide",
+    "opc": "Isoniazid",
+    "opd": "Streptomycin",
+    "ope": "Ethambutol"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "isoniazid",
+        "Drug-induced liver disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(isoniazid)-TREATS->(Drug-induced liver disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Drug-induced liver disease",
+        "Icterus",
+        "Alanine Transaminase"
+      ],
+      [
+        "Drug-induced liver disease",
+        "Liver damage",
+        "Alanine Transaminase"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Drug-induced liver disease)-CAUSES->(Icterus)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Drug-induced liver disease)-CAUSES->(Liver damage)-ASSOCIATED_WITH->(Alanine Transaminase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(isoniazid)-TREATS->(Drug-induced liver disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Isoniazid\" -> \"metabolized in liver\" -> \"hepatotoxicity\" -> \"elevated ALT and AST\" -> 85%",
+    "CHAIN: \"Rifampicin\" -> \"metabolized in liver\" -> \"possible hepatotoxicity\" -> \"elevated ALT and AST\" -> 75%",
+    "CHAIN: \"Pyrazinamide\" -> \"metabolized in liver\" -> \"hepatotoxicity\" -> \"elevated ALT and AST\" -> 90%",
+    "CHAIN: \"Ethambutol\" -> \"minimal liver metabolism\" -> \"unlikely hepatotoxicity\" -> \"normal ALT and AST\" -> 60%",
+    "CHAIN: \"Streptomycin\" -> \"renal excretion\" -> \"unlikely hepatotoxicity\" -> \"normal ALT and AST\" -> 65%"
+  ],
+  "enhanced_information": "Pyrazinamide and Isoniazid are both known to cause drug-induced liver injury, leading to elevated ALT and AST levels. In this case, Pyrazinamide could have contributed to the elevated liver enzymes observed in the patient after 2 months of treatment.",
+  "analysis": "The patient's symptoms and the 6-month drug regimen suggest a diagnosis of tuberculosis. The elevation of ALT and AST levels indicates hepatotoxicity, which is a known side effect of several first-line anti-tubercular drugs. Among the options provided, Isoniazid, Rifampicin, and Pyrazinamide are known to cause hepatotoxicity. However, Isoniazid is most commonly associated with elevated liver enzymes and hepatotoxicity in the context of tuberculosis treatment.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

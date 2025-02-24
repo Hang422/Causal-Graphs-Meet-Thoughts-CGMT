@@ -1,0 +1,139 @@
+{
+  "question": "A 72-year-old male with history of hypertension, diabetes mellitus, cluster headaches, and basal cell carcinoma presents with complaints of progressive dyspnea. He has had increasing shortness of breath, especially when going on walks or mowing the lawn. In addition, he had two episodes of extreme lightheadedness while moving some of his furniture. His temperature is 98.2°F (36.8°C), blood pressure is 135/92 mmHg, pulse is 70/min, respirations are 14/min, and oxygen saturation is 94% on room air. Physical exam is notable for clear lung fields and a 3/6 systolic ejection murmur best heard at the right 2nd intercostal space. In addition, the carotid pulses are delayed and diminished in intensity bilaterally. Which of the following would most likely be seen in association with this patient’s condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Cerebral artery aneurysm",
+    "opb": "Carotid atherosclerosis",
+    "opc": "Deep vein thrombosis",
+    "opd": "Colonic angiodysplasia",
+    "ope": "Erectile dysfunction"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypertensive disease",
+        "Arteriosclerosis"
+      ],
+      [
+        "Arteriosclerosis",
+        "Carotid Atherosclerosis"
+      ],
+      [
+        "Cluster Headache",
+        "Symptoms",
+        "Carotid Atherosclerosis"
+      ],
+      [
+        "Cluster Headache",
+        "Disease",
+        "Carotid Atherosclerosis"
+      ],
+      [
+        "Carotid Atherosclerosis",
+        "Disease",
+        "paracrine",
+        "Blood Vessels"
+      ],
+      [
+        "Carotid Atherosclerosis",
+        "Myocardial Infarction",
+        "paracrine",
+        "Blood Vessels"
+      ],
+      [
+        "Carotid Atherosclerosis",
+        "Cardiovascular Diseases",
+        "paracrine",
+        "Blood Vessels"
+      ],
+      [
+        "Arteriosclerosis",
+        "Carotid Atherosclerosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Arteriosclerosis)",
+      "(Arteriosclerosis)-PREDISPOSES->(Carotid Atherosclerosis)",
+      "(Cluster Headache)-CAUSES->(Symptoms)-PREDISPOSES->(Carotid Atherosclerosis)",
+      "(Cluster Headache)-PREDISPOSES->(Disease)-COMPLICATES->(Carotid Atherosclerosis)",
+      "(Carotid Atherosclerosis)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Blood Vessels)",
+      "(Carotid Atherosclerosis)-CAUSES->(Myocardial Infarction)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Blood Vessels)",
+      "(Carotid Atherosclerosis)-CAUSES->(Cardiovascular Diseases)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Blood Vessels)",
+      "(Arteriosclerosis)-PREDISPOSES->(Carotid Atherosclerosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cluster Headache)-CAUSES->(Symptoms)-PREDISPOSES->(Carotid Atherosclerosis)",
+      "(Arteriosclerosis)-PREDISPOSES->(Carotid Atherosclerosis)",
+      "(Hypertensive disease)-CAUSES->(Arteriosclerosis)",
+      "(Cluster Headache)-PREDISPOSES->(Disease)-COMPLICATES->(Carotid Atherosclerosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Hypertension\" -> \"Increased risk of atherosclerosis\" -> \"Carotid atherosclerosis\" -> 80% CHAIN: \"Diabetes mellitus\" -> \"Increased risk of vascular complications\" -> \"Carotid atherosclerosis\" -> 75% CHAIN: \"Cluster headaches\" -> \"No direct association with carotid atherosclerosis\" -> \"Possible indirect vascular impact\" -> 50% CHAIN: \"Basal cell carcinoma\" -> \"No direct association with carotid atherosclerosis\" -> \"Unlikely to be related\" -> 30% CHAIN: \"Progressive dyspnea\" -> \"Possible heart condition\" -> \"Increased risk of atherosclerosis\" -> \"Carotid atherosclerosis\" -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with hypertension, diabetes mellitus, cluster headaches, and basal cell carcinoma increases the likelihood of carotid atherosclerosis. The symptoms of progressive dyspnea and systolic ejection murmur suggest a possible heart condition, further supporting the association with carotid atherosclerosis. The delayed and diminished carotid pulses bilaterally are indicative of carotid artery disease. Therefore, carotid atherosclerosis (opb) would most likely be seen in association with this patient's condition.",
+  "analysis": "The patient's presentation with hypertension, diabetes mellitus, cluster headaches, and basal cell carcinoma increases the likelihood of carotid atherosclerosis. The symptoms of progressive dyspnea, systolic ejection murmur, and delayed/diminished carotid pulses support the association with carotid artery disease. Carotid atherosclerosis is a common finding in individuals with multiple risk factors for atherosclerosis. The enhanced information provided aligns with standard medical knowledge, making carotid atherosclerosis the most likely condition associated with this patient's presentation.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

@@ -1,0 +1,127 @@
+{
+  "question": "A 64-year-old woman comes to the emergency room because of a sudden weakness in her right arm and leg. She has atrial fibrillation, tinea unguium, gastroesophageal reflux disease, hypertension, and hypercholesterolemia. Current medications include warfarin, enalapril, simvastatin, lansoprazole, hydrochlorothiazide, griseofulvin, and ginkgo biloba. Two weeks ago, she had an appointment with her podiatrist. Physical examination shows sagging of her right lower face and decreased muscle strength in her right upper and lower extremity. Babinski sign is positive on the right. Her prothrombin time is 14 seconds (INR = 1.5). Which of the following drugs is the most likely underlying cause of this patient's current condition?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Ginkgo biloba",
+    "opb": "Simvastatin",
+    "opc": "Enalapril",
+    "opd": "Lansoprazole",
+    "ope": "Griseofulvin"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "griseofulvin",
+        "Disease",
+        "Cerebral Angiitis"
+      ],
+      [
+        "Cerebral Angiitis",
+        "Cerebral Infarction",
+        "Neurologic Symptoms"
+      ],
+      [
+        "Cerebral Angiitis",
+        "Thrombosis of cerebral veins",
+        "Neurologic Symptoms"
+      ],
+      [
+        "Cerebral Angiitis",
+        "Subarachnoid Hemorrhage",
+        "Neurologic Symptoms"
+      ],
+      [
+        "griseofulvin",
+        "Disease",
+        "Vasculitis"
+      ],
+      [
+        "griseofulvin",
+        "Mycoses",
+        "Vasculitis"
+      ],
+      [
+        "Vasculitis",
+        "Neurologic Symptoms"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(griseofulvin)-TREATS->(Disease)-CAUSES->(Cerebral Angiitis)",
+      "(Cerebral Angiitis)-CAUSES->(Cerebral Infarction)-CAUSES->(Neurologic Symptoms)",
+      "(Cerebral Angiitis)-CAUSES->(Thrombosis of cerebral veins)-CAUSES->(Neurologic Symptoms)",
+      "(Cerebral Angiitis)-CAUSES->(Subarachnoid Hemorrhage)-CAUSES->(Neurologic Symptoms)",
+      "(griseofulvin)-TREATS->(Disease)-CAUSES->(Vasculitis)",
+      "(griseofulvin)-TREATS->(Mycoses)-CAUSES->(Vasculitis)",
+      "(Vasculitis)-CAUSES->(Neurologic Symptoms)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(griseofulvin)-TREATS->(Disease)-CAUSES->(Cerebral Angiitis)",
+      "(griseofulvin)-TREATS->(Disease)-CAUSES->(Vasculitis)",
+      "(griseofulvin)-TREATS->(Mycoses)-CAUSES->(Vasculitis)",
+      "(Vasculitis)-CAUSES->(Neurologic Symptoms)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Griseofulvin -> drug-induced lupus-like syndrome -> neurological symptoms -> 80% CHAIN: Griseofulvin -> cerebral vasculitis -> neurological symptoms -> 70% CHAIN: Griseofulvin -> vasculitis -> neurological symptoms -> 80%"
+  ],
+  "enhanced_information": "Griseofulvin is the most likely underlying cause of this patient's current condition. Griseofulvin can lead to vasculitis, which in turn can cause neurological symptoms, aligning with the patient's presentation of sudden weakness and positive Babinski sign. The evidence paths support this relationship by showing that vasculitis can lead to neurological symptoms.",
+  "analysis": "The patient presents with sudden weakness in her right arm and leg, sagging of her right lower face, decreased muscle strength in her right extremities, and a positive Babinski sign on the right. These symptoms are indicative of a neurological deficit, likely due to a stroke. Given her medical history and medications, the most likely underlying cause is a drug interaction or side effect. Griseofulvin is known to potentially cause vasculitis, which can lead to neurological symptoms. Simvastatin, enalapril, lansoprazole, and ginkgo biloba are less likely to directly cause these neurological symptoms.",
+  "answer": "ope. griseofulvin",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

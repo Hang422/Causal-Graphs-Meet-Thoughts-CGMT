@@ -1,0 +1,76 @@
+{
+  "question": "A 57-year-old woman with type 2 diabetes mellitus comes to the physician for a follow-up examination. She previously had been compliant with her diet and medication but has had a 5-kg (11-lb) weight gain since the last visit 6 months ago. She reports that she often misses doses of her metformin. Her hemoglobin A1c is 9.8%. Which of the following is the most appropriate course of action?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Refer the patient to a dietician",
+    "opb": "Schedule more frequent follow-up visits",
+    "opc": "Refer the patient to an endocrinologist",
+    "opd": "Add glyburide to the medication regimen",
+    "ope": "Stop metformin and begin an insulin regimen"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Poor glycemic control",
+        "Disease",
+        "Complication"
+      ],
+      [
+        "Poor glycemic control",
+        "Obesity",
+        "Complication"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Poor glycemic control)-CAUSES->(Disease)-CAUSES->(Complication)",
+      "(Poor glycemic control)-PREDISPOSES->(Obesity)-CAUSES->(Complication)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Poor glycemic control)-CAUSES->(Disease)-CAUSES->(Complication)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Poor medication adherence\" -> \"Increased hemoglobin A1c\" -> \"Weight gain\" -> \"Possible insulin resistance\" -> 70% CHAIN: \"High hemoglobin A1c (9.8%)\" -> \"Poor glycemic control\" -> \"Increased risk of complications\" -> \"Consider intensifying treatment\" -> 80% CHAIN: \"Metformin non-adherence\" -> \"Reduced efficacy of treatment\" -> \"Need for alternative therapy\" -> \"Consider insulin therapy\" -> 70%"
+  ],
+  "enhanced_information": "The patient's poor medication adherence, resulting in a high hemoglobin A1c of 9.8%, weight gain, and possible insulin resistance, suggests a need for treatment intensification. Considering the reduced efficacy of metformin due to non-adherence, adding glyburide or transitioning to an insulin regimen may be appropriate. Referral to an endocrinologist for further management could also be beneficial.",
+  "analysis": "The core medical principle here is to address the high hemoglobin A1c, weight gain, and poor medication adherence in a patient with type 2 diabetes. Given the patient's non-adherence to metformin and the significantly elevated A1c level, treatment intensification is necessary. Considering the patient's situation, adding glyburide or transitioning to an insulin regimen would be more appropriate than just referring to a dietician or endocrinologist. Glyburide or insulin can help control blood sugar levels more effectively in this scenario.",
+  "answer": "opd. add glyburide to the medication regimen",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": []
+}

@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_014325",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "9f77366a",
+  "question_text": "A 5-year-old non-verbal child with a history of autism is brought into the emergency department by his grandmother. The patient’s grandmother is concerned her grandchild is being abused at home. The patient lives in an apartment with his mother, step-father, and two older brothers in low-income housing. The department of social services has an open case regarding this patient and his family. The patient is afebrile. His vital signs include: blood pressure 97/62 mm Hg, pulse 175/min, respiratory rate 62/min. Physical examination reveals a malnourished and dehydrated child in dirty and foul-smelling clothes. Which one of the following people is most likely abusing this patient?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 5-year-old non-verbal child with a history of autism is brought into the emergency department by his grandmother. The patient’s grandmother is concerned her grandchild is being abused at home. The patient lives in an apartment with his mother, step-father, and two older brothers in low-income housing. The department of social services has an open case regarding this patient and his family. The patient is afebrile. His vital signs include: blood pressure 97/62 mm Hg, pulse 175/min, respiratory rate 62/min. Physical examination reveals a malnourished and dehydrated child in dirty and foul-smelling clothes. Which one of the following people is most likely abusing this patient?\n\n            ### Options\n    opa. Mother\nopb. Step-father\nopc. Brother\nopd. Neighbor\nope. Stranger\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Neglect -> Malnourished and dehydrated child -> 95%\nCHAIN: Dirty and foul-smelling clothes -> Poor hygiene -> 90%\nCHAIN: Low-income housing -> Increased risk of neglect -> 80%\nCHAIN: Department of social services open case -> Concerns of abuse or neglect -> 85%\nCHAIN: Vital signs: blood pressure 97/62 mm Hg, pulse 175/min, respiratory rate 62/min -> Signs of neglect or abuse -> 75%\nCHAIN: Living with mother, step-father, and two older brothers -> Potential abusers -> 70%\nCHAIN: Step-father -> Most likely abuser -> 60%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

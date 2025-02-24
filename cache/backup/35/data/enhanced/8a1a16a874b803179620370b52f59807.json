@@ -1,0 +1,139 @@
+{
+  "question": "A 42-year-old woman presents because of a painful mass she first noticed on her neck 1 week ago (see image). The mass has grown over the last few days. She has no history of serious illness and takes no medications. On physical exam, her temperature is 38.0°C (100.4°F), pulse is 86/min, respirations are 12/min, blood pressure is 135/80 mm Hg. The mass is tender and relatively soft and mobile. The overlying skin is warm. On her right ear, there is a series of small and healing skin punctures left by the bite of her neighbor’s kitten 3 weeks ago. No other mass is detected in the neck, supraclavicular, axillary, or inguinal regions. Oral examination reveals several discolored teeth. Her lungs are clear to auscultation and heart sounds are normal. Which of the following is the most appropriate diagnostic study at this time?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Culture for facultative anaerobes",
+    "opb": "Histologic evaluation for Reed-Sternburg cells",
+    "opc": "The Monospot test for Epstein-Barr virus",
+    "opd": "Toxoplasma IgG using enzyme-linked immunosorbent assay",
+    "ope": "Warthin-Starry silver stain for Bartonella henselae"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Cat-Scratch Disease",
+        "Lymphadenitis"
+      ],
+      [
+        "Mass of neck",
+        "Disease",
+        "Symptoms",
+        "Diagnostic tests"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Cat-Scratch Disease)-CAUSES->(Lymphadenitis)",
+      "(Mass of neck)-MANIFESTATION_OF->(Disease)-CAUSES->(Symptoms)-CAUSES->(Diagnostic tests)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Lymphadenitis",
+        "Hypertrophy",
+        "Genes",
+        "Bone Marrow",
+        "Warthin-Starry stain method"
+      ],
+      [
+        "Lymphadenitis",
+        "Thrombosis",
+        "Genes",
+        "Bone Marrow",
+        "Warthin-Starry stain method"
+      ],
+      [
+        "Tooth infection",
+        "Infection",
+        "Ultrasonography",
+        "Mass of neck"
+      ],
+      [
+        "Tooth infection",
+        "Pathogenesis",
+        "TNFRSF10B gene|TNFRSF10B",
+        "Mass of neck"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "DIAGNOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Lymphadenitis)-CAUSES->(Hypertrophy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Bone Marrow)-LOCATION_OF->(Warthin-Starry stain method)",
+      "(Lymphadenitis)-CAUSES->(Thrombosis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Bone Marrow)-LOCATION_OF->(Warthin-Starry stain method)",
+      "(Tooth infection)-CAUSES->(Infection)-CAUSES->(Ultrasonography)-DIAGNOSES->(Mass of neck)",
+      "(Tooth infection)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(TNFRSF10B gene|TNFRSF10B)-ASSOCIATED_WITH->(Mass of neck)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Mass of neck)-MANIFESTATION_OF->(Disease)-CAUSES->(Symptoms)-CAUSES->(Diagnostic tests)",
+      "(Cat-Scratch Disease)-CAUSES->(Lymphadenitis)",
+      "(Tooth infection)-CAUSES->(Infection)-CAUSES->(Ultrasonography)-DIAGNOSES->(Mass of neck)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Bite from neighbor's kitten -> possible Bartonella henselae infection -> lymphadenitis -> diagnostic study: Warthin-Starry silver stain for Bartonella henselae -> 80%",
+    "CHAIN: Painful mass on the neck -> tender, soft, mobile mass -> warm overlying skin -> possible abscess formation -> diagnostic study: Culture for facultative anaerobes -> 70%",
+    "CHAIN: Discolored teeth -> possible dental infection -> neck mass -> diagnostic study: Culture for facultative anaerobes -> 60%"
+  ],
+  "enhanced_information": "The most appropriate diagnostic study at this time is the Warthin-Starry silver stain for Bartonella henselae due to the patient's history of a bite from a kitten and the presence of a painful mass on the neck, which could indicate lymphadenitis associated with Bartonella henselae infection.",
+  "analysis": "The patient's presentation with a painful mass on the neck following a kitten bite suggests a possible Bartonella henselae infection, commonly known as cat scratch disease. Given this context, the most appropriate diagnostic study at this time is the Warthin-Starry silver stain for Bartonella henselae to confirm the diagnosis.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      2
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

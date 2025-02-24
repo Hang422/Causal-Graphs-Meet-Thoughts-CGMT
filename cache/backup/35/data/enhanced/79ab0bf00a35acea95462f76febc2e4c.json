@@ -1,0 +1,183 @@
+{
+  "question": "A 36-year-old African American woman G1P0 at 33 weeks gestation presents to the emergency department because \"her water broke.\" Her prenatal history is remarkable for proteinuria in the absence of hypertension during her third trimester check-up. She denies any smoking, alcohol use, sick contacts, abdominal pain, fever, nausea, vomiting, or diarrhea. Her temperature is 98.6°F (37°C), blood pressure is 150/90 mmHg, pulse is 120/min, and respirations are 26/min. While the on-call obstetrician is on her way to the emergency department, the following labs are obtained:\n\nHemoglobin: 11 g/dL\nHematocrit: 35 %\nLeukocyte count: 9,800/mm^3 with normal differential\nPlatelet count: 400,000/mm^3\n\nSerum:\nNa+: 137 mEq/L\nCl-: 99 mEq/L\nK+: 3.9 mEq/L\nHCO3-: 22 mEq/L\nBUN: 35 mg/dL\nGlucose: 128 mg/dL\nCreatinine: 1.2 mg/dL\n\nUrine:\nEpithelial cells: Scant\nProtein: 2+\nGlucose: 1+\nWBC: 2/hpf\nBacterial: None\n\nWhat is the most likely finding in the neonate after delivery?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Growth retardation",
+    "opb": "Meconium aspiration",
+    "opc": "Microcephaly",
+    "opd": "Seizures",
+    "ope": "Stillbirth"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypertensive disease",
+        "Pre-Eclampsia"
+      ],
+      [
+        "Proteinuria",
+        "Pre-Eclampsia"
+      ],
+      [
+        "Perfusion (procedure)",
+        "Ischemia",
+        "Fetal Growth Retardation"
+      ],
+      [
+        "Perfusion (procedure)",
+        "Hemorrhage",
+        "Fetal Growth Retardation"
+      ],
+      [
+        "Perfusion (procedure)",
+        "Anemia",
+        "Fetal Growth Retardation"
+      ],
+      [
+        "Fetal Growth Retardation",
+        "Growth retardation"
+      ],
+      [
+        "Hypertensive disease",
+        "Pre-Eclampsia"
+      ],
+      [
+        "Proteinuria",
+        "Pre-Eclampsia"
+      ],
+      [
+        "Pre-Eclampsia",
+        "Placental Insufficiency"
+      ],
+      [
+        "Placental Insufficiency",
+        "Fetal Distress"
+      ],
+      [
+        "Fetal Distress",
+        "Stillbirth"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Pre-Eclampsia)",
+      "(Proteinuria)-CAUSES->(Pre-Eclampsia)",
+      "(Perfusion (procedure))-CAUSES->(Ischemia)-CAUSES->(Fetal Growth Retardation)",
+      "(Perfusion (procedure))-CAUSES->(Hemorrhage)-CAUSES->(Fetal Growth Retardation)",
+      "(Perfusion (procedure))-TREATS->(Anemia)-CAUSES->(Fetal Growth Retardation)",
+      "(Fetal Growth Retardation)-COMPLICATES->(Growth retardation)",
+      "(Hypertensive disease)-CAUSES->(Pre-Eclampsia)",
+      "(Proteinuria)-CAUSES->(Pre-Eclampsia)",
+      "(Pre-Eclampsia)-CAUSES->(Placental Insufficiency)",
+      "(Placental Insufficiency)-CAUSES->(Fetal Distress)",
+      "(Fetal Distress)-CAUSES->(Stillbirth)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pre-Eclampsia",
+        "Genes",
+        "Adrenal Cortex Hormones",
+        "Perfusion (procedure)"
+      ],
+      [
+        "Pre-Eclampsia",
+        "Genes",
+        "Ouabain",
+        "Perfusion (procedure)"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "ISA"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "ISA"
+      ]
+    ],
+    "paths": [
+      "(Pre-Eclampsia)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Adrenal Cortex Hormones)-ISA->(Perfusion (procedure))",
+      "(Pre-Eclampsia)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Ouabain)-ISA->(Perfusion (procedure))"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Pre-Eclampsia)-Eclampsia)",
+      "(Proteinuria)-CAUSES->(Pre-Eclampsia)-Eclampsia)",
+      "(Fetal Distress)-CAUSES->(Stillbirth)",
+      "(Pre-Eclampsia)-CAUSES->(Placental Insufficiency)",
+      "(Placental Insufficiency)-CAUSES->(Fetal Distress)",
+      "(Fetal Growth Retardation)-COMPLICATES->(Growth retardation)",
+      "(Perfusion (procedure))-TREATS->(Anemia)-CAUSES->(Fetal Growth Retardation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Proteinuria in the absence of hypertension during third trimester\" -> \"Pre-eclampsia\" -> \"Impaired placental perfusion\" -> \"Intrauterine growth restriction\" -> \"Growth retardation in neonate after delivery\" -> 80% CHAIN: \"Proteinuria in the absence of hypertension during third trimester\" -> \"Pre-eclampsia\" -> \"Placental insufficiency\" -> \"Fetal distress\" -> \"Stillbirth\" -> 80%"
+  ],
+  "enhanced_information": "The most likely finding in the neonate after delivery is growth retardation due to impaired placental perfusion leading to intrauterine growth restriction, as a consequence of pre-eclampsia. This is supported by the chain of events involving proteinuria in the absence of hypertension during the third trimester, pre-eclampsia, placental insufficiency, and fetal distress. The evidence paths confirm the relationship between pre-eclampsia and placental insufficiency, which can result in fetal growth retardation.",
+  "analysis": "The core medical principle here is the association between pre-eclampsia and impaired placental perfusion leading to intrauterine growth restriction in the neonate. The patient's presentation with proteinuria in the absence of hypertension, along with the lab findings suggestive of pre-eclampsia (elevated BUN, proteinuria, and hypertension), indicates a high likelihood of pre-eclampsia. Pre-eclampsia can lead to placental insufficiency, resulting in growth retardation in the neonate. Meconium aspiration, microcephaly, seizures, and stillbirth are less likely in this scenario.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      10
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 10
+  },
+  "normal_results": []
+}

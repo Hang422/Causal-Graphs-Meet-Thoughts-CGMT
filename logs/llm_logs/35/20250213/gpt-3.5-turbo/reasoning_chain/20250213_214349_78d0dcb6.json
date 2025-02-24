@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_214349",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "78d0dcb6",
+  "question_text": "A 70-year-old male visits his primary care physician because of progressive weight loss. He has a 20-year history of smoking 2 packs of cigarettes a day and was diagnosed with diabetes mellitus 6 years ago. After physical examination, the physician tells the patient he suspects adenocarcinoma at the head of the pancreas. Which of the following physical examination findings would support the diagnosis:?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 70-year-old male visits his primary care physician because of progressive weight loss. He has a 20-year history of smoking 2 packs of cigarettes a day and was diagnosed with diabetes mellitus 6 years ago. After physical examination, the physician tells the patient he suspects adenocarcinoma at the head of the pancreas. Which of the following physical examination findings would support the diagnosis:?\n\n            ### Options\n    opa. Lymphadenopathy of the umbilicus\nopb. Acanthosis nigricans\nopc. Palpable gallbladder\nopd. Renal artery bruits\nope. Splenomegaly\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Smoking 2 packs of cigarettes a day -> increased risk of developing adenocarcinoma at the head of the pancreas -> 80%\nCHAIN: Diabetes mellitus diagnosis 6 years ago -> increased risk of pancreatic adenocarcinoma -> 70%\nCHAIN: Progressive weight loss -> common symptom of pancreatic adenocarcinoma -> 90%\nCHAIN: Suspected adenocarcinoma at the head of the pancreas -> possible palpable gallbladder due to obstruction of the bile duct -> 60%\nCHAIN: Suspected adenocarcinoma at the head of the pancreas -> possible lymphadenopathy of the umbilicus (Sister Mary Joseph's nodule) due to metastasis -> 70%\nCHAIN: Suspected adenocarcinoma at the head of the pancreas -> possible splenomegaly due to metastasis or compression of the splenic vein -> 60%\nCHAIN: Suspected adenocarcinoma at the head of the pancreas -> unlikely acanthosis nigricans or renal artery bruits as specific physical examination findings -> 80%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

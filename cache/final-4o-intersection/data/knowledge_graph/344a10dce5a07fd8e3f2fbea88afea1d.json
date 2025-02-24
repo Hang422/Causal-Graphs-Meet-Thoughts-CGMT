@@ -1,0 +1,98 @@
+{
+  "question": "A 35-year-old woman is brought to the emergency department 30 minutes after the onset of severe dyspnea. On arrival, she is unresponsive. Her pulse is 160/min, respirations are 32/min, and blood pressure is 60/30 mm Hg. CT angiography of the chest shows extensive pulmonary embolism in both lungs. She is given a drug that inhibits both thrombin and factor Xa. Which of the following medications was most likely administered?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Ticagrelor",
+    "opb": "Apixaban",
+    "opc": "Unfractioned heparin",
+    "opd": "Fondaparinux",
+    "ope": "Tenecteplase\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Clot formation",
+        "Hemorrhage",
+        "Thrombin"
+      ],
+      [
+        "Clot formation",
+        "Hemorrhage",
+        "Thrombin"
+      ],
+      [
+        "Tenecteplase",
+        "Thrombus",
+        "Fibrinolysis"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Clot formation)-DIAGNOSES->(Hemorrhage)-ASSOCIATED_WITH->(Thrombin)",
+      "(Clot formation)-DIAGNOSES->(Hemorrhage)-ASSOCIATED_WITH->(Thrombin)",
+      "(Tenecteplase)-TREATS->(Thrombus)-MANIFESTATION_OF->(Fibrinolysis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Tenecteplase)-TREATS->(Thrombus)-MANIFESTATION_OF->(Fibrinolysis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Unfractioned heparin\" -> \"inhibits thrombin\" -> \"inhibits factor Xa\" -> \"prevents further clot formation\" -> 85%",
+    "CHAIN: \"Apixaban\" -> \"inhibits factor Xa\" -> \"reduces clot formation\" -> \"does not inhibit thrombin\" -> 60%",
+    "CHAIN: \"Fondaparinux\" -> \"inhibits factor Xa\" -> \"reduces clot formation\" -> \"does not inhibit thrombin\" -> 60%",
+    "CHAIN: \"Ticagrelor\" -> \"inhibits platelet aggregation\" -> \"does not inhibit thrombin or factor Xa\" -> 40%",
+    "CHAIN: \"Tenecteplase\" -> \"promotes fibrinolysis\" -> \"breaks down clots\" -> \"does not inhibit thrombin or factor Xa\" -> 50%"
+  ],
+  "enhanced_information": "The patient with extensive pulmonary embolism was likely administered unfractioned heparin. Unfractioned heparin is known to inhibit both thrombin and factor Xa, which aligns with the description of the drug given. This dual inhibition prevents further clot formation, making it suitable for acute management of pulmonary embolism. Apixaban and Fondaparinux only inhibit factor Xa and do not affect thrombin, thus they do not match the drug profile described. Ticagrelor inhibits platelet aggregation and does not target thrombin or factor Xa. Tenecteplase promotes fibrinolysis and breaks down clots but does not inhibit thrombin or factor Xa, as confirmed by the evidence path. Therefore, unfractioned heparin is the most appropriate choice based on the consensus and evidence.",
+  "analysis": "In the case of a patient with extensive pulmonary embolism, the immediate goal is to prevent further clot formation and stabilize the patient. The drug described as inhibiting both thrombin and factor Xa is most consistent with unfractioned heparin. Unfractioned heparin acts by enhancing the activity of antithrombin III, which in turn inhibits both thrombin (factor IIa) and factor Xa. This dual action makes it suitable for acute management of conditions like pulmonary embolism. Other options such as Apixaban and Fondaparinux only inhibit factor Xa, while Ticagrelor affects platelet aggregation and Tenecteplase is a fibrinolytic agent. Therefore, based on the mechanism of action described, unfractioned heparin is the most likely drug administered.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      33.33333333333333,
+      33.33333333333333,
+      0.0,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

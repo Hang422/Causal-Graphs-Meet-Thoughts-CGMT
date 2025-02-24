@@ -1,0 +1,174 @@
+{
+  "question": "Two days after undergoing an uncomplicated total thyroidectomy, a 63-year-old woman has acute, progressive chest pain. The pain is sharp and burning. She feels nauseated and short of breath. The patient has a history of hypertension, type 1 diabetes mellitus, medullary thyroid cancer, multiple endocrine neoplasia type 2A, anxiety, coronary artery disease, and gastroesophageal reflux disease. She smoked half a pack of cigarettes daily for 24 years but quit 18 years ago. Current medications include lisinopril, insulin glargine, insulin aspart, sertraline, aspirin, ranitidine, and levothyroxine. She appears anxious and diaphoretic. Her temperature is 37.4°C (99.3°F), pulse is 64/min, respirations are 17/min, and blood pressure is 148/77 mm Hg. The lungs are clear to auscultation. Examination shows a 3-cm linear incision over the anterior neck with 1 mm of surrounding erythema and mild serous discharge. The chest wall and abdomen are nontender. There is 5/5 strength in all extremities and decreased sensation to soft touch on the feet bilaterally. The remainder of the examination shows no abnormalities. Which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Obtain an ECG and troponin T levels",
+    "opb": "Administer IV pantoprazole and schedule endoscopy",
+    "opc": "Discontinue levothyroxine and obtain fT4 levels",
+    "opd": "Administer IV levofloxacin and obtain chest radiograph",
+    "ope": "Obtain urine and plasma metanephrine levels"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Thyroidectomy",
+        "Complication"
+      ],
+      [
+        "Complication",
+        "Disease",
+        "Hypocalcemia"
+      ],
+      [
+        "Complication",
+        "Obesity",
+        "Hypocalcemia"
+      ],
+      [
+        "Hypoparathyroidism",
+        "Hypocalcemia"
+      ],
+      [
+        "Hypocalcemia",
+        "Symptoms",
+        "Paresthesia"
+      ],
+      [
+        "Hypocalcemia",
+        "Adverse event",
+        "Paresthesia"
+      ],
+      [
+        "Hypocalcemia",
+        "Hypoparathyroidism",
+        "Paresthesia"
+      ],
+      [
+        "Paresthesia",
+        "Disease",
+        "arterial stiffness",
+        "Limb structure"
+      ],
+      [
+        "Paresthesia",
+        "Disease",
+        "Physiologic Function",
+        "Limb structure"
+      ],
+      [
+        "Paresthesia",
+        "Disease",
+        "Hearing",
+        "Limb structure"
+      ],
+      [
+        "Paresis",
+        "physiological aspects",
+        "Limb structure"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Thyroidectomy)-CAUSES->(Complication)",
+      "(Complication)-CAUSES->(Disease)-CAUSES->(Hypocalcemia)",
+      "(Complication)-CAUSES->(Obesity)-PREDISPOSES->(Hypocalcemia)",
+      "(Hypoparathyroidism)-CAUSES->(Hypocalcemia)",
+      "(Hypocalcemia)-CAUSES->(Symptoms)-CAUSES->(Paresthesia)",
+      "(Hypocalcemia)-CAUSES->(Adverse event)-CAUSES->(Paresthesia)",
+      "(Hypocalcemia)-CAUSES->(Hypoparathyroidism)-CAUSES->(Paresthesia)",
+      "(Paresthesia)-PREDISPOSES->(Disease)-CAUSES->(arterial stiffness)-PROCESS_OF->(Limb structure)",
+      "(Paresthesia)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Limb structure)",
+      "(Paresthesia)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Limb structure)",
+      "(Paresis)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Limb structure)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Thyroidectomy)-CAUSES->(Complication)",
+      "(Paresis)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Limb structure)",
+      "(Hypoparathyroidism)-CAUSES->(Hypocalcemia)",
+      "(Paresthesia)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Limb structure)",
+      "(Paresthesia)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Limb structure)",
+      "(Hypocalcemia)-CAUSES->(Symptoms)-CAUSES->(Paresthesia)",
+      "(Paresthesia)-PREDISPOSES->(Disease)-CAUSES->(arterial stiffness)-PROCESS_OF->(Limb structure)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Total thyroidectomy -> potential complication of hypoparathyroidism -> possible hypocalcemia -> muscle weakness and paresthesias -> decreased sensation in extremities -> 70%"
+  ],
+  "enhanced_information": "After total thyroidectomy, the patient presents with decreased sensation in extremities, which could be due to hypoparathyroidism and subsequent hypocalcemia. The most appropriate next step is to obtain an ECG and troponin T levels to evaluate for potential cardiac involvement given the acute, progressive chest pain.",
+  "analysis": "The patient's presentation of acute, progressive chest pain, along with nausea, shortness of breath, and diaphoresis, raises concern for a cardiac event, especially given her history of coronary artery disease. The enhanced information suggesting potential hypocalcemia as a cause of decreased sensation in extremities is important but does not change the immediate need to evaluate for cardiac involvement. Obtaining an ECG and troponin T levels is crucial in this scenario to assess for possible myocardial infarction or other cardiac issues.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

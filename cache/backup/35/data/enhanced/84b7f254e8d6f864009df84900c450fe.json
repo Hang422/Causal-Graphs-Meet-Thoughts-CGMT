@@ -1,0 +1,95 @@
+{
+  "question": "A 67-year-old man with stable coronary artery disease comes to the physician for a follow-up examination. Aside from occasional exertional chest pain on mowing the lawn or prolonged jogging, he feels well. He goes jogging for 20 minutes once a week and takes a tablet of sublingual nitroglycerine prior to his run to prevent anginal chest pain. The patient would like to run longer distances and asks the physician whether he could increase the dose of the drug prior to running. Administration of higher dosages of this drug is most likely to result in which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Rebound angina",
+    "opb": "Development of tolerance",
+    "opc": "Reflex sympathetic activity",
+    "opd": "Anaphylactic reaction",
+    "ope": "Coronary artery vasospasm"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Nitroglycerin",
+        "Coronary Artery Vasospasm"
+      ],
+      [
+        "Nitroglycerin",
+        "Disease",
+        "Anaphylaxis"
+      ],
+      [
+        "Nitroglycerin",
+        "Myocardial Infarction",
+        "Anaphylaxis"
+      ],
+      [
+        "Nitroglycerin",
+        "Symptoms",
+        "Anaphylaxis"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Nitroglycerin)-TREATS->(Coronary Artery Vasospasm)",
+      "(Nitroglycerin)-TREATS->(Disease)-CAUSES->(Anaphylaxis)",
+      "(Nitroglycerin)-TREATS->(Myocardial Infarction)-CAUSES->(Anaphylaxis)",
+      "(Nitroglycerin)-PREVENTS->(Symptoms)-CAUSES->(Anaphylaxis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Nitroglycerin)-TREATS->(Disease)-CAUSES->(Anaphylaxis)",
+      "(Nitroglycerin)-TREATS->(Myocardial Infarction)-CAUSES->(Anaphylaxis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Increased dose of nitroglycerine\" -> \"Development of tolerance\" -> 80% CHAIN: \"Increased dose of nitroglycerine\" -> \"Rebound angina\" -> 70% CHAIN: \"Increased dose of nitroglycerine\" -> \"Coronary artery vasospasm\" -> 60% CHAIN: \"Increased dose of nitroglycerine\" -> \"Reflex sympathetic activity\" -> 50% CHAIN: \"Increased dose of nitroglycerine\" -> \"Anaphylactic reaction\" -> 80%"
+  ],
+  "enhanced_information": "Increasing the dose of nitroglycerine is most likely to result in the development of tolerance rather than rebound angina, reflex sympathetic activity, anaphylactic reaction, or coronary artery vasospasm. Evidence paths linking nitroglycerin to anaphylaxis are not directly relevant to the question.",
+  "analysis": "Nitroglycerine is a vasodilator commonly used to relieve angina symptoms by dilating coronary arteries. However, with continued use at higher doses, the body can develop tolerance to its effects, leading to reduced efficacy. Rebound angina is less likely as it typically occurs upon sudden withdrawal of nitroglycerine. Reflex sympathetic activity is not the primary concern with increased nitroglycerine dosages. Anaphylactic reactions are rare with nitroglycerine use. Coronary artery vasospasm is not the expected outcome of increasing nitroglycerine dosage.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

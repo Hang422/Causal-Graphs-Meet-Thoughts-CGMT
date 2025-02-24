@@ -1,0 +1,144 @@
+{
+  "question": "A newborn girl is rushed to the neonatal ICU after an emergency cesarean section due to unstable vital signs after delivery. The pregnancy was complicated due to oligohydramnios and pulmonary hypoplasia. Gestation was at 38 weeks. APGAR scores were 6 and 8 at 1 and 5 minutes respectively. The newborn’s temperature is 37.0°C (98.6°F), the blood pressure is 60/40 mm Hg, the respiratory rate is 45/min, and the pulse is 140/min. Physical examination reveals irregularly contoured bilateral abdominal masses. Abdominal ultrasound reveals markedly enlarged echogenic kidneys (5 cm in the vertical dimension) with multiple cysts in the cortex and medulla. This patient is at highest risk of which of the following complications?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Subarachnoid hemorrhage",
+    "opb": "Emphysema",
+    "opc": "Portal hypertension",
+    "opd": "Recurrent UTI",
+    "ope": "Self mutilation"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Respiratory distress",
+        "Disease",
+        "Hypoxia"
+      ],
+      [
+        "Respiratory distress",
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Hypoxia"
+      ],
+      [
+        "Respiratory distress",
+        "Infection",
+        "Hypoxia"
+      ],
+      [
+        "Renal cyst",
+        "Kidney Failure"
+      ],
+      [
+        "Kidney Failure",
+        "Urinary tract infection"
+      ],
+      [
+        "Polycystic Kidney Diseases",
+        "Kidney Failure"
+      ],
+      [
+        "Kidney Failure",
+        "Urinary tract infection"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Respiratory distress)-CAUSES->(Disease)-CAUSES->(Hypoxia)",
+      "(Respiratory distress)-CAUSES->(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Hypoxia)",
+      "(Respiratory distress)-CAUSES->(Infection)-CAUSES->(Hypoxia)",
+      "(Renal cyst)-CAUSES->(Kidney Failure)",
+      "(Kidney Failure)-PREDISPOSES->(Urinary tract infection)",
+      "(Polycystic Kidney Diseases)-CAUSES->(Kidney Failure)",
+      "(Kidney Failure)-PREDISPOSES->(Urinary tract infection)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Kidney",
+        "Kidney Failure"
+      ],
+      [
+        "Kidney",
+        "Polycystic Kidney Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Kidney)-LOCATION_OF->(Kidney Failure)",
+      "(Kidney)-LOCATION_OF->(Polycystic Kidney Diseases)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Kidney)-LOCATION_OF->(Kidney Failure)",
+      "(Kidney)-LOCATION_OF->(Polycystic Kidney Diseases)",
+      "(Kidney Failure)-PREDISPOSES->(Urinary tract infection)",
+      "(Renal cyst)-CAUSES->(Kidney Failure)",
+      "(Polycystic Kidney Diseases)-CAUSES->(Kidney Failure)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Oligohydramnios and pulmonary hypoplasia\" -> \"Compromised lung development\" -> \"Respiratory distress\" -> \"Hypoxia\" -> \"Systemic hypoperfusion\" -> \"Renal hypoperfusion\" -> \"Renal cysts and enlarged kidneys\" -> \"Renal failure\" -> \"Recurrent UTI\" -> 80%",
+    "CHAIN: \"Enlarged echogenic kidneys with multiple cysts\" -> \"Polycystic kidney disease\" -> \"Renal insufficiency\" -> \"Recurrent UTI\" -> 70%"
+  ],
+  "enhanced_information": "The newborn with enlarged echogenic kidneys and multiple cysts is at highest risk of recurrent UTI due to renal insufficiency, likely related to polycystic kidney disease. The presence of renal cysts and enlarged kidneys predisposes to kidney failure, which in turn increases the risk of recurrent UTIs. This is supported by the evidence paths linking kidney failure, polycystic kidney disease, and urinary tract infections.",
+  "analysis": "The core medical principle here is the association between polycystic kidney disease, renal insufficiency, and the increased risk of recurrent UTIs. The presence of markedly enlarged echogenic kidneys with multiple cysts in this newborn suggests a high likelihood of polycystic kidney disease, which can lead to renal failure and subsequent recurrent UTIs.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4,
+      3
+    ],
+    "coverage_rates": [
+      57.14285714285714,
+      42.857142857142854
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

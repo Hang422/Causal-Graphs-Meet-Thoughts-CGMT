@@ -1,0 +1,139 @@
+{
+  "question": "A 58-year-old woman comes to the emergency department because of a 2-day history of worsening upper abdominal pain. She reports nausea and vomiting, and is unable to tolerate oral intake. She appears uncomfortable. Her temperature is 38.1°C (100.6°F), pulse is 92/min, respirations are 18/min, and blood pressure is 132/85 mm Hg. Examination shows yellowish discoloration of her sclera. Her abdomen is tender in the right upper quadrant. There is no abdominal distention or organomegaly. Laboratory studies show:\nHemoglobin 13 g/dL\nLeukocyte count 16,000/mm3\nSerum\nUrea nitrogen\n25 mg/dL\nCreatinine 2 mg/dL\nAlkaline phosphatase 432 U/L\nAlanine aminotransferase 196 U/L\nAspartate transaminase 207 U/L\nBilirubin\nTotal 3.8 mg/dL\nDirect 2.7 mg/dL\nLipase 82 U/L (N = 14–280)\nUltrasound of the right upper quadrant shows dilated intrahepatic and extrahepatic bile ducts and multiple hyperechoic spheres within the gallbladder. The pancreas is not well visualized. Intravenous fluid resuscitation and antibiotic therapy with ceftriaxone and metronidazole is begun. Twelve hours later, the patient appears acutely ill and is not oriented to time. Her temperature is 39.1°C (102.4°F), pulse is 105/min, respirations are 22/min, and blood pressure is 112/82 mm Hg. Which of the following is the most appropriate next step in management?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Abdominal CT scan",
+    "opb": "Laparoscopic cholecystectomy",
+    "opc": "Percutaneous cholecystostomy",
+    "opd": "Extracorporeal shock wave lithotripsy",
+    "ope": "Endoscopic retrograde cholangiopancreatography\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Alanine Transaminase",
+        "Physical findings",
+        "Obesity",
+        "Ultrasonography"
+      ],
+      [
+        "Alanine Transaminase",
+        "Hypokinesia",
+        "Obesity",
+        "Ultrasonography"
+      ],
+      [
+        "Alanine Transaminase",
+        "Physical findings",
+        "Infection",
+        "Ultrasonography"
+      ],
+      [
+        "Aspartate Transaminase",
+        "Symptoms",
+        "Ultrasonography"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-CAUSES->(Obesity)-CAUSES->(Ultrasonography)",
+      "(Alanine Transaminase)-CAUSES->(Hypokinesia)-CAUSES->(Obesity)-CAUSES->(Ultrasonography)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-CAUSES->(Infection)-CAUSES->(Ultrasonography)",
+      "(Aspartate Transaminase)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Bilirubin measurement",
+        "Icterus"
+      ],
+      [
+        "[D]Nausea and vomiting NOS",
+        "Disease",
+        "Fatty degeneration",
+        "Alanine Transaminase"
+      ],
+      [
+        "[D]Nausea and vomiting NOS",
+        "Disease",
+        "Fatty degeneration",
+        "Alanine Transaminase"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Bilirubin measurement)-DIAGNOSES->(Icterus)",
+      "([D]Nausea and vomiting NOS)-ASSOCIATED_WITH->(Disease)-CAUSES->(Fatty degeneration)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "([D]Nausea and vomiting NOS)-MANIFESTATION_OF->(Disease)-CAUSES->(Fatty degeneration)-ASSOCIATED_WITH->(Alanine Transaminase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Bilirubin measurement)-DIAGNOSES->(Icterus)",
+      "(Aspartate Transaminase)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-CAUSES->(Obesity)-CAUSES->(Ultrasonography)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Gallstone in the common bile duct -> obstructed bile flow -> increased bilirubin levels -> jaundice -> right upper quadrant abdominal pain -> nausea and vomiting -> elevated liver enzymes (AST, ALT) -> dilated intrahepatic and extrahepatic bile ducts on ultrasound -> 80%"
+  ],
+  "enhanced_information": "The patient presents with signs of obstructive jaundice due to a gallstone in the common bile duct, leading to elevated bilirubin levels, right upper quadrant pain, nausea, and vomiting. Ultrasound shows dilated bile ducts. Given the acutely ill state, the most appropriate next step is endoscopic retrograde cholangiopancreatography (ERCP) for therapeutic intervention.",
+  "analysis": "The patient's presentation with signs of obstructive jaundice due to a gallstone in the common bile duct, along with the acutely ill state, indicates the need for urgent intervention. Endoscopic retrograde cholangiopancreatography (ERCP) is the most appropriate next step for therapeutic management in this scenario.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

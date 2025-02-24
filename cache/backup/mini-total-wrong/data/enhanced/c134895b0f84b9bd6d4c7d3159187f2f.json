@@ -1,0 +1,130 @@
+{
+  "question": "A 21-year-old man presents to the emergency department after sustaining a stab wound to the neck at a local farmer's market. The patient is otherwise healthy and is complaining of pain. The patient is able to offer the history himself. His temperature is 97.6°F (36.4°C), blood pressure is 120/84 mmHg, pulse is 90/min, respirations are 15/min, and oxygen saturation is 98% on room air. Physical exam demonstrates a 3 cm laceration 1 cm inferior to the mastoid process on the right side. The patient's breath sounds are clear and he is protecting his airway. No stridor or difficulty breathing is noted. Which of the following is the most appropriate next step in the management of this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Arteriography",
+    "opb": "CT angiogram",
+    "opc": "Intubation",
+    "opd": "Observation and blood pressure monitoring",
+    "ope": "Surgical exploration"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Assault by stabbing",
+        "Inflammatory disorder",
+        "Immunity",
+        "Carotid Arteries"
+      ],
+      [
+        "Assault by stabbing",
+        "Esophageal Perforation",
+        "Respiratory distress"
+      ],
+      [
+        "Assault by stabbing",
+        "Ventricular Septal Defects",
+        "Respiratory distress"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Assault by stabbing)-CAUSES->(Inflammatory disorder)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Carotid Arteries)",
+      "(Assault by stabbing)-CAUSES->(Esophageal Perforation)-CAUSES->(Respiratory distress)",
+      "(Assault by stabbing)-CAUSES->(Ventricular Septal Defects)-CAUSES->(Respiratory distress)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Assault by stabbing",
+        "Inflammatory disorder",
+        "Immunity",
+        "Lung",
+        "Airway device"
+      ],
+      [
+        "Assault by stabbing",
+        "Inflammatory disorder",
+        "Immunity",
+        "Entire respiratory tract",
+        "Airway device"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Assault by stabbing)-CAUSES->(Inflammatory disorder)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Lung)-LOCATION_OF->(Airway device)",
+      "(Assault by stabbing)-CAUSES->(Inflammatory disorder)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Entire respiratory tract)-LOCATION_OF->(Airway device)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Assault by stabbing)-CAUSES->(Inflammatory disorder)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Lung)-LOCATION_OF->(Airway device)",
+      "(Assault by stabbing)-CAUSES->(Inflammatory disorder)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Entire respiratory tract)-LOCATION_OF->(Airway device)",
+      "(Assault by stabbing)-CAUSES->(Esophageal Perforation)-CAUSES->(Respiratory distress)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient presents with stab wound to neck\" -> \"Risk of vascular injury and airway compromise\" -> \"Patient is stable with clear breath sounds\" -> \"No immediate airway intervention needed\" -> \"Need to assess for vascular injury\" -> \"CT angiogram can evaluate vascular structures\" -> 85%",
+    "CHAIN: \"Patient has a stab wound to the neck\" -> \"Potential for injury to carotid artery or jugular vein\" -> \"Patient is hemodynamically stable\" -> \"No signs of airway obstruction\" -> \"Observation may miss vascular injury\" -> \"CT angiogram is appropriate for vascular assessment\" -> 90%",
+    "CHAIN: \"Stab wound to neck presents risk of serious injury\" -> \"Patient is stable with no respiratory distress\" -> \"Need to rule out vascular injury\" -> \"Surgical exploration is invasive and not first-line\" -> \"CT angiogram is less invasive and provides necessary information\" -> 88%",
+    "CHAIN: \"Patient with stab wound to neck\" -> \"Stable vital signs and clear airway\" -> \"Need to evaluate for potential vascular injury\" -> \"Observation may not be sufficient\" -> \"CT angiogram is a non-invasive imaging option\" -> 80%"
+  ],
+  "enhanced_information": "The patient presents with a stab wound to the neck, which poses a risk for vascular injury and potential airway compromise. However, he is stable with clear breath sounds and no signs of respiratory distress, indicating that immediate airway intervention is not necessary. Given the potential for injury to major vascular structures such as the carotid artery or jugular vein, it is crucial to assess for vascular injury. Observation alone may not adequately address this risk. A CT angiogram is a non-invasive imaging modality that can effectively evaluate vascular structures and is appropriate in this scenario. Surgical exploration is more invasive and typically reserved for cases where there is clear evidence of significant injury or instability. Therefore, the most appropriate next step in management is a CT angiogram to assess for vascular injury.",
+  "analysis": "In this case, the patient has sustained a stab wound to the neck but is stable, with no signs of respiratory distress or airway compromise. The primary concern in neck injuries is the potential for vascular injury, particularly to the carotid artery or jugular vein. Given that the patient is stable and has clear breath sounds, immediate intubation is not necessary. Observation and blood pressure monitoring alone would not adequately assess for potential vascular injuries. Surgical exploration is invasive and typically reserved for cases with clear signs of significant injury or instability. A CT angiogram is a non-invasive imaging modality that can effectively evaluate for vascular injuries in this context. Therefore, the most appropriate next step in management is to perform a CT angiogram to assess for vascular injury, as it aligns with the need for thorough evaluation without unnecessary invasive procedures.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      33.33333333333333,
+      33.33333333333333,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

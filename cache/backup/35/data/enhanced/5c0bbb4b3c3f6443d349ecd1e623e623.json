@@ -1,0 +1,176 @@
+{
+  "question": "A 45-year-old female is admitted to the hospital after worsening headaches for the past month. She has noticed that the headaches are usually generalized, and frequently occur during sleep. She does not have a history of migraines or other types of headaches. Her past medical history is significant for breast cancer, which was diagnosed a year ago and treated with mastectomy. She recovered fully and returned to work shortly thereafter. CT scan of the brain now shows a solitary cortical 5cm mass surrounded by edema in the left hemisphere of the brain at the grey-white matter junction. She is admitted to the hospital for further management. What is the most appropriate next step in management for this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Chemotherapy",
+    "opb": "Seizure prophylaxis and palliative pain therapy",
+    "opc": "Irradiation to the breasts",
+    "opd": "Irradiation to the brain mass",
+    "ope": "Surgical resection of the mass"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Headache Disorders, Primary",
+        "Disease",
+        "Lesion of brain"
+      ],
+      [
+        "Headache Disorders, Primary",
+        "Symptoms",
+        "Lesion of brain"
+      ],
+      [
+        "Headache Disorders, Primary",
+        "Cerebrovascular accident",
+        "Lesion of brain"
+      ],
+      [
+        "Headache",
+        "Hypertensive disease",
+        "Lesion of brain"
+      ],
+      [
+        "Headache",
+        "Cerebral Infarction",
+        "Lesion of brain"
+      ],
+      [
+        "Headache",
+        "Epilepsy",
+        "Lesion of brain"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Headache Disorders, Primary)-CAUSES->(Disease)-PREDISPOSES->(Lesion of brain)",
+      "(Headache Disorders, Primary)-CAUSES->(Symptoms)-PREDISPOSES->(Lesion of brain)",
+      "(Headache Disorders, Primary)-PREDISPOSES->(Cerebrovascular accident)-CAUSES->(Lesion of brain)",
+      "(Headache)-CAUSES->(Hypertensive disease)-CAUSES->(Lesion of brain)",
+      "(Headache)-CAUSES->(Cerebral Infarction)-CAUSES->(Lesion of brain)",
+      "(Headache)-CAUSES->(Epilepsy)-CAUSES->(Lesion of brain)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Headache",
+        "Subarachnoid Hemorrhage, Aneurysmal",
+        "Genes",
+        "Eye",
+        "Generalized Headache"
+      ],
+      [
+        "Headache",
+        "Thrombus",
+        "Genes",
+        "Eye",
+        "Generalized Headache"
+      ],
+      [
+        "Generalized Headache",
+        "Symptoms",
+        "Physiological Processes",
+        "Brain"
+      ],
+      [
+        "Generalized Headache",
+        "Symptoms",
+        "blood outflow",
+        "Brain"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Headache)-MANIFESTATION_OF->(Subarachnoid Hemorrhage, Aneurysmal)-ASSOCIATED_WITH->(Genes)-PART_OF->(Eye)-LOCATION_OF->(Generalized Headache)",
+      "(Headache)-ASSOCIATED_WITH->(Thrombus)-ASSOCIATED_WITH->(Genes)-PART_OF->(Eye)-LOCATION_OF->(Generalized Headache)",
+      "(Generalized Headache)-ISA->(Symptoms)-MANIFESTATION_OF->(Physiological Processes)-PROCESS_OF->(Brain)",
+      "(Generalized Headache)-ISA->(Symptoms)-MANIFESTATION_OF->(blood outflow)-PROCESS_OF->(Brain)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Headache)-CAUSES->(Hypertensive disease)-CAUSES->(Lesion of brain)",
+      "(Headache)-CAUSES->(Cerebral Infarction)-CAUSES->(Lesion of brain)",
+      "(Headache)-CAUSES->(Epilepsy)-CAUSES->(Lesion of brain)",
+      "(Headache Disorders, Primary)-CAUSES->(Disease)-PREDISPOSES->(Lesion of brain)",
+      "(Headache Disorders, Primary)-CAUSES->(Symptoms)-PREDISPOSES->(Lesion of brain)",
+      "(Headache Disorders, Primary)-PREDISPOSES->(Cerebrovascular accident)-CAUSES->(Lesion of brain)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Worsening headaches\" -> \"Generalized headaches during sleep\" -> \"Solitary cortical 5cm mass in the left hemisphere of the brain\" -> \"Likely brain tumor\" -> \"Further evaluation needed\" -> 80% CHAIN: \"Breast cancer history\" -> \"Increased risk of brain metastasis\" -> \"Likely metastatic brain tumor\" -> \"Further imaging required\" -> 75% CHAIN: \"CT scan findings: 5cm cortical mass with edema\" -> \"Suspicion of high-grade glioma\" -> \"Neurosurgical consultation needed\" -> 85% CHAIN: \"No history of migraines\" -> \"Unlikely primary headache disorder\" -> \"Brain lesion likely causing headaches\" -> \"Management directed at brain lesion\" -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation of worsening headaches, a solitary cortical 5cm brain mass, and a history of breast cancer suggests a likely metastatic brain tumor. The CT findings of a cortical mass with edema raise suspicion of a high-grade glioma. The most appropriate next step in management would be neurosurgical consultation for possible surgical resection of the mass.",
+  "analysis": "The patient's presentation of a solitary cortical brain mass, history of breast cancer, and CT findings suggest a likely metastatic brain tumor, possibly a high-grade glioma. Given the size and location of the mass, the most appropriate next step in management would be neurosurgical consultation for possible surgical resection of the mass to relieve symptoms and obtain tissue for diagnosis.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

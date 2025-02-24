@@ -1,0 +1,196 @@
+{
+  "question": "A 68-year-old man is admitted to the emergency department after 2 days of difficulty breathing and fever. His past medical history is significant for hypertension and benign prostate hypertrophy. He takes hydrochlorothiazide and tamsulosin.  He also admits to drinking alcohol on the weekends and a half pack a day smoking habit. Upon admission, he is found to have blood pressure of 125/83 mm Hg, pulse of 88/min, a respiratory rate of 28/min, and a temperature of 38.9°C (102°F). On physical exam breath sounds are decreased at the left pulmonary base. A chest x-ray reveals consolidation in the left lower lobe. Additional laboratory tests demonstrate leukocytosis, elevated C-reactive protein, a serum creatinine (Cr) of 8.0 mg/dL, and a blood urea nitrogen (BUN) of 32 mg/dL. The patient is admitted to the hospital and started on cefepime and clarithromycin. His dyspnea slowly improves after 48 hours, however, his body temperature remains at 39°C (102.2°F). Recent laboratory tests show reduced C-reactive protein levels, a Cr of 1.8 mg/dL and a BUN of 35 mg/dL. A urinalysis is ordered. Which of the following would you expect to find in this patient’s urine?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "White blood cell casts",
+    "opb": "Acanthocytes",
+    "opc": "Urate crystals",
+    "opd": "Hyaline casts",
+    "ope": "Calcium oxalate crystals"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Lung consolidation",
+        "Mycoplasma pneumonia",
+        "Systemic inflammatory response"
+      ],
+      [
+        "Lung consolidation",
+        "Respiratory Distress Syndrome, Adult",
+        "Systemic inflammatory response"
+      ],
+      [
+        "Lung consolidation",
+        "Pancreatitis, Acute",
+        "Systemic inflammatory response"
+      ],
+      [
+        "Pneumonia",
+        "Disease",
+        "Systemic inflammatory response"
+      ],
+      [
+        "Pneumonia",
+        "Obesity",
+        "Systemic inflammatory response"
+      ],
+      [
+        "Pneumonia",
+        "Myocardial Infarction",
+        "Systemic inflammatory response"
+      ],
+      [
+        "Systemic inflammatory response",
+        "Kidney Failure, Acute"
+      ],
+      [
+        "Treated with",
+        "Atherosclerosis",
+        "Diabetic Nephropathy",
+        "physiologic resolution"
+      ],
+      [
+        "Communicable Diseases",
+        "Leishmaniasis",
+        "physiologic resolution"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Lung consolidation)-PREDISPOSES->(Mycoplasma pneumonia)-CAUSES->(Systemic inflammatory response)",
+      "(Lung consolidation)-PREDISPOSES->(Respiratory Distress Syndrome, Adult)-CAUSES->(Systemic inflammatory response)",
+      "(Lung consolidation)-PREDISPOSES->(Pancreatitis, Acute)-CAUSES->(Systemic inflammatory response)",
+      "(Pneumonia)-CAUSES->(Disease)-CAUSES->(Systemic inflammatory response)",
+      "(Pneumonia)-CAUSES->(Obesity)-CAUSES->(Systemic inflammatory response)",
+      "(Pneumonia)-CAUSES->(Myocardial Infarction)-CAUSES->(Systemic inflammatory response)",
+      "(Systemic inflammatory response)-PREDISPOSES->(Kidney Failure, Acute)",
+      "(Treated with)-TREATS->(Atherosclerosis)-CAUSES->(Diabetic Nephropathy)-PREDISPOSES->(physiologic resolution)",
+      "(Communicable Diseases)-CAUSES->(Leishmaniasis)-MANIFESTATION_OF->(physiologic resolution)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Structure of left lower lobe of lung",
+        "Macrophage activation syndrome",
+        "Systemic inflammatory response"
+      ],
+      [
+        "Kidney Failure, Acute",
+        "Pathogenesis",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Adipose tissue",
+        "Blood urea nitrogen measurement"
+      ],
+      [
+        "Kidney Failure, Acute",
+        "Pathogenesis",
+        "Genes",
+        "Renal Tissue",
+        "Blood urea nitrogen measurement"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Structure of left lower lobe of lung)-LOCATION_OF->(Macrophage activation syndrome)-CAUSES->(Systemic inflammatory response)",
+      "(Kidney Failure, Acute)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)-LOCATION_OF->(Blood urea nitrogen measurement)",
+      "(Kidney Failure, Acute)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Renal Tissue)-LOCATION_OF->(Blood urea nitrogen measurement)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Systemic inflammatory response)-PREDISPOSES->(Kidney Failure, Acute)",
+      "(Structure of left lower lobe of lung)-LOCATION_OF->(Macrophage activation syndrome)-CAUSES->(Systemic inflammatory response)",
+      "(Lung consolidation)-PREDISPOSES->(Pancreatitis, Acute)-CAUSES->(Systemic inflammatory response)",
+      "(Kidney Failure, Acute)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)-LOCATION_OF->(Blood urea nitrogen measurement)",
+      "(Kidney Failure, Acute)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Renal Tissue)-LOCATION_OF->(Blood urea nitrogen measurement)",
+      "(Lung consolidation)-PREDISPOSES->(Mycoplasma pneumonia)-CAUSES->(Systemic inflammatory response)",
+      "(Lung consolidation)-PREDISPOSES->(Respiratory Distress Syndrome, Adult)-CAUSES->(Systemic inflammatory response)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Pneumonia with consolidation in the left lower lobe\" -> \"Systemic inflammatory response\" -> \"Acute kidney injury\" -> \"Elevated serum creatinine and blood urea nitrogen\" -> \"Urinalysis abnormalities\" -> 80%",
+    "CHAIN: \"Infection treated with cefepime and clarithromycin\" -> \"Resolution of systemic inflammation\" -> \"Improvement in kidney function\" -> \"Changes in urinalysis parameters\" -> 75%"
+  ],
+  "enhanced_information": "The patient with pneumonia and acute kidney injury is likely to have urinalysis abnormalities. Given the improvement in kidney function with reduced serum creatinine and elevated BUN, the urinalysis may show hyaline casts, reflecting the resolving kidney injury.",
+  "analysis": "The patient with pneumonia and acute kidney injury is likely to have urinalysis abnormalities. Given the improvement in kidney function with reduced serum creatinine and elevated BUN, the urinalysis may show hyaline casts, reflecting the resolving kidney injury. White blood cell casts are more indicative of glomerulonephritis, acanthocytes are seen in conditions like glomerulonephritis or hemolytic anemia, urate crystals are associated with gout, and calcium oxalate crystals are linked to kidney stones. Hyaline casts are commonly seen in resolving kidney injury.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      5,
+      2
+    ],
+    "coverage_rates": [
+      71.42857142857143,
+      28.57142857142857
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

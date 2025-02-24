@@ -1,0 +1,130 @@
+{
+  "question": "A 16-year-old boy presents to the emergency department after a skateboarding accident. He fell on a broken bottle and received a 4 cm wound on the dorsal aspect of his left hand. His vitals are stable and he was evaluated by the surgeon on call who determined to suture was not required. After several weeks the wound has almost completely healed (see image). Which of the following is the correct description of this patient’s wound before healing?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Incised wound",
+    "opb": "Abrasion",
+    "opc": "Laceration",
+    "opd": "Avulsion",
+    "ope": "Puncture"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Scraping",
+        "Disease",
+        "physiological aspects",
+        "Skin Specimen"
+      ],
+      [
+        "Scraping",
+        "Inflammation",
+        "physiological aspects",
+        "Skin Specimen"
+      ],
+      [
+        "Scraping",
+        "Pain",
+        "physiological aspects",
+        "Skin Specimen"
+      ],
+      [
+        "Surgical avulsion",
+        "Diabetes",
+        "physiological aspects",
+        "Skin Specimen"
+      ],
+      [
+        "Surgical avulsion",
+        "Sequela of disorder",
+        "physiological aspects",
+        "Skin Specimen"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Scraping)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Skin Specimen)",
+      "(Scraping)-CAUSES->(Inflammation)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Skin Specimen)",
+      "(Scraping)-TREATS->(Pain)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Skin Specimen)",
+      "(Surgical avulsion)-TREATS->(Diabetes)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Skin Specimen)",
+      "(Surgical avulsion)-TREATS->(Sequela of disorder)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Skin Specimen)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Surgical avulsion)-TREATS->(Diabetes)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Skin Specimen)",
+      "(Surgical avulsion)-TREATS->(Sequela of disorder)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Skin Specimen)",
+      "(Scraping)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Skin Specimen)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient fell on a broken bottle\" -> \"Resulted in a 4 cm wound on the dorsal aspect of the hand\" -> \"Wound is not clean-cut\" -> \"Edges of the wound are irregular\" -> \"Wound is classified as a laceration\" -> 85%",
+    "CHAIN: \"Wound caused by a sharp object\" -> \"Wound has jagged edges\" -> \"Not a clean incision\" -> \"Indicates a laceration rather than an incision\" -> 90%",
+    "CHAIN: \"Wound is deeper than a scrape\" -> \"Involves tearing of the skin\" -> \"Does not fit the definition of an abrasion\" -> \"Wound is classified as a laceration\" -> 80%",
+    "CHAIN: \"Wound is not a puncture\" -> \"Puncture wounds are typically small and deep\" -> \"This wound is larger and has irregular edges\" -> \"Wound is classified as a laceration\" -> 75%",
+    "CHAIN: \"Wound is not an avulsion\" -> \"Avulsion involves tearing away of skin or tissue\" -> \"This wound does not show complete detachment\" -> \"Wound is classified as a laceration\" -> 80%"
+  ],
+  "enhanced_information": "The patient's wound, resulting from a fall on a broken bottle, is characterized by irregular edges and a depth greater than a scrape, indicating tearing of the skin. This aligns with the definition of a laceration, which is a wound caused by blunt force trauma that results in irregular, jagged edges. The reasoning chains correctly identify that the wound does not fit the definitions of an incised wound (clean-cut), abrasion (superficial scrape), puncture (small and deep), or avulsion (complete tearing away of tissue). Therefore, the correct classification of the wound is a laceration.",
+  "analysis": "The wound described in the scenario is a result of a fall on a broken bottle, which typically causes tearing of the skin rather than a clean cut. The characteristics of the wound, including its irregular edges and depth, suggest that it is not a clean incised wound, which would have smooth edges. An abrasion is a superficial injury that does not penetrate deeply into the skin, while a puncture is a small, deep wound, and an avulsion involves the complete tearing away of tissue. Given these definitions, the most appropriate classification for this wound is a laceration, as it is caused by blunt force trauma and has jagged edges. Therefore, the correct answer is 'laceration'.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      50.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

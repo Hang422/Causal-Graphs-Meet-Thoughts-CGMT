@@ -1,0 +1,172 @@
+{
+  "question": "A previously healthy 31-year-old woman comes to the emergency department because of sudden, severe epigastric pain and vomiting for the past 4 hours. She reports that the pain radiates to the back and began when she was having dinner and drinks at a local brewpub. Her temperature is 37.9°C (100.2°F), pulse is 98/min, respirations are 19/min, and blood pressure is 110/60 mm Hg. Abdominal examination shows epigastric tenderness and guarding but no rebound. Bowel sounds are decreased. Laboratory studies show:\nHematocrit 43%\nLeukocyte count 9000/mm3\nSerum\nNa+ 140 mEq/L\nK+ 4.5 mEq/L\nCa2+ 9.0 mg/dL\nLipase 170 U/L (N = < 50 U/L)\nAmylase 152 U/L\nAlanine aminotransferase (ALT, GPT) 140 U/L\nIntravenous fluid resuscitation is begun. Which of the following is the most appropriate next step in management?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Contrast-enhanced abdominal CT scan",
+    "opb": "Right upper quadrant abdominal ultrasound",
+    "opc": "Plain x-ray of the abdomen",
+    "opd": "Measure serum triglycerides",
+    "ope": "Blood alcohol level assay"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Amylase level finding",
+        "Pancreatic Fistula",
+        "Pancreatitis"
+      ],
+      [
+        "Hyperlipasaemia",
+        "Pancreatitis"
+      ],
+      [
+        "Alanine Transaminase",
+        "Physical findings",
+        "Physiological stress",
+        "Liver"
+      ],
+      [
+        "Alanine Transaminase",
+        "Physical findings",
+        "Neutrophil Activation",
+        "Liver"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "COMPLICATES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Amylase level finding)-PREDISPOSES->(Pancreatic Fistula)-COMPLICATES->(Pancreatitis)",
+      "(Hyperlipasaemia)-PREDISPOSES->(Pancreatitis)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-MANIFESTATION_OF->(Physiological stress)-PROCESS_OF->(Liver)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-MANIFESTATION_OF->(Neutrophil Activation)-PROCESS_OF->(Liver)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pancreatitis",
+        "Symptoms",
+        "Ultrasonography",
+        "Diagnostic Imaging"
+      ],
+      [
+        "Pancreatitis",
+        "Infection",
+        "Ultrasonography",
+        "Diagnostic Imaging"
+      ],
+      [
+        "Decreased bowel sounds",
+        "Symptoms",
+        "Paralytic Ileus"
+      ],
+      [
+        "Paralytic Ileus",
+        "Symptoms",
+        "Ultrasonography",
+        "Diagnostic Imaging"
+      ],
+      [
+        "Paralytic Ileus",
+        "Symptoms",
+        "Diagnostic radiologic examination",
+        "Diagnostic Imaging"
+      ],
+      [
+        "Liver",
+        "Diagnostic Imaging"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "ISA"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "ISA"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "ISA"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "ISA"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Pancreatitis)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)-ISA->(Diagnostic Imaging)",
+      "(Pancreatitis)-CAUSES->(Infection)-CAUSES->(Ultrasonography)-ISA->(Diagnostic Imaging)",
+      "(Decreased bowel sounds)-ISA->(Symptoms)-ASSOCIATED_WITH->(Paralytic Ileus)",
+      "(Paralytic Ileus)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)-ISA->(Diagnostic Imaging)",
+      "(Paralytic Ileus)-CAUSES->(Symptoms)-CAUSES->(Diagnostic radiologic examination)-ISA->(Diagnostic Imaging)",
+      "(Liver)-LOCATION_OF->(Diagnostic Imaging)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Amylase level finding)-PREDISPOSES->(Pancreatic Fistula)-COMPLICATES->(Pancreatitis)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-MANIFESTATION_OF->(Neutrophil Activation)-PROCESS_OF->(Liver)",
+      "(Decreased bowel sounds)-ISA->(Symptoms)-ASSOCIATED_WITH->(Paralytic Ileus)",
+      "(Liver)-LOCATION_OF->(Diagnostic Imaging)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-MANIFESTATION_OF->(Physiological stress)-PROCESS_OF->(Liver)",
+      "(Hyperlipasaemia)-PREDISPOSES->(Pancreatitis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Sudden, severe epigastric pain with vomiting\" -> \"Radiates to the back\" -> \"Possible pancreatitis\" -> 80% CHAIN: \"Elevated lipase and amylase levels\" -> \"Supportive of pancreatitis\" -> \"Consider imaging for confirmation\" -> 85% CHAIN: \"Epigastric tenderness and guarding on examination\" -> \"Signs of acute abdomen\" -> \"Need for further evaluation\" -> 90% CHAIN: \"Decreased bowel sounds\" -> \"Possible paralytic ileus\" -> \"Consider imaging to assess bowel status\" -> 75% CHAIN: \"Elevated ALT levels\" -> \"Indicates possible liver involvement\" -> \"Consider imaging to evaluate liver status\" -> 80%"
+  ],
+  "enhanced_information": "The patient presents with symptoms and laboratory findings suggestive of pancreatitis. Given the clinical picture, the most appropriate next step in management would be a contrast-enhanced abdominal CT scan to confirm the diagnosis and assess the extent of pancreatic inflammation.",
+  "analysis": "The patient's presentation with sudden, severe epigastric pain, vomiting, and elevated lipase levels is highly suggestive of acute pancreatitis. The most appropriate next step in management for this patient is a contrast-enhanced abdominal CT scan to confirm the diagnosis and assess the extent of pancreatic inflammation. This imaging modality will help evaluate the severity of pancreatitis and guide further management.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

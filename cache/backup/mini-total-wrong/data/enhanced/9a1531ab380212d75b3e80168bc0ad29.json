@@ -1,0 +1,166 @@
+{
+  "question": "A 26-year-old G2P1 undergoes labor induction at 40 weeks gestation. The estimated fetal weight was 3890 g. The pregnancy was complicated by gestational diabetes treated with insulin. The vital signs were as follows: blood pressure 125/80 mm Hg, heart rate 91/min, respiratory rate 21/min, and temperature 36.8℃ (98.2℉). The blood workup yields the following results:\nFasting glucose 92 mg/dL\nHbA1c  7.8%\nErythrocyte count 3.3 million/mm3\nHb 11.6 mg/dL\nHt 46%\nThrombocyte count 240,000/mm3\nSerum creatinine 0.71 mg/dL\nALT 12 IU/L\nAST 9 IU/L\nWhich of the following should be administered during labor?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "5% dextrose",
+    "opb": "Intravenous regular insulin",
+    "opc": "25% magnesium sulphate",
+    "opd": "Erythrocyte mass",
+    "ope": "Subcutaneous insulin"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Finding of blood glucose level",
+        "hypoglycemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Finding of blood glucose level)-PREDISPOSES->(hypoglycemia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Diabetes, Gestational",
+        "Pathogenesis",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Adipose tissue",
+        "INSULIN TREATMENT"
+      ],
+      [
+        "Diabetes, Gestational",
+        "Growth retardation",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Adipose tissue",
+        "INSULIN TREATMENT"
+      ],
+      [
+        "INSULIN TREATMENT",
+        "Extravasation",
+        "C-reactive protein",
+        "Finding of blood glucose level"
+      ],
+      [
+        "INSULIN TREATMENT",
+        "Fibrosis",
+        "C-reactive protein",
+        "Finding of blood glucose level"
+      ],
+      [
+        "Red Blood Cell Count measurement",
+        "Anemia"
+      ],
+      [
+        "Anemia",
+        "Tachycardia",
+        "Hemoglobin"
+      ],
+      [
+        "Anemia",
+        "Pathogenesis",
+        "Hemoglobin"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "DIAGNOSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Diabetes, Gestational)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)-LOCATION_OF->(INSULIN TREATMENT)",
+      "(Diabetes, Gestational)-CAUSES->(Growth retardation)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)-LOCATION_OF->(INSULIN TREATMENT)",
+      "(INSULIN TREATMENT)-TREATS->(Extravasation)-ASSOCIATED_WITH->(C-reactive protein)-CAUSES->(Finding of blood glucose level)",
+      "(INSULIN TREATMENT)-PREVENTS->(Fibrosis)-ASSOCIATED_WITH->(C-reactive protein)-CAUSES->(Finding of blood glucose level)",
+      "(Red Blood Cell Count measurement)-DIAGNOSES->(Anemia)",
+      "(Anemia)-CAUSES->(Tachycardia)-ASSOCIATED_WITH->(Hemoglobin)",
+      "(Anemia)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Hemoglobin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Anemia)-CAUSES->(Tachycardia)-ASSOCIATED_WITH->(Hemoglobin)",
+      "(Red Blood Cell Count measurement)-DIAGNOSES->(Anemia)",
+      "(Anemia)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Hemoglobin)",
+      "(Finding of blood glucose level)-PREDISPOSES->(hypoglycemia)",
+      "(Diabetes, Gestational)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)-LOCATION_OF->(INSULIN TREATMENT)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Gestational diabetes\" -> \"insulin treatment required\" -> \"monitoring blood glucose levels during labor\" -> \"risk of hypoglycemia\" -> \"administer intravenous regular insulin if needed\" -> 85%",
+    "CHAIN: \"Fasting glucose 92 mg/dL\" -> \"within normal range\" -> \"HbA1c 7. -> 8%",
+    "CHAIN: \"Erythrocyte count 3.3 million/mm3\" -> \"indicates mild anemia\" -> \"Hb 11.6 mg/dL confirms anemia\" -> \"no immediate need for erythrocyte mass\" -> \"focus on glucose control\" -> 75%",
+    "CHAIN: \" -> 25%",
+    "CHAIN: \" -> 5%",
+    "CHAIN: \"Subcutaneous insulin\" -> \"not ideal during labor\" -> \"intravenous route preferred for rapid control\" -> \"not appropriate to administer\" -> 75%"
+  ],
+  "enhanced_information": "The patient has gestational diabetes, which requires careful monitoring of blood glucose levels during labor to prevent hypoglycemia. The fasting glucose level of 92 mg/dL is within the normal range, but the HbA1c of 7.8% indicates poor long-term glucose control, suggesting a risk for hypoglycemia during labor. Therefore, intravenous regular insulin should be administered as needed to maintain blood glucose levels within a safe range. The erythrocyte count of 3.3 million/mm3 and hemoglobin of 11.6 mg/dL indicate mild anemia, but there is no immediate need for erythrocyte mass transfusion. Subcutaneous insulin is not ideal during labor due to the need for rapid control, making intravenous administration the preferred route. Thus, the best option is intravenous regular insulin.",
+  "analysis": "The patient has gestational diabetes, which is a significant factor to consider during labor. The HbA1c of 7.8% indicates that the patient has had poor glycemic control prior to labor, which increases the risk of hypoglycemia during the labor process. Monitoring and managing blood glucose levels is crucial to prevent complications for both the mother and the fetus. Given that the patient is in labor, the need for rapid and effective control of blood glucose levels is paramount. Intravenous regular insulin is the preferred method for managing blood glucose during labor because it allows for immediate adjustments based on real-time glucose monitoring. Subcutaneous insulin is not suitable in this scenario due to its delayed onset and inability to provide rapid control. The other options, such as 5% dextrose, magnesium sulfate, and erythrocyte mass, do not address the immediate need for glucose control in a patient with gestational diabetes. Therefore, the best-supported option is intravenous regular insulin.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      60.0,
+      0.0,
+      40.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

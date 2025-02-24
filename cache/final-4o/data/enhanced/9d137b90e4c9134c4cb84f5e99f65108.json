@@ -1,0 +1,181 @@
+{
+  "question": "A 50-year-old man with a history of stage 4 kidney disease was admitted to the hospital for an elective hemicolectomy. His past medical history is significant for severe diverticulitis. After the procedure he becomes septic and was placed on broad spectrum antibiotics. On morning rounds, he appear weak and complains of fatigue and nausea. His words are soft and he has difficulty answering questions. His temperature is 38.9°C (102.1°C), heart rate is 110/min, respiratory rate is 15/min, blood pressure 90/65 mm Hg, and saturation is 89% on room air. On physical exam, his mental status appears altered. He has a bruise on his left arm that spontaneously appeared overnight. His cardiac exam is positive for a weak friction rub. Blood specimens are collected and sent for evaluation. An ECG is performed (see image). What therapy will this patient most likely receive next?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Perform a STAT pericardiocentesis",
+    "opb": "Treat the patient with cyclophosphamide and prednisone",
+    "opc": "Send the patient for hemodialysis",
+    "opd": "Prepare the patient for renal transplant",
+    "ope": "Treat the patient with aspirin"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pericarditis",
+        "Disease",
+        "Inflammation"
+      ],
+      [
+        "Pericarditis",
+        "Myocardial Infarction",
+        "Inflammation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pericarditis)-CAUSES->(Disease)-CAUSES->(Inflammation)",
+      "(Pericarditis)-CAUSES->(Myocardial Infarction)-CAUSES->(Inflammation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Heart",
+        "Pericardial effusion"
+      ],
+      [
+        "Pericardial effusion",
+        "Pathogenesis",
+        "Genes",
+        "Blood",
+        "Pericardiocentesis"
+      ],
+      [
+        "Pericardial effusion",
+        "Pathogenesis",
+        "Genes",
+        "Blood",
+        "Pericardiocentesis"
+      ],
+      [
+        "Blood Coagulation Disorders",
+        "Disease",
+        "Chronic graft-versus-host disease",
+        "Cyclophosphamide"
+      ],
+      [
+        "Blood Coagulation Disorders",
+        "Disease",
+        "Chronic graft-versus-host disease",
+        "Cyclophosphamide"
+      ],
+      [
+        "Kidney Failure, Chronic",
+        "Pathogenesis",
+        "Genes",
+        "Endothelium",
+        "Kidney Transplantation"
+      ],
+      [
+        "Kidney Failure, Chronic",
+        "Pathogenesis",
+        "Genes",
+        "Endothelium",
+        "Kidney Transplantation"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Heart)-LOCATION_OF->(Pericardial effusion)",
+      "(Pericardial effusion)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)-LOCATION_OF->(Pericardiocentesis)",
+      "(Pericardial effusion)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)-LOCATION_OF->(Pericardiocentesis)",
+      "(Blood Coagulation Disorders)-MANIFESTATION_OF->(Disease)-PREDISPOSES->(Chronic graft-versus-host disease)-ASSOCIATED_WITH->(Cyclophosphamide)",
+      "(Blood Coagulation Disorders)-ISA->(Disease)-PREDISPOSES->(Chronic graft-versus-host disease)-ASSOCIATED_WITH->(Cyclophosphamide)",
+      "(Kidney Failure, Chronic)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Endothelium)-LOCATION_OF->(Kidney Transplantation)",
+      "(Kidney Failure, Chronic)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Endothelium)-LOCATION_OF->(Kidney Transplantation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Heart)-LOCATION_OF->(Pericardial effusion)",
+      "(Blood Coagulation Disorders)-ISA/MANIFESTATION_OF->(Disease)-PREDISPOSES->(Chronic graft-versus-host disease)-versus->(Cyclophosphamide)",
+      "(Kidney Failure, Chronic)-CAUSES/PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Endothelium)-LOCATION_OF->(Kidney Transplantation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Stage 4 kidney disease\" -> \"impaired kidney function\" -> \"accumulation of toxins\" -> \"sepsis\" -> \"worsened kidney function\" -> \"need for hemodialysis\" -> 85%",
+    "CHAIN: \"Sepsis\" -> \"systemic inflammation\" -> \"altered mental status\" -> \"possible cardiac involvement\" -> \"pericardial effusion\" -> \"consider pericardiocentesis\" -> 60%",
+    "CHAIN: \"Sepsis\" -> \"systemic inflammation\" -> \"bruising\" -> \"possible coagulopathy\" -> \"not typical for cyclophosphamide and prednisone\" -> 40%",
+    "CHAIN: \"Stage 4 kidney disease\" -> \"end-stage renal disease\" -> \"renal transplant consideration\" -> \"not immediate solution\" -> 30%",
+    "CHAIN: \"Sepsis\" -> \"systemic inflammation\" -> \"cardiac involvement\" -> \"friction rub\" -> \"pericarditis\" -> \"aspirin for inflammation\" -> 50%"
+  ],
+  "enhanced_information": "The patient, with stage 4 kidney disease and recent sepsis, presents with symptoms suggesting acute kidney injury and possible cardiac involvement. The altered mental status, fatigue, and nausea, along with low blood pressure and hypoxia, indicate a need for urgent intervention. The presence of a friction rub and spontaneous bruising suggests possible pericarditis and coagulopathy, respectively. However, the most immediate concern in the context of stage 4 kidney disease and sepsis is the accumulation of toxins due to impaired kidney function, which is exacerbated by sepsis. This aligns with the need for hemodialysis to manage acute kidney injury and remove toxins. The evidence path supports the association between chronic kidney failure and the need for interventions like hemodialysis. While pericardial effusion and pericardiocentesis are considerations, the primary and most urgent treatment is hemodialysis to address the acute renal failure and stabilize the patient. Therefore, the patient will most likely receive hemodialysis next.",
+  "analysis": "The patient, with stage 4 kidney disease, has undergone an elective hemicolectomy and subsequently developed sepsis. The symptoms of fatigue, nausea, altered mental status, and spontaneous bruising, along with the presence of a friction rub, suggest complications that could include acute kidney injury, pericarditis, and coagulopathy. The low blood pressure and hypoxia further indicate a critical condition. In the context of stage 4 kidney disease, the most immediate concern is the accumulation of toxins due to impaired kidney function, which is exacerbated by sepsis. Hemodialysis is a common and urgent intervention in such scenarios to manage acute kidney injury and remove toxins. While pericarditis and the need for pericardiocentesis are considerations, the primary and most urgent treatment is hemodialysis to address the acute renal failure and stabilize the patient. Therefore, the patient will most likely receive hemodialysis next.",
+  "answer": "opc",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      1,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      40.0,
+      20.0,
+      20.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

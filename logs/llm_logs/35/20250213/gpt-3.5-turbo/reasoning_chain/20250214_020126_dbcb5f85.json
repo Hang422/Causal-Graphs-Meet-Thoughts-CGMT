@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_020126",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "dbcb5f85",
+  "question_text": "A 32-year-old man with a history of alcohol binge drinking and polysubstance use is found down in his hotel room with bottles of alcohol, oxycodone, alprazolam, amphetamine-dextroamphetamine, and tadalafil. When EMS arrives, he appears comatose with pinpoint pupils and oxygen saturation of 80% on room air. He is intubated at the scene and airlifted to the nearest intensive care unit. Body temperature is 95 degrees F (35 degrees C). Creatine phosphokinase is 12,000 U/L. MRI of the brain demonstrates extensive infarcts consistent with acute hypoxic ischemic injury. Which of the following is the likely culprit for his overdose?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 32-year-old man with a history of alcohol binge drinking and polysubstance use is found down in his hotel room with bottles of alcohol, oxycodone, alprazolam, amphetamine-dextroamphetamine, and tadalafil. When EMS arrives, he appears comatose with pinpoint pupils and oxygen saturation of 80% on room air. He is intubated at the scene and airlifted to the nearest intensive care unit. Body temperature is 95 degrees F (35 degrees C). Creatine phosphokinase is 12,000 U/L. MRI of the brain demonstrates extensive infarcts consistent with acute hypoxic ischemic injury. Which of the following is the likely culprit for his overdose?\n\n            ### Options\n    opa. Alcohol\nopb. Opioids\nopc. Benzodiazepines\nopd. Amphetamines\nope. Phosphodiesterase-5 (PDE-5) inhibitors\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Benzodiazepines -> central nervous system depression -> respiratory depression -> hypoxia -> hypoxic ischemic injury -> 80% confidence.  \nCHAIN: Opioids -> respiratory depression -> hypoxia -> hypoxic ischemic injury -> 75% confidence.  \nCHAIN: Alcohol -> central nervous system depression -> respiratory depression -> hypoxia -> hypoxic ischemic injury -> 70% confidence.  \nCHAIN: Amphetamines -> sympathetic overstimulation -> hyperthermia -> rhabdomyolysis -> hypoxic ischemic injury -> 60% confidence.  \nCHAIN: Phosphodiesterase-5 (PDE-5) inhibitors -> unlikely to directly cause hypoxic ischemic injury in this scenario -> 20% confidence.",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "question": "A 10-year-old boy presents to the emergency department accompanied by his parents with a swollen and painful right knee after he fell from his bicycle a few hours ago. The patient’s mother says he fell off the bike and struck the ground with his whole weight on his right knee. Immediately, his right knee swelled significantly, and he experienced severe pain. The patient’s past medical history is significant for previous episodes of easy bruising that manifest as small bluish spots, but not nearly as severe. The family history is significant for an uncle who had similar symptoms, and who was diagnosed at the age of 13 years old. The patient is afebrile, and the vital signs are within normal limits. On physical examination, a large bruise is present over the right knee that is extending several inches down the leg. The right tibiofemoral joint is warm to the touch and severely tender to palpation. Which of the following is the most likely diagnosis in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Hemophilia A",
+    "opb": "Factor V Leiden",
+    "opc": "Homocystinuria",
+    "opd": "von Willebrand disease",
+    "ope": "Protein C deficiency"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Severe pain",
+        "Disease",
+        "Hopping",
+        "Lower Extremity"
+      ],
+      [
+        "Severe pain",
+        "Disease",
+        "Transformation, function",
+        "Lower Extremity"
+      ],
+      [
+        "Severe pain",
+        "Disease",
+        "physiological aspects",
+        "Lower Extremity"
+      ],
+      [
+        "Hydrarthrosis",
+        "Synovitis",
+        "Hemarthrosis"
+      ],
+      [
+        "Hydrarthrosis",
+        "Arthropathies NOS",
+        "Hemarthrosis"
+      ],
+      [
+        "Hydrarthrosis",
+        "Degenerative polyarthritis",
+        "Hemarthrosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Severe pain)-CAUSES->(Disease)-MANIFESTATION_OF->(Hopping)-PROCESS_OF->(Lower Extremity)",
+      "(Severe pain)-CAUSES->(Disease)-MANIFESTATION_OF->(Transformation, function)-PROCESS_OF->(Lower Extremity)",
+      "(Severe pain)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Lower Extremity)",
+      "(Hydrarthrosis)-CAUSES->(Synovitis)-CAUSES->(Hemarthrosis)",
+      "(Hydrarthrosis)-CAUSES->(Arthropathies NOS)-CAUSES->(Hemarthrosis)",
+      "(Hydrarthrosis)-CAUSES->(Degenerative polyarthritis)-CAUSES->(Hemarthrosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Structure of right knee",
+        "Magnetic Resonance Imaging",
+        "Severe pain"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "DIAGNOSES"
+      ]
+    ],
+    "paths": [
+      "(Structure of right knee)-LOCATION_OF->(Magnetic Resonance Imaging)-DIAGNOSES->(Severe pain)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Structure of right knee)-LOCATION_OF->(Magnetic Resonance Imaging)-DIAGNOSES->(Severe pain)",
+      "(Severe pain)-CAUSES->(Disease)-MANIFESTATION_OF->(Hopping)-PROCESS_OF->(Lower Extremity)",
+      "(Severe pain)-CAUSES->(Disease)-MANIFESTATION_OF->(Transformation, function)-PROCESS_OF->(Lower Extremity)",
+      "(Severe pain)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Lower Extremity)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Trauma to right knee\" -> \"Immediate swelling and severe pain\" -> \"Large bruise over right knee extending down the leg\" -> \"Warm and tender tibiofemoral joint\" -> \"Possible joint effusion\" -> \"Possible hemarthrosis\" -> \"Consider bleeding disorder\" -> 80%",
+    "CHAIN: \"Easy bruising episodes in the past\" -> \"Family history of similar symptoms\" -> \"Uncle diagnosed with similar symptoms at age 13\" -> \"Possible genetic component\" -> \"Consider inherited bleeding disorder\" -> \"Possible hemophilia A\" -> 70%"
+  ],
+  "enhanced_information": "The most likely diagnosis in this patient is Hemophilia A, given the history of trauma leading to immediate swelling, severe pain, large bruise, warm and tender tibiofemoral joint, and possible joint effusion. The patient's past medical history of easy bruising and family history of similar symptoms, including an uncle diagnosed with similar symptoms, suggest a possible genetic component and inherited bleeding disorder, supporting the consideration of Hemophilia A.",
+  "analysis": "The most likely diagnosis in this patient is Hemophilia A based on the history of trauma leading to immediate swelling, severe pain, large bruise, warm and tender tibiofemoral joint, possible joint effusion, past medical history of easy bruising, and family history of similar symptoms. These findings are highly suggestive of an inherited bleeding disorder, specifically Hemophilia A.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      0
+    ],
+    "coverage_rates": [
+      100.0,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

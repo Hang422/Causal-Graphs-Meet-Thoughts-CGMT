@@ -1,0 +1,86 @@
+{
+  "question": "A regional academic medical center has 10 cases of adenovirus in the span of a week among its ICU patients. A committee is formed to investigate this outbreak. They are tasked with identifying the patients and interviewing the care providers to understand how adenovirus could have been spread from patient to patient. This committee will review charts, talk to the care provider teams, and investigate current patient safety and sanitation measures in the ICU. The goal of the committee is to identify weaknesses in the current system and to put in place a plan to help prevent this sort of outbreak from reoccurring in the future. The committee is most likely using what type of analysis?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Failure mode and effects analysis",
+    "opb": "Root cause analysis",
+    "opc": "Algorithmic analysis",
+    "opd": "Simulation",
+    "ope": "Heuristic analysis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "patient safety",
+        "Symptoms",
+        "Weakness"
+      ],
+      [
+        "patient safety",
+        "Malnutrition",
+        "Weakness"
+      ],
+      [
+        "patient safety",
+        "Disease",
+        "Weakness"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(patient safety)-PREDISPOSES->(Symptoms)-CAUSES->(Weakness)",
+      "(patient safety)-PREDISPOSES->(Malnutrition)-CAUSES->(Weakness)",
+      "(patient safety)-TREATS->(Disease)-CAUSES->(Weakness)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(patient safety)-PREDISPOSES->(Symptoms)-CAUSES->(Weakness)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Investigation of 10 adenovirus cases in ICU -> Formation of a committee -> Reviewing patient charts -> Interviewing care provider teams -> Investigating patient safety and sanitation measures -> Identifying weaknesses in the system -> Developing a prevention plan -> Root cause analysis -> 95%"
+  ],
+  "enhanced_information": "The committee investigating the adenovirus outbreak in the ICU is most likely using Root Cause Analysis to identify weaknesses in the system and develop a prevention plan. Evidence suggests that patient safety measures predispose weaknesses that can lead to symptoms, supporting the need for a thorough root cause analysis.",
+  "analysis": "The committee investigating the adenovirus outbreak in the ICU is focused on identifying weaknesses in the current system and developing a plan to prevent future outbreaks. Given the context provided, Root Cause Analysis is the most appropriate method for this scenario as it aims to delve deep into the underlying causes of the issue. This method involves reviewing charts, interviewing care providers, and assessing patient safety and sanitation measures to pinpoint the root causes of the outbreak.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": []
+}

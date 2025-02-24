@@ -1,0 +1,173 @@
+{
+  "question": "A 30-year-old woman comes to the physician because of increased urinary frequency over the past month. She also reports having dry mouth and feeling thirsty all the time despite drinking several liters of water per day. She has not had any weight changes and her appetite is normal. She has a history of obsessive compulsive disorder treated with citalopram. She drinks 1–2 cans of beer per day. Her vital signs are within normal limits. Physical examination shows no abnormalities. Laboratory studies show:\nSerum\nNa+ 130 mEq/L\nGlucose 110 mg/dL\nOsmolality 265 mOsmol/kg\nUrine\nOsmolality 230 mOsmol/kg\nThe patient is asked to stop drinking water for 3 hours. Following water restriction, urine osmolality is measured every hour, whereas serum osmolality is measured every 2 hours. Repeated laboratory measurements show a serum osmolality of 280 mOsmol/kg and a urine osmolality of 650 mOsmol/kg. Which of the following is the most likely diagnosis?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Cerebral salt wasting",
+    "opb": "Central diabetes insipidus",
+    "opc": "Diabetes mellitus",
+    "opd": "Primary polydipsia",
+    "ope": "Nephrogenic diabetes insipidus"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Alcohol dehydrogenase",
+        "Parkinson Disease",
+        "Disease",
+        "Diabetes Insipidus, Nephrogenic"
+      ],
+      [
+        "Alcohol dehydrogenase",
+        "Parkinson Disease",
+        "Bladder dysfunction",
+        "Diabetes Insipidus, Nephrogenic"
+      ],
+      [
+        "Alcohol dehydrogenase",
+        "Parkinson Disease",
+        "Symptoms",
+        "Diabetes Insipidus, Nephrogenic"
+      ],
+      [
+        "human AVP protein",
+        "Hypernatremia",
+        "Diabetes Insipidus, Nephrogenic"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Alcohol dehydrogenase)-PREDISPOSES->(Parkinson Disease)-CAUSES->(Disease)-CAUSES->(Diabetes Insipidus, Nephrogenic)",
+      "(Alcohol dehydrogenase)-PREDISPOSES->(Parkinson Disease)-CAUSES->(Bladder dysfunction)-CAUSES->(Diabetes Insipidus, Nephrogenic)",
+      "(Alcohol dehydrogenase)-PREDISPOSES->(Parkinson Disease)-CAUSES->(Symptoms)-CAUSES->(Diabetes Insipidus, Nephrogenic)",
+      "(human AVP protein)-CAUSES->(Hypernatremia)-CAUSES->(Diabetes Insipidus, Nephrogenic)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Serum sodium measurement",
+        "Hyponatremia"
+      ],
+      [
+        "Dilution Technics",
+        "Disease",
+        "Hyponatremia"
+      ],
+      [
+        "Dilution Technics",
+        "Malnutrition",
+        "Hyponatremia"
+      ],
+      [
+        "Citalopram",
+        "Antidepressive Agents",
+        "Pharmaceutical Preparations",
+        "Drug-induced nephrogenic diabetes insipidus"
+      ],
+      [
+        "Citalopram",
+        "Antidepressive Agents",
+        "Pharmaceutical Preparations",
+        "Drug-induced nephrogenic diabetes insipidus"
+      ],
+      [
+        "Obsessive-Compulsive Disorder",
+        "physiological aspects",
+        "Pharmaceutical Preparations",
+        "Drug-induced nephrogenic diabetes insipidus"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES"
+      ],
+      [
+        "INTERACTS_WITH",
+        "ISA",
+        "CAUSES"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Serum sodium measurement)-DIAGNOSES->(Hyponatremia)",
+      "(Dilution Technics)-DIAGNOSES->(Disease)-CAUSES->(Hyponatremia)",
+      "(Dilution Technics)-DIAGNOSES->(Malnutrition)-CAUSES->(Hyponatremia)",
+      "(Citalopram)-INTERACTS_WITH->(Antidepressive Agents)-ISA->(Pharmaceutical Preparations)-CAUSES->(Drug-induced nephrogenic diabetes insipidus)",
+      "(Citalopram)-INTERACTS_WITH->(Antidepressive Agents)-INTERACTS_WITH->(Pharmaceutical Preparations)-CAUSES->(Drug-induced nephrogenic diabetes insipidus)",
+      "(Obsessive-Compulsive Disorder)-MANIFESTATION_OF->(physiological aspects)-ASSOCIATED_WITH->(Pharmaceutical Preparations)-CAUSES->(Drug-induced nephrogenic diabetes insipidus)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Serum sodium measurement)-DIAGNOSES->(Hyponatremia)",
+      "(Citalopram)-INTERACTS_WITH->(Antidepressive Agents)-INTERACTS_WITH/ISA->(Pharmaceutical Preparations)-CAUSES->(Drug-induced nephrogenic diabetes insipidus)-induced nephrogenic diabetes insipidus)",
+      "(Obsessive-Compulsive Disorder)-MANIFESTATION_OF->(physiological aspects)-ASSOCIATED_WITH->(Pharmaceutical Preparations)-CAUSES->(Drug-induced nephrogenic diabetes insipidus)",
+      "(Dilution Technics)-DIAGNOSES->(Disease)-CAUSES->(Hyponatremia)",
+      "(Dilution Technics)-DIAGNOSES->(Malnutrition)-CAUSES->(Hyponatremia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Excessive thirst and polydipsia -> increased water intake -> dilution of serum sodium -> hyponatremia -> low serum osmolality -> 60% CHAIN: High urine osmolality after water restriction -> concentrated urine -> inability to concentrate urine -> impaired renal response to antidiuretic hormone (ADH) -> nephrogenic diabetes insipidus -> 70% CHAIN: Normal physical examination -> rules out structural abnormalities causing diabetes insipidus -> 80% CHAIN: History of obsessive-compulsive disorder and citalopram use -> possible drug-induced nephrogenic diabetes insipidus -> 60%"
+  ],
+  "enhanced_information": "The patient's presentation with increased thirst, polydipsia, dilutional hyponatremia, and inability to concentrate urine after water restriction suggests a diagnosis of nephrogenic diabetes insipidus. The history of obsessive-compulsive disorder and citalopram use raises suspicion for drug-induced nephrogenic diabetes insipidus, supported by the evidence paths linking pharmaceutical preparations to this condition.",
+  "analysis": "The patient's presentation with increased thirst, polydipsia, dilutional hyponatremia, and inability to concentrate urine after water restriction is highly suggestive of nephrogenic diabetes insipidus. The enhanced information provided further supports this diagnosis, especially with the history of obsessive-compulsive disorder and citalopram use, which can be linked to drug-induced nephrogenic diabetes insipidus.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

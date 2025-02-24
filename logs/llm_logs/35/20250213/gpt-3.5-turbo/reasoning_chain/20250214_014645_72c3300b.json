@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_014645",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "72c3300b",
+  "question_text": "A 64-year-old man presents to the emergency department with sudden onset of chest pain and an episode of vomiting. He also complains of ongoing nausea and heavy sweating (diaphoresis). He denies having experienced such symptoms before and is quite upset. Medical history is significant for hypertension and types 2 diabetes mellitus. He currently smokes and has smoked at least half a pack daily for the last 40 years. Vitals show a blood pressure of 80/50 mm Hg, pulse of 50/min, respirations of 20/min, temperature of 37.2°C (98.9°F), and oximetry is 99% before oxygen by facemask. Except for the patient being visibly distressed and diaphoretic, the examination is unremarkable. ECG findings are shown in the picture. Where is the most likely obstruction in this patient’s cardiac blood supply?\n ?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 64-year-old man presents to the emergency department with sudden onset of chest pain and an episode of vomiting. He also complains of ongoing nausea and heavy sweating (diaphoresis). He denies having experienced such symptoms before and is quite upset. Medical history is significant for hypertension and types 2 diabetes mellitus. He currently smokes and has smoked at least half a pack daily for the last 40 years. Vitals show a blood pressure of 80/50 mm Hg, pulse of 50/min, respirations of 20/min, temperature of 37.2°C (98.9°F), and oximetry is 99% before oxygen by facemask. Except for the patient being visibly distressed and diaphoretic, the examination is unremarkable. ECG findings are shown in the picture. Where is the most likely obstruction in this patient’s cardiac blood supply?\n ?\n\n            ### Options\n    opa. Right coronary artery\nopb. Left anterior descending artery\nopc. Left circumflex artery\nopd. Left main coronary artery\nope. There is no obstruction\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Chest pain, vomiting, nausea, sweating\" -> \"Symptoms suggestive of acute coronary syndrome\" -> \"Consideration of myocardial infarction\" -> \"Likely cardiac blood supply obstruction\" -> 90%  \nCHAIN: \"Hypertension, type 2 diabetes mellitus, smoking history\" -> \"Risk factors for coronary artery disease\" -> \"Increased likelihood of coronary artery obstruction\" -> 85%  \nCHAIN: \"ECG findings\" -> \"ST-segment elevation in leads II, III, and aVF\" -> \"Inferior wall myocardial infarction\" -> \"Likely obstruction in the right coronary artery territory\" -> 95%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "question": "A 26-year-old woman who is a medical student is undergoing evaluation after sticking herself with a needle while drawing blood from a patient. The patient’s medical history is unknown. A blood sample from the medical student is drawn and processed, and the results are presented below:\nAnti-HAV IgM negative\nAnti-HAV IgG positive\nHBsAg negative\nHBeAg negative\nAnti-HBs negative\nAnti-HBc IgG negative\nAnti-HBc IgM negative\nAnti-HBe negative\nAnti-HCV negative\nWhat is true about the student’s laboratory findings?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "She has not been vaccinated against the hepatitis B virus.",
+    "opb": "She is an asymptomatic carrier of the hepatitis B virus.",
+    "opc": "She is infected with the hepatitis D virus.",
+    "opd": "She recovered from a hepatitis B virus infection.",
+    "ope": "She can transmit the hepatitis A virus."
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hepatitis B vaccination",
+        "Hepatitis B Virus"
+      ],
+      [
+        "Vaccination",
+        "Hepatitis A Virus"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Hepatitis B vaccination)-TREATS->(Hepatitis B Virus)",
+      "(Vaccination)-TREATS->(Hepatitis A Virus)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hepatitis B Virus Surface Antibody",
+        "Human Cell Line",
+        "Muscle",
+        "Hepatitis B vaccination"
+      ],
+      [
+        "Hepatitis B Virus Surface Antibody",
+        "Erythrocytes",
+        "Muscle",
+        "Hepatitis B vaccination"
+      ],
+      [
+        "Hepatitis B",
+        "Hepatitis B Virus"
+      ],
+      [
+        "Hepatitis D",
+        "Disease",
+        "Hepatitis Delta Virus"
+      ],
+      [
+        "Hepatitis D",
+        "Disease",
+        "Hepatitis Delta Virus"
+      ],
+      [
+        "Hepatitis A",
+        "Hepatitis A Virus"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hepatitis B Virus Surface Antibody)-INTERACTS_WITH->(Human Cell Line)-PART_OF->(Muscle)-LOCATION_OF->(Hepatitis B vaccination)",
+      "(Hepatitis B Virus Surface Antibody)-INTERACTS_WITH->(Erythrocytes)-PART_OF->(Muscle)-LOCATION_OF->(Hepatitis B vaccination)",
+      "(Hepatitis B)-INTERACTS_WITH->(Hepatitis B Virus)",
+      "(Hepatitis D)-ISA->(Disease)-INTERACTS_WITH->(Hepatitis Delta Virus)",
+      "(Hepatitis D)-CAUSES->(Disease)-INTERACTS_WITH->(Hepatitis Delta Virus)",
+      "(Hepatitis A)-INTERACTS_WITH->(Hepatitis A Virus)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hepatitis B)-INTERACTS_WITH->(Hepatitis B Virus)",
+      "(Hepatitis A)-INTERACTS_WITH->(Hepatitis A Virus)",
+      "(Hepatitis B vaccination)-TREATS->(Hepatitis B Virus)",
+      "(Vaccination)-TREATS->(Hepatitis A Virus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Anti-HBs negative\" -> \"No detectable hepatitis B surface antibodies\" -> \"No evidence of hepatitis B vaccination or past infection immunity\" -> \"She has not been vaccinated against the hepatitis B virus\" -> 95%",
+    "CHAIN: \"HBsAg negative\" -> \"No hepatitis B surface antigen present\" -> \"Not currently infected with hepatitis B\" -> \"She is not an asymptomatic carrier of the hepatitis B virus\" -> 98%",
+    "CHAIN: \"Anti-HBc IgG negative\" -> \"No hepatitis B core antibodies from past infection\" -> \"No past infection with hepatitis B\" -> \"She recovered from a hepatitis B virus infection\" -> 5%",
+    "CHAIN: \"Anti-HDV not tested\" -> \"No data on hepatitis D virus antibodies\" -> \"Cannot confirm hepatitis D virus infection without specific testing\" -> \"She is infected with the hepatitis D virus\" -> 10%",
+    "CHAIN: \"Anti-HAV IgM negative\" -> \"No current hepatitis A virus infection\" -> \"Anti-HAV IgG positive\" -> \"Past infection or vaccination for hepatitis A\" -> \"She cannot transmit the hepatitis A virus\" -> 95%"
+  ],
+  "enhanced_information": "The medical student has not been vaccinated against hepatitis B, as indicated by the absence of Anti-HBs and Anti-HBc antibodies. She has immunity against hepatitis A, shown by the presence of Anti-HAV IgG and absence of Anti-HAV IgM, indicating past infection or vaccination but no current infection. There is no evidence of hepatitis D virus infection or asymptomatic hepatitis B carrier status. The student's laboratory results and the standard medical consensus confirm these findings.",
+  "analysis": "The medical student's lab results indicate immunity to hepatitis A through past infection or vaccination, evidenced by positive Anti-HAV IgG and negative Anti-HAV IgM. There is no evidence of hepatitis B vaccination or infection, as shown by negative HBsAg, HBeAg, Anti-HBs, Anti-HBc IgG, Anti-HBc IgM, and Anti-HBe. There is also no indication of hepatitis C or D infection. The most supported conclusion is that she has not been vaccinated against hepatitis B.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      1,
+      0,
+      1,
+      2
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      16.666666666666664,
+      0.0,
+      16.666666666666664,
+      33.33333333333333
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

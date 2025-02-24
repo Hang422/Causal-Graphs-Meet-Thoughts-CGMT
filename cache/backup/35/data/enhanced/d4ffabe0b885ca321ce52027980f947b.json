@@ -1,0 +1,145 @@
+{
+  "question": "A 5-month-old boy is brought to the physician because of fever and a cough for 3 days. His mother reports that he has had multiple episodes of loose stools over the past 3 months. He has been treated for otitis media 4 times and bronchiolitis 3 times during the past 3 months. He was born at 37 weeks' gestation and the neonatal period was uncomplicated. He is at the 10th percentile for height and 3rd percentile for weight. His temperature is 38.3°C (100.9°F), pulse is 126/min, and respirations are 35/min. Examination shows an erythematous scaly rash over the trunk and extremities. There are white patches on the tongue and buccal mucosa that bleed when scraped. Inspiratory crackles are heard in the right lung base. An x-ray of the chest shows an infiltrate in the right lower lobe and an absent thymic shadow. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Wiskott-Aldrich syndrome",
+    "opb": "Severe combined immunodeficiency",
+    "opc": "Leukocyte adhesion deficiency",
+    "opd": "Chronic granulomatous disease",
+    "ope": "X-linked agammaglobulinemia"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Thrive",
+        "Virus",
+        "Malnutrition"
+      ],
+      [
+        "Thrive",
+        "HIV",
+        "Malnutrition"
+      ],
+      [
+        "Thrive",
+        "Alopecia",
+        "Malnutrition"
+      ],
+      [
+        "Dermatitis",
+        "Disease",
+        "Immune System Diseases"
+      ],
+      [
+        "Dermatitis",
+        "Infection",
+        "Immune System Diseases"
+      ],
+      [
+        "Radiography, Thoracic",
+        "Pneumonia"
+      ],
+      [
+        "Pneumonia",
+        "Immunity"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Thrive)-TREATS->(Virus)-CAUSES->(Malnutrition)",
+      "(Thrive)-PREVENTS->(HIV)-CAUSES->(Malnutrition)",
+      "(Thrive)-TREATS->(Alopecia)-PREDISPOSES->(Malnutrition)",
+      "(Dermatitis)-CAUSES->(Disease)-CAUSES->(Immune System Diseases)",
+      "(Dermatitis)-CAUSES->(Infection)-MANIFESTATION_OF->(Immune System Diseases)",
+      "(Radiography, Thoracic)-CAUSES->(Pneumonia)",
+      "(Pneumonia)-MANIFESTATION_OF->(Immunity)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Oral mucous membrane structure",
+        "Oral candidiasis"
+      ],
+      [
+        "Tongue",
+        "Oral candidiasis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Oral mucous membrane structure)-LOCATION_OF->(Oral candidiasis)",
+      "(Tongue)-LOCATION_OF->(Oral candidiasis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Oral mucous membrane structure)-LOCATION_OF->(Oral candidiasis)",
+      "(Tongue)-LOCATION_OF->(Oral candidiasis)",
+      "(Radiography, Thoracic)-CAUSES->(Pneumonia)",
+      "(Pneumonia)-MANIFESTATION_OF->(Immunity)",
+      "(Thrive)-TREATS->(Virus)-CAUSES->(Malnutrition)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Recurrent infections -> immune system dysfunction -> possible primary immunodeficiency -> 70% CHAIN: Low weight and height percentiles -> possible failure to thrive -> malnutrition -> compromised immune function -> recurrent infections -> 80% CHAIN: Erythematous scaly rash -> possible dermatitis -> underlying immune dysfunction -> recurrent infections -> 75% CHAIN: White patches on tongue and buccal mucosa -> oral thrush -> immune system compromise -> recurrent infections -> 80% CHAIN: Inspiratory crackles in right lung base -> right lower lobe infiltrate on chest x-ray -> possible pneumonia -> impaired immune response -> 70%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 5-month-old boy presenting with recurrent infections, low weight and height percentiles, erythematous scaly rash, white patches on tongue and buccal mucosa, inspiratory crackles in the right lung base, and infiltrate in the right lower lobe on chest x-ray is X-linked agammaglobulinemia. The presence of oral thrush (oral candidiasis) and impaired immune response leading to pneumonia align with the immune system compromise seen in X-linked agammaglobulinemia.",
+  "analysis": "The clinical presentation of a 5-month-old boy with recurrent infections, low weight and height percentiles, erythematous scaly rash, oral thrush, and pulmonary infiltrates is highly suggestive of a primary immunodeficiency disorder. Given the constellation of symptoms and findings, the most likely diagnosis is X-linked agammaglobulinemia, which is characterized by a defect in B-cell maturation leading to low or absent immunoglobulins. This condition predisposes individuals to recurrent bacterial infections, including pneumonia, and can present with skin manifestations like the rash described. The absence of a thymic shadow on chest x-ray further supports this diagnosis.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

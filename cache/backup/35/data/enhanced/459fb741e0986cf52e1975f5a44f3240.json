@@ -1,0 +1,121 @@
+{
+  "question": "A 45-year-old woman presents to the emergency department with fever, cough, tonsillar enlargement, and bleeding lips. She has a diffuse blistering rash that encompasses the palms and soles of her feet, in total covering 55% of her total body surface area (TBSA). The upper epidermal layer easily slips away with slight rubbing. Within 24 hours the rash progresses to 88% TBSA involvement and the patient requires mechanical ventilation for respiratory distress. Which of the following is the most likely etiology of this patient’s condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Herpes simplex virus",
+    "opb": "Deficiency of C-1 esterase inhibitor",
+    "opc": "Molluscum contagiosum",
+    "opd": "Exposure to carbamazepine",
+    "ope": "Cytomegalovirus"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Carbamazepine",
+        "Stevens-Johnson Syndrome"
+      ],
+      [
+        "Molluscum Contagiosum",
+        "Disease",
+        "Varicella zoster",
+        "Skin Diseases, Viral"
+      ],
+      [
+        "Molluscum Contagiosum",
+        "Infection",
+        "Herpes Simplex Infections",
+        "Skin Diseases, Viral"
+      ],
+      [
+        "Cytomegalovirus",
+        "Communicable Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Carbamazepine)-CAUSES->(Stevens-Johnson Syndrome)",
+      "(Molluscum Contagiosum)-CAUSES->(Disease)-CAUSES->(Varicella zoster)-CAUSES->(Skin Diseases, Viral)",
+      "(Molluscum Contagiosum)-CAUSES->(Infection)-CAUSES->(Herpes Simplex Infections)-CAUSES->(Skin Diseases, Viral)",
+      "(Cytomegalovirus)-CAUSES->(Communicable Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Simplexvirus",
+        "Acyclovir",
+        "Gingivostomatitis, Herpetic"
+      ],
+      [
+        "Simplexvirus",
+        "Herpesvirus 1, Human",
+        "Gingivostomatitis, Herpetic"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "TREATS"
+      ],
+      [
+        "INTERACTS_WITH",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Simplexvirus)-LOCATION_OF->(Acyclovir)-TREATS->(Gingivostomatitis, Herpetic)",
+      "(Simplexvirus)-INTERACTS_WITH->(Herpesvirus 1, Human)-CAUSES->(Gingivostomatitis, Herpetic)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Carbamazepine)-CAUSES->(Stevens-Johnson Syndrome)",
+      "(Cytomegalovirus)-CAUSES->(Communicable Diseases)",
+      "(Simplexvirus)-LOCATION_OF->(Acyclovir)-TREATS->(Gingivostomatitis, Herpetic)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Exposure to carbamazepine -> Stevens-Johnson syndrome (SJS) -> diffuse blistering rash -> respiratory distress -> 80% confidence. CHAIN: Deficiency of C-1 esterase inhibitor -> Hereditary angioedema -> not consistent with the patient's presentation -> 70% confidence. CHAIN: Herpes simplex virus -> Herpetic gingivostomatitis -> not consistent with the patient's presentation -> 70% confidence. CHAIN: Molluscum contagiosum -> Benign viral skin infection -> not consistent with the patient's presentation -> 70% confidence. CHAIN: Cytomegalovirus -> Severe infection in immunocompromised individuals -> not consistent with the patient's presentation -> 80%"
+  ],
+  "enhanced_information": "The most likely etiology of this patient's condition is Exposure to carbamazepine leading to Stevens-Johnson syndrome (SJS). The patient's presentation of diffuse blistering rash progressing rapidly to respiratory distress aligns with SJS caused by carbamazepine. Evidence paths confirm the association between carbamazepine and SJS, supporting this conclusion.",
+  "analysis": "The patient's presentation of a diffuse blistering rash progressing rapidly to respiratory distress, along with the history of carbamazepine exposure, strongly suggests Stevens-Johnson syndrome (SJS) as the most likely etiology. SJS is a severe cutaneous adverse reaction commonly associated with medications like carbamazepine. The rapid progression of the rash and the need for mechanical ventilation are consistent with the severe form of SJS.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

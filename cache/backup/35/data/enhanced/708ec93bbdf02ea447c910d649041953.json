@@ -1,0 +1,219 @@
+{
+  "question": "A 70 year-old-man comes to the clinic for generalized fatigue. He says that he is more tired than before and has difficulty catching his breath while walking upstairs. He feels tired quickly doing his usual activity such as gardening and shopping. He does not have any symptoms of fever, change in bowel habits, abdominal pain, rectal bleeding, or weight loss. His appetite is normal. His last colonoscopy was done 10 years ago and it was normal. His blood pressure is 116/74 and heart rate is 87/min. On physical examination, his conjunctivae are pale. A routine blood test shows iron deficiency anemia with hemoglobin of 10 gm/dL. His stool is positive for occult blood. He is then sent for a colonoscopy (image is shown). What is the most likely diagnosis for the above condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Diverticulitis",
+    "opb": "Hereditary hemorrhagic telangiectasia",
+    "opc": "Angiodysplasia",
+    "opd": "Intestinal obstruction",
+    "ope": "Colon cancer"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Gastrointestinal Hemorrhage",
+        "Vasodilation",
+        "Colon"
+      ],
+      [
+        "colonoscopy",
+        "Disease",
+        "paracrine",
+        "Colon"
+      ],
+      [
+        "colonoscopy",
+        "Disease",
+        "Respiration",
+        "Colon"
+      ],
+      [
+        "colonoscopy",
+        "Disease",
+        "Physiologic Function",
+        "Colon"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Gastrointestinal Hemorrhage)-MANIFESTATION_OF->(Vasodilation)-PROCESS_OF->(Colon)",
+      "(colonoscopy)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Colon)",
+      "(colonoscopy)-CAUSES->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Colon)",
+      "(colonoscopy)-CAUSES->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Colon)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Blood",
+        "Disease",
+        "Gastrointestinal Hemorrhage"
+      ],
+      [
+        "Blood",
+        "Infection",
+        "Gastrointestinal Hemorrhage"
+      ],
+      [
+        "Colon",
+        "colonoscopy"
+      ],
+      [
+        "Anemia",
+        "Pathogenesis",
+        "Genes",
+        "Blood"
+      ],
+      [
+        "Anemia",
+        "Pathogenesis",
+        "Genes",
+        "Blood"
+      ],
+      [
+        "Iron deficiency",
+        "Pathogenesis",
+        "Genes",
+        "Blood"
+      ],
+      [
+        "Iron deficiency",
+        "Inflammation",
+        "Genes",
+        "Blood"
+      ],
+      [
+        "Blood",
+        "colonoscopy"
+      ],
+      [
+        "Colon",
+        "Brain",
+        "Diagnosis"
+      ],
+      [
+        "Colon",
+        "Lung",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Blood)-LOCATION_OF->(Disease)-PREDISPOSES->(Gastrointestinal Hemorrhage)",
+      "(Blood)-LOCATION_OF->(Infection)-CAUSES->(Gastrointestinal Hemorrhage)",
+      "(Colon)-LOCATION_OF->(colonoscopy)",
+      "(Anemia)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Anemia)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Iron deficiency)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Iron deficiency)-COMPLICATES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Blood)-LOCATION_OF->(colonoscopy)",
+      "(Colon)-PART_OF->(Brain)-LOCATION_OF->(Diagnosis)",
+      "(Colon)-PART_OF->(Lung)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Blood)-LOCATION_OF->(colonoscopy)",
+      "(Colon)-LOCATION_OF->(colonoscopy)",
+      "(Blood)-LOCATION_OF->(Disease)-PREDISPOSES->(Gastrointestinal Hemorrhage)",
+      "(Blood)-LOCATION_OF->(Infection)-CAUSES->(Gastrointestinal Hemorrhage)",
+      "(Anemia)-CAUSES/MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Iron deficiency)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Iron deficiency)-COMPLICATES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(colonoscopy)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Colon)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Iron deficiency anemia -> Pale conjunctivae -> Positive occult blood in stool -> High suspicion for gastrointestinal bleeding -> Likely source in the colon -> Colonoscopy indicated -> 90%",
+    "CHAIN: Iron deficiency anemia -> Positive occult blood in stool -> Colonoscopy findings consistent with a colonic lesion -> Suspicion for a colonic pathology -> Likely diagnosis of colon cancer -> 85%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 70-year-old man with iron deficiency anemia, pale conjunctivae, positive occult blood in stool, and colonoscopy findings consistent with a colonic lesion is colon cancer. The chain of events supports a high suspicion for gastrointestinal bleeding originating in the colon, leading to the diagnosis of colon cancer with an 85% likelihood.",
+  "analysis": "The core medical principle in this case is to consider the most likely diagnosis based on the patient's presentation, laboratory findings, and colonoscopy results. Given the patient's age, symptoms of fatigue, difficulty breathing, iron deficiency anemia, positive occult blood in stool, and colonoscopy findings of a colonic lesion, the most likely diagnosis is colon cancer.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      5
+    ],
+    "coverage_rates": [
+      37.5,
+      62.5
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

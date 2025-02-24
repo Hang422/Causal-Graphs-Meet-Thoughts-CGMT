@@ -1,0 +1,195 @@
+{
+  "question": "A 76-year-old woman comes in for a routine checkup with her doctor. She is concerned that she feels tired most days and has difficulty doing her household chores. She complains that she gets fatigued and breathless with mild exertion. Past medical history is significant for diabetes mellitus, chronic kidney disease from prolonged elevated blood sugar, and primary biliary cirrhosis. Medications include lisinopril, insulin, and metformin. Family medicine is noncontributory. She drinks one beer every day. Today, she has a heart rate of 98/min, respiratory rate of 17/min, blood pressure of 110/65 mm Hg, and a temperature of 37.0°C (98.6°F). General examination shows that she is pale and haggard looking. She has a heartbeat with a regular rate and rhythm and her lungs are clear to auscultation bilaterally. A complete blood count (CBC) is as follows:\nLeukocyte count: 12,000/mm3\nRed blood cell count: 3.1 million/mm3\nHemoglobin: 11.0 g/dL\nMCV: 85 um3\nMCH: 27 pg/cell\nPlatelet count: 450,000/mm3\nFecal occult blood test is negative. What is the most likely cause of her anemia?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Chronic kidney disease",
+    "opb": "Acute bleeding",
+    "opc": "Alcoholism",
+    "opd": "Liver disease",
+    "ope": "Colorectal cancer"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Erythropoietin",
+        "Anemia"
+      ],
+      [
+        "Blood Coagulation Factor",
+        "Organ failure",
+        "Disease",
+        "Chronic hemorrhage"
+      ],
+      [
+        "Blood Coagulation Factor",
+        "Thrombus",
+        "Disease",
+        "Chronic hemorrhage"
+      ],
+      [
+        "Blood Coagulation Factor",
+        "Hemophilia, NOS",
+        "Disease",
+        "Chronic hemorrhage"
+      ],
+      [
+        "Chronic hemorrhage",
+        "Anemia"
+      ],
+      [
+        "Alcoholic Intoxication, Chronic",
+        "Disease",
+        "Gastrointestinal Hemorrhage"
+      ],
+      [
+        "Alcoholic Intoxication, Chronic",
+        "Hypertensive disease",
+        "Gastrointestinal Hemorrhage"
+      ],
+      [
+        "Alcoholic Intoxication, Chronic",
+        "Renal Insufficiency",
+        "Gastrointestinal Hemorrhage"
+      ],
+      [
+        "Gastrointestinal Hemorrhage",
+        "Anemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREVENTS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Erythropoietin)-PREVENTS->(Anemia)",
+      "(Blood Coagulation Factor)-CAUSES->(Organ failure)-CAUSES->(Disease)-CAUSES->(Chronic hemorrhage)",
+      "(Blood Coagulation Factor)-CAUSES->(Thrombus)-CAUSES->(Disease)-CAUSES->(Chronic hemorrhage)",
+      "(Blood Coagulation Factor)-TREATS->(Hemophilia, NOS)-CAUSES->(Disease)-CAUSES->(Chronic hemorrhage)",
+      "(Chronic hemorrhage)-CAUSES->(Anemia)",
+      "(Alcoholic Intoxication, Chronic)-CAUSES->(Disease)-CAUSES->(Gastrointestinal Hemorrhage)",
+      "(Alcoholic Intoxication, Chronic)-CAUSES->(Hypertensive disease)-CAUSES->(Gastrointestinal Hemorrhage)",
+      "(Alcoholic Intoxication, Chronic)-CAUSES->(Renal Insufficiency)-PREDISPOSES->(Gastrointestinal Hemorrhage)",
+      "(Gastrointestinal Hemorrhage)-CAUSES->(Anemia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Chronic Kidney Diseases",
+        "Complication",
+        "Erythropoietin"
+      ],
+      [
+        "Chronic Kidney Diseases",
+        "Complication",
+        "Erythropoietin"
+      ],
+      [
+        "Liver diseases",
+        "Pathogenesis",
+        "Blood Coagulation Factor"
+      ],
+      [
+        "Liver diseases",
+        "Complication",
+        "Blood Coagulation Factor"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Chronic Kidney Diseases)-CAUSES->(Complication)-ASSOCIATED_WITH->(Erythropoietin)",
+      "(Chronic Kidney Diseases)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(Erythropoietin)",
+      "(Liver diseases)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Blood Coagulation Factor)",
+      "(Liver diseases)-CAUSES->(Complication)-ASSOCIATED_WITH->(Blood Coagulation Factor)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Erythropoietin)-PREVENTS->(Anemia)",
+      "(Chronic Kidney Diseases)-CAUSES/PREDISPOSES->(Complication)-ASSOCIATED_WITH->(Erythropoietin)",
+      "(Liver diseases)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Blood Coagulation Factor)",
+      "(Liver diseases)-CAUSES->(Complication)-ASSOCIATED_WITH->(Blood Coagulation Factor)",
+      "(Chronic hemorrhage)-CAUSES->(Anemia)",
+      "(Gastrointestinal Hemorrhage)-CAUSES->(Anemia)",
+      "(Blood Coagulation Factor)-CAUSES->(Organ failure)-CAUSES->(Disease)-CAUSES->(Chronic hemorrhage)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Chronic kidney disease -> decreased erythropoietin production -> anemia -> 80% CHAIN: Liver disease -> impaired synthesis of clotting factors -> chronic blood loss -> anemia -> 70% CHAIN: Alcoholism -> gastrointestinal bleeding -> anemia -> 80%"
+  ],
+  "enhanced_information": "The most likely cause of her anemia is chronic kidney disease leading to decreased erythropoietin production, which is a known complication of this condition.",
+  "analysis": "The core medical principle here is understanding the relationship between chronic kidney disease and anemia due to decreased erythropoietin production. In this case, the patient's history of chronic kidney disease from prolonged elevated blood sugar is a significant factor. Chronic kidney disease can lead to decreased erythropoietin production, which in turn can result in anemia. The patient's anemia is likely due to this mechanism rather than acute bleeding, alcoholism, liver disease, or colorectal cancer.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

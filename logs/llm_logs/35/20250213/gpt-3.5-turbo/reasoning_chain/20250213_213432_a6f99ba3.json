@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_213432",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "a6f99ba3",
+  "question_text": "A 27-year-old female is brought in by ambulance with altered mental status. She is in a comatose state, but is breathing spontaneously with deep and rapid respirations. Her vital signs are as follows: T 100.2F, BP 92/54 mmHg, HR 103 bpm, RR 28, and SpO2 97% on room air. Complete blood count reveals: WBC 12.7, hemoglobin 11.3, platelets 254. Basic metabolic panel reveals: sodium 137, potassium 4.2, chloride 100, bicarbonate 16, creatinine 1.78 An ABG is performed which showed pH 7.38, PaO2 94, PaCO2 26. Which of the following is the most likely cause of this patient’s presentation?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 27-year-old female is brought in by ambulance with altered mental status. She is in a comatose state, but is breathing spontaneously with deep and rapid respirations. Her vital signs are as follows: T 100.2F, BP 92/54 mmHg, HR 103 bpm, RR 28, and SpO2 97% on room air. Complete blood count reveals: WBC 12.7, hemoglobin 11.3, platelets 254. Basic metabolic panel reveals: sodium 137, potassium 4.2, chloride 100, bicarbonate 16, creatinine 1.78 An ABG is performed which showed pH 7.38, PaO2 94, PaCO2 26. Which of the following is the most likely cause of this patient’s presentation?\n\n            ### Options\n    opa. Undiagnosed type 1 diabetes mellitus\nopb. Severe sepsis\nopc. Medication overdose\nopd. Acute renal failure\nope. Alcohol binging\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Severe sepsis -> metabolic acidosis -> respiratory compensation (hyperventilation) -> 95%  \nCHAIN: Undiagnosed type 1 diabetes mellitus -> diabetic ketoacidosis -> metabolic acidosis -> respiratory compensation (Kussmaul breathing) -> 90%  \nCHAIN: Medication overdose -> metabolic acidosis -> respiratory compensation -> 80%  \nCHAIN: Alcohol binging -> metabolic acidosis -> respiratory compensation -> 75%  \nCHAIN: Acute renal failure -> metabolic acidosis -> respiratory compensation -> 70%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

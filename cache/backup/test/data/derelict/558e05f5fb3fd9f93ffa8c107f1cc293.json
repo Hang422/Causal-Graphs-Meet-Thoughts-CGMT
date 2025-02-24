@@ -1,0 +1,80 @@
+{
+  "question": "A 68-year-old female presents to your office for her annual check-up. Her vitals are HR 85, T 98.8 F, RR 16, BP 125/70. She has a history of smoking 1 pack a day for 35 years, but states she quit five years ago. She had her last pap smear at age 64 and states all of her pap smears have been normal. She had her last colonoscopy at age 62, which was also normal. Which is the following is the next best test for this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Abdominal ultrasound",
+    "opb": "Chest CT scan",
+    "opc": "Pap smear",
+    "opd": "Colonoscopy",
+    "ope": "Chest radiograph"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Cardiovascular Diseases",
+        "Genes",
+        "Lung",
+        "Chest radiograph"
+      ],
+      [
+        "Cardiovascular Diseases",
+        "Genes",
+        "Intestines, Small",
+        "Chest radiograph"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Cardiovascular Diseases)-ASSOCIATED_WITH->(Genes)-PART_OF->(Lung)-LOCATION_OF->(Chest radiograph)",
+      "(Cardiovascular Diseases)-ASSOCIATED_WITH->(Genes)-PART_OF->(Intestines, Small)-LOCATION_OF->(Chest radiograph)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cardiovascular Diseases)-ASSOCIATED_WITH->(Genes)-PART_OF->(Lung)-LOCATION_OF->(Chest radiograph)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Age 68, female, history of smoking\" -> \"Increased risk for lung cancer\" -> \"Consider chest CT scan\" -> 80% CHAIN: \"Age 68, female, history of smoking\" -> \"Increased risk for cardiovascular disease\" -> \"Consider chest radiograph\" -> 75% CHAIN: \"Age 68, female, history of normal pap smears and colonoscopy\" -> \"Low risk for gynecological and colorectal cancers\" -> \"Not indicated for pap smear or colonoscopy\" -> 80%"
+  ],
+  "enhanced_information": "Given the patient's age, gender, and history of smoking, there is an increased risk for lung cancer. Considering this, a chest CT scan would be the next best test to evaluate for potential lung pathology. The patient's history of normal pap smears and colonoscopy indicates low risk for gynecological and colorectal cancers, making pap smear and colonoscopy not indicated at this time.",
+  "analysis": "Given the patient's history of smoking, the most appropriate next test is a chest CT scan to screen for lung cancer. This is in line with guidelines recommending low-dose CT scans for individuals aged 50-80 with a significant smoking history. Pap smears are not indicated as she is over 65 with a history of normal results, and colonoscopy is not due until 10 years after her last normal result. An abdominal ultrasound and chest radiograph are not standard screening tests for this patient profile.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": []
+}

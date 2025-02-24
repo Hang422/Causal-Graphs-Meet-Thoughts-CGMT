@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_172201",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "d4ffabe0",
+  "question_text": "A 5-month-old boy is brought to the physician because of fever and a cough for 3 days. His mother reports that he has had multiple episodes of loose stools over the past 3 months. He has been treated for otitis media 4 times and bronchiolitis 3 times during the past 3 months. He was born at 37 weeks' gestation and the neonatal period was uncomplicated. He is at the 10th percentile for height and 3rd percentile for weight. His temperature is 38.3°C (100.9°F), pulse is 126/min, and respirations are 35/min. Examination shows an erythematous scaly rash over the trunk and extremities. There are white patches on the tongue and buccal mucosa that bleed when scraped. Inspiratory crackles are heard in the right lung base. An x-ray of the chest shows an infiltrate in the right lower lobe and an absent thymic shadow. Which of the following is the most likely diagnosis?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 5-month-old boy is brought to the physician because of fever and a cough for 3 days. His mother reports that he has had multiple episodes of loose stools over the past 3 months. He has been treated for otitis media 4 times and bronchiolitis 3 times during the past 3 months. He was born at 37 weeks' gestation and the neonatal period was uncomplicated. He is at the 10th percentile for height and 3rd percentile for weight. His temperature is 38.3°C (100.9°F), pulse is 126/min, and respirations are 35/min. Examination shows an erythematous scaly rash over the trunk and extremities. There are white patches on the tongue and buccal mucosa that bleed when scraped. Inspiratory crackles are heard in the right lung base. An x-ray of the chest shows an infiltrate in the right lower lobe and an absent thymic shadow. Which of the following is the most likely diagnosis?\n\n            ### Options\n    opa. Wiskott-Aldrich syndrome\nopb. Severe combined immunodeficiency\nopc. Leukocyte adhesion deficiency\nopd. Chronic granulomatous disease\nope. X-linked agammaglobulinemia\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Recurrent infections -> immune system dysfunction -> possible primary immunodeficiency -> 80%\nCHAIN: Low weight and height percentiles -> possible failure to thrive -> malnutrition -> impaired immune function -> recurrent infections -> 75%\nCHAIN: Erythematous scaly rash -> possible dermatitis -> underlying immune dysfunction -> recurrent infections -> 70%\nCHAIN: White patches on tongue and buccal mucosa -> oral thrush -> immune system compromise -> recurrent infections -> 70%\nCHAIN: Inspiratory crackles in right lung base -> right lower lobe infiltrate on chest x-ray -> possible pneumonia -> impaired immune response -> recurrent infections -> 75%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

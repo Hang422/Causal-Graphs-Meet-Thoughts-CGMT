@@ -1,0 +1,137 @@
+{
+  "question": "A 27-year-old G1P0 at 12 weeks estimated gestational age presents for prenatal care. The patient says she has occasional nausea and vomiting and a few episodes of palpitations and diarrhea this last week. Physical examination is unremarkable, except for a heart rate of 145/min. Basic thyroid function tests are shown in the table below. Which of the following additional laboratory tests would be most useful is assessing this patient’s condition?\nThyroid-stimulating hormone (TSH) \n0.28 mIU/L (0.3–4.5 mIU/L)\nTotal T4\n12 µg/dL (5.4–11.5 µg/dL)?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Total triiodothyronine (T3) levels",
+    "opb": "Free thyroxine (T4) levels",
+    "opc": "Thyroxine-binding globulin (TBG) levels",
+    "opd": "Thyroid peroxidase (TPO) antibodies",
+    "ope": "Thyrotropin receptor antibodies (TRAb)"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hyperthyroidism",
+        "Graves' Disease"
+      ],
+      [
+        "Hyperthyroidism",
+        "Hashimoto Disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hyperthyroidism)-CAUSES->(Graves' Disease)",
+      "(Hyperthyroidism)-CAUSES->(Hashimoto Disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hyperthyroidism",
+        "Pathogenesis",
+        "Triiodothyronine"
+      ],
+      [
+        "Hyperthyroidism",
+        "Pathologic Processes",
+        "Triiodothyronine"
+      ],
+      [
+        "Hyperthyroidism",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "Thyroxine-Binding Globulin"
+      ],
+      [
+        "Hyperthyroidism",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "Thyroxine-Binding Globulin"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hyperthyroidism)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Triiodothyronine)",
+      "(Hyperthyroidism)-CAUSES->(Pathologic Processes)-ASSOCIATED_WITH->(Triiodothyronine)",
+      "(Hyperthyroidism)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Thyroxine-Binding Globulin)",
+      "(Hyperthyroidism)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Thyroxine-Binding Globulin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hyperthyroidism)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Triiodothyronine)",
+      "(Hyperthyroidism)-CAUSES->(Pathologic Processes)-ASSOCIATED_WITH->(Triiodothyronine)",
+      "(Hyperthyroidism)-CAUSES->(Graves' Disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Low TSH\" -> \"Elevated Total T4\" -> \"Possible hyperthyroidism\" -> \"Assess free T4\" -> 85%",
+    "CHAIN: \"Low TSH\" -> \"Elevated Total T4\" -> \"Possible hyperthyroidism\" -> \"Assess TRAb for Graves' disease\" -> 80%",
+    "CHAIN: \"Low TSH\" -> \"Elevated Total T4\" -> \"Possible hyperthyroidism\" -> \"Assess T3 levels\" -> 75%",
+    "CHAIN: \"Low TSH\" -> \"Elevated Total T4\" -> \"Possible hyperthyroidism\" -> \"Assess TPO antibodies for autoimmune thyroiditis\" -> 70%",
+    "CHAIN: \"Low TSH\" -> \"Elevated Total T4\" -> \"Possible hyperthyroidism\" -> \"Assess TBG levels\" -> \"Unclear relevance\" -> 60%"
+  ],
+  "enhanced_information": "The patient presents with symptoms and lab findings suggestive of hyperthyroidism, characterized by low TSH and elevated Total T4. In pregnancy, it is crucial to differentiate between true hyperthyroidism and physiological changes. The most useful test to assess this condition is the Free T4 level, as it provides a more accurate measure of thyroid hormone activity unaffected by changes in thyroxine-binding globulin (TBG) levels, which can be altered during pregnancy. The chain suggesting assessment of Free T4 aligns with standard medical consensus. While Thyrotropin receptor antibodies (TRAb) can help diagnose Graves' disease, Free T4 is prioritized to confirm hyperthyroidism. The evidence paths related to hyperthyroidism and its association with triiodothyronine and Graves' disease support the context but do not directly alter the consensus that Free T4 is the most appropriate next step. Therefore, the corrected reasoning supports option 'opb. Free thyroxine (T4) levels' as the most useful additional laboratory test.",
+  "analysis": "The patient presents with symptoms and lab findings suggestive of hyperthyroidism, indicated by low TSH and elevated Total T4. In pregnancy, physiological changes can affect thyroid function tests, making it important to differentiate between true hyperthyroidism and normal pregnancy-related changes. Free T4 levels are a more accurate reflection of thyroid hormone activity, as they are not influenced by changes in thyroxine-binding globulin (TBG) levels, which can increase during pregnancy. While Thyrotropin receptor antibodies (TRAb) can help diagnose Graves' disease, confirming hyperthyroidism with Free T4 is the priority. Therefore, the most useful additional laboratory test in this scenario is Free thyroxine (T4) levels.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

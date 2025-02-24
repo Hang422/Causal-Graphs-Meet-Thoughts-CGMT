@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_011025",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "ec38b14b",
+  "question_text": "A 1-year-old previously healthy male presents to the emergency department with 3 hours of intermittent abdominal pain, vomiting, and one episode of dark red stools. On exam, his abdomen is tender to palpation and there are decreased bowel sounds. A CT scan reveals air fluid levels and a cystic mass in the ileum. Gross specimen histology reveals gastric tissue. What is the cause of this patient's problems?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 1-year-old previously healthy male presents to the emergency department with 3 hours of intermittent abdominal pain, vomiting, and one episode of dark red stools. On exam, his abdomen is tender to palpation and there are decreased bowel sounds. A CT scan reveals air fluid levels and a cystic mass in the ileum. Gross specimen histology reveals gastric tissue. What is the cause of this patient's problems?\n\n            ### Options\n    opa. Obstruction of the lumen of the appendix by a fecalith\nopb. Abnormal closure of the vitilline duct\nopc. Twisting of the midgut secondary to malrotation\nopd. Hypertrophy of the pylorus\nope. Ingestion of contaminated water\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Intermittent abdominal pain, vomiting, dark red stools\" -> \"Abdominal tenderness, decreased bowel sounds\" -> \"CT scan shows air fluid levels and cystic mass in ileum\" -> \"Gross specimen histology reveals gastric tissue\" -> opc. Twisting of the midgut secondary to malrotation -> 95% confidence\n\nCHAIN: \"CT scan shows air fluid levels and cystic mass in ileum\" -> \"Gross specimen histology reveals gastric tissue\" -> opc. Twisting of the midgut secondary to malrotation -> 90% confidence",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

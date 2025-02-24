@@ -1,0 +1,123 @@
+{
+  "question": "A 19-year-old woman comes to the physician because of a delayed menstrual period. She has had regular menses since menarche at age 11. Her last menstrual period was 7 weeks ago. She is sexually active with two male partners. A urine pregnancy test is positive. An ultrasound of the pelvis shows a viable intrauterine pregnancy with an estimated gestational age of 6 weeks and 5 days. She does not wish to continue with the pregnancy. After carefully weighing the options with her physician, she is prescribed two medications, one of which is mifepristone. Which of the following is this drug's primary mechanism of action?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Inhibition of dihydrofolate reductase",
+    "opb": "Blockage of progesterone receptor",
+    "opc": "Activation of prostaglandin E1 receptors",
+    "opd": "Antagonist at gonadotropin-releasing hormone receptors",
+    "ope": "Agonist at oxytocin receptors"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Mifepristone",
+        "Obstruction"
+      ],
+      [
+        "Obstruction",
+        "uptake",
+        "Endometrium"
+      ],
+      [
+        "Obstruction",
+        "Physiologic Function",
+        "Endometrium"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Mifepristone)-CAUSES->(Obstruction)",
+      "(Obstruction)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Endometrium)",
+      "(Obstruction)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Endometrium)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Endometrium",
+        "Lipopolysaccharides",
+        "Tissue membrane",
+        "Abortion, Induced"
+      ],
+      [
+        "Endometrium",
+        "TERF1 gene|TERF1",
+        "Tissue membrane",
+        "Abortion, Induced"
+      ],
+      [
+        "Progesterone",
+        "Tissue membrane",
+        "Abortion, Induced"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Endometrium)-LOCATION_OF->(Lipopolysaccharides)-PART_OF->(Tissue membrane)-LOCATION_OF->(Abortion, Induced)",
+      "(Endometrium)-LOCATION_OF->(TERF1 gene|TERF1)-PART_OF->(Tissue membrane)-LOCATION_OF->(Abortion, Induced)",
+      "(Progesterone)-PART_OF->(Tissue membrane)-LOCATION_OF->(Abortion, Induced)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Mifepristone)-CAUSES->(Obstruction)",
+      "(Progesterone)-PART_OF->(Tissue membrane)-LOCATION_OF->(Abortion, Induced)",
+      "(Endometrium)-LOCATION_OF->(Lipopolysaccharides)-PART_OF->(Tissue membrane)-LOCATION_OF->(Abortion, Induced)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Mifepristone\" -> \"Blocks progesterone receptor\" -> \"Inhibits progesterone action on the endometrium\" -> \"Results in endometrial shedding and pregnancy termination\" -> 95%"
+  ],
+  "enhanced_information": "Mifepristone's primary mechanism of action is blocking the progesterone receptor, leading to inhibition of progesterone action on the endometrium, resulting in endometrial shedding and pregnancy termination. This aligns with the consensus understanding of mifepristone's function in inducing abortion.",
+  "analysis": "Mifepristone is a progesterone receptor blocker, leading to the inhibition of progesterone action on the endometrium, resulting in endometrial shedding and pregnancy termination. This aligns with the consensus understanding of mifepristone's mechanism of action in inducing abortion.",
+  "answer": "opb",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

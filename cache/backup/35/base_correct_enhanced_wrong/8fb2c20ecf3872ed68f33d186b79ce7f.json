@@ -1,0 +1,200 @@
+{
+  "question": "A 13-year-old girl is brought to the physician by her father because of a worsening pruritic rash for 2 days. Five weeks ago, she was diagnosed with juvenile myoclonic epilepsy and treatment with lamotrigine was begun. Her immunizations are up-to-date. Her temperature is 38.8°C (101.8°F). Physical examination shows facial edema and a partially confluent morbilliform rash over the face, trunk, and extremities. There is swelling of the cervical and inguinal lymph nodes and hepatomegaly. Further evaluation is most likely to show which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Fragmented red blood cells",
+    "opb": "Increased absolute eosinophil count",
+    "opc": "Positive heterophile antibody test",
+    "opd": "Anti-measles IgM antibodies",
+    "ope": "Elevated antistreptolysin-O titer"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "lamotrigine",
+        "Disease",
+        "Adverse reaction to drug"
+      ],
+      [
+        "lamotrigine",
+        "Syndrome",
+        "Adverse reaction to drug"
+      ],
+      [
+        "lamotrigine",
+        "Stevens-Johnson Syndrome",
+        "Adverse reaction to drug"
+      ],
+      [
+        "Adverse reaction to drug",
+        "Disease",
+        "Exanthema"
+      ],
+      [
+        "Adverse reaction to drug",
+        "Lupus Erythematosus, Systemic",
+        "Exanthema"
+      ],
+      [
+        "Adverse reaction to drug",
+        "Psoriasis",
+        "Exanthema"
+      ],
+      [
+        "Exanthema",
+        "Disease",
+        "Superior Vena Cava Syndrome",
+        "Facial edema"
+      ],
+      [
+        "Exanthema",
+        "Disease",
+        "Goiter",
+        "Facial edema"
+      ],
+      [
+        "Exanthema",
+        "Disease",
+        "Blastomycosis",
+        "Facial edema"
+      ],
+      [
+        "Edema",
+        "Disease",
+        "Hepatomegaly"
+      ],
+      [
+        "Edema",
+        "Infection",
+        "Hepatomegaly"
+      ],
+      [
+        "Edema",
+        "Macrophage activation syndrome",
+        "Hepatomegaly"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(lamotrigine)-CAUSES->(Disease)-CAUSES->(Adverse reaction to drug)",
+      "(lamotrigine)-CAUSES->(Syndrome)-CAUSES->(Adverse reaction to drug)",
+      "(lamotrigine)-TREATS->(Stevens-Johnson Syndrome)-CAUSES->(Adverse reaction to drug)",
+      "(Adverse reaction to drug)-CAUSES->(Disease)-CAUSES->(Exanthema)",
+      "(Adverse reaction to drug)-CAUSES->(Lupus Erythematosus, Systemic)-CAUSES->(Exanthema)",
+      "(Adverse reaction to drug)-CAUSES->(Psoriasis)-CAUSES->(Exanthema)",
+      "(Exanthema)-CAUSES->(Disease)-CAUSES->(Superior Vena Cava Syndrome)-CAUSES->(Facial edema)",
+      "(Exanthema)-CAUSES->(Disease)-CAUSES->(Goiter)-COMPLICATES->(Facial edema)",
+      "(Exanthema)-CAUSES->(Disease)-MANIFESTATION_OF->(Blastomycosis)-CAUSES->(Facial edema)",
+      "(Edema)-CAUSES->(Disease)-CAUSES->(Hepatomegaly)",
+      "(Edema)-CAUSES->(Infection)-CAUSES->(Hepatomegaly)",
+      "(Edema)-CAUSES->(Macrophage activation syndrome)-CAUSES->(Hepatomegaly)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "lymph nodes",
+        "Hepatomegaly"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(lymph nodes)-LOCATION_OF->(Hepatomegaly)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Adverse reaction to drug)-CAUSES->(Lupus Erythematosus, Systemic)-CAUSES->(Exanthema)",
+      "(lamotrigine)-CAUSES->(Disease)-CAUSES->(Adverse reaction to drug)",
+      "(lamotrigine)-CAUSES->(Syndrome)-CAUSES->(Adverse reaction to drug)",
+      "(lamotrigine)-TREATS->(Stevens-Johnson Syndrome)-CAUSES->(Adverse reaction to drug)",
+      "(Adverse reaction to drug)-CAUSES->(Disease)-CAUSES->(Exanthema)",
+      "(Adverse reaction to drug)-CAUSES->(Psoriasis)-CAUSES->(Exanthema)",
+      "(Edema)-CAUSES->(Disease)-CAUSES->(Hepatomegaly)",
+      "(Edema)-CAUSES->(Infection)-CAUSES->(Hepatomegaly)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Lamotrigine treatment -> Drug reaction -> Rash -> 70% CHAIN: Rash -> Facial edema -> Morbilliform rash -> 60% CHAIN: Morbilliform rash -> Swelling of lymph nodes -> Hepatomegaly -> 50% CHAIN: Hepatomegaly -> Elevated antistreptolysin-O titer -> 70%"
+  ],
+  "enhanced_information": "The presentation of a pruritic rash, facial edema, morbilliform rash, lymph node swelling, and hepatomegaly in a 13-year-old girl on lamotrigine treatment suggests a drug reaction. Further evaluation is most likely to show elevated antistreptolysin-O titer, indicating a possible association with the drug reaction rather than other options like fragmented red blood cells, increased absolute eosinophil count, positive heterophile antibody test, or anti-measles IgM antibodies.",
+  "analysis": "The presentation of a pruritic rash, facial edema, morbilliform rash, lymph node swelling, and hepatomegaly in a 13-year-old girl on lamotrigine treatment strongly suggests a drug reaction. Given the context provided, the most likely correct option is an elevated antistreptolysin-O titer, indicating a possible association with the drug reaction.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

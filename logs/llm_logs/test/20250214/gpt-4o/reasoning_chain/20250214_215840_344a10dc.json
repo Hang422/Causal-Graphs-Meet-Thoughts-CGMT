@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_215840",
+  "model": "gpt-4o",
+  "interaction_type": "reasoning_chain",
+  "question_id": "344a10dc",
+  "question_text": "A 35-year-old woman is brought to the emergency department 30 minutes after the onset of severe dyspnea. On arrival, she is unresponsive. Her pulse is 160/min, respirations are 32/min, and blood pressure is 60/30 mm Hg. CT angiography of the chest shows extensive pulmonary embolism in both lungs. She is given a drug that inhibits both thrombin and factor Xa. Which of the following medications was most likely administered?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 35-year-old woman is brought to the emergency department 30 minutes after the onset of severe dyspnea. On arrival, she is unresponsive. Her pulse is 160/min, respirations are 32/min, and blood pressure is 60/30 mm Hg. CT angiography of the chest shows extensive pulmonary embolism in both lungs. She is given a drug that inhibits both thrombin and factor Xa. Which of the following medications was most likely administered?\n\n            ### Options\n    opa. Ticagrelor\nopb. Apixaban\nopc. Unfractioned heparin\nopd. Fondaparinux\nope. Tenecteplase\n\"\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Unfractioned heparin\" -> \"inhibits thrombin\" -> \"inhibits factor Xa\" -> \"prevents further clot formation\" -> 95%\n\nCHAIN: \"Apixaban\" -> \"inhibits factor Xa\" -> \"does not inhibit thrombin\" -> \"less likely to be administered\" -> 60%\n\nCHAIN: \"Fondaparinux\" -> \"inhibits factor Xa\" -> \"does not inhibit thrombin\" -> \"less likely to be administered\" -> 60%\n\nCHAIN: \"Ticagrelor\" -> \"inhibits platelet aggregation\" -> \"does not inhibit thrombin or factor Xa\" -> \"unlikely to be administered\" -> 50%\n\nCHAIN: \"Tenecteplase\" -> \"fibrinolytic agent\" -> \"breaks down clots\" -> \"does not inhibit thrombin or factor Xa\" -> \"unlikely to be administered\" -> 55%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": true,
+    "has_enhanced_info": true,
+    "model_config": "gpt-4o",
+    "temperature": 0.0
+  }
+}

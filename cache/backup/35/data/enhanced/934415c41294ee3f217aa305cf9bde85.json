@@ -1,0 +1,96 @@
+{
+  "question": "A 42-year-old African American woman presents to the physician’s office complaining of sudden onset chest pain. She describes the pain as sharp, non-radiating with improvement when she is sitting up and leaning forward. She denies fever, chills, or a cough, but she has had swollen hands and wrists for the past 3 weeks. Medical history is significant for chronic hypertension. She had an appendectomy at age 12. Medications include hydralazine and folic acid. Vital signs are normal except for a low-grade fever. On examination, the patient is in mild distress, especially in the supine position. The metacarpophalangeal and proximal interphalangeal joints are swollen and tender bilaterally. ECG shows diffuse ST elevations. Her antinuclear antibody is negative. Which of the following additional antibodies are expected to be found in this patient’s serum?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Anti-topoisomerase I antibodies",
+    "opb": "Anti-histone antibodies",
+    "opc": "Anti-cardiolipin antibodies",
+    "opd": "Anti-mitochondrial antibodies",
+    "ope": "Anti-cyclic citrullinated antibodies"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Chest Pain",
+        "Pericarditis"
+      ],
+      [
+        "Pericarditis",
+        "Disease",
+        "Lupus Erythematosus, Systemic"
+      ],
+      [
+        "Pericarditis",
+        "Infection",
+        "Lupus Erythematosus, Systemic"
+      ],
+      [
+        "Polyarthritis",
+        "Rheumatoid Arthritis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Chest Pain)-CAUSES->(Pericarditis)",
+      "(Pericarditis)-CAUSES->(Disease)-CAUSES->(Lupus Erythematosus, Systemic)",
+      "(Pericarditis)-COMPLICATES->(Infection)-MANIFESTATION_OF->(Lupus Erythematosus, Systemic)",
+      "(Polyarthritis)-CAUSES->(Rheumatoid Arthritis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Chest Pain)-CAUSES->(Pericarditis)",
+      "(Polyarthritis)-CAUSES->(Rheumatoid Arthritis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Chest pain, sharp, non-radiating, improves with sitting up and leaning forward\" -> \"Pericarditis likely\" -> \"Associated with systemic lupus erythematosus (SLE)\" -> \"Anti-histone antibodies expected in serum\" -> 85%",
+    "CHAIN: \"Swollen and tender metacarpophalangeal and proximal interphalangeal joints bilaterally\" -> \"Polyarthritis\" -> \"Possible rheumatoid arthritis (RA)\" -> \"Anti-cyclic citrullinated antibodies expected in serum\" -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with chest pain, sharp, non-radiating, improving with sitting up and leaning forward, along with swollen and tender joints, suggests pericarditis and possible rheumatoid arthritis. Anti-histone antibodies are expected in pericarditis associated with systemic lupus erythematosus, while anti-cyclic citrullinated antibodies are expected in rheumatoid arthritis. Therefore, anti-histone antibodies are more likely to be found in this patient's serum.",
+  "analysis": "The patient's presentation with chest pain, pericarditis, and swollen joints suggests a possible association with systemic lupus erythematosus. Anti-histone antibodies are commonly found in pericarditis associated with lupus. While anti-cyclic citrullinated antibodies are more specific for rheumatoid arthritis, the clinical picture in this case leans towards lupus-related pericarditis. Therefore, the most likely correct option is anti-histone antibodies.",
+  "answer": "opb",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      1
+    ],
+    "coverage_rates": [
+      66.66666666666666,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

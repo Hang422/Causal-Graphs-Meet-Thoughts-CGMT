@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250215_012354",
+  "model": "gpt-4o",
+  "interaction_type": "reasoning_chain",
+  "question_id": "1ea3cbe2",
+  "question_text": "A 57-year-old man presents with a large wound on his right lower leg that has been present for 6 months as shown in the picture. He has had chronically swollen legs for over 10 years. His mother and brother had similar problems with their legs. He had a documented deep vein thrombosis (DVT) in the affected leg 5 years earlier, but has no other past medical history. He has a blood pressure of 126/84 and heart rate of 62/min. Which of the following is the most likely diagnosis?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 57-year-old man presents with a large wound on his right lower leg that has been present for 6 months as shown in the picture. He has had chronically swollen legs for over 10 years. His mother and brother had similar problems with their legs. He had a documented deep vein thrombosis (DVT) in the affected leg 5 years earlier, but has no other past medical history. He has a blood pressure of 126/84 and heart rate of 62/min. Which of the following is the most likely diagnosis?\n\n            ### Options\n    opa. Arterial ulcer\nopb. Marjolin ulcer\nopc. Chronic venous insufficiency\nopd. Lymphedema\nope. Kaposi sarcoma\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Chronic leg swelling\" -> \"History of DVT\" -> \"Family history of similar leg problems\" -> \"Venous stasis\" -> \"Chronic venous insufficiency\" -> 85%\n\nCHAIN: \"Large wound on leg\" -> \"Present for 6 months\" -> \"Chronic leg swelling\" -> \"Possible venous stasis\" -> \"Chronic venous insufficiency\" -> 80%\n\nCHAIN: \"Chronic leg swelling\" -> \"Family history of leg problems\" -> \"Possible genetic predisposition\" -> \"Chronic venous insufficiency\" -> 75%\n\nCHAIN: \"Large wound on leg\" -> \"Chronic leg swelling\" -> \"No history of arterial disease\" -> \"Unlikely arterial ulcer\" -> \"Chronic venous insufficiency\" -> 70%\n\nCHAIN: \"Large wound on leg\" -> \"Chronic leg swelling\" -> \"No signs of malignancy\" -> \"Unlikely Marjolin ulcer\" -> \"Chronic venous insufficiency\" -> 65%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-4o",
+    "temperature": 0.0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_174813",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "e2819db2",
+  "question_text": "A 67-year-old male presents to the emergency department with sudden onset shortness of breath and epigastric pain. The patient has a past medical history of GERD, obesity, diabetes mellitus type II, anxiety, glaucoma, and irritable bowel syndrome. His current medications include omeprazole, insulin, metformin, lisinopril, and clonazepam as needed. The patient's temperature is 99.5°F (37.5°C), pulse is 112/min, blood pressure is 90/70 mmHg, respirations are 18/min, and oxygen saturation is 95% on room air. On physical exam the patient's lungs are clear to auscultation bilaterally. JVD is notable and cardiac auscultation is not revealing. An EKG is obtained in the emergency department. The patient is given a bolus of fluids and his pulse becomes 80/min with a blood pressure of 105/75 mmHg. The patient is then started on beta-blockers, oxygen, nitroglycerin, morphine, IV fluids, and aspirin. Repeat vitals demonstrate a blood pressure of 80/65 mmHg. Which of the following is the best explanation of this patient's current vital signs?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 67-year-old male presents to the emergency department with sudden onset shortness of breath and epigastric pain. The patient has a past medical history of GERD, obesity, diabetes mellitus type II, anxiety, glaucoma, and irritable bowel syndrome. His current medications include omeprazole, insulin, metformin, lisinopril, and clonazepam as needed. The patient's temperature is 99.5°F (37.5°C), pulse is 112/min, blood pressure is 90/70 mmHg, respirations are 18/min, and oxygen saturation is 95% on room air. On physical exam the patient's lungs are clear to auscultation bilaterally. JVD is notable and cardiac auscultation is not revealing. An EKG is obtained in the emergency department. The patient is given a bolus of fluids and his pulse becomes 80/min with a blood pressure of 105/75 mmHg. The patient is then started on beta-blockers, oxygen, nitroglycerin, morphine, IV fluids, and aspirin. Repeat vitals demonstrate a blood pressure of 80/65 mmHg. Which of the following is the best explanation of this patient's current vital signs?\n\n            ### Options\n    opa. Beta-adrenergic blockade\nopb. Increased cGMP\nopc. Fluid overload\nopd. Ventricular free wall rupture\nope. Left ventricular failure\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Beta-adrenergic blockade -> decreased heart rate -> decreased cardiac output -> decreased blood pressure -> 80%\n\nCHAIN: Left ventricular failure -> decreased cardiac output -> decreased tissue perfusion -> hypotension -> 70%\n\nCHAIN: Fluid overload -> increased preload -> increased cardiac output initially -> subsequent heart failure -> decreased cardiac output -> hypotension -> 60%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

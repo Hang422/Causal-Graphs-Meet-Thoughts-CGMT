@@ -1,0 +1,142 @@
+{
+  "question": "A 58-year-old man comes to the physician because of a sore throat and painful lesions in his mouth for the past few days. Six weeks ago, he underwent cardiac catheterization and stent implantation of the left anterior descending artery for treatment of acute myocardial infarction. Pharmacotherapy with dual antiplatelet medication was started. His temperature is 38.1°C (100.6°F). Oral examination shows several shallow ulcers on the buccal mucosa. Laboratory studies show:\nHematocrit 41.5%\nLeukocyte count 1,050/mm3\nSegmented neutrophils 35%\nPlatelet count 175,000/mm3\nWhich of the following drugs is most likely responsible for this patient's current condition?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Abciximab",
+    "opb": "Ticlopidine",
+    "opc": "Apixaban",
+    "opd": "Enoxaparin",
+    "ope": "Aspirin"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ticlopidine",
+        "Disease",
+        "Respiration",
+        "Bone Marrow"
+      ],
+      [
+        "Ticlopidine",
+        "Disease",
+        "Physiologic Function",
+        "Bone Marrow"
+      ],
+      [
+        "Ticlopidine",
+        "Disease",
+        "Excretory function",
+        "Bone Marrow"
+      ],
+      [
+        "Visual Suppression",
+        "Nystagmus",
+        "Disease",
+        "Leukopenia"
+      ],
+      [
+        "Visual Suppression",
+        "Diplopia",
+        "Disease",
+        "Leukopenia"
+      ],
+      [
+        "Visual Suppression",
+        "Diplopia",
+        "Infection",
+        "Leukopenia"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Ticlopidine)-TREATS->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Bone Marrow)",
+      "(Ticlopidine)-TREATS->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Bone Marrow)",
+      "(Ticlopidine)-TREATS->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(Bone Marrow)",
+      "(Visual Suppression)-CAUSES->(Nystagmus)-CAUSES->(Disease)-CAUSES->(Leukopenia)",
+      "(Visual Suppression)-PREDISPOSES->(Diplopia)-CAUSES->(Disease)-CAUSES->(Leukopenia)",
+      "(Visual Suppression)-PREDISPOSES->(Diplopia)-CAUSES->(Infection)-COMPLICATES->(Leukopenia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Bone Marrow",
+        "Leukopenia"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Bone Marrow)-LOCATION_OF->(Leukopenia)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ticlopidine)-TREATS->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Bone Marrow)",
+      "(Ticlopidine)-TREATS->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Bone Marrow)",
+      "(Ticlopidine)-TREATS->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(Bone Marrow)",
+      "(Bone Marrow)-LOCATION_OF->(Leukopenia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Ticlopidine -> Bone marrow suppression -> Neutropenia -> 95%"
+  ],
+  "enhanced_information": "Ticlopidine is the most likely drug responsible for the patient's current condition. The chain linking Ticlopidine to bone marrow suppression, resulting in neutropenia, aligns with the patient's presentation of leukopenia and low neutrophil count. The evidence paths further support this relationship by highlighting the impact of Ticlopidine on bone marrow, leading to leukopenia.",
+  "analysis": "The patient presents with leukopenia and low neutrophil count, which is suggestive of bone marrow suppression. Ticlopidine is known to cause bone marrow suppression leading to neutropenia. This aligns with the enhanced information provided, linking Ticlopidine to the patient's current condition.",
+  "answer": "opb. ticlopidine",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

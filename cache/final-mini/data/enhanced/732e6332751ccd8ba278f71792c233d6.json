@@ -1,0 +1,250 @@
+{
+  "question": "An inconsolable mother brings her 2-year-old son to the emergency room after finding a large amount of bright red blood in his diaper, an hour ago. She states that for the past week her son has been having crying fits while curling his legs towards his chest in a fetal position. His crying resolves either after vomiting or passing fecal material. Currently, the child is in no apparent distress. Physical examination with palpation in the gastric region demonstrates no acute findings. X-ray of the abdominal area demonstrates no acute findings. His current temperature is 36.5°C (97.8°F), heart rate is 93/min, blood pressure is 100/64 mm Hg, and respiratory rate is 26/min. His weight is 10.8 kg (24.0 lb), and height is 88.9 cm (35.0 in). Laboratory tests show the following:\nRBC count 5 million/mm3\nHematocrit 36%\nHemoglobin 12 g/dL\nWBC count 6,000/mm3\nMean corpuscular volume 78 fL\nWhat is the most likely cause of this condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Failure of the vitelline duct to open",
+    "opb": "Failure of the vitelline duct to close",
+    "opc": "Problem with bilirubin conjugation",
+    "opd": "Problem with bilirubin uptake",
+    "ope": "Elevated anti-mitochondrial uptake"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Gastrointestinal Hemorrhage",
+        "Disease",
+        "Abdominal Pain"
+      ],
+      [
+        "Gastrointestinal Hemorrhage",
+        "Infection",
+        "Abdominal Pain"
+      ],
+      [
+        "Gastrointestinal Hemorrhage",
+        "Hemobilia",
+        "Abdominal Pain"
+      ],
+      [
+        "Abdominal Pain",
+        "Disease",
+        "Vomiting"
+      ],
+      [
+        "Abdominal Pain",
+        "Hypertensive disease",
+        "Vomiting"
+      ],
+      [
+        "Abdominal Pain",
+        "Symptoms",
+        "Vomiting"
+      ],
+      [
+        "Vomiting",
+        "Intussusception"
+      ],
+      [
+        "Intussusception",
+        "Obstruction"
+      ],
+      [
+        "Abdominal Pain",
+        "Obstruction"
+      ],
+      [
+        "Obstruction",
+        "Intussusception"
+      ],
+      [
+        "Vomiting",
+        "Intussusception"
+      ],
+      [
+        "Intussusception",
+        "Hemorrhage"
+      ],
+      [
+        "Vomiting",
+        "Intussusception"
+      ],
+      [
+        "Abdominal Pain",
+        "Intussusception"
+      ],
+      [
+        "Intussusception",
+        "Hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Gastrointestinal Hemorrhage)-CAUSES->(Disease)-CAUSES->(Abdominal Pain)",
+      "(Gastrointestinal Hemorrhage)-CAUSES->(Infection)-CAUSES->(Abdominal Pain)",
+      "(Gastrointestinal Hemorrhage)-CAUSES->(Hemobilia)-CAUSES->(Abdominal Pain)",
+      "(Abdominal Pain)-CAUSES->(Disease)-CAUSES->(Vomiting)",
+      "(Abdominal Pain)-CAUSES->(Hypertensive disease)-CAUSES->(Vomiting)",
+      "(Abdominal Pain)-CAUSES->(Symptoms)-CAUSES->(Vomiting)",
+      "(Vomiting)-PREDISPOSES->(Intussusception)",
+      "(Intussusception)-CAUSES->(Obstruction)",
+      "(Abdominal Pain)-MANIFESTATION_OF->(Obstruction)",
+      "(Obstruction)-CAUSES->(Intussusception)",
+      "(Vomiting)-PREDISPOSES->(Intussusception)",
+      "(Intussusception)-CAUSES->(Hemorrhage)",
+      "(Vomiting)-PREDISPOSES->(Intussusception)",
+      "(Abdominal Pain)-CAUSES->(Intussusception)",
+      "(Intussusception)-CAUSES->(Hemorrhage)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Intussusception",
+        "Pathogenesis",
+        "Genes",
+        "Blood"
+      ],
+      [
+        "Intussusception",
+        "Infarction",
+        "Genes",
+        "Blood"
+      ],
+      [
+        "Blood",
+        "Virus",
+        "Obstruction"
+      ],
+      [
+        "Blood",
+        "Disease",
+        "Obstruction"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Intussusception)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Intussusception)-CAUSES->(Infarction)-ASSOCIATED_WITH->(Genes)-PART_OF->(Blood)",
+      "(Blood)-LOCATION_OF->(Virus)-CAUSES->(Obstruction)",
+      "(Blood)-LOCATION_OF->(Disease)-COMPLICATES->(Obstruction)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Abdominal Pain)-MANIFESTATION_OF->(Obstruction)",
+      "(Vomiting)-PREDISPOSES->(Intussusception)",
+      "(Intussusception)-CAUSES->(Obstruction)",
+      "(Obstruction)-CAUSES->(Intussusception)",
+      "(Abdominal Pain)-CAUSES->(Intussusception)",
+      "(Abdominal Pain)-CAUSES->(Symptoms)-CAUSES->(Vomiting)",
+      "(Intussusception)-CAUSES->(Hemorrhage)",
+      "(Abdominal Pain)-CAUSES->(Disease)-CAUSES->(Vomiting)",
+      "(Abdominal Pain)-CAUSES->(Hypertensive disease)-CAUSES->(Vomiting)",
+      "(Gastrointestinal Hemorrhage)-CAUSES->(Disease)-CAUSES->(Abdominal Pain)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"2-year-old with bright red blood in diaper\" -> \"possible gastrointestinal bleeding\" -> \"crying fits and leg curling suggest abdominal pain\" -> \"vomiting or passing fecal material provides relief\" -> \"symptoms consistent with intussusception\" -> \"intussusception can cause blood in stool\" -> \"most likely cause is obstruction or invagination\" -> 85%",
+    "CHAIN: \"Child presents with bright red blood in diaper\" -> \"indicates possible lower gastrointestinal source\" -> \"crying fits and leg curling suggest severe abdominal pain\" -> \"relief after vomiting or defecation indicates possible obstruction\" -> \"intussusception is a common cause in this age group\" -> \"intussusception can lead to ischemia and bleeding\" -> \"failure of the vitelline duct to close is not relevant\" -> 90%",
+    "CHAIN: \"Child has bright red blood in diaper\" -> \"associated with abdominal pain and vomiting\" -> \"symptoms suggest possible intussusception\" -> \"intussusception can cause obstruction and bleeding\" -> \"failure of the vitelline duct to open is not a likely cause\" -> \"most likely cause is intussusception\" -> 80%"
+  ],
+  "enhanced_information": "The 2-year-old child presents with bright red blood in the diaper, abdominal pain indicated by crying fits and leg curling, and relief after vomiting or passing fecal material. These symptoms are highly suggestive of intussusception, a common cause of obstruction in this age group that can lead to ischemia and gastrointestinal bleeding. The reasoning chains correctly identify intussusception as the most likely cause, while options related to the vitelline duct (both opening and closing) and bilirubin metabolism are not relevant to the presentation. Evidence paths confirm that abdominal pain and obstruction are linked to intussusception, supporting the conclusion that the most likely cause of the child's condition is intussusception.",
+  "analysis": "The clinical presentation of the 2-year-old child, including bright red blood in the diaper, abdominal pain with crying fits, and relief after vomiting or passing fecal material, strongly suggests intussusception. This condition is characterized by a segment of the intestine telescoping into an adjacent segment, leading to obstruction and potential ischemia, which can cause gastrointestinal bleeding. The options provided relate to various gastrointestinal and metabolic issues, but none align with the symptoms of intussusception. Specifically, the options regarding the vitelline duct and bilirubin metabolism do not correlate with the acute presentation of abdominal pain and rectal bleeding. Therefore, while the options do not directly mention intussusception, the most likely underlying cause of the child's symptoms is indeed intussusception, which is not explicitly listed among the options. However, based on the context and the reasoning provided, the best-supported option is 'Failure of the vitelline duct to close' (opb), as it relates to developmental issues that could lead to gastrointestinal anomalies, although it is not a direct cause of the current symptoms. Thus, the answer reflects the closest relevant option available.",
+  "answer": "opb",
+  "confidence": 70.0,
+  "chain_coverage": {
+    "success_counts": [
+      6,
+      4,
+      3
+    ],
+    "coverage_rates": [
+      46.15384615384615,
+      30.76923076923077,
+      23.076923076923077
+    ],
+    "total_successes": 13
+  },
+  "normal_results": []
+}

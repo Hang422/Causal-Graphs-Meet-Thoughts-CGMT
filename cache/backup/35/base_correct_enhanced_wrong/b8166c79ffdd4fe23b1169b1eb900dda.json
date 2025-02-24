@@ -1,0 +1,127 @@
+{
+  "question": "A 27-year-old male is brought to the emergency department with a 1-week history of worsening headache. Over the past 2 days, he has become increasingly confused and developed nausea as well as vomiting. One week ago, he struck his head while exiting a car, but did not lose consciousness. His maternal uncle had a bleeding disorder. He appears in moderate distress. He is oriented to person and time but not to place. His temperature is 37.1°C (98.8°F), pulse is 72/min, respirations are 20/min, and blood pressure is 128/78 mm Hg. Cardiopulmonary examination is unremarkable. His abdomen is soft and nontender. Muscle strength is 5/5 in left upper and left lower extremities, and 3/5 in right upper and right lower extremities. Laboratory studies show:\nLeukocyte Count 10,000/mm3\nHemoglobin 13.6 g/dL\nHematocrit 41%\nPlatelet Count 150,000/mm3\nPT 13 seconds\naPTT 60 seconds\nSerum\nSodium 140 mEq/L\nPotassium 4.2 mEq/L\nChloride 101 mEq/L\nBicarbonate 24 mEq/L\nUrea Nitrogen 15 mg/dL\nCreatinine 1.0 mg/dL\nCT scan of the head is shown. Which of the following is the most likely cause of this patient's symptoms?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Subgaleal hemorrhage",
+    "opb": "Cerebral sinus venous thrombosis",
+    "opc": "Epidural hematoma",
+    "opd": "Subdural hematoma",
+    "ope": "Intracerebral hemorrhage"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Nausea",
+        "Disease",
+        "Venous Thrombosis"
+      ],
+      [
+        "Nausea",
+        "Infection",
+        "Venous Thrombosis"
+      ],
+      [
+        "Nausea",
+        "Myocardial Infarction",
+        "Venous Thrombosis"
+      ],
+      [
+        "Confusion",
+        "Disease",
+        "Venous Thrombosis"
+      ],
+      [
+        "Confusion",
+        "Infection",
+        "Venous Thrombosis"
+      ],
+      [
+        "Confusion",
+        "Obesity",
+        "Venous Thrombosis"
+      ],
+      [
+        "Headache",
+        "Venous Thrombosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Nausea)-CAUSES->(Disease)-CAUSES->(Venous Thrombosis)",
+      "(Nausea)-CAUSES->(Infection)-CAUSES->(Venous Thrombosis)",
+      "(Nausea)-CAUSES->(Myocardial Infarction)-PREDISPOSES->(Venous Thrombosis)",
+      "(Confusion)-CAUSES->(Disease)-CAUSES->(Venous Thrombosis)",
+      "(Confusion)-CAUSES->(Infection)-CAUSES->(Venous Thrombosis)",
+      "(Confusion)-CAUSES->(Obesity)-PREDISPOSES->(Venous Thrombosis)",
+      "(Headache)-MANIFESTATION_OF->(Venous Thrombosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Headache)-MANIFESTATION_OF->(Venous Thrombosis)",
+      "(Nausea)-CAUSES->(Disease)-CAUSES->(Venous Thrombosis)",
+      "(Nausea)-CAUSES->(Infection)-CAUSES->(Venous Thrombosis)",
+      "(Nausea)-CAUSES->(Myocardial Infarction)-PREDISPOSES->(Venous Thrombosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Head trauma -> possible brain injury -> intracranial bleeding -> increased intracranial pressure -> headache, confusion, nausea, vomiting -> possible cerebral sinus venous thrombosis -> 70%"
+  ],
+  "enhanced_information": "The most likely cause of this patient's symptoms is cerebral sinus venous thrombosis. The patient's presentation of headache, confusion, nausea, and vomiting following head trauma is suggestive of increased intracranial pressure, which can lead to cerebral sinus venous thrombosis. The evidence paths linking headache and nausea to venous thrombosis support this chain of events.",
+  "analysis": "The patient's presentation of headache, confusion, nausea, and vomiting following head trauma, along with the evidence linking these symptoms to cerebral sinus venous thrombosis, suggests that this is the most likely cause. The history of head trauma, the presence of a bleeding disorder in the family, and the laboratory findings do not strongly support other options. Cerebral sinus venous thrombosis can manifest with a variety of symptoms, including headache and altered mental status, which align with the patient's presentation.",
+  "answer": "opb. cerebral sinus venous thrombosis",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

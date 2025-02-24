@@ -1,0 +1,139 @@
+{
+  "question": "An 11-year-old boy is brought to the physician by his mother because of a pruritic generalized rash for 2 days. He returned from a 3-day outdoor summer camp 1 week ago. During his time there, one child was sent home after being diagnosed with measles. The patient was diagnosed with a seizure disorder 6 weeks ago and he has asthma. Current medications include carbamazepine and an albuterol inhaler. His immunization records are unavailable. His temperature is 38.4°C (101.1°F), pulse is 88/min, and blood pressure is 102/60 mm Hg. Examination shows facial edema and a diffuse rash over the face, trunk, and extremities. There is cervical and inguinal lymphadenopathy. The remainder of the examination shows no abnormalities. Which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Discontinue carbamazepine",
+    "opb": "Perform measles serology",
+    "opc": "Heterophile antibody test",
+    "opd": "Administer penicillin therapy",
+    "ope": "Perform rapid plasma reagin test"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "cyclic AMP",
+        "Symptoms",
+        "Measles"
+      ],
+      [
+        "cyclic AMP",
+        "Streptococcus",
+        "Measles"
+      ],
+      [
+        "Measles",
+        "Disease",
+        "Viremia",
+        "Serologic tests"
+      ],
+      [
+        "Measles",
+        "Infection",
+        "Viremia",
+        "Serologic tests"
+      ],
+      [
+        "Measles",
+        "Virus Diseases",
+        "Viremia",
+        "Serologic tests"
+      ],
+      [
+        "Lymphadenopathy",
+        "Inflammation",
+        "Viremia",
+        "Serologic tests"
+      ],
+      [
+        "Lymphadenopathy",
+        "Disease",
+        "Viremia",
+        "Serologic tests"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(cyclic AMP)-TREATS->(Symptoms)-CAUSES->(Measles)",
+      "(cyclic AMP)-TREATS->(Streptococcus)-CAUSES->(Measles)",
+      "(Measles)-CAUSES->(Disease)-CAUSES->(Viremia)-CAUSES->(Serologic tests)",
+      "(Measles)-CAUSES->(Infection)-CAUSES->(Viremia)-CAUSES->(Serologic tests)",
+      "(Measles)-CAUSES->(Virus Diseases)-CAUSES->(Viremia)-CAUSES->(Serologic tests)",
+      "(Lymphadenopathy)-PREDISPOSES->(Inflammation)-CAUSES->(Viremia)-CAUSES->(Serologic tests)",
+      "(Lymphadenopathy)-MANIFESTATION_OF->(Disease)-CAUSES->(Viremia)-CAUSES->(Serologic tests)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(cyclic AMP)-TREATS->(Symptoms)-CAUSES->(Measles)",
+      "(Lymphadenopathy)-PREDISPOSES->(Inflammation)-CAUSES->(Viremia)-CAUSES->(Serologic tests)",
+      "(cyclic AMP)-TREATS->(Streptococcus)-CAUSES->(Measles)",
+      "(Measles)-CAUSES->(Disease)-CAUSES->(Viremia)-CAUSES->(Serologic tests)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Exposure to measles at summer camp -> Incubation period for measles -> 80% CHAIN: Presence of generalized pruritic rash, facial edema, diffuse rash, lymphadenopathy -> Clinical suspicion of measles infection -> 70% CHAIN: History of exposure to measles, characteristic rash, lymphadenopathy -> Perform measles serology -> 80%"
+  ],
+  "enhanced_information": "Given the clinical suspicion of measles infection due to exposure history, characteristic rash, and lymphadenopathy, the most appropriate next step is to perform measles serology to confirm the diagnosis. Discontinuing carbamazepine or administering penicillin therapy is not indicated in this scenario. The evidence paths mentioning the relationship between symptoms and measles, as well as the importance of serologic tests in diagnosing viremia, support the decision to perform measles serology.",
+  "analysis": "Given the clinical suspicion of measles infection based on exposure history, characteristic rash, and lymphadenopathy, the most appropriate next step is to perform measles serology to confirm the diagnosis. Discontinuing carbamazepine or administering penicillin therapy is not indicated in this scenario. The evidence supporting the importance of serologic tests in diagnosing viremia aligns with standard medical practice.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

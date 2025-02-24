@@ -1,0 +1,150 @@
+{
+  "question": "A 30-year-old caucasian female comes to the physician because of chronic diarrhea and abdominal bloating that started 6 months ago. She also reports increasing fatigue and intermittent tingling in her hands and feet. She lost 5 kg (11 lb) of weight over the past 6 months without changing her diet or trying to lose weight. She and her husband have been trying to conceive for over a year without any success. Menses have been irregular at 28–45 day intervals and last for 1–2 days. She has generalized anxiety disorder for which she takes sertraline. Her height is 151 cm and weight is 50 kg; BMI is 22 kg/m2. Examination shows generalized pallor. Cardiopulmonary examination is normal. Test of the stool for occult blood is negative. Laboratory studies show:\nHemoglobin 9.5 g/dL\nLeukocyte count 3900/mm3\nPlatelet count 130,000/mm3\nSerum\nGlucose 100 mg/dL\nCreatinine 0.6 mg/dL\nThyroid-stimulating hormone 3.3 μU/mL\nVitamin B12 80 pg/mL (N > 200)\nIgA anti-tissue transglutaminase antibody negative\nSerum IgA decreased\nWhich of the following is the most appropriate next step in diagnosis?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Plasma zinc concentration",
+    "opb": "Fecal fat test",
+    "opc": "IgG deamidated gliadin peptide test",
+    "opd": "IgA endomysial antibody",
+    "ope": "Skin prick test"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fatigue",
+        "Disease",
+        "Irregular menstrual cycle NOS"
+      ],
+      [
+        "Fatigue",
+        "Obesity",
+        "Irregular menstrual cycle NOS"
+      ],
+      [
+        "Fatigue",
+        "Sleep disturbances",
+        "Irregular menstrual cycle NOS"
+      ],
+      [
+        "Paresthesia",
+        "Disease",
+        "Irregular menstrual cycle NOS"
+      ],
+      [
+        "Anemia",
+        "Iron deficiency"
+      ],
+      [
+        "Decreased hemoglobin",
+        "Anemia"
+      ],
+      [
+        "Decreased hemoglobin",
+        "Anemia"
+      ],
+      [
+        "Decreased hemoglobin",
+        "Disease",
+        "Microcytic anemia"
+      ],
+      [
+        "Vitamin B 12",
+        "Anemia, Pernicious"
+      ],
+      [
+        "Vitamin B 12",
+        "Malabsorption Syndromes"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Fatigue)-CAUSES->(Disease)-CAUSES->(Irregular menstrual cycle NOS)",
+      "(Fatigue)-CAUSES->(Obesity)-CAUSES->(Irregular menstrual cycle NOS)",
+      "(Fatigue)-PREDISPOSES->(Sleep disturbances)-CAUSES->(Irregular menstrual cycle NOS)",
+      "(Paresthesia)-PREDISPOSES->(Disease)-CAUSES->(Irregular menstrual cycle NOS)",
+      "(Anemia)-CAUSES->(Iron deficiency)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Anemia)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Anemia)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Microcytic anemia)",
+      "(Vitamin B 12)-TREATS->(Anemia, Pernicious)",
+      "(Vitamin B 12)-TREATS->(Malabsorption Syndromes)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vitamin B 12)-TREATS->(Anemia, Pernicious)",
+      "(Vitamin B 12)-TREATS->(Malabsorption Syndromes)",
+      "(Fatigue)-CAUSES->(Disease)-CAUSES->(Irregular menstrual cycle NOS)",
+      "(Fatigue)-CAUSES->(Obesity)-CAUSES->(Irregular menstrual cycle NOS)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Anemia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Chronic diarrhea and abdominal bloating -> weight loss -> fatigue and tingling in hands/feet -> irregular menses -> difficulty conceiving -> generalized pallor -> anemia (low hemoglobin) -> possible iron deficiency anemia -> 80% CHAIN: Generalized pallor -> anemia (low hemoglobin) -> further evaluation for anemia -> iron studies -> 70% CHAIN: Low hemoglobin -> microcytic anemia -> iron studies -> 80% CHAIN: Low vitamin B12 -> possible B12 deficiency -> further evaluation for B12 deficiency -> 70% CHAIN: Low vitamin B12 -> possible pernicious anemia -> intrinsic factor antibody test -> 70% CHAIN: Low vitamin B12 -> possible malabsorption -> fecal fat test -> 80%"
+  ],
+  "enhanced_information": "The most appropriate next step in diagnosis for this patient with chronic diarrhea, weight loss, fatigue, tingling in hands/feet, irregular menses, difficulty conceiving, and low vitamin B12 levels is a fecal fat test to evaluate for malabsorption syndromes, which could be contributing to the B12 deficiency and other symptoms.",
+  "analysis": "The patient presents with chronic diarrhea, weight loss, fatigue, tingling in hands/feet, irregular menses, difficulty conceiving, and low vitamin B12 levels. The combination of symptoms suggests malabsorption syndrome as a possible underlying cause. Given the context of the enhanced information provided, a fecal fat test is the most appropriate next step to evaluate for malabsorption syndromes, which could explain the B12 deficiency and other symptoms.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      8
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

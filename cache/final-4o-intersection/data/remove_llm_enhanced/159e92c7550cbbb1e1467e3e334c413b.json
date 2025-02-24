@@ -1,0 +1,169 @@
+{
+  "question": "A 26-year-old woman who is a medical student is undergoing evaluation after sticking herself with a needle while drawing blood from a patient. The patient’s medical history is unknown. A blood sample from the medical student is drawn and processed, and the results are presented below:\nAnti-HAV IgM negative\nAnti-HAV IgG positive\nHBsAg negative\nHBeAg negative\nAnti-HBs negative\nAnti-HBc IgG negative\nAnti-HBc IgM negative\nAnti-HBe negative\nAnti-HCV negative\nWhat is true about the student’s laboratory findings?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "She has not been vaccinated against the hepatitis B virus.",
+    "opb": "She is an asymptomatic carrier of the hepatitis B virus.",
+    "opc": "She is infected with the hepatitis D virus.",
+    "opd": "She recovered from a hepatitis B virus infection.",
+    "ope": "She can transmit the hepatitis A virus."
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Immunity",
+        "HIV",
+        "Hepatitis B"
+      ],
+      [
+        "Immunity",
+        "HIV",
+        "Disease",
+        "Hepatitis A"
+      ],
+      [
+        "Immunity",
+        "HIV",
+        "Infection",
+        "Hepatitis A"
+      ],
+      [
+        "Immunity",
+        "HIV",
+        "Anemia",
+        "Hepatitis A"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Immunity)-PROCESS_OF->(HIV)-CAUSES->(Hepatitis B)",
+      "(Immunity)-PROCESS_OF->(HIV)-CAUSES->(Disease)-CAUSES->(Hepatitis A)",
+      "(Immunity)-PROCESS_OF->(HIV)-CAUSES->(Infection)-CAUSES->(Hepatitis A)",
+      "(Immunity)-PROCESS_OF->(HIV)-CAUSES->(Anemia)-COMPLICATES->(Hepatitis A)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Immunity",
+        "Structure of parenchyma of lung",
+        "Vaccination"
+      ],
+      [
+        "Immunity",
+        "Bone Marrow",
+        "Vaccination"
+      ],
+      [
+        "Hepatitis A",
+        "Pathogenesis",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Liver",
+        "Vaccination"
+      ],
+      [
+        "Hepatitis A",
+        "Pathogenesis",
+        "Genes",
+        "Cartilage",
+        "Vaccination"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Immunity)-PROCESS_OF->(Structure of parenchyma of lung)-LOCATION_OF->(Vaccination)",
+      "(Immunity)-PROCESS_OF->(Bone Marrow)-LOCATION_OF->(Vaccination)",
+      "(Hepatitis A)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Liver)-LOCATION_OF->(Vaccination)",
+      "(Hepatitis A)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage)-LOCATION_OF->(Vaccination)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Immunity)-PROCESS_OF->(HIV)-CAUSES->(Hepatitis B)",
+      "(Immunity)-PROCESS_OF->(HIV)-CAUSES->(Disease)-CAUSES->(Hepatitis A)",
+      "(Immunity)-PROCESS_OF->(HIV)-CAUSES->(Infection)-CAUSES->(Hepatitis A)",
+      "(Immunity)-PROCESS_OF->(HIV)-CAUSES->(Anemia)-COMPLICATES->(Hepatitis A)",
+      "(Hepatitis A)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Liver)-LOCATION_OF->(Vaccination)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Anti-HAV IgM negative\" -> \"No acute hepatitis A infection\" -> \"Anti-HAV IgG positive\" -> \"Immunity to hepatitis A\" -> \"Past infection or vaccination\" -> 95%",
+    "CHAIN: \"HBsAg negative\" -> \"No active hepatitis B infection\" -> \"Anti-HBs negative\" -> \"No immunity to hepatitis B\" -> \"Not vaccinated against hepatitis B\" -> 90%",
+    "CHAIN: \"Anti-HBc IgG negative\" -> \"No past hepatitis B infection\" -> \"Anti-HBc IgM negative\" -> \"No recent hepatitis B infection\" -> \"Not a carrier of hepatitis B\" -> 95%",
+    "CHAIN: \"Anti-HCV negative\" -> \"No hepatitis C infection\" -> 100%",
+    "CHAIN: \"Anti-HAV IgG positive\" -> \"Immunity to hepatitis A\" -> \"Cannot transmit hepatitis A\" -> 95%"
+  ],
+  "enhanced_information": "The laboratory findings for the medical student indicate the following: 1) The presence of Anti-HAV IgG and absence of Anti-HAV IgM suggest immunity to hepatitis A, likely due to past infection or vaccination, and she cannot transmit hepatitis A. 2) The absence of HBsAg, Anti-HBs, Anti-HBc IgG, and Anti-HBc IgM indicates no current or past hepatitis B infection, and no immunity, suggesting she has not been vaccinated against hepatitis B. 3) The absence of Anti-HCV confirms no hepatitis C infection. The retrieved evidence paths are too broad and do not directly support the specific findings related to hepatitis A or B in this context. Therefore, the most accurate conclusion is that she has not been vaccinated against the hepatitis B virus (Option opa).",
+  "analysis": "The laboratory findings for the medical student show that she is negative for all hepatitis B markers, including HBsAg, Anti-HBs, Anti-HBc IgG, and Anti-HBc IgM. This indicates that she has neither been infected with nor vaccinated against hepatitis B, as vaccination would result in the presence of Anti-HBs antibodies. The presence of Anti-HAV IgG and absence of Anti-HAV IgM suggest immunity to hepatitis A, likely due to past infection or vaccination, and she cannot transmit hepatitis A. The absence of Anti-HCV confirms no hepatitis C infection. Therefore, the most accurate conclusion is that she has not been vaccinated against the hepatitis B virus.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      1,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      25.0,
+      0.0,
+      0.0,
+      25.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

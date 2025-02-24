@@ -1,0 +1,120 @@
+{
+  "question": "A 44-year-old woman presents to the emergency department with confusion starting this morning. Her husband states that she initially complained of abdominal pain, diarrhea, and fatigue after eating. She has vomited 3 times and progressively became more confused. Her past medical history is notable for morbid obesity, diabetes, hypertension, dyslipidemia, a sleeve gastrectomy 1 month ago, and depression with multiple suicide attempts. Her temperature is 98.0°F (36.7°C), blood pressure is 104/54 mmHg, pulse is 120/min, respirations are 15/min, and oxygen saturation is 98% on room air. Her physical exam is notable for generalized confusion. Laboratory values are ordered as seen below.\n\nSerum:\nNa+: 139 mEq/L\nCl-: 100 mEq/L\nK+: 3.9 mEq/L\nHCO3-: 24 mEq/L\nBUN: 22 mg/dL\nGlucose: 41 mg/dL\nCreatinine: 1.1 mg/dL\nCa2+: 10.2 mg/dL\nC-peptide level: normal\n\nWhich of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Dumping syndrome",
+    "opb": "Glipizide overdose",
+    "opc": "Insulin overdose",
+    "opd": "Malnutrition",
+    "ope": "Propranolol overdose"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Diarrhea",
+        "Disease",
+        "hypoglycemia"
+      ],
+      [
+        "Diarrhea",
+        "Diabetes Mellitus, Insulin-Dependent",
+        "hypoglycemia"
+      ],
+      [
+        "Abdominal Pain",
+        "hypoglycemia"
+      ],
+      [
+        "Insulin",
+        "hypoglycemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Diarrhea)-CAUSES->(Disease)-CAUSES->(hypoglycemia)",
+      "(Diarrhea)-CAUSES->(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(hypoglycemia)",
+      "(Abdominal Pain)-PREDISPOSES->(hypoglycemia)",
+      "(Insulin)-CAUSES->(hypoglycemia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Diabetes",
+        "Pathogenesis",
+        "Insulin"
+      ],
+      [
+        "Diabetes",
+        "Pathogenesis",
+        "Insulin"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Diabetes)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Insulin)",
+      "(Diabetes)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Insulin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Insulin)-CAUSES->(hypoglycemia)",
+      "(Abdominal Pain)-PREDISPOSES->(hypoglycemia)",
+      "(Diabetes)-CAUSES/MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Insulin)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Sleeve gastrectomy\" -> \"rapid gastric emptying\" -> \"abdominal pain, diarrhea after eating\" -> \"confusion due to hypoglycemia\" -> \"glucose 41 mg/dL\" -> \"possible dumping syndrome\" -> 70%",
+    "CHAIN: \"Diabetes\" -> \"treatment with insulin\" -> \"hypoglycemia\" -> \"glucose 41 mg/dL\" -> \"possible insulin overdose\" -> 60%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 44-year-old woman presenting with confusion and hypoglycemia is insulin overdose, supported by her history of diabetes, treatment with insulin, and low glucose level. The evidence paths confirm the association between insulin and hypoglycemia, further supporting this conclusion.",
+  "analysis": "The patient's presentation with confusion, hypoglycemia, and a history of diabetes and insulin treatment strongly suggests an insulin overdose as the most likely diagnosis. The low glucose level of 41 mg/dL is concerning for severe hypoglycemia, which can lead to confusion and altered mental status. The patient's symptoms are consistent with the effects of excess insulin. Other options like dumping syndrome, malnutrition, and propranolol overdose do not align well with the clinical scenario and laboratory findings.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      2
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

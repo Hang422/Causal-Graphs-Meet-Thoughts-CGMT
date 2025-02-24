@@ -1,0 +1,106 @@
+{
+  "question": "A 42-year-old woman presents to the emergency department with abdominal pain. Her pain started last night during dinner and has persisted. This morning, the patient felt very ill and her husband called emergency medical services. The patient has a past medical history of obesity, diabetes, and depression. Her temperature is 104°F (40°C), blood pressure is 90/65 mmHg, pulse is 160/min, respirations are 14/min, and oxygen saturation is 98% on room air. Physical exam is notable for a very ill appearing woman. Her skin is mildly yellow, and she is in an antalgic position on the stretcher. Laboratory values are ordered as seen below.\n\nHemoglobin: 13 g/dL\nHematocrit: 38%\nLeukocyte count: 14,500 cells/mm^3 with normal differential\nPlatelet count: 257,000/mm^3\n\nAlkaline phosphatase: 227 U/L\nBilirubin, total: 11.3 mg/dL\nBilirubin, direct: 9.8 mg/dL\nAST: 42 U/L\nALT: 31 U/L\n\nThe patient is started on antibiotics and IV fluids. Which of the following is the best next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Emergency cholecystectomy",
+    "opb": "Endoscopic retrograde cholangiopancreatography",
+    "opc": "FAST exam",
+    "opd": "Nasogastric tube and NPO",
+    "ope": "Supportive therapy followed by elective cholecystectomy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Mental Depression",
+        "Obesity",
+        "Respiration"
+      ],
+      [
+        "Diabetes",
+        "Disease",
+        "Respiration"
+      ],
+      [
+        "Diabetes",
+        "Obesity",
+        "Respiration"
+      ],
+      [
+        "Diabetes",
+        "Symptoms",
+        "Respiration"
+      ],
+      [
+        "Obesity",
+        "Respiration"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Mental Depression)-CAUSES->(Obesity)-MANIFESTATION_OF->(Respiration)",
+      "(Diabetes)-CAUSES->(Disease)-MANIFESTATION_OF->(Respiration)",
+      "(Diabetes)-CAUSES->(Obesity)-MANIFESTATION_OF->(Respiration)",
+      "(Diabetes)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Respiration)",
+      "(Obesity)-MANIFESTATION_OF->(Respiration)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Obesity)-MANIFESTATION_OF->(Respiration)",
+      "(Mental Depression)-CAUSES->(Obesity)-MANIFESTATION_OF->(Respiration)",
+      "(Diabetes)-CAUSES->(Obesity)-MANIFESTATION_OF->(Respiration)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Abdominal pain -> started during dinner -> persisted -> patient felt very ill this morning -> husband called emergency medical services -> past medical history of obesity, diabetes, and depression -> vital signs: temperature 104°F, blood pressure 90/65 mmHg, pulse 160/min, respirations 14/min, oxygen saturation -> 98%"
+  ],
+  "enhanced_information": "The patient presents with abdominal pain, fever, hypotension, tachycardia, and jaundice, suggestive of acute cholangitis. Given the clinical picture, the best next step in management would be endoscopic retrograde cholangiopancreatography (ERCP) to diagnose and potentially treat the underlying biliary obstruction.",
+  "analysis": "The patient's presentation with abdominal pain, fever, hypotension, tachycardia, and jaundice is highly suggestive of acute cholangitis. The enhanced information supports the use of endoscopic retrograde cholangiopancreatography (ERCP) as the best next step in management to diagnose and potentially treat the underlying biliary obstruction.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

@@ -1,0 +1,164 @@
+{
+  "question": "A 16-year-old Caucasian boy presents to your family practice office complaining of itchiness. He denies other symptoms. He also denies tobacco, alcohol, or other illicit drug use and is not sexually active. He has no other significant past medical or surgical history aside from a meniscal repair from a wrestling injury sustained two years ago from which he has recovered fully. Vitals are T 98.3, HR 67, BP 110/70. On exam you note several pruritic, erythematous, slightly raised annular patches with central clearing on his back.\n\nWhich of the following additional tests or features are sufficient to make the diagnosis of this boy's skin lesion?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Acid-fast bacilli on smear from skin scrapings",
+    "opb": "History of recent herald patch and lesions along skin cleavage lines",
+    "opc": "Presence of hyphae when KOH added to skin scrapings",
+    "opd": "Symmetrical distribution on bilaterial extremities progressing proximally",
+    "ope": "History of time spent in a Lyme-endemic region"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Skin Specimen",
+        "Tail",
+        "Diagnosis"
+      ],
+      [
+        "Skin Specimen",
+        "Hand",
+        "Diagnosis"
+      ],
+      [
+        "Hyphae",
+        "Farnesol",
+        "T-Lymphocyte",
+        "Diagnosis"
+      ],
+      [
+        "Hyphae",
+        "Liposomes",
+        "T-Lymphocyte",
+        "Diagnosis"
+      ],
+      [
+        "Providing presence (regime/therapy)",
+        "Infiltration",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Providing presence (regime/therapy)",
+        "Infiltration",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Potassium Hydroxide",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Potassium Hydroxide",
+        "Inflammation",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Limb structure",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREVENTS",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Skin Specimen)-PART_OF->(Tail)-LOCATION_OF->(Diagnosis)",
+      "(Skin Specimen)-PART_OF->(Hand)-LOCATION_OF->(Diagnosis)",
+      "(Hyphae)-LOCATION_OF->(Farnesol)-PART_OF->(T-Lymphocyte)-LOCATION_OF->(Diagnosis)",
+      "(Hyphae)-LOCATION_OF->(Liposomes)-PART_OF->(T-Lymphocyte)-LOCATION_OF->(Diagnosis)",
+      "(Providing presence (regime/therapy))-CAUSES->(Infiltration)-MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Providing presence (regime/therapy))-CAUSES->(Infiltration)-CAUSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Potassium Hydroxide)-TREATS->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Potassium Hydroxide)-PREVENTS->(Inflammation)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Limb structure)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hyphae)-LOCATION_OF->(Farnesol)-PART_OF->(T-Lymphocyte)-LOCATION_OF->(Diagnosis)",
+      "(Potassium Hydroxide)-TREATS->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Potassium Hydroxide)-PREVENTS->(Inflammation)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Hyphae)-LOCATION_OF->(Liposomes)-PART_OF->(T-Lymphocyte)-LOCATION_OF->(Diagnosis)",
+      "(Skin Specimen)-PART_OF->(Tail)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: History of recent herald patch and lesions along skin cleavage lines -> Diagnosis of pityriasis rosea -> 80% CHAIN: Presence of hyphae when KOH added to skin scrapings -> Diagnosis of dermatophytosis (tinea corporis) -> 85% CHAIN: Symmetrical distribution on bilateral extremities progressing proximally -> Diagnosis of erythema multiforme -> 80%"
+  ],
+  "enhanced_information": "The presence of a herald patch and lesions along skin cleavage lines is sufficient to make the diagnosis of pityriasis rosea in this case. The evidence paths mentioning hyphae and KOH are not directly relevant to the diagnosis of the skin lesion in this patient.",
+  "analysis": "The core medical principle here is to recognize the clinical presentation of pityriasis rosea. The presence of a herald patch and lesions along skin cleavage lines is characteristic of pityriasis rosea, making option b the most likely correct choice. Acid-fast bacilli, hyphae, and Lyme disease history are not relevant to this presentation.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

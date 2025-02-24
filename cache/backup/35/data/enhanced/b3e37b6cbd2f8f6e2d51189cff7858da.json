@@ -1,0 +1,182 @@
+{
+  "question": "A 23-year-old woman is brought to the emergency department by her friend because of a 1-hour episode of confusion. Earlier that night, they were at a dance club, and the patient was very energetic and euphoric. Thirty minutes after arriving, she became agitated and nauseous. She no longer seemed to know where she was or how she got there, and she began talking to herself. She has no major medical illness. She is an undergraduate student at a local college. She does not smoke but drinks 10–14 mixed drinks each week. Her temperature is 38.3°C (100.9°F), pulse is 115/min and regular, respirations are 16/min, and blood pressure is 138/84 mm Hg. She oriented to self but not to time or place. Throughout the examination, she grinds her teeth. Her pupils are 7 mm in diameter and minimally reactive. Her skin is diffusely flushed and diaphoretic. Cardiopulmonary examination shows no abnormalities. Serum studies show:\nNa+ 129 mEq/L\nK+ 3.7 mEq/L\nHCO3- 22 mEq/L\nCreatinine 1.2 mg/dL\nGlucose 81 mg/dL\nWhich of the following substances is the most likely cause of this patient's presentation?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Cocaine",
+    "opb": "Diphenhydramine",
+    "opc": "Acetaminophen",
+    "opd": "Ecstasy",
+    "ope": "Codeine"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Agitation",
+        "Disease",
+        "Confusion"
+      ],
+      [
+        "Agitation",
+        "Dizziness",
+        "Confusion"
+      ],
+      [
+        "Agitation",
+        "Ischemia",
+        "Confusion"
+      ],
+      [
+        "Nausea",
+        "Disease",
+        "Confusion"
+      ],
+      [
+        "Nausea",
+        "Infection",
+        "Confusion"
+      ],
+      [
+        "Nausea",
+        "Urinary tract infection",
+        "Confusion"
+      ],
+      [
+        "Confusion",
+        "Disease",
+        "Flushing"
+      ],
+      [
+        "Confusion",
+        "Neuropathy",
+        "Flushing"
+      ],
+      [
+        "Confusion",
+        "Osteoporosis",
+        "Flushing"
+      ],
+      [
+        "Stimulant",
+        "Drug abuse",
+        "Substance abuse problem"
+      ],
+      [
+        "Stimulant",
+        "Disease",
+        "Substance abuse problem"
+      ],
+      [
+        "Stimulant",
+        "Obsessive-Compulsive Disorder",
+        "Substance abuse problem"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Agitation)-CAUSES->(Disease)-COMPLICATES->(Confusion)",
+      "(Agitation)-CAUSES->(Dizziness)-PREDISPOSES->(Confusion)",
+      "(Agitation)-CAUSES->(Ischemia)-PREDISPOSES->(Confusion)",
+      "(Nausea)-CAUSES->(Disease)-COMPLICATES->(Confusion)",
+      "(Nausea)-CAUSES->(Infection)-PREDISPOSES->(Confusion)",
+      "(Nausea)-PREDISPOSES->(Urinary tract infection)-CAUSES->(Confusion)",
+      "(Confusion)-CAUSES->(Disease)-CAUSES->(Flushing)",
+      "(Confusion)-CAUSES->(Neuropathy)-CAUSES->(Flushing)",
+      "(Confusion)-CAUSES->(Osteoporosis)-CAUSES->(Flushing)",
+      "(Stimulant)-CAUSES->(Drug abuse)-COMPLICATES->(Substance abuse problem)",
+      "(Stimulant)-CAUSES->(Disease)-PREDISPOSES->(Substance abuse problem)",
+      "(Stimulant)-CAUSES->(Obsessive-Compulsive Disorder)-PREDISPOSES->(Substance abuse problem)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Agitation)-CAUSES->(Disease)-COMPLICATES->(Confusion)",
+      "(Agitation)-CAUSES->(Dizziness)-PREDISPOSES->(Confusion)",
+      "(Agitation)-CAUSES->(Ischemia)-PREDISPOSES->(Confusion)",
+      "(Nausea)-CAUSES->(Disease)-COMPLICATES->(Confusion)",
+      "(Nausea)-CAUSES->(Infection)-PREDISPOSES->(Confusion)",
+      "(Nausea)-PREDISPOSES->(Urinary tract infection)-CAUSES->(Confusion)",
+      "(Confusion)-CAUSES->(Disease)-CAUSES->(Flushing)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Energetic and euphoric at dance club\" -> \"Agitated and nauseous after 30 minutes\" -> \"Confusion, talking to self, not oriented to time or place\" -> \"Teeth grinding, dilated pupils, flushed skin, diaphoresis\" -> \"Increased heart rate, elevated temperature\" -> \"Possible stimulant intoxication\" -> \"Likely substance abuse\" -> \"Possible cocaine use\" -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with symptoms of agitation, confusion, dilated pupils, flushed skin, and diaphoresis, along with a history of energetic and euphoric behavior followed by agitation and nausea, is highly suggestive of stimulant intoxication. Given the clinical picture, the most likely substance causing these symptoms is cocaine.",
+  "analysis": "The patient's presentation with symptoms of agitation, confusion, dilated pupils, flushed skin, and diaphoresis, along with a history of energetic and euphoric behavior followed by agitation and nausea, is highly suggestive of stimulant intoxication. Given the clinical picture and the enhanced information provided, the most likely substance causing these symptoms is cocaine.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

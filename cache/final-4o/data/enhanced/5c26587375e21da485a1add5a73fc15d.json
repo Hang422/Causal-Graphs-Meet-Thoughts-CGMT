@@ -1,0 +1,188 @@
+{
+  "question": "A 6-year-old boy presents to his pediatrician accompanied by his mother for evaluation of a rash. The rash appeared a little over a week ago, and since that time the boy has felt tired. He is less interested in playing outside, preferring to remain indoors because his knees and stomach hurt. His past medical history is significant for an upper respiratory infection that resolved uneventfully without treatment 2 weeks ago. Temperature is 99.5°F (37.5°C), blood pressure is 115/70 mmHg, pulse is 90/min, and respirations are 18/min. Physical exam shows scattered maroon macules and papules on the lower extremities. The abdomen is diffusely tender to palpation. There is no cervical lymphadenopathy or conjunctival injection. Which of the following will most likely be found in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Coronary artery aneurysms",
+    "opb": "Leukocytoclastic vasculitis",
+    "opc": "Mitral regurgitation",
+    "opd": "Occult malignancy",
+    "ope": "Thrombocytopenia"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Infections, Upper Respiratory",
+        "Infection",
+        "Immunity"
+      ],
+      [
+        "Infections, Upper Respiratory",
+        "Hypertensive disease",
+        "Immunity"
+      ],
+      [
+        "Infections, Upper Respiratory",
+        "Symptoms",
+        "Immunity"
+      ],
+      [
+        "Antigen-Antibody Complex",
+        "Abdominal Pain",
+        "Hypersensitivity vasculitis"
+      ],
+      [
+        "Antigen-Antibody Complex",
+        "Symptoms",
+        "Hypersensitivity vasculitis"
+      ],
+      [
+        "Vasculitis",
+        "Hypersensitivity vasculitis"
+      ],
+      [
+        "Vasculitis",
+        "Hypersensitivity vasculitis"
+      ],
+      [
+        "Small vessel vasculitis",
+        "Inflammation",
+        "Infection",
+        "Hypersensitivity vasculitis"
+      ],
+      [
+        "Small vessel vasculitis",
+        "Kidney Failure, Acute",
+        "Infection",
+        "Hypersensitivity vasculitis"
+      ],
+      [
+        "Small vessel vasculitis",
+        "Streptococcus",
+        "Infection",
+        "Hypersensitivity vasculitis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Infections, Upper Respiratory)-CAUSES->(Infection)-MANIFESTATION_OF->(Immunity)",
+      "(Infections, Upper Respiratory)-CAUSES->(Hypertensive disease)-MANIFESTATION_OF->(Immunity)",
+      "(Infections, Upper Respiratory)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Immunity)",
+      "(Antigen-Antibody Complex)-CAUSES->(Abdominal Pain)-CAUSES->(Hypersensitivity vasculitis)",
+      "(Antigen-Antibody Complex)-CAUSES->(Symptoms)-PREDISPOSES->(Hypersensitivity vasculitis)",
+      "(Vasculitis)-CAUSES->(Hypersensitivity vasculitis)",
+      "(Vasculitis)-CAUSES->(Hypersensitivity vasculitis)",
+      "(Small vessel vasculitis)-CAUSES->(Inflammation)-CAUSES->(Infection)-CAUSES->(Hypersensitivity vasculitis)",
+      "(Small vessel vasculitis)-CAUSES->(Kidney Failure, Acute)-CAUSES->(Infection)-CAUSES->(Hypersensitivity vasculitis)",
+      "(Small vessel vasculitis)-PROCESS_OF->(Streptococcus)-CAUSES->(Infection)-CAUSES->(Hypersensitivity vasculitis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Immunity",
+        "Kidney",
+        "Antigen-Antibody Complex"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Immunity)-PROCESS_OF->(Kidney)-LOCATION_OF->(Antigen-Antibody Complex)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vasculitis)-CAUSES->(Hypersensitivity vasculitis)",
+      "(Antigen-Antibody Complex)-CAUSES->(Abdominal Pain)-CAUSES->(Hypersensitivity vasculitis)",
+      "(Small vessel vasculitis)-CAUSES->(Inflammation)-CAUSES->(Infection)-CAUSES->(Hypersensitivity vasculitis)",
+      "(Small vessel vasculitis)-CAUSES->(Kidney Failure, Acute)-CAUSES->(Infection)-CAUSES->(Hypersensitivity vasculitis)",
+      "(Antigen-Antibody Complex)-CAUSES->(Symptoms)-PREDISPOSES->(Hypersensitivity vasculitis)",
+      "(Infections, Upper Respiratory)-CAUSES->(Infection)-MANIFESTATION_OF->(Immunity)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Upper respiratory infection\" -> \"immune response\" -> \"immune complex deposition\" -> \"leukocytoclastic vasculitis\" -> 95%",
+    "CHAIN: \"Recent infection\" -> \"immune system activation\" -> \"systemic inflammation\" -> \"vasculitis\" -> \"leukocytoclastic vasculitis\" -> 90%",
+    "CHAIN: \"Rash on lower extremities\" -> \"palpable purpura\" -> \"vasculitis\" -> \"leukocytoclastic vasculitis\" -> 85%",
+    "CHAIN: \"Abdominal pain\" -> \"intestinal vasculitis\" -> \"leukocytoclastic vasculitis\" -> 80%",
+    "CHAIN: \"Recent infection\" -> \"immune complex formation\" -> \"small vessel vasculitis\" -> \"leukocytoclastic vasculitis\" -> 88%"
+  ],
+  "enhanced_information": "The clinical presentation of a 6-year-old boy with a rash, abdominal pain, and a recent upper respiratory infection is highly suggestive of Henoch-Schönlein purpura (HSP), a type of small vessel vasculitis. This condition is characterized by leukocytoclastic vasculitis, which is supported by the presence of palpable purpura on the lower extremities and abdominal pain due to intestinal involvement. The reasoning chains correctly identify the link between recent infection, immune complex deposition, and leukocytoclastic vasculitis. The retrieved evidence paths support this by highlighting the role of antigen-antibody complexes and hypersensitivity vasculitis in causing symptoms like abdominal pain. Therefore, the most likely finding in this patient is leukocytoclastic vasculitis, aligning with the consensus understanding of HSP. Other options, such as coronary artery aneurysms, mitral regurgitation, occult malignancy, and thrombocytopenia, are not consistent with the typical presentation of HSP.",
+  "analysis": "The clinical presentation of the 6-year-old boy is highly indicative of Henoch-Schönlein purpura (HSP), a small vessel vasculitis. The key symptoms include a palpable purpuric rash on the lower extremities, abdominal pain, and a history of a recent upper respiratory infection. HSP is characterized by leukocytoclastic vasculitis, which is a type of hypersensitivity vasculitis involving immune complex deposition in small vessels. This aligns with the description of maroon macules and papules, as well as the abdominal pain due to intestinal involvement. Other options such as coronary artery aneurysms, mitral regurgitation, occult malignancy, and thrombocytopenia do not fit the typical presentation of HSP. Therefore, the most likely finding in this patient is leukocytoclastic vasculitis.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      1,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      16.666666666666664,
+      16.666666666666664,
+      0.0,
+      16.666666666666664
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

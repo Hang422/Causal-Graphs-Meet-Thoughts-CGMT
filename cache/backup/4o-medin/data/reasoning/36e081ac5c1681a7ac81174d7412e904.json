@@ -1,0 +1,135 @@
+{
+  "question": "A 32-year-old woman comes to her doctor’s office with abdominal distention, diffuse abdominal pain, and a history of 10–12 bowel movements a day for the last week. She was diagnosed with Crohn’s disease 3 years ago. Today, vitals are normal. Her abdomen is mildly distended and diffusely tender to palpation. A CT scan shows evidence of a fistula and strictures located in the last 30 cm of her ileum. A resection of the affected portion of the bowel is scheduled. What changes in bile metabolism are expected in this patient post-procedure?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Absorption of vitamin K will not be impaired",
+    "opb": "Synthesis of cholesterol in the liver will decrease",
+    "opc": "The balance of the components in bile will be altered",
+    "opd": "Enteric bacteria will remain the same in the small intestine",
+    "ope": "Absorption of  7⍺-dehydroxylated bile will decrease"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Vitamin K",
+        "Vitamin K Deficiency"
+      ],
+      [
+        "Ileectomy",
+        "Crohn's disease",
+        "Enterobacteriaceae"
+      ],
+      [
+        "Ileectomy",
+        "Disease",
+        "Enterobacteriaceae"
+      ],
+      [
+        "Ileectomy",
+        "Peritonitis",
+        "Enterobacteriaceae"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Vitamin K)-CAUSES->(Vitamin K Deficiency)",
+      "(Ileectomy)-CAUSES->(Crohn's disease)-PROCESS_OF->(Enterobacteriaceae)",
+      "(Ileectomy)-TREATS->(Disease)-PROCESS_OF->(Enterobacteriaceae)",
+      "(Ileectomy)-TREATS->(Peritonitis)-PROCESS_OF->(Enterobacteriaceae)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Ileectomy",
+        "Kidney Calculi",
+        "Genes",
+        "Vitamin K"
+      ],
+      [
+        "Ileectomy",
+        "Atherosclerosis",
+        "Genes",
+        "Vitamin K"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Ileectomy)-PREDISPOSES->(Kidney Calculi)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Vitamin K)",
+      "(Ileectomy)-TREATS->(Atherosclerosis)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Vitamin K)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vitamin K)-CAUSES->(Vitamin K Deficiency)",
+      "(Ileectomy)-TREATS->(Peritonitis)-PROCESS_OF->(Enterobacteriaceae)",
+      "(Ileectomy)-PREDISPOSES->(Kidney Calculi)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Vitamin K)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Ileal resection\" -> \"decreased bile acid reabsorption\" -> \"increased bile acid loss\" -> \"altered bile composition\" -> 85%",
+    "CHAIN: \"Ileal resection\" -> \"decreased bile acid reabsorption\" -> \"increased hepatic bile acid synthesis\" -> \"altered cholesterol metabolism\" -> 75%",
+    "CHAIN: \"Ileal resection\" -> \"decreased bile acid reabsorption\" -> \"decreased enterohepatic circulation\" -> \"decreased absorption of fat-soluble vitamins\" -> \"possible vitamin K absorption not impaired\" -> 70%",
+    "CHAIN: \"Ileal resection\" -> \"decreased bile acid reabsorption\" -> \"increased bile acid in colon\" -> \"altered gut microbiota\" -> \"possible change in enteric bacteria\" -> 65%",
+    "CHAIN: \"Ileal resection\" -> \"decreased bile acid reabsorption\" -> \"decreased reabsorption of 7⍺-dehydroxylated bile acids\" -> 80%"
+  ],
+  "enhanced_information": "Resection of the ileum leads to decreased absorption of bile acids, which alters bile metabolism and the balance of bile components. This supports option (opc) as correct. The ileum is crucial for the reabsorption of bile acids; thus, its loss results in reduced enterohepatic circulation, confirming option (ope) as also correct regarding decreased absorption of 7α-dehydroxylated bile acids. However, the claim that vitamin K absorption will not be impaired (option opa) is incorrect, as ileal resection can lead to impaired absorption of fat-soluble vitamins, including vitamin K. The impact on enteric bacteria (option opd) is uncertain, as the resection may alter the bacterial composition, but the extent of this change is not clearly defined. Therefore, options (opc) and (ope) are the most supported by consensus, while (opa) and (opd) are incorrect or uncertain.",
+  "analysis": "In patients with Crohn's disease who undergo resection of the ileum, bile acid metabolism is significantly affected. The ileum is the primary site for bile acid reabsorption. When the ileum is resected, the reabsorption of bile acids is impaired, leading to increased bile acids in the colon, which can cause diarrhea. Additionally, the reabsorption of 7⍺-dehydroxylated bile acids, which are secondary bile acids formed by bacterial action in the colon, will decrease because these bile acids are normally reabsorbed in the ileum. This alteration in bile acid metabolism can also affect the balance of bile components and fat-soluble vitamin absorption, but the specific change related to 7⍺-dehydroxylated bile acids is most directly impacted by ileal resection.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      66.66666666666666,
+      0.0,
+      0.0,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

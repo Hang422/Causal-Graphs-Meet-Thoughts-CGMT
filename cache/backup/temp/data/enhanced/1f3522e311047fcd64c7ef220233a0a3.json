@@ -1,0 +1,189 @@
+{
+  "question": "A 63-year-old woman comes to the emergency department because of a 1-day history of progressive blurring and darkening of her vision in the right eye. Upon waking up in the morning, she suddenly started seeing multiple dark streaks. She has migraines and type 2 diabetes mellitus diagnosed at her last health maintenance examination 20 years ago. She has smoked one pack of cigarettes daily for 40 years. Her only medication is sumatriptan. Her vitals are within normal limits. Ophthalmologic examination shows visual acuity of 20/40 in the left eye and 20/100 in the right eye. The fundus is obscured and difficult to visualize on fundoscopic examination of the right eye. The red reflex is diminished on the right. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Central retinal vein occlusion",
+    "opb": "Central retinal artery occlusion",
+    "opc": "Cataract",
+    "opd": "Migraine aura",
+    "ope": "Vitreous hemorrhage"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Diabetes",
+        "Vascular Diseases"
+      ],
+      [
+        "Vascular Diseases",
+        "Disease",
+        "Blood Circulation",
+        "Right eye"
+      ],
+      [
+        "Vascular Diseases",
+        "Disease",
+        "Transformation, function",
+        "Right eye"
+      ],
+      [
+        "Vascular Diseases",
+        "Obesity",
+        "Energy Metabolism",
+        "Right eye"
+      ],
+      [
+        "Cataract",
+        "Disease",
+        "Vitreous Hemorrhage"
+      ],
+      [
+        "Cataract",
+        "Retinal ischemia",
+        "Vitreous Hemorrhage"
+      ],
+      [
+        "Cataract",
+        "Syndrome",
+        "Vitreous Hemorrhage"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Diabetes)-CAUSES->(Vascular Diseases)",
+      "(Vascular Diseases)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)-PROCESS_OF->(Right eye)",
+      "(Vascular Diseases)-CAUSES->(Disease)-MANIFESTATION_OF->(Transformation, function)-PROCESS_OF->(Right eye)",
+      "(Vascular Diseases)-COMPLICATES->(Obesity)-MANIFESTATION_OF->(Energy Metabolism)-PROCESS_OF->(Right eye)",
+      "(Cataract)-CAUSES->(Disease)-CAUSES->(Vitreous Hemorrhage)",
+      "(Cataract)-CAUSES->(Retinal ischemia)-CAUSES->(Vitreous Hemorrhage)",
+      "(Cataract)-CAUSES->(Syndrome)-CAUSES->(Vitreous Hemorrhage)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Structure of fundus of eye",
+        "Eye",
+        "Right eye"
+      ],
+      [
+        "Right eye",
+        "Vitreous Hemorrhage"
+      ],
+      [
+        "Structure of fundus of eye",
+        "Disease",
+        "Migraine with Aura"
+      ],
+      [
+        "Structure of fundus of eye",
+        "Diagnosis",
+        "Migraine with Aura"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "DIAGNOSES"
+      ]
+    ],
+    "paths": [
+      "(Structure of fundus of eye)-PART_OF->(Eye)-PART_OF->(Right eye)",
+      "(Right eye)-LOCATION_OF->(Vitreous Hemorrhage)",
+      "(Structure of fundus of eye)-LOCATION_OF->(Disease)-MANIFESTATION_OF->(Migraine with Aura)",
+      "(Structure of fundus of eye)-LOCATION_OF->(Diagnosis)-DIAGNOSES->(Migraine with Aura)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Structure of fundus of eye)-LOCATION_OF->(Diagnosis)-DIAGNOSES->(Migraine with Aura)",
+      "(Structure of fundus of eye)-LOCATION_OF->(Disease)-MANIFESTATION_OF->(Migraine with Aura)",
+      "(Right eye)-LOCATION_OF->(Vitreous Hemorrhage)",
+      "(Cataract)-CAUSES->(Disease)-CAUSES->(Vitreous Hemorrhage)",
+      "(Cataract)-CAUSES->(Retinal ischemia)-CAUSES->(Vitreous Hemorrhage)",
+      "(Cataract)-CAUSES->(Syndrome)-CAUSES->(Vitreous Hemorrhage)",
+      "(Structure of fundus of eye)-PART_OF->(Eye)-PART_OF->(Right eye)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"63-year-old woman with sudden vision changes\" -> \"progressive blurring and darkening of vision in right eye\" -> \"multiple dark streaks in vision\" -> \"fundoscopic examination shows obscured fundus\" -> \"diminished red reflex in right eye\" -> \"possible vitreous hemorrhage\" -> 85%",
+    "CHAIN: \"63-year-old woman with diabetes and smoking history\" -> \"risk factors for vascular disease\" -> \"sudden vision loss in right eye\" -> \"fundoscopic examination shows obscured fundus\" -> \"diminished red reflex\" -> \"possible central retinal vein occlusion\" -> 80%",
+    "CHAIN: \"63-year-old woman with sudden vision changes\" -> \"progressive blurring and darkening of vision\" -> \"fundoscopic examination shows obscured fundus\" -> \"diminished red reflex\" -> \"less likely to be cataract due to age and symptoms\" -> \"possible vitreous hemorrhage\" -> 75%",
+    "CHAIN: \"63-year-old woman with migraines\" -> \"sudden visual disturbances\" -> \"not typical for migraine aura\" -> \"progressive blurring and darkening of vision\" -> \"fundoscopic examination shows obscured fundus\" -> \"less likely to be migraine aura\" -> 70%",
+    "CHAIN: \"63-year-old woman with sudden vision changes\" -> \"progressive blurring and darkening of vision\" -> \"multiple dark streaks in vision\" -> \"fundoscopic examination shows obscured fundus\" -> \"diminished red reflex\" -> \"less likely to be central retinal artery occlusion due to symptoms\" -> 65%"
+  ],
+  "enhanced_information": "The 63-year-old woman presents with sudden vision changes, specifically progressive blurring and darkening of vision in the right eye, accompanied by multiple dark streaks. The fundoscopic examination reveals an obscured fundus and diminished red reflex in the right eye, which are indicative of a serious ocular condition. Given her history of diabetes and smoking, she is at increased risk for vascular diseases. The combination of sudden vision loss, obscured fundus, and diminished red reflex strongly suggests vitreous hemorrhage, which can occur due to diabetic retinopathy or other vascular issues. Central retinal vein occlusion is also a possibility due to her risk factors, but the specific symptoms and examination findings align more closely with vitreous hemorrhage. Cataracts are less likely given the acute nature of her symptoms, and migraine aura typically does not present with such findings. Therefore, the most likely diagnosis is vitreous hemorrhage.",
+  "analysis": "The patient presents with sudden vision changes, specifically progressive blurring and darkening of vision in the right eye, along with multiple dark streaks. The examination findings of an obscured fundus and diminished red reflex in the right eye are critical. These findings suggest a significant intraocular issue. Given her history of diabetes and smoking, she is at increased risk for conditions like diabetic retinopathy, which can lead to vitreous hemorrhage. Central retinal vein occlusion is also a consideration due to her risk factors, but the acute nature of her symptoms and the specific examination findings (obscured fundus and diminished red reflex) are more indicative of vitreous hemorrhage. Cataracts typically present with gradual vision loss rather than acute changes, and migraine aura does not correlate with the physical examination findings. Therefore, the most likely diagnosis is vitreous hemorrhage, as it aligns with the acute presentation and examination results.",
+  "answer": "ope",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      2,
+      1,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      33.33333333333333,
+      16.666666666666664,
+      16.666666666666664,
+      0.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

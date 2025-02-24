@@ -1,0 +1,203 @@
+{
+  "question": "A 72-year-old man comes to the emergency department for progressively worsening abdominal pain. The pain began 2 weeks ago and is localized to the right upper quadrant. He feels sick and fatigued. He also reports breathlessness when climbing the stairs to his first-floor apartment. He is a retired painter. He has hypertension and type 2 diabetes mellitus. He is sexually active with one female partner and does not use condoms consistently. He began having sexual relations with his most recent partner 2 months ago. He smoked 1 pack of cigarettes daily for 40 years but quit 10 years ago. He does not drink alcohol. Current medications include insulin and enalapril. He is 181 cm (5 ft 11 in) tall and weighs 110 kg (264 lb); BMI is 33.5 kg/m2. His vital signs are within normal limits. Physical examination shows jaundice, a distended abdomen, and tender hepatomegaly. There is no jugular venous distention. A grade 2/6 systolic ejection murmur is heard along the right upper sternal border. Laboratory studies show:\nHemoglobin 18.9 g/dL\nAspartate aminotransferase 450 U/L\nAlanine aminotransferase 335 U/L\nTotal bilirubin 2.1 mg/dL\nWhich of the following is the most likely cause of his symptoms?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Hepatotropic viral infection",
+    "opb": "Increased iron absorption",
+    "opc": "Hepatic vein obstruction",
+    "opd": "Thickened pericaridium",
+    "ope": "Hepatic steatosis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Icterus",
+        "Disease",
+        "Right upper quadrant pain"
+      ],
+      [
+        "Icterus",
+        "Cholelithiasis",
+        "Right upper quadrant pain"
+      ],
+      [
+        "Icterus",
+        "Cholecystitis, Acute",
+        "Right upper quadrant pain"
+      ],
+      [
+        "Icterus",
+        "Disease",
+        "Right upper quadrant pain"
+      ],
+      [
+        "Icterus",
+        "Cholelithiasis",
+        "Right upper quadrant pain"
+      ],
+      [
+        "Icterus",
+        "Cholecystitis, Acute",
+        "Right upper quadrant pain"
+      ],
+      [
+        "Right upper quadrant pain",
+        "Cholestasis",
+        "Icterus"
+      ],
+      [
+        "Right upper quadrant pain",
+        "Cholelithiasis",
+        "Icterus"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Icterus)-CAUSES->(Disease)-CAUSES->(Right upper quadrant pain)",
+      "(Icterus)-CAUSES->(Cholelithiasis)-CAUSES->(Right upper quadrant pain)",
+      "(Icterus)-CAUSES->(Cholecystitis, Acute)-CAUSES->(Right upper quadrant pain)",
+      "(Icterus)-CAUSES->(Disease)-CAUSES->(Right upper quadrant pain)",
+      "(Icterus)-CAUSES->(Cholelithiasis)-CAUSES->(Right upper quadrant pain)",
+      "(Icterus)-CAUSES->(Cholecystitis, Acute)-CAUSES->(Right upper quadrant pain)",
+      "(Right upper quadrant pain)-PREDISPOSES->(Cholestasis)-CAUSES->(Icterus)",
+      "(Right upper quadrant pain)-PREDISPOSES->(Cholelithiasis)-CAUSES->(Icterus)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Liver",
+        "Liver damage"
+      ],
+      [
+        "Fatty Liver",
+        "Pathogenesis",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Adipose tissue"
+      ],
+      [
+        "Fatty Liver",
+        "Pathogenesis",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Adipose tissue"
+      ],
+      [
+        "Adipose tissue",
+        "Hepatitis"
+      ],
+      [
+        "Liver",
+        "Hepatitis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Liver)-LOCATION_OF->(Liver damage)",
+      "(Fatty Liver)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)",
+      "(Fatty Liver)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)",
+      "(Adipose tissue)-LOCATION_OF->(Hepatitis)",
+      "(Liver)-LOCATION_OF->(Hepatitis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Liver)-LOCATION_OF->(Hepatitis)",
+      "(Icterus)-CAUSES->(Cholecystitis, Acute)-CAUSES->(Right upper quadrant pain)",
+      "(Liver)-LOCATION_OF->(Liver damage)",
+      "(Adipose tissue)-LOCATION_OF->(Hepatitis)",
+      "(Icterus)-CAUSES->(Disease)-CAUSES->(Right upper quadrant pain)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Hepatotropic viral infection\" -> \"liver inflammation\" -> \"elevated liver enzymes\" -> \"jaundice\" -> \"right upper quadrant pain\" -> 85%",
+    "CHAIN: \"Increased iron absorption\" -> \"iron deposition in liver\" -> \"liver damage\" -> \"elevated liver enzymes\" -> \"jaundice\" -> \"right upper quadrant pain\" -> 80%",
+    "CHAIN: \"Hepatic vein obstruction\" -> \"impaired liver drainage\" -> \"liver congestion\" -> \"tender hepatomegaly\" -> \"elevated liver enzymes\" -> \"jaundice\" -> 90%",
+    "CHAIN: \"Thickened pericardium\" -> \"impaired cardiac function\" -> \"congestive hepatopathy\" -> \"tender hepatomegaly\" -> \"elevated liver enzymes\" -> \"jaundice\" -> 70%",
+    "CHAIN: \"Hepatic steatosis\" -> \"fat accumulation in liver\" -> \"liver inflammation\" -> \"elevated liver enzymes\" -> \"right upper quadrant pain\" -> \"jaundice\" -> 75%"
+  ],
+  "enhanced_information": "The patient's symptoms and laboratory findings suggest a liver-related condition. The most likely cause is hepatic vein obstruction (Budd-Chiari syndrome), which aligns with the reasoning chain: 'Hepatic vein obstruction' -> 'impaired liver drainage' -> 'liver congestion' -> 'tender hepatomegaly' -> 'elevated liver enzymes' -> 'jaundice'. This is supported by the patient's tender hepatomegaly, elevated liver enzymes, and jaundice. The retrieved evidence paths confirm liver damage and right upper quadrant pain, which are consistent with hepatic vein obstruction. Other options, such as hepatotropic viral infection and increased iron absorption, are less likely given the acute presentation and specific symptoms. Hepatic steatosis and thickened pericardium are also less consistent with the acute and specific nature of the symptoms. Therefore, hepatic vein obstruction is the most consensus-supported diagnosis.",
+  "analysis": "The patient's symptoms and laboratory findings suggest a liver-related condition. The key symptoms include progressively worsening right upper quadrant abdominal pain, jaundice, tender hepatomegaly, and elevated liver enzymes. The elevated hemoglobin level suggests possible polycythemia, which can be associated with hepatic vein obstruction (Budd-Chiari syndrome). The absence of jugular venous distention and the presence of a systolic ejection murmur are less specific but do not rule out Budd-Chiari syndrome. The acute nature of the symptoms, along with the specific laboratory findings, makes hepatic vein obstruction the most likely cause. Other options, such as hepatotropic viral infection, increased iron absorption, hepatic steatosis, and thickened pericardium, are less consistent with the acute presentation and specific symptoms. Therefore, based on the consensus and the enhanced information provided, hepatic vein obstruction is the most likely diagnosis.",
+  "answer": "opc",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2,
+      0,
+      0,
+      4
+    ],
+    "coverage_rates": [
+      14.285714285714285,
+      28.57142857142857,
+      0.0,
+      0.0,
+      57.14285714285714
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

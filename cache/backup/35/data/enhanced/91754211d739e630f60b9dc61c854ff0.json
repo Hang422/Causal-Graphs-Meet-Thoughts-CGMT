@@ -1,0 +1,113 @@
+{
+  "question": "A 55-year-old man comes to the physician for a follow-up examination. He feels well. He has hyperlipidemia and type 2 diabetes mellitus. He takes medium-dose simvastatin and metformin. Four months ago, fasting serum studies showed a LDL-cholesterol of 136 mg/dL and his medications were adjusted. Vital signs are within normal limits. On physical examination, there is generalized weakness of the proximal muscles. Deep tendon reflexes are 2+ bilaterally. Fasting serum studies show:\nTotal cholesterol 154 mg/dL\nHDL-cholesterol 35 mg/dL\nLDL-cholesterol 63 mg/dL\nTriglycerides 138 mg/dL\nGlucose 98 mg/dL\nCreatinine 1.1 mg/dL\nCreatine kinase 260 mg/dL\nWhich of the following is the most appropriate next step in management of this patient's hyperlipidemia?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Discontinue simvastatin, start pravastatin in 3 weeks",
+    "opb": "Continue simvastatin, add niacin",
+    "opc": "Discontinue simvastatin, start fenofibrate now",
+    "opd": "Increase the dose of simvastatin",
+    "ope": "Discontinue simvastatin, start niacin in 3 weeks"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Diabetes Mellitus, Non-Insulin-Dependent",
+        "Cardiovascular Diseases"
+      ],
+      [
+        "Hyperlipidemia",
+        "Cardiovascular Diseases"
+      ],
+      [
+        "Simvastatin",
+        "Myopathy"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Cardiovascular Diseases)",
+      "(Hyperlipidemia)-CAUSES->(Cardiovascular Diseases)",
+      "(Simvastatin)-PREDISPOSES->(Myopathy)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Myopathy",
+        "Pathogenesis",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Adipose tissue",
+        "Lipid-lowering therapy"
+      ],
+      [
+        "Myopathy",
+        "Tachycardia, Ventricular",
+        "Genes",
+        "Adipose tissue",
+        "Lipid-lowering therapy"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Myopathy)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)-LOCATION_OF->(Lipid-lowering therapy)",
+      "(Myopathy)-CAUSES->(Tachycardia, Ventricular)-ASSOCIATED_WITH->(Genes)-PART_OF->(Adipose tissue)-LOCATION_OF->(Lipid-lowering therapy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Simvastatin)-PREDISPOSES->(Myopathy)",
+      "(Hyperlipidemia)-CAUSES->(Cardiovascular Diseases)",
+      "(Diabetes Mellitus, Non-Insulin-Dependent)-CAUSES->(Cardiovascular Diseases)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Hyperlipidemia and type 2 diabetes mellitus\" -> \"Increased risk of cardiovascular disease\" -> \"Importance of managing lipid levels\" -> 90% CHAIN: \"LDL-cholesterol 63 mg/dL\" -> \"Low LDL-cholesterol level\" -> \"Potential need for further lipid management\" -> 80% CHAIN: \"Creatine kinase 260 mg/dL\" -> \"Elevated creatine kinase levels\" -> \"Possible muscle damage or myopathy\" -> 70% CHAIN: \"Generalized weakness of proximal muscles\" -> \"Symptom of myopathy\" -> \"Possible side effect of simvastatin\" -> 60% CHAIN: \"Discontinue simvastatin\" -> \"Address potential cause of myopathy\" -> \"Consider alternative lipid-lowering therapy\" -> 70% CHAIN: \"Start pravastatin in 3 weeks\" -> \"Initiating a different statin medication\" -> \"Monitoring for muscle symptoms\" -> 90%"
+  ],
+  "enhanced_information": "The patient with hyperlipidemia and type 2 diabetes mellitus has low LDL-cholesterol levels and elevated creatine kinase, suggesting a potential need for further lipid management while considering the risk of myopathy. Given the possible myopathy related to simvastatin, discontinuing simvastatin to address this issue and considering alternative lipid-lowering therapy is appropriate. Starting pravastatin in 3 weeks as an alternative statin medication may be considered to monitor for muscle symptoms.",
+  "analysis": "The patient with hyperlipidemia and type 2 diabetes mellitus has low LDL-cholesterol levels and elevated creatine kinase, suggesting a potential need for further lipid management while considering the risk of myopathy. Given the possible myopathy related to simvastatin, discontinuing simvastatin to address this issue and considering alternative lipid-lowering therapy is appropriate. Starting pravastatin in 3 weeks as an alternative statin medication may be considered to monitor for muscle symptoms.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

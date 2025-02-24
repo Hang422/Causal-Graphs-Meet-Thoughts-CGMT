@@ -1,0 +1,95 @@
+{
+  "question": "A 22-year-old primigravida is admitted to the obstetrics ward with leg swelling at 35 weeks gestation. She denies any other symptoms. Her pregnancy has been uneventful and she was compliant with the recommended prenatal care. Her vital signs were as follows: blood pressure, 168/95 mm Hg; heart rate, 86/min; respiratory rate, 16/min; and temperature, 36.7℃ (98℉). The fetal heart rate was 141/min. The physical examination was significant for 2+ pitting edema of the lower extremity. A dipstick test shows 1+ proteinuria. On reassessment 15 minutes later without administration of an antihypertensive, her blood pressure was 141/88 mm Hg, and the fetal heart rate was 147/min. A decision was made to observe the patient and continue the work-up without initiating antihypertensive therapy. Which of the following clinical features would make the suspected diagnosis into a more severe form?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "24-hour urinary protein of 5 g/L",
+    "opb": "Blood pressure of 165/90 mm Hg reassessed 4 hours later",
+    "opc": "Hematocrit of 0.55",
+    "opd": "Platelet count 133,000/μL",
+    "ope": "Serum creatinine 0.98 mg/dL"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Proteinuria",
+        "Pre-Eclampsia"
+      ],
+      [
+        "Thrombocytopenia",
+        "Pre-Eclampsia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Proteinuria)-CAUSES->(Pre-Eclampsia)",
+      "(Thrombocytopenia)-CAUSES->(Pre-Eclampsia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Platelet Count measurement",
+        "Thrombocytopenia"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES"
+      ]
+    ],
+    "paths": [
+      "(Platelet Count measurement)-DIAGNOSES->(Thrombocytopenia)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Proteinuria)-CAUSES->(Pre-Eclampsia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"24-hour urinary protein of 5 g/L\" -> \"severe proteinuria\" -> \"severe preeclampsia\" -> 95%",
+    "CHAIN: \"Blood pressure of 165/90 mm Hg reassessed 4 hours later\" -> \"persistent hypertension\" -> \"severe preeclampsia\" -> 85%",
+    "CHAIN: \"Hematocrit of 0.55\" -> \"hemoconcentration\" -> \"possible severe preeclampsia\" -> 75%",
+    "CHAIN: \"Platelet count 133,000/μL\" -> \"thrombocytopenia\" -> \"severe preeclampsia\" -> 90%",
+    "CHAIN: \"Serum creatinine 0.98 mg/dL\" -> \"normal renal function\" -> \"not indicative of severe preeclampsia\" -> 60%"
+  ],
+  "enhanced_information": "In evaluating the severity of preeclampsia, several clinical features are considered. For option 'opa', a 24-hour urinary protein of 5 g/L indicates severe proteinuria, which is a criterion for severe preeclampsia. This aligns with the consensus that significant proteinuria is a marker of severe disease. For 'opb', a blood pressure of 165/90 mm Hg reassessed 4 hours later suggests persistent hypertension, which is also a criterion for severe preeclampsia. For 'opc', a hematocrit of 0.55 suggests hemoconcentration, which can occur in severe preeclampsia due to fluid shifts, but it is not a definitive criterion on its own. For 'opd', a platelet count of 133,000/μL indicates thrombocytopenia, a recognized feature of severe preeclampsia. Lastly, 'ope', a serum creatinine of 0.98 mg/dL, is within normal limits and does not indicate renal impairment, thus not supporting a diagnosis of severe preeclampsia. The retrieved evidence path confirms that proteinuria is associated with preeclampsia, supporting the reasoning for option 'opa'. Overall, options 'opa', 'opb', and 'opd' are aligned with the criteria for severe preeclampsia, with 'opa' being the most definitive indicator due to the high level of proteinuria.",
+  "analysis": "The patient is suspected to have preeclampsia, a condition characterized by hypertension and proteinuria after 20 weeks of gestation. The severity of preeclampsia can be assessed by several clinical features. A 24-hour urinary protein of 5 g/L (option 'opa') indicates severe proteinuria, which is a criterion for severe preeclampsia. Persistent hypertension with blood pressure readings of 160/110 mm Hg or higher is also a criterion for severe preeclampsia, but the blood pressure of 165/90 mm Hg (option 'opb') does not meet this threshold. A hematocrit of 0.55 (option 'opc') suggests hemoconcentration, which can occur in severe preeclampsia, but it is not a definitive criterion on its own. A platelet count of 133,000/μL (option 'opd') indicates thrombocytopenia, a recognized feature of severe preeclampsia. A serum creatinine of 0.98 mg/dL (option 'ope') is within normal limits and does not indicate renal impairment, thus not supporting a diagnosis of severe preeclampsia. Based on the criteria for severe preeclampsia, options 'opa' and 'opd' are aligned with the criteria, with 'opa' being the most definitive indicator due to the high level of proteinuria.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      0.0,
+      0.0,
+      66.66666666666666,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

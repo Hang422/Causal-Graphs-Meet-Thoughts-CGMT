@@ -1,0 +1,147 @@
+{
+  "question": "A 48-year-old woman presents to the physician because of facial flushing and weakness for 3 months, abdominal discomfort and bloating for 6 months, and profuse watery diarrhea for 1 year. She reports that her diarrhea was episodic initially, but it has been continuous for the past 3 months. The frequency ranges from 10 to 12 bowel movements per day, and the diarrhea persists even if she is fasting. She describes the stools as odorless, watery in consistency, and tea-colored, without blood or mucus. She has not been diagnosed with any specific medical conditions, and there is no history of substance use. Her temperature is 36.9°C (98.4°F), heart rate is 88/min, respiratory rate is 18/min, and blood pressure is 110/74 mm Hg. Her physical exam shows decreased skin turgor, and the abdominal exam does not reveal any significant abnormality. Laboratory studies show:\nSerum glucose 216 mg/dL (12.0 mmol/L)\nSerum sodium 142 mEq/L (142 mmol/L)\nSerum potassium 3.1 mEq/L (3.1 mmol/L)\nSerum chloride 100 mEq/L (100 mmol/L)\nSerum calcium 11.1 mg/dL (2.77 mmol/L)\nHer 24-hour stool volume is 4 liters. Which of the following tests is most likely to yield an accurate diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Urinary 5-hydroxyindoleacetic acid excretion",
+    "opb": "Plasma gastrin level",
+    "opc": "Plasma vasoactive intestinal peptide",
+    "opd": "Plasma glucagon level",
+    "ope": "Plasma somatostatin level"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Flushing",
+        "Disease",
+        "Asthenia"
+      ],
+      [
+        "Flushing",
+        "Infection",
+        "Asthenia"
+      ],
+      [
+        "Flushing",
+        "Symptoms",
+        "Asthenia"
+      ],
+      [
+        "Asthenia",
+        "Disease",
+        "Abdominal discomfort"
+      ],
+      [
+        "Asthenia",
+        "Infection",
+        "Abdominal discomfort"
+      ],
+      [
+        "Asthenia",
+        "Adhesions",
+        "Abdominal discomfort"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Flushing)-CAUSES->(Disease)-CAUSES->(Asthenia)",
+      "(Flushing)-CAUSES->(Infection)-CAUSES->(Asthenia)",
+      "(Flushing)-CAUSES->(Symptoms)-CAUSES->(Asthenia)",
+      "(Asthenia)-CAUSES->(Disease)-CAUSES->(Abdominal discomfort)",
+      "(Asthenia)-CAUSES->(Infection)-CAUSES->(Abdominal discomfort)",
+      "(Asthenia)-CAUSES->(Adhesions)-CAUSES->(Abdominal discomfort)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Plasma potassium",
+        "Disease",
+        "Tachycardia",
+        "Vasoactive Intestinal Peptide"
+      ],
+      [
+        "Plasma potassium",
+        "Heart Diseases",
+        "Tachycardia",
+        "Vasoactive Intestinal Peptide"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Plasma potassium)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Tachycardia)-ASSOCIATED_WITH->(Vasoactive Intestinal Peptide)",
+      "(Plasma potassium)-DIAGNOSES->(Heart Diseases)-MANIFESTATION_OF->(Tachycardia)-ASSOCIATED_WITH->(Vasoactive Intestinal Peptide)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Plasma potassium)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Tachycardia)-ASSOCIATED_WITH->(Vasoactive Intestinal Peptide)",
+      "(Plasma potassium)-DIAGNOSES->(Heart Diseases)-MANIFESTATION_OF->(Tachycardia)-ASSOCIATED_WITH->(Vasoactive Intestinal Peptide)",
+      "(Flushing)-CAUSES->(Disease)-CAUSES->(Asthenia)",
+      "(Flushing)-CAUSES->(Infection)-CAUSES->(Asthenia)",
+      "(Flushing)-CAUSES->(Symptoms)-CAUSES->(Asthenia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Watery diarrhea\" -> \"Tea-colored stools\" -> \"No blood or mucus in stools\" -> \"High 24-hour stool volume\" -> \"Decreased skin turgor\" -> \"Dehydration\" -> \"Electrolyte abnormalities\" -> \"Hypokalemia\" -> \"Plasma potassium 3.1 mEq/L\" -> \"Plasma vasoactive intestinal peptide\" -> 80% CHAIN: \"Facial flushing\" -> \"Weakness\" -> \"Abdominal discomfort and bloating\" -> \"Profuse watery diarrhea\" -> \"Continuous diarrhea despite fasting\" -> \"High 24-hour stool volume\" -> \"Plasma vasoactive intestinal peptide\" -> 80%"
+  ],
+  "enhanced_information": "The patient's symptoms of watery diarrhea, high 24-hour stool volume, and electrolyte abnormalities, specifically hypokalemia, suggest a diagnosis related to vasoactive intestinal peptide (VIP) secretion. The most likely test to yield an accurate diagnosis in this case is the measurement of plasma vasoactive intestinal peptide levels.",
+  "analysis": "The patient's presentation with watery diarrhea, high 24-hour stool volume, electrolyte abnormalities (specifically hypokalemia), and the suspicion of vasoactive intestinal peptide (VIP) secretion points towards a possible diagnosis of VIPoma. The most appropriate test to confirm this diagnosis is the measurement of plasma vasoactive intestinal peptide levels.",
+  "answer": "opc. plasma vasoactive intestinal peptide",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

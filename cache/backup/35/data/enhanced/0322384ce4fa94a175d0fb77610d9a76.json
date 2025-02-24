@@ -1,0 +1,157 @@
+{
+  "question": "A 23-year-old man is brought to the emergency department by the police for impaired cognition and agitation after being struck in the head at a local nightclub. The patient refuses to respond to questions and continues to be markedly agitated. An alcoholic smell is noted. His temperature is 36.9°C (98.4°F), pulse is 104/min, respirations are 24/min, and blood pressure is 148/95 mm Hg. He is confused and oriented only to person. Neurological examination shows miosis and nystagmus but is quickly aborted after the patient tries to attack several members of the care team. CT scan of the head shows no abnormalities. Ingestion of which of the following substances most likely explains this patient's symptoms?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Heroin",
+    "opb": "Alcohol",
+    "opc": "Lysergic acid diethylamide",
+    "opd": "Methamphetamine",
+    "ope": "Phencyclidine"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ethanol",
+        "Agitation"
+      ],
+      [
+        "Agitation",
+        "Disease",
+        "Nystagmus"
+      ],
+      [
+        "Agitation",
+        "Symptoms",
+        "Nystagmus"
+      ],
+      [
+        "Agitation",
+        "Epilepsy",
+        "Nystagmus"
+      ],
+      [
+        "Ethanol",
+        "Agitation"
+      ],
+      [
+        "Agitation",
+        "Aggressive behavior"
+      ],
+      [
+        "Confusion",
+        "Disease",
+        "Aggressive behavior"
+      ],
+      [
+        "Confusion",
+        "Obesity",
+        "Aggressive behavior"
+      ],
+      [
+        "Confusion",
+        "Infection",
+        "Aggressive behavior"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREVENTS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Ethanol)-PREVENTS->(Agitation)",
+      "(Agitation)-CAUSES->(Disease)-CAUSES->(Nystagmus)",
+      "(Agitation)-CAUSES->(Symptoms)-CAUSES->(Nystagmus)",
+      "(Agitation)-CAUSES->(Epilepsy)-CAUSES->(Nystagmus)",
+      "(Ethanol)-PREVENTS->(Agitation)",
+      "(Agitation)-PREDISPOSES->(Aggressive behavior)",
+      "(Confusion)-CAUSES->(Disease)-PREDISPOSES->(Aggressive behavior)",
+      "(Confusion)-CAUSES->(Obesity)-PREDISPOSES->(Aggressive behavior)",
+      "(Confusion)-CAUSES->(Infection)-PREDISPOSES->(Aggressive behavior)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Ethanol",
+        "Cells",
+        "Pulse taking"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Ethanol)-PART_OF->(Cells)-LOCATION_OF->(Pulse taking)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ethanol)-PREVENTS->(Agitation)",
+      "(Agitation)-CAUSES->(Symptoms)-CAUSES->(Nystagmus)",
+      "(Ethanol)-PART_OF->(Cells)-LOCATION_OF->(Pulse taking)",
+      "(Agitation)-PREDISPOSES->(Aggressive behavior)",
+      "(Agitation)-CAUSES->(Disease)-CAUSES->(Nystagmus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Alcohol -> impaired cognition and agitation -> miosis and nystagmus -> 90% CHAIN: Alcohol -> confusion and agitation -> aggressive behavior -> 85% CHAIN: Alcohol -> increased pulse and blood pressure -> 80% CHAIN: Alcohol -> alcoholic smell noted -> 90%"
+  ],
+  "enhanced_information": "The patient's symptoms of impaired cognition, agitation, miosis, nystagmus, confusion, and aggressive behavior, along with an alcoholic smell, are most likely explained by alcohol ingestion. The evidence paths support the relationship between alcohol and agitation, aggressive behavior, and nystagmus, aligning with standard consensus that alcohol can cause these symptoms.",
+  "analysis": "The patient's presentation with impaired cognition, agitation, miosis, nystagmus, confusion, and an alcoholic smell is most consistent with alcohol ingestion. Alcohol can lead to disinhibition, confusion, aggression, and neurological findings like miosis and nystagmus. The absence of abnormalities on the CT scan further supports alcohol as the likely cause of his symptoms.",
+  "answer": "opb. alcohol",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

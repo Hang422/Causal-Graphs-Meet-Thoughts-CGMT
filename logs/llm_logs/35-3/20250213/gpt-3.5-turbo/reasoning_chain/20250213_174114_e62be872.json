@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_174114",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "e62be872",
+  "question_text": "A 50-year-old man presents to the emergency department with pain and swelling of his right leg for the past 2 days. Three days ago he collapsed on his leg after tripping on a rug. It was a hard fall and left him with bruising of his leg. Since then the pain and swelling of his leg have been gradually increasing. Past medical history is noncontributory. He lives a rather sedentary life and smokes two packs of cigarettes per day. The vital signs include heart rate 98/min, respiratory rate 15/min, temperature 37.8°C (100.1°F), and blood pressure 100/60 mm Hg. On physical examination, his right leg is visibly swollen up to the mid-calf with pitting edema and moderate erythema. Peripheral pulses in the right leg are weak and the leg is tender. Manipulation of the right leg is negative for Homan’s sign. What is the next best step in the management of this patient?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 50-year-old man presents to the emergency department with pain and swelling of his right leg for the past 2 days. Three days ago he collapsed on his leg after tripping on a rug. It was a hard fall and left him with bruising of his leg. Since then the pain and swelling of his leg have been gradually increasing. Past medical history is noncontributory. He lives a rather sedentary life and smokes two packs of cigarettes per day. The vital signs include heart rate 98/min, respiratory rate 15/min, temperature 37.8°C (100.1°F), and blood pressure 100/60 mm Hg. On physical examination, his right leg is visibly swollen up to the mid-calf with pitting edema and moderate erythema. Peripheral pulses in the right leg are weak and the leg is tender. Manipulation of the right leg is negative for Homan’s sign. What is the next best step in the management of this patient?\n\n            ### Options\n    opa. Make a diagnosis of deep vein thrombosis based on history and physical\nopb. Perform a venous ultrasound\nopc. Start intravenous heparin therapy immediately\nopd. Send the patient to surgery for an emergency fasciotomy\nope. Perform intravenous venography within 24 hours\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Trauma to the leg -> bruising and swelling -> gradual increase in pain and swelling -> weak peripheral pulses and tenderness in the leg -> suspicion of deep vein thrombosis -> 80%\nCHAIN: Trauma to the leg -> bruising and swelling -> gradual increase in pain and swelling -> weak peripheral pulses and tenderness in the leg -> perform a venous ultrasound -> 70%\nCHAIN: Trauma to the leg -> bruising and swelling -> gradual increase in pain and swelling -> weak peripheral pulses and tenderness in the leg -> suspicion of compartment syndrome -> 60%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

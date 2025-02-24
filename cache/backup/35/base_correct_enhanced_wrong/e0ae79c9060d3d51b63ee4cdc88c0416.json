@@ -1,0 +1,113 @@
+{
+  "question": "A 61-year-old man comes to the physician because of a 2-month history of severe chest discomfort. The chest discomfort usually occurs after heavy meals or eating in the late evening and lasts several hours. He has nausea sometimes but no vomiting. He has also had an occasional nighttime cough during this period. He has hypertension and type 2 diabetes mellitus. He has smoked one pack of cigarettes daily for the past 41 years and drinks one beer daily. Current medications include metformin, naproxen, enalapril,and sitagliptin. He is 177 cm (5 ft 10 in) tall and weighs 135 kg (297 lb); BMI is 43 kg/m2. Vital signs are within normal limits. Cardiopulmonary examination shows no abnormalities. The abdomen is soft and nontender. Laboratory studies are within the reference ranges. An ECG shows no abnormalities. An upper endoscopy shows that the Z-line is located 4 cm above the diaphragmatic hiatus and reveals the presence of a 1.5-cm esophageal ulcer with an erythematous base and without bleeding. The physician recommends weight loss as well as smoking and alcohol cessation. Treatment with omeprazole is begun. One month later, his symptoms are unchanged. Which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Clarithromycin, amoxicillin, and omeprazole therapy for 2 weeks",
+    "opb": "Laparoscopic herniotomy",
+    "opc": "Laparoscopic Nissen fundoplication with hiatoplasty",
+    "opd": "Calcium carbonate therapy for 2 months",
+    "ope": "Bariatric surgery"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Gastroesophageal reflux disease",
+        "Ulcer of esophagus"
+      ],
+      [
+        "Ulcer of esophagus",
+        "Symptoms",
+        "Esophageal motility disorders",
+        "[D]Chest discomfort"
+      ],
+      [
+        "Ulcer of esophagus",
+        "Symptoms",
+        "Weakness",
+        "[D]Chest discomfort"
+      ],
+      [
+        "Ulcer of esophagus",
+        "Symptoms",
+        "Eosinophilic esophagitis",
+        "[D]Chest discomfort"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Gastroesophageal reflux disease)-CAUSES->(Ulcer of esophagus)",
+      "(Ulcer of esophagus)-CAUSES->(Symptoms)-CAUSES->(Esophageal motility disorders)-CAUSES->([D]Chest discomfort)",
+      "(Ulcer of esophagus)-CAUSES->(Symptoms)-CAUSES->(Weakness)-CAUSES->([D]Chest discomfort)",
+      "(Ulcer of esophagus)-CAUSES->(Symptoms)-CAUSES->(Eosinophilic esophagitis)-CAUSES->([D]Chest discomfort)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Esophageal mucous membrane",
+        "Ulcer of esophagus"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Esophageal mucous membrane)-LOCATION_OF->(Ulcer of esophagus)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Gastroesophageal reflux disease)-CAUSES->(Ulcer of esophagus)",
+      "(Ulcer of esophagus)-CAUSES->(Symptoms)-CAUSES->(Esophageal motility disorders)-CAUSES->([D]Chest discomfort)",
+      "(Ulcer of esophagus)-CAUSES->(Symptoms)-CAUSES->(Eosinophilic esophagitis)-CAUSES->([D]Chest discomfort)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Obesity (BMI 43 kg/m2) -> Increased intra-abdominal pressure -> Gastroesophageal reflux disease (GERD) -> Esophageal ulcer with erythematous base -> Symptoms of severe chest discomfort after heavy meals -> 80% CHAIN: Smoking and alcohol consumption -> Irritation of the esophageal mucosa -> Aggravation of esophageal ulcer -> Persistence of symptoms despite treatment -> 70% CHAIN: Failure of omeprazole therapy -> Consideration of alternative treatment options -> 80%"
+  ],
+  "enhanced_information": "The patient's severe chest discomfort after heavy meals, with an esophageal ulcer and persistence of symptoms despite omeprazole therapy, suggests refractory GERD. Smoking and alcohol consumption may aggravate the ulcer. Considering the failure of omeprazole, alternative treatment options should be explored. Bariatric surgery may be the most appropriate next step to address the underlying obesity and potentially improve GERD symptoms.",
+  "analysis": "The patient's presentation with severe chest discomfort after heavy meals, an esophageal ulcer, and persistence of symptoms despite omeprazole therapy suggests refractory GERD. Given the failure of initial treatment and the underlying obesity, bariatric surgery may be the most appropriate next step to address both the obesity and potentially improve GERD symptoms.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

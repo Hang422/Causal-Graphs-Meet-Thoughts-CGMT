@@ -1,0 +1,181 @@
+{
+  "question": "A 65-year-old man is brought to the emergency department because of a 3-day history of increasing shortness of breath and chest pain. He has had a productive cough with foul-smelling sputum for 1 week. He has gastritis as well as advanced Parkinson disease and currently lives in an assisted-living community. He smoked one pack of cigarettes daily for 40 years but quit 5 years ago. He has a 30-year history of alcohol abuse but has not consumed any alcohol in the past 5 years. His temperature is 39.3°C (102.7°F), he is tachycardic and tachypneic and his oxygen saturation is 77% on room air. Auscultation of the lung shows rales and decreased breath sounds over the right upper lung field. Examination shows a resting tremor. Laboratory studies show:\nHematocrit 38%\nLeukocyte count 17,000/mm3\nPlatelet count 210,000/mm3\nLactic acid 4.1 mmol/L (N=0.5–1.5)\nA x-ray of the chest shows infiltrates in the right upper lobe. Which of the following is the most significant predisposing factor for this patient's respiratory symptoms?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Living in an assisted-living community",
+    "opb": "Tobacco use history",
+    "opc": "Past history of alcohol abuse",
+    "opd": "Gastritis",
+    "ope": "Parkinson disease\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Respiratory Tract Infections",
+        "Pneumonia"
+      ],
+      [
+        "Respiratory Tract Infections",
+        "Pneumonia"
+      ],
+      [
+        "Gastritis",
+        "Inflammation"
+      ],
+      [
+        "Inflammation",
+        "Chronic Obstructive Airway Disease",
+        "Respiratory physiology"
+      ],
+      [
+        "Aspiration-action",
+        "Aspiration Pneumonia"
+      ],
+      [
+        "Aspiration Pneumonia",
+        "Infection",
+        "Signs and Symptoms, Respiratory"
+      ],
+      [
+        "Aspiration Pneumonia",
+        "Symptoms",
+        "Signs and Symptoms, Respiratory"
+      ],
+      [
+        "Aspiration Pneumonia",
+        "Respiratory Distress Syndrome, Adult",
+        "Signs and Symptoms, Respiratory"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Respiratory Tract Infections)-CAUSES->(Pneumonia)",
+      "(Respiratory Tract Infections)-CAUSES->(Pneumonia)",
+      "(Gastritis)-CAUSES->(Inflammation)",
+      "(Inflammation)-CAUSES->(Chronic Obstructive Airway Disease)-MANIFESTATION_OF->(Respiratory physiology)",
+      "(Aspiration-action)-CAUSES->(Aspiration Pneumonia)",
+      "(Aspiration Pneumonia)-CAUSES->(Infection)-CAUSES->(Signs and Symptoms, Respiratory)",
+      "(Aspiration Pneumonia)-CAUSES->(Symptoms)-CAUSES->(Signs and Symptoms, Respiratory)",
+      "(Aspiration Pneumonia)-CAUSES->(Respiratory Distress Syndrome, Adult)-CAUSES->(Signs and Symptoms, Respiratory)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Structure of parenchyma of lung",
+        "Respiratory Tract Infections"
+      ],
+      [
+        "Respiratory physiology",
+        "Pharmaceutical Preparations",
+        "Signs and Symptoms, Respiratory"
+      ],
+      [
+        "Respiratory physiology",
+        "Respiratory tract structure",
+        "Signs and Symptoms, Respiratory"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "TREATS"
+      ],
+      [
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Structure of parenchyma of lung)-LOCATION_OF->(Respiratory Tract Infections)",
+      "(Respiratory physiology)-ASSOCIATED_WITH->(Pharmaceutical Preparations)-TREATS->(Signs and Symptoms, Respiratory)",
+      "(Respiratory physiology)-PROCESS_OF->(Respiratory tract structure)-LOCATION_OF->(Signs and Symptoms, Respiratory)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Respiratory Tract Infections)-CAUSES->(Pneumonia)",
+      "(Respiratory Tract Infections)-CAUSES->(Pneumonia)",
+      "(Gastritis)-CAUSES->(Inflammation)",
+      "(Inflammation)-CAUSES->(Chronic Obstructive Airway Disease)-MANIFESTATION_OF->(Respiratory physiology)",
+      "(Aspiration-action)-CAUSES->(Aspiration Pneumonia)",
+      "(Aspiration Pneumonia)-CAUSES->(Infection)-CAUSES->(Signs and Symptoms, Respiratory)",
+      "(Aspiration Pneumonia)-CAUSES->(Symptoms)-CAUSES->(Signs and Symptoms, Respiratory)",
+      "(Aspiration Pneumonia)-CAUSES->(Respiratory Distress Syndrome, Adult)-CAUSES->(Signs and Symptoms, Respiratory)",
+      "(Structure of parenchyma of lung)-LOCATION_OF->(Respiratory Tract Infections)",
+      "(Respiratory physiology)-ASSOCIATED_WITH->(Pharmaceutical Preparations)-TREATS->(Signs and Symptoms, Respiratory)",
+      "(Respiratory physiology)-PROCESS_OF->(Respiratory tract structure)-LOCATION_OF->(Signs and Symptoms, Respiratory)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Tobacco use history\" -> \"chronic exposure to cigarette smoke\" -> \"damage to lung tissue\" -> \"increased susceptibility to respiratory infections\" -> \"development of pneumonia\" -> 85%",
+    "CHAIN: \"Living in an assisted-living community\" -> \"increased exposure to infectious agents\" -> \"higher risk of respiratory infections\" -> \"possible development of pneumonia\" -> 70%",
+    "CHAIN: \"Past history of alcohol abuse\" -> \"possible weakened immune system\" -> \"increased vulnerability to infections\" -> \"possible contribution to respiratory symptoms\" -> 60%",
+    "CHAIN: \"Gastritis\" -> \"inflammation of stomach lining\" -> \"no direct impact on lung function\" -> \"unlikely to be a significant predisposing factor for respiratory symptoms\" -> 10%",
+    "CHAIN: \"Parkinson disease\" -> \"impaired swallowing mechanism\" -> \"increased risk of aspiration\" -> \"possible aspiration pneumonia\" -> \"contributes to respiratory symptoms\" -> 75%"
+  ],
+  "enhanced_information": "The most significant predisposing factor for the patient's respiratory symptoms is his extensive history of tobacco use, which has likely caused chronic lung damage and increased susceptibility to pneumonia. This conclusion is supported by medical consensus and evidence paths linking smoking to respiratory tract infections and pneumonia. Other factors like living in an assisted-living community and Parkinson's disease are relevant but less significant in this context.",
+  "analysis": "The patient presents with symptoms indicative of a severe respiratory infection, possibly pneumonia, characterized by shortness of breath, chest pain, productive cough with foul-smelling sputum, and specific findings on chest x-ray. Among the provided options, the most significant predisposing factor for these respiratory symptoms is his extensive history of tobacco use (opb). Smoking is well-documented to cause chronic lung damage and significantly increases the risk of respiratory infections, including pneumonia. This is supported by a broad medical consensus that identifies smoking as a primary risk factor for pulmonary diseases. Other factors such as living in an assisted-living community (opa) and Parkinson's disease (ope) also contribute to an increased risk of respiratory infections due to generally higher exposure to pathogens and potential swallowing difficulties leading to aspiration, respectively. However, the direct impact of smoking on lung health and function makes it the most significant predisposing factor in this scenario. The patient's past history of alcohol abuse (opc) and gastritis (opd) are less directly related to the current respiratory symptoms.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      1,
+      0,
+      3,
+      2
+    ],
+    "coverage_rates": [
+      25.0,
+      12.5,
+      0.0,
+      37.5,
+      25.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

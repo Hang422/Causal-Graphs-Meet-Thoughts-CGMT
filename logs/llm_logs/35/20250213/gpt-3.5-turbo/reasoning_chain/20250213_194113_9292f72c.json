@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_194113",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "9292f72c",
+  "question_text": "A novel PET radiotracer is being evaluated for its ability to aid in the diagnosis of Alzheimer’s disease (AD). The study decides to use a sample size of 1,000 patients, and half of the patients enrolled have AD. In the group of patients with AD, 400 are found positive on the novel type of PET imaging examination. In the control group, 50 are found positive. What is the PPV of this novel exam?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A novel PET radiotracer is being evaluated for its ability to aid in the diagnosis of Alzheimer’s disease (AD). The study decides to use a sample size of 1,000 patients, and half of the patients enrolled have AD. In the group of patients with AD, 400 are found positive on the novel type of PET imaging examination. In the control group, 50 are found positive. What is the PPV of this novel exam?\n\n            ### Options\n    opa. 400 / (400+100)\nopb. 450 / (450 + 50)\nopc. 400 / (400+50)\nopd. 400 / (400 + 150)\nope. 450 / (450 + 100)\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Total patients enrolled = 1,000\" -> \"Patients with AD = 500\" -> \"Patients without AD = 500\" -> 100%\nCHAIN: \"Patients with AD positive on PET imaging = 400\" -> \"Patients without AD positive on PET imaging = 50\" -> 100%\nCHAIN: \"Positive predictive value (PPV) = True positives / (True positives + False positives)\" -> 100%\nCHAIN: \"PPV = 400 / (400 + 50)\" -> 100%\nCHAIN: \"PPV = 400 / 450\" -> 88.9%\nCHAIN: \"The PPV of this novel exam is 88.9%\" -> 100%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

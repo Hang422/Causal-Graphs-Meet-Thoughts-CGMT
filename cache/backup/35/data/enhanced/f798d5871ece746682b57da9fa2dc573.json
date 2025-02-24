@@ -1,0 +1,99 @@
+{
+  "question": "A 49-year-old male presents to his primary care physician for the first time in twelve years. His chief complaint is a new onset of diarrhea, which nothing seems to improve. He first noticed this diarrhea about a month ago. He complains of greasy stools, which leave a residue in his toilet bowl. Review of systems is notable for alcohol consumption of 12-16 cans of beer per day for the last two decades. Additionally, the patient endorses losing 12 lbs unintentionally over the last month. Vital signs are within normal limits and stable. Exam demonstrates a male who appears older than stated age; abdominal exam is notable for epigastric tenderness to palpation. What is the next step in diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "d-Xylose absorption test",
+    "opb": "Endoscopic retrograde cholangiopancreatography (ERCP)",
+    "opc": "CT abdomen with IV contrast",
+    "opd": "EGD with biopsy of gastric mucosa",
+    "ope": "Somatostatin receptor scintigraphy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pancreatitis, Chronic",
+        "Malabsorption Syndromes"
+      ],
+      [
+        "Malabsorption Syndromes",
+        "Steatorrhea"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pancreatitis, Chronic)-CAUSES->(Malabsorption Syndromes)",
+      "(Malabsorption Syndromes)-CAUSES->(Steatorrhea)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Endoscopic Retrograde Cholangiopancreatography",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Endoscopic Retrograde Cholangiopancreatography",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Endoscopic Retrograde Cholangiopancreatography)-TREATS->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Endoscopic Retrograde Cholangiopancreatography)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Malabsorption Syndromes)-CAUSES->(Steatorrhea)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Alcohol consumption -> chronic pancreatitis -> malabsorption syndrome -> 80% CHAIN: Malabsorption syndrome -> greasy stools -> steatorrhea -> 70% CHAIN: Steatorrhea -> weight loss -> malnutrition -> 70% CHAIN: Epigastric tenderness -> pancreatic pathology -> ERCP indicated -> 80% CHAIN: ERCP indicated -> diagnosis of chronic pancreatitis -> 80%"
+  ],
+  "enhanced_information": "The next step in diagnosis for this patient with chronic alcohol consumption, greasy stools, weight loss, and epigastric tenderness is likely EGD with biopsy of gastric mucosa to evaluate for chronic pancreatitis and associated malabsorption syndrome. The evidence path linking malabsorption syndromes to steatorrhea supports the presence of fat malabsorption in this case.",
+  "analysis": "Given the patient's history of chronic alcohol consumption, greasy stools, weight loss, and epigastric tenderness, the most likely diagnosis to consider is chronic pancreatitis with associated malabsorption syndrome. The presence of steatorrhea suggests fat malabsorption, which can be evaluated through EGD with biopsy of gastric mucosa. This procedure can help assess for pancreatic insufficiency and malabsorption. The other options, such as d-Xylose absorption test, ERCP, CT abdomen, and somatostatin receptor scintigraphy, are less likely to provide direct information on the suspected condition in this clinical context.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

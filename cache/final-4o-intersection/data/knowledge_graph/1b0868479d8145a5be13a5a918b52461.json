@@ -1,0 +1,158 @@
+{
+  "question": "A 72-year-old man comes to the emergency department for progressively worsening abdominal pain. The pain began 2 weeks ago and is localized to the right upper quadrant. He feels sick and fatigued. He also reports breathlessness when climbing the stairs to his first-floor apartment. He is a retired painter. He has hypertension and type 2 diabetes mellitus. He is sexually active with one female partner and does not use condoms consistently. He began having sexual relations with his most recent partner 2 months ago. He smoked 1 pack of cigarettes daily for 40 years but quit 10 years ago. He does not drink alcohol. Current medications include insulin and enalapril. He is 181 cm (5 ft 11 in) tall and weighs 110 kg (264 lb); BMI is 33.5 kg/m2. His vital signs are within normal limits. Physical examination shows jaundice, a distended abdomen, and tender hepatomegaly. There is no jugular venous distention. A grade 2/6 systolic ejection murmur is heard along the right upper sternal border. Laboratory studies show:\nHemoglobin 18.9 g/dL\nAspartate aminotransferase 450 U/L\nAlanine aminotransferase 335 U/L\nTotal bilirubin 2.1 mg/dL\nWhich of the following is the most likely cause of his symptoms?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Hepatotropic viral infection",
+    "opb": "Increased iron absorption",
+    "opc": "Hepatic vein obstruction",
+    "opd": "Thickened pericaridium",
+    "ope": "Hepatic steatosis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Icterus",
+        "Disease",
+        "Right upper quadrant pain"
+      ],
+      [
+        "Icterus",
+        "Disease",
+        "Right upper quadrant pain"
+      ],
+      [
+        "Liver",
+        "Liver damage"
+      ],
+      [
+        "Icterus",
+        "Disease",
+        "Right upper quadrant pain"
+      ],
+      [
+        "Icterus",
+        "Disease",
+        "Right upper quadrant pain"
+      ],
+      [
+        "Fatty Liver",
+        "Pathogenesis",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Adipose tissue"
+      ],
+      [
+        "Fatty Liver",
+        "Pathogenesis",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Adipose tissue"
+      ],
+      [
+        "Adipose tissue",
+        "Hepatitis"
+      ],
+      [
+        "Liver",
+        "Hepatitis"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Icterus)-ISA->(Disease)-CAUSES->(Right upper quadrant pain)",
+      "(Icterus)-PREDISPOSES->(Disease)-CAUSES->(Right upper quadrant pain)",
+      "(Liver)-LOCATION_OF->(Liver damage)",
+      "(Icterus)-ISA->(Disease)-CAUSES->(Right upper quadrant pain)",
+      "(Icterus)-PREDISPOSES->(Disease)-CAUSES->(Right upper quadrant pain)",
+      "(Fatty Liver)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)",
+      "(Fatty Liver)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)",
+      "(Adipose tissue)-LOCATION_OF->(Hepatitis)",
+      "(Liver)-LOCATION_OF->(Hepatitis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Liver)-LOCATION_OF->(Hepatitis)",
+      "(Liver)-LOCATION_OF->(Liver damage)",
+      "(Adipose tissue)-LOCATION_OF->(Hepatitis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Hepatotropic viral infection\" -> \"liver inflammation\" -> \"elevated liver enzymes\" -> \"jaundice\" -> \"right upper quadrant pain\" -> 70%",
+    "CHAIN: \"Increased iron absorption\" -> \"iron deposition in liver\" -> \"liver damage\" -> \"elevated liver enzymes\" -> \"jaundice\" -> \"right upper quadrant pain\" -> 80%",
+    "CHAIN: \"Hepatic vein obstruction\" -> \"impaired liver drainage\" -> \"liver congestion\" -> \"tender hepatomegaly\" -> \"elevated liver enzymes\" -> \"jaundice\" -> 85%",
+    "CHAIN: \"Thickened pericardium\" -> \"impaired cardiac function\" -> \"congestive hepatopathy\" -> \"tender hepatomegaly\" -> \"elevated liver enzymes\" -> \"jaundice\" -> 60%",
+    "CHAIN: \"Hepatic steatosis\" -> \"fat accumulation in liver\" -> \"liver inflammation\" -> \"elevated liver enzymes\" -> \"right upper quadrant pain\" -> 65%"
+  ],
+  "enhanced_information": "The patient's symptoms and laboratory findings suggest a liver-related condition. The most likely cause is hepatic vein obstruction (Budd-Chiari syndrome), which aligns with the reasoning chain: 'Hepatic vein obstruction' -> 'impaired liver drainage' -> 'liver congestion' -> 'tender hepatomegaly' -> 'elevated liver enzymes' -> 'jaundice'. This condition is characterized by the triad of abdominal pain, ascites, and liver enlargement, which matches the patient's presentation of right upper quadrant pain, tender hepatomegaly, and elevated liver enzymes. The retrieved evidence paths, while broad, support the location of liver damage, which is consistent with hepatic vein obstruction leading to liver congestion and damage. Other options, such as hepatotropic viral infection or hepatic steatosis, are less likely given the acute presentation and specific symptoms. Increased iron absorption (hemochromatosis) typically presents with more chronic symptoms and additional systemic manifestations. Thickened pericardium leading to congestive hepatopathy would likely present with signs of heart failure, which are not observed here. Therefore, hepatic vein obstruction is the most consensus-aligned diagnosis.",
+  "analysis": "The patient's presentation includes right upper quadrant abdominal pain, jaundice, tender hepatomegaly, and elevated liver enzymes, which are indicative of liver dysfunction. The elevated hemoglobin suggests possible polycythemia, which can be associated with Budd-Chiari syndrome. The absence of jugular venous distention and the presence of a systolic murmur do not strongly suggest heart failure or constrictive pericarditis. Hepatotropic viral infection could cause similar liver enzyme elevations but is less likely given the acute nature and specific symptomatology. Hemochromatosis typically presents with more chronic symptoms and systemic manifestations. Hepatic steatosis is usually associated with metabolic syndrome and does not typically cause such acute symptoms. The enhanced information supports hepatic vein obstruction (Budd-Chiari syndrome) as the most likely cause, given the triad of symptoms: abdominal pain, hepatomegaly, and jaundice. Therefore, the most likely diagnosis is hepatic vein obstruction.",
+  "answer": "opc",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2,
+      0,
+      0,
+      3
+    ],
+    "coverage_rates": [
+      16.666666666666664,
+      33.33333333333333,
+      0.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

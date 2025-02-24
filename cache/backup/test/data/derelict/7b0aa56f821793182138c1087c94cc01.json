@@ -1,0 +1,93 @@
+{
+  "question": "A 3-year-old girl with no significant past medical history presents to the clinic with a 4-day history of acute onset cough. Her parents have recently started to introduce several new foods into her diet. Her vital signs are all within normal limits. Physical exam is significant for decreased breath sounds on the right. What is the most appropriate definitive management in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Chest x-ray (CXR)",
+    "opb": "Rigid broncoscopy",
+    "opc": "Inhaled bronchodilators and oral corticosteroids",
+    "opd": "Flexible broncoscopy",
+    "ope": "Empiric antibiotic therapy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pneumonia",
+        "Liver Cirrhosis",
+        "Radiography, Thoracic"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pneumonia)-CAUSES->(Liver Cirrhosis)-CAUSES->(Radiography, Thoracic)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Airway Obstruction",
+        "Respiration",
+        "Eye",
+        "Flexible bronchoscopy"
+      ],
+      [
+        "Airway Obstruction",
+        "Respiration",
+        "Trachea",
+        "Flexible bronchoscopy"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Airway Obstruction)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Eye)-LOCATION_OF->(Flexible bronchoscopy)",
+      "(Airway Obstruction)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Trachea)-LOCATION_OF->(Flexible bronchoscopy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Airway Obstruction)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Eye)-LOCATION_OF->(Flexible bronchoscopy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Acute onset cough\" -> \"Decreased breath sounds on the right\" -> \"Suspicion of pneumonia\" -> \"Chest x-ray (CXR)\" -> 80% CHAIN: \"Acute onset cough\" -> \"Decreased breath sounds on the right\" -> \"Suspicion of foreign body aspiration\" -> \"Rigid bronchoscopy\" -> 70% CHAIN: \"Acute onset cough\" -> \"Decreased breath sounds on the right\" -> \"Suspicion of bronchospasm\" -> \"Inhaled bronchodilators and oral corticosteroids\" -> 60% CHAIN: \"Acute onset cough\" -> \"Decreased breath sounds on the right\" -> \"Suspicion of airway obstruction\" -> \"Flexible bronchoscopy\" -> 50% CHAIN: \"Acute onset cough\" -> \"Decreased breath sounds on the right\" -> \"Suspicion of bacterial infection\" -> \"Empiric antibiotic therapy\" -> 80%"
+  ],
+  "enhanced_information": "In a 3-year-old girl with acute onset cough and decreased breath sounds on the right, the most appropriate definitive management is rigid bronchoscopy due to suspicion of foreign body aspiration. This is supported by the reasoning chain and the evidence path indicating the need for airway evaluation and intervention in cases of suspected foreign body obstruction.",
+  "analysis": "The clinical presentation of acute onset cough and decreased breath sounds on the right in a 3-year-old child, especially after the introduction of new foods, raises suspicion for foreign body aspiration. In such cases, the most appropriate definitive management is to perform a rigid bronchoscopy, which allows for both diagnosis and removal of the foreign body. Other options like chest x-ray or flexible bronchoscopy are not definitive treatments, and inhaled bronchodilators, corticosteroids, or antibiotics are not appropriate for foreign body removal.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

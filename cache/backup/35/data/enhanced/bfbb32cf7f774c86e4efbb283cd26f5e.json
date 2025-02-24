@@ -1,0 +1,223 @@
+{
+  "question": "A 43-year-old man with a history of untreated HIV presents with fever, shortness of breath, and a nonproductive cough for the past week. Past medical history is significant for HIV diagnosed 10 years ago and never treated. His most recent CD4+ T cell count was 105/µL. Physical examination reveals bilateral crepitus over all lobes. No lymphadenopathy is present. A chest radiograph reveals bilateral infiltrates. Which of the following is the best treatment for this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Highly active antiretroviral therapy (HAART)",
+    "opb": "Trimethoprim-sulfamethoxazole",
+    "opc": "Ganciclovir",
+    "opd": "Azithromycin",
+    "ope": "Amphotericin B"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Infiltration",
+        "Disease",
+        "Pneumocystis jiroveci pneumonia"
+      ],
+      [
+        "Infiltration",
+        "Lupus Erythematosus, Systemic",
+        "Pneumocystis jiroveci pneumonia"
+      ],
+      [
+        "Infiltration",
+        "Adverse effects",
+        "Pneumocystis jiroveci pneumonia"
+      ],
+      [
+        "Chest radiograph",
+        "Symptoms",
+        "Disease",
+        "Pneumocystis jiroveci pneumonia"
+      ],
+      [
+        "Chest radiograph",
+        "Communicable Diseases",
+        "Disease",
+        "Pneumocystis jiroveci pneumonia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "COMPLICATES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Infiltration)-CAUSES->(Disease)-PREDISPOSES->(Pneumocystis jiroveci pneumonia)",
+      "(Infiltration)-PREDISPOSES->(Lupus Erythematosus, Systemic)-COMPLICATES->(Pneumocystis jiroveci pneumonia)",
+      "(Infiltration)-MANIFESTATION_OF->(Adverse effects)-CAUSES->(Pneumocystis jiroveci pneumonia)",
+      "(Chest radiograph)-CAUSES->(Symptoms)-CAUSES->(Disease)-PREDISPOSES->(Pneumocystis jiroveci pneumonia)",
+      "(Chest radiograph)-CAUSES->(Communicable Diseases)-CAUSES->(Disease)-PREDISPOSES->(Pneumocystis jiroveci pneumonia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "HIV Infections",
+        "Pathogenesis",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Adipose tissue",
+        "CD4 Count determination procedure"
+      ],
+      [
+        "HIV Infections",
+        "Pathogenesis",
+        "E2F1 gene|E2F1|UBE2L3",
+        "Adipose tissue",
+        "CD4 Count determination procedure"
+      ],
+      [
+        "CD4 Count determination procedure",
+        "Opportunistic Infections"
+      ],
+      [
+        "CD4 Positive T Lymphocytes",
+        "Liver",
+        "Pneumocystis jiroveci pneumonia"
+      ],
+      [
+        "CD4 Positive T Lymphocytes",
+        "CD8A wt Allele|CD8A",
+        "Pneumocystis jiroveci pneumonia"
+      ],
+      [
+        "Pneumocystis jiroveci pneumonia",
+        "Adverse reaction to drug",
+        "Genes",
+        "Trimethoprim-Sulfamethoxazole Combination"
+      ],
+      [
+        "Pneumocystis jiroveci pneumonia",
+        "Adverse reaction to drug",
+        "Alleles",
+        "Trimethoprim-Sulfamethoxazole Combination"
+      ],
+      [
+        "Pneumocystis jiroveci pneumonia",
+        "Adverse reaction to drug",
+        "Genes",
+        "Trimethoprim-Sulfamethoxazole Combination"
+      ],
+      [
+        "Pneumocystis jiroveci pneumonia",
+        "Adverse reaction to drug",
+        "Alleles",
+        "Trimethoprim-Sulfamethoxazole Combination"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(HIV Infections)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)-LOCATION_OF->(CD4 Count determination procedure)",
+      "(HIV Infections)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(E2F1 gene|E2F1|UBE2L3)-PART_OF->(Adipose tissue)-LOCATION_OF->(CD4 Count determination procedure)",
+      "(CD4 Count determination procedure)-DIAGNOSES->(Opportunistic Infections)",
+      "(CD4 Positive T Lymphocytes)-PART_OF->(Liver)-LOCATION_OF->(Pneumocystis jiroveci pneumonia)",
+      "(CD4 Positive T Lymphocytes)-INTERACTS_WITH->(CD8A wt Allele|CD8A)-CAUSES->(Pneumocystis jiroveci pneumonia)",
+      "(Pneumocystis jiroveci pneumonia)-CAUSES->(Adverse reaction to drug)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)",
+      "(Pneumocystis jiroveci pneumonia)-CAUSES->(Adverse reaction to drug)-ASSOCIATED_WITH->(Alleles)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)",
+      "(Pneumocystis jiroveci pneumonia)-CAUSES->(Adverse reaction to drug)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)",
+      "(Pneumocystis jiroveci pneumonia)-CAUSES->(Adverse reaction to drug)-ASSOCIATED_WITH->(Alleles)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(CD4 Positive T Lymphocytes)-PART_OF->(Liver)-LOCATION_OF->(Pneumocystis jiroveci pneumonia)",
+      "(Chest radiograph)-CAUSES->(Symptoms)-CAUSES->(Disease)-PREDISPOSES->(Pneumocystis jiroveci pneumonia)",
+      "(CD4 Positive T Lymphocytes)-INTERACTS_WITH->(CD8A wt Allele|CD8A)-CAUSES->(Pneumocystis jiroveci pneumonia)",
+      "(CD4 Count determination procedure)-DIAGNOSES->(Opportunistic Infections)",
+      "(Chest radiograph)-CAUSES->(Communicable Diseases)-CAUSES->(Disease)-PREDISPOSES->(Pneumocystis jiroveci pneumonia)",
+      "(Pneumocystis jiroveci pneumonia)-CAUSES->(Adverse reaction to drug)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)-Sulfamethoxazole Combination)",
+      "(Pneumocystis jiroveci pneumonia)-CAUSES->(Adverse reaction to drug)-ASSOCIATED_WITH->(Alleles)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)-Sulfamethoxazole Combination)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: HIV infection -> decreased CD4+ T cell count -> increased susceptibility to opportunistic infections -> 95% CHAIN: Untreated HIV -> low CD4+ T cell count -> increased risk of Pneumocystis jirovecii pneumonia (PCP) -> 90% CHAIN: Fever, shortness of breath, nonproductive cough -> bilateral crepitus on examination -> bilateral infiltrates on chest radiograph -> 90% CHAIN: Bilateral infiltrates on chest radiograph -> likely Pneumocystis jirovecii pneumonia (PCP) -> 90% CHAIN: Pneumocystis jirovecii pneumonia (PCP) -> treatment with Trimethoprim-sulfamethoxazole -> 95% CHAIN: Best treatment for Pneumocystis jirovecii pneumonia (PCP) -> Trimethoprim-sulfamethoxazole -> 95%"
+  ],
+  "enhanced_information": "The best treatment for this patient with likely Pneumocystis jirovecii pneumonia (PCP) is Trimethoprim-sulfamethoxazole, supported by the patient's history of untreated HIV, low CD4+ T cell count, symptoms, physical examination findings, and chest radiograph showing bilateral infiltrates. This aligns with the standard consensus for treating PCP in HIV-infected individuals.",
+  "analysis": "The patient's presentation with untreated HIV, low CD4+ T cell count, symptoms, physical exam findings, and chest radiograph consistent with likely Pneumocystis jirovecii pneumonia (PCP) strongly suggests the need for treatment. Trimethoprim-sulfamethoxazole is the standard first-line therapy for PCP in HIV-infected individuals. This aligns with the enhanced information provided and consensus guidelines.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

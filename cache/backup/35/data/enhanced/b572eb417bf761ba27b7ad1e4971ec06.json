@@ -1,0 +1,164 @@
+{
+  "question": "A 50-year-old woman comes to the physician for the evaluation of fatigue over the past 6 months. During this period, the patient has also had a 5 kg (11-lb) weight loss. She has a history of Hashimoto thyroiditis. She is sexually active with her husband only. She does not smoke. She drinks one glass of wine per day. She does not use illicit drugs. Her only medication is levothyroxine. Temperature is 37°C (98.6°F), pulse is 70/min, and blood pressure is 110/70 mm Hg. Abdominal examination shows tenderness in the right upper quadrant with no rebound or guarding. Laboratory studies show a serum alanine aminotransferase level of 190 U/L, serum aspartate aminotransferase level of 250 U/L, and serum total bilirubin level of 0.6 mg/dL. Liver biopsy shows plasma cell infiltration and areas of periportal piecemeal necrosis. Further evaluation of this patient is most likely to show which of the following findings?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Positive anti-smooth muscle antibodies",
+    "opb": "Positive anti-mitochondrial antibodies",
+    "opc": "Positive HBV surface antigen",
+    "opd": "Elevated serum transferrin saturation",
+    "ope": "Positive anti-HCV antibodies"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hashimoto Disease",
+        "Autoimmune Diseases"
+      ],
+      [
+        "Autoimmune Diseases",
+        "Energy Metabolism",
+        "Liver"
+      ],
+      [
+        "Piecemeal necrosis",
+        "Hepatitis",
+        "Hepatitis, Autoimmune"
+      ],
+      [
+        "Infiltration",
+        "Disease",
+        "Hepatitis, Autoimmune"
+      ],
+      [
+        "Infiltration",
+        "Infection",
+        "Hepatitis, Autoimmune"
+      ],
+      [
+        "Hepatitis",
+        "Hepatitis, Autoimmune"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hashimoto Disease)-CAUSES->(Autoimmune Diseases)",
+      "(Autoimmune Diseases)-MANIFESTATION_OF->(Energy Metabolism)-PROCESS_OF->(Liver)",
+      "(Piecemeal necrosis)-CAUSES->(Hepatitis)-CAUSES->(Hepatitis, Autoimmune)",
+      "(Infiltration)-CAUSES->(Disease)-CAUSES->(Hepatitis, Autoimmune)",
+      "(Infiltration)-CAUSES->(Infection)-CAUSES->(Hepatitis, Autoimmune)",
+      "(Hepatitis)-CAUSES->(Hepatitis, Autoimmune)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Biopsy of liver (procedure)",
+        "Fatty degeneration",
+        "CLTC|SLC4A1",
+        "Piecemeal necrosis"
+      ],
+      [
+        "Biopsy of liver (procedure)",
+        "Infiltration",
+        "human leukocyte interferon|IFNA1",
+        "Piecemeal necrosis"
+      ],
+      [
+        "Plasma Cells",
+        "Genes",
+        "Hepatitis, Autoimmune"
+      ],
+      [
+        "Plasma Cells",
+        "Immunohistochemistry",
+        "Hepatitis, Autoimmune"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "TREATS"
+      ],
+      [
+        "INTERACTS_WITH",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "DIAGNOSES"
+      ]
+    ],
+    "paths": [
+      "(Biopsy of liver (procedure))-DIAGNOSES->(Fatty degeneration)-ASSOCIATED_WITH->(CLTC|SLC4A1)-ASSOCIATED_WITH->(Piecemeal necrosis)",
+      "(Biopsy of liver (procedure))-DIAGNOSES->(Infiltration)-ASSOCIATED_WITH->(human leukocyte interferon|IFNA1)-TREATS->(Piecemeal necrosis)",
+      "(Plasma Cells)-INTERACTS_WITH->(Genes)-CAUSES->(Hepatitis, Autoimmune)",
+      "(Plasma Cells)-LOCATION_OF->(Immunohistochemistry)-DIAGNOSES->(Hepatitis, Autoimmune)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Plasma Cells)-LOCATION_OF->(Immunohistochemistry)-DIAGNOSES->(Hepatitis, Autoimmune)",
+      "(Biopsy of liver (procedure))-DIAGNOSES->(Infiltration)-ASSOCIATED_WITH->(human leukocyte interferon|IFNA1)-TREATS->(Piecemeal necrosis)",
+      "(Hepatitis)-CAUSES->(Hepatitis, Autoimmune)",
+      "(Hashimoto Disease)-CAUSES->(Autoimmune Diseases)",
+      "(Piecemeal necrosis)-CAUSES->(Hepatitis)-CAUSES->(Hepatitis, Autoimmune)",
+      "(Infiltration)-CAUSES->(Disease)-CAUSES->(Hepatitis, Autoimmune)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Hashimoto thyroiditis -> autoimmune condition -> possible liver involvement -> 70% CHAIN: Liver biopsy findings -> plasma cell infiltration and periportal piecemeal necrosis -> suggestive of autoimmune hepatitis -> 80% CHAIN: Elevated serum aminotransferase levels -> liver inflammation -> autoimmune hepatitis -> 75% CHAIN: Positive anti-smooth muscle antibodies -> associated with autoimmune hepatitis -> 85% CHAIN: Positive anti-mitochondrial antibodies -> associated with primary biliary cholangitis, not likely in this case -> 60% CHAIN: Positive HBV surface antigen -> indicates hepatitis B infection, not likely in this case -> 50% CHAIN: Elevated serum transferrin saturation -> suggestive of iron overload, not directly related to the presentation -> 60% CHAIN: Positive anti-HCV antibodies -> indicates hepatitis C infection, not likely in this case -> 70%"
+  ],
+  "enhanced_information": "The patient's presentation with fatigue, weight loss, history of Hashimoto thyroiditis, elevated liver enzymes, and liver biopsy findings of plasma cell infiltration and periportal piecemeal necrosis suggest autoimmune hepatitis. Further evaluation is most likely to show positive anti-smooth muscle antibodies, supporting the diagnosis of autoimmune hepatitis.",
+  "analysis": "The patient's presentation, along with the liver biopsy findings, strongly suggest autoimmune hepatitis. The most likely finding in further evaluation would be positive anti-smooth muscle antibodies, which are commonly associated with autoimmune hepatitis.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

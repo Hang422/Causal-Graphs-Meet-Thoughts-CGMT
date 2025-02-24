@@ -1,0 +1,106 @@
+{
+  "question": "A 24-year-old female comes to the physician because of flu-like symptoms and a new rash for 2 days. She denies contacts with sick individuals or recent travel abroad, but recently went camping in Vermont. Vital signs are within normal limits. Examination of the lateral right thigh shows a circular red ring with central clearing. Which of the following is the natural reservoir of the pathogen responsible for this patient's symptoms?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Rat",
+    "opb": "Mouse",
+    "opc": "Rabbit",
+    "opd": "Tick",
+    "ope": "Flea"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Lyme Disease",
+        "Borrelia burgdorferi"
+      ],
+      [
+        "Lyme Disease",
+        "Borrelia burgdorferi"
+      ],
+      [
+        "Borrelia burgdorferi",
+        "Disease",
+        "disease transmission"
+      ],
+      [
+        "Borrelia burgdorferi",
+        "Infection",
+        "disease transmission"
+      ],
+      [
+        "Borrelia burgdorferi",
+        "nervous system disorder",
+        "disease transmission"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF"
+      ],
+      [
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Lyme Disease)-PROCESS_OF->(Borrelia burgdorferi)",
+      "(Lyme Disease)-PROCESS_OF->(Borrelia burgdorferi)",
+      "(Borrelia burgdorferi)-CAUSES->(Disease)-CAUSES->(disease transmission)",
+      "(Borrelia burgdorferi)-CAUSES->(Infection)-CAUSES->(disease transmission)",
+      "(Borrelia burgdorferi)-CAUSES->(nervous system disorder)-PREDISPOSES->(disease transmission)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Lyme Disease)-PROCESS_OF->(Borrelia burgdorferi)",
+      "(Borrelia burgdorferi)-CAUSES->(Disease)-CAUSES->(disease transmission)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Circular red ring with central clearing on lateral right thigh\" -> \"Lyme disease suspected\" -> \"Pathogen responsible is Borrelia burgdorferi\" -> \"Natural reservoir is Tick\" -> 95%",
+    "CHAIN: \"Circular red ring with central clearing on lateral right thigh\" -> \"Lyme disease suspected\" -> \"Pathogen responsible is Borrelia burgdorferi\" -> \"Transmitted by Ixodes ticks\" -> \"Natural reservoir is Tick\" -> 90%"
+  ],
+  "enhanced_information": "The natural reservoir of the pathogen responsible for this patient's symptoms, suspected to be Lyme disease, is the tick. Borrelia burgdorferi, the causative agent of Lyme disease, is transmitted by Ixodes ticks.",
+  "analysis": "The core medical principle here is the knowledge that Lyme disease, characterized by a circular red ring with central clearing (erythema migrans), is transmitted by ticks. The enhanced information provided aligns with the consensus that the natural reservoir of Borrelia burgdorferi, the pathogen responsible for Lyme disease, is the tick. Given the patient's presentation and recent camping in Vermont, where ticks are prevalent, the most likely correct option is the tick.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      66.66666666666666
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

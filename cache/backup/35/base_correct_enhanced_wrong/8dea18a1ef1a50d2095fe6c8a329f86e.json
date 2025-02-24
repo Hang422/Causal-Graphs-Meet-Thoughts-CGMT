@@ -1,0 +1,100 @@
+{
+  "question": "A 24-year-old G1P1 presents to her physician to discuss the results of her Pap smear. Her previous 2 Pap smears were normal. Her family history is significant for breast cancer in her grandmother and cervical carcinoma in situ in her older sister. The results of her current Pap smear are as follows:\nSpecimen adequacy: satisfactory for evaluation\nInterpretation: atypical squamous cells of undetermined significance\nWhich of the following options is the best next step in the management of this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Repeat Pap smear in 3 years",
+    "opb": "Perform colposcopy",
+    "opc": "Obtain a vaginal smear",
+    "opd": "Test for HPV",
+    "ope": "Resume routine screening schedule"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Atypical Squamous Cell",
+        "Human papillomavirus 16",
+        "Human papilloma virus infection"
+      ],
+      [
+        "Atypical Squamous Cell",
+        "Human papillomavirus 16",
+        "Human papilloma virus infection"
+      ],
+      [
+        "Human papilloma virus infection",
+        "Infection",
+        "Fine needle aspiration biopsy",
+        "Laboratory Procedures"
+      ],
+      [
+        "Human papilloma virus infection",
+        "Infection",
+        "Fine needle aspiration biopsy",
+        "Laboratory Procedures"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA",
+        "CAUSES",
+        "ISA"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "ISA"
+      ]
+    ],
+    "paths": [
+      "(Atypical Squamous Cell)-LOCATION_OF->(Human papillomavirus 16)-CAUSES->(Human papilloma virus infection)",
+      "(Atypical Squamous Cell)-LOCATION_OF->(Human papillomavirus 16)-INTERACTS_WITH->(Human papilloma virus infection)",
+      "(Human papilloma virus infection)-ISA->(Infection)-CAUSES->(Fine needle aspiration biopsy)-ISA->(Laboratory Procedures)",
+      "(Human papilloma virus infection)-CAUSES->(Infection)-CAUSES->(Fine needle aspiration biopsy)-ISA->(Laboratory Procedures)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Atypical Squamous Cell)-LOCATION_OF->(Human papillomavirus 16)-CAUSES/INTERACTS_WITH->(Human papilloma virus infection)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Atypical squamous cells of undetermined significance\" -> \"May indicate precancerous changes\" -> \"Perform colposcopy\" -> 95% CHAIN: \"Atypical squamous cells of undetermined significance\" -> \"Associated with HPV infection\" -> \"Test for HPV\" -> 90% CHAIN: \"Atypical squamous cells of undetermined significance\" -> \"Increased risk for cervical cancer\" -> \"Perform colposcopy\" -> 95%"
+  ],
+  "enhanced_information": "Atypical squamous cells of undetermined significance on Pap smear may indicate precancerous changes or HPV infection. Given the association with HPV and potential increased risk for cervical cancer, the best next step in management would be to perform colposcopy or test for HPV.",
+  "analysis": "Atypical squamous cells of undetermined significance on Pap smear can indicate precancerous changes or HPV infection. Given the patient's history and the enhanced information provided, the best next step in the management of this patient would be to perform colposcopy or test for HPV to further evaluate for any potential abnormalities or HPV infection.",
+  "answer": "opb. perform colposcopy",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

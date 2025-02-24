@@ -1,0 +1,141 @@
+{
+  "question": "An 1800-g (4.0-lb) male newborn is delivered to a 26-year-old woman, gravida 2, para 1, at 33 weeks' gestation. The Apgar scores are 7 at 1 minute and 8 at 5 minutes. The pregnancy was complicated by iron deficiency anemia. The mother has no other history of serious illness. She has smoked one-half pack of cigarettes daily for the past 10 years. She does not drink alcohol. She has never used illicit drugs. Pregnancy and delivery of her first child were complicated by placenta previa. The mother has received all appropriate immunizations. It is most appropriate for the physician to recommend which of the following to the mother regarding her son's immunizations?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Give first dose of hepatitis B vaccine at 3 months of chronological age",
+    "opb": "Give first dose of influenza vaccine at 2 months of chronological age",
+    "opc": "Give first dose of varicella vaccine at 2 months of chronological age",
+    "opd": "Give first dose of Haemophilus influenza type b vaccine at 3 months of chronological age",
+    "ope": "Give first dose of diphtheria and tetanus toxoids, acellular pertussis (DTaP) vaccine at 2 months of chronological age"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Immunization Schedule",
+        "Disease",
+        "Chickenpox"
+      ],
+      [
+        "Immunization Schedule",
+        "Infection",
+        "Chickenpox"
+      ],
+      [
+        "Immunization Schedule",
+        "Herpes zoster disease",
+        "Chickenpox"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Immunization Schedule)-PREDISPOSES->(Disease)-CAUSES->(Chickenpox)",
+      "(Immunization Schedule)-TREATS->(Infection)-CAUSES->(Chickenpox)",
+      "(Immunization Schedule)-PREVENTS->(Herpes zoster disease)-CAUSES->(Chickenpox)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Vaccination",
+        "Immunization reaction",
+        "Hepatitis B Vaccines"
+      ],
+      [
+        "Immunization",
+        "Pathogenesis",
+        "Genes",
+        "Clone",
+        "Immunization Schedule"
+      ],
+      [
+        "Immunization",
+        "Pathogenesis",
+        "Genes",
+        "Clone",
+        "Immunization Schedule"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Vaccination)-CAUSES->(Immunization reaction)-ASSOCIATED_WITH->(Hepatitis B Vaccines)",
+      "(Immunization)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Clone)-LOCATION_OF->(Immunization Schedule)",
+      "(Immunization)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Clone)-LOCATION_OF->(Immunization Schedule)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vaccination)-CAUSES->(Immunization reaction)-ASSOCIATED_WITH->(Hepatitis B Vaccines)",
+      "(Immunization Schedule)-PREDISPOSES->(Disease)-CAUSES->(Chickenpox)",
+      "(Immunization Schedule)-TREATS->(Infection)-CAUSES->(Chickenpox)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Newborn is 33 weeks gestation\" -> \"Considered preterm\" -> \"Higher risk for infections\" -> \"Need for timely vaccinations\" -> \"First dose of DTaP recommended at 2 months\" -> 85%",
+    "CHAIN: \"Newborn is low birth weight\" -> \"Increased risk for complications\" -> \"Vaccination schedule should be followed\" -> \"First dose of influenza vaccine recommended at 2 months\" -> 80%",
+    "CHAIN: \"Mother has iron deficiency anemia\" -> \"Potential impact on newborn's health\" -> \"Vaccination is crucial for protection\" -> \"First dose of hepatitis B vaccine at 3 months\" -> 75%",
+    "CHAIN: \"Newborn has Apgar scores of 7 and 8\" -> \"Indicates good health\" -> \"Vaccination can begin as per schedule\" -> \"First dose of Haemophilus influenza type b vaccine at 3 months\" -> 70%",
+    "CHAIN: \"Newborn is a male\" -> \"No specific immunization differences based on gender\" -> \"Follow standard immunization schedule\" -> \"First dose of varicella vaccine at 2 months\" -> 65%"
+  ],
+  "enhanced_information": "The newborn is a preterm infant born at 33 weeks gestation, which places him at higher risk for infections and complications. According to the standard immunization schedule, the first dose of the DTaP vaccine is recommended at 2 months of chronological age, regardless of birth weight or gestational age. The first dose of the influenza vaccine is also recommended at 6 months, not 2 months. The hepatitis B vaccine is typically given at birth, 1-2 months, and 6-18 months, so the recommendation to start at 3 months is not aligned with the consensus. The varicella vaccine is not recommended until 12 months of age. The Haemophilus influenza type b vaccine is recommended at 2 months, not 3 months. Therefore, the most appropriate recommendation for the mother regarding her son's immunizations is to give the first dose of DTaP vaccine at 2 months of chronological age.",
+  "analysis": "The newborn is a preterm infant born at 33 weeks gestation, which does place him at higher risk for infections. However, the standard immunization schedule is designed to provide protection regardless of gestational age, as long as the infant is stable. According to the CDC immunization schedule, the first dose of the DTaP vaccine is recommended at 2 months of chronological age. The hepatitis B vaccine is typically given at birth, and the first dose of the influenza vaccine is recommended at 6 months, not 2 months. The varicella vaccine is not recommended until 12 months of age, and the Haemophilus influenza type b vaccine is also recommended at 2 months, not 3 months. Therefore, the most appropriate recommendation for the mother regarding her son's immunizations is to give the first dose of DTaP vaccine at 2 months of chronological age, as this aligns with the standard immunization schedule and is supported by medical consensus.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      0,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      33.33333333333333,
+      0.0,
+      66.66666666666666
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

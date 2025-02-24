@@ -1,0 +1,177 @@
+{
+  "question": "A previously healthy 31-year-old woman comes to the emergency department because of sudden, severe epigastric pain and vomiting for the past 4 hours. She reports that the pain radiates to the back and began when she was having dinner and drinks at a local brewpub. Her temperature is 37.9°C (100.2°F), pulse is 98/min, respirations are 19/min, and blood pressure is 110/60 mm Hg. Abdominal examination shows epigastric tenderness and guarding but no rebound. Bowel sounds are decreased. Laboratory studies show:\nHematocrit 43%\nLeukocyte count 9000/mm3\nSerum\nNa+ 140 mEq/L\nK+ 4.5 mEq/L\nCa2+ 9.0 mg/dL\nLipase 170 U/L (N = < 50 U/L)\nAmylase 152 U/L\nAlanine aminotransferase (ALT, GPT) 140 U/L\nIntravenous fluid resuscitation is begun. Which of the following is the most appropriate next step in management?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Contrast-enhanced abdominal CT scan",
+    "opb": "Right upper quadrant abdominal ultrasound",
+    "opc": "Plain x-ray of the abdomen",
+    "opd": "Measure serum triglycerides",
+    "ope": "Blood alcohol level assay"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Amylases",
+        "Pancreatitis, Acute"
+      ],
+      [
+        "Hyperlipasaemia",
+        "Pancreatitis",
+        "Pancreatitis, Acute"
+      ],
+      [
+        "Alanine Transaminase",
+        "Physical findings",
+        "Abdominal Pain",
+        "Gallstone pancreatitis"
+      ],
+      [
+        "Alanine Transaminase",
+        "Physical findings",
+        "Cholecystitis, Acute",
+        "Gallstone pancreatitis"
+      ],
+      [
+        "Alanine Transaminase",
+        "Physical findings",
+        "Obstruction",
+        "Gallstone pancreatitis"
+      ],
+      [
+        "Hyperlipasaemia",
+        "Pancreatitis",
+        "Pancreatitis, Acute"
+      ],
+      [
+        "Amylases",
+        "Pancreatitis, Acute"
+      ],
+      [
+        "Hyperlipasaemia",
+        "Pancreatitis",
+        "Pancreatitis, Acute"
+      ],
+      [
+        "Alanine Transaminase",
+        "Physical findings",
+        "Physiological stress",
+        "Liver"
+      ],
+      [
+        "Alanine Transaminase",
+        "Physical findings",
+        "Neutrophil Activation",
+        "Liver"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Amylases)-TREATS->(Pancreatitis, Acute)",
+      "(Hyperlipasaemia)-PREDISPOSES->(Pancreatitis)-CAUSES->(Pancreatitis, Acute)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-CAUSES->(Abdominal Pain)-CAUSES->(Gallstone pancreatitis)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-PREDISPOSES->(Cholecystitis, Acute)-COMPLICATES->(Gallstone pancreatitis)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-MANIFESTATION_OF->(Obstruction)-CAUSES->(Gallstone pancreatitis)",
+      "(Hyperlipasaemia)-PREDISPOSES->(Pancreatitis)-CAUSES->(Pancreatitis, Acute)",
+      "(Amylases)-TREATS->(Pancreatitis, Acute)",
+      "(Hyperlipasaemia)-PREDISPOSES->(Pancreatitis)-CAUSES->(Pancreatitis, Acute)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-MANIFESTATION_OF->(Physiological stress)-PROCESS_OF->(Liver)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-MANIFESTATION_OF->(Neutrophil Activation)-PROCESS_OF->(Liver)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Amylases)-TREATS->(Pancreatitis, Acute)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-CAUSES->(Abdominal Pain)-CAUSES->(Gallstone pancreatitis)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-PREDISPOSES->(Cholecystitis, Acute)-COMPLICATES->(Gallstone pancreatitis)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-MANIFESTATION_OF->(Neutrophil Activation)-PROCESS_OF->(Liver)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Sudden severe epigastric pain\" -> \"Radiates to back\" -> \"Recent alcohol consumption\" -> \"Elevated lipase and amylase\" -> \"Acute pancreatitis suspected\" -> \"Right upper quadrant abdominal ultrasound\" -> 85%",
+    "CHAIN: \"Sudden severe epigastric pain\" -> \"Radiates to back\" -> \"Recent alcohol consumption\" -> \"Elevated ALT\" -> \"Possible gallstone pancreatitis\" -> \"Right upper quadrant abdominal ultrasound\" -> 80%",
+    "CHAIN: \"Sudden severe epigastric pain\" -> \"Radiates to back\" -> \"Recent alcohol consumption\" -> \"Elevated lipase\" -> \"Acute pancreatitis\" -> \"Right upper quadrant abdominal ultrasound\" -> 90%",
+    "CHAIN: \"Sudden severe epigastric pain\" -> \"Radiates to back\" -> \"Recent alcohol consumption\" -> \"Elevated lipase and amylase\" -> \"Acute pancreatitis\" -> \"Rule out gallstones\" -> \"Right upper quadrant abdominal ultrasound\" -> 85%",
+    "CHAIN: \"Sudden severe epigastric pain\" -> \"Radiates to back\" -> \"Recent alcohol consumption\" -> \"Elevated ALT\" -> \"Possible liver involvement\" -> \"Right upper quadrant abdominal ultrasound\" -> 75%"
+  ],
+  "enhanced_information": "The patient's presentation of sudden severe epigastric pain radiating to the back, recent alcohol consumption, and elevated lipase and amylase levels strongly suggests acute pancreatitis. The elevated ALT level raises the possibility of gallstone pancreatitis, as liver enzyme elevation can indicate biliary obstruction or liver involvement. The most appropriate next step in management is a right upper quadrant abdominal ultrasound. This imaging modality is used to assess for gallstones or biliary obstruction, which are common causes of pancreatitis. The retrieved evidence supports the link between elevated lipase and amylase with acute pancreatitis and the role of ALT in indicating possible gallstone pancreatitis. Therefore, the right upper quadrant abdominal ultrasound is the best next step to confirm the presence of gallstones or biliary pathology, aligning with standard medical consensus.",
+  "analysis": "The patient's symptoms and laboratory findings are highly suggestive of acute pancreatitis, likely due to gallstones, given the elevated ALT level. In cases of suspected gallstone pancreatitis, the most appropriate next step is to perform a right upper quadrant abdominal ultrasound. This imaging study is crucial for identifying gallstones or biliary obstruction, which are common causes of pancreatitis. The elevated lipase and amylase levels confirm the diagnosis of pancreatitis, and the elevated ALT suggests a biliary cause. Therefore, the right upper quadrant ultrasound is the best-supported option to further evaluate the underlying cause of the pancreatitis.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      28.57142857142857,
+      14.285714285714285,
+      14.285714285714285,
+      28.57142857142857,
+      14.285714285714285
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

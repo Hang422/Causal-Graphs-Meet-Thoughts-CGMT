@@ -1,0 +1,145 @@
+{
+  "question": "A 31-year-old man comes to the emergency department for acute tearing chest pain that radiates to the back. Despite appropriate therapy, the patient dies. Autopsy shows an increase in mucoid extracellular matrix and loss of smooth muscle cell nuclei in the media of large arteries. Which of the following additional findings is most likely in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Nasal septum perforation",
+    "opb": "Inferonasal lens dislocation",
+    "opc": "Pes cavus with hammer toes",
+    "opd": "Pectus carinatum",
+    "ope": "Condylomata lata"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Dissection of aorta",
+        "Disease",
+        "arterial stiffness",
+        "Arteries"
+      ],
+      [
+        "Dissection of aorta",
+        "Disease",
+        "Respiration",
+        "Arteries"
+      ],
+      [
+        "Dissection of aorta",
+        "Disease",
+        "Physiologic Function",
+        "Arteries"
+      ],
+      [
+        "Medionecrosis of aorta",
+        "Dissection of aorta",
+        "Marfan Syndrome"
+      ],
+      [
+        "Medionecrosis of aorta",
+        "Aortic Valve Insufficiency",
+        "Marfan Syndrome"
+      ],
+      [
+        "Medionecrosis of aorta",
+        "Aortic Aneurysm",
+        "Marfan Syndrome"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Dissection of aorta)-CAUSES->(Disease)-CAUSES->(arterial stiffness)-PROCESS_OF->(Arteries)",
+      "(Dissection of aorta)-CAUSES->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Arteries)",
+      "(Dissection of aorta)-CAUSES->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Arteries)",
+      "(Medionecrosis of aorta)-CAUSES->(Dissection of aorta)-CAUSES->(Marfan Syndrome)",
+      "(Medionecrosis of aorta)-CAUSES->(Aortic Valve Insufficiency)-CAUSES->(Marfan Syndrome)",
+      "(Medionecrosis of aorta)-CAUSES->(Aortic Aneurysm)-CAUSES->(Marfan Syndrome)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Arteries",
+        "Marfan Syndrome"
+      ],
+      [
+        "Arteries",
+        "Medionecrosis of aorta"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Arteries)-LOCATION_OF->(Marfan Syndrome)",
+      "(Arteries)-LOCATION_OF->(Medionecrosis of aorta)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Arteries)-LOCATION_OF->(Marfan Syndrome)",
+      "(Arteries)-LOCATION_OF->(Medionecrosis of aorta)",
+      "(Dissection of aorta)-CAUSES->(Disease)-CAUSES->(arterial stiffness)-PROCESS_OF->(Arteries)",
+      "(Dissection of aorta)-CAUSES->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Arteries)",
+      "(Dissection of aorta)-CAUSES->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Arteries)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Acute tearing chest pain radiating to the back\" -> \"Aortic dissection\" -> \"Loss of smooth muscle cell nuclei in the media of large arteries\" -> \"Marfan syndrome\" -> \"Inferonasal lens dislocation\" -> 80% CHAIN: \"Increase in mucoid extracellular matrix in large arteries\" -> \"Cystic medial necrosis\" -> \"Marfan syndrome\" -> \"Inferonasal lens dislocation\" -> 80%"
+  ],
+  "enhanced_information": "The most likely additional finding in this patient with aortic dissection and Marfan syndrome is inferonasal lens dislocation.",
+  "analysis": "The core medical principle here is to recognize the association between aortic dissection and Marfan syndrome. The autopsy findings of mucoid extracellular matrix increase and loss of smooth muscle cell nuclei in the media of large arteries are consistent with Marfan syndrome. The enhanced information provided aligns with this diagnosis, indicating inferonasal lens dislocation as the most likely additional finding in this patient.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

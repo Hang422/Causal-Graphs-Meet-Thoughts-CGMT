@@ -1,0 +1,138 @@
+{
+  "question": "A 48-year-old woman comes to the physician for the evaluation of 24-hour blood pressure monitoring results. Over the last 3 months, she has had intermittent nausea, decreased appetite, and increasing weakness and fatigue during the day. She has been treated twice for kidney stones within the past year. Her current medications include lisinopril, amlodipine, and furosemide. She is 178 cm (5 ft 10 in) tall and weighs 97 kg (214 lb); BMI is 31 kg/m2. Her blood pressure is 152/98 mm Hg. Physical examination shows no abnormalities. Serum studies show:\nNa+ 141 mEq/L\nCl− 101 mEq/L\nK+ 4.5 mEq/L\nHCO3− 24 mEq/L\nCalcium 12.9 mg/dL\nCreatinine 1.0 mg/dL\nTwenty-four-hour blood pressure monitoring indicates elevated nocturnal blood pressure. Further evaluation is most likely to show which of the following findings?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Increased serum aldosterone-to-renin ratio",
+    "opb": "Increased serum parathyroid hormone",
+    "opc": "Decreased serum thyroid-stimulating hormone",
+    "opd": "Decreased renal blood flow",
+    "ope": "Decreased nocturnal oxygen saturation"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypercalcemia",
+        "Kidney Calculi"
+      ],
+      [
+        "Kidney Calculi",
+        "Hypertensive disease"
+      ],
+      [
+        "Hypothyroidism",
+        "Disease",
+        "Body fluid retention"
+      ],
+      [
+        "Hypothyroidism",
+        "Hyponatremia",
+        "Body fluid retention"
+      ],
+      [
+        "Body fluid retention",
+        "Hypertensive disease"
+      ],
+      [
+        "Body fluid retention",
+        "Hypertensive disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hypercalcemia)-CAUSES->(Kidney Calculi)",
+      "(Kidney Calculi)-CAUSES->(Hypertensive disease)",
+      "(Hypothyroidism)-CAUSES->(Disease)-CAUSES->(Body fluid retention)",
+      "(Hypothyroidism)-CAUSES->(Hyponatremia)-CAUSES->(Body fluid retention)",
+      "(Body fluid retention)-CAUSES->(Hypertensive disease)",
+      "(Body fluid retention)-CAUSES->(Hypertensive disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Aldosterone measurement, serum",
+        "Hypertrophy",
+        "Genes",
+        "Kidney"
+      ],
+      [
+        "Aldosterone measurement, serum",
+        "Cardiac Hypertrophy",
+        "NOX4 gene|NOX4",
+        "Kidney"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Aldosterone measurement, serum)-DIAGNOSES->(Hypertrophy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Kidney)",
+      "(Aldosterone measurement, serum)-DIAGNOSES->(Cardiac Hypertrophy)-ASSOCIATED_WITH->(NOX4 gene|NOX4)-PART_OF->(Kidney)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Aldosterone measurement, serum)-DIAGNOSES->(Hypertrophy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Kidney)",
+      "(Aldosterone measurement, serum)-DIAGNOSES->(Cardiac Hypertrophy)-ASSOCIATED_WITH->(NOX4 gene|NOX4)-PART_OF->(Kidney)",
+      "(Hypercalcemia)-CAUSES->(Kidney Calculi)",
+      "(Kidney Calculi)-CAUSES->(Hypertensive disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Increased serum aldosterone\" -> \"Increased sodium reabsorption in the kidneys\" -> \"Increased blood volume\" -> \"Elevated blood pressure\" -> \"Elevated nocturnal blood pressure\" -> 85% CHAIN: \"Increased serum parathyroid hormone\" -> \"Hypercalcemia\" -> \"Possible kidney stone formation\" -> \"Elevated blood pressure\" -> \"Elevated nocturnal blood pressure\" -> 70% CHAIN: \"Decreased serum thyroid-stimulating hormone\" -> \"Possible hypothyroidism\" -> \"Fluid retention\" -> \"Elevated blood pressure\" -> \"Elevated nocturnal blood pressure\" -> 60% CHAIN: \"Decreased renal blood flow\" -> \"Decreased kidney function\" -> \"Fluid retention\" -> \"Elevated blood pressure\" -> \"Elevated nocturnal blood pressure\" -> 75% CHAIN: \"Decreased nocturnal oxygen saturation\" -> \"Possible sleep apnea\" -> \"Increased sympathetic activity\" -> \"Elevated blood pressure\" -> \"Elevated nocturnal blood pressure\" -> 85%"
+  ],
+  "enhanced_information": "The most likely finding in the further evaluation of the 48-year-old woman with elevated nocturnal blood pressure is increased serum aldosterone-to-renin ratio, indicating primary hyperaldosteronism. This is supported by the chain linking increased serum aldosterone to elevated blood pressure and nocturnal hypertension. The evidence paths showing the association of aldosterone with hypertrophy and kidney function further support this conclusion.",
+  "analysis": "The patient's presentation with elevated nocturnal blood pressure, hypokalemia, metabolic alkalosis, and very high calcium levels suggests primary hyperaldosteronism. The enhanced information supports this by indicating an increased serum aldosterone-to-renin ratio. This aligns with the known pathophysiology of primary hyperaldosteronism leading to hypertension and electrolyte abnormalities.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

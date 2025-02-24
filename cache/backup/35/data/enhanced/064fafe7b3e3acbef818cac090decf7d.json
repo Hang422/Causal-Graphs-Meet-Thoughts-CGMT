@@ -1,0 +1,162 @@
+{
+  "question": "A 52-year-old woman presents with fatigue and pain of the proximal interphalangeal and metacarpophalangeal joints for the past 6 months. She also has knee and wrist pain that has been present for the past 2 months, with morning stiffness that improves over the course of the day. Physical examination is significant for subcutaneous nodules. Laboratory tests are significant for the following:\nHemoglobin 12.5 g/dL\nRed blood cell count 4.9 x 106/µL\nWhite blood cell count 5,000/mm3\nPlatelet count 180,000/mm3\nCoombs' test Negative\nC-reactive peptide (CRP) Elevated\nErythrocyte sedimentation rate (ESR) Negative\nAnti-cyclic citrullinated peptide antibody (anti-CCP antibody) Moderately positive\nAnti-nuclear antibody (ANA) Negative\nRheumatoid factor (RF) Negative\nWhat is the most likely human leukocyte antigen (HLA) subtype associated with this disease?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "HLA-DR4",
+    "opb": "HLA-DR2",
+    "opc": "HLA-DR5",
+    "opd": "HLA-DQ2",
+    "ope": "HLA-B27"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "[D]Nodule, subcutaneous",
+        "Disease",
+        "Rheumatoid Arthritis"
+      ],
+      [
+        "[D]Nodule, subcutaneous",
+        "Infection",
+        "Rheumatoid Arthritis"
+      ],
+      [
+        "Providing presence (regime/therapy)",
+        "Infiltration",
+        "Rheumatoid Arthritis"
+      ],
+      [
+        "Providing presence (regime/therapy)",
+        "COVID-19",
+        "Rheumatoid Arthritis"
+      ],
+      [
+        "Providing presence (regime/therapy)",
+        "Prosthetic joint infection",
+        "Rheumatoid Arthritis"
+      ],
+      [
+        "Rheumatoid factor negative",
+        "Disease",
+        "Rheumatoid Arthritis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "COMPLICATES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "([D]Nodule, subcutaneous)-CAUSES->(Disease)-CAUSES->(Rheumatoid Arthritis)",
+      "([D]Nodule, subcutaneous)-MANIFESTATION_OF->(Infection)-CAUSES->(Rheumatoid Arthritis)",
+      "(Providing presence (regime/therapy))-CAUSES->(Infiltration)-CAUSES->(Rheumatoid Arthritis)",
+      "(Providing presence (regime/therapy))-TREATS->(COVID-19)-CAUSES->(Rheumatoid Arthritis)",
+      "(Providing presence (regime/therapy))-TREATS->(Prosthetic joint infection)-COMPLICATES->(Rheumatoid Arthritis)",
+      "(Rheumatoid factor negative)-MANIFESTATION_OF->(Disease)-CAUSES->(Rheumatoid Arthritis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Rheumatoid Arthritis",
+        "Pathogenesis",
+        "HLA Antigens"
+      ],
+      [
+        "Rheumatoid Arthritis",
+        "Pathogenesis",
+        "HLA Antigens"
+      ],
+      [
+        "Rheumatoid Arthritis",
+        "Pathogenesis",
+        "HLA Antigens"
+      ],
+      [
+        "Rheumatoid Arthritis",
+        "Pathogenesis",
+        "HLA Antigens"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Rheumatoid Arthritis)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(HLA Antigens)",
+      "(Rheumatoid Arthritis)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(HLA Antigens)",
+      "(Rheumatoid Arthritis)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(HLA Antigens)",
+      "(Rheumatoid Arthritis)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(HLA Antigens)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Rheumatoid Arthritis)-CAUSES/MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(HLA Antigens)",
+      "(Providing presence (regime/therapy))-CAUSES->(Infiltration)-CAUSES->(Rheumatoid Arthritis)",
+      "([D]Nodule, subcutaneous)-CAUSES->(Disease)-CAUSES->(Rheumatoid Arthritis)",
+      "(Rheumatoid factor negative)-MANIFESTATION_OF->(Disease)-CAUSES->(Rheumatoid Arthritis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Presence of subcutaneous nodules\" -> \"Possible rheumatoid arthritis\" -> \"Consider HLA subtype associated with rheumatoid arthritis\" -> 80% confidence. CHAIN: \"Moderately positive anti-CCP antibody\" -> \"Indicates rheumatoid arthritis\" -> \"Consider HLA subtype associated with rheumatoid arthritis\" -> 85% confidence. CHAIN: \"Negative rheumatoid factor (RF)\" -> \"Does not rule out rheumatoid arthritis\" -> \"Consider HLA subtype associated with rheumatoid arthritis\" -> 75% confidence. CHAIN: \"Elevated C-reactive protein (CRP)\" -> \"Indicates inflammation\" -> \"Consider HLA subtype associated with inflammatory conditions\" -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with subcutaneous nodules, moderately positive anti-CCP antibody, negative RF, and elevated CRP suggests a high likelihood of rheumatoid arthritis. Considering the HLA subtype associated with rheumatoid arthritis, the most likely option is HLA-DR4.",
+  "analysis": "The patient's presentation with fatigue, joint pain, subcutaneous nodules, moderately positive anti-CCP antibody, negative RF, and elevated CRP is highly suggestive of rheumatoid arthritis. In rheumatoid arthritis, the most common HLA subtype associated is HLA-DR4.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

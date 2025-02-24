@@ -1,0 +1,144 @@
+{
+  "question": "A 59-year-old man presents to the emergency department because of severe flank pain. He says that the pain came on suddenly while he was at home and is located on his right side. He also says that he has had fever and chills for the last 2 days, but he did not seek medical attention because he assumed that it was just a cold. His past medical history is significant for intermittent kidney stones, hypertension, peptic ulcer disease, and low back pain. He says that he takes vitamin supplements, antihypertensives, a proton pump inhibitor, and occasional over the counter pain medicine though he doesn't recall the names of these drugs. He also drinks socially with his friends but does not exceed 2 drinks per day. Physical exam reveals severe costovertebral angle tenderness as well as gross hematuria. A computed tomography scan is obtained showing ring shadows in the medullae of the right kidney. Which of the following most likely contributed to the development of this patient's condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Alcohol",
+    "opb": "Antihypertensives",
+    "opc": "Pain medicine",
+    "opd": "Proton pump inhibitor",
+    "ope": "Vitamin supplement"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Providing presence (regime/therapy)",
+        "Aneurysm",
+        "Disease",
+        "Kidney Calculi"
+      ],
+      [
+        "Providing presence (regime/therapy)",
+        "CNS disorder",
+        "Disease",
+        "Kidney Calculi"
+      ],
+      [
+        "Flank Pain",
+        "Disease",
+        "Kidney Calculi"
+      ],
+      [
+        "Flank Pain",
+        "Cystic kidney",
+        "Kidney Calculi"
+      ],
+      [
+        "Flank Pain",
+        "Ultrasonography",
+        "Kidney Calculi"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Providing presence (regime/therapy))-TREATS->(Aneurysm)-CAUSES->(Disease)-CAUSES->(Kidney Calculi)",
+      "(Providing presence (regime/therapy))-CAUSES->(CNS disorder)-MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Kidney Calculi)",
+      "(Flank Pain)-CAUSES->(Disease)-CAUSES->(Kidney Calculi)",
+      "(Flank Pain)-CAUSES->(Cystic kidney)-CAUSES->(Kidney Calculi)",
+      "(Flank Pain)-CAUSES->(Ultrasonography)-CAUSES->(Kidney Calculi)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Blood",
+        "Disease",
+        "Kidney Calculi"
+      ],
+      [
+        "Blood",
+        "Disease",
+        "Kidney Calculi"
+      ],
+      [
+        "Right kidney",
+        "Kidney Calculi"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Blood)-LOCATION_OF->(Disease)-CAUSES->(Kidney Calculi)",
+      "(Blood)-LOCATION_OF->(Disease)-PREDISPOSES->(Kidney Calculi)",
+      "(Right kidney)-LOCATION_OF->(Kidney Calculi)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Right kidney)-LOCATION_OF->(Kidney Calculi)",
+      "(Flank Pain)-CAUSES->(Disease)-CAUSES->(Kidney Calculi)",
+      "(Flank Pain)-CAUSES->(Cystic kidney)-CAUSES->(Kidney Calculi)",
+      "(Flank Pain)-CAUSES->(Ultrasonography)-CAUSES->(Kidney Calculi)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Intermittent kidney stones\" -> \"History of kidney issues\" -> \"Increased risk for kidney stone formation\" -> 80% CHAIN: \"Gross hematuria\" -> \"Presence of blood in urine\" -> \"Possible kidney stone or kidney injury\" -> 70% CHAIN: \"Ring shadows in the medullae of the right kidney\" -> \"Radiological finding suggestive of kidney stones\" -> \"Likely kidney stone formation\" -> 90% CHAIN: \"Severe costovertebral angle tenderness\" -> \"Flank pain on right side\" -> \"Symptoms consistent with kidney stone\" -> 85% CHAIN: \"Fever and chills\" -> \"Systemic signs of infection\" -> \"Possible kidney infection (pyelonephritis)\" -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with severe flank pain, fever, chills, gross hematuria, and radiological findings of ring shadows in the right kidney is highly suggestive of kidney stones. The history of intermittent kidney stones, increased risk for kidney stone formation, and symptoms consistent with kidney stones support this diagnosis. The evidence paths confirming the presence of kidney calculi in the right kidney further strengthen the likelihood of kidney stone formation as the primary contributor to the patient's condition.",
+  "analysis": "The patient's presentation with severe flank pain, fever, chills, gross hematuria, and radiological findings of ring shadows in the right kidney is highly suggestive of kidney stones. Given his history of intermittent kidney stones and the evidence supporting the presence of kidney calculi in the right kidney, kidney stone formation is the primary contributor to his current condition.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

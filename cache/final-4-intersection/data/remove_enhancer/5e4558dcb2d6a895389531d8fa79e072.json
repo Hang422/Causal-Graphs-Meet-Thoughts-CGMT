@@ -1,0 +1,162 @@
+{
+  "question": "A 25-year-old woman presented to an urgent care center with a complaint of a cough for more than 3 weeks that was accompanied by night sweats, weight loss, and malaise. On physical examination, the patient had slightly pale palpebral conjunctivae bilateral posterior cervical lymphadenopathy, but with no adventitious breath sounds in the lung fields bilaterally. The remainder of the physical examination was routine. The patient was started on a drug regimen that was to be taken for 6 months. On follow-up after 2 months, the ALT and AST levels were elevated. Which of the following anti-tubercular drug could have contributed to this labor result?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Rifampicin",
+    "opb": "Pyrazinamide",
+    "opc": "Isoniazid",
+    "opd": "Streptomycin",
+    "ope": "Ethambutol"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Streptomycin",
+        "Infection",
+        "Disease",
+        "Toxic nephropathy"
+      ],
+      [
+        "Streptomycin",
+        "Tuberculosis",
+        "Disease",
+        "Toxic nephropathy"
+      ],
+      [
+        "Streptomycin",
+        "Infection",
+        "Hypertensive disease",
+        "Toxic nephropathy"
+      ],
+      [
+        "Ethambutol",
+        "Optic Neuritis"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Streptomycin)-TREATS->(Infection)-CAUSES->(Disease)-CAUSES->(Toxic nephropathy)",
+      "(Streptomycin)-TREATS->(Tuberculosis)-CAUSES->(Disease)-CAUSES->(Toxic nephropathy)",
+      "(Streptomycin)-TREATS->(Infection)-CAUSES->(Hypertensive disease)-PREDISPOSES->(Toxic nephropathy)",
+      "(Ethambutol)-TREATS->(Optic Neuritis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Toxic nephropathy",
+        "Adverse effects",
+        "Alanine Transaminase"
+      ],
+      [
+        "Toxic nephropathy",
+        "Adverse effects",
+        "Alanine Transaminase"
+      ],
+      [
+        "Optic Neuritis",
+        "Edema",
+        "Alanine Transaminase"
+      ],
+      [
+        "Optic Neuritis",
+        "Functional disorder",
+        "Alanine Transaminase"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Toxic nephropathy)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Toxic nephropathy)-PREDISPOSES->(Adverse effects)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Optic Neuritis)-CAUSES->(Edema)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Optic Neuritis)-CAUSES->(Functional disorder)-ASSOCIATED_WITH->(Alanine Transaminase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Streptomycin)-TREATS->(Infection)-CAUSES->(Disease)-CAUSES->(Toxic nephropathy)",
+      "(Streptomycin)-TREATS->(Tuberculosis)-CAUSES->(Disease)-CAUSES->(Toxic nephropathy)",
+      "(Streptomycin)-TREATS->(Infection)-CAUSES->(Hypertensive disease)-PREDISPOSES->(Toxic nephropathy)",
+      "(Ethambutol)-TREATS->(Optic Neuritis)",
+      "(Toxic nephropathy)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Toxic nephropathy)-PREDISPOSES->(Adverse effects)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Optic Neuritis)-CAUSES->(Edema)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Optic Neuritis)-CAUSES->(Functional disorder)-ASSOCIATED_WITH->(Alanine Transaminase)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Isoniazid\" -> \"hepatotoxicity\" -> \"elevated ALT and AST levels\" -> 85%",
+    "CHAIN: \"Rifampicin\" -> \"mild hepatotoxic effects\" -> \"possible elevation of ALT and AST levels\" -> 70%",
+    "CHAIN: \"Pyrazinamide\" -> \"strong hepatotoxic effects\" -> \"elevated ALT and AST levels\" -> 80%",
+    "CHAIN: \"Streptomycin\" -> \"nephrotoxicity\" -> \"unlikely to elevate ALT and AST levels\" -> 30%",
+    "CHAIN: \"Ethambutol\" -> \"optic neuritis\" -> \"unlikely to elevate ALT and AST levels\" -> 30%"
+  ],
+  "enhanced_information": "Among the anti-tubercular drugs, isoniazid and pyrazinamide are strongly associated with hepatotoxic effects, which can lead to elevated ALT and AST levels. Isoniazid is a common cause of drug-induced liver injury in tuberculosis treatment. Pyrazinamide is also known for its significant hepatotoxicity. Rifampicin can mildly elevate liver enzymes but is generally less implicated compared to isoniazid and pyrazinamide. Streptomycin and ethambutol, known for causing nephrotoxicity and optic neuritis respectively, are unlikely to cause elevated liver enzymes.",
+  "analysis": "The patient's presentation with symptoms such as a prolonged cough, night sweats, weight loss, and malaise, along with the initiation of a 6-month drug regimen, strongly suggests a diagnosis of tuberculosis. The subsequent elevation of liver enzymes (ALT and AST) after starting treatment indicates a potential side effect of the anti-tubercular drugs. Among the options provided, both isoniazid and pyrazinamide are known for their hepatotoxic effects. However, isoniazid is more commonly associated with drug-induced liver injury in the context of tuberculosis treatment. This aligns with the enhanced information provided, which also identifies isoniazid as a common cause of such liver enzyme elevations. While pyrazinamide also has significant hepatotoxicity, the broader consensus and typical clinical patterns point more frequently towards isoniazid as the culprit in such scenarios. Therefore, based on the standard medical knowledge and the enhanced information provided, isoniazid is the most likely drug to have contributed to the elevated liver enzymes in this patient.",
+  "answer": "opc",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      2,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

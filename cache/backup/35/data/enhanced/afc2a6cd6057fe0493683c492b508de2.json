@@ -1,0 +1,121 @@
+{
+  "question": "A 27-year-old woman comes to the emergency room because of fever and severe left knee pain for the past week. She has not sustained any trauma or injury to the area, nor has she traveled or taken part in outdoor activities in the recent past. She is sexually active with one male partner, and they use condoms inconsistently. She appears ill. Her temperature is 38°C (100.4°F), pulse is 98/min, respirations are 17/min, and blood pressure is 106/72 mm Hg. Physical examination shows multiple painless pustular lesions on her ankles and the dorsum and soles of her feet bilaterally, as well as a swollen, erythematous, exquisitely tender left knee. Her wrists are also mildly edematous and tender, with pain on extension. X-ray of the knees shows tissue swelling. Arthrocentesis of the knee shows yellow purulent fluid. Gram stain is negative. Analysis of the synovial fluid shows a leukocyte count of 58,000/mm3 with 93% neutrophils and no crystals. Which of the following is the most appropriate pharmacotherapy?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Oral penicillin V",
+    "opb": "Oral hydroxychloroquine",
+    "opc": "Intramuscular ceftriaxone and oral azithromycin",
+    "opd": "Oral doxycycline",
+    "ope": "Intramuscular ceftriaxone"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Condoms, Male",
+        "Disease",
+        "Hearing",
+        "Pes"
+      ],
+      [
+        "Condoms, Male",
+        "Disease",
+        "physiological aspects",
+        "Pes"
+      ],
+      [
+        "Condoms, Male",
+        "Disease",
+        "biological adaptation to stress",
+        "Pes"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREVENTS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Condoms, Male)-PREVENTS->(Disease)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Pes)",
+      "(Condoms, Male)-TREATS->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Pes)",
+      "(Condoms, Male)-TREATS->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-PROCESS_OF->(Pes)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pes",
+        "Fifth finger",
+        "Peritoneum",
+        "White Blood Cell Count procedure"
+      ],
+      [
+        "Pes",
+        "Lysophosphatidylcholines",
+        "Frozen Sections",
+        "White Blood Cell Count procedure"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Pes)-PART_OF->(Fifth finger)-PART_OF->(Peritoneum)-LOCATION_OF->(White Blood Cell Count procedure)",
+      "(Pes)-LOCATION_OF->(Lysophosphatidylcholines)-PART_OF->(Frozen Sections)-LOCATION_OF->(White Blood Cell Count procedure)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Condoms, Male)-TREATS->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-PROCESS_OF->(Pes)",
+      "(Condoms, Male)-PREVENTS->(Disease)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Pes)",
+      "(Condoms, Male)-TREATS->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Pes)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Fever and severe left knee pain\" -> \"No history of trauma or recent outdoor activities\" -> \"Sexually active with inconsistent condom use\" -> \"Multiple painless pustular lesions on ankles and feet, swollen, erythematous, tender left knee, edematous wrists\" -> \"Arthrocentesis of knee shows yellow purulent fluid, leukocyte count of 58,000/mm3 with -> 93%"
+  ],
+  "enhanced_information": "The patient presents with fever, severe left knee pain, pustular lesions, and synovial fluid analysis consistent with septic arthritis. The most appropriate pharmacotherapy is intramuscular ceftriaxone and oral azithromycin to cover likely infectious etiology.",
+  "analysis": "The patient's presentation with fever, severe knee pain, pustular lesions, and synovial fluid analysis consistent with septic arthritis indicates a bacterial joint infection. The most appropriate pharmacotherapy for septic arthritis is intravenous or intramuscular antibiotics to cover likely infectious etiology. Ceftriaxone and azithromycin provide broad-spectrum coverage against common pathogens causing septic arthritis.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

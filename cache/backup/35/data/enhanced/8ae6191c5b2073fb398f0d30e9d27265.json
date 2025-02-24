@@ -1,0 +1,123 @@
+{
+  "question": "A 45-year-old man presents to his primary care physician for lower extremity pain and unsteadiness. He describes the pain as severe and stabbing and affecting his lower extremities. These episodes of pain last for minutes at a time. He also reports knocking into furniture regularly. Medical history is significant for streptococcal pharyngitis, where he had a severe allergic reaction to appropriate treatment. He is currently sexually active with men and does not use condoms. On physical exam, his pupils are miotic in normal and low light. The pupils do not constrict further when exposed to the penlight and there is no direct or consensual pupillary dilation when the penlight is removed. The pupils constrict further when exposed to a near object. He has decreased vibration and proprioception sense in his lower extremities, absent lower extremity deep tendon reflexes, and a positive Romberg test. Which of the following is the best next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Intramuscular penicillin",
+    "opb": "Intramuscular ceftriaxone",
+    "opc": "Intravenous doxycycline",
+    "opd": "Intravenous penicillin",
+    "ope": "Oral doxycycline"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "SYPHILIS INFECTION",
+        "Neurosyphilis"
+      ],
+      [
+        "Neurosyphilis",
+        "Lesion of brain",
+        "Sensory deficit"
+      ],
+      [
+        "Neurosyphilis",
+        "Neuropathy",
+        "Sensory deficit"
+      ],
+      [
+        "Neurosyphilis",
+        "Cerebral Infarction",
+        "Sensory deficit"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(SYPHILIS INFECTION)-CAUSES->(Neurosyphilis)",
+      "(Neurosyphilis)-CAUSES->(Lesion of brain)-CAUSES->(Sensory deficit)",
+      "(Neurosyphilis)-CAUSES->(Neuropathy)-CAUSES->(Sensory deficit)",
+      "(Neurosyphilis)-CAUSES->(Cerebral Infarction)-CAUSES->(Sensory deficit)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Sensory deficit",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Sensory deficit",
+        "Pain",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Sensory deficit)-CAUSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Sensory deficit)-CAUSES->(Pain)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Neurosyphilis)-CAUSES->(Lesion of brain)-CAUSES->(Sensory deficit)",
+      "(SYPHILIS INFECTION)-CAUSES->(Neurosyphilis)",
+      "(Sensory deficit)-CAUSES->(Pain)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Syphilis infection -> Neurosyphilis involvement -> Pupillary abnormalities and sensory deficits -> 80% CHAIN: Neurosyphilis involvement -> Absent lower extremity deep tendon reflexes and positive Romberg test -> 75% CHAIN: Pupillary abnormalities and sensory deficits -> Neurosyphilis diagnosis -> 70% CHAIN: Positive Romberg test -> Neurological impairment -> 60% CHAIN: Absent lower extremity deep tendon reflexes -> Neurological dysfunction -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with lower extremity pain, unsteadiness, miotic pupils, absent lower extremity deep tendon reflexes, positive Romberg test, and sensory deficits is highly suggestive of neurosyphilis involvement. The best next step in management would be intravenous penicillin or intramuscular ceftriaxone to treat the neurosyphilis infection.",
+  "analysis": "The patient's presentation is highly suggestive of neurosyphilis involvement, given the constellation of symptoms such as lower extremity pain, unsteadiness, miotic pupils, absent lower extremity deep tendon reflexes, positive Romberg test, and sensory deficits. The enhanced information supports the need for treatment with intravenous penicillin or intramuscular ceftriaxone to address the neurosyphilis infection.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

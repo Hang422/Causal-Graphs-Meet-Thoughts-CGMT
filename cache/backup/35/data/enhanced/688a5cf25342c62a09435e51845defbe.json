@@ -1,0 +1,118 @@
+{
+  "question": "A 7-year-old boy is brought to his pediatrician by his parents because of a new rash. The family immigrated from Laos one year ago and recently obtained health insurance. A week ago, the boy stated that he was “not feeling well” and asked to stay home from school. At the time, he starting having cough, nasal congestion, and irritated eyes – symptoms that persisted and intensified. His parents recall that at the time they noticed small whitish-blue papules over the red buccal mucosa opposite his molars. Five days ago, his parents noticed a red rash around his face that quickly spread downward to cover most of his arms, trunk, and then legs. His temperature is 102.5°F (39.2°C), blood pressure is 110/85 mmHg, pulse is 102/min, and respirations 25/min. On physical exam, he has intermittent cough, cervical lymphadenopathy, and nonpurulent conjunctivitis accompanied by a confluent, dark red rash over his body. This patient is at risk for which of the following complications later in life?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "CNS degeneration",
+    "opb": "Valvular heart disease",
+    "opc": "Nonreactive pupils",
+    "opd": "Monoarticular arthritis",
+    "ope": "B cell neoplasm"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Exanthema",
+        "Disease",
+        "Lymphadenopathy"
+      ],
+      [
+        "Exanthema",
+        "Syndrome",
+        "Lymphadenopathy"
+      ],
+      [
+        "Exanthema",
+        "Symptoms",
+        "Lymphadenopathy"
+      ],
+      [
+        "Lymphadenopathy",
+        "Complication",
+        "Conjunctivitis"
+      ],
+      [
+        "Lymphadenopathy",
+        "Uveitis",
+        "Conjunctivitis"
+      ],
+      [
+        "Lymphadenopathy",
+        "Cellulitis",
+        "Conjunctivitis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Exanthema)-CAUSES->(Disease)-CAUSES->(Lymphadenopathy)",
+      "(Exanthema)-CAUSES->(Syndrome)-CAUSES->(Lymphadenopathy)",
+      "(Exanthema)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Lymphadenopathy)",
+      "(Lymphadenopathy)-CAUSES->(Complication)-CAUSES->(Conjunctivitis)",
+      "(Lymphadenopathy)-CAUSES->(Uveitis)-COMPLICATES->(Conjunctivitis)",
+      "(Lymphadenopathy)-CAUSES->(Cellulitis)-PREDISPOSES->(Conjunctivitis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Exanthema)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Lymphadenopathy)",
+      "(Exanthema)-CAUSES->(Disease)-CAUSES->(Lymphadenopathy)",
+      "(Exanthema)-CAUSES->(Syndrome)-CAUSES->(Lymphadenopathy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Measles infection -> high fever -> rash -> lymphadenopathy -> conjunctivitis -> 80% CHAIN: Measles infection -> systemic inflammation -> potential long-term complications -> 70% CHAIN: Measles infection -> immune system activation -> potential autoimmune reactions -> 60% CHAIN: Measles infection -> viral invasion -> potential CNS involvement -> 50% CHAIN: Measles infection -> systemic spread of virus -> potential organ damage -> 80%"
+  ],
+  "enhanced_information": "Measles infection can lead to potential long-term complications due to systemic inflammation and immune system activation. Complications may include CNS involvement, systemic spread of the virus causing organ damage, and potential autoimmune reactions. The patient is at risk for CNS degeneration as a complication later in life.",
+  "analysis": "The patient's presentation is consistent with measles infection, given the characteristic symptoms and rash pattern described. Measles can lead to various complications, including CNS degeneration, which is a known long-term consequence of the infection. While other complications are possible, the provided enhanced information specifically highlights CNS degeneration as a risk in this case.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

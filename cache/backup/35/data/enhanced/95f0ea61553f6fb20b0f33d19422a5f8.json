@@ -1,0 +1,105 @@
+{
+  "question": "A 24-year-old woman presents to the labor and delivery floor in active labor at 40 weeks gestation. She has a prolonged course but ultimately vaginally delivers an 11 pound boy. On post operative day 2, she is noted to have uterine tenderness and decreased bowel sounds. She states she has been urinating more frequently as well. Her temperature is 102°F (38.9°C), blood pressure is 118/78 mmHg, pulse is 111/min, respirations are 17/min, and oxygen saturation is 98% on room air. Physical exam is notable for a non-distended abdomen and a tender uterus. Pulmonary exam reveals minor bibasilar crackles. Initial laboratory studies and a urinalysis are pending. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Atelectasis",
+    "opb": "Chorioamnionitis",
+    "opc": "Deep vein thrombosis",
+    "opd": "Endometritis",
+    "ope": "Urinary tract infection"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Laboratory studies",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Laboratory studies",
+        "Infection",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Urinalysis",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Urinalysis",
+        "Infection",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Laboratory studies)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Laboratory studies)-DIAGNOSES->(Infection)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Urinalysis)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Urinalysis)-DIAGNOSES->(Infection)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Laboratory studies)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Laboratory studies)-DIAGNOSES->(Infection)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Prolonged labor -> increased risk of infection -> 70% CHAIN: Vaginal delivery of an 11-pound baby -> increased risk of uterine trauma -> 60% CHAIN: Uterine tenderness and decreased bowel sounds -> possible infection or inflammation -> 50% CHAIN: Urinating more frequently -> possible urinary tract involvement -> 40% CHAIN: Temperature of 102°F (38.9°C) -> indicative of infection -> 80% CHAIN: Tender uterus on physical exam -> suggestive of endometritis -> 70% CHAIN: Minor bibasilar crackles on pulmonary exam -> possible pulmonary involvement in infection -> 50% CHAIN: Initial laboratory studies and urinalysis pending -> to confirm the diagnosis -> 60% CHAIN: Most likely diagnosis is endometritis -> 70%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 24-year-old woman with uterine tenderness, decreased bowel sounds, fever, and other symptoms postpartum is endometritis. The reasoning is supported by the prolonged labor, delivery of a large baby, uterine tenderness, fever, and pending laboratory studies. The evidence paths mentioning infection and sphincter location further support the possibility of endometritis.",
+  "analysis": "The most likely diagnosis for the 24-year-old woman with uterine tenderness, decreased bowel sounds, fever, and other symptoms postpartum is endometritis. The clinical presentation of uterine tenderness, fever, and pending laboratory studies aligns with endometritis, which is a common postpartum infection. The enhanced information provided further supports this diagnosis based on the patient's history of prolonged labor, delivery of a large baby, and evidence suggesting infection. Chorioamnionitis is less likely given the absence of fetal distress during labor. Atelectasis, deep vein thrombosis, and urinary tract infection are less likely based on the clinical presentation and context.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

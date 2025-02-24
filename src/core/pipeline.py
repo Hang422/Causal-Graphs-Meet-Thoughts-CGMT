@@ -214,11 +214,11 @@ class QuestionProcessor:
                 else:
                     question = cached_question
 
-                if not self.complete_process_question(question, False):
-                    continue
+                # if not self.complete_process_question(question, False):
+                #     continue
 
-                # self.compare_experiments(question)
-                self.normal_rag(question)
+                self.compare_experiments(question)
+                # self.normal_rag(question)
 
             except Exception as e:
                 self.logger.error(f"Error processing question {i + 1}: {str(e)}")
@@ -406,7 +406,7 @@ def compare_models(process_path):
     try:
         processor = QuestionProcessor(process_path)
         processor.process_from_cache(process_path)
-        # processor.batch_process_file('test2',1000)
+        # processor.batch_process_file('test2',3000)
 
         STAGES = ['derelict', 'enhanced', 'knowledge_graph', 'remove_llm_enhanced', 'normal_rag', 'remove_enhancer']
         base_dir = process_path
@@ -447,39 +447,72 @@ def random_copy_json_files(src_dir: str, dest_dir: str, num_files: int) -> None:
 
     # Get all JSON files in the source directory
     json_files = [file for file in src_path.iterdir() if file.suffix == '.json']
-
-    if len(json_files) == 0:
-        raise ValueError(f"No JSON files found in the source directory: {src_dir}")
-    if num_files > len(json_files):
-        raise ValueError(f"Requested number of files exceeds available files in {src_dir}.")
-
+    target_files = [file for file in dest_path.iterdir() if file.suffix == '.json']
+    dest_path = Path('../../cache/final')
+    dest_path.mkdir(parents=True, exist_ok=True)
     # Randomly select the specified number of files
-    for i in range(int(len(json_files) / num_files)):
-        selected_files = json_files[(i-1)*num_files:i*num_files]
+    j = 0
+    for i in json_files:
+        if i not in target_files:
+            shutil.copy(i, dest_path)
 
-        # Copy each selected file to the destination directory
-        for file in selected_files:
-            dest_path = Path(f'{dest_dir}_{i}')
-            dest_path.mkdir(parents=True, exist_ok=True)
-            shutil.copy(file, dest_path)
+            j += 1
+        if j == num_files:
+            break
 
 
+def remove_matching_files(base_dir: str, target_dirs: list) -> None:
+    """
+    Remove files from target directories that match files in the base directory.
 
+    Args:
+        base_dir: Directory containing the reference JSON files
+        target_dirs: List of directories to remove matching files from
+    """
+    # Convert base directory to Path object
+    base_path = Path(base_dir)
+
+    # Get list of JSON files in base directory
+    base_files = {f.name for f in base_path.glob('*.json')}
+
+    # Process each target directory
+    for target_dir in target_dirs:
+        target_path = Path(target_dir)
+        if not target_path.exists():
+            print(f"Warning: Target directory does not exist: {target_dir}")
+            continue
+
+        # Find and remove matching files
+        for file_path in target_path.glob('*.json'):
+            if file_path.name in base_files:
+                try:
+                    file_path.unlink()
+                    print(f"Removed: {file_path}")
+                except Exception as e:
+                    print(f"Error removing {file_path}: {str(e)}")
+
+
+# 使用示例
+# base_dir = "../../cache/final-mini/base_correct_enhanced_wrong"
+# target_directories = [
+#     "../../cache/final-mini/data/derelict",
+#     "../../cache/final-mini/data/enhanced",
+#     "../../cache/final-mini/data/reasoning"
+# ]
+
+# remove_matching_files(base_dir, target_directories)
 # Example usage:
-# random_copy_json_files("../../cache/medinstruct/original", "../../cache/medinstruct1/data/original", 200)
+# random_copy_json_files("../../cache/temp-intersection/data/original", "../../cache/temp-intersection/base_correct_enhanced_wrong", 50)
 
 if __name__ == "__main__":
-    # models = ['4', '4o', '4o-mini']
+    # models = ['final-4', 'final-4o','final-mini']
     # intersect(models)
     # config.openai['model'] = 'gpt-4o-mini'
-    # compare_models('set2')
-    # compare_models('set3')
-    config.openai['model'] = 'gpt-4o'
-    compare_models('4o-wrong')
-    # config.openai['model'] = 'gpt-3.5-turbo'
-    # compare_models('original-35')
-    # config.openai['model'] = 'gpt-4-turbo'
-    # compare_models('4-intersection')
+    # compare_models('final-mini-intersection')
+    # config.openai['model'] = 'gpt-4o'
+    # compare_models('final-4o-intersection')
+    config.openai['model'] = 'gpt-4-turbo'
+    compare_models('final-4-intersection')
     # compare_models('2-mini_1-4o')
     # config.openai['model'] = 'gpt-4o'
     # compare_models('test')

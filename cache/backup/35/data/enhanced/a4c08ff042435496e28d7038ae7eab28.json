@@ -1,0 +1,101 @@
+{
+  "question": "A 16-year-old boy presents to the emergency department after a skateboarding accident. He fell on a broken bottle and received a 4 cm wound on the dorsal aspect of his left hand. His vitals are stable and he was evaluated by the surgeon on call who determined to suture was not required. After several weeks the wound has almost completely healed (see image). Which of the following is the correct description of this patient’s wound before healing?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Incised wound",
+    "opb": "Abrasion",
+    "opc": "Laceration",
+    "opd": "Avulsion",
+    "ope": "Puncture"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Force",
+        "Pre-Eclampsia",
+        "Genes",
+        "Body tissue"
+      ],
+      [
+        "Force",
+        "Ischemia",
+        "Genes",
+        "Body tissue"
+      ],
+      [
+        "Body tissue",
+        "Nerve",
+        "Surgical avulsion"
+      ],
+      [
+        "Body tissue",
+        "Cartilage",
+        "Surgical avulsion"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Force)-CAUSES->(Pre-Eclampsia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Body tissue)",
+      "(Force)-CAUSES->(Ischemia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Body tissue)",
+      "(Body tissue)-PART_OF->(Nerve)-LOCATION_OF->(Surgical avulsion)",
+      "(Body tissue)-PART_OF->(Cartilage)-LOCATION_OF->(Surgical avulsion)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Body tissue)-PART_OF->(Nerve)-LOCATION_OF->(Surgical avulsion)",
+      "(Body tissue)-PART_OF->(Cartilage)-LOCATION_OF->(Surgical avulsion)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Sharp object caused the wound\" -> \"Clean edges and smooth walls of the wound\" -> \"Incised wound\" -> 95% CHAIN: \"Wound caused by a blunt force or friction\" -> \"Scraped appearance with irregular edges\" -> \"Abrasion\" -> 90% CHAIN: \"Wound caused by tearing of the skin\" -> \"Irregular, jagged wound edges\" -> \"Laceration\" -> 90% CHAIN: \"Wound caused by a force pulling the skin away\" -> \"Tissue completely separated from the body\" -> \"Avulsion\" -> 90% CHAIN: \"Wound caused by a sharp, pointed object\" -> \"Small, deep hole in the skin\" -> \"Puncture\" -> 95%"
+  ],
+  "enhanced_information": "The correct description of this patient's wound before healing is an incised wound. This is supported by the clean edges and smooth walls of the wound, indicating a sharp object caused the injury.",
+  "analysis": "The core medical principle guiding wound classification is based on the mechanism of injury. In this case, the wound was caused by a sharp object (broken bottle), resulting in clean edges and smooth walls, characteristic of an incised wound. This aligns with the enhanced information provided, supporting the conclusion that the correct description of this patient's wound before healing is an incised wound.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

@@ -1,0 +1,160 @@
+{
+  "question": "A 55-year-old man comes to the physician because of increasing shortness of breath for 1 month. Initially, he was able to climb the 3 flights of stairs to his apartment, but he now needs several breaks to catch his breath. He has no chest pain. He has rheumatic heart disease and type 2 diabetes mellitus. He emigrated from India about 25 years ago. The patient's current medications include carvedilol, torsemide, and insulin. He appears uncomfortable. His temperature is 37.3°C (99.1°F), pulse is 72/min and regular, respirations are 18/min, and blood pressure is 130/80 mm Hg. Pulse oximetry on room air shows an oxygen saturation of 96%. Examination shows bilateral crackles at the lung bases. There is an opening snap followed by a low-pitched diastolic murmur at the fifth left intercostal space at the mid-clavicular line. An x-ray of the chest shows left atrial enlargement, straightening of the left cardiac border and increased vascular markings. Which of the following is the preferred intervention to improve this patient's symptoms?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Tricuspid valve repair",
+    "opb": "Mitral valve replacement",
+    "opc": "Percutaneous mitral balloon commissurotomy",
+    "opd": "Transcatheter aortic valve replacement",
+    "ope": "Enalapril therapy\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Rheumatic Heart Disease",
+        "Mitral Valve Stenosis"
+      ],
+      [
+        "Mitral Valve Stenosis",
+        "Functional disorder",
+        "P-Selectin",
+        "Left atrial pressure"
+      ],
+      [
+        "Mitral Valve Stenosis",
+        "Obstruction",
+        "CD69 protein, human|CD69",
+        "Left atrial pressure"
+      ],
+      [
+        "Left atrial pressure",
+        "Pulmonary congestion"
+      ],
+      [
+        "Pulmonary congestion",
+        "Dyspnea"
+      ],
+      [
+        "Pulmonary congestion",
+        "Dyspnea"
+      ],
+      [
+        "Pulmonary venous hypertension",
+        "Refractory heart failure",
+        "Disease",
+        "Cardiac Hypertrophy",
+        "Rales"
+      ],
+      [
+        "Pulmonary venous hypertension",
+        "Refractory heart failure",
+        "Death, Sudden",
+        "Cardiac Hypertrophy",
+        "Rales"
+      ],
+      [
+        "Rheumatic Heart Disease",
+        "Mitral Valve Stenosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "ISA"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "ISA",
+        "PREDISPOSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Rheumatic Heart Disease)-CAUSES->(Mitral Valve Stenosis)",
+      "(Mitral Valve Stenosis)-CAUSES->(Functional disorder)-ASSOCIATED_WITH->(P-Selectin)-CAUSES->(Left atrial pressure)",
+      "(Mitral Valve Stenosis)-ISA->(Obstruction)-ASSOCIATED_WITH->(CD69 protein, human|CD69)-CAUSES->(Left atrial pressure)",
+      "(Left atrial pressure)-PREDISPOSES->(Pulmonary congestion)",
+      "(Pulmonary congestion)-ISA->(Dyspnea)",
+      "(Pulmonary congestion)-CAUSES->(Dyspnea)",
+      "(Pulmonary venous hypertension)-CAUSES->(Refractory heart failure)-ISA->(Disease)-PREDISPOSES->(Cardiac Hypertrophy)-PREDISPOSES->(Rales)",
+      "(Pulmonary venous hypertension)-CAUSES->(Refractory heart failure)-CAUSES->(Death, Sudden)-MANIFESTATION_OF->(Cardiac Hypertrophy)-PREDISPOSES->(Rales)",
+      "(Rheumatic Heart Disease)-CAUSES->(Mitral Valve Stenosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pulmonary congestion)-CAUSES/ISA->(Dyspnea)",
+      "(Rheumatic Heart Disease)-CAUSES->(Mitral Valve Stenosis)",
+      "(Left atrial pressure)-PREDISPOSES->(Pulmonary congestion)",
+      "(Pulmonary venous hypertension)-CAUSES->(Refractory heart failure)-CAUSES->(Death, Sudden)-MANIFESTATION_OF->(Cardiac Hypertrophy)-PREDISPOSES->(Rales)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Rheumatic heart disease\" -> \"Mitral stenosis\" -> \"Increased left atrial pressure\" -> \"Pulmonary congestion\" -> \"Shortness of breath\" -> \"Percutaneous mitral balloon commissurotomy\" -> \"Relief of mitral stenosis\" -> \"Improved symptoms\" -> 95%",
+    "CHAIN: \"Rheumatic heart disease\" -> \"Mitral valve thickening\" -> \"Diastolic murmur\" -> \"Left atrial enlargement\" -> \"Pulmonary venous hypertension\" -> \"Bilateral crackles\" -> \"Percutaneous mitral balloon commissurotomy\" -> \"Decreased left atrial pressure\" -> \"Symptom improvement\" -> 90%",
+    "CHAIN: \"Mitral stenosis\" -> \"Opening snap\" -> \"Low-pitched diastolic murmur\" -> \"Increased pulmonary vascular markings\" -> \"Shortness of breath\" -> \"Percutaneous mitral balloon commissurotomy\" -> \"Increased mitral valve area\" -> \"Reduced pulmonary congestion\" -> 92%",
+    "CHAIN: \"Rheumatic heart disease\" -> \"Mitral valve stenosis\" -> \"Left atrial enlargement\" -> \"Straightening of left cardiac border\" -> \"Pulmonary congestion\" -> \"Percutaneous mitral balloon commissurotomy\" -> \"Improved mitral valve function\" -> \"Symptom relief\" -> 93%"
+  ],
+  "enhanced_information": "The patient's symptoms and examination findings are consistent with mitral stenosis due to rheumatic heart disease. The presence of an opening snap and a low-pitched diastolic murmur, along with left atrial enlargement and pulmonary congestion, supports this diagnosis. The preferred intervention for symptomatic mitral stenosis, especially in cases without significant mitral regurgitation or calcification, is percutaneous mitral balloon commissurotomy. This procedure relieves mitral stenosis by increasing the mitral valve area, thereby reducing left atrial pressure and pulmonary congestion, leading to symptom improvement. The retrieved evidence paths confirm that pulmonary congestion causes dyspnea and that rheumatic heart disease leads to mitral valve stenosis, aligning with the consensus that percutaneous mitral balloon commissurotomy is the appropriate intervention to improve this patient's symptoms.",
+  "analysis": "The patient's symptoms and examination findings are indicative of mitral stenosis, likely due to rheumatic heart disease. The presence of an opening snap and a low-pitched diastolic murmur, along with left atrial enlargement and pulmonary congestion, strongly suggest this diagnosis. In cases of symptomatic mitral stenosis without significant mitral regurgitation or calcification, the preferred intervention is percutaneous mitral balloon commissurotomy. This procedure is minimally invasive and effectively increases the mitral valve area, reducing left atrial pressure and alleviating pulmonary congestion, which should improve the patient's symptoms. Other options, such as mitral valve replacement, are typically reserved for cases where balloon commissurotomy is not feasible or has failed. Therefore, based on standard medical practice and the patient's presentation, percutaneous mitral balloon commissurotomy is the most appropriate intervention.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      66.66666666666666,
+      16.666666666666664,
+      0.0,
+      16.666666666666664
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

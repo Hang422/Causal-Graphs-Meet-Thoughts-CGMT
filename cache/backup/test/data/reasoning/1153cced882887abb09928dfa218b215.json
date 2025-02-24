@@ -1,0 +1,129 @@
+{
+  "question": "A 54-year-old man with lymphoma presents to his oncologist with severe abdominal pain and flank pain. He says that the pain started 2 days ago and has gotten worse over time. He has also not been able to urinate over the same time period. On presentation, his temperature is 99°F (37.2°C), blood pressure is 110/72 mmHg, pulse is 105/min, and respirations are 12/min. Physical exam reveals bilateral flank tenderness. Labs results are shown below:\n\nBlood urea nitrogen: 34 mg/dL\nCreatinine: 3.7 mg/dl\nUrine osmolality: 228 mOsm/kg\n\nRenal ultrasonography shows dilation of the kidneys bilaterally with a normal-sized bladder. Which of the following would most likely be beneficial in treating this patient's condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Administration of a loop diuretic",
+    "opb": "Bilateral stenting of the renal arteries",
+    "opc": "Bilateral stenting of the ureters",
+    "opd": "Catheterization of the bladder",
+    "ope": "Volume repletion with saline"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pressure- physical agent",
+        "Disease",
+        "Physiological stress",
+        "Kidney"
+      ],
+      [
+        "Pressure- physical agent",
+        "Disease",
+        "arterial stiffness",
+        "Kidney"
+      ],
+      [
+        "Pressure- physical agent",
+        "Disease",
+        "metabolic effects",
+        "Kidney"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Pressure- physical agent)-CAUSES->(Disease)-CAUSES->(Physiological stress)-PROCESS_OF->(Kidney)",
+      "(Pressure- physical agent)-CAUSES->(Disease)-CAUSES->(arterial stiffness)-PROCESS_OF->(Kidney)",
+      "(Pressure- physical agent)-CAUSES->(Disease)-MANIFESTATION_OF->(metabolic effects)-PROCESS_OF->(Kidney)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Flow of urine",
+        "Bladder",
+        "Kidney"
+      ],
+      [
+        "Flow of urine",
+        "Rectum",
+        "Kidney"
+      ],
+      [
+        "Kidney",
+        "Pathological Dilatation"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "PART_OF"
+      ],
+      [
+        "PROCESS_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Flow of urine)-PROCESS_OF->(Bladder)-PART_OF->(Kidney)",
+      "(Flow of urine)-PROCESS_OF->(Rectum)-PART_OF->(Kidney)",
+      "(Kidney)-LOCATION_OF->(Pathological Dilatation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Kidney)-LOCATION_OF->(Pathological Dilatation)",
+      "(Flow of urine)-PROCESS_OF->(Bladder)-PART_OF->(Kidney)",
+      "(Pressure- physical agent)-CAUSES->(Disease)-CAUSES->(Physiological stress)-PROCESS_OF->(Kidney)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Lymphoma\" -> \"possible retroperitoneal mass\" -> \"ureteral obstruction\" -> \"hydronephrosis\" -> \"bilateral flank pain\" -> \"elevated creatinine\" -> \"bilateral stenting of the ureters\" -> \"relieve obstruction\" -> \"improve renal function\" -> 95%",
+    "CHAIN: \"Severe abdominal pain\" -> \"flank pain\" -> \"hydronephrosis\" -> \"urinary obstruction\" -> \"elevated creatinine\" -> \"bilateral stenting of the ureters\" -> \"relieve obstruction\" -> \"improve symptoms\" -> 90%",
+    "CHAIN: \"Lymphoma\" -> \"tumor growth\" -> \"ureteral compression\" -> \"urinary retention\" -> \"hydronephrosis\" -> \"bilateral stenting of the ureters\" -> \"restore urine flow\" -> \"reduce pain\" -> 92%",
+    "CHAIN: \"Bilateral flank tenderness\" -> \"hydronephrosis\" -> \"urinary obstruction\" -> \"elevated blood urea nitrogen\" -> \"bilateral stenting of the ureters\" -> \"relieve obstruction\" -> \"normalize kidney function\" -> 93%",
+    "CHAIN: \"Inability to urinate\" -> \"urinary obstruction\" -> \"hydronephrosis\" -> \"elevated creatinine\" -> \"bilateral stenting of the ureters\" -> \"restore urine flow\" -> \"improve renal function\" -> 94%"
+  ],
+  "enhanced_information": "The patient likely has obstructed ureters leading to impaired urine flow, increased pressure in the kidneys, dilation of the kidneys, decreased urine output, and elevated blood urea nitrogen and creatinine levels, indicative of acute kidney injury. Urgent intervention is needed. Bilateral stenting of the ureters would be most beneficial in treating this patient's condition.",
+  "analysis": "The patient presents with symptoms and laboratory findings suggestive of post-renal acute kidney injury, likely due to bilateral ureteral obstruction. This is supported by the severe abdominal and flank pain, inability to urinate, elevated creatinine, and bilateral kidney dilation on ultrasound. The normal-sized bladder suggests that the obstruction is above the level of the bladder, likely in the ureters. Bilateral stenting of the ureters would relieve the obstruction and improve renal function.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

@@ -1,0 +1,126 @@
+{
+  "question": "A 57-year-old woman with a history of diabetes and hypertension accidentally overdoses on antiarrhythmic medication. Upon arrival in the ER, she is administered a drug to counteract the effects of the overdose. Which of the following matches an antiarrhythmic with its correct treatment in overdose?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Quinidine and insulin",
+    "opb": "Encainide and epinephrine",
+    "opc": "Propafenone and glucose",
+    "opd": "Esmolol and glucagon",
+    "ope": "Sotalol and norepinephrine"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "hypoglycemia",
+        "Salmonella typhi",
+        "Pharmaceutical Preparations",
+        "Blood Glucose"
+      ],
+      [
+        "hypoglycemia",
+        "Immunity",
+        "Pharmaceutical Preparations",
+        "Blood Glucose"
+      ],
+      [
+        "cardiac arrhythmia",
+        "Pathogenesis",
+        "Norepinephrine"
+      ],
+      [
+        "cardiac arrhythmia",
+        "Thrombosis",
+        "Norepinephrine"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(hypoglycemia)-PROCESS_OF->(Salmonella typhi)-LOCATION_OF->(Pharmaceutical Preparations)-INTERACTS_WITH->(Blood Glucose)",
+      "(hypoglycemia)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Blood Glucose)",
+      "(cardiac arrhythmia)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Norepinephrine)",
+      "(cardiac arrhythmia)-CAUSES->(Thrombosis)-ASSOCIATED_WITH->(Norepinephrine)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(cardiac arrhythmia)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Norepinephrine)",
+      "(cardiac arrhythmia)-CAUSES->(Thrombosis)-ASSOCIATED_WITH->(Norepinephrine)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Quinidine overdose\" -> \"increased risk of hypoglycemia\" -> \"insulin may be used to stabilize blood glucose\" -> 70%",
+    "CHAIN: \"Encainide overdose\" -> \"potential for severe bradycardia\" -> \"epinephrine may increase heart rate\" -> 60%",
+    "CHAIN: \"Propafenone overdose\" -> \"risk of hypotension\" -> \"glucose does not counteract hypotension\" -> \"unclear\" -> 50%",
+    "CHAIN: \"Esmolol overdose\" -> \"beta-blockade leading to bradycardia\" -> \"glucagon can increase heart rate\" -> 85%",
+    "CHAIN: \"Sotalol overdose\" -> \"risk of severe arrhythmias\" -> \"norepinephrine may help restore blood pressure\" -> 75%"
+  ],
+  "enhanced_information": "In cases of antiarrhythmic overdose, specific treatments are indicated based on the drug involved. For Quinidine, while there is a risk of hypoglycemia, insulin is not a standard treatment for overdose management. Encainide can cause severe bradycardia, and epinephrine is used to increase heart rate, making this a plausible option. Propafenone overdose leads to hypotension, and glucose does not address this issue, thus this option is not supported. Esmolol overdose results in beta-blockade and bradycardia, where glucagon is known to increase heart rate effectively, making this a strong candidate. Sotalol can cause severe arrhythmias, and norepinephrine may help restore blood pressure, supporting its use in overdose scenarios. Therefore, the best-supported options are Esmolol with glucagon and Encainide with epinephrine, with Esmolol and glucagon being the most consensus-aligned treatment for overdose management.",
+  "analysis": "In cases of antiarrhythmic overdose, specific treatments are indicated based on the drug involved. Glucagon is known to be effective in treating beta-blocker and calcium channel blocker overdoses, which can include esmolol, a beta-blocker. The other options do not have strong evidence supporting their use in the context of overdose treatment. Therefore, the best-supported option is 'opd. Esmolol and glucagon'.",
+  "answer": "opd",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      0.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Antidotes INTERACTS_WITH Anti-Arrhythmia Agents",
+    "Periphlebitis ISA Disease",
+    "Charts TREATS Retinitis Pigmentosa",
+    "Progestins TREATS Hypersensitivity",
+    "Cytostatic Agents CAUSES Obstruction",
+    "Anti-Arrhythmia Agents INTERACTS_WITH Glucose",
+    "Vascular resistance PROCESS_OF Submandibular gland",
+    "Glucagon TREATS cardiac arrhythmia",
+    "Anti-Arrhythmia Agents TREATS Symptoms",
+    "lepirudin TREATS Pulmonary Embolism",
+    "Encainide TREATS cardiac arrhythmia",
+    "benazepril TREATS Kidney Failure"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "question": "An otherwise healthy 25-year-old man comes to the physician because of a 3-month history of intermittent palpitations and worsening shortness of breath on exertion. He has not had chest pain or nocturnal dyspnea. The patient is 195 cm (6 ft 5 in) tall and weighs 70 kg (154 lbs); BMI is 18.4 kg/m2. His pulse is 110/min and blood pressure is 140/60 mm Hg. The lungs are clear to auscultation. Cardiac examination is shown. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Aortic regurgitation",
+    "opb": "Pulmonary regurgitation",
+    "opc": "Tricuspid stenosis",
+    "opd": "Aortic stenosis",
+    "ope": "Tricuspid regurgitation"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Dyspnea",
+        "Disease",
+        "Tachycardia"
+      ],
+      [
+        "Dyspnea",
+        "Myocardial Infarction",
+        "Tachycardia"
+      ],
+      [
+        "Dyspnea",
+        "Hypertensive disease",
+        "Tachycardia"
+      ],
+      [
+        "Body mass index procedure",
+        "Malnutrition"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Dyspnea)-CAUSES->(Disease)-CAUSES->(Tachycardia)",
+      "(Dyspnea)-PREDISPOSES->(Myocardial Infarction)-CAUSES->(Tachycardia)",
+      "(Dyspnea)-CAUSES->(Hypertensive disease)-PREDISPOSES->(Tachycardia)",
+      "(Body mass index procedure)-CAUSES->(Malnutrition)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Tachycardia",
+        "APEX1 protein, human|APEX1",
+        "Cells",
+        "Auscultation"
+      ],
+      [
+        "Tachycardia",
+        "Ionotropic receptor",
+        "Cells",
+        "Auscultation"
+      ],
+      [
+        "Tachycardia",
+        "APEX1 protein, human|APEX1",
+        "Cells",
+        "Body mass index procedure"
+      ],
+      [
+        "Tachycardia",
+        "Ionotropic receptor",
+        "Cells",
+        "Body mass index procedure"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Tachycardia)-ASSOCIATED_WITH->(APEX1 protein, human|APEX1)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Auscultation)",
+      "(Tachycardia)-ASSOCIATED_WITH->(Ionotropic receptor)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Auscultation)",
+      "(Tachycardia)-ASSOCIATED_WITH->(APEX1 protein, human|APEX1)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Body mass index procedure)",
+      "(Tachycardia)-ASSOCIATED_WITH->(Ionotropic receptor)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Body mass index procedure)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Body mass index procedure)-CAUSES->(Malnutrition)",
+      "(Dyspnea)-CAUSES->(Disease)-CAUSES->(Tachycardia)",
+      "(Dyspnea)-PREDISPOSES->(Myocardial Infarction)-CAUSES->(Tachycardia)",
+      "(Dyspnea)-CAUSES->(Hypertensive disease)-PREDISPOSES->(Tachycardia)",
+      "(Tachycardia)-ASSOCIATED_WITH->(APEX1 protein, human|APEX1)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Auscultation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Palpitations and shortness of breath on exertion\" -> \"Tachycardia (pulse 110/min)\" -> \"Possible cardiac pathology\" -> 70% CHAIN: \"Tachycardia (pulse 110/min)\" -> \"Increased cardiac output\" -> \"Compensatory mechanism\" -> 80% CHAIN: \"Tachycardia (pulse 110/min)\" -> \"Normal blood pressure\" -> \"Maintained perfusion\" -> 85% CHAIN: \"Tachycardia (pulse 110/min)\" -> \"Nocturnal dyspnea absence\" -> \"Less likely heart failure\" -> 75% CHAIN: \"Tachycardia (pulse 110/min)\" -> \"No chest pain\" -> \"Less likely ischemic heart disease\" -> 75% CHAIN: \"Tachycardia (pulse 110/min)\" -> \"Clear lungs on auscultation\" -> \"Less likely primary lung pathology\" -> 70% CHAIN: \"Tachycardia (pulse 110/min)\" -> \"BMI 18.4 kg/m2\" -> \"Possible malnutrition\" -> 70%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 25-year-old man with palpitations and shortness of breath on exertion, tachycardia, normal blood pressure, and clear lungs on auscultation is Aortic regurgitation. The absence of chest pain and nocturnal dyspnea makes ischemic heart disease and heart failure less likely. The patient's BMI of 18.4 kg/m2 raises suspicion of possible malnutrition, which could be a contributing factor.",
+  "analysis": "The patient's presentation of palpitations, shortness of breath on exertion, tachycardia, normal blood pressure, and clear lungs on auscultation is suggestive of aortic regurgitation. The absence of chest pain and nocturnal dyspnea makes ischemic heart disease and heart failure less likely. The patient's BMI indicating possible malnutrition could be a contributing factor. Aortic regurgitation fits the clinical picture best.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

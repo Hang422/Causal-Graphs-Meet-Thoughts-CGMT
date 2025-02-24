@@ -1,0 +1,128 @@
+{
+  "question": "A 23-year-old woman presents to a medical office for a check-up. The patient has a 5-year history of epilepsy with focal-onset motor seizures and currently is seizure-free on 50 mg of lamotrigine 3 times a day. She does not have any concurrent illnesses and does not take other medications, except oral contraceptive pills. She is considering pregnancy and seeks advice on possible adjustments or additions to her therapy. Which of the following changes should be made?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Decrease the dose of lamotrigine to 50 mg 2 times a day",
+    "opb": "Recommend 5 mg of folic acid daily with no changes to antiepileptic therapy",
+    "opc": "Recommend 100 μg of vitamin K daily with no changes to antiepileptic therapy",
+    "opd": "Change lamotrigine to oxcarbazepine prior to conception",
+    "ope": "No changes or additions to the patient’s regimen are indicated"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "lamotrigine",
+        "Disease",
+        "Teratogenesis"
+      ],
+      [
+        "lamotrigine",
+        "Syndrome",
+        "Teratogenesis"
+      ],
+      [
+        "lamotrigine",
+        "Obesity",
+        "Teratogenesis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(lamotrigine)-CAUSES->(Disease)-CAUSES->(Teratogenesis)",
+      "(lamotrigine)-CAUSES->(Syndrome)-CAUSES->(Teratogenesis)",
+      "(lamotrigine)-TREATS->(Obesity)-CAUSES->(Teratogenesis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "oxcarbazepine",
+        "Pharmaceutical Preparations",
+        "Cells",
+        "Fat pad",
+        "Treatment Protocols"
+      ],
+      [
+        "oxcarbazepine",
+        "Pharmaceutical Preparations",
+        "Cells",
+        "Cartilage",
+        "Treatment Protocols"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(oxcarbazepine)-ISA->(Pharmaceutical Preparations)-PART_OF->(Cells)-PART_OF->(Fat pad)-LOCATION_OF->(Treatment Protocols)",
+      "(oxcarbazepine)-ISA->(Pharmaceutical Preparations)-PART_OF->(Cells)-PART_OF->(Cartilage)-LOCATION_OF->(Treatment Protocols)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(lamotrigine)-CAUSES->(Disease)-CAUSES->(Teratogenesis)",
+      "(lamotrigine)-CAUSES->(Syndrome)-CAUSES->(Teratogenesis)",
+      "(lamotrigine)-TREATS->(Obesity)-CAUSES->(Teratogenesis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient is seizure-free on lamotrigine\" -> \"Planning for pregnancy\" -> \"Folic acid is recommended for all women of childbearing age\" -> \"Folic acid reduces risk of neural tube defects\" -> \"5 mg of folic acid daily is a standard recommendation\" -> 95%",
+    "CHAIN: \"Patient is on lamotrigine\" -> \"Lamotrigine is a category C medication in pregnancy\" -> \"Risk of teratogenic effects exists\" -> \"No need to change therapy if seizure-free\" -> \"Folic acid supplementation is advised\" -> 90%",
+    "CHAIN: \"Patient is considering pregnancy\" -> \"Vitamin K is not routinely recommended for all pregnant women\" -> \"Vitamin K is usually given in specific cases\" -> \"No changes to antiepileptic therapy needed\" -> \"Folic acid is the primary recommendation\" -> 85%",
+    "CHAIN: \"Patient is stable on current medication\" -> \"Changing to oxcarbazepine may not be necessary\" -> \"Oxcarbazepine has its own risks in pregnancy\" -> \"Current regimen is effective\" -> \"No changes or additions are indicated\" -> 80%"
+  ],
+  "enhanced_information": "The patient is currently seizure-free on lamotrigine, which is a category C medication in pregnancy, indicating that while there is a risk of teratogenic effects, it may be necessary to continue if the patient is stable. Folic acid supplementation is strongly recommended for all women planning pregnancy to reduce the risk of neural tube defects, with a standard dose of 5 mg daily. Vitamin K is not routinely recommended for all pregnant women and is typically reserved for specific cases. Changing to oxcarbazepine is not necessary as the current regimen is effective and stable. Therefore, the best course of action is to recommend 5 mg of folic acid daily with no changes to antiepileptic therapy.",
+  "analysis": "The patient is currently stable on lamotrigine, which is a category C medication in pregnancy. The primary concern for women planning pregnancy who are on antiepileptic drugs is to minimize the risk of teratogenic effects, particularly neural tube defects. Folic acid supplementation is universally recommended for women of childbearing age who are planning to conceive, with a standard dose of 5 mg daily. This is supported by medical guidelines to reduce the risk of neural tube defects. The other options either suggest unnecessary changes to a stable medication regimen (like decreasing lamotrigine or switching to oxcarbazepine) or recommend vitamin K, which is not routinely indicated for all pregnant women. Therefore, the most appropriate recommendation is to advise the patient to take 5 mg of folic acid daily while continuing her current antiepileptic therapy without changes.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

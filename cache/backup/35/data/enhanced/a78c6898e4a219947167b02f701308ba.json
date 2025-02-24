@@ -1,0 +1,95 @@
+{
+  "question": "Multiple patients present to your office with hematuria following an outbreak of Group A Streptococcus. Biopsy reveals that all of the patients have the same disease, characterized by large, hypercellular glomeruli with neutrophil infiltration. Which patient has the best prognosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "65-year-old nulliparous woman",
+    "opb": "50-year-old man with a history of strep infection",
+    "opc": "8-year-old boy who undergoes no treatment",
+    "opd": "38-year-old man with sickle cell trait",
+    "ope": "18-year-old man treated with corticosteroids"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Streptococcal Infections",
+        "Glomerulonephritis"
+      ],
+      [
+        "Glomerulonephritis",
+        "Disease",
+        "Neutrophil Infiltration"
+      ],
+      [
+        "Glomerulonephritis",
+        "Pathogenesis",
+        "Neutrophil Infiltration"
+      ],
+      [
+        "Glomerulonephritis",
+        "Inflammation",
+        "Neutrophil Infiltration"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Streptococcal Infections)-CAUSES->(Glomerulonephritis)",
+      "(Glomerulonephritis)-CAUSES->(Disease)-MANIFESTATION_OF->(Neutrophil Infiltration)",
+      "(Glomerulonephritis)-CAUSES->(Pathogenesis)-MANIFESTATION_OF->(Neutrophil Infiltration)",
+      "(Glomerulonephritis)-CAUSES->(Inflammation)-MANIFESTATION_OF->(Neutrophil Infiltration)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Glomerulonephritis)-CAUSES->(Disease)-MANIFESTATION_OF->(Neutrophil Infiltration)",
+      "(Streptococcal Infections)-CAUSES->(Glomerulonephritis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Group A Streptococcus infection -> glomerulonephritis -> large, hypercellular glomeruli with neutrophil infiltration -> variable prognosis -> 60% CHAIN: Glomerulonephritis with neutrophil infiltration -> potential for renal damage -> variable prognosis -> 70% CHAIN: Corticosteroid treatment -> anti-inflammatory effect -> potential improvement in glomerulonephritis -> better prognosis -> 60%"
+  ],
+  "enhanced_information": "The 18-year-old man treated with corticosteroids has the best prognosis. Glomerulonephritis with neutrophil infiltration can lead to renal damage and has a variable prognosis. Corticosteroid treatment, with its anti-inflammatory effects, may improve glomerulonephritis and result in a better prognosis. Evidence supports the potential benefit of corticosteroid treatment in this context.",
+  "analysis": "Glomerulonephritis with neutrophil infiltration following Group A Streptococcus infection suggests post-infectious glomerulonephritis. The enhanced information supports that corticosteroid treatment can improve the prognosis in this condition due to its anti-inflammatory effects. While age and underlying conditions can influence outcomes, the 18-year-old man treated with corticosteroids is likely to have the best prognosis based on the provided context.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

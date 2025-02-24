@@ -1,0 +1,128 @@
+{
+  "question": "A 3-year-old boy is taken to the ER by his parents due to his elevated temperature. He has had a fever (>101.1 deg F) for a little over a week, and over that time, his parents noticed his eyes had gotten a little pink, and his palms and soles were red and swollen. His lips and tongue are also peeling. His parents note he has not taken any new medications, and they did not notice any runny nose, sore throat, cough, or changes in his bowel or bladder habits. In the ER, his vitals are as follows: temperature is 101.3 deg F (38.5 deg C), blood pressure is 90/60 mmHg, pulse is 125/min, and respirations are 20/min. His exam is notable for bilateral injected conjunctivae, right-sided cervical lymphadenopathy, erythematous and edematous palms and soles, and erythema multiforme-like rash over his trunk. Appropriate lab tests and imaging were performed. Which of the following is the most worrisome complication of this boy's disease process?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Digital gangrene",
+    "opb": "Coronary artery aneurysms",
+    "opc": "Glomerulonephritis",
+    "opd": "Endocardial valve damage",
+    "ope": "Toxic endodermal necrolysis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Skin Specimen",
+        "MLH1 gene|MLH1",
+        "Mucous Membrane"
+      ],
+      [
+        "Skin Specimen",
+        "Lipids",
+        "Mucous Membrane"
+      ],
+      [
+        "Tongue",
+        "Lipids",
+        "Mucous Membrane"
+      ],
+      [
+        "Tongue",
+        "Vitamin E",
+        "Mucous Membrane"
+      ],
+      [
+        "Vasculitis",
+        "Pathogenesis",
+        "Genes",
+        "Endothelium"
+      ],
+      [
+        "Vasculitis",
+        "Pathogenesis",
+        "Genes",
+        "Endothelium"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Skin Specimen)-LOCATION_OF->(MLH1 gene|MLH1)-PART_OF->(Mucous Membrane)",
+      "(Skin Specimen)-LOCATION_OF->(Lipids)-PART_OF->(Mucous Membrane)",
+      "(Tongue)-LOCATION_OF->(Lipids)-PART_OF->(Mucous Membrane)",
+      "(Tongue)-LOCATION_OF->(Vitamin E)-PART_OF->(Mucous Membrane)",
+      "(Vasculitis)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Endothelium)",
+      "(Vasculitis)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Endothelium)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Tongue)-LOCATION_OF->(Vitamin E)-PART_OF->(Mucous Membrane)",
+      "(Tongue)-LOCATION_OF->(Lipids)-PART_OF->(Mucous Membrane)",
+      "(Vasculitis)-CAUSES/MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Endothelium)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Viral infection -> Kawasaki disease -> Systemic inflammation -> Multi-organ involvement -> Coronary artery aneurysms -> 95%",
+    "CHAIN: Viral infection -> Kawasaki disease -> Skin manifestations (erythema multiforme-like rash, peeling lips and tongue) -> Mucous membrane involvement -> Toxic endodermal necrolysis -> 80%",
+    "CHAIN: Viral infection -> Kawasaki disease -> Systemic vasculitis -> Endothelial damage -> Endocardial valve damage -> 85%"
+  ],
+  "enhanced_information": "The most worrisome complication of this boy's disease process is coronary artery aneurysms, which can occur in Kawasaki disease due to systemic inflammation leading to multi-organ involvement, including the cardiovascular system. The evidence path linking vasculitis to endothelial damage supports the chain of systemic vasculitis causing endocardial valve damage, which is another potential complication in Kawasaki disease.",
+  "analysis": "The most worrisome complication of this boy's disease process is coronary artery aneurysms, which can occur in Kawasaki disease due to systemic inflammation leading to multi-organ involvement, including the cardiovascular system. While other complications like endocardial valve damage can also occur in Kawasaki disease, the potential impact of coronary artery aneurysms on long-term cardiovascular health is particularly concerning.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      66.66666666666666,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

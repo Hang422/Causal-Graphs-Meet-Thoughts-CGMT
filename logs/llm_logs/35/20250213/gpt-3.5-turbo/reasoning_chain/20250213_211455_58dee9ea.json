@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_211455",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "58dee9ea",
+  "question_text": "A 42-year-old woman presents to the urgent care clinic with recurrent chest pain and pressure radiating to her jaw. ECG is obtained and shows ST-segment elevation, but her cardiac enzymes are repeatedly found to be within normal ranges. She has a heart rate of 82/min and a blood pressure of 128/76 mm Hg. Physical examination reveals regular heart sounds with no friction rub. Which of the following options is an acceptable treatment regimen for this patient’s suspected condition?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 42-year-old woman presents to the urgent care clinic with recurrent chest pain and pressure radiating to her jaw. ECG is obtained and shows ST-segment elevation, but her cardiac enzymes are repeatedly found to be within normal ranges. She has a heart rate of 82/min and a blood pressure of 128/76 mm Hg. Physical examination reveals regular heart sounds with no friction rub. Which of the following options is an acceptable treatment regimen for this patient’s suspected condition?\n\n            ### Options\n    opa. Nitrates only\nopb. Aspirin and clopidogrel\nopc. Calcium channel blockers and nitrates\nopd. Beta-blockers, nitrates and aspirin\nope. Aspirin, clopidogrel, beta-blockers, and nitrates\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: ST-segment elevation on ECG -> indicative of myocardial infarction -> possible acute coronary syndrome -> 70%\nCHAIN: Normal cardiac enzymes -> may not rule out myocardial infarction -> consider non-ST elevation myocardial infarction -> 60%\nCHAIN: Chest pain radiating to jaw -> concerning for cardiac origin -> suggestive of myocardial infarction -> 80%\nCHAIN: Heart rate of 82/min -> within normal range -> may not require immediate rate control -> 70%\nCHAIN: Blood pressure of 128/76 mm Hg -> stable hemodynamics -> favorable for medical management -> 80%\nCHAIN: Regular heart sounds with no friction rub -> absence of pericarditis findings -> less likely to have pericardial involvement -> 90%\nCHAIN: Acceptable treatment regimen for suspected condition -> Beta-blockers, nitrates, and aspirin -> standard therapy for acute coronary syndrome -> 95%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

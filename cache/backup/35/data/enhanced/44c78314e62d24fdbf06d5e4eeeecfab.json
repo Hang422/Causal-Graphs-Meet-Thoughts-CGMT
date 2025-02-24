@@ -1,0 +1,145 @@
+{
+  "question": "A 21-year-old college student comes to the emergency department because of a two-day history of vomiting and epigastric pain that radiates to the back. He has a history of atopic dermatitis and Hashimoto thyroiditis. His only medication is levothyroxine. He has not received any routine vaccinations. He drinks 1–2 beers on the weekends and occasionally smokes marijuana. The patient appears distressed and is diaphoretic. His temperature is 37.9°C (100.3°F), pulse is 105/min, respirations are 16/min, and blood pressure is 130/78 mm Hg. Physical examination shows abdominal distention with tenderness to palpation in the epigastrium. There is no guarding or rebound tenderness. Skin examination shows several clusters of yellow plaques over the trunk and extensor surfaces of the extremities. Hemoglobin concentration is 15.2 g/dL and serum calcium concentration is 7.9 mg/dL. Which of the following is the most appropriate next step in evaluation?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Perform a pilocarpine-induced sweat test",
+    "opb": "Measure serum mumps IgM titer",
+    "opc": "Obtain an upright x-ray of the abdomen",
+    "opd": "Measure serum lipid levels",
+    "ope": "Measure stool elastase level"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "[D]Epigastric pain",
+        "Pancreatitis"
+      ],
+      [
+        "Hashimoto Disease",
+        "Autoimmune Diseases"
+      ],
+      [
+        "Dermatitis, Atopic",
+        "Autoimmune Diseases"
+      ],
+      [
+        "Xanthoma",
+        "Hyperlipidemia",
+        "Disorder of lipoid metabolism NOS"
+      ],
+      [
+        "Xanthoma",
+        "Disease",
+        "Disorder of lipoid metabolism NOS"
+      ],
+      [
+        "Xanthoma",
+        "Dyslipidemias",
+        "Disorder of lipoid metabolism NOS"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "([D]Epigastric pain)-CAUSES->(Pancreatitis)",
+      "(Hashimoto Disease)-CAUSES->(Autoimmune Diseases)",
+      "(Dermatitis, Atopic)-CAUSES->(Autoimmune Diseases)",
+      "(Xanthoma)-COMPLICATES->(Hyperlipidemia)-CAUSES->(Disorder of lipoid metabolism NOS)",
+      "(Xanthoma)-PREDISPOSES->(Disease)-CAUSES->(Disorder of lipoid metabolism NOS)",
+      "(Xanthoma)-PREDISPOSES->(Dyslipidemias)-PREDISPOSES->(Disorder of lipoid metabolism NOS)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Disorder of lipoid metabolism NOS",
+        "Pathogenesis",
+        "Genes",
+        "Myocardium",
+        "Measurement of serum lipid level"
+      ],
+      [
+        "Disorder of lipoid metabolism NOS",
+        "Inflammation",
+        "Genes",
+        "Myocardium",
+        "Measurement of serum lipid level"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Disorder of lipoid metabolism NOS)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Myocardium)-LOCATION_OF->(Measurement of serum lipid level)",
+      "(Disorder of lipoid metabolism NOS)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Myocardium)-LOCATION_OF->(Measurement of serum lipid level)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hashimoto Disease)-CAUSES->(Autoimmune Diseases)",
+      "([D]Epigastric pain)-CAUSES->(Pancreatitis)",
+      "(Dermatitis, Atopic)-CAUSES->(Autoimmune Diseases)",
+      "(Xanthoma)-COMPLICATES->(Hyperlipidemia)-CAUSES->(Disorder of lipoid metabolism NOS)",
+      "(Xanthoma)-PREDISPOSES->(Disease)-CAUSES->(Disorder of lipoid metabolism NOS)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Epigastric pain radiating to the back\" -> \"Possible pancreatitis\" -> \"Consider serum lipase and amylase levels\" -> 70% CHAIN: \"Atopic dermatitis and Hashimoto thyroiditis\" -> \"Autoimmune conditions\" -> \"Increased risk for other autoimmune diseases\" -> 80% CHAIN: \"Abdominal distention with tenderness in the epigastrium\" -> \"Possible gastrointestinal issue\" -> \"Consider abdominal imaging\" -> 75% CHAIN: \"Skin examination findings of yellow plaques\" -> \"Xanthomas\" -> \"Possible lipid metabolism disorder\" -> \"Consider measuring serum lipid levels\" -> 70%"
+  ],
+  "enhanced_information": "The patient's presentation with epigastric pain radiating to the back, abdominal tenderness, and skin findings of xanthomas suggests a possible pancreatitis and lipid metabolism disorder. Given the history of autoimmune conditions, including Hashimoto thyroiditis and atopic dermatitis, there is an increased risk for other autoimmune diseases. Measuring serum lipid levels would be the most appropriate next step in evaluation to assess for a lipid metabolism disorder, which is supported by the presence of xanthomas.",
+  "analysis": "The patient's presentation with epigastric pain, abdominal tenderness, and xanthomas suggests a possible lipid metabolism disorder like hypertriglyceridemia-induced pancreatitis. Given the history of autoimmune conditions and the presence of xanthomas, measuring serum lipid levels would be the most appropriate next step to evaluate for a lipid metabolism disorder.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

@@ -1,0 +1,178 @@
+{
+  "question": "A 65-year-old man presents to his primary care physician for fatigue. The patient states that he has not been sleeping well and requests sleep medication to help him with his fatigue. He recently changed his diet to try to increase his energy and has been on a vegetarian diet for the past several months. The patient has no significant past medical history. He smokes 1 pack of cigarettes per day and drinks 5 alcoholic beverages per day. The patient has lost 12 pounds since his last visit 1 month ago. Physical exam demonstrates a tired man. He appears thin, and his skin and sclera are icteric. Abdominal ultrasound is notable for a thin-walled and enlarged gallbladder. A urine sample is collected and is noted to be amber in color. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Autoimmune hemolytic anemia",
+    "opb": "Cholangiocarcinoma",
+    "opc": "Gallbladder adenocarcinoma",
+    "opd": "Iron deficiency anemia",
+    "ope": "Pancreatic adenocarcinoma"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ultrasonography",
+        "Disease",
+        "Liver Dysfunction"
+      ],
+      [
+        "Ultrasonography",
+        "Obesity",
+        "Liver Dysfunction"
+      ],
+      [
+        "Ultrasonography",
+        "Myocardial Infarction",
+        "Liver Dysfunction"
+      ],
+      [
+        "Ultrasonography",
+        "Liver diseases"
+      ],
+      [
+        "Ultrasonography",
+        "Anemia"
+      ],
+      [
+        "Anemia",
+        "Iron deficiency"
+      ],
+      [
+        "Ultrasonography",
+        "Disease",
+        "Autoimmune"
+      ],
+      [
+        "Ultrasonography",
+        "Obesity",
+        "Autoimmune"
+      ],
+      [
+        "Ultrasonography",
+        "Myocardial Infarction",
+        "Autoimmune"
+      ],
+      [
+        "Autoimmune",
+        "Disease",
+        "Autoimmune hemolytic anemia"
+      ],
+      [
+        "Autoimmune",
+        "Lupus Erythematosus, Systemic",
+        "Autoimmune hemolytic anemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Ultrasonography)-CAUSES->(Disease)-CAUSES->(Liver Dysfunction)",
+      "(Ultrasonography)-CAUSES->(Obesity)-CAUSES->(Liver Dysfunction)",
+      "(Ultrasonography)-CAUSES->(Myocardial Infarction)-CAUSES->(Liver Dysfunction)",
+      "(Ultrasonography)-CAUSES->(Liver diseases)",
+      "(Ultrasonography)-CAUSES->(Anemia)",
+      "(Anemia)-CAUSES->(Iron deficiency)",
+      "(Ultrasonography)-CAUSES->(Disease)-CAUSES->(Autoimmune)",
+      "(Ultrasonography)-CAUSES->(Obesity)-CAUSES->(Autoimmune)",
+      "(Ultrasonography)-CAUSES->(Myocardial Infarction)-CAUSES->(Autoimmune)",
+      "(Autoimmune)-CAUSES->(Disease)-CAUSES->(Autoimmune hemolytic anemia)",
+      "(Autoimmune)-CAUSES->(Lupus Erythematosus, Systemic)-COMPLICATES->(Autoimmune hemolytic anemia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ultrasonography)-CAUSES->(Anemia)",
+      "(Anemia)-CAUSES->(Iron deficiency)",
+      "(Ultrasonography)-CAUSES->(Liver diseases)",
+      "(Ultrasonography)-CAUSES->(Disease)-CAUSES->(Liver Dysfunction)",
+      "(Ultrasonography)-CAUSES->(Obesity)-CAUSES->(Liver Dysfunction)",
+      "(Ultrasonography)-CAUSES->(Myocardial Infarction)-CAUSES->(Liver Dysfunction)",
+      "(Ultrasonography)-CAUSES->(Disease)-CAUSES->(Autoimmune)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"65-year-old man presents with fatigue\" -> \"recent weight loss of 12 pounds\" -> \"icteric skin and sclera\" -> \"amber urine sample\" -> \"thin-walled and enlarged gallbladder on ultrasound\" -> \"possible biliary obstruction or liver dysfunction\" -> \"consider cholangiocarcinoma\" -> 85%",
+    "CHAIN: \"65-year-old man presents with fatigue\" -> \"recent weight loss of 12 pounds\" -> \"icteric skin and sclera\" -> \"amber urine sample\" -> \"thin-walled and enlarged gallbladder on ultrasound\" -> \"gallbladder pathology indicated\" -> \"consider gallbladder adenocarcinoma\" -> 80%",
+    "CHAIN: \"65-year-old man presents with fatigue\" -> \"recent weight loss of 12 pounds\" -> \"icteric skin and sclera\" -> \"amber urine sample\" -> \"thin-walled and enlarged gallbladder on ultrasound\" -> \"possible liver disease or malignancy\" -> \"consider pancreatic adenocarcinoma\" -> 70%",
+    "CHAIN: \"65-year-old man presents with fatigue\" -> \"recent weight loss of 12 pounds\" -> \"icteric skin and sclera\" -> \"amber urine sample\" -> \"thin-walled and enlarged gallbladder on ultrasound\" -> \"anemia not indicated by symptoms\" -> \"iron deficiency anemia less likely\" -> 60%",
+    "CHAIN: \"65-year-old man presents with fatigue\" -> \"recent weight loss of 12 pounds\" -> \"icteric skin and sclera\" -> \"amber urine sample\" -> \"thin-walled and enlarged gallbladder on ultrasound\" -> \"autoimmune process less likely due to age and presentation\" -> \"autoimmune hemolytic anemia less likely\" -> 50%"
+  ],
+  "enhanced_information": "The 65-year-old man presents with fatigue, significant weight loss, icteric skin and sclera, and amber urine, indicating possible liver dysfunction or biliary obstruction. The ultrasound shows a thin-walled and enlarged gallbladder, which raises suspicion for malignancy. Given the age, symptoms, and ultrasound findings, cholangiocarcinoma is a strong consideration due to its association with biliary obstruction and jaundice. Gallbladder adenocarcinoma is also a possibility but is less common. Pancreatic adenocarcinoma could cause similar symptoms but is less likely given the specific gallbladder findings. Iron deficiency anemia and autoimmune hemolytic anemia are less likely due to the absence of symptoms indicating anemia and the patient's presentation. Therefore, the most likely diagnosis is cholangiocarcinoma.",
+  "analysis": "The patient presents with fatigue, significant weight loss, jaundice (icteric skin and sclera), and amber urine, which are indicative of possible liver dysfunction or biliary obstruction. The abdominal ultrasound shows a thin-walled and enlarged gallbladder, which raises suspicion for malignancy. Given the patient's age (65 years), smoking history, and alcohol consumption, there is a higher risk for malignancies in the biliary tract. Cholangiocarcinoma is a strong consideration due to its association with biliary obstruction and jaundice. While gallbladder adenocarcinoma is also a possibility, it is less common than cholangiocarcinoma. Pancreatic adenocarcinoma could present similarly but is less likely given the specific ultrasound findings of the gallbladder. Autoimmune hemolytic anemia and iron deficiency anemia are less likely due to the absence of symptoms indicating anemia. Therefore, the most likely diagnosis is cholangiocarcinoma, supported by the clinical presentation and ultrasound findings.",
+  "answer": "opb",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      1,
+      2,
+      2
+    ],
+    "coverage_rates": [
+      16.666666666666664,
+      0.0,
+      16.666666666666664,
+      33.33333333333333,
+      33.33333333333333
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

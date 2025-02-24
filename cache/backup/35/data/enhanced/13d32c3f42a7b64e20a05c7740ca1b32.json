@@ -1,0 +1,127 @@
+{
+  "question": "A 71 year-old female is brought to the emergency room by her husband. The husband reports that they were taking a walk together one hour ago, when his wife experienced sudden, right arm and leg weakness. He noticed that she had slurred speech, and that she was not able to tell him where she was. The patient underwent an emergent CT scan, which was unremarkable, and was treated with tissue plasminogen activator (tPA). Which of the following EKG findings increases a patient's risk for this acute presentation?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Supraventricular tachycardia",
+    "opb": "Atrial bigeminy",
+    "opc": "Normal sinus rhythm",
+    "opd": "Prolonged QT",
+    "ope": "Atrial fibrillation"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Atrial Fibrillation",
+        "Thrombophilia",
+        "Atrial thrombosis"
+      ],
+      [
+        "Atrial Fibrillation",
+        "Obesity",
+        "Atrial thrombosis"
+      ],
+      [
+        "Atrial Fibrillation",
+        "ATRIAL THROMBUS",
+        "Atrial thrombosis"
+      ],
+      [
+        "Atrial thrombosis",
+        "Ischemic stroke",
+        "Embolism"
+      ],
+      [
+        "Atrial thrombosis",
+        "Pulmonary Embolism",
+        "Embolism"
+      ],
+      [
+        "Atrial thrombosis",
+        "Mitral Valve Stenosis",
+        "Embolism"
+      ],
+      [
+        "Embolism",
+        "Ischemic stroke"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Atrial Fibrillation)-CAUSES->(Thrombophilia)-COMPLICATES->(Atrial thrombosis)",
+      "(Atrial Fibrillation)-CAUSES->(Obesity)-PREDISPOSES->(Atrial thrombosis)",
+      "(Atrial Fibrillation)-CAUSES->(ATRIAL THROMBUS)-PREDISPOSES->(Atrial thrombosis)",
+      "(Atrial thrombosis)-CAUSES->(Ischemic stroke)-CAUSES->(Embolism)",
+      "(Atrial thrombosis)-CAUSES->(Pulmonary Embolism)-CAUSES->(Embolism)",
+      "(Atrial thrombosis)-COMPLICATES->(Mitral Valve Stenosis)-CAUSES->(Embolism)",
+      "(Embolism)-CAUSES->(Ischemic stroke)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Atrial Fibrillation)-CAUSES->(ATRIAL THROMBUS)-PREDISPOSES->(Atrial thrombosis)",
+      "(Embolism)-CAUSES->(Ischemic stroke)",
+      "(Atrial Fibrillation)-CAUSES->(Thrombophilia)-COMPLICATES->(Atrial thrombosis)",
+      "(Atrial Fibrillation)-CAUSES->(Obesity)-PREDISPOSES->(Atrial thrombosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Atrial fibrillation -> atrial thrombus formation -> embolism -> ischemic stroke -> acute presentation -> 80% CHAIN: Prolonged QT -> ventricular arrhythmia -> decreased cardiac output -> ischemic stroke -> acute presentation -> 80%"
+  ],
+  "enhanced_information": "Atrial fibrillation increases the risk for atrial thrombus formation, which can lead to embolism causing ischemic stroke, presenting as sudden weakness and slurred speech. Prolonged QT can lead to ventricular arrhythmias but is not directly linked to the acute presentation described. Therefore, atrial fibrillation is more likely to increase the risk for this acute presentation.",
+  "analysis": "Atrial fibrillation increases the risk for atrial thrombus formation, which can lead to embolism causing ischemic stroke, presenting as sudden weakness and slurred speech. Prolonged QT is not directly linked to the acute presentation described. Therefore, atrial fibrillation is more likely to increase the risk for this acute presentation.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

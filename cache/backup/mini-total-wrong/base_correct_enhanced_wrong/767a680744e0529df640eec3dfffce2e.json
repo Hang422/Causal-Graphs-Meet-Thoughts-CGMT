@@ -1,0 +1,134 @@
+{
+  "question": "A 35-year-old woman is presenting for a general wellness checkup. She is generally healthy and has no complaints. The patient does not smoke, drinks 1 alcoholic drink per day, and exercises 1 day per week. She recently had silicone breast implants placed 1 month ago. Her family history is notable for a heart attack in her mother and father at the age of 71 and 55 respectively. Her father had colon cancer at the age of 70. Her temperature is 99.0°F (37.2°C), blood pressure is 121/81 mmHg, pulse is 77/min, respirations are 14/min, and oxygen saturation is 98% on room air. Physical exam is unremarkable. Which of the following is the most appropriate initial step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Alcohol cessation",
+    "opb": "Colonoscopy at age 60",
+    "opc": "Colonoscopy now",
+    "opd": "Mammography at age 50",
+    "ope": "Mammography now"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Myocardial Infarction",
+        "Disease",
+        "Intestinal hemorrhage NOS",
+        "colonoscopy"
+      ],
+      [
+        "Myocardial Infarction",
+        "Disease",
+        "Sedation",
+        "colonoscopy"
+      ],
+      [
+        "Myocardial Infarction",
+        "Infection",
+        "Sedation",
+        "colonoscopy"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Myocardial Infarction)-CAUSES->(Disease)-CAUSES->(Intestinal hemorrhage NOS)-CAUSES->(colonoscopy)",
+      "(Myocardial Infarction)-CAUSES->(Disease)-CAUSES->(Sedation)-CAUSES->(colonoscopy)",
+      "(Myocardial Infarction)-CAUSES->(Infection)-CAUSES->(Sedation)-CAUSES->(colonoscopy)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "colonoscopy",
+        "Hypoxia",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "Mammography"
+      ],
+      [
+        "colonoscopy",
+        "Obstruction",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "Mammography"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(colonoscopy)-DIAGNOSES->(Hypoxia)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Mammography)",
+      "(colonoscopy)-DIAGNOSES->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Mammography)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Myocardial Infarction)-CAUSES->(Disease)-CAUSES->(Sedation)-CAUSES->(colonoscopy)",
+      "(Myocardial Infarction)-CAUSES->(Infection)-CAUSES->(Sedation)-CAUSES->(colonoscopy)",
+      "(Myocardial Infarction)-CAUSES->(Disease)-CAUSES->(Intestinal hemorrhage NOS)-CAUSES->(colonoscopy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient is 35 years old\" -> \"Family history of heart attack and colon cancer\" -> \"Guidelines recommend colonoscopy starting at age 45\" -> \"Patient is below recommended age for colonoscopy\" -> \"Mammography recommended starting at age 50\" -> \"Patient is below recommended age for mammography\" -> \"No immediate intervention needed\" -> 85%",
+    "CHAIN: \"Patient has silicone breast implants\" -> \"Routine screening for breast cancer recommended\" -> \"Mammography recommended starting at age 50\" -> \"Patient is 35 years old\" -> \"No current indication for mammography\" -> \"Focus on preventive measures\" -> 80%",
+    "CHAIN: \"Patient has no current complaints\" -> \"General wellness checkup indicates no immediate health issues\" -> \"Family history suggests increased risk for certain cancers\" -> \"Colonoscopy recommended at age 60 due to family history\" -> \"Patient is currently 35 years old\" -> \"No immediate need for colonoscopy\" -> 75%",
+    "CHAIN: \"Patient drinks 1 alcoholic drink per day\" -> \"Moderate alcohol consumption\" -> \"No immediate need for alcohol cessation\" -> \"Family history of heart disease\" -> \"Monitor lifestyle factors\" -> 70%"
+  ],
+  "enhanced_information": "The patient is 35 years old with a family history of heart disease and colon cancer. Current guidelines recommend starting colonoscopy at age 45 for average-risk individuals, and at age 40 for those with a family history of colorectal cancer. However, the patient is currently 35, so there is no immediate need for a colonoscopy now. Mammography is recommended starting at age 50, and since the patient is 35, there is no current indication for mammography either. The patient's moderate alcohol consumption does not necessitate immediate cessation, but lifestyle factors should be monitored due to her family history of heart disease. Therefore, the most appropriate initial step in management is to continue monitoring her health without immediate interventions for colonoscopy or mammography.",
+  "analysis": "The patient is 35 years old and has a family history of heart disease and colon cancer. Current guidelines suggest that average-risk individuals should begin screening for colorectal cancer at age 45, and those with a family history should start at age 40. Since the patient is only 35, there is no immediate need for a colonoscopy now. Regarding mammography, guidelines recommend starting at age 50 for average-risk women, and again, at 35, there is no current indication for mammography. The patient's alcohol consumption is moderate and does not require immediate cessation. Therefore, the most appropriate initial step in management is to continue monitoring her health without immediate interventions for colonoscopy or mammography. This aligns with the consensus that preventive screenings should be initiated based on age and risk factors, which do not currently necessitate action for this patient. Thus, the best-supported option is to recommend a colonoscopy at age 60, as it aligns with the guidelines for her age and family history.",
+  "answer": "opb",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      100.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

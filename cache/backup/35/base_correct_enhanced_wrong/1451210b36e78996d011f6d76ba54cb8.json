@@ -1,0 +1,87 @@
+{
+  "question": "A 48-year-old man comes to the physician because of worsening shortness of breath and nocturnal cough for the past 2 weeks. On two occasions, his cough was bloody. He had a heart condition as a child that was treated with antibiotics. He emigrated to the US from Kazakhstan 15 years ago. Pulmonary examination shows crackles at both lung bases. Cardiac examination is shown. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Aortic valve regurgitation",
+    "opb": "Mitral valve prolapse",
+    "opc": "Mitral valve stenosis",
+    "opd": "Mitral valve regurgitation",
+    "ope": "Tricuspid valve stenosis\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Rales",
+        "Pulmonary Edema"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Rales)-CAUSES->(Pulmonary Edema)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Basal segment of lung",
+        "Pneumonia",
+        "Pulmonary Edema"
+      ],
+      [
+        "Basal segment of lung",
+        "Pneumonia",
+        "Pulmonary Edema"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Basal segment of lung)-LOCATION_OF->(Pneumonia)-CAUSES->(Pulmonary Edema)",
+      "(Basal segment of lung)-LOCATION_OF->(Pneumonia)-COMPLICATES->(Pulmonary Edema)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Rales)-CAUSES->(Pulmonary Edema)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Heart condition as a child -> history of antibiotics -> possible infective endocarditis -> 60% CHAIN: Crackles at both lung bases -> pulmonary edema -> 70% CHAIN: Shortness of breath and nocturnal cough -> worsening symptoms -> possible heart failure -> 80% CHAIN: Bloody cough -> possible pulmonary hemorrhage -> 50% CHAIN: Emigrated from Kazakhstan -> potential exposure to infectious diseases -> 40% CHAIN: Pulmonary examination findings -> suggestive of interstitial lung disease -> 60% CHAIN: Cardiac examination findings -> possible signs of valvular heart disease -> 70% CHAIN: Given the symptoms and findings -> Mitral valve regurgitation is the most likely diagnosis -> 60%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 48-year-old man with worsening shortness of breath, nocturnal cough, and bloody cough is Mitral valve regurgitation. This is supported by the history of a heart condition as a child, pulmonary examination findings of crackles at both lung bases, and cardiac examination showing possible signs of valvular heart disease.",
+  "analysis": "The most likely diagnosis for this 48-year-old man with worsening shortness of breath, nocturnal cough, and bloody cough, along with a history of a heart condition as a child, crackles at both lung bases, and cardiac examination findings, is Mitral valve regurgitation. This condition can lead to pulmonary congestion and symptoms like cough and shortness of breath. The presence of crackles suggests pulmonary edema secondary to left-sided heart failure, which is commonly seen in mitral valve regurgitation.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

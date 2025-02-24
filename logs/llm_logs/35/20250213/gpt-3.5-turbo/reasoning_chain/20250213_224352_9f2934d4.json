@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_224352",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "9f2934d4",
+  "question_text": "A 68-year-old man is brought to the emergency department by ambulance from a homeless shelter. The report from the shelter describes the man as a loner expressing symptoms of depression. He has been living at the shelter for approximately 10 months and has no family or friends and few visitors. He spends most of his evenings drinking alcohol and being by himself. Which of the following statements is most accurate regarding this patient?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 68-year-old man is brought to the emergency department by ambulance from a homeless shelter. The report from the shelter describes the man as a loner expressing symptoms of depression. He has been living at the shelter for approximately 10 months and has no family or friends and few visitors. He spends most of his evenings drinking alcohol and being by himself. Which of the following statements is most accurate regarding this patient?\n\n            ### Options\n    opa. Males are more likely to die from suicide than females.\nopb. Males attempt suicide more than females.\nopc. Males are more likely to use drug overdose as a means of suicide.\nopd. Females are more likely to self-inflict fatal injuries.\nope. Suicide risk is highest among middle-age white women.\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Social isolation -> increased risk of depression -> suicidal ideation -> increased suicide risk in this patient -> 80%  \nCHAIN: Alcohol abuse -> impulsive behavior -> increased suicide risk -> 75%  \nCHAIN: Lack of social support -> feelings of hopelessness -> increased suicide risk -> 70%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

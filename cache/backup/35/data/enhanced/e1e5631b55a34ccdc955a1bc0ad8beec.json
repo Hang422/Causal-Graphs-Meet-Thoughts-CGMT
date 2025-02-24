@@ -1,0 +1,109 @@
+{
+  "question": "A 50-year-old woman comes to the physician for the evaluation of excessive hair growth on her chin over the past 2 weeks. She also reports progressive enlargement of her gums. Three months ago, she underwent a liver transplantation due to Wilson disease. Following the procedure, the patient was started on transplant rejection prophylaxis. She has a history of poorly-controlled type 2 diabetes mellitus. Temperature is 37°C (98.6°F), pulse is 80/min, respirations are 22/min, and blood pressure is 150/80 mm Hg. Physical examination shows dark-pigmented, coarse hair on the chin, upper lip, and chest. The gingiva and the labial mucosa are swollen. There is a well-healed scar on her right lower abdomen. Which of the following drugs is the most likely cause of this patient's findings?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Daclizumab",
+    "opb": "Cyclosporine",
+    "opc": "Sirolimus",
+    "opd": "Tacrolimus",
+    "ope": "Methotrexate"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Cyclosporine",
+        "Gingival Hyperplasia"
+      ],
+      [
+        "Cyclosporine",
+        "Disease",
+        "Hirsutism"
+      ],
+      [
+        "Cyclosporine",
+        "Acne",
+        "Hirsutism"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Cyclosporine)-CAUSES->(Gingival Hyperplasia)",
+      "(Cyclosporine)-CAUSES->(Disease)-CAUSES->(Hirsutism)",
+      "(Cyclosporine)-TREATS->(Acne)-CAUSES->(Hirsutism)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Therapeutic immunosuppression",
+        "Pathogenesis",
+        "Cyclosporine"
+      ],
+      [
+        "Therapeutic immunosuppression",
+        "Extravasation",
+        "Cyclosporine"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREVENTS",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Therapeutic immunosuppression)-TREATS->(Pathogenesis)-ASSOCIATED_WITH->(Cyclosporine)",
+      "(Therapeutic immunosuppression)-PREVENTS->(Extravasation)-ASSOCIATED_WITH->(Cyclosporine)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cyclosporine)-CAUSES->(Gingival Hyperplasia)",
+      "(Therapeutic immunosuppression)-TREATS->(Pathogenesis)-ASSOCIATED_WITH->(Cyclosporine)",
+      "(Therapeutic immunosuppression)-PREVENTS->(Extravasation)-ASSOCIATED_WITH->(Cyclosporine)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Liver transplantation\" -> \"Transplant rejection prophylaxis\" -> \"Immunosuppressive therapy\" -> \"Cyclosporine\" -> 80% CHAIN: \"Cyclosporine\" -> \"Gingival hyperplasia\" -> \"Enlargement of gums\" -> 90% CHAIN: \"Poorly-controlled type 2 diabetes mellitus\" -> \"Excessive hair growth\" -> \"Hirsutism\" -> 70% CHAIN: \"Cyclosporine\" -> \"Hirsutism\" -> \"Excessive hair growth\" -> 80%"
+  ],
+  "enhanced_information": "Cyclosporine is the most likely cause of the patient's findings. Cyclosporine is known to cause gingival hyperplasia, which aligns with the patient's swollen gums. Additionally, the patient's excessive hair growth can be attributed to hirsutism induced by Cyclosporine. The evidence paths confirm the association between Cyclosporine and gingival hyperplasia, supporting this conclusion.",
+  "analysis": "Cyclosporine is a well-known medication associated with gingival hyperplasia and hirsutism. The patient's presentation of swollen gums and excessive hair growth aligns with these side effects of Cyclosporine. Given the patient's history of liver transplantation and the known adverse effects of Cyclosporine, it is the most likely cause of her current findings.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

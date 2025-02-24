@@ -1,0 +1,117 @@
+{
+  "question": "A 72-year-old man arrives at the emergency department 30 minutes after developing rapid onset right-sided weakness and decreased sensation on the right side of his body. The patient’s wife also reports that he has had difficulty forming sentences. His wife adds that these symptoms were at their maximum within a few minutes of the incident and began to resolve almost instantaneously. The patient says he had a related episode of painless visual loss in his left eye that resolved after about 10–20 minutes about 3 months ago. His past medical history includes diabetes mellitus type 2 and essential hypertension. The patient reports a 50 pack-year smoking history. His blood pressure is 140/60 mm Hg, and his temperature is 36.5°C (97.7°F). Neurological examination is significant for a subtle weakness of the right hand. A noncontrast CT scan of the head is unremarkable, and a carotid Doppler ultrasound shows 10% stenosis of the right internal carotid artery and 50% stenosis of the left internal carotid artery. Which of the following is the expected change in resistance to blood flow through the stenotic artery most likely responsible for this patient’s current symptoms?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "It will double",
+    "opb": "It will be 4 times greater",
+    "opc": "It will be 8 times greater",
+    "opd": "It will be 16 times greater",
+    "ope": "No change"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Blood Circulation",
+        "Pancreas",
+        "Pancreatitis",
+        "Disease",
+        "Transient Ischemic Attack"
+      ],
+      [
+        "Blood Circulation",
+        "Pancreas",
+        "Pancreatitis",
+        "Hypertensive disease",
+        "Transient Ischemic Attack"
+      ]
+    ],
+    "relationships": [
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Disease)-CAUSES->(Transient Ischemic Attack)",
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-CAUSES->(Hypertensive disease)-CAUSES->(Transient Ischemic Attack)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Internal carotid artery structure",
+        "Disease",
+        "Blood Circulation"
+      ],
+      [
+        "Internal carotid artery structure",
+        "Complication",
+        "Blood Circulation"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Internal carotid artery structure)-LOCATION_OF->(Disease)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Internal carotid artery structure)-LOCATION_OF->(Complication)-MANIFESTATION_OF->(Blood Circulation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Internal carotid artery structure)-LOCATION_OF->(Disease)-MANIFESTATION_OF->(Blood Circulation)",
+      "(Internal carotid artery structure)-LOCATION_OF->(Complication)-MANIFESTATION_OF->(Blood Circulation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Stenosis in the internal carotid artery\" -> \"increased resistance to blood flow\" -> \"reduced cerebral perfusion\" -> \"right-sided weakness and sensory loss\" -> \"expected change in resistance is significant\" -> \"likely 16 times greater due to the severity of stenosis\" -> 85%",
+    "CHAIN: \"Carotid artery stenosis\" -> \"increased turbulence and resistance\" -> \"compromised blood flow to the brain\" -> \"neurological deficits observed\" -> \"higher resistance correlates with greater stenosis\" -> \"expected change in resistance is 8 times greater\" -> 75%",
+    "CHAIN: \"Patient with carotid artery stenosis\" -> \"reduced lumen diameter\" -> \"increased resistance to blood flow\" -> \"potential for transient ischemic attacks\" -> \"expected change in resistance could be significant\" -> \"likely 4 times greater\" -> 70%",
+    "CHAIN: \"Stenosis leads to increased resistance\" -> \"blood flow dynamics altered\" -> \"risk of ischemic symptoms\" -> \"expected change in resistance is unclear\" -> \"possible 16 times greater\" -> 60%"
+  ],
+  "enhanced_information": "The patient presents with symptoms consistent with transient ischemic attack (TIA) due to carotid artery stenosis. Stenosis in the internal carotid artery leads to increased resistance to blood flow, which can compromise cerebral perfusion and result in neurological deficits. According to the consensus in vascular physiology, the resistance to blood flow through a stenotic artery can be estimated using the formula for resistance in a cylindrical vessel, which indicates that resistance increases significantly as the diameter decreases. For a stenosis of 50%, the resistance is expected to be approximately 4 times greater than normal. Therefore, while the chains suggested varying degrees of increased resistance, the most accurate consensus-supported interpretation is that the expected change in resistance is likely 4 times greater due to the 50% stenosis observed in the left internal carotid artery, which is the most significant stenosis in this case.",
+  "analysis": "The patient presents with symptoms indicative of a transient ischemic attack (TIA), likely due to carotid artery stenosis. The Doppler ultrasound shows 50% stenosis of the left internal carotid artery, which is significant in terms of blood flow resistance. According to vascular physiology, resistance in a cylindrical vessel increases as the diameter decreases. Specifically, for a 50% stenosis, the resistance to blood flow is expected to be approximately 4 times greater than normal. This aligns with the consensus in medical literature regarding the relationship between arterial stenosis and resistance. Therefore, the most accurate answer regarding the expected change in resistance to blood flow through the stenotic artery is that it will be 4 times greater. This conclusion is supported by the enhanced information provided, which aligns with established medical principles.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

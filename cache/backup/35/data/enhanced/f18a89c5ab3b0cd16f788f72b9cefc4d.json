@@ -1,0 +1,231 @@
+{
+  "question": "A 27-year-old man with seizure disorder is brought to the emergency department by his girlfriend after falling while climbing a building. The girlfriend reports that he was started on a new medication for treatment of depressed mood, low energy, and difficulty sleeping 2 weeks ago by his physician. She says that he has had unstable emotions for several months. Over the past 3 days, he has not slept and has spent all his time “training to climb Everest.” He has never climbed before this period. He also spent all of his savings buying mountain climbing gear. Physical examination shows ecchymoses over his right upper extremity, pressured speech, and easy distractibility. He is alert but not oriented to place. Which of the following drugs is the most likely cause of this patient's current behavior?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Lithium",
+    "opb": "Quetiapine",
+    "opc": "Bupropion",
+    "opd": "Venlafaxine",
+    "ope": "Selegiline"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Sleep disturbances",
+        "Symptoms",
+        "Hypomania"
+      ],
+      [
+        "Sleep disturbances",
+        "Major Depressive Disorder",
+        "Hypomania"
+      ],
+      [
+        "Sleep disturbances",
+        "Disability NOS",
+        "Hypomania"
+      ],
+      [
+        "Depressed mood",
+        "COVID-19",
+        "Symptoms",
+        "Hypomania"
+      ],
+      [
+        "Depressed mood",
+        "Cardiovascular Diseases",
+        "Symptoms",
+        "Hypomania"
+      ],
+      [
+        "Depressed mood",
+        "Cardiovascular Diseases",
+        "Disability NOS",
+        "Hypomania"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Sleep disturbances)-CAUSES->(Symptoms)-PREDISPOSES->(Hypomania)",
+      "(Sleep disturbances)-PREDISPOSES->(Major Depressive Disorder)-COMPLICATES->(Hypomania)",
+      "(Sleep disturbances)-CAUSES->(Disability NOS)-MANIFESTATION_OF->(Hypomania)",
+      "(Depressed mood)-CAUSES->(COVID-19)-CAUSES->(Symptoms)-PREDISPOSES->(Hypomania)",
+      "(Depressed mood)-MANIFESTATION_OF->(Cardiovascular Diseases)-CAUSES->(Symptoms)-PREDISPOSES->(Hypomania)",
+      "(Depressed mood)-MANIFESTATION_OF->(Cardiovascular Diseases)-CAUSES->(Disability NOS)-MANIFESTATION_OF->(Hypomania)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hypomania",
+        "Symptoms",
+        "Menopause",
+        "Antidepressive Agents",
+        "Pressure of speech"
+      ],
+      [
+        "Hypomania",
+        "Disease",
+        "Physiological Processes",
+        "Antidepressive Agents",
+        "Pressure of speech"
+      ],
+      [
+        "Pressure of speech",
+        "Disease",
+        "Virus",
+        "Pharmaceutical Preparations"
+      ],
+      [
+        "Pressure of speech",
+        "Disease",
+        "Biological feedback",
+        "Pharmaceutical Preparations"
+      ],
+      [
+        "Manic",
+        "Disease",
+        "Virus",
+        "Pharmaceutical Preparations"
+      ],
+      [
+        "Manic",
+        "Disease",
+        "Virus",
+        "Pharmaceutical Preparations"
+      ],
+      [
+        "Impulsive Behavior",
+        "Disease Progression",
+        "Genes",
+        "Pharmaceutical Preparations"
+      ],
+      [
+        "Impulsive Behavior",
+        "Disease Progression",
+        "Genes",
+        "Pharmaceutical Preparations"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "TREATS"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "TREATS"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH",
+        "ISA"
+      ],
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hypomania)-ISA->(Symptoms)-MANIFESTATION_OF->(Menopause)-ASSOCIATED_WITH->(Antidepressive Agents)-TREATS->(Pressure of speech)",
+      "(Hypomania)-ISA->(Disease)-MANIFESTATION_OF->(Physiological Processes)-ASSOCIATED_WITH->(Antidepressive Agents)-TREATS->(Pressure of speech)",
+      "(Pressure of speech)-ISA->(Disease)-ASSOCIATED_WITH->(Virus)-LOCATION_OF->(Pharmaceutical Preparations)",
+      "(Pressure of speech)-ISA->(Disease)-MANIFESTATION_OF->(Biological feedback)-ASSOCIATED_WITH->(Pharmaceutical Preparations)",
+      "(Manic)-CAUSES->(Disease)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Pharmaceutical Preparations)",
+      "(Manic)-MANIFESTATION_OF->(Disease)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Pharmaceutical Preparations)",
+      "(Impulsive Behavior)-COMPLICATES->(Disease Progression)-ASSOCIATED_WITH->(Genes)-ISA->(Pharmaceutical Preparations)",
+      "(Impulsive Behavior)-COMPLICATES->(Disease Progression)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Pharmaceutical Preparations)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Sleep disturbances)-PREDISPOSES->(Major Depressive Disorder)-COMPLICATES->(Hypomania)",
+      "(Depressed mood)-CAUSES->(COVID-19)-CAUSES->(Symptoms)-PREDISPOSES->(Hypomania)",
+      "(Depressed mood)-MANIFESTATION_OF->(Cardiovascular Diseases)-CAUSES->(Symptoms)-PREDISPOSES->(Hypomania)",
+      "(Depressed mood)-MANIFESTATION_OF->(Cardiovascular Diseases)-CAUSES->(Disability NOS)-MANIFESTATION_OF->(Hypomania)",
+      "(Manic)-CAUSES/MANIFESTATION_OF->(Disease)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Pharmaceutical Preparations)",
+      "(Impulsive Behavior)-COMPLICATES->(Disease Progression)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH/ISA->(Pharmaceutical Preparations)",
+      "(Sleep disturbances)-CAUSES->(Symptoms)-PREDISPOSES->(Hypomania)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"New medication for depressed mood, low energy, and difficulty sleeping\" -> \"Possible medication-induced mania or hypomania\" -> \"Symptoms of mania: pressured speech, easy distractibility, decreased need for sleep, impulsivity\" -> \"Likely bipolar disorder exacerbation due to medication\" -> 80%"
+  ],
+  "enhanced_information": "The most likely cause of the patient's current behavior is lithium, as the new medication for his symptoms of depressed mood, low energy, and difficulty sleeping can induce mania or hypomania. The symptoms of pressured speech, easy distractibility, decreased need for sleep, and impulsivity are consistent with a likely bipolar disorder exacerbation due to medication. The evidence paths regarding sleep disturbances predisposing to hypomania further support this conclusion.",
+  "analysis": "The core medical principle here is recognizing medication-induced mania or hypomania in a patient with a seizure disorder who was started on a new medication for symptoms of depression, low energy, and difficulty sleeping. The symptoms of pressured speech, easy distractibility, decreased need for sleep, and impulsivity are consistent with a likely bipolar disorder exacerbation due to medication. The enhanced information provided aligns with the known fact that lithium, commonly used for bipolar disorder, can induce manic or hypomanic episodes. This patient's presentation is highly suggestive of lithium-induced mania.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

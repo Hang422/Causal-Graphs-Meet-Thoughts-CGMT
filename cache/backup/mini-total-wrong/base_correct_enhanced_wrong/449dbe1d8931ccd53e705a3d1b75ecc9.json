@@ -1,0 +1,179 @@
+{
+  "question": "A 29-year-old woman at 38 weeks gestation comes to the emergency room with regular contractions and spontaneous rupture of membranes. She subsequently delivers a 3500g (7lbs 7oz) newborn with ambiguous genitalia by spontaneous vaginal delivery. Her pregnancy and labor was uncomplicated. Examination of the newborn demonstrated no palpable gonads at the inguinal canal or perineum. Karyotype analysis demonstrated 46,XX. What is the best explanation for this patient’s presentation?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Defective androgen receptors",
+    "opb": "Defective migration of gonadotropin-releasing hormone (GnRH) releasing neurons",
+    "opc": "Deficiency of 5-alpha-reductase",
+    "opd": "Exposure to excessive androgenic steroids during gestation",
+    "ope": "Ovarian dysgenesis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Release - action",
+        "Chronic Fatigue Syndrome",
+        "Disease",
+        "Klinefelter's Syndrome"
+      ],
+      [
+        "Release - action",
+        "Depression, Postpartum",
+        "Disease",
+        "Klinefelter's Syndrome"
+      ],
+      [
+        "Release - action",
+        "Chronic Fatigue Syndrome",
+        "Functional disorder",
+        "Klinefelter's Syndrome"
+      ],
+      [
+        "Gonadorelin",
+        "Klinefelter's Syndrome"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Release - action)-TREATS->(Chronic Fatigue Syndrome)-CAUSES->(Disease)-CAUSES->(Klinefelter's Syndrome)",
+      "(Release - action)-TREATS->(Depression, Postpartum)-CAUSES->(Disease)-CAUSES->(Klinefelter's Syndrome)",
+      "(Release - action)-TREATS->(Chronic Fatigue Syndrome)-CAUSES->(Functional disorder)-CAUSES->(Klinefelter's Syndrome)",
+      "(Gonadorelin)-TREATS->(Klinefelter's Syndrome)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Androgens",
+        "Androgenic steroid"
+      ],
+      [
+        "Androgens",
+        "Androgenic steroid"
+      ],
+      [
+        "Gonadal structure",
+        "Eye",
+        "Tissue fiber",
+        "Release - action"
+      ],
+      [
+        "Gonadal structure",
+        "Fatty Acids, Nonesterified",
+        "Smooth muscle (tissue)",
+        "Release - action"
+      ],
+      [
+        "Neurons",
+        "Genes",
+        "Klinefelter's Syndrome"
+      ],
+      [
+        "Neurons",
+        "Genes",
+        "Klinefelter's Syndrome"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA"
+      ],
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "INTERACTS_WITH",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Androgens)-ISA->(Androgenic steroid)",
+      "(Androgens)-INTERACTS_WITH->(Androgenic steroid)",
+      "(Gonadal structure)-PART_OF->(Eye)-PART_OF->(Tissue fiber)-LOCATION_OF->(Release - action)",
+      "(Gonadal structure)-LOCATION_OF->(Fatty Acids, Nonesterified)-PART_OF->(Smooth muscle (tissue))-LOCATION_OF->(Release - action)",
+      "(Neurons)-LOCATION_OF->(Genes)-CAUSES->(Klinefelter's Syndrome)",
+      "(Neurons)-INTERACTS_WITH->(Genes)-ASSOCIATED_WITH->(Klinefelter's Syndrome)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Gonadorelin)-TREATS->(Klinefelter's Syndrome)",
+      "(Androgens)-INTERACTS_WITH/ISA->(Androgenic steroid)",
+      "(Neurons)-INTERACTS_WITH/LOCATION_OF->(Genes)-ASSOCIATED_WITH/CAUSES->(Klinefelter's Syndrome)",
+      "(Release - action)-TREATS->(Depression, Postpartum)-CAUSES->(Disease)-CAUSES->(Klinefelter's Syndrome)",
+      "(Release - action)-TREATS->(Chronic Fatigue Syndrome)-CAUSES->(Functional disorder)-CAUSES->(Klinefelter's Syndrome)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: 46,XX karyotype -> \"Ambiguous genitalia\" -> \"Possible androgen insensitivity syndrome\" -> \"Defective androgen receptors\" -> 85%",
+    "CHAIN: 46,XX karyotype -> \"No palpable gonads\" -> \"Indicates possible gonadal dysgenesis\" -> \"Ovarian dysgenesis\" -> 70%",
+    "CHAIN: 46,XX karyotype -> \"Ambiguous genitalia\" -> \"Possible exposure to androgens\" -> \"Exposure to excessive androgenic steroids during gestation\" -> 60%",
+    "CHAIN: 46,XX karyotype -> \"Absence of male genital structures\" -> \"Deficiency of 5-alpha-reductase\" -> \"Inability to convert testosterone to DHT\" -> 75%",
+    "CHAIN: 46,XX karyotype -> \"Absence of gonads\" -> \"Defective migration of GnRH releasing neurons\" -> \"Possible hypogonadotropic hypogonadism\" -> 50%"
+  ],
+  "enhanced_information": "The patient presents with a 46,XX karyotype and ambiguous genitalia, indicating a possible disorder of sexual development. The absence of palpable gonads suggests a condition affecting gonadal development. The most likely explanation is androgen insensitivity syndrome (AIS), which is caused by defective androgen receptors. In AIS, individuals with a 46,XX karyotype develop female external genitalia despite having XY gonadal tissue due to the body's inability to respond to androgens. This aligns with the reasoning chain indicating 'Defective androgen receptors' as the best explanation. Other options, such as ovarian dysgenesis and exposure to excessive androgens, do not fit the clinical picture as well as AIS. The evidence paths regarding androgens and their interactions support the relevance of androgen insensitivity in this case.",
+  "analysis": "The case presents a 29-year-old woman who delivered a newborn with ambiguous genitalia and a 46,XX karyotype. The absence of palpable gonads suggests a disorder of sexual development. The most likely explanation for this presentation is androgen insensitivity syndrome (AIS), which occurs due to defective androgen receptors. In AIS, individuals with a 46,XX karyotype can develop female external genitalia despite having XY gonadal tissue, as their bodies cannot respond to androgens. Other options, such as ovarian dysgenesis or exposure to excessive androgens, do not align with the findings of ambiguous genitalia and absent gonads as clearly as AIS does. Therefore, the best-supported option is 'Defective androgen receptors'.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      0,
+      4
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      20.0,
+      0.0,
+      80.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

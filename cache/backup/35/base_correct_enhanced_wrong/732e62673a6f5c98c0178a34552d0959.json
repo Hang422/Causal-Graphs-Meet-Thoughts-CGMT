@@ -1,0 +1,146 @@
+{
+  "question": "An 8-year-old boy is brought by his mother to his pediatrician because his urine is tea-colored and his face has appeared puffy for the past 2 days. He suffered a fever and sore throat several weeks ago that was treated with ibuprofen. The boy was born at 39 weeks gestation via spontaneous vaginal delivery. He is up to date on all vaccines and is meeting all developmental milestones. Today, his heart rate is 100/min, the respiratory rate is 22/min, the blood pressure is 130/80 mm Hg, and the temperature is 36.8°C (98.2°F). On physical exam the boy has mild periorbital swelling. A urine dipstick reveals 1+ proteinuria and urinalysis reveals 10–15 red cells/high power field and dysmorphic red cells. The pediatrician is concerned with the child’s hypertension, facial edema, and abnormal urine analysis results. Which of the following best represents the mechanism of this patient’s condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Diffuse mesangial IgA deposition",
+    "opb": "Immune complex deposition",
+    "opc": "Complement-dependent antibody reaction",
+    "opd": "Complement-independent reaction",
+    "ope": "Podocyte injury"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fever",
+        "Disease",
+        "Acute post-streptococcal glomerulonephritis"
+      ],
+      [
+        "Fever",
+        "Hemolytic-Uremic Syndrome",
+        "Acute post-streptococcal glomerulonephritis"
+      ],
+      [
+        "Pharyngitis",
+        "Disease",
+        "Acute post-streptococcal glomerulonephritis"
+      ],
+      [
+        "Pharyngitis",
+        "Infection",
+        "Acute post-streptococcal glomerulonephritis"
+      ],
+      [
+        "Pharyngitis",
+        "Skin Diseases, Infectious",
+        "Acute post-streptococcal glomerulonephritis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Acute post-streptococcal glomerulonephritis)",
+      "(Fever)-MANIFESTATION_OF->(Hemolytic-Uremic Syndrome)-COMPLICATES->(Acute post-streptococcal glomerulonephritis)",
+      "(Pharyngitis)-CAUSES->(Disease)-CAUSES->(Acute post-streptococcal glomerulonephritis)",
+      "(Pharyngitis)-CAUSES->(Infection)-CAUSES->(Acute post-streptococcal glomerulonephritis)",
+      "(Pharyngitis)-CAUSES->(Skin Diseases, Infectious)-CAUSES->(Acute post-streptococcal glomerulonephritis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Acute post-streptococcal glomerulonephritis",
+        "Disease",
+        "Pathogenesis",
+        "Antigen-Antibody Complex"
+      ],
+      [
+        "Acute post-streptococcal glomerulonephritis",
+        "Disease",
+        "Pathogenesis",
+        "Antigen-Antibody Complex"
+      ],
+      [
+        "Periorbital swelling",
+        "COVID-19",
+        "Nephrotic Syndrome"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Acute post-streptococcal glomerulonephritis)-CAUSES->(Disease)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Antigen-Antibody Complex)",
+      "(Acute post-streptococcal glomerulonephritis)-MANIFESTATION_OF->(Disease)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Antigen-Antibody Complex)",
+      "(Periorbital swelling)-ASSOCIATED_WITH->(COVID-19)-CAUSES->(Nephrotic Syndrome)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Acute post-streptococcal glomerulonephritis)-streptococcal glomerulonephritis)->(Disease)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Antigen-Antibody Complex)-Antibody Complex)",
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Acute post-streptococcal glomerulonephritis)",
+      "(Fever)-MANIFESTATION_OF->(Hemolytic-Uremic Syndrome)-COMPLICATES->(Acute post-streptococcal glomerulonephritis)",
+      "(Periorbital swelling)-ASSOCIATED_WITH->(COVID-19)-CAUSES->(Nephrotic Syndrome)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Recent fever and sore throat\" -> \"Poststreptococcal glomerulonephritis\" -> \"Immune complex deposition\" -> 80% CHAIN: \"Periorbital swelling and tea-colored urine\" -> \"Nephrotic syndrome\" -> \"Podocyte injury\" -> 70% CHAIN: \"Hypertension and proteinuria\" -> \"Renal pathology\" -> \"Diffuse mesangial IgA deposition\" -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with hypertension, proteinuria, and abnormal urine analysis results is most likely due to diffuse mesangial IgA deposition, consistent with IgA nephropathy. This aligns with the chain linking hypertension and renal pathology to this mechanism. The evidence paths do not provide additional relevant information in this context.",
+  "analysis": "The patient's presentation of hypertension, proteinuria, and abnormal urine analysis results, along with the presence of dysmorphic red cells, is most indicative of IgA nephropathy. This condition is characterized by diffuse mesangial IgA deposition in the kidneys, leading to glomerulonephritis. The immune complex deposition of IgA in the mesangium triggers an inflammatory response, causing renal damage and subsequent clinical manifestations. This mechanism aligns with the patient's clinical findings and supports the diagnosis of IgA nephropathy.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

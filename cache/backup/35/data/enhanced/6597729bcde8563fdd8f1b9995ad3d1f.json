@@ -1,0 +1,147 @@
+{
+  "question": "An 11-year-old boy presents to his pediatrician for a wellness checkup. The child is an immigrant, and this is his first visit. The patient is in the 99th percentile for height and 50th percentile for weight. The child is struggling in school, and basic cognitive testing suggests he is moderately mentally disabled. His temperature is 99.5°F (37.5°C), blood pressure is 107/68 mmHg, pulse is 90/min, respirations are 17/min, and oxygen saturation is 98% on room air. Laboratory values are obtained and shown below.\n\nHemoglobin: 9 g/dL\nHematocrit: 30%\nMCV: 110 fL\nLeukocyte count: 5,500/mm^3 with normal differential\nPlatelet count: 192,000/mm^3\n\nSerum:\nNa+: 140 mEq/L\nCl-: 101 mEq/L\nK+: 4.4 mEq/L\nHCO3-: 24 mEq/L\nBUN: 20 mg/dL\nGlucose: 90 mg/dL\nCreatinine: 1.0 mg/dL\nCa2+: 10.0 mg/dL\nAST: 12 U/L\nALT: 10 U/L\n\nThe patient is started on vitamin B9 and B12. Which of the following interventions could decrease the risk for cardiac complications the most in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Iron",
+    "opb": "Pyridoxine",
+    "opc": "Fish oil",
+    "opd": "Vitamin D",
+    "ope": "No interventions needed"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Decreased hemoglobin",
+        "Anemia"
+      ],
+      [
+        "Anemia",
+        "Cardiac complication"
+      ],
+      [
+        "Decreased hemoglobin",
+        "Anemia"
+      ],
+      [
+        "Anemia",
+        "Cardiac complication"
+      ],
+      [
+        "Cardiac complication",
+        "Disease",
+        "Iron deficiency"
+      ],
+      [
+        "Cardiac complication",
+        "Myocardial Infarction",
+        "Iron deficiency"
+      ],
+      [
+        "Cardiac complication",
+        "Hypertensive disease",
+        "Iron deficiency"
+      ],
+      [
+        "Anemia",
+        "Cardiac complication"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Decreased hemoglobin)-PREDISPOSES->(Anemia)",
+      "(Anemia)-CAUSES->(Cardiac complication)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Anemia)",
+      "(Anemia)-CAUSES->(Cardiac complication)",
+      "(Cardiac complication)-CAUSES->(Disease)-CAUSES->(Iron deficiency)",
+      "(Cardiac complication)-CAUSES->(Myocardial Infarction)-CAUSES->(Iron deficiency)",
+      "(Cardiac complication)-CAUSES->(Hypertensive disease)-CAUSES->(Iron deficiency)",
+      "(Anemia)-CAUSES->(Cardiac complication)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hematocrit procedure",
+        "Anemia"
+      ],
+      [
+        "Hematocrit procedure",
+        "Anemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES"
+      ],
+      [
+        "DIAGNOSES"
+      ]
+    ],
+    "paths": [
+      "(Hematocrit procedure)-DIAGNOSES->(Anemia)",
+      "(Hematocrit procedure)-DIAGNOSES->(Anemia)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Anemia)-CAUSES->(Cardiac complication)",
+      "(Hematocrit procedure)-DIAGNOSES->(Anemia)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Anemia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Low hemoglobin and hematocrit\" -> \"Possible anemia\" -> \"Increased risk for cardiac complications\" -> 70% CHAIN: \"Low hemoglobin and hematocrit\" -> \"Possible anemia\" -> \"Increased risk for cardiac complications\" -> \"Iron deficiency\" -> \"Iron supplementation\" -> \"Improved anemia\" -> \"Decreased risk for cardiac complications\" -> 70%"
+  ],
+  "enhanced_information": "Iron supplementation could decrease the risk for cardiac complications the most in this patient due to the association between low hemoglobin, anemia, and increased risk for cardiac complications. Anemia is a known risk factor for cardiac issues, and correcting iron deficiency can improve anemia, thereby reducing the risk for cardiac complications.",
+  "analysis": "Iron supplementation is the most appropriate intervention in this case to decrease the risk for cardiac complications due to the patient's low hemoglobin levels. Anemia is a known risk factor for cardiac issues, and correcting iron deficiency can improve anemia, thereby reducing the risk for cardiac complications.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      8
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

@@ -1,0 +1,185 @@
+{
+  "question": "A 2-week-old newborn girl is brought to the physician for a follow-up examination after the initial newborn examination showed asymmetry of the legs. She was born at term to a 26-year-old woman, gravida 3, para 2. Pregnancy was complicated by a breech presentation and treated with an emergency lower-segment transverse cesarean section. The newborn's head circumference is 35 cm (13.7 in). She is at the 60th percentile for length and 75th percentile for weight. Cardiac examination shows no abnormalities. The spine and overlying skin do not indicate significant abnormalities. Abduction of the right hip after cupping the pelvis and flexing the right hip and knee causes a palpable clunk. The feet exhibit no deformities. Ultrasonography of the hip revealed a 50° angle between the lines along the bone acetabulum and the ilium. Which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Immobilize the hips with a spica cast",
+    "opb": "Obtain an MRI of the right hip",
+    "opc": "Obtain an X-ray of the right hip",
+    "opd": "Reassure the mother and schedule follow-up appointment in 4 weeks",
+    "ope": "Treat using a harness"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ultrasonography",
+        "Disease",
+        "physiological aspects",
+        "Hip structure"
+      ],
+      [
+        "Ultrasonography",
+        "Obesity",
+        "physiological aspects",
+        "Hip structure"
+      ],
+      [
+        "Ultrasonography",
+        "Pelvic Pain",
+        "Musculoskeletal torsion, function",
+        "Hip structure"
+      ],
+      [
+        "Breech Presentation",
+        "Respiratory morbidity",
+        "Disability NOS",
+        "physiological aspects",
+        "Hip structure"
+      ],
+      [
+        "Breech Presentation",
+        "Developmental Dysplasia of the Hip",
+        "Disease",
+        "physiological aspects",
+        "Hip structure"
+      ],
+      [
+        "Breech Presentation",
+        "Respiratory morbidity",
+        "Disease",
+        "physiological aspects",
+        "Hip structure"
+      ],
+      [
+        "Ultrasonography",
+        "Complication"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Ultrasonography)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Hip structure)",
+      "(Ultrasonography)-CAUSES->(Obesity)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Hip structure)",
+      "(Ultrasonography)-CAUSES->(Pelvic Pain)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(Hip structure)",
+      "(Breech Presentation)-CAUSES->(Respiratory morbidity)-CAUSES->(Disability NOS)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Hip structure)",
+      "(Breech Presentation)-PREDISPOSES->(Developmental Dysplasia of the Hip)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Hip structure)",
+      "(Breech Presentation)-CAUSES->(Respiratory morbidity)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Hip structure)",
+      "(Ultrasonography)-TREATS->(Complication)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hip structure",
+        "Ultrasonography"
+      ],
+      [
+        "Hip structure",
+        "Ultrasonography"
+      ],
+      [
+        "Leg",
+        "Ultrasonography"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Hip structure)-LOCATION_OF->(Ultrasonography)",
+      "(Hip structure)-LOCATION_OF->(Ultrasonography)",
+      "(Leg)-LOCATION_OF->(Ultrasonography)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hip structure)-LOCATION_OF->(Ultrasonography)",
+      "(Ultrasonography)-TREATS->(Complication)",
+      "(Leg)-LOCATION_OF->(Ultrasonography)",
+      "(Ultrasonography)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Hip structure)",
+      "(Ultrasonography)-CAUSES->(Obesity)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Hip structure)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Asymmetry of the legs\" -> \"palpable clunk during hip abduction\" -> \"suggests developmental dysplasia of the hip (DDH)\" -> \"ultrasonography confirms DDH with abnormal angle\" -> \"treat using a harness to correct hip alignment\" -> 95%",
+    "CHAIN: \"Breech presentation during pregnancy\" -> \"increased risk of developmental dysplasia of the hip\" -> \"palpable clunk indicates possible hip dislocation\" -> \"ultrasonography shows abnormal hip angle\" -> \"treat using a harness to stabilize and correct hip development\" -> 92%",
+    "CHAIN: \"Newborn with leg asymmetry and palpable clunk in hip\" -> \"ultrasound shows 50° angle, indicative of DDH\" -> \"early intervention required to prevent long-term complications\" -> \"treat using a harness to allow normal hip joint development\" -> 90%",
+    "CHAIN: \"Palpable clunk during hip examination\" -> \"indicates hip instability or dislocation\" -> \"confirmed by ultrasound showing abnormal angle\" -> \"non-surgical intervention recommended first\" -> \"treat using a harness to promote proper hip joint development\" -> 93%",
+    "CHAIN: \"Asymmetry of legs and palpable clunk\" -> \"ultrasound diagnosis of DDH with 50° angle\" -> \"DDH commonly treated with harness in newborns\" -> \"harness is effective in correcting DDH at early stages\" -> \"treat using a harness to optimize outcomes\" -> 94%"
+  ],
+  "enhanced_information": "The newborn girl diagnosed with developmental dysplasia of the hip (DDH) confirmed by ultrasonography showing a 50° angle should be treated using a harness. This non-surgical intervention is recommended to promote proper hip joint development and prevent future complications, aligning with standard medical guidelines for early-stage DDH management in newborns.",
+  "analysis": "The newborn girl presents with a palpable clunk during the abduction of the right hip, which is a classic sign of developmental dysplasia of the hip (DDH). The ultrasonography of the hip showing a 50° angle between the lines along the bone acetabulum and the ilium further supports this diagnosis. The standard and first-line treatment for DDH in newborns involves the use of a Pavlik harness, which helps in maintaining the hip in flexion and abduction, thus promoting proper development of the hip joint. This non-surgical intervention is generally effective when started early, as in this case. Other options such as immobilization with a spica cast or obtaining an MRI or X-ray are typically considered in older children, cases of failed harness treatment, or when the diagnosis is uncertain. Reassuring the mother and scheduling a follow-up without immediate intervention is not advisable given the confirmed diagnosis and the potential for worsening of the condition without treatment. Therefore, the use of a harness is the most appropriate and consensus-aligned next step in management.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      1,
+      2,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      16.666666666666664,
+      33.33333333333333,
+      0.0,
+      16.666666666666664
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

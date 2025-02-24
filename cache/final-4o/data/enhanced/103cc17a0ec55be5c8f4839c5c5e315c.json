@@ -1,0 +1,96 @@
+{
+  "question": "A 52-year-old man is brought to the emergency department while on vacation with a history of sudden onset vertigo and difficulty walking. He was in normal health since starting his vacation a week ago, but today he is suffering from a loss of balance, mild headache, and has had 5–6 episodes of vomiting over the last few hours. He denies fever, neck pain, head trauma, weakness, and diplopia. Past medical history is significant for hypertension and dyslipidemia. His medications include valsartan and atorvastatin, but he missed several doses since leaving for this trip. Blood pressure is 198/112 mm Hg, the heart rate is 76/min, the respiratory rate is 16/min, and the temperature is 37.0°C (98.6°F). The patient is awake and oriented to time, place, and person. Extraocular movements are within normal limits. Muscle strength is normal in all 4 extremities. An urgent head CT is ordered and shown in the picture. What additional clinical features be expected in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Inability to comprehend commands",
+    "opb": "Inability to perform repetitive alternating movements",
+    "opc": "Inability to speak fluently",
+    "opd": "Right-sided neglect",
+    "ope": "Right-sided visual field loss"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypertensive disease",
+        "Cerebrovascular accident"
+      ],
+      [
+        "Cerebrovascular accident",
+        "Myocardial Infarction",
+        "Cerebellar stroke"
+      ],
+      [
+        "Cerebrovascular accident",
+        "Vertebral Artery Dissection",
+        "Cerebellar stroke"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Cerebrovascular accident)",
+      "(Cerebrovascular accident)-CAUSES->(Myocardial Infarction)-CAUSES->(Cerebellar stroke)",
+      "(Cerebrovascular accident)-COMPLICATES->(Vertebral Artery Dissection)-CAUSES->(Cerebellar stroke)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Cerebrovascular accident)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Sudden onset vertigo\" -> \"Cerebellar dysfunction\" -> \"Inability to perform repetitive alternating movements\" -> 85%",
+    "CHAIN: \"Hypertension\" -> \"Increased risk of stroke\" -> \"Possible cerebellar stroke\" -> \"Inability to perform repetitive alternating movements\" -> 80%",
+    "CHAIN: \"Sudden onset vertigo\" -> \"Possible cerebellar lesion\" -> \"Inability to perform repetitive alternating movements\" -> 75%",
+    "CHAIN: \"Missed antihypertensive medication\" -> \"Elevated blood pressure\" -> \"Increased risk of cerebrovascular event\" -> \"Cerebellar involvement\" -> \"Inability to perform repetitive alternating movements\" -> 70%",
+    "CHAIN: \"Normal extraocular movements\" -> \"Unlikely brainstem involvement\" -> \"Less likely right-sided neglect or visual field loss\" -> \"Cerebellar dysfunction more likely\" -> \"Inability to perform repetitive alternating movements\" -> 65%"
+  ],
+  "enhanced_information": "The patient's sudden onset of vertigo, difficulty walking, and vomiting, combined with a history of hypertension and missed antihypertensive medication, suggest a cerebellar stroke. This is supported by the elevated blood pressure and the absence of brainstem involvement, as indicated by normal extraocular movements. Cerebellar dysfunction is consistent with the inability to perform repetitive alternating movements (dysdiadochokinesia), which aligns with the symptoms of a cerebellar stroke. The retrieved evidence path linking hypertensive disease to cerebrovascular accidents supports the increased risk of a stroke, particularly in the cerebellum, given the patient's symptoms and medical history. Other options, such as inability to comprehend commands, speak fluently, right-sided neglect, or visual field loss, are less likely due to the lack of cortical or brainstem signs in this patient.",
+  "analysis": "The patient's presentation of sudden onset vertigo, difficulty walking, and vomiting, along with a history of hypertension and missed antihypertensive medication, strongly suggests a cerebellar stroke. The elevated blood pressure further supports this diagnosis. The absence of brainstem involvement, as indicated by normal extraocular movements, and the lack of cortical signs such as aphasia or neglect, point towards cerebellar dysfunction. In cerebellar strokes, one common clinical feature is dysdiadochokinesia, which is the inability to perform repetitive alternating movements. This aligns with the symptoms of a cerebellar stroke and is consistent with the patient's presentation. Other options, such as inability to comprehend commands, speak fluently, right-sided neglect, or visual field loss, are less likely due to the lack of cortical or brainstem signs in this patient. Therefore, the most likely additional clinical feature expected in this patient is the inability to perform repetitive alternating movements.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      100.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

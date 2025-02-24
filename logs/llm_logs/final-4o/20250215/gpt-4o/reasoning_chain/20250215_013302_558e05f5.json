@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250215_013302",
+  "model": "gpt-4o",
+  "interaction_type": "reasoning_chain",
+  "question_id": "558e05f5",
+  "question_text": "A 68-year-old female presents to your office for her annual check-up. Her vitals are HR 85, T 98.8 F, RR 16, BP 125/70. She has a history of smoking 1 pack a day for 35 years, but states she quit five years ago. She had her last pap smear at age 64 and states all of her pap smears have been normal. She had her last colonoscopy at age 62, which was also normal. Which is the following is the next best test for this patient?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 68-year-old female presents to your office for her annual check-up. Her vitals are HR 85, T 98.8 F, RR 16, BP 125/70. She has a history of smoking 1 pack a day for 35 years, but states she quit five years ago. She had her last pap smear at age 64 and states all of her pap smears have been normal. She had her last colonoscopy at age 62, which was also normal. Which is the following is the next best test for this patient?\n\n            ### Options\n    opa. Abdominal ultrasound\nopb. Chest CT scan\nopc. Pap smear\nopd. Colonoscopy\nope. Chest radiograph\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"68-year-old female\" -> \"history of smoking\" -> \"increased risk of lung cancer\" -> \"screening for lung cancer\" -> \"Chest CT scan\" -> 85%\n\nCHAIN: \"68-year-old female\" -> \"history of smoking\" -> \"risk of lung disease\" -> \"screening for lung disease\" -> \"Chest radiograph\" -> 70%\n\nCHAIN: \"68-year-old female\" -> \"last pap smear at age 64\" -> \"normal results\" -> \"guidelines suggest pap smear every 3-5 years\" -> \"Pap smear\" -> 60%\n\nCHAIN: \"68-year-old female\" -> \"last colonoscopy at age 62\" -> \"normal results\" -> \"guidelines suggest colonoscopy every 10 years\" -> \"no immediate need for colonoscopy\" -> 50%\n\nCHAIN: \"68-year-old female\" -> \"no specific symptoms indicating abdominal issues\" -> \"no immediate need for abdominal ultrasound\" -> 40%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-4o",
+    "temperature": 0.0
+  }
+}

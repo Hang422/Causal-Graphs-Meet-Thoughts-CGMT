@@ -1,0 +1,96 @@
+{
+  "question": "A 27-year-old man presents to the clinic for his annual health check-up. He currently complains of fatigue for the past few months. He has no significant past medical history. He admits to being sexually active with men and also is an intravenous drug user. He has never received a hepatitis B vaccine. His blood pressure is 122/98 mm Hg, the respiratory rate is 16/min, the pulse is 68/min, and the temperature is 37.0°C (98.6°F). On physical examination, he appears fatigued and unkempt. His tongue and buccal mucosa appear moist and without ulcerations or lesions. There are no murmurs or gallops on cardiac auscultation. His lungs are clear bilaterally. No lesions are present on the surface of the skin nor skin discoloration. The physician proceeds to order a hepatitis B panel to assess the patient’s serologic status:\nHBV DNA positive\nHBsAg negative\nHBeAg  negative\nHBsAb negative\nHBcAb positive\nHBeAb negative\nWhich of the following disease states is the patient exhibiting?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Acute infection",
+    "opb": "Chronic infection",
+    "opc": "Immune from vaccine",
+    "opd": "Immune from natural infection",
+    "ope": "Convalescent (window) period"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hepatitis B core antibody positive",
+        "Hepatitis B",
+        "Chronic infectious disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hepatitis B core antibody positive)-PREDISPOSES->(Hepatitis B)-CAUSES->(Chronic infectious disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hepatitis B core antibody positive",
+        "Hepatitis B",
+        "Fibrosis",
+        "Antibody to hepatitis Be antigen"
+      ],
+      [
+        "Hepatitis B core antibody positive",
+        "Hepatitis B",
+        "Fibrosis",
+        "Antibody to hepatitis Be antigen"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hepatitis B core antibody positive)-PREDISPOSES->(Hepatitis B)-CAUSES->(Fibrosis)-ASSOCIATED_WITH->(Antibody to hepatitis Be antigen)",
+      "(Hepatitis B core antibody positive)-PREDISPOSES->(Hepatitis B)-PREDISPOSES->(Fibrosis)-ASSOCIATED_WITH->(Antibody to hepatitis Be antigen)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hepatitis B core antibody positive)-PREDISPOSES->(Hepatitis B)-CAUSES/PREDISPOSES->(Fibrosis)-ASSOCIATED_WITH->(Antibody to hepatitis Be antigen)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"HBV DNA positive\" -> \"HBsAg negative\" -> \"HBeAg negative\" -> \"HBsAb negative\" -> \"HBcAb positive\" -> \"HBeAb negative\" -> Chronic infection -> 95%",
+    "CHAIN: \"HBV DNA positive\" -> \"HBcAb positive\" -> Chronic infection -> 90%"
+  ],
+  "enhanced_information": "The patient is exhibiting chronic hepatitis B infection based on the presence of HBV DNA, HBcAb positive, and absence of HBsAg, HBeAg, HBsAb, and HBeAb. The evidence path supports the association of hepatitis B core antibody positivity with chronic infection.",
+  "analysis": "The patient is exhibiting chronic hepatitis B infection based on the presence of HBV DNA, HBcAb positive, and absence of HBsAg, HBeAg, HBsAb, and HBeAb. The enhanced information confirms the association of hepatitis B core antibody positivity with chronic infection.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

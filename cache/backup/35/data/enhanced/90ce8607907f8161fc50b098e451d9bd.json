@@ -1,0 +1,86 @@
+{
+  "question": "A 27-year-old man presents to the emergency department with severe substernal pain at rest, which radiates to his left arm and jaw. He reports that he has had similar but milder pain several times in the past during strenuous exercise. He had heart transplantation due to dilatory cardiomyopathy 5 years ago with an acute rejection reaction that was successfully treated with corticosteroids. He had been taking 1 mg tacrolimus twice a day for 3.5 years but then discontinued it and had no regular follow-ups. The man does not have a family history of premature coronary artery disease. His blood pressure is 110/60 mm Hg, heart rate is 97/min, respiratory rate is 22/min, and temperature is 37.3°C (99.1°F). On physical examination, the patient is alert, responsive, and agitated. Cardiac auscultation reveals a fourth heart sound (S4) and an irregularly irregular heart rhythm. His ECG shows ST elevation in leads I, II, V5, and V6, and ST depression in leads III and aVF. His complete blood count and lipidogram are within normal limits. The patient’s cardiac troponin I and T levels are elevated. A coronary angiogram reveals diffuse concentric narrowing of all branches of the left coronary artery. What is the most likely causative mechanism of this patient’s cardiac ischemia?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Vasospasm of distal coronary arteries branches",
+    "opb": "Left ventricular hypertrophy",
+    "opc": "Obliterative arteriopathy",
+    "opd": "Increased oxygen demand due to tachycardia",
+    "ope": "Granulomatous vasculitis of coronary arteries"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Tacrolimus",
+        "Disease",
+        "Cardiac complication"
+      ],
+      [
+        "Tacrolimus",
+        "Obesity",
+        "Cardiac complication"
+      ],
+      [
+        "Tacrolimus",
+        "Myocardial Infarction",
+        "Cardiac complication"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Tacrolimus)-CAUSES->(Disease)-CAUSES->(Cardiac complication)",
+      "(Tacrolimus)-TREATS->(Obesity)-CAUSES->(Cardiac complication)",
+      "(Tacrolimus)-TREATS->(Myocardial Infarction)-CAUSES->(Cardiac complication)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Tacrolimus)-CAUSES->(Disease)-CAUSES->(Cardiac complication)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Previous heart transplantation\" -> \"History of acute rejection reaction\" -> \"Discontinued tacrolimus without regular follow-ups\" -> \"Increased risk of cardiac complications\" -> \"Possible obliterative arteriopathy\" -> 70% CHAIN: \"ST elevation in ECG leads I, II, V5, and V6\" -> \"ST depression in leads III and aVF\" -> \"Diffuse concentric narrowing of left coronary artery branches\" -> \"Possible obliterative arteriopathy\" -> 80% CHAIN: \"Elevated cardiac troponin levels\" -> \"Indicates myocardial damage\" -> \"Possible obliterative arteriopathy\" -> 70%"
+  ],
+  "enhanced_information": "The most likely causative mechanism of this patient's cardiac ischemia is obliterative arteriopathy, supported by the history of heart transplantation, acute rejection reaction, discontinued tacrolimus, elevated cardiac troponin levels indicating myocardial damage, ST elevation and depression on ECG, and diffuse concentric narrowing of left coronary artery branches. The evidence path linking tacrolimus to cardiac complications aligns with the possibility of obliterative arteriopathy in this case.",
+  "analysis": "The most likely causative mechanism of this patient's cardiac ischemia is obliterative arteriopathy, which is supported by the history of heart transplantation, acute rejection reaction, discontinued tacrolimus, elevated cardiac troponin levels indicating myocardial damage, ST elevation and depression on ECG, and diffuse concentric narrowing of left coronary artery branches. Obliterative arteriopathy is a known complication post-heart transplantation and can lead to coronary artery disease.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": []
+}

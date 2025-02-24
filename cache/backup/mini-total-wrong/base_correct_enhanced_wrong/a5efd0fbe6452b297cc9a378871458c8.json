@@ -1,0 +1,213 @@
+{
+  "question": "A 39-year-old man comes to the physician with a 4-week history of lesions on his penis and scrotum. He has no pain or discharge from the lesions. Two years ago, he was diagnosed with chronic myeloid leukemia and was treated with imatinib. He takes no medications. He has smoked one pack of cigarettes daily for 20 years and drinks one to two beers on the weekends. He is sexually active and had unprotected intercourse with a woman about 4 months ago while abroad on business. He appears well. His temperature is 37°C (98°F), pulse is 85/min, and blood pressure is 128/82 mm Hg. Examination shows 3 nontender lesions up to 1 cm in size. A photograph of the lesions is shown. There is no inguinal lymphadenopathy. Which of the following is the most likely causal organism?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Treponema pallidum",
+    "opb": "Klebsiella granulomatis",
+    "opc": "Herpes simplex virus",
+    "opd": "Haemophilus ducreyi",
+    "ope": "Chlamydia trachomatis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Communicable Diseases",
+        "Sexually Transmitted Diseases"
+      ],
+      [
+        "Pain",
+        "Disease",
+        "Sexually Transmitted Diseases"
+      ],
+      [
+        "Pain",
+        "Infection",
+        "Sexually Transmitted Diseases"
+      ],
+      [
+        "Sexually Transmitted Diseases",
+        "Genital lesion"
+      ],
+      [
+        "Genital lesion",
+        "HIV Infections",
+        "Syphilis"
+      ],
+      [
+        "Genital lesion",
+        "Hemophilus ducreyi",
+        "Syphilis"
+      ],
+      [
+        "Genital lesion",
+        "Disease",
+        "Syphilis"
+      ],
+      [
+        "Treponema pallidum",
+        "Syphilis"
+      ],
+      [
+        "Genital ulceration",
+        "Infection",
+        "Granuloma Inguinale"
+      ],
+      [
+        "Genital ulceration",
+        "Syphilis",
+        "Granuloma Inguinale"
+      ],
+      [
+        "Calymmatobacterium granulomatis",
+        "Granuloma Inguinale"
+      ],
+      [
+        "Treponema pallidum",
+        "Syphilis"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Communicable Diseases)-PREDISPOSES->(Sexually Transmitted Diseases)",
+      "(Pain)-CAUSES->(Disease)-CAUSES->(Sexually Transmitted Diseases)",
+      "(Pain)-CAUSES->(Infection)-CAUSES->(Sexually Transmitted Diseases)",
+      "(Sexually Transmitted Diseases)-CAUSES->(Genital lesion)",
+      "(Genital lesion)-COMPLICATES->(HIV Infections)-CAUSES->(Syphilis)",
+      "(Genital lesion)-PROCESS_OF->(Hemophilus ducreyi)-CAUSES->(Syphilis)",
+      "(Genital lesion)-CAUSES->(Disease)-MANIFESTATION_OF->(Syphilis)",
+      "(Treponema pallidum)-CAUSES->(Syphilis)",
+      "(Genital ulceration)-CAUSES->(Infection)-CAUSES->(Granuloma Inguinale)",
+      "(Genital ulceration)-CAUSES->(Syphilis)-CAUSES->(Granuloma Inguinale)",
+      "(Calymmatobacterium granulomatis)-CAUSES->(Granuloma Inguinale)",
+      "(Treponema pallidum)-CAUSES->(Syphilis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Scrotum",
+        "Disease",
+        "Communicable Diseases"
+      ],
+      [
+        "Scrotum",
+        "Disease",
+        "Communicable Diseases"
+      ],
+      [
+        "penis",
+        "Communicable Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Scrotum)-LOCATION_OF->(Disease)-CAUSES->(Communicable Diseases)",
+      "(Scrotum)-LOCATION_OF->(Disease)-PREDISPOSES->(Communicable Diseases)",
+      "(penis)-LOCATION_OF->(Communicable Diseases)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Treponema pallidum)-CAUSES->(Syphilis)",
+      "(Calymmatobacterium granulomatis)-CAUSES->(Granuloma Inguinale)",
+      "(penis)-LOCATION_OF->(Communicable Diseases)",
+      "(Sexually Transmitted Diseases)-CAUSES->(Genital lesion)",
+      "(Genital lesion)-PROCESS_OF->(Hemophilus ducreyi)-CAUSES->(Syphilis)",
+      "(Communicable Diseases)-PREDISPOSES->(Sexually Transmitted Diseases)",
+      "(Scrotum)-LOCATION_OF->(Disease)-CAUSES/PREDISPOSES->(Communicable Diseases)",
+      "(Genital lesion)-COMPLICATES->(HIV Infections)-CAUSES->(Syphilis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient has nontender lesions on penis and scrotum\" -> \"Lesions are likely not due to infection with painful symptoms\" -> \"Unprotected intercourse raises risk for STIs\" -> \"Treponema pallidum causes painless genital lesions\" -> \"Syphilis is a possibility\" -> \"Other options less likely due to lesion characteristics\" -> 85%",
+    "CHAIN: \"Patient has a history of chronic myeloid leukemia\" -> \"Imatinib treatment may affect immune response\" -> \"Immunocompromised patients are at risk for certain infections\" -> \"Klebsiella granulomatis causes painless genital ulcers\" -> \"Granuloma inguinale is a possibility\" -> \"Lesions are nontender, consistent with this organism\" -> 80%",
+    "CHAIN: \"Patient has nontender lesions\" -> \"Herpes simplex virus typically presents with painful vesicles\" -> \"Unlikely to be the cause of these lesions\" -> \"Chlamydia trachomatis usually presents with discharge\" -> \"Not consistent with the patient's presentation\" -> \"Haemophilus ducreyi causes painful ulcers\" -> \"Unlikely due to lack of pain\" -> 70%",
+    "CHAIN: \"Patient has a history of unprotected intercourse\" -> \"Risk factors for STIs are present\" -> \"Nontender lesions suggest a specific type of infection\" -> \"Treponema pallidum is known for painless lesions\" -> \"Syphilis is a strong consideration\" -> \"Other organisms less likely based on lesion characteristics\" -> 90%"
+  ],
+  "enhanced_information": "The patient presents with nontender lesions on the penis and scrotum, which are characteristic of certain sexually transmitted infections (STIs). Treponema pallidum, the causative agent of syphilis, is known for causing painless genital lesions, making it a strong consideration given the patient's history of unprotected intercourse. While Klebsiella granulomatis (Calymmatobacterium granulomatis) can also cause painless genital ulcers (granuloma inguinale), the overall presentation and the context of potential syphilis exposure suggest Treponema pallidum is more likely. Other options, such as herpes simplex virus and Haemophilus ducreyi, are less likely due to the absence of painful symptoms, and Chlamydia trachomatis typically presents with discharge, which is not noted here. Therefore, the most likely causal organism is Treponema pallidum.",
+  "analysis": "The patient presents with nontender lesions on the penis and scrotum, which is a key feature in differentiating between various sexually transmitted infections (STIs). Treponema pallidum, the causative agent of syphilis, is known for causing painless genital lesions, particularly in its primary stage. Given the patient's history of unprotected intercourse and the nature of the lesions, syphilis is a strong consideration. While Klebsiella granulomatis (granuloma inguinale) can also cause painless genital ulcers, the overall clinical context and the commonality of syphilis make Treponema pallidum the more likely causal organism in this case. Other options, such as herpes simplex virus and Haemophilus ducreyi, are less likely due to the absence of painful symptoms, and Chlamydia trachomatis typically presents with discharge, which is not noted here. Therefore, the most likely causal organism is Treponema pallidum.",
+  "answer": "opa",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      7,
+      2,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      70.0,
+      20.0,
+      0.0,
+      10.0
+    ],
+    "total_successes": 10
+  },
+  "normal_results": []
+}

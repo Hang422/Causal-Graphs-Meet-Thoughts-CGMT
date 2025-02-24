@@ -1,0 +1,104 @@
+{
+  "question": "A 65-year-old man is brought to his primary care provider by his concerned wife. She reports he has had this \"thing\" on his eye for years and refuses to seek care. He denies any pain or discharge from the affected eye. A picture of his eye is shown below. Given the diagnosis, what are you most likely to discover when taking this patient's history?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "He experienced shingles three years ago, with a positive Hutchinson's sign",
+    "opb": "He suffered from recurrent conjunctivitis in his youth",
+    "opc": "He grew up in Ecuador, where he worked outdoors as a farmer for 30 years",
+    "opd": "He was involved in a bar fight and experienced a ruptured globe 10 years ago",
+    "ope": "He suffered a burn to his eye while cleaning his bathroom with bleach 5 years earlier"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Herpes zoster disease",
+        "Disease",
+        "Respiration",
+        "Trigeminal nerve structure"
+      ],
+      [
+        "Herpes zoster disease",
+        "Symptoms",
+        "Respiration",
+        "Trigeminal nerve structure"
+      ],
+      [
+        "Herpes zoster disease",
+        "Respiratory Failure",
+        "Respiration",
+        "Trigeminal nerve structure"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Herpes zoster disease)-CAUSES->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Trigeminal nerve structure)",
+      "(Herpes zoster disease)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Trigeminal nerve structure)",
+      "(Herpes zoster disease)-CAUSES->(Respiratory Failure)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Trigeminal nerve structure)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Eye",
+        "Corneal scar"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Eye)-LOCATION_OF->(Corneal scar)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Eye)-LOCATION_OF->(Corneal scar)",
+      "(Herpes zoster disease)-CAUSES->(Symptoms)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Trigeminal nerve structure)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: opc -> chronic sun exposure -> increased risk of developing pterygium -> 80% CHAIN: opa -> history of shingles -> possible involvement of the trigeminal nerve -> 70% CHAIN: ope -> chemical burn to the eye -> potential corneal scarring -> 80%"
+  ],
+  "enhanced_information": "In this case, the most likely discovery when taking this patient's history would be chronic sun exposure due to his background of growing up in Ecuador and working outdoors as a farmer for 30 years. This chronic sun exposure increases his risk of developing a pterygium, which aligns with the presentation of the 'thing' on his eye. The evidence path confirming the link between chronic sun exposure and pterygium supports this reasoning.",
+  "analysis": "The most likely discovery when taking this patient's history would be chronic sun exposure due to his background of growing up in Ecuador and working outdoors as a farmer for 30 years. Chronic sun exposure is a significant risk factor for developing a pterygium, which aligns with the presentation of the 'thing' on his eye. This aligns with the enhanced information provided.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

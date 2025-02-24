@@ -1,0 +1,93 @@
+{
+  "question": "A 3-year-old girl with no significant past medical history presents to the clinic with a 4-day history of acute onset cough. Her parents have recently started to introduce several new foods into her diet. Her vital signs are all within normal limits. Physical exam is significant for decreased breath sounds on the right. What is the most appropriate definitive management in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Chest x-ray (CXR)",
+    "opb": "Rigid broncoscopy",
+    "opc": "Inhaled bronchodilators and oral corticosteroids",
+    "opd": "Flexible broncoscopy",
+    "ope": "Empiric antibiotic therapy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pneumonia",
+        "Liver Cirrhosis",
+        "Radiography, Thoracic"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pneumonia)-CAUSES->(Liver Cirrhosis)-CAUSES->(Radiography, Thoracic)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Airway Obstruction",
+        "Respiration",
+        "Eye",
+        "Flexible bronchoscopy"
+      ],
+      [
+        "Airway Obstruction",
+        "Respiration",
+        "Trachea",
+        "Flexible bronchoscopy"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Airway Obstruction)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Eye)-LOCATION_OF->(Flexible bronchoscopy)",
+      "(Airway Obstruction)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Trachea)-LOCATION_OF->(Flexible bronchoscopy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Airway Obstruction)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Eye)-LOCATION_OF->(Flexible bronchoscopy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Acute onset cough\" -> \"Decreased breath sounds on the right\" -> \"Suspicion of pneumonia\" -> \"Chest x-ray (CXR)\" -> 80% CHAIN: \"Acute onset cough\" -> \"Decreased breath sounds on the right\" -> \"Suspicion of foreign body aspiration\" -> \"Rigid bronchoscopy\" -> 70% CHAIN: \"Acute onset cough\" -> \"Decreased breath sounds on the right\" -> \"Suspicion of bronchospasm\" -> \"Inhaled bronchodilators and oral corticosteroids\" -> 60% CHAIN: \"Acute onset cough\" -> \"Decreased breath sounds on the right\" -> \"Suspicion of airway obstruction\" -> \"Flexible bronchoscopy\" -> 50% CHAIN: \"Acute onset cough\" -> \"Decreased breath sounds on the right\" -> \"Suspicion of bacterial infection\" -> \"Empiric antibiotic therapy\" -> 80%"
+  ],
+  "enhanced_information": "In a 3-year-old girl with acute onset cough and decreased breath sounds on the right, the most appropriate definitive management is rigid bronchoscopy due to suspicion of foreign body aspiration. This is supported by the reasoning chain and the evidence path indicating the need for airway evaluation and intervention in cases of suspected foreign body obstruction.",
+  "analysis": "In a 3-year-old girl with acute onset cough and decreased breath sounds on the right, the most likely cause is foreign body aspiration. The enhanced information strongly supports the need for rigid bronchoscopy as the definitive management to evaluate and potentially remove the foreign body. This aligns with the standard medical approach for suspected foreign body aspiration in pediatric patients.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

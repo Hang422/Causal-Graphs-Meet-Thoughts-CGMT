@@ -1,0 +1,111 @@
+{
+  "question": "A 48-year-old man comes to the emergency room for a persistent painful erection for the last 4 hours. Three weeks ago, he had a deep vein thrombosis following a 13-hour flight. He also has a history of sickle cell trait, gastroesophageal reflux disease, major depressive disorder, and hypertension. He has smoked 1 pack of cigarette daily for the past 9 years. He takes warfarin, propranolol, citalopram, trazodone, lisinopril, and omeprazole. He is alert and oriented but in acute distress. His temperature is 37°C(98.6°F), pulse is 109/min, and blood pressure is 139/88 mm Hg. Examination shows a rigid erection with no evidence of trauma, penile discharge, injection, or prosthesis. Which of the following is the most likely cause of his condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Warfarin",
+    "opb": "Cigarette smoking",
+    "opc": "Trazodone",
+    "opd": "Sickle cell trait",
+    "ope": "Citalopram"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "VASO OCCLUSIVE CRISIS",
+        "Symptoms",
+        "Priapism"
+      ],
+      [
+        "VASO OCCLUSIVE CRISIS",
+        "Pain",
+        "Priapism"
+      ],
+      [
+        "VASO OCCLUSIVE CRISIS",
+        "Fibrosis",
+        "Priapism"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(VASO OCCLUSIVE CRISIS)-CAUSES->(Symptoms)-CAUSES->(Priapism)",
+      "(VASO OCCLUSIVE CRISIS)-CAUSES->(Pain)-CAUSES->(Priapism)",
+      "(VASO OCCLUSIVE CRISIS)-CAUSES->(Fibrosis)-CAUSES->(Priapism)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Blood Viscosity",
+        "Anticoagulants",
+        "Priapism"
+      ],
+      [
+        "Blood Viscosity",
+        "Brain",
+        "Priapism"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Blood Viscosity)-ASSOCIATED_WITH->(Anticoagulants)-CAUSES->(Priapism)",
+      "(Blood Viscosity)-PROCESS_OF->(Brain)-LOCATION_OF->(Priapism)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(VASO OCCLUSIVE CRISIS)-CAUSES->(Pain)-CAUSES->(Priapism)",
+      "(Blood Viscosity)-ASSOCIATED_WITH->(Anticoagulants)-CAUSES->(Priapism)",
+      "(VASO OCCLUSIVE CRISIS)-CAUSES->(Symptoms)-CAUSES->(Priapism)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Sickle cell trait -> priapism -> 90% CHAIN: Sickle cell trait -> increased blood viscosity -> priapism -> 85% CHAIN: Sickle cell trait -> vaso-occlusive crisis -> priapism -> 80% CHAIN: Sickle cell trait -> impaired penile blood flow -> priapism -> 90%"
+  ],
+  "enhanced_information": "The most likely cause of the man's condition is his sickle cell trait, which can lead to priapism due to vaso-occlusive crisis and impaired penile blood flow. The evidence paths support this by highlighting the association between vaso-occlusive crisis and priapism, aligning with the consensus that sickle cell trait can cause priapism.",
+  "analysis": "The most likely cause of the man's persistent painful erection is priapism, which can be attributed to his sickle cell trait. Sickle cell trait can lead to vaso-occlusive crisis and impaired penile blood flow, resulting in priapism. While other factors like medications and lifestyle choices may contribute to erectile dysfunction, the acute onset and association with sickle cell trait make it the primary suspect in this case.",
+  "answer": "opd. sickle cell trait",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

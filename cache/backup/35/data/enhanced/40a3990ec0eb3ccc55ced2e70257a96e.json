@@ -1,0 +1,162 @@
+{
+  "question": "A 51-year-old woman is brought to the emergency department because of an aggressive cough with copious amounts of thick, foamy, yellow-green sputum. She says she has had this cough for about 11 years with exacerbations similar to her presentation today. She also reports that her cough is worse in the morning. She was evaluated multiple times in the past because of recurrent bouts of bronchitis that have required treatment with antibiotics. She is a non-smoker. On physical examination, the blood pressure is 125/78 mm Hg, pulse rate is 80/min, respiratory rate is 16/min, and temperature is 36.7°C (98.0°F). Chest auscultation reveals crackles and wheezing over the right middle lobe and the rest of her physical examinations are normal. The chest X-ray shows irregular opacities in the right middle lobe and diffuse airway thickening. Based on this history and physical examination, which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Tuberculosis",
+    "opb": "Alpha-1-antitrypsin deficiency",
+    "opc": "Bronchiectasis",
+    "opd": "Chronic obstructive pulmonary disease",
+    "ope": "Chronic bronchitis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Rales",
+        "Pulmonary Edema",
+        "Disease",
+        "Liver Cirrhosis",
+        "Radiography, Thoracic"
+      ],
+      [
+        "Rales",
+        "Pulmonary Edema",
+        "Hypertensive disease",
+        "Liver Cirrhosis",
+        "Radiography, Thoracic"
+      ],
+      [
+        "Wheezing",
+        "Disease",
+        "Liver Cirrhosis",
+        "Radiography, Thoracic"
+      ],
+      [
+        "Wheezing",
+        "Obesity",
+        "Liver Cirrhosis",
+        "Radiography, Thoracic"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Rales)-CAUSES->(Pulmonary Edema)-CAUSES->(Disease)-CAUSES->(Liver Cirrhosis)-CAUSES->(Radiography, Thoracic)",
+      "(Rales)-CAUSES->(Pulmonary Edema)-CAUSES->(Hypertensive disease)-COMPLICATES->(Liver Cirrhosis)-CAUSES->(Radiography, Thoracic)",
+      "(Wheezing)-CAUSES->(Disease)-CAUSES->(Liver Cirrhosis)-CAUSES->(Radiography, Thoracic)",
+      "(Wheezing)-PREDISPOSES->(Obesity)-CAUSES->(Liver Cirrhosis)-CAUSES->(Radiography, Thoracic)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Structure of middle lobe of right lung",
+        "Disease",
+        "Liver Cirrhosis",
+        "Radiography, Thoracic"
+      ],
+      [
+        "Structure of middle lobe of right lung",
+        "Disease",
+        "Liver Cirrhosis",
+        "Radiography, Thoracic"
+      ],
+      [
+        "Radiography, Thoracic",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Radiography, Thoracic",
+        "Symptoms",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Structure of middle lobe of right lung)-LOCATION_OF->(Disease)-CAUSES->(Liver Cirrhosis)-CAUSES->(Radiography, Thoracic)",
+      "(Structure of middle lobe of right lung)-LOCATION_OF->(Disease)-COMPLICATES->(Liver Cirrhosis)-CAUSES->(Radiography, Thoracic)",
+      "(Radiography, Thoracic)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Radiography, Thoracic)-CAUSES->(Symptoms)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Radiography, Thoracic)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Wheezing)-CAUSES->(Disease)-CAUSES->(Liver Cirrhosis)-CAUSES->(Radiography, Thoracic)",
+      "(Wheezing)-PREDISPOSES->(Obesity)-CAUSES->(Liver Cirrhosis)-CAUSES->(Radiography, Thoracic)",
+      "(Structure of middle lobe of right lung)-LOCATION_OF->(Disease)-CAUSES/COMPLICATES->(Liver Cirrhosis)-CAUSES->(Radiography, Thoracic)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Chronic cough for 11 years\" -> \"Exacerbations with thick, foamy, yellow-green sputum\" -> \"Worse in the morning\" -> \"Recurrent bouts of bronchitis\" -> \"Antibiotic treatment needed\" -> \"Non-smoker\" -> \"Crackles and wheezing on chest auscultation\" -> \"Irregular opacities in right middle lobe on chest X-ray\" -> \"Diffuse airway thickening on chest X-ray\" -> \"Most likely diagnosis is Bronchiectasis\" -> 95%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 51-year-old woman with chronic cough, thick foamy sputum, exacerbations, crackles, wheezing, and irregular opacities in the right middle lobe on chest X-ray is Bronchiectasis.",
+  "analysis": "The patient's history of chronic cough with thick foamy sputum, recurrent bronchitis exacerbations, and crackles and wheezing on exam, along with the chest X-ray findings of irregular opacities and diffuse airway thickening, are highly suggestive of bronchiectasis. Bronchiectasis is characterized by permanent dilation of bronchi due to chronic inflammation and recurrent infections. The absence of smoking history and the chronic nature of symptoms make other options less likely.",
+  "answer": "opc. bronchiectasis",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

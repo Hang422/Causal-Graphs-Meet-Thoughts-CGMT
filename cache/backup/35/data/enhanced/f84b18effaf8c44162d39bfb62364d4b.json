@@ -1,0 +1,87 @@
+{
+  "question": "A biology graduate student is performing an experiment in the immunology laboratory. He is researching the recombination activation genes RAG1 and RAG2 in order to verify the function of these genes. He then decides to carry out the experiment on knock-out mice so that these genes will be turned off. Which of the following changes should he be expecting to see?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Defect of NADPH oxidase in phagocyte",
+    "opb": "Total lack of B and T cells",
+    "opc": "Deficiency in CD40L on activated T cells",
+    "opd": "Absence of CD18 in leukocytes",
+    "ope": "The mice should be asymptomatic"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "CD40 Ligand",
+        "T-Lymphocyte"
+      ],
+      [
+        "T-Lymphocyte",
+        "Cells",
+        "CD40 Ligand"
+      ],
+      [
+        "T-Lymphocyte",
+        "CD8-Positive T-Lymphocytes",
+        "CD40 Ligand"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(CD40 Ligand)-INTERACTS_WITH->(T-Lymphocyte)",
+      "(T-Lymphocyte)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(CD40 Ligand)",
+      "(T-Lymphocyte)-INTERACTS_WITH->(CD8-Positive T-Lymphocytes)-INTERACTS_WITH->(CD40 Ligand)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(CD40 Ligand)-INTERACTS_WITH->(T-Lymphocyte)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Knock-out of RAG1 and RAG2 genes -> Impaired V(D)J recombination -> Lack of functional B and T cells -> Total lack of B and T cells -> 95%",
+    "CHAIN: Knock-out of RAG1 and RAG2 genes -> Impaired lymphocyte development -> Deficiency in CD40L on activated T cells -> Deficiency in CD40L on activated T cells -> 85%"
+  ],
+  "enhanced_information": "Knock-out of RAG1 and RAG2 genes leads to impaired V(D)J recombination, resulting in a total lack of functional B and T cells. Therefore, the biology graduate student should expect to see a total lack of B and T cells in the knock-out mice.",
+  "analysis": "Knock-out of RAG1 and RAG2 genes leads to impaired V(D)J recombination, resulting in a total lack of functional B and T cells. This is a well-established immunological consequence of disrupting these genes.",
+  "answer": "opb",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

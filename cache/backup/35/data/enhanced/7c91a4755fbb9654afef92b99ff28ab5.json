@@ -1,0 +1,196 @@
+{
+  "question": "A 44-year-old woman with high blood pressure and diabetes presents to the outpatient clinic and informs you that she is trying to get pregnant. Her current medications include lisinopril, metformin, and sitagliptin. Her blood pressure is 136/92 mm Hg and heart rate is 79/min. Her physical examination is unremarkable. What should you do regarding her medication for high blood pressure?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Continue her current regimen",
+    "opb": "Discontinue lisinopril and initiate labetalol",
+    "opc": "Continue her current regimen and add a beta-blocker for increased control",
+    "opd": "Discontinue lisinopril and initiate candesartan",
+    "ope": "Discontinue lisinopril and initiate aliskiren"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Labetalol",
+        "Hypertensive disease"
+      ],
+      [
+        "Adrenergic beta-Antagonists",
+        "Hypertensive disease"
+      ],
+      [
+        "aliskiren",
+        "Hypertensive disease",
+        "Haemodynamic instability",
+        "Fetal Harm"
+      ],
+      [
+        "aliskiren",
+        "Ventricular Fibrillation",
+        "Haemodynamic instability",
+        "Fetal Harm"
+      ],
+      [
+        "aliskiren",
+        "Inflammation",
+        "Haemodynamic instability",
+        "Fetal Harm"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Labetalol)-TREATS->(Hypertensive disease)",
+      "(Adrenergic beta-Antagonists)-CAUSES->(Hypertensive disease)",
+      "(aliskiren)-TREATS->(Hypertensive disease)-CAUSES->(Haemodynamic instability)-CAUSES->(Fetal Harm)",
+      "(aliskiren)-TREATS->(Ventricular Fibrillation)-CAUSES->(Haemodynamic instability)-CAUSES->(Fetal Harm)",
+      "(aliskiren)-TREATS->(Inflammation)-CAUSES->(Haemodynamic instability)-CAUSES->(Fetal Harm)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hypertensive disease",
+        "Adverse effects",
+        "Lisinopril"
+      ],
+      [
+        "Hypertensive disease",
+        "Adverse effects",
+        "Lisinopril"
+      ],
+      [
+        "candesartan",
+        "hyperkalemia",
+        "Lisinopril"
+      ],
+      [
+        "candesartan",
+        "Edema",
+        "Lisinopril"
+      ],
+      [
+        "Hypertensive disease",
+        "Adverse effects",
+        "Lisinopril"
+      ],
+      [
+        "Hypertensive disease",
+        "Adverse effects",
+        "Lisinopril"
+      ],
+      [
+        "Angiotensin-Converting Enzyme Inhibitors",
+        "Antihypertensive Agents",
+        "Lisinopril"
+      ],
+      [
+        "Angiotensin-Converting Enzyme Inhibitors",
+        "Angioneurotic Edema",
+        "Lisinopril"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(Lisinopril)",
+      "(Hypertensive disease)-COMPLICATES->(Adverse effects)-ASSOCIATED_WITH->(Lisinopril)",
+      "(candesartan)-ASSOCIATED_WITH->(hyperkalemia)-ASSOCIATED_WITH->(Lisinopril)",
+      "(candesartan)-TREATS->(Edema)-ASSOCIATED_WITH->(Lisinopril)",
+      "(Hypertensive disease)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(Lisinopril)",
+      "(Hypertensive disease)-COMPLICATES->(Adverse effects)-ASSOCIATED_WITH->(Lisinopril)",
+      "(Angiotensin-Converting Enzyme Inhibitors)-INTERACTS_WITH->(Antihypertensive Agents)-INTERACTS_WITH->(Lisinopril)",
+      "(Angiotensin-Converting Enzyme Inhibitors)-CAUSES->(Angioneurotic Edema)-ASSOCIATED_WITH->(Lisinopril)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Labetalol)-TREATS->(Hypertensive disease)",
+      "(candesartan)-ASSOCIATED_WITH->(hyperkalemia)-ASSOCIATED_WITH->(Lisinopril)",
+      "(Adrenergic beta-Antagonists)-CAUSES->(Hypertensive disease)",
+      "(Hypertensive disease)-CAUSES/COMPLICATES->(Adverse effects)-ASSOCIATED_WITH->(Lisinopril)",
+      "(candesartan)-TREATS->(Edema)-ASSOCIATED_WITH->(Lisinopril)",
+      "(aliskiren)-TREATS->(Hypertensive disease)-CAUSES->(Haemodynamic instability)-CAUSES->(Fetal Harm)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Lisinopril (ACE inhibitor) -> inhibits the renin-angiotensin-aldosterone system -> decreases blood pressure -> 90% confidence. CHAIN: Lisinopril -> contraindicated in pregnancy due to potential harm to the fetus -> discontinue lisinopril if planning pregnancy -> 90% confidence. CHAIN: Labetalol (beta-blocker) -> safe to use in pregnancy for hypertension -> can be considered as an alternative to lisinopril -> 80% confidence. CHAIN: Candesartan (ARB) -> alternative to ACE inhibitors like lisinopril for hypertension -> can be initiated in place of lisinopril -> 80% confidence. CHAIN: Aliskiren (direct renin inhibitor) -> contraindicated in pregnancy due to potential fetal harm -> avoid in pregnant or planning pregnancy patients -> 90%"
+  ],
+  "enhanced_information": "Considering the patient's desire to get pregnant, it is crucial to discontinue lisinopril due to its potential harm to the fetus. Labetalol can be a safe alternative for managing hypertension during pregnancy. Candesartan is also a suitable option as an alternative to lisinopril. Aliskiren should be avoided in pregnant or planning pregnancy patients due to potential fetal harm. Therefore, discontinuing lisinopril and initiating either labetalol or candesartan would be appropriate in this case.",
+  "analysis": "Considering the patient's desire to get pregnant and the potential harm of lisinopril to the fetus, it is crucial to discontinue lisinopril. Labetalol and candesartan are safe alternatives for managing hypertension during pregnancy. Aliskiren should be avoided due to potential fetal harm. Given the options provided, the most appropriate course of action would be to discontinue lisinopril and initiate either labetalol or candesartan.",
+  "answer": "opb or opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

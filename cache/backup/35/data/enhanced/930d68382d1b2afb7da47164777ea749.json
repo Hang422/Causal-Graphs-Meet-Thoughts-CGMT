@@ -1,0 +1,161 @@
+{
+  "question": "An 8-year-old girl is brought to the clinic by her parents for fever and easy bruising. Her parents report that the child has been bruising easily ever since an upper respiratory infection 3 months ago. For example, a bump into the table resulted in a large bruise on the side of her hip for a week. Three days ago, her mother noticed that the child felt warm and subsequently measured a temperature of 101.8°F (38.8°C) that did not respond to acetaminophen. The patient denies any chills, cough, rhinorrhea, pharyngitis, sick contacts, headache, or urinary symptoms. A physical examination demonstrates a nontender, firm, and rubbery node along her left neck and splenomegaly. Laboratory findings are shown below:\n\nLeukocyte count and differential:\nLeukocyte count:  19,000/mm^3\nNeutrophils: 39%\nBands: 12% \nEosinophils: 2%\nBasophils: 0.5%\nLymphocytes: 40%\nMonocytes: 6.5%\nHemoglobin: 9.7 g/dL\nPlatelet count:  100,000/mm^3\nMean corpuscular hemoglobin concentration: 30%\nMean corpuscular volume: 76 µm^3\nReticulocyte count: 0.7%\n\nWhat findings would you expect in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Low leukocyte alkaline phosphatase levels",
+    "opb": "Presence of Auer rods",
+    "opc": "Smudge cells on peripheral blood smear",
+    "opd": "Tartrate-resistant acid phosphatase positivity",
+    "ope": "Translocation of chromosomes 12 and 21"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fever",
+        "Disease",
+        "Hematological Disease"
+      ],
+      [
+        "Fever",
+        "Cardiovascular Diseases",
+        "Hematological Disease"
+      ],
+      [
+        "Fever",
+        "Respiratory Distress Syndrome, Adult",
+        "Hematological Disease"
+      ],
+      [
+        "Decreased hemoglobin",
+        "Kidney Diseases",
+        "paracrine",
+        "Bone Marrow"
+      ],
+      [
+        "Decreased hemoglobin",
+        "Coronary Arteriosclerosis",
+        "paracrine",
+        "Bone Marrow"
+      ],
+      [
+        "Decreased hemoglobin",
+        "Ischemia",
+        "paracrine",
+        "Bone Marrow"
+      ],
+      [
+        "Leukocytosis",
+        "Inflammatory Response"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Hematological Disease)",
+      "(Fever)-CAUSES->(Cardiovascular Diseases)-CAUSES->(Hematological Disease)",
+      "(Fever)-CAUSES->(Respiratory Distress Syndrome, Adult)-COMPLICATES->(Hematological Disease)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Kidney Diseases)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Bone Marrow)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Coronary Arteriosclerosis)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Bone Marrow)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Ischemia)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Bone Marrow)",
+      "(Leukocytosis)-MANIFESTATION_OF->(Inflammatory Response)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Platelet Count measurement",
+        "Inflammation",
+        "Genes",
+        "Bone Marrow"
+      ],
+      [
+        "Platelet Count measurement",
+        "Late pregnancy",
+        "Genes",
+        "Bone Marrow"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Platelet Count measurement)-DIAGNOSES->(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Bone Marrow)",
+      "(Platelet Count measurement)-DIAGNOSES->(Late pregnancy)-ASSOCIATED_WITH->(Genes)-PART_OF->(Bone Marrow)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fever)-CAUSES->(Respiratory Distress Syndrome, Adult)-COMPLICATES->(Hematological Disease)",
+      "(Leukocytosis)-MANIFESTATION_OF->(Inflammatory Response)",
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Hematological Disease)",
+      "(Fever)-CAUSES->(Cardiovascular Diseases)-CAUSES->(Hematological Disease)",
+      "(Decreased hemoglobin)-PREDISPOSES->(Kidney Diseases)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Bone Marrow)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Fever and easy bruising\" -> \"Possible underlying hematologic disorder\" -> 70% CHAIN: \"Splenomegaly and lymphadenopathy\" -> \"Suspicion of lymphoproliferative disorder\" -> 80% CHAIN: \"Low hemoglobin and platelet count\" -> \"Possible bone marrow involvement\" -> 75% CHAIN: \"Leukocytosis with left shift\" -> \"Indicates an inflammatory response\" -> 85% CHAIN: \"Elevated eosinophils and basophils\" -> \"Suggests an allergic or parasitic etiology\" -> 70% CHAIN: \"Low leukocyte alkaline phosphatase levels\" -> \"Seen in chronic myeloid leukemia\" -> 90% CHAIN: \"Presence of Auer rods\" -> \"Characteristic of acute myeloid leukemia\" -> 95% CHAIN: \"Smudge cells on peripheral blood smear\" -> \"Seen in chronic lymphocytic leukemia\" -> 90% CHAIN: \"Tartrate-resistant acid phosphatase positivity\" -> \"Associated with hairy cell leukemia\" -> 85% CHAIN: \"Translocation of chromosomes 12 and 21\" -> \"Associated with acute lymphoblastic leukemia\" -> 70%"
+  ],
+  "enhanced_information": "In a patient with fever, easy bruising, splenomegaly, and lymphadenopathy, findings expected include low leukocyte alkaline phosphatase levels, presence of Auer rods, and smudge cells on peripheral blood smear. These findings align with possible underlying hematologic disorders such as chronic myeloid leukemia, acute myeloid leukemia, and chronic lymphocytic leukemia.",
+  "analysis": "The patient presents with fever, easy bruising, splenomegaly, lymphadenopathy, anemia, and thrombocytopenia, suggestive of a hematologic disorder. Given the enhanced information provided, the expected findings align with a hematologic malignancy. Among the options, low leukocyte alkaline phosphatase levels, presence of Auer rods, and smudge cells on peripheral blood smear are characteristic of hematologic malignancies such as acute myeloid leukemia. Therefore, the most likely correct option is the presence of Auer rods.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

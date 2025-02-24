@@ -1,0 +1,123 @@
+{
+  "question": "A 57-year-old woman presents to an outpatient clinic with lower extremity weakness and lower back pain. The patient says that her symptoms began 2 weeks ago when she was working in her garden and have progressively worsened to the extent she currently is unable to walk on her own. She describes the pain as sharp, severe and descending bilaterally from her lower back to her lateral ankles along the posterior surface of her thighs and legs. She also states that she has had several episodes of urinary incontinence for the past couple of days. The patient denies having any similar pain or incontinence in the past. No other significant past medical history. Current medications are alendronate 5 mg orally daily and a daily multivitamin. Her temperature is 37.0℃ (98.6℉), the blood pressure is 110/70 mm Hg, the pulse is 72/min, the respiratory rate is 15/min, and oxygen saturation is 99% on room air. On physical examination, the patient appears to be in significant distress. Strength is ⅗ in her thighs bilaterally and ⅖ in the legs bilaterally left greater than right. Muscle tone is decreased in the lower extremities. The patellar reflex is 1+ bilaterally and plantar reflex is 0+ bilaterally. Fine touch and pain and temperature sensation are decreased in the lower extremities bilaterally, left greater than right. Saddle anesthesia is present. Which of the following is the next, best step in the management of this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Outpatient management with a 3-day course of meloxicam and tolperisone and reassess",
+    "opb": "Outpatient management with 3 days of strict bed rest and reassess",
+    "opc": "Outpatient management with a 3-day course of diclofenac and gabapentin and reassess",
+    "opd": "Recommend non-emergent inpatient spinal manipulation program",
+    "ope": "Immediate transfer to the emergency department for management"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Back Pain",
+        "Disease",
+        "Urinary Incontinence"
+      ],
+      [
+        "Back Pain",
+        "Obesity",
+        "Urinary Incontinence"
+      ],
+      [
+        "Back Pain",
+        "Symptoms",
+        "Urinary Incontinence"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Back Pain)-CAUSES->(Disease)-CAUSES->(Urinary Incontinence)",
+      "(Back Pain)-CAUSES->(Obesity)-CAUSES->(Urinary Incontinence)",
+      "(Back Pain)-CAUSES->(Symptoms)-CAUSES->(Urinary Incontinence)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Cauda Equina",
+        "Back Pain"
+      ],
+      [
+        "Urinary Incontinence",
+        "GJA1 gene|GJA1",
+        "Lower Extremity",
+        "Numbness of saddle area"
+      ],
+      [
+        "Urinary Incontinence",
+        "IMPACT gene",
+        "Lower Extremity",
+        "Numbness of saddle area"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Cauda Equina)-LOCATION_OF->(Back Pain)",
+      "(Urinary Incontinence)-ASSOCIATED_WITH->(GJA1 gene|GJA1)-PART_OF->(Lower Extremity)-LOCATION_OF->(Numbness of saddle area)",
+      "(Urinary Incontinence)-ASSOCIATED_WITH->(IMPACT gene)-PART_OF->(Lower Extremity)-LOCATION_OF->(Numbness of saddle area)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cauda Equina)-LOCATION_OF->(Back Pain)",
+      "(Back Pain)-CAUSES->(Symptoms)-CAUSES->(Urinary Incontinence)",
+      "(Back Pain)-CAUSES->(Disease)-CAUSES->(Urinary Incontinence)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Compression of the cauda equina -> Lower extremity weakness and back pain -> Urinary incontinence -> Saddle anesthesia -> Immediate transfer to the emergency department for management -> 95%"
+  ],
+  "enhanced_information": "The patient's presentation with lower extremity weakness, back pain, urinary incontinence, and saddle anesthesia is concerning for compression of the cauda equina. Immediate transfer to the emergency department for management is the next best step to prevent potential permanent neurological damage. Evidence paths support the link between back pain and urinary incontinence, further reinforcing the urgency of the situation.",
+  "analysis": "The patient's presentation with lower extremity weakness, back pain, urinary incontinence, and saddle anesthesia is highly concerning for cauda equina syndrome, a surgical emergency. Immediate transfer to the emergency department is crucial to prevent potential permanent neurological damage. Outpatient management or non-emergent interventions are not appropriate in this case.",
+  "answer": "ope",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

@@ -1,0 +1,224 @@
+{
+  "question": "A 29-year-old woman comes to the physician because of intermittent episodes of sharp chest pain and palpitations. She appears nervous. Her pulse is 115/min and irregularly irregular, and blood pressure is 139/86 mmHg. Examination shows a fine tremor on both hands and digital swelling; the extremities are warm. There is retraction of the right upper eyelid. Which of the following is the most appropriate next step in the management of this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Amiodarone",
+    "opb": "Propylthiouracil",
+    "opc": "Warfarin",
+    "opd": "Methimazole",
+    "ope": "Propranolol"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Chest Pain",
+        "Disease",
+        "Tachycardia"
+      ],
+      [
+        "Chest Pain",
+        "Myocardial Infarction",
+        "Tachycardia"
+      ],
+      [
+        "Chest Pain",
+        "Hypertensive disease",
+        "Tachycardia"
+      ],
+      [
+        "Tachycardia",
+        "Hypertensive disease"
+      ],
+      [
+        "Pulse taking",
+        "Disease",
+        "Hypertensive disease"
+      ],
+      [
+        "Pulse taking",
+        "Severe Acute Respiratory Syndrome",
+        "Hypertensive disease"
+      ],
+      [
+        "Hypertensive disease",
+        "Disease",
+        "Fine Tremor"
+      ],
+      [
+        "Hypertensive disease",
+        "Parkinson Disease",
+        "Fine Tremor"
+      ],
+      [
+        "Tachycardia",
+        "cardiac arrhythmia"
+      ],
+      [
+        "Pulse taking",
+        "Disease",
+        "cardiac arrhythmia"
+      ],
+      [
+        "Pulse taking",
+        "Deglutition Disorders",
+        "cardiac arrhythmia"
+      ],
+      [
+        "Pulse taking",
+        "Pain",
+        "cardiac arrhythmia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Chest Pain)-CAUSES->(Disease)-CAUSES->(Tachycardia)",
+      "(Chest Pain)-CAUSES->(Myocardial Infarction)-CAUSES->(Tachycardia)",
+      "(Chest Pain)-CAUSES->(Hypertensive disease)-CAUSES->(Tachycardia)",
+      "(Tachycardia)-CAUSES->(Hypertensive disease)",
+      "(Pulse taking)-CAUSES->(Disease)-CAUSES->(Hypertensive disease)",
+      "(Pulse taking)-CAUSES->(Severe Acute Respiratory Syndrome)-CAUSES->(Hypertensive disease)",
+      "(Hypertensive disease)-CAUSES->(Disease)-CAUSES->(Fine Tremor)",
+      "(Hypertensive disease)-PREDISPOSES->(Parkinson Disease)-CAUSES->(Fine Tremor)",
+      "(Tachycardia)-MANIFESTATION_OF->(cardiac arrhythmia)",
+      "(Pulse taking)-CAUSES->(Disease)-CAUSES->(cardiac arrhythmia)",
+      "(Pulse taking)-CAUSES->(Deglutition Disorders)-PREDISPOSES->(cardiac arrhythmia)",
+      "(Pulse taking)-CAUSES->(Pain)-PREDISPOSES->(cardiac arrhythmia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Symptom control",
+        "Disease",
+        "Virus",
+        "Pharmaceutical Preparations"
+      ],
+      [
+        "Symptom control",
+        "Disease",
+        "Virus",
+        "Pharmaceutical Preparations"
+      ],
+      [
+        "Thyroid Hormones",
+        "Pharmaceutical Preparations"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREVENTS",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA"
+      ]
+    ],
+    "paths": [
+      "(Symptom control)-PREVENTS->(Disease)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Pharmaceutical Preparations)",
+      "(Symptom control)-PREDISPOSES->(Disease)-INTERACTS_WITH->(Virus)-LOCATION_OF->(Pharmaceutical Preparations)",
+      "(Thyroid Hormones)-ISA->(Pharmaceutical Preparations)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pulse taking)-CAUSES->(Severe Acute Respiratory Syndrome)-CAUSES->(Hypertensive disease)",
+      "(Pulse taking)-CAUSES->(Pain)-PREDISPOSES->(cardiac arrhythmia)",
+      "(Tachycardia)-CAUSES->(Hypertensive disease)",
+      "(Tachycardia)-MANIFESTATION_OF->(cardiac arrhythmia)",
+      "(Thyroid Hormones)-ISA->(Pharmaceutical Preparations)",
+      "(Chest Pain)-CAUSES->(Disease)-CAUSES->(Tachycardia)",
+      "(Chest Pain)-CAUSES->(Myocardial Infarction)-CAUSES->(Tachycardia)",
+      "(Chest Pain)-CAUSES->(Hypertensive disease)-CAUSES->(Tachycardia)",
+      "(Pulse taking)-CAUSES->(Disease)-CAUSES->(Hypertensive disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Symptoms of chest pain and palpitations\" -> \"Tachycardia and irregular pulse\" -> \"Hypertension\" -> \"Fine tremor, digital swelling, warm extremities, retraction of right upper eyelid\" -> \"Signs of hyperthyroidism\" -> 90%",
+    "CHAIN: \"Signs of hyperthyroidism\" -> \"Likely diagnosis of Graves' disease\" -> \"Excess thyroid hormone production\" -> \"Increased sympathetic activity\" -> \"Tachycardia and palpitations\" -> 85%",
+    "CHAIN: \"Likely diagnosis of Graves' disease\" -> \"Treatment with antithyroid medications indicated\" -> \"Need for management to control symptoms and reduce thyroid hormone levels\" -> \"Consideration of medications to block thyroid hormone synthesis\" -> 80%",
+    "CHAIN: \"Tachycardia and irregular pulse\" -> \"Potential risk of arrhythmias\" -> \"Need for rate control\" -> \"Consideration of beta-blockers like Propranolol\" -> 75%"
+  ],
+  "enhanced_information": "The patient presents with symptoms suggestive of hyperthyroidism, likely Graves' disease. The most appropriate next step in management is to start antithyroid medication to control symptoms and reduce thyroid hormone levels. Considering the symptoms and signs of hyperthyroidism, the correct option is Methimazole (opd). Evidence paths support the link between excess thyroid hormone production and symptoms like tachycardia and palpitations.",
+  "analysis": "The patient's presentation is highly suggestive of hyperthyroidism, likely Graves' disease, based on the symptoms of chest pain, palpitations, nervousness, tremors, digital swelling, warm extremities, and retraction of the right upper eyelid. The irregularly irregular pulse is indicative of atrial fibrillation, a common complication of hyperthyroidism. The most appropriate next step in the management of hyperthyroidism is to start antithyroid medication to control symptoms and reduce thyroid hormone levels. Methimazole is the preferred initial treatment for hyperthyroidism, as it inhibits thyroid hormone synthesis. Propranolol, although it can help with symptoms like tachycardia, does not address the underlying cause of hyperthyroidism. Amiodarone and Warfarin are not indicated as initial treatments for hyperthyroidism. Propylthiouracil is an alternative to Methimazole but is associated with a higher risk of hepatotoxicity.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4,
+      0,
+      2,
+      2
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      25.0,
+      25.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

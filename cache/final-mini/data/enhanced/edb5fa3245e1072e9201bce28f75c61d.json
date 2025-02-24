@@ -1,0 +1,137 @@
+{
+  "question": "A 20-year-old woman visits the clinic for her annual physical examination. She does not have any complaints during this visit. The past medical history is insignificant. She follows a healthy lifestyle with a balanced diet and moderate exercise schedule. She does not smoke or drink alcohol. She does not take any medications currently. The family history is significant for her grandfather and uncle who had their parathyroid glands removed. The vital signs include: blood pressure:122/88 mm Hg, pulse 88/min, respirations 17/min, and temperature 36.7°C (98.0°F). The physical exam is within normal limits. The lab test results are as follows:\nBlood Urea Nitrogen 12 mg/dL\nSerum Creatinine 1.1 mg/dL\nSerum Glucose (Random) 88 mg/dL\nSerum chloride 107 mmol/L\nSerum potassium 4.5 mEq/L\nSerum sodium 140 mEq/L\nSerum calcium 14.5 mmol/L\nSerum albumin 4.4 gm/dL\nParathyroid Hormone (PTH) 70 pg/mL (Normal: 10-65 pg/mL)\n24-Hr urinary calcium 85 mg/day (Normal: 100–300 mg/day)\nWhich of the following is the next best step in the management of this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Parathyroidectomy",
+    "opb": "Start IV fluids to keep her hydrated",
+    "opc": "No treatment is necessary",
+    "opd": "Start her on pamidronate",
+    "ope": "Give glucocorticoids"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Serum Calcium Level",
+        "Hypercalcemia"
+      ],
+      [
+        "Hypercalcemia",
+        "Hyperparathyroidism, Primary"
+      ],
+      [
+        "Serum Calcium Level",
+        "Hypercalcemia"
+      ],
+      [
+        "Serum Calcium Level",
+        "Hypercalcemia"
+      ],
+      [
+        "Serum Calcium Level",
+        "Hypercalcemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Serum Calcium Level)-MANIFESTATION_OF->(Hypercalcemia)",
+      "(Hypercalcemia)-CAUSES->(Hyperparathyroidism, Primary)",
+      "(Serum Calcium Level)-MANIFESTATION_OF->(Hypercalcemia)",
+      "(Serum Calcium Level)-MANIFESTATION_OF->(Hypercalcemia)",
+      "(Serum Calcium Level)-MANIFESTATION_OF->(Hypercalcemia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "amidronate",
+        "loss; bone",
+        "Genes",
+        "Transplanted tissue",
+        "Parathyroidectomy"
+      ],
+      [
+        "amidronate",
+        "Bone necrosis",
+        "Genes",
+        "Transplanted tissue",
+        "Parathyroidectomy"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREVENTS",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(amidronate)-PREVENTS->(loss; bone)-ASSOCIATED_WITH->(Genes)-PART_OF->(Transplanted tissue)-LOCATION_OF->(Parathyroidectomy)",
+      "(amidronate)-TREATS->(Bone necrosis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Transplanted tissue)-LOCATION_OF->(Parathyroidectomy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Serum Calcium Level)-MANIFESTATION_OF->(Hypercalcemia)",
+      "(Hypercalcemia)-CAUSES->(Hyperparathyroidism, Primary)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Serum calcium level is 14.5 mmol/L\" -> \"indicates hypercalcemia\" -> \"possible causes include primary hyperparathyroidism or malignancy\" -> \"PTH level is elevated at 70 pg/mL\" -> \"suggests primary hyperparathyroidism\" -> \"24-Hr urinary calcium is low at 85 mg/day\" -> \"indicates possible parathyroid adenoma\" -> \"parathyroidectomy is indicated\" -> 85%",
+    "CHAIN: \"Serum calcium level is 14.5 mmol/L\" -> \"indicates hypercalcemia\" -> \"PTH level is elevated at 70 pg/mL\" -> \"suggests primary hyperparathyroidism\" -> \"patient is asymptomatic\" -> \"monitoring may be appropriate\" -> \"no immediate treatment necessary\" -> 75%",
+    "CHAIN: \"Serum calcium level is 14.5 mmol/L\" -> \"indicates hypercalcemia\" -> \"PTH level is elevated at 70 pg/mL\" -> \"suggests primary hyperparathyroidism\" -> \"patient has no symptoms\" -> \"consider conservative management\" -> \"no treatment is necessary\" -> 80%",
+    "CHAIN: \"Serum calcium level is 14.5 mmol/L\" -> \"indicates hypercalcemia\" -> \"PTH level is elevated at 70 pg/mL\" -> \"suggests primary hyperparathyroidism\" -> \"24-Hr urinary calcium is low at 85 mg/day\" -> \"indicates possible parathyroid adenoma\" -> \"pamidronate could be considered\" -> \"but parathyroidectomy is more definitive\" -> 70%"
+  ],
+  "enhanced_information": "The patient presents with hypercalcemia (serum calcium level of 14.5 mmol/L) and elevated parathyroid hormone (PTH) levels (70 pg/mL), which suggests primary hyperparathyroidism. The low urinary calcium excretion (85 mg/day) indicates that the hypercalcemia is likely due to a parathyroid adenoma rather than malignancy. Although the patient is asymptomatic, the presence of hypercalcemia and elevated PTH levels typically warrants intervention. The standard management for primary hyperparathyroidism, especially with evidence of a parathyroid adenoma, is parathyroidectomy, making it the most appropriate next step in management. Other options such as IV fluids, no treatment, pamidronate, or glucocorticoids are not indicated in this scenario based on current medical consensus.",
+  "analysis": "The patient presents with hypercalcemia (serum calcium level of 14.5 mmol/L) and elevated parathyroid hormone (PTH) levels (70 pg/mL), which is indicative of primary hyperparathyroidism. The low urinary calcium excretion (85 mg/day) suggests that the hypercalcemia is likely due to a parathyroid adenoma rather than malignancy. In cases of primary hyperparathyroidism, especially when there is evidence of a parathyroid adenoma, surgical intervention (parathyroidectomy) is the standard management approach, even in asymptomatic patients. Other options such as IV fluids, no treatment, pamidronate, or glucocorticoids are not appropriate in this context. Therefore, the most appropriate next step in management is parathyroidectomy.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      1,
+      1,
+      2
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      16.666666666666664,
+      16.666666666666664,
+      33.33333333333333
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

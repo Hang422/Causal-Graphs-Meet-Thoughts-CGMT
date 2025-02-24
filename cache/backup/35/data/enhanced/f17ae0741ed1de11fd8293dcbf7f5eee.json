@@ -1,0 +1,140 @@
+{
+  "question": "A 57-year-old man comes to the physician because of a 2-year history of fatigue, worsening shortness of breath, and a productive cough for 2 years. He has smoked 1 pack of cigarettes daily for the past 40 years. Examination shows pursed-lip breathing and an increased anteroposterior chest diameter. There is diffuse wheezing bilaterally and breath sounds are distant. Which of the following parameters is most likely to be decreased in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Work of breathing",
+    "opb": "Lung elastic recoil",
+    "opc": "Lower airway resistance",
+    "opd": "Thickness of small airways",
+    "ope": "Pulmonary vascular pressure"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Chronic Obstructive Airway Disease",
+        "paracrine",
+        "Lung"
+      ],
+      [
+        "Chronic Obstructive Airway Disease",
+        "Muscle Tonus",
+        "Lung"
+      ],
+      [
+        "Chronic Obstructive Airway Disease",
+        "Respiration",
+        "Lung"
+      ],
+      [
+        "Chronic Obstructive Airway Disease",
+        "Pathological accumulation of air in tissues"
+      ],
+      [
+        "Chronic Obstructive Airway Disease",
+        "Bronchitis, Chronic"
+      ],
+      [
+        "Chronic Obstructive Airway Disease",
+        "Hypertension, Pulmonary"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Chronic Obstructive Airway Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Lung)",
+      "(Chronic Obstructive Airway Disease)-MANIFESTATION_OF->(Muscle Tonus)-PROCESS_OF->(Lung)",
+      "(Chronic Obstructive Airway Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Lung)",
+      "(Chronic Obstructive Airway Disease)-CAUSES->(Pathological accumulation of air in tissues)",
+      "(Chronic Obstructive Airway Disease)-CAUSES->(Bronchitis, Chronic)",
+      "(Chronic Obstructive Airway Disease)-CAUSES->(Hypertension, Pulmonary)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Chronic Obstructive Airway Disease",
+        "Pathogenesis",
+        "Adenylate Cyclase",
+        "Airway Resistance"
+      ],
+      [
+        "Chronic Obstructive Airway Disease",
+        "Pathogenesis",
+        "Adenylate Cyclase",
+        "Airway Resistance"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Chronic Obstructive Airway Disease)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Adenylate Cyclase)-CAUSES->(Airway Resistance)",
+      "(Chronic Obstructive Airway Disease)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Adenylate Cyclase)-CAUSES->(Airway Resistance)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Chronic Obstructive Airway Disease)-CAUSES->(Pathological accumulation of air in tissues)",
+      "(Chronic Obstructive Airway Disease)-CAUSES->(Bronchitis, Chronic)",
+      "(Chronic Obstructive Airway Disease)-CAUSES/MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Adenylate Cyclase)-CAUSES->(Airway Resistance)",
+      "(Chronic Obstructive Airway Disease)-CAUSES->(Hypertension, Pulmonary)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Smoking -> Chronic obstructive pulmonary disease (COPD) -> Decreased lung elastic recoil -> 80% CHAIN: COPD -> Increased airway resistance -> Decreased lower airway resistance -> 70% CHAIN: COPD -> Emphysema -> Decreased thickness of small airways -> 60% CHAIN: COPD -> Chronic bronchitis -> Increased work of breathing -> 50% CHAIN: COPD -> Pulmonary hypertension -> Increased pulmonary vascular pressure -> 80%"
+  ],
+  "enhanced_information": "In a patient with COPD, the most likely parameter to be decreased is lung elastic recoil. This is supported by the consensus that COPD leads to decreased lung elastic recoil, which contributes to the symptoms of pursed-lip breathing and increased anteroposterior chest diameter. The evidence paths mentioning chronic obstructive airway disease causing increased airway resistance and pulmonary hypertension align with the understanding of COPD pathophysiology.",
+  "analysis": "In a patient with COPD, the most likely parameter to be decreased is lung elastic recoil. This aligns with the consensus that COPD leads to decreased lung elastic recoil, contributing to symptoms like pursed-lip breathing and increased anteroposterior chest diameter. While other parameters like lower airway resistance and pulmonary vascular pressure can be affected in COPD, the primary characteristic associated with the clinical presentation described is the decreased lung elastic recoil.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

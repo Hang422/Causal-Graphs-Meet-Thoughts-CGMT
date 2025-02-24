@@ -1,0 +1,125 @@
+{
+  "question": "A 21-year-old woman presents to her primary care physician for evaluation of malaise, joint pains, and rash. She has developed joint pain in her hands over the last month, and has noted a rash over her face that gets worse with sun exposure. She is taking no medication at the present time. On further physical examination, an erythematous rash with a small amount of underlying edema is seen on her face. Her complete blood count is remarkable due to a lymphocytopenia. What are other disorders known to cause lymphocytopenia?\nI 22q.11.2 deletion syndrome\nII Bruton tyrosine kinase (BTK) defect\nIII Diphyllobothrium latum infection\nIV Whole body radiation\nV Glanzmann-Riniker syndrome?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "I, II, III",
+    "opb": "I, III, V",
+    "opc": "III, IV",
+    "opd": "I, II, IV, V",
+    "ope": "III, V"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Whole-Body Irradiation",
+        "Disease",
+        "paracrine",
+        "Bone Marrow"
+      ],
+      [
+        "Whole-Body Irradiation",
+        "Disease",
+        "Respiration",
+        "Bone Marrow"
+      ],
+      [
+        "Whole-Body Irradiation",
+        "Disease",
+        "Physiologic Function",
+        "Bone Marrow"
+      ],
+      [
+        "Malabsorption Syndromes",
+        "Malnutrition"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Whole-Body Irradiation)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Bone Marrow)",
+      "(Whole-Body Irradiation)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Bone Marrow)",
+      "(Whole-Body Irradiation)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Bone Marrow)",
+      "(Malabsorption Syndromes)-CAUSES->(Malnutrition)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Lymphocyte",
+        "Virus",
+        "Lymphopenia"
+      ],
+      [
+        "Lymphocyte",
+        "Virus",
+        "Lymphopenia"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PART_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Lymphocyte)-LOCATION_OF->(Virus)-INTERACTS_WITH->(Lymphopenia)",
+      "(Lymphocyte)-PART_OF->(Virus)-CAUSES->(Lymphopenia)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Malabsorption Syndromes)-CAUSES->(Malnutrition)",
+      "(Lymphocyte)-LOCATION_OF/PART_OF->(Virus)-CAUSES/INTERACTS_WITH->(Lymphopenia)",
+      "(Whole-Body Irradiation)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Bone Marrow)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Bruton tyrosine kinase (BTK) defect -> impaired B-cell development -> decreased lymphocyte production -> lymphocytopenia -> 80% CHAIN: Whole body radiation -> bone marrow suppression -> decreased lymphocyte production -> lymphocytopenia -> 85% CHAIN: Glanzmann-Riniker syndrome -> autoimmune destruction of lymphocytes -> lymphocytopenia -> 75% CHAIN: Diphyllobothrium latum infection -> malabsorption of nutrients -> nutritional deficiency -> decreased lymphocyte production -> lymphocytopenia -> 80%"
+  ],
+  "enhanced_information": "Lymphocytopenia can be caused by various disorders including Bruton tyrosine kinase (BTK) defect, whole body radiation, Glanzmann-Riniker syndrome, and Diphyllobothrium latum infection. Malabsorption syndromes leading to malnutrition can also contribute to decreased lymphocyte production. Therefore, options I, II, III, and V are known to cause lymphocytopenia.",
+  "analysis": "The core medical principle here is to identify disorders that are known to cause lymphocytopenia. Based on the enhanced information provided, options I, II, III, and V are confirmed to be associated with lymphocytopenia. Therefore, the most likely correct option is opd: I, II, IV, V.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

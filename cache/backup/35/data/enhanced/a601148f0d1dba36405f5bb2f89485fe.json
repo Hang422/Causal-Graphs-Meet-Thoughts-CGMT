@@ -1,0 +1,145 @@
+{
+  "question": "A 71-year-old man presents to his primary care physician because he is increasingly troubled by a tremor in his hands. He says that the tremor is worse when he is resting and gets better when he reaches for objects. His wife reports that he has been slowing in his movements and also has difficulty starting to walk. His steps have been short and unsteady even when he is able to initiate movement. Physical exam reveals rigidity in his muscles when tested for active range of motion. Histology in this patient would most likely reveal which of the following findings?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Alpha-synuclein",
+    "opb": "Intracellular hyperphosphorylated tau",
+    "opc": "Hyperphosphorylated tau inclusion bodies",
+    "opd": "Large intracellular vacuoles",
+    "ope": "Perivascular inflammation"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Resting Tremor",
+        "Parkinson Disease",
+        "Bradykinesia"
+      ],
+      [
+        "Resting Tremor",
+        "Disease",
+        "Bradykinesia"
+      ],
+      [
+        "Resting Tremor",
+        "Parkinson Disease",
+        "Bradykinesia"
+      ],
+      [
+        "Resting Tremor",
+        "Disease",
+        "Bradykinesia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Resting Tremor)-CAUSES->(Parkinson Disease)-CAUSES->(Bradykinesia)",
+      "(Resting Tremor)-MANIFESTATION_OF->(Disease)-CAUSES->(Bradykinesia)",
+      "(Resting Tremor)-CAUSES->(Parkinson Disease)-CAUSES->(Bradykinesia)",
+      "(Resting Tremor)-MANIFESTATION_OF->(Disease)-CAUSES->(Bradykinesia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Muscle Rigidity",
+        "Diastasis",
+        "alpha-Synuclein"
+      ],
+      [
+        "Muscle Rigidity",
+        "Inflammation",
+        "alpha-Synuclein"
+      ],
+      [
+        "Muscle Rigidity",
+        "Diastasis",
+        "Antibodies",
+        "Inclusion Bodies"
+      ],
+      [
+        "Muscle Rigidity",
+        "Diastasis",
+        "TARDBP gene|TARDBP",
+        "Inclusion Bodies"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Muscle Rigidity)-MANIFESTATION_OF->(Diastasis)-ASSOCIATED_WITH->(alpha-Synuclein)",
+      "(Muscle Rigidity)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(alpha-Synuclein)",
+      "(Muscle Rigidity)-MANIFESTATION_OF->(Diastasis)-ASSOCIATED_WITH->(Antibodies)-PART_OF->(Inclusion Bodies)",
+      "(Muscle Rigidity)-MANIFESTATION_OF->(Diastasis)-ASSOCIATED_WITH->(TARDBP gene|TARDBP)-PART_OF->(Inclusion Bodies)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Muscle Rigidity)-MANIFESTATION_OF->(Diastasis)-ASSOCIATED_WITH->(Antibodies)-PART_OF->(Inclusion Bodies)",
+      "(Muscle Rigidity)-MANIFESTATION_OF->(Diastasis)-ASSOCIATED_WITH->(alpha-Synuclein)",
+      "(Muscle Rigidity)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(alpha-Synuclein)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Resting tremor, improves with movement\" -> \"Bradykinesia\" -> \"Short, unsteady steps\" -> \"Rigidity on physical exam\" -> \"Alpha-synuclein\" -> 95% CHAIN: \"Resting tremor, improves with movement\" -> \"Bradykinesia\" -> \"Short, unsteady steps\" -> \"Rigidity on physical exam\" -> \"Hyperphosphorylated tau inclusion bodies\" -> 95%"
+  ],
+  "enhanced_information": "In a 71-year-old man presenting with resting tremor, bradykinesia, short unsteady steps, and rigidity on physical exam, the most likely histological finding would be alpha-synuclein deposition, not hyperphosphorylated tau inclusion bodies as initially suggested. Evidence paths support the association of muscle rigidity with alpha-synuclein, aligning with the consensus in Parkinson's disease pathology.",
+  "analysis": "The core medical principle in this case is the presentation of a 71-year-old man with resting tremor, bradykinesia, short unsteady steps, and rigidity, which strongly suggests Parkinson's disease. The enhanced information provided aligns with the consensus that alpha-synuclein deposition is the most likely histological finding in Parkinson's disease, not hyperphosphorylated tau inclusion bodies. This aligns with the typical pathology seen in Parkinson's disease.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

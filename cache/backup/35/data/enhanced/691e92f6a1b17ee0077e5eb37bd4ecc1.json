@@ -1,0 +1,163 @@
+{
+  "question": "A 35-year-old woman with a history of Crohn disease presents for a follow-up appointment. She says that lately, she has started to notice difficulty walking. She says that some of her friends have joked that she appears to be walking as if she was drunk. Past medical history is significant for Crohn disease diagnosed 2 years ago, managed with natalizumab for the past year because her intestinal symptoms have become severe and unresponsive to other therapies. On physical examination, there is gait and limb ataxia present. Strength is 4/5 in the right upper limb. A T1/T2 MRI of the brain is ordered and is shown. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Sporadic Creutzfeldt-Jakob disease (sCJD)",
+    "opb": "Variant Creutzfeldt-Jakob disease (vCJD)",
+    "opc": "Subacute sclerosing panencephalitis (SSPE)",
+    "opd": "Progressive multifocal encephalopathy (PML)",
+    "ope": "West Nile encephalitis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "natalizumab",
+        "Leukoencephalopathy, Progressive Multifocal"
+      ],
+      [
+        "Ataxia, Appendicular",
+        "Asthenia",
+        "uptake",
+        "Brain"
+      ],
+      [
+        "Ataxia, Appendicular",
+        "Asthenia",
+        "biological adaptation to stress",
+        "Brain"
+      ],
+      [
+        "Magnetic Resonance Imaging",
+        "Leukoencephalopathy, Progressive Multifocal"
+      ],
+      [
+        "Ataxia, Appendicular",
+        "Asthenia",
+        "uptake",
+        "Right upper extremity"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(natalizumab)-TREATS->(Leukoencephalopathy, Progressive Multifocal)",
+      "(Ataxia, Appendicular)-CAUSES->(Asthenia)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Brain)",
+      "(Ataxia, Appendicular)-CAUSES->(Asthenia)-MANIFESTATION_OF->(biological adaptation to stress)-PROCESS_OF->(Brain)",
+      "(Magnetic Resonance Imaging)-CAUSES->(Leukoencephalopathy, Progressive Multifocal)",
+      "(Ataxia, Appendicular)-CAUSES->(Asthenia)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Right upper extremity)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Crohn's disease",
+        "Pathogenesis",
+        "natalizumab"
+      ],
+      [
+        "Crohn's disease",
+        "Pathogenesis",
+        "natalizumab"
+      ],
+      [
+        "Brain",
+        "Leukoencephalopathy, Progressive Multifocal"
+      ],
+      [
+        "Right upper extremity",
+        "Disease",
+        "Leukoencephalopathy, Progressive Multifocal"
+      ],
+      [
+        "Right upper extremity",
+        "Symptoms",
+        "Leukoencephalopathy, Progressive Multifocal"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Crohn's disease)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(natalizumab)",
+      "(Crohn's disease)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(natalizumab)",
+      "(Brain)-LOCATION_OF->(Leukoencephalopathy, Progressive Multifocal)",
+      "(Right upper extremity)-LOCATION_OF->(Disease)-CAUSES->(Leukoencephalopathy, Progressive Multifocal)",
+      "(Right upper extremity)-LOCATION_OF->(Symptoms)-ASSOCIATED_WITH->(Leukoencephalopathy, Progressive Multifocal)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(natalizumab)-TREATS->(Leukoencephalopathy, Progressive Multifocal)",
+      "(Magnetic Resonance Imaging)-CAUSES->(Leukoencephalopathy, Progressive Multifocal)",
+      "(Brain)-LOCATION_OF->(Leukoencephalopathy, Progressive Multifocal)",
+      "(Crohn's disease)-CAUSES/MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(natalizumab)",
+      "(Right upper extremity)-LOCATION_OF->(Symptoms)-ASSOCIATED_WITH->(Leukoencephalopathy, Progressive Multifocal)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Crohn disease\" -> \"long-term natalizumab use\" -> \"increased risk of progressive multifocal leukoencephalopathy (PML)\" -> 70% CHAIN: \"Gait and limb ataxia\" -> \"T1/T2 MRI of the brain findings\" -> \"white matter lesions suggestive of PML\" -> 80% CHAIN: \"Gait and limb ataxia\" -> \"strength 4/5 in right upper limb\" -> \"suggestive of corticospinal tract involvement seen in PML\" -> 70%"
+  ],
+  "enhanced_information": "The patient's history of Crohn disease and long-term natalizumab use increases the risk of progressive multifocal leukoencephalopathy (PML). The presence of gait and limb ataxia, along with T1/T2 MRI findings of white matter lesions and corticospinal tract involvement, is highly suggestive of PML. The evidence paths confirm the association between natalizumab and PML, supporting the diagnosis of Progressive Multifocal Encephalopathy (PML) as the most likely diagnosis in this case.",
+  "analysis": "The patient's history of Crohn disease and long-term natalizumab use increases the risk of progressive multifocal leukoencephalopathy (PML). The presence of gait and limb ataxia, along with T1/T2 MRI findings of white matter lesions and corticospinal tract involvement, is highly suggestive of PML. The enhanced information strongly supports the diagnosis of Progressive Multifocal Encephalopathy (PML) as the most likely cause of the patient's symptoms.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

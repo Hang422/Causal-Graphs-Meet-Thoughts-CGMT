@@ -1,0 +1,163 @@
+{
+  "question": "A 14-year-old boy is brought to the emergency department by his parents for joint pain following the acute onset of a diffuse, pruritic rash for the past 24 hours. A week ago, he was diagnosed with pharyngitis after returning home from summer camp and is currently taking antibiotics. There is no family history of serious illness. His temperature is 38.5°C (101.3°F), pulse is 90/min, and blood pressure is 110/70 mm Hg. Physical examination shows periorbital edema, generalized lymphadenopathy, and well-circumscribed, erythematous, confluent skin lesions of variable sizes up to several centimeters in width over his entire body. There is pain on passive movement of wrists and ankle joints bilaterally. Urine dipstick shows 1+ proteinuria. There is no hematuria. Which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Switch medication to doxycycline",
+    "opb": "Discontinue antibiotic",
+    "opc": "Administer prednisone",
+    "opd": "Perform allergy testing",
+    "ope": "Administer diphenhydramine\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pharyngitis",
+        "Disease",
+        "Hypersensitivity"
+      ],
+      [
+        "Hypersensitivity",
+        "Disease",
+        "Arthralgia"
+      ],
+      [
+        "Hypersensitivity",
+        "Obesity",
+        "Arthralgia"
+      ],
+      [
+        "Hypersensitivity",
+        "Infection",
+        "Arthralgia"
+      ],
+      [
+        "Proteinuria",
+        "Disease",
+        "Acute post-streptococcal glomerulonephritis"
+      ],
+      [
+        "Proteinuria",
+        "Nephritis, Interstitial",
+        "Acute post-streptococcal glomerulonephritis"
+      ],
+      [
+        "Proteinuria",
+        "Hemolytic-Uremic Syndrome",
+        "Acute post-streptococcal glomerulonephritis"
+      ],
+      [
+        "Periorbital edema",
+        "Lactose Intolerance",
+        "Disease",
+        "Acute post-streptococcal glomerulonephritis"
+      ],
+      [
+        "Arthralgia",
+        "Disease",
+        "Acute post-streptococcal glomerulonephritis"
+      ],
+      [
+        "Arthralgia",
+        "Infection",
+        "Acute post-streptococcal glomerulonephritis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pharyngitis)-CAUSES->(Disease)-CAUSES->(Hypersensitivity)",
+      "(Hypersensitivity)-CAUSES->(Disease)-CAUSES->(Arthralgia)",
+      "(Hypersensitivity)-CAUSES->(Obesity)-CAUSES->(Arthralgia)",
+      "(Hypersensitivity)-CAUSES->(Infection)-CAUSES->(Arthralgia)",
+      "(Proteinuria)-CAUSES->(Disease)-CAUSES->(Acute post-streptococcal glomerulonephritis)",
+      "(Proteinuria)-CAUSES->(Nephritis, Interstitial)-COMPLICATES->(Acute post-streptococcal glomerulonephritis)",
+      "(Proteinuria)-CAUSES->(Hemolytic-Uremic Syndrome)-COMPLICATES->(Acute post-streptococcal glomerulonephritis)",
+      "(Periorbital edema)-MANIFESTATION_OF->(Lactose Intolerance)-CAUSES->(Disease)-CAUSES->(Acute post-streptococcal glomerulonephritis)",
+      "(Arthralgia)-CAUSES->(Disease)-CAUSES->(Acute post-streptococcal glomerulonephritis)",
+      "(Arthralgia)-CAUSES->(Infection)-CAUSES->(Acute post-streptococcal glomerulonephritis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypersensitivity)-CAUSES->(Disease)-CAUSES->(Arthralgia)",
+      "(Hypersensitivity)-CAUSES->(Obesity)-CAUSES->(Arthralgia)",
+      "(Hypersensitivity)-CAUSES->(Infection)-CAUSES->(Arthralgia)",
+      "(Proteinuria)-CAUSES->(Nephritis, Interstitial)-COMPLICATES->(Acute post-streptococcal glomerulonephritis)",
+      "(Pharyngitis)-CAUSES->(Disease)-CAUSES->(Hypersensitivity)",
+      "(Proteinuria)-CAUSES->(Disease)-CAUSES->(Acute post-streptococcal glomerulonephritis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Antibiotic treatment for pharyngitis -> possible allergic reaction -> rash and joint pain -> 70% CHAIN: Joint pain and rash -> possible serum sickness-like reaction -> 80% CHAIN: Periorbital edema, proteinuria, and joint pain -> possible acute poststreptococcal glomerulonephritis -> 60% CHAIN: Acute poststreptococcal glomerulonephritis -> supportive management with monitoring -> 70%"
+  ],
+  "enhanced_information": "The patient presents with joint pain, rash, periorbital edema, proteinuria, and a history of pharyngitis. The most likely diagnosis is acute poststreptococcal glomerulonephritis (APSGN) given the constellation of symptoms. The next step in management would involve supportive care and monitoring for APSGN rather than switching antibiotics or administering prednisone. Discontinuing the current antibiotic may be considered if it is suspected to be the cause of the reaction. Allergy testing or diphenhydramine administration is not indicated at this point.",
+  "analysis": "The patient's presentation is most consistent with acute poststreptococcal glomerulonephritis (APSGN) given the history of pharyngitis, rash, joint pain, periorbital edema, proteinuria, and absence of hematuria. The management of APSGN primarily involves supportive care and monitoring. Switching antibiotics or administering prednisone is not the first-line approach in this scenario. Discontinuing the current antibiotic may be considered if it is suspected to be the cause of the reaction. Allergy testing and diphenhydramine are not indicated at this point.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

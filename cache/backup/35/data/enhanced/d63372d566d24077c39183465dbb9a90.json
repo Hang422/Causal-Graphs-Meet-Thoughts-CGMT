@@ -1,0 +1,129 @@
+{
+  "question": "A 3-day-old newborn is brought to the physician because of abdominal distention, inconsolable crying, and 3 episodes of bilious vomiting since the previous evening. He was delivered at home at 40 weeks' gestation by a trained midwife. He has not passed meconium. Physical examination shows abdominal distention, a tight anal sphincter, and an explosive passage of air and feces on removal of the examining finger. Abnormal development of which of the following best explains this patient's condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Muscularis mucosae and serosa",
+    "opb": "Epithelium and lamina propria",
+    "opc": "Submucosa and muscularis externa",
+    "opd": "Epithelium and submucosa",
+    "ope": "Muscularis mucosae and lamina propria"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Intestinal Obstruction",
+        "Vomiting bile"
+      ],
+      [
+        "Rectal examination",
+        "Constipation",
+        "Disease",
+        "Hirschsprung Disease"
+      ],
+      [
+        "Rectal examination",
+        "Acute appendicitis NOS",
+        "Disease",
+        "Hirschsprung Disease"
+      ],
+      [
+        "Rectal examination",
+        "Pain",
+        "Disease",
+        "Hirschsprung Disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Intestinal Obstruction)-CAUSES->(Vomiting bile)",
+      "(Rectal examination)-CAUSES->(Constipation)-CAUSES->(Disease)-CAUSES->(Hirschsprung Disease)",
+      "(Rectal examination)-CAUSES->(Acute appendicitis NOS)-CAUSES->(Disease)-CAUSES->(Hirschsprung Disease)",
+      "(Rectal examination)-CAUSES->(Pain)-CAUSES->(Disease)-CAUSES->(Hirschsprung Disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Vomiting bile",
+        "Symptoms",
+        "Disease",
+        "Hirschsprung Disease"
+      ],
+      [
+        "Vomiting bile",
+        "Symptoms",
+        "Disease",
+        "Hirschsprung Disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "DIAGNOSES",
+        "CAUSES"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Vomiting bile)-ISA->(Symptoms)-DIAGNOSES->(Disease)-CAUSES->(Hirschsprung Disease)",
+      "(Vomiting bile)-ISA->(Symptoms)-ASSOCIATED_WITH->(Disease)-CAUSES->(Hirschsprung Disease)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Intestinal Obstruction)-CAUSES->(Vomiting bile)",
+      "(Vomiting bile)-ISA->(Symptoms)-ASSOCIATED_WITH/DIAGNOSES->(Disease)-CAUSES->(Hirschsprung Disease)",
+      "(Rectal examination)-CAUSES->(Constipation)-CAUSES->(Disease)-CAUSES->(Hirschsprung Disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Absence of meconium passage -> intestinal obstruction -> abdominal distention, bilious vomiting, inconsolable crying -> possible Hirschsprung disease -> 80% confidence. CHAIN: Tight anal sphincter -> explosive passage of air and feces on rectal examination -> possible Hirschsprung disease -> 70% confidence. CHAIN: Home delivery by a trained midwife -> lack of proper medical assessment at birth -> missed signs of Hirschsprung disease -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with abdominal distention, bilious vomiting, inconsolable crying, absence of meconium passage, tight anal sphincter, and explosive passage of air and feces on rectal examination is highly suggestive of Hirschsprung disease. This condition involves the absence of ganglion cells in the submucosa and muscularis externa of the colon, leading to functional obstruction. The abnormal development of submucosa and muscularis externa best explains the patient's symptoms.",
+  "analysis": "The patient's presentation is highly suggestive of Hirschsprung disease, characterized by the absence of ganglion cells in the submucosa and muscularis externa of the colon, leading to functional obstruction. This aligns with the enhanced information provided. The symptoms described, including abdominal distention, bilious vomiting, absence of meconium passage, tight anal sphincter, and explosive passage of air and feces on rectal examination, point towards a diagnosis related to the abnormal development of submucosa and muscularis externa.",
+  "answer": "opc",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

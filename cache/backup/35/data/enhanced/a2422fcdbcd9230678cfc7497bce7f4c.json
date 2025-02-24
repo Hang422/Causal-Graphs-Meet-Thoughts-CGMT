@@ -1,0 +1,171 @@
+{
+  "question": "A 36-year-old man presents to his physician with an acute burning retrosternal sensation with radiation to his jaw. This sensation began 20 minutes ago when the patient was exercising at the gym. It does not change with position or with a cough. The patient’s vital signs include: blood pressure is 140/90 mm Hg, heart rate is 84/min, respiratory rate is 14/min, and temperature is 36.6℃ (97.9℉). Physical examination is only remarkable for paleness and perspiration. The patient is given sublingual nitroglycerin, the blood is drawn for an express troponin test, and an ECG is going to be performed. At the moment of performing ECG, the patient’s symptoms are gone. ECG shows increased R amplitude in I, II V3-V6, and ST depression measuring for 0.5 mm in the same leads. The express test for troponin is negative. Which of the following tests would be reasonable to perform next to confirm a diagnosis in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Blood test for CPK-MB",
+    "opb": "Echocardiography",
+    "opc": "Chest radiography",
+    "opd": "CT angiography",
+    "ope": "Exercise stress testing"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Coughing",
+        "Disease",
+        "Pallor"
+      ],
+      [
+        "Coughing",
+        "Infection",
+        "Pallor"
+      ],
+      [
+        "Coughing",
+        "Vasculitis",
+        "Pallor"
+      ],
+      [
+        "Coughing",
+        "Disease",
+        "Pallor"
+      ],
+      [
+        "Coughing",
+        "Infection",
+        "Pallor"
+      ],
+      [
+        "Coughing",
+        "Vasculitis",
+        "Pallor"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Coughing)-CAUSES->(Disease)-CAUSES->(Pallor)",
+      "(Coughing)-CAUSES->(Infection)-CAUSES->(Pallor)",
+      "(Coughing)-CAUSES->(Vasculitis)-CAUSES->(Pallor)",
+      "(Coughing)-CAUSES->(Disease)-CAUSES->(Pallor)",
+      "(Coughing)-CAUSES->(Infection)-CAUSES->(Pallor)",
+      "(Coughing)-CAUSES->(Vasculitis)-CAUSES->(Pallor)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pallor",
+        "Disease",
+        "Adverse effects",
+        "Nitroglycerin"
+      ],
+      [
+        "Pallor",
+        "Disease",
+        "Adverse effects",
+        "Nitroglycerin"
+      ],
+      [
+        "Pallor",
+        "Disease",
+        "Adverse effects",
+        "Nitroglycerin"
+      ],
+      [
+        "Pallor",
+        "Disease",
+        "Adverse effects",
+        "Nitroglycerin"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Pallor)-ASSOCIATED_WITH->(Disease)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(Nitroglycerin)",
+      "(Pallor)-ISA->(Disease)-PREDISPOSES->(Adverse effects)-ASSOCIATED_WITH->(Nitroglycerin)",
+      "(Pallor)-ASSOCIATED_WITH->(Disease)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(Nitroglycerin)",
+      "(Pallor)-ISA->(Disease)-PREDISPOSES->(Adverse effects)-ASSOCIATED_WITH->(Nitroglycerin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pallor)-ASSOCIATED_WITH/ISA->(Disease)-CAUSES/PREDISPOSES->(Adverse effects)-ASSOCIATED_WITH->(Nitroglycerin)",
+      "(Coughing)-CAUSES->(Disease)-CAUSES->(Pallor)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Acute burning retrosternal sensation with radiation to jaw during exercise\" -> \"Does not change with position or cough\" -> \"Paleness and perspiration on physical exam\" -> \"Given sublingual nitroglycerin\" -> \"Express troponin test negative\" -> \"ECG shows increased R amplitude in I, II V3-V6 and ST depression\" -> \"Perform echocardiography\" -> 85%",
+    "CHAIN: \"Acute burning retrosternal sensation with radiation to jaw during exercise\" -> \"Does not change with position or cough\" -> \"Paleness and perspiration on physical exam\" -> \"Given sublingual nitroglycerin\" -> \"Express troponin test negative\" -> \"ECG shows increased R amplitude in I, II V3-V6 and ST depression\" -> \"Perform CT angiography\" -> 75%"
+  ],
+  "enhanced_information": "In a patient with acute burning retrosternal sensation, radiation to the jaw during exercise, paleness, and perspiration, with negative troponin and ECG changes showing increased R amplitude and ST depression, the next reasonable test would be echocardiography to evaluate for possible cardiac involvement.",
+  "analysis": "The patient's presentation with acute burning retrosternal sensation, radiation to the jaw during exercise, paleness, and perspiration, along with ECG changes suggestive of cardiac involvement, warrants further evaluation for possible cardiac issues. Given the scenario and enhanced information provided, echocardiography would be the most reasonable test to perform next to assess for cardiac abnormalities.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      2
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

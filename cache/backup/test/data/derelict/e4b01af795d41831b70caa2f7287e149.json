@@ -1,0 +1,138 @@
+{
+  "question": "A 3-year-old girl is brought to the physician by her mother two days after the sudden onset of a rash. The mother says that the rash developed an hour after she bathed the child in lukewarm water. Two weeks ago, the patient was diagnosed with a skin infection and was treated with penicillin V. She has been otherwise healthy but has missed several well-child examinations. She lives with her single mother, who recently lost her job and is now dependent on social assistance. The patient's mother has major depressive disorder and her maternal aunt has systemic lupus erythematosus. The girl's temperature is 36.8°C (98.2°F), pulse is 112/min, and blood pressure is 108/62 mm Hg. She has poor eye contact. Physical examination shows sharply delineated erythema on the lower extremities up to the umbilicus with sparing of the knees and flexor surfaces. Further evaluation is most likely to reveal which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Multiple injuries in different stages of healing",
+    "opb": "Dermatographism",
+    "opc": "Positive Nikolsky's sign",
+    "opd": "Malar rash with sparing of the nasolabial folds",
+    "ope": "Ulcers of the oral mucosa\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Treated with",
+        "Atherosclerosis",
+        "Disease",
+        "Hypersensitivity"
+      ],
+      [
+        "Cellulitis",
+        "Disease",
+        "Hypersensitivity"
+      ],
+      [
+        "Bathing",
+        "Extravasation",
+        "Contact Dermatitis"
+      ],
+      [
+        "Bathing",
+        "Dermatitis",
+        "Contact Dermatitis"
+      ],
+      [
+        "Bathing",
+        "Adverse effects",
+        "Contact Dermatitis"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Treated with)-TREATS->(Atherosclerosis)-CAUSES->(Disease)-CAUSES->(Hypersensitivity)",
+      "(Cellulitis)-CAUSES->(Disease)-CAUSES->(Hypersensitivity)",
+      "(Bathing)-CAUSES->(Extravasation)-CAUSES->(Contact Dermatitis)",
+      "(Bathing)-CAUSES->(Dermatitis)-CAUSES->(Contact Dermatitis)",
+      "(Bathing)-CAUSES->(Adverse effects)-PREDISPOSES->(Contact Dermatitis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hypersensitivity",
+        "Genes",
+        "Serous Membrane",
+        "Bathing"
+      ],
+      [
+        "Hypersensitivity",
+        "Genes",
+        "Endothelium",
+        "Bathing"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Hypersensitivity)-ASSOCIATED_WITH->(Genes)-PART_OF->(Serous Membrane)-LOCATION_OF->(Bathing)",
+      "(Hypersensitivity)-ASSOCIATED_WITH->(Genes)-PART_OF->(Endothelium)-LOCATION_OF->(Bathing)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Bathing)-CAUSES->(Extravasation)-CAUSES->(Contact Dermatitis)",
+      "(Bathing)-CAUSES->(Adverse effects)-PREDISPOSES->(Contact Dermatitis)",
+      "(Treated with)-TREATS->(Atherosclerosis)-CAUSES->(Disease)-CAUSES->(Hypersensitivity)",
+      "(Cellulitis)-CAUSES->(Disease)-CAUSES->(Hypersensitivity)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Skin infection treated with penicillin V -> possible allergic reaction to penicillin -> rash development after bathing in lukewarm water -> possible irritant contact dermatitis -> 70%"
+  ],
+  "enhanced_information": "The patient's rash development after bathing in lukewarm water is likely due to irritant contact dermatitis rather than an allergic reaction to penicillin V. Further evaluation is most likely to reveal multiple injuries in different stages of healing, indicating a history of trauma or abuse.",
+  "analysis": "The sudden onset of a rash after bathing in lukewarm water, along with the sharply delineated erythema on the lower extremities, suggests a possible case of dermatographism. Dermatographism is a form of physical urticaria where the skin becomes raised and inflamed when stroked, scratched, or subjected to pressure. The history of recent penicillin use and the social context do not directly point to other options like multiple injuries, Nikolsky's sign, malar rash, or oral ulcers. The absence of systemic symptoms and the specific description of the rash make dermatographism the most likely finding upon further evaluation.",
+  "answer": "opb",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

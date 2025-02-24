@@ -1,0 +1,156 @@
+{
+  "question": "An 8-month-old boy is brought to the emergency room by his mother who notes that the child has not been passing stool regularly. Palpation and radiographic imaging of the umbilical region reveal the presence of fecal material in an abnormal out-pocketing of bowel. Which of the following is a common complication seen in this condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Enlarged rugal folds",
+    "opb": "Dysplasia",
+    "opc": "Ulceration",
+    "opd": "Megacolon",
+    "ope": "Paneth cell metaplasia"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Meckel's Diverticulum",
+        "Anemia",
+        "Inflammation"
+      ],
+      [
+        "Meckel's Diverticulum",
+        "Crohn's disease",
+        "Inflammation"
+      ],
+      [
+        "Meckel's Diverticulum",
+        "Stenosis",
+        "Inflammation"
+      ],
+      [
+        "Inflammation",
+        "Ulcer"
+      ],
+      [
+        "Complication",
+        "Ulcer"
+      ],
+      [
+        "Meckel's Diverticulum",
+        "Obstruction"
+      ],
+      [
+        "Obstruction",
+        "Complication"
+      ],
+      [
+        "Complication",
+        "Disease",
+        "Megacolon"
+      ],
+      [
+        "Complication",
+        "Infection",
+        "Megacolon"
+      ],
+      [
+        "Complication",
+        "Obstruction",
+        "Megacolon"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "COMPLICATES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Meckel's Diverticulum)-CAUSES->(Anemia)-CAUSES->(Inflammation)",
+      "(Meckel's Diverticulum)-COMPLICATES->(Crohn's disease)-CAUSES->(Inflammation)",
+      "(Meckel's Diverticulum)-CAUSES->(Stenosis)-MANIFESTATION_OF->(Inflammation)",
+      "(Inflammation)-COMPLICATES->(Ulcer)",
+      "(Complication)-MANIFESTATION_OF->(Ulcer)",
+      "(Meckel's Diverticulum)-CAUSES->(Obstruction)",
+      "(Obstruction)-COMPLICATES->(Complication)",
+      "(Complication)-CAUSES->(Disease)-CAUSES->(Megacolon)",
+      "(Complication)-CAUSES->(Infection)-CAUSES->(Megacolon)",
+      "(Complication)-CAUSES->(Obstruction)-CAUSES->(Megacolon)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Complication)-MANIFESTATION_OF->(Ulcer)",
+      "(Inflammation)-COMPLICATES->(Ulcer)",
+      "(Obstruction)-COMPLICATES->(Complication)",
+      "(Complication)-CAUSES->(Disease)-CAUSES->(Megacolon)",
+      "(Complication)-CAUSES->(Infection)-CAUSES->(Megacolon)",
+      "(Complication)-CAUSES->(Obstruction)-CAUSES->(Megacolon)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Abnormal out-pocketing of bowel\" -> \"Likely Meckel's diverticulum\" -> \"Common complication is inflammation\" -> \"Possible complication: Ulceration\" -> 70%",
+    "CHAIN: \"Abnormal out-pocketing of bowel\" -> \"Meckel's diverticulum\" -> \"Common complication is obstruction\" -> \"Possible complication: Megacolon\" -> 60%"
+  ],
+  "enhanced_information": "In an 8-month-old with an abnormal out-pocketing of bowel like Meckel's diverticulum, a common complication is inflammation leading to possible ulceration. Another complication is obstruction, which can lead to megacolon. Evidence supports ulceration and megacolon as complications in this scenario.",
+  "analysis": "Meckel's diverticulum is a common congenital anomaly that can lead to complications such as inflammation and ulceration, as well as obstruction resulting in megacolon. While the enhanced information specifically mentions ulceration and megacolon as complications, it is important to note that these are indeed recognized complications associated with Meckel's diverticulum. Megacolon can occur due to obstruction caused by the diverticulum. Therefore, the most likely correct answer based on consensus is megacolon.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      3
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

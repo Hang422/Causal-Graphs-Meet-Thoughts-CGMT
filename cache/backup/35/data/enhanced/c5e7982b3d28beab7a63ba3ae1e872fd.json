@@ -1,0 +1,112 @@
+{
+  "question": "A 3-month-old girl is brought to the emergency department by her parents after she appeared to have a seizure at home. On presentation, she no longer has convulsions though she is still noted to be lethargic. She was born through uncomplicated vaginal delivery and was not noted to have any abnormalities at the time of birth. Since then, she has been noted by her pediatrician to be falling behind in height and weight compared to similarly aged infants. Physical exam reveals an enlarged liver, and laboratory tests reveal a glucose of 38 mg/dL. Advanced testing shows that a storage molecule present in the cells of this patient has abnormally short outer chains. Which of the following enzymes is most likely defective in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Branching enzyme",
+    "opb": "Debranching enzyme",
+    "opc": "Glucose-6-phosphatase",
+    "opd": "Hepatic phosphorylase",
+    "ope": "Muscle phosphorylase"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Glycogen",
+        "Myocardial necrosis",
+        "Inflammation",
+        "Cerebral atrophy",
+        "Glycogen Storage Disease"
+      ],
+      [
+        "Glycogen",
+        "Myocardial necrosis",
+        "Hyperglycemia",
+        "Cerebral atrophy",
+        "Glycogen Storage Disease"
+      ],
+      [
+        "Glycogen",
+        "Myocardial necrosis",
+        "Inflammatory Response",
+        "Cerebral atrophy",
+        "Glycogen Storage Disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Glycogen)-CAUSES->(Myocardial necrosis)-CAUSES->(Inflammation)-CAUSES->(Cerebral atrophy)-CAUSES->(Glycogen Storage Disease)",
+      "(Glycogen)-CAUSES->(Myocardial necrosis)-CAUSES->(Hyperglycemia)-CAUSES->(Cerebral atrophy)-CAUSES->(Glycogen Storage Disease)",
+      "(Glycogen)-CAUSES->(Myocardial necrosis)-CAUSES->(Inflammatory Response)-CAUSES->(Cerebral atrophy)-CAUSES->(Glycogen Storage Disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "pullulanase",
+        "Cells",
+        "Glycogen"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(pullulanase)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Glycogen)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(pullulanase)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Glycogen)",
+      "(Glycogen)-CAUSES->(Myocardial necrosis)-CAUSES->(Inflammation)-CAUSES->(Cerebral atrophy)-CAUSES->(Glycogen Storage Disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Glucose-6-phosphatase -> Impaired gluconeogenesis -> Hypoglycemia -> 80% CHAIN: Branching enzyme -> Abnormal glycogen structure -> Glycogen storage disease -> 90% CHAIN: Debranching enzyme -> Impaired glycogen breakdown -> Glycogen storage disease -> 80%"
+  ],
+  "enhanced_information": "The most likely enzyme defect in this patient is Glucose-6-phosphatase, leading to impaired gluconeogenesis and hypoglycemia. The evidence path showing Glycogen causing Glycogen Storage Disease aligns with the consensus that abnormal glycogen structure can result from a defect in Glucose-6-phosphatase.",
+  "analysis": "The core medical principle in this case involves recognizing the clinical presentation of a child with hypoglycemia, hepatomegaly, growth retardation, and abnormal glycogen structure. Given the enhanced information provided, the most likely correct option is Glucose-6-phosphatase deficiency, which is consistent with the clinical findings and the abnormal glycogen structure. This enzyme defect impairs gluconeogenesis, leading to hypoglycemia and the observed symptoms.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

@@ -1,0 +1,140 @@
+{
+  "question": "A 33-year-old man presents to the emergency department with severe anxiety. He has had multiple episodes in the past treated with low dose lorazepam. The patient states that he feels as if he is going to die and that he cannot breathe. His past medical history is notable for depression and anxiety. His temperature is 98.1°F (36.7°C), blood pressure is 122/83 mmHg, pulse is 153/min, respirations are 13/min, and oxygen saturation is 98% on room air. The patient is given a low dose of lorazepam and reports a complete resolution of his symptoms. An ECG is performed and demonstrates prolongation of the P-R interval with a widened QRS complex. There is a P wave preceding every QRS complex, no dropped QRS complexes, and the P-R interval does not change. His initial lab values are unremarkable. Which of the following is the best management of this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Cardiac catheterization",
+    "opb": "Electrophysiological studies",
+    "opc": "No further management needed",
+    "opd": "Sodium bicarbonate",
+    "ope": "Transcutaneous pacing"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Sodium Channel",
+        "Excitability",
+        "cardiac arrhythmia"
+      ],
+      [
+        "Sodium Channel",
+        "Seizures",
+        "cardiac arrhythmia"
+      ],
+      [
+        "Sodium Channel",
+        "Pain",
+        "cardiac arrhythmia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Sodium Channel)-CAUSES->(Excitability)-CAUSES->(cardiac arrhythmia)",
+      "(Sodium Channel)-CAUSES->(Seizures)-CAUSES->(cardiac arrhythmia)",
+      "(Sodium Channel)-CAUSES->(Pain)-PREDISPOSES->(cardiac arrhythmia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Electrocardiogram",
+        "Complication",
+        "Sodium Channel"
+      ],
+      [
+        "Electrocardiogram",
+        "Functional disorder",
+        "Sodium Channel"
+      ],
+      [
+        "cardiac arrhythmia",
+        "NEUROD1|TUBB4B",
+        "Cell Nucleus",
+        "Electrophysiological studies"
+      ],
+      [
+        "cardiac arrhythmia",
+        "TNFRSF10B gene|TNFRSF10B",
+        "Cell Nucleus",
+        "Electrophysiological studies"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Electrocardiogram)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(Sodium Channel)",
+      "(Electrocardiogram)-DIAGNOSES->(Functional disorder)-ASSOCIATED_WITH->(Sodium Channel)",
+      "(cardiac arrhythmia)-ASSOCIATED_WITH->(NEUROD1|TUBB4B)-PART_OF->(Cell Nucleus)-LOCATION_OF->(Electrophysiological studies)",
+      "(cardiac arrhythmia)-ASSOCIATED_WITH->(TNFRSF10B gene|TNFRSF10B)-PART_OF->(Cell Nucleus)-LOCATION_OF->(Electrophysiological studies)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Electrocardiogram)-DIAGNOSES->(Complication)-ASSOCIATED_WITH->(Sodium Channel)",
+      "(Electrocardiogram)-DIAGNOSES->(Functional disorder)-ASSOCIATED_WITH->(Sodium Channel)",
+      "(cardiac arrhythmia)-ASSOCIATED_WITH->(NEUROD1|TUBB4B)-PART_OF->(Cell Nucleus)-LOCATION_OF->(Electrophysiological studies)",
+      "(cardiac arrhythmia)-ASSOCIATED_WITH->(TNFRSF10B gene|TNFRSF10B)-PART_OF->(Cell Nucleus)-LOCATION_OF->(Electrophysiological studies)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Severe anxiety\" -> \"Treated with lorazepam\" -> \"Resolution of symptoms\" -> \"ECG shows P-R prolongation and widened QRS\" -> \"Possible drug-induced cardiac conduction issue\" -> \"Consider sodium bicarbonate for possible drug toxicity\" -> 75%",
+    "CHAIN: \"Severe anxiety\" -> \"Treated with lorazepam\" -> \"Resolution of symptoms\" -> \"ECG shows P-R prolongation and widened QRS\" -> \"No acute cardiac symptoms\" -> \"No further management needed\" -> 70%",
+    "CHAIN: \"Severe anxiety\" -> \"Treated with lorazepam\" -> \"Resolution of symptoms\" -> \"ECG shows P-R prolongation and widened QRS\" -> \"Possible underlying conduction issue\" -> \"Electrophysiological studies to investigate further\" -> 60%",
+    "CHAIN: \"Severe anxiety\" -> \"Treated with lorazepam\" -> \"Resolution of symptoms\" -> \"ECG shows P-R prolongation and widened QRS\" -> \"No evidence of ischemia or acute cardiac event\" -> \"No further management needed\" -> 80%",
+    "CHAIN: \"Severe anxiety\" -> \"Treated with lorazepam\" -> \"Resolution of symptoms\" -> \"ECG shows P-R prolongation and widened QRS\" -> \"Possible conduction block\" -> \"Transcutaneous pacing if symptomatic bradycardia develops\" -> 50%"
+  ],
+  "enhanced_information": "The patient's presentation with severe anxiety, ECG findings of PR interval prolongation and widened QRS complex after lorazepam administration suggest possible sodium channel blockade, increasing the risk of life-threatening arrhythmias. Considering this, the best management would be to proceed with electrophysiological studies to further evaluate the cardiac conduction system and assess for arrhythmias.",
+  "analysis": "The patient presents with symptoms of anxiety and an ECG showing a prolonged P-R interval and widened QRS complex. These ECG findings suggest a possible tricyclic antidepressant (TCA) overdose, which can cause cardiac conduction abnormalities. The resolution of symptoms with lorazepam indicates that the anxiety was likely a panic attack. However, the ECG changes are concerning and need to be addressed. Sodium bicarbonate is the treatment of choice for cardiac toxicity due to TCA overdose, as it helps to narrow the QRS complex and correct the conduction abnormalities.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

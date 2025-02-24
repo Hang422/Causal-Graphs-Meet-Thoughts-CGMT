@@ -1,0 +1,201 @@
+{
+  "question": "A 67-year-old man presents to the emergency department with confusion. The patient is generally healthy, but his wife noticed him becoming progressively more confused as the day went on. The patient is not currently taking any medications and has no recent falls or trauma. His temperature is 102°F (38.9°C), blood pressure is 126/64 mmHg, pulse is 120/min, respirations are 17/min, and oxygen saturation is 98% on room air. Physical exam is notable for a confused man who cannot participate in a neurological exam secondary to his confusion. No symptoms are elicited with flexion of the neck and jolt accentuation of headache is negative. Initial laboratory values are unremarkable and the patient's chest radiograph and urinalysis are within normal limits. An initial CT scan of the head is unremarkable. Which of the following is the best next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Acyclovir",
+    "opb": "CT angiogram of the head and neck",
+    "opc": "MRI of the head",
+    "opd": "PCR of the cerebrospinal fluid",
+    "ope": "Vancomycin, ceftriaxone, ampicillin, and dexamethasone"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Confusion",
+        "Disease",
+        "Fever"
+      ],
+      [
+        "Confusion",
+        "Obesity",
+        "Fever"
+      ],
+      [
+        "Confusion",
+        "Hypertensive disease",
+        "Fever"
+      ],
+      [
+        "Fever",
+        "Communicable Diseases"
+      ],
+      [
+        "Confusion",
+        "Disease",
+        "Splenic Infarction",
+        "Left upper quadrant pain",
+        "X-Ray Computed Tomography"
+      ],
+      [
+        "Confusion",
+        "Disease",
+        "Splenomegaly",
+        "Left upper quadrant pain",
+        "X-Ray Computed Tomography"
+      ],
+      [
+        "Confusion",
+        "Infection",
+        "Splenomegaly",
+        "Left upper quadrant pain",
+        "X-Ray Computed Tomography"
+      ],
+      [
+        "Confusion",
+        "Communicable Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Confusion)-CAUSES->(Disease)-CAUSES->(Fever)",
+      "(Confusion)-CAUSES->(Obesity)-CAUSES->(Fever)",
+      "(Confusion)-CAUSES->(Hypertensive disease)-CAUSES->(Fever)",
+      "(Fever)-CAUSES->(Communicable Diseases)",
+      "(Confusion)-CAUSES->(Disease)-CAUSES->(Splenic Infarction)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)",
+      "(Confusion)-CAUSES->(Disease)-CAUSES->(Splenomegaly)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)",
+      "(Confusion)-CAUSES->(Infection)-CAUSES->(Splenomegaly)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)",
+      "(Confusion)-CAUSES->(Communicable Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Confusion",
+        "Autoimmune",
+        "Genes",
+        "Renal Tissue",
+        "Urinalysis"
+      ],
+      [
+        "Confusion",
+        "Infarction",
+        "Genes",
+        "Renal Tissue",
+        "Urinalysis"
+      ],
+      [
+        "Urinalysis",
+        "Disease",
+        "Systemic infection"
+      ],
+      [
+        "Urinalysis",
+        "Disease",
+        "Systemic infection"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Confusion)-MANIFESTATION_OF->(Autoimmune)-ASSOCIATED_WITH->(Genes)-PART_OF->(Renal Tissue)-LOCATION_OF->(Urinalysis)",
+      "(Confusion)-MANIFESTATION_OF->(Infarction)-ASSOCIATED_WITH->(Genes)-PART_OF->(Renal Tissue)-LOCATION_OF->(Urinalysis)",
+      "(Urinalysis)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Systemic infection)",
+      "(Urinalysis)-DIAGNOSES->(Disease)-CAUSES->(Systemic infection)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Confusion)-CAUSES->(Communicable Diseases)",
+      "(Confusion)-CAUSES->(Disease)-CAUSES->(Splenomegaly)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)",
+      "(Confusion)-CAUSES->(Infection)-CAUSES->(Splenomegaly)-CAUSES->(Left upper quadrant pain)-CAUSES->(X-Ray Computed Tomography)",
+      "(Confusion)-MANIFESTATION_OF->(Autoimmune)-ASSOCIATED_WITH->(Genes)-PART_OF->(Renal Tissue)-LOCATION_OF->(Urinalysis)",
+      "(Fever)-CAUSES->(Communicable Diseases)",
+      "(Confusion)-CAUSES->(Disease)-CAUSES->(Fever)",
+      "(Confusion)-CAUSES->(Obesity)-CAUSES->(Fever)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Confusion in a 67-year-old man -> fever of 102°F -> possible infection or inflammatory process -> 70% confidence CHAIN: Confusion -> no symptoms with neck flexion -> unlikely meningitis -> 80% confidence CHAIN: Confusion -> unremarkable initial laboratory values -> rules out common metabolic derangements -> 90% confidence CHAIN: Confusion -> unremarkable initial CT scan of the head -> unlikely acute structural brain lesion -> 85% confidence CHAIN: Confusion -> normal chest radiograph and urinalysis -> less likely systemic infection -> 80% confidence CHAIN: Confusion -> next step: ruling out infectious causes -> 70%"
+  ],
+  "enhanced_information": "Given the presentation of confusion in a 67-year-old man with fever and unremarkable initial tests, the best next step is to consider ruling out infectious causes. Therefore, the most appropriate next step in management would be PCR of the cerebrospinal fluid to assess for possible infectious etiologies.",
+  "analysis": "Given the presentation of a 67-year-old man with confusion and fever, along with unremarkable initial tests, the most likely cause could be an infectious etiology affecting the central nervous system. The enhanced information supports the consideration of infectious causes, making PCR of the cerebrospinal fluid the best next step to assess for possible infectious etiologies such as viral or bacterial meningitis.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

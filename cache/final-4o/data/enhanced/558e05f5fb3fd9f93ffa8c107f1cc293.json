@@ -1,0 +1,176 @@
+{
+  "question": "A 68-year-old female presents to your office for her annual check-up. Her vitals are HR 85, T 98.8 F, RR 16, BP 125/70. She has a history of smoking 1 pack a day for 35 years, but states she quit five years ago. She had her last pap smear at age 64 and states all of her pap smears have been normal. She had her last colonoscopy at age 62, which was also normal. Which is the following is the next best test for this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Abdominal ultrasound",
+    "opb": "Chest CT scan",
+    "opc": "Pap smear",
+    "opd": "Colonoscopy",
+    "ope": "Chest radiograph"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Screening for cancer",
+        "Disease Progression",
+        "Genes",
+        "A band",
+        "Chest CT"
+      ],
+      [
+        "Screening for cancer",
+        "Hypersensitivity",
+        "Genes",
+        "Lung",
+        "Chest CT"
+      ],
+      [
+        "Lung diseases",
+        "Airflow",
+        "Lung",
+        "Screening for cancer"
+      ],
+      [
+        "Lung diseases",
+        "Airflow",
+        "Larynx",
+        "Screening for cancer"
+      ],
+      [
+        "Screening for cancer",
+        "Disease Progression",
+        "Genes",
+        "jejunum",
+        "Chest radiograph"
+      ],
+      [
+        "Screening for cancer",
+        "Hypersensitivity",
+        "Genes",
+        "Lung",
+        "Chest radiograph"
+      ],
+      [
+        "Lung diseases",
+        "Airflow",
+        "Right lung",
+        "Chest radiograph"
+      ],
+      [
+        "Lung diseases",
+        "Airflow",
+        "Lung",
+        "Chest radiograph"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Screening for cancer)-DIAGNOSES->(Disease Progression)-ASSOCIATED_WITH->(Genes)-PART_OF->(A band)-LOCATION_OF->(Chest CT)",
+      "(Screening for cancer)-DIAGNOSES->(Hypersensitivity)-ASSOCIATED_WITH->(Genes)-PART_OF->(Lung)-LOCATION_OF->(Chest CT)",
+      "(Lung diseases)-MANIFESTATION_OF->(Airflow)-PROCESS_OF->(Lung)-LOCATION_OF->(Screening for cancer)",
+      "(Lung diseases)-MANIFESTATION_OF->(Airflow)-PROCESS_OF->(Larynx)-LOCATION_OF->(Screening for cancer)",
+      "(Screening for cancer)-DIAGNOSES->(Disease Progression)-ASSOCIATED_WITH->(Genes)-PART_OF->(jejunum)-LOCATION_OF->(Chest radiograph)",
+      "(Screening for cancer)-DIAGNOSES->(Hypersensitivity)-ASSOCIATED_WITH->(Genes)-PART_OF->(Lung)-LOCATION_OF->(Chest radiograph)",
+      "(Lung diseases)-MANIFESTATION_OF->(Airflow)-PROCESS_OF->(Right lung)-LOCATION_OF->(Chest radiograph)",
+      "(Lung diseases)-MANIFESTATION_OF->(Airflow)-PROCESS_OF->(Lung)-LOCATION_OF->(Chest radiograph)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Lung diseases)-MANIFESTATION_OF->(Airflow)-PROCESS_OF->(Right lung)-LOCATION_OF->(Chest radiograph)",
+      "(Lung diseases)-MANIFESTATION_OF->(Airflow)-PROCESS_OF->(Lung)-LOCATION_OF->(Chest radiograph)",
+      "(Screening for cancer)-DIAGNOSES->(Disease Progression)-ASSOCIATED_WITH->(Genes)-PART_OF->(A band)-LOCATION_OF->(Chest CT)",
+      "(Screening for cancer)-DIAGNOSES->(Hypersensitivity)-ASSOCIATED_WITH->(Genes)-PART_OF->(Lung)-LOCATION_OF->(Chest CT)",
+      "(Screening for cancer)-DIAGNOSES->(Disease Progression)-ASSOCIATED_WITH->(Genes)-PART_OF->(jejunum)-LOCATION_OF->(Chest radiograph)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"68-year-old female\" -> \"history of smoking\" -> \"increased risk of lung cancer\" -> \"screening for lung cancer\" -> \"Chest CT scan\" -> 85%",
+    "CHAIN: \"68-year-old female\" -> \"history of smoking\" -> \"risk of lung disease\" -> \"screening for lung disease\" -> \"Chest radiograph\" -> 70%",
+    "CHAIN: \"68-year-old female\" -> \"last pap smear at age 64\" -> \"normal results\" -> \"guidelines suggest pap smear every 3-5 years\" -> \"Pap smear\" -> 60%",
+    "CHAIN: \"68-year-old female\" -> \"last colonoscopy at age 62\" -> \"normal results\" -> \"guidelines suggest colonoscopy every 10 years\" -> \"no immediate need for colonoscopy\" -> 50%",
+    "CHAIN: \"68-year-old female\" -> \"no specific symptoms indicating abdominal issues\" -> \"no immediate need for abdominal ultrasound\" -> 40%"
+  ],
+  "enhanced_information": "For a 68-year-old female with a significant smoking history, the standard medical consensus recommends lung cancer screening with a low-dose chest CT scan, especially given her age and smoking history. This aligns with the reasoning chain that identifies an increased risk of lung cancer due to her smoking history, making a chest CT scan the most appropriate next test. The retrieved evidence paths support the use of chest CT for cancer screening, confirming its relevance. Other options, such as a chest radiograph, are less sensitive for lung cancer screening. Pap smear and colonoscopy are not immediately necessary based on current guidelines, and there is no indication for an abdominal ultrasound without specific symptoms. Therefore, the chest CT scan is the best test to proceed with.",
+  "analysis": "The patient is a 68-year-old female with a significant smoking history, having smoked 1 pack a day for 35 years and quit five years ago. According to standard medical guidelines, individuals aged 50 to 80 years with a 20 pack-year smoking history who currently smoke or have quit within the past 15 years should be screened annually for lung cancer with a low-dose chest CT scan. Given her age and smoking history, she falls into the category where lung cancer screening is recommended. Other options such as a pap smear and colonoscopy are not immediately necessary based on her history and current guidelines. A chest radiograph is less sensitive for lung cancer screening compared to a chest CT scan, and there is no indication for an abdominal ultrasound without specific symptoms. Therefore, the most appropriate next test for this patient is a chest CT scan.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      3,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      25.0,
+      75.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

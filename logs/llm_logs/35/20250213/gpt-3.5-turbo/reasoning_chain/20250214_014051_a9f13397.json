@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_014051",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "a9f13397",
+  "question_text": "A 9-year-old boy presents to the emergency department with a 12 hour history of severe vomiting and increased sleepiness. He experienced high fever and muscle pain about 5 days prior to presentation, and his parents gave him an over the counter medication to control the fever at that time. On presentation, he is found to be afebrile though he is still somnolent and difficult to arouse. Physical exam reveals hepatomegaly and laboratory testing shows the following results:\n\nAlanine aminotransferase: 85 U/L\nAspartate aminotransferase: 78 U/L\n\nWhich of the following is the most likely cause of this patient's neurologic changes?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 9-year-old boy presents to the emergency department with a 12 hour history of severe vomiting and increased sleepiness. He experienced high fever and muscle pain about 5 days prior to presentation, and his parents gave him an over the counter medication to control the fever at that time. On presentation, he is found to be afebrile though he is still somnolent and difficult to arouse. Physical exam reveals hepatomegaly and laboratory testing shows the following results:\n\nAlanine aminotransferase: 85 U/L\nAspartate aminotransferase: 78 U/L\n\nWhich of the following is the most likely cause of this patient's neurologic changes?\n\n            ### Options\n    opa. Bacterial sepsis\nopb. Cerebral edema\nopc. Drug overdose\nopd. Subarachnoid hemorrhage\nope. Viral meningitis\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"High fever and muscle pain\" -> \"Over the counter medication for fever\" -> \"Possible drug overdose\" -> 70% confidence\nCHAIN: \"Hepatomegaly\" -> \"Elevated liver enzymes (ALT, AST)\" -> \"Liver dysfunction\" -> \"Possible drug-induced liver injury\" -> 80% confidence\nCHAIN: \"Increased sleepiness and difficult to arouse\" -> \"Neurologic changes\" -> \"Possible cerebral edema\" -> 60% confidence\nCHAIN: \"Vomiting and somnolence\" -> \"Possible metabolic derangement\" -> \"Neurologic changes\" -> 50% confidence",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

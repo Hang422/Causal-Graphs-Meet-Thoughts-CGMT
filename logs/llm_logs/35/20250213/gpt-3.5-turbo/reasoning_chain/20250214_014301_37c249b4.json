@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_014301",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "37c249b4",
+  "question_text": "A 57-year-old man presents to his family physician for a routine exam. He feels well and reports no new complaints since his visit last year. Last year, he had a colonoscopy which showed no polyps, a low dose chest computerized tomography (CT) scan that showed no masses, and routine labs which showed a fasting glucose of 93 mg/dL. He is relatively sedentary and has a body mass index (BMI) of 24 kg/m^2. He has a history of using methamphetamines, alcohol (4-5 drinks per day since age 30), and tobacco (1 pack per day since age 18), but he joined Alcoholics Anonymous and has been in recovery, not using any of these for the past 7 years. Which of the following is indicated at this time?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 57-year-old man presents to his family physician for a routine exam. He feels well and reports no new complaints since his visit last year. Last year, he had a colonoscopy which showed no polyps, a low dose chest computerized tomography (CT) scan that showed no masses, and routine labs which showed a fasting glucose of 93 mg/dL. He is relatively sedentary and has a body mass index (BMI) of 24 kg/m^2. He has a history of using methamphetamines, alcohol (4-5 drinks per day since age 30), and tobacco (1 pack per day since age 18), but he joined Alcoholics Anonymous and has been in recovery, not using any of these for the past 7 years. Which of the following is indicated at this time?\n\n            ### Options\n    opa. Abdominal ultrasound\nopb. Chest computerized tomography (CT) scan\nopc. Colonoscopy\nopd. Chest radiograph\nope. Fasting glucose\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"History of alcohol and tobacco use\" -> \"Increased risk for various cancers\" -> \"Indication for abdominal ultrasound\" -> 80%\nCHAIN: \"History of methamphetamine use\" -> \"Increased risk for cardiovascular diseases\" -> \"Indication for chest radiograph\" -> 75%\nCHAIN: \"History of alcohol and tobacco use\" -> \"Increased risk for lung cancer\" -> \"Indication for chest radiograph\" -> 70%\nCHAIN: \"History of alcohol and tobacco use\" -> \"Increased risk for diabetes\" -> \"Indication for fasting glucose test\" -> 85%\nCHAIN: \"History of alcohol and tobacco use\" -> \"Increased risk for colorectal cancer\" -> \"Indication for colonoscopy\" -> 90%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

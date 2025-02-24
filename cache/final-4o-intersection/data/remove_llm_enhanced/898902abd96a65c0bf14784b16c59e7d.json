@@ -1,0 +1,185 @@
+{
+  "question": "A 72-year-old woman comes to the physician because she is seeing things that she knows are not there. Sometimes she sees a dog in her kitchen and at other times she sees a stranger in her garden, both of which no one else can see. She also reports a lack of motivation to do daily tasks for the past week. Three years ago, she was diagnosed with Parkinson disease and was started on levodopa and carbidopa. Her younger brother has schizophrenia. The patient also takes levothyroxine for hypothyroidism. She used to drink a bottle of wine every day, but she stopped drinking alcohol 2 months ago. Neurologic examination shows a mild resting tremor of the hands and bradykinesia. Her thought process is organized and logical. Which of the following is the most likely underlying cause of this patient's symptoms?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Adverse effect of medication",
+    "opb": "Alcohol withdrawal",
+    "opc": "Schizophrenia",
+    "opd": "Major depressive disorder",
+    "ope": "Poorly controlled hypothyroidism"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Psychotic symptom",
+        "Cataract",
+        "Hallucinations, Visual"
+      ],
+      [
+        "Psychotic symptom",
+        "Communicable Diseases",
+        "Hallucinations, Visual"
+      ],
+      [
+        "Psychotic symptom",
+        "Disease",
+        "Hallucinations, Visual"
+      ],
+      [
+        "Dopamine Hydrochloride",
+        "Disease",
+        "Psychotic symptom"
+      ],
+      [
+        "Dopamine Hydrochloride",
+        "Pain",
+        "Psychotic symptom"
+      ],
+      [
+        "Dopamine Hydrochloride",
+        "Primary disease",
+        "Psychotic symptom"
+      ],
+      [
+        "Psychotic symptom",
+        "Cataract",
+        "Hallucinations, Visual"
+      ],
+      [
+        "Psychotic symptom",
+        "Communicable Diseases",
+        "Hallucinations, Visual"
+      ],
+      [
+        "Psychotic symptom",
+        "Disease",
+        "Hallucinations, Visual"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Psychotic symptom)-CAUSES->(Cataract)-CAUSES->(Hallucinations, Visual)",
+      "(Psychotic symptom)-CAUSES->(Communicable Diseases)-CAUSES->(Hallucinations, Visual)",
+      "(Psychotic symptom)-PREDISPOSES->(Disease)-CAUSES->(Hallucinations, Visual)",
+      "(Dopamine Hydrochloride)-TREATS->(Disease)-CAUSES->(Psychotic symptom)",
+      "(Dopamine Hydrochloride)-TREATS->(Pain)-CAUSES->(Psychotic symptom)",
+      "(Dopamine Hydrochloride)-TREATS->(Primary disease)-CAUSES->(Psychotic symptom)",
+      "(Psychotic symptom)-CAUSES->(Cataract)-CAUSES->(Hallucinations, Visual)",
+      "(Psychotic symptom)-CAUSES->(Communicable Diseases)-CAUSES->(Hallucinations, Visual)",
+      "(Psychotic symptom)-PREDISPOSES->(Disease)-CAUSES->(Hallucinations, Visual)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hypothyroidism",
+        "Pathogenesis",
+        "Thyroxine"
+      ],
+      [
+        "Hypothyroidism",
+        "Adverse effects",
+        "Thyroxine"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hypothyroidism)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Thyroxine)",
+      "(Hypothyroidism)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(Thyroxine)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypothyroidism)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Thyroxine)",
+      "(Hypothyroidism)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(Thyroxine)",
+      "(Dopamine Hydrochloride)-TREATS->(Disease)-CAUSES->(Psychotic symptom)",
+      "(Dopamine Hydrochloride)-TREATS->(Primary disease)-CAUSES->(Psychotic symptom)",
+      "(Psychotic symptom)-CAUSES->(Cataract)-CAUSES->(Hallucinations, Visual)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Levodopa and carbidopa\" -> \"increased dopamine levels\" -> \"dopamine dysregulation\" -> \"visual hallucinations\" -> 85%",
+    "CHAIN: \"Alcohol cessation\" -> \"reduced GABAergic activity\" -> \"increased excitatory neurotransmission\" -> \"visual hallucinations\" -> 60%",
+    "CHAIN: \"Family history of schizophrenia\" -> \"genetic predisposition\" -> \"psychotic symptoms\" -> \"visual hallucinations\" -> 50%",
+    "CHAIN: \"Parkinson's disease\" -> \"dopaminergic treatment\" -> \"psychotic symptoms\" -> \"visual hallucinations\" -> 75%",
+    "CHAIN: \"Hypothyroidism\" -> \"levothyroxine treatment\" -> \"stable thyroid function\" -> \"unlikely cause of hallucinations\" -> 30%"
+  ],
+  "enhanced_information": "The most likely underlying cause of this patient's visual hallucinations is an adverse effect of her medication, specifically the dopaminergic treatment with levodopa and carbidopa for Parkinson's disease. This aligns with the consensus that increased dopamine levels from such treatment can lead to dopamine dysregulation, resulting in psychotic symptoms like visual hallucinations. The reasoning chain for this option is supported by the standard medical understanding that dopaminergic medications can cause hallucinations in Parkinson's patients. Other options, such as alcohol withdrawal, schizophrenia, major depressive disorder, and poorly controlled hypothyroidism, are less likely given the context and timing of symptoms. The retrieved evidence paths, while broad, do not directly contradict this conclusion and are not necessary for the final determination.",
+  "analysis": "The patient's visual hallucinations are most likely due to an adverse effect of her Parkinson's disease medication, specifically levodopa and carbidopa. These medications increase dopamine levels in the brain, which can lead to psychotic symptoms such as hallucinations, especially in older patients with Parkinson's disease. The timing of the symptoms, her organized thought process, and the absence of other psychotic symptoms make schizophrenia less likely. Alcohol withdrawal is also unlikely, as the patient stopped drinking two months ago, and withdrawal symptoms typically occur within a few days to weeks after cessation. Major depressive disorder could explain the lack of motivation, but it does not typically cause visual hallucinations. Poorly controlled hypothyroidism is also unlikely to cause these specific symptoms. Therefore, the most likely cause of her symptoms is the adverse effect of her Parkinson's medication.",
+  "answer": "opa",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      25.0,
+      50.0,
+      25.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

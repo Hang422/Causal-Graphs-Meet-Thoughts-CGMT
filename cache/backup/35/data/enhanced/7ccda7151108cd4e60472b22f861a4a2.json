@@ -1,0 +1,131 @@
+{
+  "question": "A 17-year-old girl presents to her primary care physician for a wellness checkup. The patient is currently doing well in school and plays soccer. She has a past medical history of childhood obesity that was treated with diet and exercise. The patient states that her menses have not changed, and they occur every 1 to 3 months. Her temperature is 99.5°F (37.5°C), blood pressure is 127/70 mmHg, pulse is 90/min, respirations are 13/min, and oxygen saturation is 98% on room air. The patient's BMI at this visit is 22.1 kg/m^2. On physical exam, the patient is in no distress. You note acne present on her face, shoulders, and chest. You also note thick, black hair on her upper lip and chest. The patient's laboratory values are seen as below.\n\nHemoglobin: 14 g/dL\nHematocrit: 42%\nLeukocyte count: 7,500/mm^3 with normal differential\nPlatelet count: 177,000/mm^3\n\nSerum:\nNa+: 137 mEq/L\nCl-: 101 mEq/L\nK+: 4.4 mEq/L\nHCO3-: 24 mEq/L\nBUN: 27 mg/dL\nGlucose: 90 mg/dL\nCreatinine: 1.0 mg/dL\nCa2+: 10.1 mg/dL\nTestosterone: 82 ng/dL\n17-hydroxyprogesterone: elevated\nAST: 12 U/L\nALT: 10 U/L\n\nWhich of the following is associated with this patient's most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Deficiency of 11-hydroxylase",
+    "opb": "Deficiency of 17-hydroxylase",
+    "opc": "Deficiency of 21-hydroxylase",
+    "opd": "Insulin resistance",
+    "ope": "Malignancy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Providing presence (regime/therapy)",
+        "Aneurysm",
+        "Disease",
+        "Hyperandrogenism"
+      ],
+      [
+        "Hirsutism",
+        "Polycystic Ovary Syndrome",
+        "Hyperandrogenism"
+      ],
+      [
+        "Hirsutism",
+        "Insulin Resistance",
+        "Hyperandrogenism"
+      ],
+      [
+        "Hirsutism",
+        "Androgenetic Alopecia",
+        "Hyperandrogenism"
+      ],
+      [
+        "Acne Vulgaris",
+        "Disease",
+        "Hyperandrogenism"
+      ],
+      [
+        "Acne Vulgaris",
+        "Inflammation",
+        "Hyperandrogenism"
+      ],
+      [
+        "Acne Vulgaris",
+        "Acne",
+        "Hyperandrogenism"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Providing presence (regime/therapy))-TREATS->(Aneurysm)-CAUSES->(Disease)-COMPLICATES->(Hyperandrogenism)",
+      "(Hirsutism)-CAUSES->(Polycystic Ovary Syndrome)-CAUSES->(Hyperandrogenism)",
+      "(Hirsutism)-CAUSES->(Insulin Resistance)-CAUSES->(Hyperandrogenism)",
+      "(Hirsutism)-PREDISPOSES->(Androgenetic Alopecia)-PREDISPOSES->(Hyperandrogenism)",
+      "(Acne Vulgaris)-CAUSES->(Disease)-CAUSES->(Hyperandrogenism)",
+      "(Acne Vulgaris)-CAUSES->(Inflammation)-CAUSES->(Hyperandrogenism)",
+      "(Acne Vulgaris)-CAUSES->(Acne)-PREDISPOSES->(Hyperandrogenism)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hirsutism)-CAUSES->(Insulin Resistance)-CAUSES->(Hyperandrogenism)",
+      "(Acne Vulgaris)-CAUSES->(Inflammation)-CAUSES->(Hyperandrogenism)",
+      "(Acne Vulgaris)-CAUSES->(Disease)-CAUSES->(Hyperandrogenism)",
+      "(Acne Vulgaris)-CAUSES->(Acne)-PREDISPOSES->(Hyperandrogenism)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Elevated testosterone -> possible hyperandrogenism -> 70% CHAIN: Elevated 17-hydroxyprogesterone -> suggestive of 21-hydroxylase deficiency -> 80% CHAIN: Presence of acne and hirsutism -> signs of hyperandrogenism -> 75% CHAIN: Elevated 17-hydroxyprogesterone -> possible congenital adrenal hyperplasia -> 70% CHAIN: Elevated 17-hydroxyprogesterone -> suggestive of 21-hydroxylase deficiency -> 70%"
+  ],
+  "enhanced_information": "The patient's presentation with elevated testosterone, acne, hirsutism, and elevated 17-hydroxyprogesterone suggests hyperandrogenism, possibly due to 21-hydroxylase deficiency. The evidence paths linking hirsutism, acne, and hyperandrogenism support this association. Therefore, deficiency of 21-hydroxylase is the most likely diagnosis in this case.",
+  "analysis": "The patient's presentation with elevated testosterone, acne, hirsutism, and elevated 17-hydroxyprogesterone strongly suggests hyperandrogenism, which is commonly associated with 21-hydroxylase deficiency. The enhanced information provided aligns with the classic signs and symptoms of this condition. The patient's history of childhood obesity and irregular menses further support this diagnosis. Therefore, deficiency of 21-hydroxylase is the most likely correct option.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

@@ -1,0 +1,180 @@
+{
+  "question": "A 25-year-old woman presented to an urgent care center with a complaint of a cough for more than 3 weeks that was accompanied by night sweats, weight loss, and malaise. On physical examination, the patient had slightly pale palpebral conjunctivae bilateral posterior cervical lymphadenopathy, but with no adventitious breath sounds in the lung fields bilaterally. The remainder of the physical examination was routine. The patient was started on a drug regimen that was to be taken for 6 months. On follow-up after 2 months, the ALT and AST levels were elevated. Which of the following anti-tubercular drug could have contributed to this labor result?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Rifampicin",
+    "opb": "Pyrazinamide",
+    "opc": "Isoniazid",
+    "opd": "Streptomycin",
+    "ope": "Ethambutol"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "isoniazid",
+        "Disease",
+        "drug clearance",
+        "Liver"
+      ],
+      [
+        "isoniazid",
+        "Disease",
+        "Thermotolerance",
+        "Liver"
+      ],
+      [
+        "isoniazid",
+        "Disease",
+        "biological adaptation to stress",
+        "Liver"
+      ],
+      [
+        "Pyrazinamide",
+        "Complication",
+        "Biological Transport, Active",
+        "Liver"
+      ],
+      [
+        "Pyrazinamide",
+        "Disease",
+        "paracrine",
+        "Liver"
+      ],
+      [
+        "Pyrazinamide",
+        "Obesity",
+        "paracrine",
+        "Liver"
+      ],
+      [
+        "Streptomycin",
+        "Infection",
+        "Disease",
+        "Excretory function"
+      ],
+      [
+        "Streptomycin",
+        "Tuberculosis",
+        "Disease",
+        "Excretory function"
+      ],
+      [
+        "Streptomycin",
+        "Infection",
+        "Renal Insufficiency",
+        "Excretory function"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREVENTS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(drug clearance)-PROCESS_OF->(Liver)",
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(Thermotolerance)-PROCESS_OF->(Liver)",
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-PROCESS_OF->(Liver)",
+      "(Pyrazinamide)-PREVENTS->(Complication)-MANIFESTATION_OF->(Biological Transport, Active)-PROCESS_OF->(Liver)",
+      "(Pyrazinamide)-TREATS->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Liver)",
+      "(Pyrazinamide)-TREATS->(Obesity)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Liver)",
+      "(Streptomycin)-TREATS->(Infection)-CAUSES->(Disease)-MANIFESTATION_OF->(Excretory function)",
+      "(Streptomycin)-TREATS->(Tuberculosis)-CAUSES->(Disease)-MANIFESTATION_OF->(Excretory function)",
+      "(Streptomycin)-TREATS->(Infection)-CAUSES->(Renal Insufficiency)-MANIFESTATION_OF->(Excretory function)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-PROCESS_OF->(Liver)",
+      "(Pyrazinamide)-PREVENTS->(Complication)-MANIFESTATION_OF->(Biological Transport, Active)-PROCESS_OF->(Liver)",
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(drug clearance)-PROCESS_OF->(Liver)",
+      "(isoniazid)-TREATS->(Disease)-MANIFESTATION_OF->(Thermotolerance)-PROCESS_OF->(Liver)",
+      "(Pyrazinamide)-TREATS->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Liver)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Isoniazid\" -> \"metabolized in liver\" -> \"hepatotoxicity\" -> \"elevated ALT and AST\" -> 85%",
+    "CHAIN: \"Rifampicin\" -> \"induces liver enzymes\" -> \"increased liver metabolism\" -> \"potential hepatotoxicity\" -> \"elevated ALT and AST\" -> 75%",
+    "CHAIN: \"Pyrazinamide\" -> \"metabolized in liver\" -> \"hepatotoxicity\" -> \"elevated ALT and AST\" -> 80%",
+    "CHAIN: \"Ethambutol\" -> \"minimal liver metabolism\" -> \"unlikely hepatotoxicity\" -> \"normal ALT and AST\" -> 30%",
+    "CHAIN: \"Streptomycin\" -> \"primarily renal excretion\" -> \"unlikely hepatotoxicity\" -> \"normal ALT and AST\" -> 25%"
+  ],
+  "enhanced_information": "In evaluating the potential hepatotoxicity of anti-tubercular drugs, Isoniazid, Rifampicin, and Pyrazinamide are known to be associated with elevated ALT and AST levels due to their metabolism in the liver. Isoniazid is particularly noted for its hepatotoxic effects, as it is metabolized in the liver and can lead to liver enzyme elevation, aligning with the consensus that it is a common cause of drug-induced liver injury. Rifampicin, while inducing liver enzymes and potentially causing hepatotoxicity, is less commonly the primary cause compared to Isoniazid. Pyrazinamide is also metabolized in the liver and can cause hepatotoxicity, but its role is less emphasized than Isoniazid. Ethambutol and Streptomycin are less likely to cause hepatotoxicity, as Ethambutol has minimal liver metabolism and Streptomycin is primarily excreted renally. The retrieved evidence paths confirm the liver involvement in the metabolism of Isoniazid and Pyrazinamide, supporting their potential to cause elevated liver enzymes. Therefore, Isoniazid is the most likely drug to have contributed to the elevated ALT and AST levels in this patient.",
+  "analysis": "The patient in question is being treated for tuberculosis, as indicated by the symptoms and the 6-month drug regimen. The elevation of ALT and AST levels suggests hepatotoxicity, which is a known side effect of certain anti-tubercular drugs. Among the options provided, Isoniazid, Rifampicin, and Pyrazinamide are known to cause liver enzyme elevation due to their metabolism in the liver. Isoniazid is particularly noted for its hepatotoxic effects and is a common cause of drug-induced liver injury. While Rifampicin and Pyrazinamide can also cause hepatotoxicity, Isoniazid is more frequently implicated in such cases. Ethambutol and Streptomycin are less likely to cause hepatotoxicity, as Ethambutol has minimal liver metabolism and Streptomycin is primarily excreted renally. Based on this information, Isoniazid is the most likely drug to have contributed to the elevated ALT and AST levels in this patient.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      0.0,
+      33.33333333333333,
+      0.0,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

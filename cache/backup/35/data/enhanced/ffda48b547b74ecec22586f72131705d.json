@@ -1,0 +1,184 @@
+{
+  "question": "A 30-year-old woman visits her local walk-in clinic and reports more than one week of progressive shortness of breath, dyspnea on effort, fatigue, lightheadedness, and lower limb edema. She claims she has been healthy all year round except for last week when she had a low-grade fever, malaise, and myalgias. Upon examination, her blood pressure is 94/58 mm Hg, heart rate is 125/min, respiratory rate is 26/min, and body temperature is 36.4°C (97.5°F). Her other symptoms include fine rattles in the base of both lungs, a laterally displaced pulse of maximum intensity, and regular, rhythmic heart sounds with an S3 gallop. She is referred to the nearest hospital for stabilization and further support. Which of the following best explains this patient’s condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Disruption of the dystrophin-glycoprotein complex",
+    "opb": "Cardiomyocyte hypertrophy",
+    "opc": "Fibrofatty replacement of the myocardium",
+    "opd": "IgA antiendomysial antibodies",
+    "ope": "Eosinophilic infiltration"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fever",
+        "Disease",
+        "Virus Diseases"
+      ],
+      [
+        "Fever",
+        "Symptoms",
+        "Virus Diseases"
+      ],
+      [
+        "Myalgia",
+        "Disease",
+        "Virus Diseases"
+      ],
+      [
+        "Myalgia",
+        "Obesity",
+        "Virus Diseases"
+      ],
+      [
+        "Myalgia",
+        "Symptoms",
+        "Virus Diseases"
+      ],
+      [
+        "Malaise",
+        "Disease",
+        "Virus Diseases"
+      ],
+      [
+        "Malaise",
+        "Infection",
+        "Virus Diseases"
+      ],
+      [
+        "Malaise",
+        "Adverse effects",
+        "Virus Diseases"
+      ],
+      [
+        "Virus Diseases",
+        "Heart failure"
+      ],
+      [
+        "Communicable Diseases",
+        "Heart failure"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Virus Diseases)",
+      "(Fever)-CAUSES->(Symptoms)-CAUSES->(Virus Diseases)",
+      "(Myalgia)-CAUSES->(Disease)-CAUSES->(Virus Diseases)",
+      "(Myalgia)-CAUSES->(Obesity)-CAUSES->(Virus Diseases)",
+      "(Myalgia)-CAUSES->(Symptoms)-CAUSES->(Virus Diseases)",
+      "(Malaise)-CAUSES->(Disease)-CAUSES->(Virus Diseases)",
+      "(Malaise)-PREDISPOSES->(Infection)-CAUSES->(Virus Diseases)",
+      "(Malaise)-MANIFESTATION_OF->(Adverse effects)-COMPLICATES->(Virus Diseases)",
+      "(Virus Diseases)-CAUSES->(Heart failure)",
+      "(Communicable Diseases)-CAUSES->(Heart failure)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Heart Auscultation",
+        "Tachycardia",
+        "Heart failure"
+      ],
+      [
+        "Heart Auscultation",
+        "Valvular disease",
+        "Heart failure"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "PREDISPOSES"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Heart Auscultation)-DIAGNOSES->(Tachycardia)-PREDISPOSES->(Heart failure)",
+      "(Heart Auscultation)-DIAGNOSES->(Valvular disease)-CAUSES->(Heart failure)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fever)-CAUSES->(Symptoms)-CAUSES->(Virus Diseases)",
+      "(Myalgia)-CAUSES->(Symptoms)-CAUSES->(Virus Diseases)",
+      "(Malaise)-MANIFESTATION_OF->(Adverse effects)-COMPLICATES->(Virus Diseases)",
+      "(Fever)-CAUSES->(Disease)-CAUSES->(Virus Diseases)",
+      "(Myalgia)-CAUSES->(Disease)-CAUSES->(Virus Diseases)",
+      "(Myalgia)-CAUSES->(Obesity)-CAUSES->(Virus Diseases)",
+      "(Malaise)-CAUSES->(Disease)-CAUSES->(Virus Diseases)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Progressive shortness of breath, dyspnea on effort, fatigue, lightheadedness, and lower limb edema\" -> \"Signs of heart failure\" -> \"S3 gallop on cardiac auscultation\" -> \"Likely heart failure with preserved ejection fraction\" -> 80%",
+    "CHAIN: \"Low-grade fever, malaise, and myalgias\" -> \"Possible viral illness or infection\" -> \"Can trigger heart failure exacerbation in predisposed individuals\" -> \"Exacerbated heart failure leading to symptoms\" -> 70%"
+  ],
+  "enhanced_information": "The patient's presentation with progressive shortness of breath, dyspnea on effort, fatigue, lightheadedness, and lower limb edema, along with signs of heart failure like an S3 gallop, suggests heart failure with preserved ejection fraction. The recent viral illness could have triggered an exacerbation of heart failure in this predisposed individual. Therefore, the best explanation for this patient's condition is likely cardiomyocyte hypertrophy.",
+  "analysis": "The patient's presentation with symptoms of heart failure, including dyspnea, fatigue, edema, and signs like an S3 gallop, along with the contextual information pointing towards heart failure with preserved ejection fraction and recent viral illness triggering an exacerbation, strongly suggests cardiomyocyte hypertrophy as the best explanation for this patient's condition.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      5
+    ],
+    "coverage_rates": [
+      16.666666666666664,
+      83.33333333333334
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

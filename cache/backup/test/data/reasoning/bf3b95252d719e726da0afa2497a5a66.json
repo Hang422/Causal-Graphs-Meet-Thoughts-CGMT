@@ -1,0 +1,173 @@
+{
+  "question": "A 4-year-old boy is brought to the physician because of swelling around his eyes for 4 days. The swelling is most severe in the morning and milder by bedtime. Ten days ago, he had a sore throat that resolved spontaneously. His temperature is 37°C (98.6°F), pulse is 103/min, and blood pressure is 88/52 mm Hg. Examination shows 3+ pitting edema of the lower extremities and periorbital edema. The remainder of the examination shows no abnormalities. Laboratory studies show:\nHemoglobin 15.3 g/dL\nLeukocyte count 10,500/mm3\nPlatelet count 480,000/mm3\nSerum\nUrea nitrogen 36 mg/dL\nGlucose 67 mg/dL\nCreatinine 0.8 mg/dL\nAlbumin 2.6 mg/dL\nUrine\nBlood negative\nGlucose negative\nProtein 4+\nRBC none\nWBC 0–1/hpf\nFatty casts numerous\nProtein/creatinine ratio 6.8 (N ≤0.2)\nSerum complement concentrations are within the reference ranges. Which of the following is the most appropriate next step in management?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Enalapril therapy",
+    "opb": "Furosemide therapy",
+    "opc": "Anti-streptolysin O levels",
+    "opd": "Prednisone therapy",
+    "ope": "Cyclosporine therapy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Periorbital edema",
+        "Lactose Intolerance",
+        "Disease",
+        "Proteinuria"
+      ],
+      [
+        "Periorbital edema",
+        "Lactose Intolerance",
+        "Inflammation",
+        "Proteinuria"
+      ],
+      [
+        "Periorbital edema",
+        "Lactose Intolerance",
+        "Functional disorder",
+        "Proteinuria"
+      ],
+      [
+        "Proteinuria",
+        "Nephrotic Syndrome"
+      ],
+      [
+        "Proteinuria",
+        "Nephrotic Syndrome"
+      ],
+      [
+        "Hypoalbuminemia",
+        "Disease",
+        "Nephrotic Syndrome"
+      ],
+      [
+        "Hypoalbuminemia",
+        "Dehydration",
+        "Nephrotic Syndrome"
+      ],
+      [
+        "Hypoalbuminemia",
+        "Hypertensive disease",
+        "Nephrotic Syndrome"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Periorbital edema)-MANIFESTATION_OF->(Lactose Intolerance)-CAUSES->(Disease)-CAUSES->(Proteinuria)",
+      "(Periorbital edema)-MANIFESTATION_OF->(Lactose Intolerance)-CAUSES->(Inflammation)-CAUSES->(Proteinuria)",
+      "(Periorbital edema)-MANIFESTATION_OF->(Lactose Intolerance)-CAUSES->(Functional disorder)-CAUSES->(Proteinuria)",
+      "(Proteinuria)-CAUSES->(Nephrotic Syndrome)",
+      "(Proteinuria)-CAUSES->(Nephrotic Syndrome)",
+      "(Hypoalbuminemia)-CAUSES->(Disease)-CAUSES->(Nephrotic Syndrome)",
+      "(Hypoalbuminemia)-CAUSES->(Dehydration)-COMPLICATES->(Nephrotic Syndrome)",
+      "(Hypoalbuminemia)-PREDISPOSES->(Hypertensive disease)-CAUSES->(Nephrotic Syndrome)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Nephrotic Syndrome",
+        "Disease",
+        "pulmonary complications",
+        "Prednisone"
+      ],
+      [
+        "Nephrotic Syndrome",
+        "Disease",
+        "pulmonary complications",
+        "Prednisone"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Nephrotic Syndrome)-PREDISPOSES->(Disease)-CAUSES->(pulmonary complications)-ASSOCIATED_WITH->(Prednisone)",
+      "(Nephrotic Syndrome)-MANIFESTATION_OF->(Disease)-CAUSES->(pulmonary complications)-ASSOCIATED_WITH->(Prednisone)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Nephrotic Syndrome)-MANIFESTATION_OF/PREDISPOSES->(Disease)-CAUSES->(pulmonary complications)-ASSOCIATED_WITH->(Prednisone)",
+      "(Proteinuria)-CAUSES->(Nephrotic Syndrome)",
+      "(Periorbital edema)-MANIFESTATION_OF->(Lactose Intolerance)-CAUSES->(Disease)-CAUSES->(Proteinuria)",
+      "(Periorbital edema)-MANIFESTATION_OF->(Lactose Intolerance)-CAUSES->(Inflammation)-CAUSES->(Proteinuria)",
+      "(Periorbital edema)-MANIFESTATION_OF->(Lactose Intolerance)-CAUSES->(Functional disorder)-CAUSES->(Proteinuria)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Periorbital edema\" -> \"Morning severity\" -> \"Nephrotic syndrome suspicion\" -> \"Low albumin\" -> \"Proteinuria\" -> \"Minimal change disease likely\" -> \"Prednisone therapy\" -> 95%",
+    "CHAIN: \"Recent sore throat\" -> \"Post-infectious symptom\" -> \"Edema\" -> \"Nephrotic syndrome\" -> \"Normal complement levels\" -> \"Minimal change disease\" -> \"Prednisone therapy\" -> 90%",
+    "CHAIN: \"Edema\" -> \"Proteinuria\" -> \"Hypoalbuminemia\" -> \"Nephrotic syndrome\" -> \"Minimal change disease\" -> \"Prednisone therapy\" -> 92%",
+    "CHAIN: \"Swelling around eyes\" -> \"Pitting edema\" -> \"Proteinuria\" -> \"Hypoalbuminemia\" -> \"Nephrotic syndrome\" -> \"Prednisone therapy\" -> 93%",
+    "CHAIN: \"Swelling\" -> \"Resolved sore throat\" -> \"Nephrotic syndrome\" -> \"Normal complement\" -> \"Minimal change disease\" -> \"Prednisone therapy\" -> 90%"
+  ],
+  "enhanced_information": "The presence of fatty casts in urine, periorbital edema, proteinuria, and hypoalbuminemia suggest nephrotic syndrome. The most appropriate next step in management is Prednisone therapy, supported by the consensus that nephrotic syndrome is treated with corticosteroids like Prednisone.",
+  "analysis": "The clinical presentation and laboratory findings are consistent with nephrotic syndrome, characterized by significant proteinuria, hypoalbuminemia, and edema. The presence of fatty casts and the absence of hematuria further support this diagnosis. The normal serum complement levels and recent history of a sore throat suggest minimal change disease, which is the most common cause of nephrotic syndrome in children. The standard initial treatment for minimal change disease is corticosteroids, specifically prednisone.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

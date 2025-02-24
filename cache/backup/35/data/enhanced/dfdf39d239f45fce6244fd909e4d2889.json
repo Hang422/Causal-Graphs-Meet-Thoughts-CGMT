@@ -1,0 +1,159 @@
+{
+  "question": "A 38-year-old woman presents to the primary care physician with a complaint of painless hematuria over the last 5 days. History reveals that she has a 20 pack-year smoking history, and her last menses was 10 days ago. Her blood pressure is 130/80 mm Hg, heart rate is 86/min, respiratory rate is 19/min, and temperature is 36.6°C (98.0°F). Physical examination is within normal limits. Laboratory studies show:\nCreatinine 0.9 mg/dL\nBlood urea nitrogen 15 mg/dL\nProthrombin time 12.0 sec\nPartial thromboplastin time 28.1 sec\nPlatelet count 250,000/mm3\nUrine microscopy reveals 15 RBC/HPF and no leukocytes, casts, or bacteria. Which of the following is the best next step for this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Digital rectal examination",
+    "opb": "Check urine for NMP22 and BTA",
+    "opc": "Cystoscopy",
+    "opd": "Renal biopsy",
+    "ope": "Reassurance"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Bacteria",
+        "Urinary tract infection"
+      ],
+      [
+        "Orthopedic Cast",
+        "Asthenopia",
+        "Disease",
+        "Urinary tract infection"
+      ],
+      [
+        "Orthopedic Cast",
+        "Asthenopia",
+        "Symptoms",
+        "Urinary tract infection"
+      ],
+      [
+        "Orthopedic Cast",
+        "Asthenopia",
+        "Epilepsy",
+        "Urinary tract infection"
+      ],
+      [
+        "Urinary tract infection",
+        "Hematuria"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Bacteria)-CAUSES->(Urinary tract infection)",
+      "(Orthopedic Cast)-PREVENTS->(Asthenopia)-CAUSES->(Disease)-CAUSES->(Urinary tract infection)",
+      "(Orthopedic Cast)-PREVENTS->(Asthenopia)-CAUSES->(Symptoms)-CAUSES->(Urinary tract infection)",
+      "(Orthopedic Cast)-PREVENTS->(Asthenopia)-CAUSES->(Epilepsy)-PREDISPOSES->(Urinary tract infection)",
+      "(Urinary tract infection)-CAUSES->(Hematuria)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Microscopic urinalysis",
+        "Disease",
+        "Human Development",
+        "Urinary tract"
+      ],
+      [
+        "Microscopic urinalysis",
+        "Infection",
+        "tissue tropism",
+        "Urinary tract"
+      ],
+      [
+        "Leukocytes",
+        "Virus",
+        "Urinary tract infection"
+      ],
+      [
+        "Leukocytes",
+        "Column",
+        "Urinary tract infection"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Microscopic urinalysis)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Human Development)-PROCESS_OF->(Urinary tract)",
+      "(Microscopic urinalysis)-DIAGNOSES->(Infection)-MANIFESTATION_OF->(tissue tropism)-PROCESS_OF->(Urinary tract)",
+      "(Leukocytes)-LOCATION_OF->(Virus)-CAUSES->(Urinary tract infection)",
+      "(Leukocytes)-PART_OF->(Column)-LOCATION_OF->(Urinary tract infection)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Bacteria)-CAUSES->(Urinary tract infection)",
+      "(Urinary tract infection)-CAUSES->(Hematuria)",
+      "(Orthopedic Cast)-PREVENTS->(Asthenopia)-CAUSES->(Symptoms)-CAUSES->(Urinary tract infection)",
+      "(Microscopic urinalysis)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Human Development)-PROCESS_OF->(Urinary tract)",
+      "(Leukocytes)-LOCATION_OF->(Virus)-CAUSES->(Urinary tract infection)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Smoking history and painless hematuria -> Suspected bladder cancer -> Need for further evaluation -> 80% CHAIN: Normal physical examination -> Less likely to have a local cause for hematuria -> Consider systemic etiology -> 70% CHAIN: Normal platelet count -> Less likely to have a bleeding disorder -> Lower suspicion for coagulopathy -> 75% CHAIN: Elevated RBCs in urine microscopy -> Suggestive of urinary tract pathology -> Further investigation warranted -> 85% CHAIN: Absence of leukocytes, casts, or bacteria in urine -> Less likely urinary tract infection -> Consider other causes of hematuria -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation of painless hematuria, smoking history, and normal physical examination raises suspicion for bladder cancer. Given the elevated RBCs in urine microscopy, further evaluation is warranted. The absence of leukocytes, casts, or bacteria in urine makes urinary tract infection less likely. The best next step for this patient would be to perform a cystoscopy for direct visualization and evaluation of the bladder.",
+  "analysis": "The patient's presentation of painless hematuria, smoking history, and normal physical examination raise suspicion for bladder cancer. The elevated RBCs in urine microscopy further support this concern. Given the clinical scenario, the best next step would be to perform a cystoscopy for direct visualization and evaluation of the bladder to assess for possible bladder pathology, including cancer.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

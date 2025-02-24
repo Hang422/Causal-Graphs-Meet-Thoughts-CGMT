@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_002738",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "714deb9f",
+  "question_text": "A 60-year-old woman presents to the emergency department due to progressive shortness of breath and a dry cough for the past week. She notes that her symptoms are exacerbated by physical activity and relieved by rest. The woman was diagnosed with chronic kidney disease 2 years ago and was recently started on regular dialysis treatment. Her pulse rate is 105/min, blood pressure is 110/70 mm Hg, respiratory rate is 30/min, and temperature is 37.8°C (100.0°F). On examination of the respiratory system, there is dullness on percussion, decreased vocal tactile fremitus, and decreased breath sounds over the right lung base. The rest of the physical exam is within normal limits. Which of the following is the most likely cause of this patient’s symptoms?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 60-year-old woman presents to the emergency department due to progressive shortness of breath and a dry cough for the past week. She notes that her symptoms are exacerbated by physical activity and relieved by rest. The woman was diagnosed with chronic kidney disease 2 years ago and was recently started on regular dialysis treatment. Her pulse rate is 105/min, blood pressure is 110/70 mm Hg, respiratory rate is 30/min, and temperature is 37.8°C (100.0°F). On examination of the respiratory system, there is dullness on percussion, decreased vocal tactile fremitus, and decreased breath sounds over the right lung base. The rest of the physical exam is within normal limits. Which of the following is the most likely cause of this patient’s symptoms?\n\n            ### Options\n    opa. Primary spontaneous pneumothorax (PSP)\nopb. Pleural effusion\nopc. Pulmonary tuberculosis (TB)\nopd. Pneumonia\nope. Acute bronchitis\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Chronic kidney disease -> increased risk of fluid overload -> pleural effusion -> 80%\nCHAIN: Regular dialysis treatment -> potential for volume overload -> pleural effusion -> 75%\nCHAIN: Dullness on percussion, decreased breath sounds over right lung base -> consolidation -> pneumonia -> 70%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

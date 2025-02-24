@@ -1,0 +1,193 @@
+{
+  "question": "A 30-year-old woman presents to the office with complaints of pain in her right breast for 5 days. The pain is moderate-to-intense and is localized to the upper quadrant of the right breast, and mainly to the areola for the past 48 hours. She adds that there is some nipple discharge on the same side and that the right breast is red. She was diagnosed with type 1 diabetes at the age of 10 years of age, for which she takes insulin. The family history is negative for breast and ovarian cancers, and endometrial disorders. She smokes one-half pack of cigarettes every day and binge drinks alcohol on the weekends. Two weeks ago she was hit by a volleyball while playing at the beach. There is no history of fractures or surgical procedures. The physical examination reveals a swollen, erythematous, and warm right breast with periareolar tenderness and nipple discharge. There are no palpable masses or lymphadenopathy. Which of the following is the most important risk factor for the development of this patient’s condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Age",
+    "opb": "Trauma",
+    "opc": "Smoking",
+    "opd": "Diabetes",
+    "ope": "Parity"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Erythema",
+        "Disease",
+        "Nipple discharge NOS"
+      ],
+      [
+        "Nipple discharge NOS",
+        "Granulomatous Mastitis",
+        "Disease",
+        "Communicable Diseases"
+      ],
+      [
+        "Nipple discharge NOS",
+        "Granulomatous Mastitis",
+        "Symptoms",
+        "Communicable Diseases"
+      ],
+      [
+        "Incident",
+        "Toxic Epidermal Necrolysis",
+        "Staphylococcus, coagulase negative",
+        "Breast infection"
+      ],
+      [
+        "Incident",
+        "Endometriosis, site unspecified",
+        "Genus Mycobacterium",
+        "Breast infection"
+      ],
+      [
+        "Incident",
+        "Chronic Disease",
+        "Genus Mycobacterium",
+        "Breast infection"
+      ],
+      [
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Immunity"
+      ],
+      [
+        "mastitis",
+        "Disease",
+        "Diabetes"
+      ],
+      [
+        "mastitis",
+        "Infection",
+        "Diabetes"
+      ],
+      [
+        "Inflammation",
+        "uptake",
+        "Right breast"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Erythema)-PREDISPOSES->(Disease)-CAUSES->(Nipple discharge NOS)",
+      "(Nipple discharge NOS)-PREDISPOSES->(Granulomatous Mastitis)-CAUSES->(Disease)-CAUSES->(Communicable Diseases)",
+      "(Nipple discharge NOS)-PREDISPOSES->(Granulomatous Mastitis)-CAUSES->(Symptoms)-CAUSES->(Communicable Diseases)",
+      "(Incident)-CAUSES->(Toxic Epidermal Necrolysis)-PROCESS_OF->(Staphylococcus, coagulase negative)-CAUSES->(Breast infection)",
+      "(Incident)-CAUSES->(Endometriosis, site unspecified)-PROCESS_OF->(Genus Mycobacterium)-CAUSES->(Breast infection)",
+      "(Incident)-CAUSES->(Chronic Disease)-PROCESS_OF->(Genus Mycobacterium)-CAUSES->(Breast infection)",
+      "(Diabetes Mellitus, Insulin-Dependent)-MANIFESTATION_OF->(Immunity)",
+      "(mastitis)-CAUSES->(Disease)-CAUSES->(Diabetes)",
+      "(mastitis)-MANIFESTATION_OF->(Infection)-CAUSES->(Diabetes)",
+      "(Inflammation)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Right breast)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Right breast",
+        "Nipple discharge NOS"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Right breast)-LOCATION_OF->(Nipple discharge NOS)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Right breast)-LOCATION_OF->(Nipple discharge NOS)",
+      "(Nipple discharge NOS)-PREDISPOSES->(Granulomatous Mastitis)-CAUSES->(Symptoms)-CAUSES->(Communicable Diseases)",
+      "(Erythema)-PREDISPOSES->(Disease)-CAUSES->(Nipple discharge NOS)",
+      "(Diabetes Mellitus, Insulin-Dependent)-MANIFESTATION_OF->(Immunity)",
+      "(Nipple discharge NOS)-PREDISPOSES->(Granulomatous Mastitis)-CAUSES->(Disease)-CAUSES->(Communicable Diseases)",
+      "(mastitis)-CAUSES->(Disease)-CAUSES->(Diabetes)",
+      "(mastitis)-MANIFESTATION_OF->(Infection)-CAUSES->(Diabetes)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"30-year-old woman\" -> \"localized breast pain\" -> \"erythema and warmth in right breast\" -> \"nipple discharge\" -> \"possible infection or inflammatory condition\" -> \"trauma from volleyball incident\" -> \"increased risk of breast infection\" -> 85%",
+    "CHAIN: \"30-year-old woman\" -> \"type 1 diabetes\" -> \"impaired immune response\" -> \"increased susceptibility to infections\" -> \"erythematous and warm right breast\" -> \"possible mastitis\" -> \"diabetes as a risk factor\" -> 80%",
+    "CHAIN: \"30-year-old woman\" -> \"smoking one-half pack daily\" -> \"increased risk of infections\" -> \"compromised vascular health\" -> \"possible contribution to breast condition\" -> \"smoking as a risk factor\" -> 75%",
+    "CHAIN: \"30-year-old woman\" -> \"no history of parity\" -> \"nulliparity associated with breast conditions\" -> \"possible increased risk\" -> \"unclear impact in this case\" -> 60%",
+    "CHAIN: \"30-year-old woman\" -> \"trauma from volleyball\" -> \"localized inflammation\" -> \"swelling and tenderness in right breast\" -> \"trauma as a significant risk factor\" -> 90%"
+  ],
+  "enhanced_information": "The patient presents with localized breast pain, erythema, warmth, and nipple discharge, suggesting a possible infection or inflammatory condition, likely mastitis. The most significant risk factors to consider are trauma, diabetes, and smoking. Trauma from the volleyball incident may have contributed to localized inflammation, but the consensus indicates that diabetes, particularly type 1, is a critical risk factor due to its association with impaired immune response and increased susceptibility to infections, including mastitis. Smoking also poses a risk by compromising vascular health, but its impact is less direct compared to diabetes. Nulliparity is less relevant in this acute presentation. Therefore, the most important risk factor for the development of this patient's condition is diabetes, as it significantly increases the risk of infections like mastitis.",
+  "analysis": "The patient presents with symptoms consistent with mastitis, characterized by localized breast pain, erythema, warmth, and nipple discharge. In evaluating the risk factors, we consider the patient's history of type 1 diabetes, which is known to impair immune function and increase susceptibility to infections. While trauma from the volleyball incident could have contributed to the inflammation, the consensus in medical literature suggests that diabetes is a more significant risk factor for developing infections like mastitis. Smoking is also a risk factor, but its impact is less direct compared to the immunocompromised state associated with diabetes. Therefore, the most important risk factor for this patient's condition is diabetes, as it significantly increases the risk of infections. Thus, the best-supported option is diabetes.",
+  "answer": "opd",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      4,
+      2,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      57.14285714285714,
+      28.57142857142857,
+      0.0,
+      0.0,
+      14.285714285714285
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

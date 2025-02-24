@@ -1,0 +1,241 @@
+{
+  "question": "A 52-year-old woman presents to the clinic with several days of vomiting and diarrhea. She also complains of headaches, muscle aches, and fever, but denies tenesmus, urgency, and bloody diarrhea. Past medical history is insignificant. When asked about any recent travel she says that she just came back from a cruise ship vacation. Her temperature is 37°C (98.6° F), respiratory rate is 15/min, pulse is 67/min, and blood pressure is 122/98 mm Hg. Physical examination is non-contributory. Microscopic examination of the stool is negative for ova or parasites. What is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Giardiasis",
+    "opb": "C. difficile colitis",
+    "opc": "Irritable bowel syndrome",
+    "opd": "Norovirus infection",
+    "ope": "Traveler’s diarrhea due to ETEC"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fever",
+        "Bacterial Infections"
+      ],
+      [
+        "Myalgia",
+        "Disease",
+        "Bacterial Infections"
+      ],
+      [
+        "Myalgia",
+        "Symptoms",
+        "Bacterial Infections"
+      ],
+      [
+        "Myalgia",
+        "Obesity",
+        "Bacterial Infections"
+      ],
+      [
+        "Diarrhea",
+        "Bacterial Infections"
+      ],
+      [
+        "Vomiting",
+        "Disease",
+        "Bacterial Infections"
+      ],
+      [
+        "Vomiting",
+        "Infection",
+        "Bacterial Infections"
+      ],
+      [
+        "[D]Tenesmus",
+        "Intestinal Obstruction",
+        "Inflammatory Bowel Diseases"
+      ],
+      [
+        "[D]Tenesmus",
+        "Colitis",
+        "Inflammatory Bowel Diseases"
+      ],
+      [
+        "[D]Tenesmus",
+        "Traveler's diarrhea",
+        "Inflammatory Bowel Diseases"
+      ],
+      [
+        "Hemorrhagic diarrhea",
+        "Syndrome",
+        "Inflammatory Bowel Diseases"
+      ],
+      [
+        "Hemorrhagic diarrhea",
+        "Septicemia",
+        "Inflammatory Bowel Diseases"
+      ],
+      [
+        "Hemorrhagic diarrhea",
+        "Diarrhea",
+        "Inflammatory Bowel Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Fever)-PREDISPOSES->(Bacterial Infections)",
+      "(Myalgia)-CAUSES->(Disease)-CAUSES->(Bacterial Infections)",
+      "(Myalgia)-CAUSES->(Symptoms)-CAUSES->(Bacterial Infections)",
+      "(Myalgia)-CAUSES->(Obesity)-PREDISPOSES->(Bacterial Infections)",
+      "(Diarrhea)-PREDISPOSES->(Bacterial Infections)",
+      "(Vomiting)-CAUSES->(Disease)-CAUSES->(Bacterial Infections)",
+      "(Vomiting)-CAUSES->(Infection)-CAUSES->(Bacterial Infections)",
+      "([D]Tenesmus)-CAUSES->(Intestinal Obstruction)-CAUSES->(Inflammatory Bowel Diseases)",
+      "([D]Tenesmus)-CAUSES->(Colitis)-CAUSES->(Inflammatory Bowel Diseases)",
+      "([D]Tenesmus)-CAUSES->(Traveler's diarrhea)-COMPLICATES->(Inflammatory Bowel Diseases)",
+      "(Hemorrhagic diarrhea)-CAUSES->(Syndrome)-CAUSES->(Inflammatory Bowel Diseases)",
+      "(Hemorrhagic diarrhea)-CAUSES->(Septicemia)-CAUSES->(Inflammatory Bowel Diseases)",
+      "(Hemorrhagic diarrhea)-CAUSES->(Diarrhea)-CAUSES->(Inflammatory Bowel Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Ovum",
+        "Pharmaceutical Preparations",
+        "Parasitic Diseases"
+      ],
+      [
+        "Ovum",
+        "Pharmaceutical Preparations",
+        "Parasitic Diseases"
+      ],
+      [
+        "Infection caused by Norovirus",
+        "Gastroenteritis",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Infection caused by Norovirus",
+        "Gastroenteritis",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PREVENTS"
+      ],
+      [
+        "LOCATION_OF",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Ovum)-LOCATION_OF->(Pharmaceutical Preparations)-PREVENTS->(Parasitic Diseases)",
+      "(Ovum)-LOCATION_OF->(Pharmaceutical Preparations)-PREDISPOSES->(Parasitic Diseases)",
+      "(Infection caused by Norovirus)-CAUSES->(Gastroenteritis)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Infection caused by Norovirus)-CAUSES->(Gastroenteritis)-MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Fever)-PREDISPOSES->(Bacterial Infections)",
+      "(Diarrhea)-PREDISPOSES->(Bacterial Infections)",
+      "(Hemorrhagic diarrhea)-CAUSES->(Diarrhea)-CAUSES->(Inflammatory Bowel Diseases)",
+      "(Myalgia)-CAUSES->(Disease)-CAUSES->(Bacterial Infections)",
+      "(Myalgia)-CAUSES->(Symptoms)-CAUSES->(Bacterial Infections)",
+      "(Myalgia)-CAUSES->(Obesity)-PREDISPOSES->(Bacterial Infections)",
+      "(Vomiting)-CAUSES->(Disease)-CAUSES->(Bacterial Infections)",
+      "(Vomiting)-CAUSES->(Infection)-CAUSES->(Bacterial Infections)",
+      "(Ovum)-LOCATION_OF->(Pharmaceutical Preparations)-PREDISPOSES/PREVENTS->(Parasitic Diseases)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Recent cruise ship vacation -> gastrointestinal symptoms -> possible infectious etiology -> 70% CHAIN: Vomiting, diarrhea, fever, and muscle aches -> viral or bacterial infection -> 80% CHAIN: Negative stool microscopy for ova or parasites -> less likely parasitic infection -> 90% CHAIN: Absence of tenesmus, urgency, and bloody diarrhea -> less likely inflammatory bowel disease -> 85% CHAIN: Symptoms consistent with Norovirus infection -> likely diagnosis -> 70%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 52-year-old woman with gastrointestinal symptoms after a cruise ship vacation is Norovirus infection. The symptoms of vomiting, diarrhea, fever, and muscle aches, along with the absence of tenesmus, urgency, and bloody diarrhea, are consistent with Norovirus infection. The negative stool microscopy for ova or parasites makes parasitic infection less likely. The evidence paths support the predisposition of bacterial infections by fever and diarrhea, as well as the absence of ova in stool samples for parasitic diseases.",
+  "analysis": "The core medical principle here is to consider the patient's symptoms, recent travel history, and the absence of ova or parasites in stool samples. Given the presentation of vomiting, diarrhea, fever, and muscle aches after a cruise ship vacation, along with negative stool microscopy, the most likely diagnosis is Norovirus infection.",
+  "answer": "opd. norovirus infection",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      8
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

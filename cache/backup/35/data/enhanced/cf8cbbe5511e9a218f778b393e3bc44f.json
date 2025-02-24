@@ -1,0 +1,200 @@
+{
+  "question": "You are seeing a 4-year-old boy in clinic who is presenting with concern for a primary immune deficiency. He has an unremarkable birth history, but since the age of 6 months he has had recurrent otitis media, bacterial pneumonia, as well as two episodes of sinusitis, and four episodes of conjunctivitis. He has a maternal uncle who died from sepsis secondary to H. influenza pneumonia. If you drew blood work for diagnostic testing, which of the following would you expect to find?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Abnormally low number of B cells",
+    "opb": "Abnormally low number of T cells",
+    "opc": "Abnormally high number of B cells",
+    "opd": "Abnormally high number of T cells",
+    "ope": "Elevated immunoglobulin levels"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Otitis Media",
+        "Disease",
+        "Immunologic Deficiency Syndromes"
+      ],
+      [
+        "Otitis Media",
+        "Infection",
+        "Immunologic Deficiency Syndromes"
+      ],
+      [
+        "Conjunctivitis",
+        "Disease",
+        "Immunologic Deficiency Syndromes"
+      ],
+      [
+        "Conjunctivitis",
+        "Infection",
+        "Immunologic Deficiency Syndromes"
+      ],
+      [
+        "Pneumonia, Bacterial",
+        "Disease",
+        "Immunologic Deficiency Syndromes"
+      ],
+      [
+        "Pneumonia, Bacterial",
+        "Infection",
+        "Immunologic Deficiency Syndromes"
+      ],
+      [
+        "Sinusitis",
+        "Disease",
+        "Immunologic Deficiency Syndromes"
+      ],
+      [
+        "Sinusitis",
+        "Infection",
+        "Immunologic Deficiency Syndromes"
+      ],
+      [
+        "Immunologic Deficiency Syndromes",
+        "Symptoms",
+        "Diagnostic tests"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Otitis Media)-CAUSES->(Disease)-CAUSES->(Immunologic Deficiency Syndromes)",
+      "(Otitis Media)-CAUSES->(Infection)-MANIFESTATION_OF->(Immunologic Deficiency Syndromes)",
+      "(Conjunctivitis)-CAUSES->(Disease)-CAUSES->(Immunologic Deficiency Syndromes)",
+      "(Conjunctivitis)-CAUSES->(Infection)-COMPLICATES->(Immunologic Deficiency Syndromes)",
+      "(Pneumonia, Bacterial)-CAUSES->(Disease)-CAUSES->(Immunologic Deficiency Syndromes)",
+      "(Pneumonia, Bacterial)-MANIFESTATION_OF->(Infection)-MANIFESTATION_OF->(Immunologic Deficiency Syndromes)",
+      "(Sinusitis)-CAUSES->(Disease)-CAUSES->(Immunologic Deficiency Syndromes)",
+      "(Sinusitis)-CAUSES->(Infection)-COMPLICATES->(Immunologic Deficiency Syndromes)",
+      "(Immunologic Deficiency Syndromes)-CAUSES->(Symptoms)-CAUSES->(Diagnostic tests)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Diagnostic tests",
+        "Fetal Growth Retardation",
+        "neuropeptide Y|NPY",
+        "B-Lymphocytes"
+      ],
+      [
+        "Diagnostic tests",
+        "Obstruction",
+        "neuropeptide Y|NPY",
+        "B-Lymphocytes"
+      ],
+      [
+        "B-Lymphocytes",
+        "Pharmaceutical Preparations",
+        "Immunoglobulin level - finding"
+      ],
+      [
+        "B-Lymphocytes",
+        "Vaccines",
+        "Immunoglobulin level - finding"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "INTERACTS_WITH",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Diagnostic tests)-DIAGNOSES->(Fetal Growth Retardation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(B-Lymphocytes)",
+      "(Diagnostic tests)-DIAGNOSES->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(B-Lymphocytes)",
+      "(B-Lymphocytes)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Immunoglobulin level - finding)",
+      "(B-Lymphocytes)-INTERACTS_WITH->(Vaccines)-CAUSES->(Immunoglobulin level - finding)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Diagnostic tests)-DIAGNOSES->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(B-Lymphocytes)",
+      "(Immunologic Deficiency Syndromes)-CAUSES->(Symptoms)-CAUSES->(Diagnostic tests)",
+      "(B-Lymphocytes)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Immunoglobulin level - finding)",
+      "(B-Lymphocytes)-INTERACTS_WITH->(Vaccines)-CAUSES->(Immunoglobulin level - finding)",
+      "(Diagnostic tests)-DIAGNOSES->(Fetal Growth Retardation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(B-Lymphocytes)",
+      "(Pneumonia, Bacterial)-CAUSES->(Disease)-CAUSES->(Immunologic Deficiency Syndromes)",
+      "(Pneumonia, Bacterial)-MANIFESTATION_OF->(Infection)-MANIFESTATION_OF->(Immunologic Deficiency Syndromes)",
+      "(Otitis Media)-CAUSES->(Disease)-CAUSES->(Immunologic Deficiency Syndromes)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Recurrent otitis media, bacterial pneumonia, sinusitis, conjunctivitis -> Suspected primary immune deficiency -> Blood work for diagnostic testing -> Abnormally low number of B cells -> Elevated immunoglobulin levels -> 85%"
+  ],
+  "enhanced_information": "In a 4-year-old boy with suspected primary immune deficiency presenting with recurrent otitis media, bacterial pneumonia, sinusitis, and conjunctivitis, blood work for diagnostic testing would likely show an abnormally low number of B cells and elevated immunoglobulin levels. This aligns with the standard understanding of primary immune deficiencies. The retrieved evidence paths, while broad, support the relationship between B-Lymphocytes and immunoglobulin levels, reinforcing the expected findings in this clinical scenario.",
+  "analysis": "In a 4-year-old boy with suspected primary immune deficiency presenting with recurrent infections, especially respiratory and mucosal infections, the most likely findings on blood work would include an abnormally low number of B cells and elevated immunoglobulin levels. This pattern is consistent with a primary immune deficiency affecting B cell function and antibody production.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

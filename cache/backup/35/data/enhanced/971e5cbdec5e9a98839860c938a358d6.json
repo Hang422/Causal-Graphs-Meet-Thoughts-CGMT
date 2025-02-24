@@ -1,0 +1,114 @@
+{
+  "question": "A 56-year-old man comes to the physician for a follow-up examination. One month ago, he was diagnosed with a focal seizure and treatment with a drug that blocks voltage-gated sodium channels was begun. Today, he reports that he has not had any abnormal body movements, but he has noticed occasional double vision. His serum sodium is 132 mEq/L, alanine aminotransferase is 49 U/L, and aspartate aminotransferase is 46 U/L. This patient has most likely been taking which of the following drugs?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Carbamazepine",
+    "opb": "Levetiracetam",
+    "opc": "Gabapentin",
+    "opd": "Lamotrigine",
+    "ope": "Topiramate"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Diplopia",
+        "Disease",
+        "Hyponatremia"
+      ],
+      [
+        "Diplopia",
+        "Symptoms",
+        "Hyponatremia"
+      ],
+      [
+        "Diplopia",
+        "Respiratory Failure",
+        "Hyponatremia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Diplopia)-CAUSES->(Disease)-CAUSES->(Hyponatremia)",
+      "(Diplopia)-CAUSES->(Symptoms)-CAUSES->(Hyponatremia)",
+      "(Diplopia)-CAUSES->(Respiratory Failure)-CAUSES->(Hyponatremia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Seizures, Focal",
+        "Disease",
+        "Inflammation",
+        "Voltage-Gated Sodium Channels"
+      ],
+      [
+        "Seizures, Focal",
+        "Disease",
+        "Inflammation",
+        "Voltage-Gated Sodium Channels"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Seizures, Focal)-CAUSES->(Disease)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(Voltage-Gated Sodium Channels)",
+      "(Seizures, Focal)-ASSOCIATED_WITH->(Disease)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(Voltage-Gated Sodium Channels)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Seizures, Focal)-ASSOCIATED_WITH/CAUSES->(Disease)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(Voltage-Gated Sodium Channels)-Gated Sodium Channels)",
+      "(Diplopia)-CAUSES->(Disease)-CAUSES->(Hyponatremia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Focal seizure\" -> \"Treatment with drug blocking voltage-gated sodium channels\" -> \"Occasional double vision\" -> \"Serum sodium 132 mEq/L\" -> \"Alanine aminotransferase 49 U/L\" -> \"Aspartate aminotransferase 46 U/L\" -> 95% CHAIN: \"Drug blocking voltage-gated sodium channels\" -> \"Double vision\" -> \"Hyponatremia (serum sodium 132 mEq/L)\" -> \"Mild liver enzyme elevation (alanine aminotransferase 49 U/L, aspartate aminotransferase 46 U/L)\" -> \"Likely taking Carbamazepine\" -> 95%"
+  ],
+  "enhanced_information": "The patient most likely has been taking Carbamazepine based on the presentation of focal seizure, treatment with a drug blocking voltage-gated sodium channels, occasional double vision, hyponatremia (serum sodium 132 mEq/L), and mild liver enzyme elevation. The evidence paths support the association between diplopia and hyponatremia, further reinforcing the likelihood of Carbamazepine as the drug causing these symptoms.",
+  "analysis": "The patient's presentation of focal seizure, treatment with a drug blocking voltage-gated sodium channels, occasional double vision, hyponatremia, and mild liver enzyme elevation strongly suggest the use of Carbamazepine. Carbamazepine is known to block voltage-gated sodium channels and can cause side effects like diplopia and hyponatremia. The absence of abnormal body movements further supports this choice.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

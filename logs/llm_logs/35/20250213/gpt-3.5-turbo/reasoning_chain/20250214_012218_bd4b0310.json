@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_012218",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "bd4b0310",
+  "question_text": "A 57-year-old man is admitted to the ER due to an abrupt onset of abdominal pain that radiates to the back, nausea, and multiple vomiting episodes for the past 10 hours. He does not have any significant past medical history. He admits to drinking alcohol every night. During admission, he is found to have a body temperature of 37.5°C (99.5°F), a respiratory rate of 20/min, a pulse of 120/min, and a blood pressure of 120/76 mm Hg. He looks pale with sunken eyes and has significant epigastric tenderness and flank discoloration. An initial laboratory panel shows the following:\nTotal count (WBC) 10,000/mm3\nPlatelet count 140,000/mm3\nSerum glucose 160 mg/dL\nSerum LDH 500 IU/L\nAspartate aminotransferase 400 IU/dL\nSerum Amylase 500 IU/L\nSerum Lipase 300 IU/L\nWhich of the following combinations would best predict severity in this case?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 57-year-old man is admitted to the ER due to an abrupt onset of abdominal pain that radiates to the back, nausea, and multiple vomiting episodes for the past 10 hours. He does not have any significant past medical history. He admits to drinking alcohol every night. During admission, he is found to have a body temperature of 37.5°C (99.5°F), a respiratory rate of 20/min, a pulse of 120/min, and a blood pressure of 120/76 mm Hg. He looks pale with sunken eyes and has significant epigastric tenderness and flank discoloration. An initial laboratory panel shows the following:\nTotal count (WBC) 10,000/mm3\nPlatelet count 140,000/mm3\nSerum glucose 160 mg/dL\nSerum LDH 500 IU/L\nAspartate aminotransferase 400 IU/dL\nSerum Amylase 500 IU/L\nSerum Lipase 300 IU/L\nWhich of the following combinations would best predict severity in this case?\n\n            ### Options\n    opa. Glucose, LDH, AST\nopb. Age, LDH, AST\nopc. WBC, platelet count, AST\nopd. Age, glucose, amylase\nope. AST, amylase, lipase\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Alcohol consumption -> pancreatitis -> elevated serum amylase and lipase -> 70%\nCHAIN: Abdominal pain radiating to the back -> pancreatitis -> elevated serum amylase and lipase -> 80%\nCHAIN: Epigastric tenderness and flank discoloration -> pancreatitis -> elevated serum amylase and lipase -> 75%\nCHAIN: Elevated serum amylase and lipase -> pancreatic inflammation -> severity prediction -> 85%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "question": "A 20-year-old woman visits the clinic for her annual physical examination. She does not have any complaints during this visit. The past medical history is insignificant. She follows a healthy lifestyle with a balanced diet and moderate exercise schedule. She does not smoke or drink alcohol. She does not take any medications currently. The family history is significant for her grandfather and uncle who had their parathyroid glands removed. The vital signs include: blood pressure:122/88 mm Hg, pulse 88/min, respirations 17/min, and temperature 36.7°C (98.0°F). The physical exam is within normal limits. The lab test results are as follows:\nBlood Urea Nitrogen 12 mg/dL\nSerum Creatinine 1.1 mg/dL\nSerum Glucose (Random) 88 mg/dL\nSerum chloride 107 mmol/L\nSerum potassium 4.5 mEq/L\nSerum sodium 140 mEq/L\nSerum calcium 14.5 mmol/L\nSerum albumin 4.4 gm/dL\nParathyroid Hormone (PTH) 70 pg/mL (Normal: 10-65 pg/mL)\n24-Hr urinary calcium 85 mg/day (Normal: 100–300 mg/day)\nWhich of the following is the next best step in the management of this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Parathyroidectomy",
+    "opb": "Start IV fluids to keep her hydrated",
+    "opc": "No treatment is necessary",
+    "opd": "Start her on pamidronate",
+    "ope": "Give glucocorticoids"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypercalcemia",
+        "Hyperparathyroidism, Primary"
+      ],
+      [
+        "Hypercalcemia",
+        "Dehydration"
+      ],
+      [
+        "Hypercalcemia",
+        "Granulomatous disorder"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hypercalcemia)-CAUSES->(Hyperparathyroidism, Primary)",
+      "(Hypercalcemia)-CAUSES->(Dehydration)",
+      "(Hypercalcemia)-CAUSES->(Granulomatous disorder)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Granulomatous disorder",
+        "Disease",
+        "Pathogenesis",
+        "Glucocorticoids"
+      ],
+      [
+        "Granulomatous disorder",
+        "Disease",
+        "Pathogenesis",
+        "Glucocorticoids"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Granulomatous disorder)-ISA->(Disease)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Glucocorticoids)",
+      "(Granulomatous disorder)-ISA->(Disease)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Glucocorticoids)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypercalcemia)-CAUSES->(Hyperparathyroidism, Primary)",
+      "(Hypercalcemia)-CAUSES->(Dehydration)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Possible primary hyperparathyroidism\" -> \"Family history of parathyroid issues\" -> \"Consider parathyroidectomy\" -> 85%",
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Risk of dehydration\" -> \"Start IV fluids to keep her hydrated\" -> 80%",
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Increased bone resorption\" -> \"Consider bisphosphonates like pamidronate\" -> 75%",
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"Possible granulomatous disease or malignancy\" -> \"Consider glucocorticoids\" -> 60%",
+    "CHAIN: \"Elevated serum calcium\" -> \"Hypercalcemia\" -> \"No acute symptoms\" -> \"No treatment is necessary\" -> 50%"
+  ],
+  "enhanced_information": "The patient presents with hypercalcemia, as indicated by the elevated serum calcium level. The elevated PTH level suggests primary hyperparathyroidism, which is supported by the family history of parathyroid gland removal. The retrieved evidence path confirms that hypercalcemia can be caused by primary hyperparathyroidism. In this context, parathyroidectomy is a standard treatment for primary hyperparathyroidism, especially with a family history and elevated calcium levels. While IV fluids can be used to manage acute hypercalcemia by preventing dehydration, they do not address the underlying cause. Bisphosphonates and glucocorticoids are more appropriate for hypercalcemia due to malignancy or granulomatous disease, which is not indicated here. No treatment is not advisable given the elevated calcium and PTH levels. Therefore, the next best step in management is parathyroidectomy.",
+  "analysis": "The patient presents with hypercalcemia and an elevated parathyroid hormone (PTH) level, which suggests primary hyperparathyroidism. The family history of parathyroid gland removal further supports this diagnosis. In cases of primary hyperparathyroidism, especially with significant hypercalcemia, the standard treatment is surgical removal of the overactive parathyroid gland(s), known as parathyroidectomy. While IV fluids can help manage acute hypercalcemia by preventing dehydration, they do not address the underlying cause. Bisphosphonates and glucocorticoids are typically used for hypercalcemia due to malignancy or granulomatous disease, which is not indicated here. Given the elevated calcium and PTH levels, and the family history, parathyroidectomy is the most appropriate next step in management.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      0,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      25.0,
+      25.0,
+      0.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

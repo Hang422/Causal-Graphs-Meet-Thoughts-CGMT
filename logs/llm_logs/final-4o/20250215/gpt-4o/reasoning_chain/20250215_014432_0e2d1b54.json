@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250215_014432",
+  "model": "gpt-4o",
+  "interaction_type": "reasoning_chain",
+  "question_id": "0e2d1b54",
+  "question_text": "A 72-year-old man comes to the emergency department because of blurry vision for the past 3 days. He has also had 4 episodes of right-sided headaches over the past month. He has no significant past medical history. His father died of coronary artery disease at the age of 62 years. His temperature is 37.2°C (99°F), pulse is 94/min, and blood pressure is 232/128 mm Hg. Fundoscopy shows right-sided optic disc blurring and retinal hemorrhages. A medication is given immediately. Five minutes later, his pulse is 75/min and blood pressure is 190/105 mm Hg. Which of the following drugs was most likely administered?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 72-year-old man comes to the emergency department because of blurry vision for the past 3 days. He has also had 4 episodes of right-sided headaches over the past month. He has no significant past medical history. His father died of coronary artery disease at the age of 62 years. His temperature is 37.2°C (99°F), pulse is 94/min, and blood pressure is 232/128 mm Hg. Fundoscopy shows right-sided optic disc blurring and retinal hemorrhages. A medication is given immediately. Five minutes later, his pulse is 75/min and blood pressure is 190/105 mm Hg. Which of the following drugs was most likely administered?\n\n            ### Options\n    opa. Labetalol\nopb. Hydralazine\nopc. Fenoldopam\nopd. Nicardipine\nope. Nitroprusside\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Labetalol\" -> \"alpha and beta-blockade\" -> \"decreased heart rate\" -> \"decreased blood pressure\" -> 95%\n\nCHAIN: \"Hydralazine\" -> \"arterial vasodilation\" -> \"decreased peripheral resistance\" -> \"decreased blood pressure\" -> \"no significant change in heart rate\" -> 70%\n\nCHAIN: \"Fenoldopam\" -> \"dopamine receptor agonist\" -> \"vasodilation\" -> \"decreased blood pressure\" -> \"possible reflex tachycardia\" -> 60%\n\nCHAIN: \"Nicardipine\" -> \"calcium channel blockade\" -> \"vasodilation\" -> \"decreased blood pressure\" -> \"possible reflex tachycardia\" -> 65%\n\nCHAIN: \"Nitroprusside\" -> \"nitric oxide release\" -> \"vasodilation\" -> \"decreased blood pressure\" -> \"no significant change in heart rate\" -> 75%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-4o",
+    "temperature": 0.0
+  }
+}

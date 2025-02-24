@@ -1,0 +1,195 @@
+{
+  "question": "Laboratory studies, including serum vitamin B12 (cyanocobalamin), thyroxine (T4), and thyroid-stimulating hormone concentrations, are within normal limits. A lumbar puncture is performed. Cerebrospinal fluid (CSF) analysis is most likely to show which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Antiganglioside GM1 antibodies",
+    "opb": "Increased α-synuclein protein concentration",
+    "opc": "Increased 14-3-3 protein concentration",
+    "opd": "Oligoclonal bands",
+    "ope": "Anti-glutamic acid decarboxylase antibodies"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Spinal Puncture",
+        "Disease",
+        "Autoimmune"
+      ],
+      [
+        "Spinal Puncture",
+        "Obesity",
+        "Autoimmune"
+      ],
+      [
+        "Spinal Puncture",
+        "Infection",
+        "Autoimmune"
+      ],
+      [
+        "Vitamin B 12",
+        "Neurologic Symptoms"
+      ],
+      [
+        "Spinal Puncture",
+        "Inflammation"
+      ],
+      [
+        "Spinal Puncture",
+        "Disease",
+        "Autoimmune"
+      ],
+      [
+        "Spinal Puncture",
+        "Obesity",
+        "Autoimmune"
+      ],
+      [
+        "Spinal Puncture",
+        "Infection",
+        "Autoimmune"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "PREVENTS"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Spinal Puncture)-CAUSES->(Disease)-CAUSES->(Autoimmune)",
+      "(Spinal Puncture)-CAUSES->(Obesity)-CAUSES->(Autoimmune)",
+      "(Spinal Puncture)-CAUSES->(Infection)-COMPLICATES->(Autoimmune)",
+      "(Vitamin B 12)-PREVENTS->(Neurologic Symptoms)",
+      "(Spinal Puncture)-CAUSES->(Inflammation)",
+      "(Spinal Puncture)-CAUSES->(Disease)-CAUSES->(Autoimmune)",
+      "(Spinal Puncture)-CAUSES->(Obesity)-CAUSES->(Autoimmune)",
+      "(Spinal Puncture)-CAUSES->(Infection)-COMPLICATES->(Autoimmune)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Autoimmune",
+        "Proteins"
+      ],
+      [
+        "Neurologic Symptoms",
+        "Functional disorder",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "Spinal Puncture"
+      ],
+      [
+        "Neurologic Symptoms",
+        "Functional disorder",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "Spinal Puncture"
+      ],
+      [
+        "Inflammation",
+        "Oligoclonal Bands"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Autoimmune)-ASSOCIATED_WITH->(Proteins)",
+      "(Neurologic Symptoms)-MANIFESTATION_OF->(Functional disorder)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Spinal Puncture)",
+      "(Neurologic Symptoms)-ASSOCIATED_WITH->(Functional disorder)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Spinal Puncture)",
+      "(Inflammation)-ASSOCIATED_WITH->(Oligoclonal Bands)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vitamin B 12)-PREVENTS->(Neurologic Symptoms)",
+      "(Inflammation)-ASSOCIATED_WITH->(Oligoclonal Bands)",
+      "(Spinal Puncture)-CAUSES->(Inflammation)",
+      "(Neurologic Symptoms)-ASSOCIATED_WITH/MANIFESTATION_OF->(Functional disorder)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Spinal Puncture)",
+      "(Spinal Puncture)-CAUSES->(Disease)-CAUSES->(Autoimmune)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Normal serum vitamin B12\" -> \"Excludes vitamin B12 deficiency\" -> \"Normal neurological function\" -> \"Lumbar puncture performed\" -> \"CSF analysis indicates possible autoimmune process\" -> \"Increased 14-3-3 protein concentration\" -> 85%",
+    "CHAIN: \"Normal thyroxine and TSH levels\" -> \"Excludes thyroid dysfunction\" -> \"Normal metabolic state\" -> \"Lumbar puncture performed\" -> \"CSF analysis shows signs of neurodegeneration\" -> \"Increased α-synuclein protein concentration\" -> 80%",
+    "CHAIN: \"Normal serum vitamin B12\" -> \"Excludes nutritional causes of neurological symptoms\" -> \"Lumbar puncture performed\" -> \"CSF analysis shows signs of inflammation\" -> \"Oligoclonal bands present\" -> 75%",
+    "CHAIN: \"Normal thyroid function tests\" -> \"Excludes thyroid-related neurological issues\" -> \"Lumbar puncture performed\" -> \"CSF analysis shows autoimmune markers\" -> \"Antiganglioside GM1 antibodies detected\" -> 70%",
+    "CHAIN: \"Normal vitamin B12 and thyroid function\" -> \"Excludes common metabolic causes\" -> \"Lumbar puncture performed\" -> \"CSF analysis shows possible autoimmune response\" -> \"Anti-glutamic acid decarboxylase antibodies detected\" -> 65%"
+  ],
+  "enhanced_information": "The normal serum vitamin B12 and thyroid function tests suggest that common metabolic causes of neurological symptoms are excluded. In this context, a lumbar puncture is performed to analyze cerebrospinal fluid (CSF). The presence of oligoclonal bands in the CSF is a well-established marker of central nervous system inflammation, often associated with multiple sclerosis and other autoimmune conditions. The evidence path indicating that inflammation is associated with oligoclonal bands supports this conclusion. While increased α-synuclein protein concentration is relevant in neurodegenerative diseases like Parkinson's, it is less likely given the normal metabolic state indicated by the lab results. Antiganglioside GM1 antibodies and anti-glutamic acid decarboxylase antibodies are more specific to certain autoimmune conditions and are less likely to be present without additional clinical context. Therefore, the most likely finding in the CSF analysis is the presence of oligoclonal bands.",
+  "analysis": "The normal serum vitamin B12 and thyroid function tests suggest that common metabolic causes of neurological symptoms are excluded, which directs attention to potential central nervous system (CNS) pathologies. A lumbar puncture is performed to analyze cerebrospinal fluid (CSF). The presence of oligoclonal bands in the CSF is a well-established marker of CNS inflammation, often associated with conditions like multiple sclerosis. Given the context of normal metabolic tests and the need to investigate CNS conditions, the presence of oligoclonal bands is the most likely finding. Other options, such as increased α-synuclein protein concentration, are more specific to neurodegenerative diseases and less likely in this scenario. Antiganglioside GM1 antibodies and anti-glutamic acid decarboxylase antibodies are also less likely without additional clinical context. Therefore, the most supported option based on the provided information is the presence of oligoclonal bands.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      4,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      28.57142857142857,
+      0.0,
+      57.14285714285714,
+      0.0,
+      14.285714285714285
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

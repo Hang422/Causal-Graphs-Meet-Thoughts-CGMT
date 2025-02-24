@@ -1,0 +1,190 @@
+{
+  "question": "A 2-week-old infant is brought to the physician by her father because of a 1-week history of vaginal discharge. The discharge was initially clear, but now he notices that it is tinged with blood. The father is also concerned about “bruises” on his daughter's back and buttocks. Both parents work so that the infant spends most of her time in daycare or with her aunt. She was born at term following a pregnancy complicated by maternal gonococcal infection that was treated with antibiotics. She appears well. Physical examination shows mild acne across her cheeks and forehead. There are multiple large flat gray-blue patches on her back and buttocks. An image of one of the lesions is shown. Firm breast buds are present. Genitourinary examination shows erythema and swelling of the vulva and vagina with an odorless, blood-stained white discharge. Which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Reassurance",
+    "opb": "Ceftriaxone and doxycycline therapy",
+    "opc": "Leuprolide therapy",
+    "opd": "Fluconazole therapy",
+    "ope": "Ceftriaxone therapy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Gonorrhea",
+        "Disease",
+        "Vertical Disease Transmission"
+      ],
+      [
+        "Gonorrhea",
+        "Infection",
+        "Vertical Disease Transmission"
+      ],
+      [
+        "Vertical Disease Transmission",
+        "Disease",
+        "Genital infection"
+      ],
+      [
+        "Vertical Disease Transmission",
+        "Infection",
+        "Genital infection"
+      ],
+      [
+        "Genital infection",
+        "Infection",
+        "Vaginal Discharge"
+      ],
+      [
+        "Genital infection",
+        "Pruritus",
+        "Vaginal Discharge"
+      ],
+      [
+        "Genital infection",
+        "Bacterial Vaginosis",
+        "Vaginal Discharge"
+      ],
+      [
+        "Erythema",
+        "Infection",
+        "Inflammation"
+      ],
+      [
+        "Erythema",
+        "Disease",
+        "Inflammation"
+      ],
+      [
+        "Erythema",
+        "Decubitus ulcer",
+        "Inflammation"
+      ],
+      [
+        "Edema",
+        "Inflammation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Gonorrhea)-CAUSES->(Disease)-CAUSES->(Vertical Disease Transmission)",
+      "(Gonorrhea)-PREDISPOSES->(Infection)-MANIFESTATION_OF->(Vertical Disease Transmission)",
+      "(Vertical Disease Transmission)-CAUSES->(Disease)-CAUSES->(Genital infection)",
+      "(Vertical Disease Transmission)-CAUSES->(Infection)-CAUSES->(Genital infection)",
+      "(Genital infection)-CAUSES->(Infection)-CAUSES->(Vaginal Discharge)",
+      "(Genital infection)-CAUSES->(Pruritus)-CAUSES->(Vaginal Discharge)",
+      "(Genital infection)-CAUSES->(Bacterial Vaginosis)-CAUSES->(Vaginal Discharge)",
+      "(Erythema)-CAUSES->(Infection)-CAUSES->(Inflammation)",
+      "(Erythema)-PREDISPOSES->(Disease)-CAUSES->(Inflammation)",
+      "(Erythema)-PREDISPOSES->(Decubitus ulcer)-CAUSES->(Inflammation)",
+      "(Edema)-COMPLICATES->(Inflammation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Vulva",
+        "Inflammation"
+      ],
+      [
+        "Vagina",
+        "Inflammation"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Vulva)-LOCATION_OF->(Inflammation)",
+      "(Vagina)-LOCATION_OF->(Inflammation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vagina)-LOCATION_OF->(Inflammation)",
+      "(Edema)-COMPLICATES->(Inflammation)",
+      "(Genital infection)-CAUSES->(Infection)-CAUSES->(Vaginal Discharge)",
+      "(Genital infection)-CAUSES->(Pruritus)-CAUSES->(Vaginal Discharge)",
+      "(Genital infection)-CAUSES->(Bacterial Vaginosis)-CAUSES->(Vaginal Discharge)",
+      "(Erythema)-CAUSES->(Infection)-CAUSES->(Inflammation)",
+      "(Erythema)-PREDISPOSES->(Disease)-CAUSES->(Inflammation)",
+      "(Erythema)-PREDISPOSES->(Decubitus ulcer)-CAUSES->(Inflammation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Maternal gonococcal infection during pregnancy -> possible vertical transmission to the infant -> genital infection in the infant -> vaginal discharge with blood tinge -> 70% confidence. CHAIN: Presence of large flat gray-blue patches on back and buttocks -> possible Mongolian spots -> common in infants of color -> benign finding -> 80% confidence. CHAIN: Firm breast buds present -> normal physiological finding in newborns -> due to maternal hormones -> 90% confidence. CHAIN: Genitourinary examination shows erythema and swelling of vulva and vagina -> possible infection or inflammation -> further evaluation needed -> 70% confidence. CHAIN: Mild acne across cheeks and forehead -> common in newborns due to maternal hormones -> benign finding -> 80% confidence. CHAIN: Next step in management -> further evaluation of the genital infection and consideration of appropriate therapy -> 70%"
+  ],
+  "enhanced_information": "The infant's symptoms suggest a possible genital infection, likely related to maternal gonococcal infection during pregnancy. The presence of large flat gray-blue patches is consistent with Mongolian spots, a benign finding. The firm breast buds and mild acne are normal physiological findings in newborns. The next step should involve further evaluation of the genital infection and consideration of appropriate therapy, possibly including antibiotics like ceftriaxone and doxycycline.",
+  "analysis": "The infant's symptoms, including erythema, swelling, and blood-stained discharge from the genital area, raise concern for a genital infection, likely related to maternal gonococcal infection during pregnancy. Given this history and presentation, the most appropriate next step would be to initiate ceftriaxone and doxycycline therapy to cover for possible gonococcal infection in the infant. Reassurance alone is not sufficient in this case due to the concerning symptoms. Leuprolide therapy is not indicated at this stage. Fluconazole therapy is not the first-line treatment for suspected gonococcal infection. Ceftriaxone therapy alone may not provide adequate coverage for both gonococcal and chlamydial infections, hence the preference for ceftriaxone and doxycycline therapy.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

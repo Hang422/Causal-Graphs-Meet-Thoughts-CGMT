@@ -1,0 +1,166 @@
+{
+  "question": "A 23-year-old woman goes to a walk-in clinic while on the fourth day of her honeymoon. She is very upset saying that her honeymoon is being ruined because she is in severe pain. She states that yesterday she began to experience severe pain with urination and seems to be urinating more frequently than normal. She does admit that she has been having increased sexual intercourse with her new husband while on their honeymoon. The physician diagnoses the patient and prescribes trimethoprim-sulfamethoxazole. Which of the following virulence factors is most likely responsible for this patient's infection?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "LPS endotoxin",
+    "opb": "K capsule",
+    "opc": "P fimbriae",
+    "opd": "Flagella",
+    "ope": "Exotoxin"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Severe pain",
+        "Symptoms"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Severe pain)-CAUSES->(Symptoms)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Diagnosis",
+        "Pathogenesis",
+        "Genes",
+        "Trimethoprim-Sulfamethoxazole Combination"
+      ],
+      [
+        "Diagnosis",
+        "Pathogenesis",
+        "BMP1|PRCP|PGPEP1",
+        "Trimethoprim-Sulfamethoxazole Combination"
+      ],
+      [
+        "Urinary tract infection",
+        "Pathogenesis",
+        "Genes",
+        "Trimethoprim-Sulfamethoxazole Combination"
+      ],
+      [
+        "Urinary tract infection",
+        "Pathogenesis",
+        "Genes",
+        "Trimethoprim-Sulfamethoxazole Combination"
+      ],
+      [
+        "Uropathogenic Escherichia coli",
+        "Adhesions",
+        "KAT5 wt Allele",
+        "Bacterial Fimbria"
+      ],
+      [
+        "Uropathogenic Escherichia coli",
+        "Adhesions",
+        "mutant gene",
+        "Bacterial Fimbria"
+      ],
+      [
+        "Urinary tract infection",
+        "Pathogenesis",
+        "Genes",
+        "Bacterial Fimbria"
+      ],
+      [
+        "Urinary tract infection",
+        "Pathogenesis",
+        "Genes",
+        "Bacterial Fimbria"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ]
+    ],
+    "paths": [
+      "(Diagnosis)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)",
+      "(Diagnosis)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(BMP1|PRCP|PGPEP1)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)",
+      "(Urinary tract infection)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)",
+      "(Urinary tract infection)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)",
+      "(Uropathogenic Escherichia coli)-CAUSES->(Adhesions)-ASSOCIATED_WITH->(KAT5 wt Allele)-PART_OF->(Bacterial Fimbria)",
+      "(Uropathogenic Escherichia coli)-CAUSES->(Adhesions)-ASSOCIATED_WITH->(mutant gene)-PART_OF->(Bacterial Fimbria)",
+      "(Urinary tract infection)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Bacterial Fimbria)",
+      "(Urinary tract infection)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Bacterial Fimbria)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Severe pain)-CAUSES->(Symptoms)",
+      "(Diagnosis)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)",
+      "(Diagnosis)-DIAGNOSES->(Pathogenesis)-ASSOCIATED_WITH->(BMP1|PRCP|PGPEP1)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)",
+      "(Urinary tract infection)-CAUSES/PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Trimethoprim-Sulfamethoxazole Combination)-Sulfamethoxazole Combination)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Increased sexual intercourse -> increased risk of urinary tract infection (UTI) -> 80% CHAIN: Severe pain with urination -> symptom of UTI -> 90% CHAIN: Diagnosis of UTI -> prescribing trimethoprim-sulfamethoxazole -> 95% CHAIN: UTI caused by uropathogenic Escherichia coli (UPEC) -> expresses P fimbriae -> 85% CHAIN: Most likely responsible virulence factor for this patient's infection -> P fimbriae -> 80%"
+  ],
+  "enhanced_information": "The most likely virulence factor responsible for this patient's urinary tract infection is P fimbriae, which is expressed by uropathogenic Escherichia coli (UPEC). The patient's symptoms of severe pain with urination, diagnosis of UTI, and prescription of trimethoprim-sulfamethoxazole align with this conclusion. The evidence paths support the association of P fimbriae with UPEC and the effectiveness of trimethoprim-sulfamethoxazole in treating UTIs caused by this pathogen.",
+  "analysis": "The core medical principle here is the association of P fimbriae with uropathogenic Escherichia coli (UPEC) causing urinary tract infections (UTIs). The patient's symptoms of severe pain with urination and the prescription of trimethoprim-sulfamethoxazole align with this conclusion. P fimbriae facilitate the adherence of UPEC to uroepithelial cells, contributing to UTI pathogenesis.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

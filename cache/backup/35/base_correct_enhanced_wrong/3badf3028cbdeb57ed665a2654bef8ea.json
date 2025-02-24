@@ -1,0 +1,174 @@
+{
+  "question": "A newborn born at 33 weeks of gestation has a respiratory rate of 70/min and a heart rate of 148/min 2 hours after birth. He is grunting and has intercostal and subcostal retractions. He has peripheral cyanosis as well. An immediate chest radiograph is taken which shows a fine reticular granulation with ground glass appearance on both lungs. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Pneumothorax",
+    "opb": "Transient tachypnea of the newborn",
+    "opc": "Respiratory distress syndrome",
+    "opd": "Cyanotic congenital heart disease",
+    "ope": "Bacterial pneumonia"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Premature Birth",
+        "Disease",
+        "paracrine",
+        "Lung"
+      ],
+      [
+        "Premature Birth",
+        "Disease",
+        "Hearing",
+        "Lung"
+      ],
+      [
+        "Premature Birth",
+        "Disease",
+        "Neutrophil Infiltration",
+        "Lung"
+      ],
+      [
+        "Chest radiograph",
+        "Symptoms",
+        "Infection",
+        "[D]Tachypnea"
+      ],
+      [
+        "Chest radiograph",
+        "UNDERLYING INFECTION",
+        "Infection",
+        "[D]Tachypnea"
+      ],
+      [
+        "Chest radiograph",
+        "Communicable Diseases",
+        "Infection",
+        "[D]Tachypnea"
+      ],
+      [
+        "Tachycardia",
+        "Cardiomyopathy, Dilated",
+        "[D]Tachypnea"
+      ],
+      [
+        "Tachycardia",
+        "Pulmonary Edema",
+        "[D]Tachypnea"
+      ],
+      [
+        "Tachycardia",
+        "Syndrome",
+        "[D]Tachypnea"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Premature Birth)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Lung)",
+      "(Premature Birth)-CAUSES->(Disease)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Lung)",
+      "(Premature Birth)-COMPLICATES->(Disease)-MANIFESTATION_OF->(Neutrophil Infiltration)-PROCESS_OF->(Lung)",
+      "(Chest radiograph)-CAUSES->(Symptoms)-CAUSES->(Infection)-CAUSES->([D]Tachypnea)",
+      "(Chest radiograph)-CAUSES->(UNDERLYING INFECTION)-CAUSES->(Infection)-CAUSES->([D]Tachypnea)",
+      "(Chest radiograph)-CAUSES->(Communicable Diseases)-CAUSES->(Infection)-CAUSES->([D]Tachypnea)",
+      "(Tachycardia)-CAUSES->(Cardiomyopathy, Dilated)-CAUSES->([D]Tachypnea)",
+      "(Tachycardia)-CAUSES->(Pulmonary Edema)-CAUSES->([D]Tachypnea)",
+      "(Tachycardia)-CAUSES->(Syndrome)-CAUSES->([D]Tachypnea)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Lung",
+        "Respiratory complication"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Lung)-LOCATION_OF->(Respiratory complication)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Lung)-LOCATION_OF->(Respiratory complication)",
+      "(Premature Birth)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Lung)",
+      "(Premature Birth)-CAUSES->(Disease)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Lung)",
+      "(Premature Birth)-COMPLICATES->(Disease)-MANIFESTATION_OF->(Neutrophil Infiltration)-PROCESS_OF->(Lung)",
+      "(Chest radiograph)-CAUSES->(Symptoms)-CAUSES->(Infection)-CAUSES->([D]Tachypnea)",
+      "(Chest radiograph)-CAUSES->(UNDERLYING INFECTION)-CAUSES->(Infection)-CAUSES->([D]Tachypnea)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Premature birth at 33 weeks gestation -> immature lungs -> increased risk of respiratory complications -> 80% CHAIN: Grunting, intercostal retractions, subcostal retractions, peripheral cyanosis -> signs of respiratory distress -> 90% CHAIN: Fine reticular granulation with ground glass appearance on chest radiograph -> characteristic of transient tachypnea of the newborn -> 95% CHAIN: Respiratory rate of 70/min, heart rate of 148/min -> tachypnea and tachycardia -> common in transient tachypnea of the newborn -> 85% CHAIN: Diagnosis of transient tachypnea of the newborn is most likely based on clinical presentation and radiographic findings -> 90% CHAIN: Most likely diagnosis: Transient tachypnea of the newborn -> 80%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the newborn with signs of respiratory distress, fine reticular granulation with ground glass appearance on chest radiograph, and clinical presentation of grunting, intercostal retractions, subcostal retractions, peripheral cyanosis, respiratory rate of 70/min, and heart rate of 148/min 2 hours after birth is Transient Tachypnea of the Newborn. This is supported by the characteristic radiographic findings and clinical symptoms observed, aligning with standard consensus on this condition in premature infants.",
+  "analysis": "The core medical principle here is to consider the clinical presentation, radiographic findings, and the gestational age of the newborn. Given the signs of respiratory distress, fine reticular granulation with ground glass appearance on chest radiograph, and the clinical symptoms of grunting, intercostal retractions, subcostal retractions, peripheral cyanosis, along with the prematurity at 33 weeks, the most likely diagnosis is Transient Tachypnea of the Newborn (TTN). TTN is a common cause of respiratory distress in newborns, especially premature infants, and is characterized by retained fetal lung fluid leading to delayed clearance. The radiographic findings and clinical symptoms align with TTN in this case.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

@@ -1,0 +1,151 @@
+{
+  "question": "An 84-year-old man presents to the emergency department for a loss of consciousness. The patient states that he was using the bathroom when he lost consciousness and fell, hitting his head on the counter. The patient has a past medical history of diabetes, hypertension, obesity, factor V leiden, constipation, myocardial infarction, and vascular claudication. His current medications include lisinopril, atorvastatin, valproic acid, propranolol, insulin, metformin, and sodium docusate. The patient denies use of illicit substances. His temperature is 99.5°F (37.5°C), blood pressure is 167/98 mmHg, pulse is 90/min, respirations are 15/min, and oxygen saturation is 98% on room air. Physical exam reveals an elderly man sitting comfortably in his stretcher. Cardiac exam reveals a systolic murmur heard at the right upper sternal border that radiates to the carotids. Pulmonary exam reveals mild bibasilar crackles. Neurological exam reveals 5/5 strength in his upper and lower extremities with normal sensation. The patient's gait is mildly unstable. The patient is unable to give a urine sample in the emergency department and states that he almost fainted again when he tried to. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Transient ischemic attack",
+    "opb": "Postural hypotension",
+    "opc": "Seizure",
+    "opd": "Cardiac arrhythmia",
+    "ope": "Situational syncope"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Insulin",
+        "hypoglycemia"
+      ],
+      [
+        "Hypertensive disease",
+        "Disease",
+        "Hypotension, Orthostatic"
+      ],
+      [
+        "Hypertensive disease",
+        "Adverse effects",
+        "Hypotension, Orthostatic"
+      ],
+      [
+        "Hypertensive disease",
+        "Symptoms",
+        "Hypotension, Orthostatic"
+      ],
+      [
+        "Heart murmur",
+        "Symptoms",
+        "cardiac arrhythmia"
+      ],
+      [
+        "Heart murmur",
+        "Congenital heart disease",
+        "cardiac arrhythmia"
+      ],
+      [
+        "Heart murmur",
+        "Heart Diseases",
+        "cardiac arrhythmia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Insulin)-CAUSES->(hypoglycemia)",
+      "(Hypertensive disease)-CAUSES->(Disease)-CAUSES->(Hypotension, Orthostatic)",
+      "(Hypertensive disease)-CAUSES->(Adverse effects)-COMPLICATES->(Hypotension, Orthostatic)",
+      "(Hypertensive disease)-CAUSES->(Symptoms)-PREDISPOSES->(Hypotension, Orthostatic)",
+      "(Heart murmur)-CAUSES->(Symptoms)-CAUSES->(cardiac arrhythmia)",
+      "(Heart murmur)-CAUSES->(Congenital heart disease)-CAUSES->(cardiac arrhythmia)",
+      "(Heart murmur)-CAUSES->(Heart Diseases)-CAUSES->(cardiac arrhythmia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "hypoglycemia",
+        "Pathogenesis",
+        "Insulin"
+      ],
+      [
+        "hypoglycemia",
+        "Pathogenesis",
+        "Insulin"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(hypoglycemia)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Insulin)",
+      "(hypoglycemia)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Insulin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Insulin)-CAUSES->(hypoglycemia)",
+      "(Hypertensive disease)-CAUSES->(Adverse effects)-COMPLICATES->(Hypotension, Orthostatic)",
+      "(Hypertensive disease)-CAUSES->(Symptoms)-PREDISPOSES->(Hypotension, Orthostatic)",
+      "(hypoglycemia)-CAUSES/PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Insulin)",
+      "(Hypertensive disease)-CAUSES->(Disease)-CAUSES->(Hypotension, Orthostatic)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Loss of consciousness while using the bathroom\" -> \"Fall and head injury\" -> \"Possible head trauma\" -> 70% CHAIN: \"Diabetes history\" -> \"Increased risk of hypoglycemia\" -> \"Insulin use\" -> \"Possible hypoglycemia\" -> 80% CHAIN: \"Hypertension\" -> \"Increased risk of postural hypotension\" -> \"Symptoms of near-fainting\" -> \"Postural hypotension\" -> 70% CHAIN: \"Cardiac murmur\" -> \"Possible cardiac arrhythmia\" -> \"Symptoms of syncope\" -> \"Cardiac arrhythmia\" -> 60% CHAIN: \"Elderly age\" -> \"Increased risk of situational syncope\" -> \"Symptoms of near-fainting\" -> \"Situational syncope\" -> 70%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 84-year-old man presenting with loss of consciousness while using the bathroom, near-fainting, and a history of diabetes, hypertension, and cardiac murmur is postural hypotension. This is supported by the patient's hypertension increasing the risk of postural hypotension, symptoms of near-fainting, and the evidence path linking hypertensive disease to orthostatic hypotension.",
+  "analysis": "The patient's presentation of loss of consciousness while using the bathroom, near-fainting, and a history of diabetes, hypertension, and cardiac murmur is highly suggestive of postural hypotension. The risk factors such as hypertension and the symptoms align with this diagnosis. Other differential diagnoses like transient ischemic attack, seizure, cardiac arrhythmia, and situational syncope are less likely based on the provided information.",
+  "answer": "opb. postural hypotension",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

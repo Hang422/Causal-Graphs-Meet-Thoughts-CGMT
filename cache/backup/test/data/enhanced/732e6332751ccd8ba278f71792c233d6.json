@@ -1,0 +1,154 @@
+{
+  "question": "An inconsolable mother brings her 2-year-old son to the emergency room after finding a large amount of bright red blood in his diaper, an hour ago. She states that for the past week her son has been having crying fits while curling his legs towards his chest in a fetal position. His crying resolves either after vomiting or passing fecal material. Currently, the child is in no apparent distress. Physical examination with palpation in the gastric region demonstrates no acute findings. X-ray of the abdominal area demonstrates no acute findings. His current temperature is 36.5°C (97.8°F), heart rate is 93/min, blood pressure is 100/64 mm Hg, and respiratory rate is 26/min. His weight is 10.8 kg (24.0 lb), and height is 88.9 cm (35.0 in). Laboratory tests show the following:\nRBC count 5 million/mm3\nHematocrit 36%\nHemoglobin 12 g/dL\nWBC count 6,000/mm3\nMean corpuscular volume 78 fL\nWhat is the most likely cause of this condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Failure of the vitelline duct to open",
+    "opb": "Failure of the vitelline duct to close",
+    "opc": "Problem with bilirubin conjugation",
+    "opd": "Problem with bilirubin uptake",
+    "ope": "Elevated anti-mitochondrial uptake"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Lower gastrointestinal hemorrhage",
+        "Pemphigus Vulgaris",
+        "Disease",
+        "Meckel's Diverticulum"
+      ],
+      [
+        "Lower gastrointestinal hemorrhage",
+        "anemia; profound",
+        "Disease",
+        "Meckel's Diverticulum"
+      ],
+      [
+        "INTERMITTENT ABDOMINAL PAIN",
+        "Intussusception",
+        "Disease",
+        "Meckel's Diverticulum"
+      ],
+      [
+        "INTERMITTENT ABDOMINAL PAIN",
+        "Intussusception",
+        "Symptoms",
+        "Meckel's Diverticulum"
+      ],
+      [
+        "INTERMITTENT ABDOMINAL PAIN",
+        "Intussusception",
+        "Intestinal Obstruction",
+        "Meckel's Diverticulum"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Lower gastrointestinal hemorrhage)-CAUSES->(Pemphigus Vulgaris)-CAUSES->(Disease)-CAUSES->(Meckel's Diverticulum)",
+      "(Lower gastrointestinal hemorrhage)-CAUSES->(anemia; profound)-COMPLICATES->(Disease)-CAUSES->(Meckel's Diverticulum)",
+      "(INTERMITTENT ABDOMINAL PAIN)-MANIFESTATION_OF->(Intussusception)-CAUSES->(Disease)-CAUSES->(Meckel's Diverticulum)",
+      "(INTERMITTENT ABDOMINAL PAIN)-MANIFESTATION_OF->(Intussusception)-CAUSES->(Symptoms)-CAUSES->(Meckel's Diverticulum)",
+      "(INTERMITTENT ABDOMINAL PAIN)-MANIFESTATION_OF->(Intussusception)-CAUSES->(Intestinal Obstruction)-CAUSES->(Meckel's Diverticulum)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Bilirubin measurement",
+        "Disease",
+        "uptake"
+      ],
+      [
+        "Bilirubin measurement",
+        "Infection",
+        "uptake"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Bilirubin measurement)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(uptake)",
+      "(Bilirubin measurement)-DIAGNOSES->(Infection)-MANIFESTATION_OF->(uptake)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Bilirubin measurement)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(uptake)",
+      "(Bilirubin measurement)-DIAGNOSES->(Infection)-MANIFESTATION_OF->(uptake)",
+      "(INTERMITTENT ABDOMINAL PAIN)-MANIFESTATION_OF->(Intussusception)-CAUSES->(Symptoms)-CAUSES->(Meckel's Diverticulum)",
+      "(INTERMITTENT ABDOMINAL PAIN)-MANIFESTATION_OF->(Intussusception)-CAUSES->(Disease)-CAUSES->(Meckel's Diverticulum)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Bright red blood in diaper\" -> \"Lower gastrointestinal bleeding\" -> \"Possible Meckel's diverticulum\" -> \"Failure of the vitelline duct to close\" -> 85%",
+    "CHAIN: \"Crying fits with leg curling\" -> \"Intermittent abdominal pain\" -> \"Intussusception or Meckel's diverticulum\" -> \"Failure of the vitelline duct to close\" -> 80%",
+    "CHAIN: \"Vomiting or passing fecal material relieves pain\" -> \"Obstructive or irritative gastrointestinal process\" -> \"Meckel's diverticulum\" -> \"Failure of the vitelline duct to close\" -> 75%",
+    "CHAIN: \"Normal bilirubin levels\" -> \"Unlikely bilirubin conjugation or uptake issue\" -> \"Not related to bilirubin problems\" -> \"Failure of the vitelline duct to close\" -> 70%",
+    "CHAIN: \"No acute findings on X-ray\" -> \"No obvious obstruction or perforation\" -> \"Possible Meckel's diverticulum\" -> \"Failure of the vitelline duct to close\" -> 65%"
+  ],
+  "enhanced_information": "The clinical presentation of bright red blood in the diaper, intermittent abdominal pain relieved by vomiting or passing fecal material, and the absence of acute findings on X-ray is consistent with Meckel's diverticulum. This condition is caused by the failure of the vitelline duct to close, leading to a diverticulum that can cause bleeding and mimic symptoms of intussusception. The retrieved evidence paths support the link between intermittent abdominal pain and Meckel's diverticulum, confirming the consensus that this is a common cause of lower gastrointestinal bleeding in young children. The normal bilirubin levels and lack of acute findings on X-ray further rule out issues related to bilirubin metabolism and acute obstructions, respectively. Therefore, the most likely cause of the condition is the failure of the vitelline duct to close, leading to Meckel's diverticulum.",
+  "analysis": "The clinical presentation of the child, including bright red blood in the diaper, intermittent abdominal pain relieved by vomiting or passing fecal material, and the absence of acute findings on X-ray, is highly suggestive of Meckel's diverticulum. Meckel's diverticulum is a congenital condition resulting from the failure of the vitelline duct to close completely. This can lead to the formation of a diverticulum in the small intestine, which may contain ectopic gastric or pancreatic tissue, causing bleeding and symptoms similar to intussusception. The laboratory findings, including normal RBC count, hematocrit, hemoglobin, and WBC count, do not indicate any acute infection or significant anemia, which aligns with the presentation of Meckel's diverticulum. The enhanced information supports this diagnosis, as it is a common cause of lower gastrointestinal bleeding in young children. Other options related to bilirubin metabolism or elevated anti-mitochondrial uptake are not consistent with the clinical presentation. Therefore, the most likely cause of this condition is the failure of the vitelline duct to close, leading to Meckel's diverticulum.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      33.33333333333333,
+      0.0,
+      33.33333333333333,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

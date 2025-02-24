@@ -1,0 +1,119 @@
+{
+  "question": "A 19-year-old woman with a history of poorly controlled asthma presents to her pulmonologist for a follow-up visit. She was recently hospitalized for an asthma exacerbation. It is her third hospitalization in the past five years. She currently takes inhaled salmeterol and medium-dose inhaled budesonide. Her past medical history is also notable for psoriasis. She does not smoke and does not drink alcohol. Her temperature is 98.6°F (37°C), blood pressure is 110/65 mmHg, pulse is 75/min, and respirations are 20/min. Physical examination reveals bilateral wheezes that are loudest at the bases. The patient’s physician decides to start the patient on zileuton. Which of the following is the most immediate downstream effect of initiating zileuton?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Decreased production of leukotrienes",
+    "opb": "Decreased signaling via the leukotriene receptor",
+    "opc": "Decreased IgE-mediated pro-inflammatory activity",
+    "opd": "Decreased mast cell degranulation",
+    "ope": "Decreased signaling via the muscarinic receptor"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "zileuton",
+        "Disease",
+        "Obstruction"
+      ],
+      [
+        "zileuton",
+        "Pulmonary Edema",
+        "Obstruction"
+      ],
+      [
+        "zileuton",
+        "Respiration Disorders",
+        "Obstruction"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(zileuton)-TREATS->(Disease)-CAUSES->(Obstruction)",
+      "(zileuton)-PREVENTS->(Pulmonary Edema)-CAUSES->(Obstruction)",
+      "(zileuton)-TREATS->(Respiration Disorders)-CAUSES->(Obstruction)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "zileuton",
+        "Pharmaceutical Preparations",
+        "Cells",
+        "neutrophil",
+        "Arachidonate 5-Lipoxygenase"
+      ],
+      [
+        "zileuton",
+        "Pharmaceutical Preparations",
+        "Genes",
+        "Structure of parenchyma of lung",
+        "Arachidonate 5-Lipoxygenase"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "PART_OF",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(zileuton)-ISA->(Pharmaceutical Preparations)-PART_OF->(Cells)-INTERACTS_WITH->(neutrophil)-LOCATION_OF->(Arachidonate 5-Lipoxygenase)",
+      "(zileuton)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(Genes)-PART_OF->(Structure of parenchyma of lung)-LOCATION_OF->(Arachidonate 5-Lipoxygenase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(zileuton)-TREATS->(Disease)-CAUSES->(Obstruction)",
+      "(zileuton)-TREATS->(Respiration Disorders)-CAUSES->(Obstruction)",
+      "(zileuton)-PREVENTS->(Pulmonary Edema)-CAUSES->(Obstruction)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Zileuton\" -> \"Inhibits 5-lipoxygenase\" -> \"Decreased production of leukotrienes\" -> 95% CHAIN: \"Zileuton\" -> \"Inhibits leukotriene synthesis\" -> \"Decreased leukotriene-mediated inflammation\" -> 90% CHAIN: \"Zileuton\" -> \"Blocks leukotriene formation\" -> \"Decreased bronchoconstriction\" -> 95%"
+  ],
+  "enhanced_information": "Initiating zileuton leads to decreased production of leukotrienes, which is the most immediate downstream effect. This is supported by the drug's mechanism of inhibiting 5-lipoxygenase and leukotriene synthesis, resulting in decreased leukotriene-mediated inflammation and bronchoconstriction.",
+  "analysis": "Zileuton inhibits 5-lipoxygenase and decreases the production of leukotrienes, which are potent mediators of inflammation and bronchoconstriction in asthma. The most immediate downstream effect of initiating zileuton is the decreased production of leukotrienes.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

@@ -1,0 +1,114 @@
+{
+  "question": "A 23-year-old pregnant woman at 22 weeks gestation presents with burning upon urination. She states it started 1 day ago and has been worsening despite drinking more water and taking cranberry extract. She otherwise feels well and is followed by a doctor for her pregnancy. Her temperature is 97.7°F (36.5°C), blood pressure is 122/77 mmHg, pulse is 80/min, respirations are 19/min, and oxygen saturation is 98% on room air. Physical exam is notable for an absence of costovertebral angle tenderness and a gravid uterus. Which of the following is the best treatment for this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Ampicillin",
+    "opb": "Ceftriaxone",
+    "opc": "Ciprofloxacin",
+    "opd": "Doxycycline",
+    "ope": "Nitrofurantoin"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Burning sensation",
+        "Disease",
+        "[X]Painful micturition, unspecified"
+      ],
+      [
+        "[X]Painful micturition, unspecified",
+        "Urinary tract infection"
+      ],
+      [
+        "Urinary tract infection",
+        "Complication"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Burning sensation)-PREDISPOSES->(Disease)-CAUSES->([X]Painful micturition, unspecified)",
+      "([X]Painful micturition, unspecified)-CAUSES->(Urinary tract infection)",
+      "(Urinary tract infection)-CAUSES->(Complication)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Urinary tract infection",
+        "Pathogenesis",
+        "Genes",
+        "Hepatocyte",
+        "Nitrofurantoin"
+      ],
+      [
+        "Urinary tract infection",
+        "Pathogenesis",
+        "Genes",
+        "Hepatocyte",
+        "Nitrofurantoin"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Urinary tract infection)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Hepatocyte)-LOCATION_OF->(Nitrofurantoin)",
+      "(Urinary tract infection)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-PART_OF->(Hepatocyte)-LOCATION_OF->(Nitrofurantoin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Burning sensation)-PREDISPOSES->(Disease)-CAUSES->([X]Painful micturition, unspecified)",
+      "([X]Painful micturition, unspecified)-CAUSES->(Urinary tract infection)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Burning upon urination\" -> \"Dysuria\" -> \"Possible urinary tract infection (UTI)\" -> 70% CHAIN: \"UTI\" -> \"Common in pregnancy due to anatomical changes\" -> \"Increased risk of pyelonephritis\" -> 80% CHAIN: \"Pregnant woman with UTI\" -> \"Increased risk of complications for both mother and fetus\" -> \"Need for prompt and appropriate treatment\" -> 90% CHAIN: \"Best treatment for UTI in pregnancy\" -> \"Nitrofurantoin\" -> 70%"
+  ],
+  "enhanced_information": "The best treatment for a pregnant woman with a UTI is Nitrofurantoin. UTIs are common in pregnancy due to anatomical changes, increasing the risk of complications for both mother and fetus. Prompt and appropriate treatment is essential to prevent adverse outcomes. The evidence path supports the link between burning sensation and urinary tract infection, reinforcing the importance of addressing the UTI promptly with Nitrofurantoin.",
+  "analysis": "The core medical principle is to treat UTIs in pregnant women promptly to prevent complications. Nitrofurantoin is considered safe and effective for UTI treatment in pregnancy. Given the patient's presentation and the enhanced information provided, Nitrofurantoin is the best treatment option.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

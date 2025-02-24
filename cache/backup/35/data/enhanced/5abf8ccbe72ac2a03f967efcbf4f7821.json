@@ -1,0 +1,105 @@
+{
+  "question": "A 32-year-old woman presents to her primary care physician for an annual checkup. She reports that she has been feeling well and has no medical concerns. Her past medical history is significant for childhood asthma but she has not experienced any symptoms since she was a teenager. Physical exam reveals a 1-centimeter hard mobile mass in the left upper outer quadrant of her breast. A mammogram was performed and demonstrated calcifications within the mass so a biopsy was obtained. The biopsy shows acinar proliferation with intralobular fibrosis. Which of the following conditions is most likely affecting this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Cystic hyperplasia",
+    "opb": "Fibroadenoma",
+    "opc": "Infiltrating ductal carcinoma",
+    "opd": "Invasive lobular carcinoma",
+    "ope": "Sclerosing adenosis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Biopsy",
+        "Disease",
+        "Histopathology",
+        "Fibrosing adenosis"
+      ],
+      [
+        "Biopsy",
+        "Infection",
+        "Histopathology",
+        "Fibrosing adenosis"
+      ],
+      [
+        "Biopsy",
+        "Hypertensive disease",
+        "Histopathology",
+        "Fibrosing adenosis"
+      ],
+      [
+        "Childhood asthma",
+        "Disease",
+        "Hypertrophy",
+        "Cystic hyperplasia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Biopsy)-CAUSES->(Disease)-CAUSES->(Histopathology)-CAUSES->(Fibrosing adenosis)",
+      "(Biopsy)-CAUSES->(Infection)-CAUSES->(Histopathology)-CAUSES->(Fibrosing adenosis)",
+      "(Biopsy)-CAUSES->(Hypertensive disease)-CAUSES->(Histopathology)-CAUSES->(Fibrosing adenosis)",
+      "(Childhood asthma)-CAUSES->(Disease)-CAUSES->(Hypertrophy)-MANIFESTATION_OF->(Cystic hyperplasia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Biopsy)-CAUSES->(Disease)-CAUSES->(Histopathology)-CAUSES->(Fibrosing adenosis)",
+      "(Biopsy)-CAUSES->(Infection)-CAUSES->(Histopathology)-CAUSES->(Fibrosing adenosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Acinar proliferation with intralobular fibrosis\" -> \"Sclerosing adenosis\" -> 80% CHAIN: \"1-centimeter hard mobile mass in the left upper outer quadrant of the breast\" -> \"Fibroadenoma\" -> 70% CHAIN: \"Calcifications within the mass\" -> \"Infiltrating ductal carcinoma\" -> 60% CHAIN: \"Biopsy showing acinar proliferation with intralobular fibrosis\" -> \"Sclerosing adenosis\" -> 75% CHAIN: \"Past medical history of childhood asthma\" -> \"Cystic hyperplasia\" -> 80%"
+  ],
+  "enhanced_information": "The biopsy findings of acinar proliferation with intralobular fibrosis are most consistent with sclerosing adenosis in this patient. The presence of a 1-centimeter hard mobile mass in the breast suggests fibroadenoma. The calcifications within the mass could indicate infiltrating ductal carcinoma, but the biopsy results point more towards sclerosing adenosis. The patient's past medical history of childhood asthma is not directly related to the breast mass findings.",
+  "analysis": "The core medical principle here is to correlate the biopsy findings with the most likely condition affecting the patient. The biopsy results of acinar proliferation with intralobular fibrosis are most consistent with sclerosing adenosis. Although the presence of a 1-centimeter hard mobile mass in the breast suggests fibroadenoma, the biopsy findings take precedence in this case.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

@@ -1,0 +1,145 @@
+{
+  "question": "A 29-year-old patient presents to her primary care physician with persistent amenorrhea and inability to breastfeed over the last 5 months. She says that she has also been very tired since her baby was born and this fatigue was accompanied by an inability to deal with cold weather despite having no problem with cold prior to becoming pregnant. She has gained an additional 5 pounds since delivery. Review of her hospital records reveals that she had a vaginal delivery that was complicated by severe hemorrhage and episodes of hypotension. Which of the following hormone levels is most likely to be normal in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Follicle-stimulating hormone (FSH)",
+    "opb": "Prolactin",
+    "opc": "Thyroid hormone",
+    "opd": "Cortisol",
+    "ope": "Aldosterone"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hemorrhage",
+        "Adrenal gland hypofunction"
+      ],
+      [
+        "Hemorrhage",
+        "Disease",
+        "Thyroid dysfunction"
+      ],
+      [
+        "Hemorrhage",
+        "Vascular Diseases",
+        "Thyroid dysfunction"
+      ],
+      [
+        "Hemorrhage",
+        "Diabetes Mellitus",
+        "Thyroid dysfunction"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Hemorrhage)-CAUSES->(Adrenal gland hypofunction)",
+      "(Hemorrhage)-CAUSES->(Disease)-CAUSES->(Thyroid dysfunction)",
+      "(Hemorrhage)-CAUSES->(Vascular Diseases)-CAUSES->(Thyroid dysfunction)",
+      "(Hemorrhage)-PREDISPOSES->(Diabetes Mellitus)-COMPLICATES->(Thyroid dysfunction)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Adrenal gland hypofunction",
+        "Pathogenesis",
+        "Corticotropin-Releasing Hormone|CRH",
+        "Cortisol level"
+      ],
+      [
+        "Adrenal gland hypofunction",
+        "Pathogenesis",
+        "Corticotropin-Releasing Hormone",
+        "Cortisol level"
+      ],
+      [
+        "Cortisol level",
+        "Immunity",
+        "Hydrocortisone"
+      ],
+      [
+        "Cortisol level",
+        "biological adaptation to stress",
+        "Hydrocortisone"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Adrenal gland hypofunction)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Corticotropin-Releasing Hormone|CRH)-CAUSES->(Cortisol level)",
+      "(Adrenal gland hypofunction)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Corticotropin-Releasing Hormone)-CAUSES->(Cortisol level)",
+      "(Cortisol level)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Hydrocortisone)",
+      "(Cortisol level)-MANIFESTATION_OF->(biological adaptation to stress)-ASSOCIATED_WITH->(Hydrocortisone)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cortisol level)-MANIFESTATION_OF->(biological adaptation to stress)-ASSOCIATED_WITH->(Hydrocortisone)",
+      "(Adrenal gland hypofunction)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Corticotropin-Releasing Hormone|CRH)-CAUSES->(Cortisol level)",
+      "(Adrenal gland hypofunction)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Corticotropin-Releasing Hormone)-CAUSES->(Cortisol level)",
+      "(Cortisol level)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Hydrocortisone)",
+      "(Hemorrhage)-CAUSES->(Adrenal gland hypofunction)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Severe hemorrhage and hypotension -> potential pituitary damage -> decreased prolactin secretion -> prolactin levels normal in this patient -> 80% CHAIN: Severe hemorrhage and hypotension -> potential adrenal insufficiency -> decreased cortisol levels -> cortisol levels normal in this patient -> 70% CHAIN: Severe hemorrhage and hypotension -> potential thyroid dysfunction -> normal thyroid hormone levels -> thyroid hormone levels normal in this patient -> 80%"
+  ],
+  "enhanced_information": "In this patient with a history of severe hemorrhage and hypotension post-delivery, the most likely hormone level to be normal is thyroid hormone. The reasoning chain suggesting potential thyroid dysfunction aligns with the consensus that thyroid hormone levels are likely to be normal in this scenario. The evidence paths related to cortisol and adrenal function, while correct, do not provide direct support for cortisol levels being normal in this patient.",
+  "analysis": "The patient's presentation with persistent amenorrhea, inability to breastfeed, fatigue, cold intolerance, weight gain post-delivery, and a history of severe hemorrhage and hypotension suggests a high likelihood of postpartum thyroiditis. In this context, thyroid hormone levels are most likely to be normal. While cortisol and aldosterone could be affected by the stress of severe hemorrhage and hypotension, the enhanced information supports the normalcy of thyroid hormone levels in this scenario.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

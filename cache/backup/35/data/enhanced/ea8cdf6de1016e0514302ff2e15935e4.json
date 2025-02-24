@@ -1,0 +1,114 @@
+{
+  "question": "Background: Beta-blockers reduce mortality in patients who have chronic heart failure, systolic dysfunction, and are on background treatment with diuretics and angiotensin-converting enzyme inhibitors. We aimed to compare the effects of carvedilol and metoprolol on clinical outcome.\nMethods: In a multicenter, double-blind, randomized parallel group trial, we assigned 1511 patients with chronic heart failure to treatment with carvedilol (target dose, 25 mg twice daily) and 1518 to metoprolol (target dose, 50 mg twice daily). The patients were required to have chronic heart failure (NYHA II-IV), the previous admission for a cardiovascular indication, an ejection fraction of < 0.35, and to have been treated optimally with diuretics and angiotensin-converting enzyme inhibitors unless not tolerated. The primary endpoints were all-cause mortality and the composite endpoint of all-cause mortality or all-cause admission. The analysis was done by intention-to-treat.\nFindings: The mean study duration was 58 months (SD, 6). The mean ejection fraction was 0.26 (SD, 0.07) and the mean age was 62 years (SD, 11). The all-cause mortality was 34% (512 of 1511) for carvedilol and 40% (600 of 1518) for metoprolol (hazard ratio, 0.83 [95% CI 0.74-0.93], p = 0.0017). The reduction in all-cause mortality was consistent across pre-defined subgroups. The incidence of side effects and drug withdrawals did not differ significantly between the 2 study groups.\nBased on the best interpretation of the results of this clinical trial, which of the following statements is most accurate?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "There is no appreciable, statistically significant difference in overall mortality between the 2 treatment arms.",
+    "opb": "Carvedilol demonstrated a significant improvement in all-cause mortality in patients with heart failure as compared to metoprolol.",
+    "opc": "Metoprolol demonstrated a significant improvement in all-cause mortality in patients with heart failure compared to carvedilol.",
+    "opd": "The study was underpowered and unable to arrive at a statistically significant conclusion.",
+    "ope": "The results are likely biased due to trial design, and therefore non-generalizable."
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "carvedilol",
+        "Disease",
+        "Drug withdrawal syndrome"
+      ],
+      [
+        "Metoprolol",
+        "Disease",
+        "Drug withdrawal syndrome"
+      ],
+      [
+        "Metoprolol",
+        "Long QT Syndrome",
+        "Drug withdrawal syndrome"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(carvedilol)-TREATS->(Disease)-CAUSES->(Drug withdrawal syndrome)",
+      "(Metoprolol)-TREATS->(Disease)-CAUSES->(Drug withdrawal syndrome)",
+      "(Metoprolol)-TREATS->(Long QT Syndrome)-CAUSES->(Drug withdrawal syndrome)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Metoprolol",
+        "Pharmaceutical Preparations",
+        "carvedilol"
+      ],
+      [
+        "Metoprolol",
+        "Ventricular arrhythmia",
+        "carvedilol"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "INTERACTS_WITH"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Metoprolol)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(carvedilol)",
+      "(Metoprolol)-TREATS->(Ventricular arrhythmia)-ASSOCIATED_WITH->(carvedilol)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(carvedilol)-TREATS->(Disease)-CAUSES->(Drug withdrawal syndrome)",
+      "(Metoprolol)-TREATS->(Disease)-CAUSES->(Drug withdrawal syndrome)",
+      "(Metoprolol)-TREATS->(Long QT Syndrome)-CAUSES->(Drug withdrawal syndrome)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Carvedilol vs. Metoprolol comparison in heart failure trial -> Carvedilol showed lower all-cause mortality ( -> 34%",
+    "CHAIN: Carvedilol vs. Metoprolol comparison in heart failure trial -> No significant difference in side effects or drug withdrawals between the two groups -> 80%"
+  ],
+  "enhanced_information": "Carvedilol demonstrated a significant improvement in all-cause mortality in patients with heart failure compared to metoprolol. The comparison showed a lower all-cause mortality with carvedilol (34% vs. 40%) and a hazard ratio of 0.83 (95% CI 0.74-0.93, p = 0.0017). There were no significant differences in side effects or drug withdrawals between the two groups. The evidence paths related to drug withdrawal syndrome do not impact the interpretation of the trial results.",
+  "analysis": "Carvedilol demonstrated a significant improvement in all-cause mortality in patients with heart failure compared to metoprolol in the clinical trial. The hazard ratio of 0.83 (95% CI 0.74-0.93, p = 0.0017) indicates a clear benefit of carvedilol over metoprolol in reducing mortality. The study was well-powered, and the results were consistent across subgroups. There were no significant differences in side effects or drug withdrawals between the two groups. Therefore, the most likely correct option is that Carvedilol demonstrated a significant improvement in all-cause mortality in patients with heart failure as compared to metoprolol.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      2
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      66.66666666666666
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

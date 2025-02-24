@@ -1,0 +1,127 @@
+{
+  "question": "A 19-year-old man is brought to the emergency department 35 minutes after being involved in a high-speed motor vehicle collision. On arrival, he is alert, has mild chest pain, and minimal shortness of breath. He has one episode of vomiting in the hospital. His temperature is 37.3°C (99.1°F), pulse is 108/min, respirations are 23/min, and blood pressure is 90/70 mm Hg. Pulse oximetry on room air shows an oxygen saturation of 92%. Examination shows multiple abrasions over his trunk and right upper extremity. There are coarse breath sounds over the right lung base. Cardiac examination shows no murmurs, rubs, or gallop. Infusion of 0.9% saline is begun. He subsequently develops increasing shortness of breath. Arterial blood gas analysis on 60% oxygen shows:\npH 7.36\npCO2 39 mm Hg\npO2 68 mm Hg\nHCO3- 18 mEq/L\nO2 saturation 81%\nAn x-ray of the chest shows patchy, irregular infiltrates over the right lung fields. Which of the following is the most likely diagnosis?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Pneumothorax",
+    "opb": "Pulmonary contusion",
+    "opc": "Pulmonary embolism",
+    "opd": "Aspiration pneumonia",
+    "ope": "Acute respiratory distress syndrome"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Tachycardia",
+        "Syndrome",
+        "Shock, Hemorrhagic"
+      ],
+      [
+        "Tachycardia",
+        "Hypertensive disease",
+        "Shock, Hemorrhagic"
+      ],
+      [
+        "Tachycardia",
+        "Myocardial Ischemia",
+        "Shock, Hemorrhagic"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Tachycardia)-CAUSES->(Syndrome)-CAUSES->(Shock, Hemorrhagic)",
+      "(Tachycardia)-CAUSES->(Hypertensive disease)-COMPLICATES->(Shock, Hemorrhagic)",
+      "(Tachycardia)-CAUSES->(Myocardial Ischemia)-COMPLICATES->(Shock, Hemorrhagic)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Shock, Hemorrhagic",
+        "MUC7|MCOLN1",
+        "Perineurium",
+        "Infusion procedures"
+      ],
+      [
+        "Shock, Hemorrhagic",
+        "MUC7|MCOLN1",
+        "Tissue membrane",
+        "Infusion procedures"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Shock, Hemorrhagic)-ASSOCIATED_WITH->(MUC7|MCOLN1)-PART_OF->(Perineurium)-LOCATION_OF->(Infusion procedures)",
+      "(Shock, Hemorrhagic)-ASSOCIATED_WITH->(MUC7|MCOLN1)-PART_OF->(Tissue membrane)-LOCATION_OF->(Infusion procedures)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Tachycardia)-CAUSES->(Syndrome)-CAUSES->(Shock, Hemorrhagic)",
+      "(Tachycardia)-CAUSES->(Hypertensive disease)-COMPLICATES->(Shock, Hemorrhagic)",
+      "(Tachycardia)-CAUSES->(Myocardial Ischemia)-COMPLICATES->(Shock, Hemorrhagic)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"High-speed motor vehicle collision\" -> \"Possible lung injury\" -> \"Mild chest pain and shortness of breath\" -> \"Coarse breath sounds over right lung base\" -> \"X-ray shows patchy, irregular infiltrates\" -> \"Suggestive of pulmonary contusion\" -> 85%",
+    "CHAIN: \"High-speed motor vehicle collision\" -> \"Hypotension and tachycardia\" -> \"Possible hemorrhagic shock\" -> \"Infusion of 0. -> 9%",
+    "CHAIN: \"High-speed motor vehicle collision\" -> \"Chest pain and respiratory distress\" -> \"Oxygen saturation -> 81%",
+    "CHAIN: \"High-speed motor vehicle collision\" -> \"Signs of respiratory distress\" -> \"Coarse breath sounds\" -> \"X-ray shows patchy infiltrates\" -> \"Infiltrates suggest lung parenchyma injury\" -> \"Pulmonary contusion is likely\" -> 90%",
+    "CHAIN: \"High-speed motor vehicle collision\" -> \"Chest pain and hypoxemia\" -> \"X-ray shows patchy infiltrates\" -> \"Could indicate aspiration pneumonia or pulmonary contusion\" -> \"Mechanism of injury favors pulmonary contusion\" -> 70%"
+  ],
+  "enhanced_information": "The patient, a 19-year-old man involved in a high-speed motor vehicle collision, presents with mild chest pain, shortness of breath, hypotension, and tachycardia, which are indicative of potential lung injury. The presence of coarse breath sounds over the right lung base and the chest X-ray showing patchy, irregular infiltrates strongly suggest pulmonary contusion, a common consequence of blunt chest trauma. While aspiration pneumonia could be considered due to the vomiting episode, the mechanism of injury and the specific findings on the X-ray favor pulmonary contusion as the most likely diagnosis. The arterial blood gas analysis indicates hypoxemia, further supporting the diagnosis of pulmonary contusion rather than other options like pneumothorax, pulmonary embolism, or acute respiratory distress syndrome, which would present differently. Therefore, the most likely diagnosis is pulmonary contusion.",
+  "analysis": "The patient is a 19-year-old male who was involved in a high-speed motor vehicle collision, presenting with mild chest pain, shortness of breath, hypotension, and tachycardia. The examination reveals coarse breath sounds over the right lung base, and the chest X-ray shows patchy, irregular infiltrates in the right lung fields. These findings are consistent with pulmonary contusion, which is a common consequence of blunt chest trauma. The arterial blood gas analysis indicates hypoxemia, with a pO2 of 68 mm Hg and an oxygen saturation of 81%, further supporting the diagnosis of pulmonary contusion. While aspiration pneumonia could be a consideration due to the vomiting, the mechanism of injury and the specific X-ray findings strongly favor pulmonary contusion over the other options, such as pneumothorax, pulmonary embolism, or acute respiratory distress syndrome, which would present with different clinical features. Therefore, the most likely diagnosis is pulmonary contusion.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      100.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

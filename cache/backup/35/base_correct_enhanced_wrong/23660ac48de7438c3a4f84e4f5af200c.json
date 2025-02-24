@@ -1,0 +1,77 @@
+{
+  "question": "A 65-year-old man is brought to the emergency department for a 1-week history of worsening shortness of breath. The symptoms occur when he climbs the stairs to his apartment on the 3rd floor and when he goes to bed. He gained 2.3 kg (5 lbs) in the past 5 days. He has a history of hypertension, hyperlipidemia, alcoholic steatosis, and osteoarthritis. He received surgical repair of a ventricular septal defect when he was 4 months old. He started taking ibuprofen for his osteoarthritis and simvastatin for his hyperlipidemia one week ago. He drinks 2–3 beers daily after work. His temperature is 37.0°C (98.6°F), his pulse is 114/min, and his blood pressure is 130/90 mmHg. Physical examination reveals jugular venous distention and 2+ pitting edema in his lower legs. On cardiac auscultation, an additional, late-diastolic heart sound is heard. Bilateral crackles are heard over the lung bases. Echocardiography shows concentric hypertrophy of the left ventricle. Which of the following is the most likely underlying cause of this patient's condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Alcoholic cardiomyopathy",
+    "opb": "Pericardial effusion",
+    "opc": "Recent use of simvastatin",
+    "opd": "Arterial hypertension",
+    "ope": "Flow reversal of ventricular shunt"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypertensive disease",
+        "Hypertrophy, Left Ventricular"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Hypertrophy, Left Ventricular)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Simvastatin",
+        "Symptoms",
+        "Drug-induced myopathy"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Simvastatin)-TREATS->(Symptoms)-ASSOCIATED_WITH->(Drug-induced myopathy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Simvastatin)-TREATS->(Symptoms)-ASSOCIATED_WITH->(Drug-induced myopathy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Alcoholic steatosis\" -> \"chronic alcohol consumption\" -> \"alcoholic cardiomyopathy\" -> 80% CHAIN: \"Recent use of simvastatin\" -> \"potential drug-induced myopathy\" -> \"congestive heart failure exacerbation\" -> 70% CHAIN: \"Arterial hypertension\" -> \"left ventricular hypertrophy\" -> \"congestive heart failure exacerbation\" -> 80%"
+  ],
+  "enhanced_information": "The most likely underlying cause of this patient's condition is alcoholic cardiomyopathy, supported by the chain linking alcoholic steatosis to chronic alcohol consumption and then to alcoholic cardiomyopathy. The evidence path mentioning drug-induced myopathy associated with simvastatin does not directly support the patient's presentation and can be disregarded in this context.",
+  "analysis": "The most likely underlying cause of this patient's condition is alcoholic cardiomyopathy, given his history of chronic alcohol consumption and the clinical findings of jugular venous distention, pitting edema, late-diastolic heart sound, crackles, and concentric left ventricular hypertrophy. The evidence linking alcoholic steatosis to alcoholic cardiomyopathy supports this diagnosis. Other options like pericardial effusion, recent use of simvastatin, arterial hypertension, and flow reversal of ventricular shunt are less likely based on the patient's presentation.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

@@ -1,0 +1,111 @@
+{
+  "question": "An otherwise healthy 62-year-old woman comes to the physician because of a 3-year history of hearing loss. To test her hearing, the physician performs two tests. First, a vibrating tuning fork is held against the mastoid bone of the patient and then near her ear, to which the patient responds she hears the sound better on both sides when the tuning fork is held near her ear. Next, the physician holds the tuning fork against the bridge of her forehead, to which the patient responds she hears the sound better on the right side than the left. The patient's examination findings are most consistent with which of the following conditions?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Cerumen impaction on the right",
+    "opb": "Otosclerosis on the left",
+    "opc": "Cochlear ischemia on the right",
+    "opd": "Acoustic neuroma on the left",
+    "ope": "Cholesteatoma on the right"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Conductive hearing loss",
+        "Complication",
+        "Tooth, Impacted"
+      ],
+      [
+        "Orthopedic Fork",
+        "Complication",
+        "Conductive hearing loss"
+      ],
+      [
+        "Conductive hearing loss",
+        "Complication",
+        "Tooth, Impacted"
+      ],
+      [
+        "Orthopedic Fork",
+        "Shock",
+        "Disease",
+        "Otosclerosis"
+      ],
+      [
+        "Orthopedic Fork",
+        "Complication",
+        "Disease",
+        "Otosclerosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Conductive hearing loss)-MANIFESTATION_OF->(Complication)-CAUSES->(Tooth, Impacted)",
+      "(Orthopedic Fork)-TREATS->(Complication)-CAUSES->(Conductive hearing loss)",
+      "(Conductive hearing loss)-MANIFESTATION_OF->(Complication)-CAUSES->(Tooth, Impacted)",
+      "(Orthopedic Fork)-CAUSES->(Shock)-CAUSES->(Disease)-CAUSES->(Otosclerosis)",
+      "(Orthopedic Fork)-TREATS->(Complication)-CAUSES->(Disease)-CAUSES->(Otosclerosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Orthopedic Fork)-CAUSES->(Shock)-CAUSES->(Disease)-CAUSES->(Otosclerosis)",
+      "(Orthopedic Fork)-TREATS->(Complication)-CAUSES->(Disease)-CAUSES->(Otosclerosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Sound heard better on both sides with tuning fork near ear\" -> \"Conductive hearing loss\" -> \"Possible cerumen impaction on both sides\" -> 70% CHAIN: \"Sound heard better on right side with tuning fork against forehead\" -> \"Conductive hearing loss\" -> \"Possible cerumen impaction on the right\" -> 70% CHAIN: \"Sound heard better on left side with tuning fork against forehead\" -> \"Possible otosclerosis on the left\" -> 70%"
+  ],
+  "enhanced_information": "The patient's findings are most consistent with cerumen impaction on the right side. The tuning fork test results suggest conductive hearing loss, with the sound heard better on both sides near the ear indicating possible bilateral cerumen impaction and better on the right side near the forehead pointing towards cerumen impaction specifically on the right side.",
+  "analysis": "The patient's presentation of hearing better on both sides near the ear and better on the right side near the forehead is indicative of conductive hearing loss. The enhanced information provided confirms that the findings are most consistent with cerumen impaction on the right side. Cerumen impaction can cause conductive hearing loss by blocking sound transmission through the ear canal. The tuning fork test results align with this diagnosis.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

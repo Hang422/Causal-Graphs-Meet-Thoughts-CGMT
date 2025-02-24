@@ -1,0 +1,125 @@
+{
+  "question": "A 24-year-old male with cystic fibrosis is brought to the emergency room by his mother after he had difficulty breathing. He previously received a lung transplant 6 months ago and was able to recover quickly from the operation. He is compliant with all of his medications and had been doing well with no major complaints until 2 weeks ago when he began to experience shortness of breath. Exam reveals a decreased FEV1/FVC ratio and biopsy reveals lymphocytic infiltration. Which of the following components is present in the airway zone characteristically affected by the most likely cause of this patient's symptoms?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Cartilage",
+    "opb": "Goblet cells",
+    "opc": "Pseudostratified columnar cells",
+    "opd": "Simple cuboidal cells",
+    "ope": "Stratified cuboidal cells"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Cystic Fibrosis",
+        "Obstruction"
+      ],
+      [
+        "Lymphocytic infiltration",
+        "Inflammation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Cystic Fibrosis)-CAUSES->(Obstruction)",
+      "(Lymphocytic infiltration)-CAUSES->(Inflammation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Inflammation",
+        "Genes",
+        "Tongue",
+        "Airway device"
+      ],
+      [
+        "Inflammation",
+        "Genes",
+        "Eye",
+        "Airway device"
+      ],
+      [
+        "Airway device",
+        "Diastasis",
+        "Carcinoembryonic Antigen",
+        "Columnar epithelial cell"
+      ],
+      [
+        "Airway device",
+        "Diastasis",
+        "Human Papilloma Virus Vaccine",
+        "Columnar epithelial cell"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Tongue)-LOCATION_OF->(Airway device)",
+      "(Inflammation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Eye)-LOCATION_OF->(Airway device)",
+      "(Airway device)-TREATS->(Diastasis)-ASSOCIATED_WITH->(Carcinoembryonic Antigen)-INTERACTS_WITH->(Columnar epithelial cell)",
+      "(Airway device)-TREATS->(Diastasis)-ASSOCIATED_WITH->(Human Papilloma Virus Vaccine)-INTERACTS_WITH->(Columnar epithelial cell)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cystic Fibrosis)-CAUSES->(Obstruction)",
+      "(Airway device)-TREATS->(Diastasis)-ASSOCIATED_WITH->(Human Papilloma Virus Vaccine)-INTERACTS_WITH->(Columnar epithelial cell)",
+      "(Lymphocytic infiltration)-CAUSES->(Inflammation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Cystic fibrosis -> airway obstruction -> difficulty breathing -> 80% CHAIN: Lung transplant -> immunosuppressive medications -> lymphocytic infiltration -> 70% CHAIN: Decreased FEV1/FVC ratio -> obstructive lung disease -> difficulty breathing -> 90% CHAIN: Lymphocytic infiltration -> inflammation -> airway narrowing -> 75% CHAIN: Airway narrowing -> affects pseudostratified columnar cells -> difficulty breathing -> 80%"
+  ],
+  "enhanced_information": "In this case, the most likely cause of the patient's symptoms is related to airway narrowing, which affects pseudostratified columnar cells. This is supported by the presence of lymphocytic infiltration in the biopsy, indicating inflammation leading to airway narrowing. The evidence path confirming lymphocytic infiltration causing inflammation aligns with the consensus that inflammation can lead to airway narrowing and subsequent breathing difficulties.",
+  "analysis": "The core medical principle in this case involves understanding the pathology of airway narrowing in a patient with cystic fibrosis post-lung transplant. The presence of lymphocytic infiltration in the biopsy indicates inflammation, which can lead to airway narrowing. Pseudostratified columnar cells are characteristically affected in this scenario due to the inflammatory process. This aligns with the enhanced information provided.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

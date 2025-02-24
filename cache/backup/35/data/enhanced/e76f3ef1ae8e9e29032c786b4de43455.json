@@ -1,0 +1,127 @@
+{
+  "question": "A 22-year-old G4P2 at 35 weeks gestation presents to the hospital after she noticed that \"her water broke.\" Her prenatal course is unremarkable, but her obstetric history includes postpartum hemorrhage after her third pregnancy, attributed to a retained placenta. The patient undergoes augmentation of labor with oxytocin and within four hours delivers a male infant with Apgar scores of 8 and 9 at 1 and 5 minutes, respectively. Three minutes later, the placenta passes the vagina, but a smooth mass attached to the placenta continues to follow. Her temperature is 98.6°F (37°C), blood pressure is 110/70 mmHg, pulse is 90/min, and respirations are 20/min. What is the most likely complication in the absence of intervention?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Heart failure",
+    "opb": "Hemorrhagic shock",
+    "opc": "Hypertension",
+    "opd": "Hyperthermia",
+    "ope": "Tachypnea"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Postpartum Hemorrhage",
+        "Placenta Accreta"
+      ],
+      [
+        "Placenta Accreta",
+        "Uterine Perforation",
+        "Hemorrhage"
+      ],
+      [
+        "Placenta Accreta",
+        "Disseminated Intravascular Coagulation",
+        "Hemorrhage"
+      ],
+      [
+        "Placenta Accreta",
+        "Anemia",
+        "Hemorrhage"
+      ],
+      [
+        "Hemorrhage",
+        "Disease",
+        "Shock, Hemorrhagic"
+      ],
+      [
+        "Hemorrhage",
+        "Cerebral Infarction",
+        "Shock, Hemorrhagic"
+      ],
+      [
+        "Hemorrhage",
+        "Nontraumatic splenic rupture",
+        "Shock, Hemorrhagic"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Postpartum Hemorrhage)-MANIFESTATION_OF->(Placenta Accreta)",
+      "(Placenta Accreta)-CAUSES->(Uterine Perforation)-CAUSES->(Hemorrhage)",
+      "(Placenta Accreta)-CAUSES->(Disseminated Intravascular Coagulation)-CAUSES->(Hemorrhage)",
+      "(Placenta Accreta)-COMPLICATES->(Anemia)-CAUSES->(Hemorrhage)",
+      "(Hemorrhage)-CAUSES->(Disease)-CAUSES->(Shock, Hemorrhagic)",
+      "(Hemorrhage)-CAUSES->(Cerebral Infarction)-COMPLICATES->(Shock, Hemorrhagic)",
+      "(Hemorrhage)-PREDISPOSES->(Nontraumatic splenic rupture)-CAUSES->(Shock, Hemorrhagic)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Postpartum Hemorrhage)-MANIFESTATION_OF->(Placenta Accreta)",
+      "(Placenta Accreta)-CAUSES->(Uterine Perforation)-CAUSES->(Hemorrhage)",
+      "(Placenta Accreta)-CAUSES->(Disseminated Intravascular Coagulation)-CAUSES->(Hemorrhage)",
+      "(Placenta Accreta)-COMPLICATES->(Anemia)-CAUSES->(Hemorrhage)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Retained placenta -> Smooth mass attached to placenta -> Possible placenta accreta -> 70% CHAIN: Augmentation of labor with oxytocin -> Rapid delivery of the placenta -> Increased risk of placenta accreta -> 60% CHAIN: Postpartum hemorrhage after third pregnancy -> Increased risk of placenta accreta in subsequent pregnancies -> 50% CHAIN: Placenta accreta -> Risk of hemorrhage -> Hemorrhagic shock in the absence of intervention -> 70%"
+  ],
+  "enhanced_information": "In the absence of intervention, the most likely complication for the patient is hemorrhagic shock due to the risk of hemorrhage associated with placenta accreta. This risk is increased in patients with a history of postpartum hemorrhage and retained placenta, as seen in this case. Evidence paths confirm the link between placenta accreta and hemorrhage, supporting the conclusion of hemorrhagic shock as the likely complication.",
+  "analysis": "Given the patient's history of postpartum hemorrhage and retained placenta, the smooth mass attached to the placenta following delivery likely represents placenta accreta. Placenta accreta can lead to significant hemorrhage, especially if left untreated. Hemorrhagic shock is the most likely complication in the absence of intervention.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

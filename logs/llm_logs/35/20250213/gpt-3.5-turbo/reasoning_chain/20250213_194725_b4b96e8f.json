@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_194725",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "b4b96e8f",
+  "question_text": "A 71-year-old woman presents to the clinic after an X-ray that revealed compression fractures of her L1 and L2 vertebral bodies due to osteoporotic changes. The patient has a history of hypertension for which she takes hydrochlorothiazide, and rheumatoid arthritis, for which she has been taking prednisone for the last 2 years. The patient states that she had a dual-energy X-ray absorptiometry (DEXA) scan 3 years ago that was normal and attributes that finding to regularly taking calcium and vitamin D supplements since then. The patient states that her pain from the fractures is stopping her from participating in her regular activities, such as exercising and gardening. Which of the following is the main cause of her osteoporosis?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 71-year-old woman presents to the clinic after an X-ray that revealed compression fractures of her L1 and L2 vertebral bodies due to osteoporotic changes. The patient has a history of hypertension for which she takes hydrochlorothiazide, and rheumatoid arthritis, for which she has been taking prednisone for the last 2 years. The patient states that she had a dual-energy X-ray absorptiometry (DEXA) scan 3 years ago that was normal and attributes that finding to regularly taking calcium and vitamin D supplements since then. The patient states that her pain from the fractures is stopping her from participating in her regular activities, such as exercising and gardening. Which of the following is the main cause of her osteoporosis?\n\n            ### Options\n    opa. Decreased estrogen levels\nopb. Hydrochlorothiazide (HCTZ) therapy\nopc. Calcium malabsorption\nopd. Bone depletion due to chronic corticosteroid use\nope. Undiagnosed hyperparathyroidism\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: Chronic corticosteroid use -> bone depletion -> osteoporosis -> 80%\nCHAIN: Decreased estrogen levels -> increased bone resorption -> osteoporosis -> 70%\nCHAIN: Calcium malabsorption -> decreased bone mineral density -> osteoporosis -> 60%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

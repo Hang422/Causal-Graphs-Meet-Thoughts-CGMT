@@ -1,0 +1,106 @@
+{
+  "question": "A 24-year-old woman presents with fever, abdominal pain, and bloody bowel movements. She says her symptoms onset 2 days ago and have not improved. She describes the abdominal pain as moderate, cramping in character, and poorly localized. 1 week ago, she says she was on a camping trip with her friends and had barbecued chicken which she thought tasted strange. The patient denies any chills, hemoptysis, hematochezia, or similar symptoms in the past. The vital signs include: pulse 87/min and temperature 37.8°C (100.0°F). Physical examination is significant for moderate tenderness to palpation in the periumbilical region with no rebound or guarding. Stool is guaiac positive. Which of the following is a complication associated with this patient’s most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Typhoid",
+    "opb": "Appendicitis",
+    "opc": "Toxic megacolon",
+    "opd": "Guillain-Barré syndrome",
+    "ope": "Hemolytic uremic syndrome"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Fever",
+        "Brucellosis",
+        "Infectious colitis"
+      ],
+      [
+        "Abdominal Pain",
+        "Nausea",
+        "Infectious colitis"
+      ],
+      [
+        "Abdominal Pain",
+        "Campylobacter jejuni infection",
+        "Infectious colitis"
+      ],
+      [
+        "Abdominal Pain",
+        "Abscess",
+        "Infectious colitis"
+      ],
+      [
+        "Infectious colitis",
+        "Megacolon, Toxic"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Fever)-MANIFESTATION_OF->(Brucellosis)-CAUSES->(Infectious colitis)",
+      "(Abdominal Pain)-CAUSES->(Nausea)-CAUSES->(Infectious colitis)",
+      "(Abdominal Pain)-MANIFESTATION_OF->(Campylobacter jejuni infection)-CAUSES->(Infectious colitis)",
+      "(Abdominal Pain)-MANIFESTATION_OF->(Abscess)-COMPLICATES->(Infectious colitis)",
+      "(Infectious colitis)-CAUSES->(Megacolon, Toxic)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Infectious colitis)-CAUSES->(Megacolon, Toxic)",
+      "(Fever)-MANIFESTATION_OF->(Brucellosis)-CAUSES->(Infectious colitis)",
+      "(Abdominal Pain)-CAUSES->(Nausea)-CAUSES->(Infectious colitis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Ingestion of strange-tasting barbecued chicken -> Food poisoning -> Bloody bowel movements -> 70% CHAIN: Bloody bowel movements -> Positive guaiac test -> Gastrointestinal bleeding -> 80% CHAIN: Fever, abdominal pain, bloody bowel movements -> Infectious colitis -> Toxic megacolon -> 70%"
+  ],
+  "enhanced_information": "The patient likely has infectious colitis leading to toxic megacolon. A complication associated with this diagnosis is toxic megacolon.",
+  "analysis": "The patient's presentation with fever, abdominal pain, bloody bowel movements, and guaiac-positive stool suggests infectious colitis, likely due to food poisoning from the barbecued chicken. The presence of toxic megacolon is a complication associated with severe infectious colitis. Toxic megacolon is characterized by colonic distension and systemic toxicity. Appendicitis is less likely given the absence of classic symptoms like right lower quadrant pain, anorexia, and nausea. Typhoid fever typically presents with a gradual onset of sustained fever, headache, malaise, and abdominal pain, which is not consistent with this case. Guillain-Barré syndrome and hemolytic uremic syndrome are not directly related to the patient's presentation. Therefore, toxic megacolon is the most likely complication in this scenario.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

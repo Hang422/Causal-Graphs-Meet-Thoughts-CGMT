@@ -1,0 +1,162 @@
+{
+  "question": "A 32-year-old woman comes to the physician because of pain and stiffness in both of her hands for the past 3 weeks. The pain is most severe early in the day and does not respond to ibuprofen. She has no history of serious illness and takes no medications. Vital signs are within normal limits. Examination shows swelling and tenderness of the wrists and metacarpophalangeal joints bilaterally. Range of motion is decreased due to pain. There are subcutaneous, nontender, firm, mobile nodules on the extensor surface of the forearm. Which of the following is the most appropriate pharmacotherapy for this patient's current symptoms?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Methotrexate",
+    "opb": "Adalimumab",
+    "opc": "Colchicine",
+    "opd": "Sulfasalazine",
+    "ope": "Prednisone"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ibuprofen",
+        "Obesity",
+        "Sore to touch"
+      ],
+      [
+        "Ibuprofen",
+        "Infection",
+        "Sore to touch"
+      ],
+      [
+        "Ibuprofen",
+        "Symptoms",
+        "Sore to touch"
+      ],
+      [
+        "Sore to touch",
+        "Pain"
+      ],
+      [
+        "Edema",
+        "Pain"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Ibuprofen)-TREATS->(Obesity)-CAUSES->(Sore to touch)",
+      "(Ibuprofen)-TREATS->(Infection)-CAUSES->(Sore to touch)",
+      "(Ibuprofen)-PREVENTS->(Symptoms)-CAUSES->(Sore to touch)",
+      "(Sore to touch)-CAUSES->(Pain)",
+      "(Edema)-PREDISPOSES->(Pain)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pain",
+        "Musculoskeletal torsion, function",
+        "hair",
+        "EXTENSOR SURFACE"
+      ],
+      [
+        "Pain",
+        "biological adaptation to stress",
+        "hair",
+        "EXTENSOR SURFACE"
+      ],
+      [
+        "EXTENSOR SURFACE",
+        "Fingers",
+        "Diagnosis"
+      ],
+      [
+        "EXTENSOR SURFACE",
+        "Bone structure of ischium",
+        "Diagnosis"
+      ],
+      [
+        "Forearm",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "PART_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Pain)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(hair)-PART_OF->(EXTENSOR SURFACE)",
+      "(Pain)-MANIFESTATION_OF->(biological adaptation to stress)-PROCESS_OF->(hair)-PART_OF->(EXTENSOR SURFACE)",
+      "(EXTENSOR SURFACE)-PART_OF->(Fingers)-LOCATION_OF->(Diagnosis)",
+      "(EXTENSOR SURFACE)-PART_OF->(Bone structure of ischium)-LOCATION_OF->(Diagnosis)",
+      "(Forearm)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ibuprofen)-PREVENTS->(Symptoms)-CAUSES->(Sore to touch)",
+      "(Ibuprofen)-TREATS->(Obesity)-CAUSES->(Sore to touch)",
+      "(Ibuprofen)-TREATS->(Infection)-CAUSES->(Sore to touch)",
+      "(Sore to touch)-CAUSES->(Pain)",
+      "(Edema)-PREDISPOSES->(Pain)",
+      "(Forearm)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Pain and stiffness in hands\" -> \"Most severe early in the day\" -> \"Does not respond to ibuprofen\" -> \"Swelling and tenderness in wrists and metacarpophalangeal joints\" -> \"Decreased range of motion due to pain\" -> \"Subcutaneous, nontender, firm, mobile nodules on extensor surface of forearm\" -> \"Possible diagnosis of rheumatoid arthritis\" -> 70%"
+  ],
+  "enhanced_information": "The patient's symptoms of pain, stiffness, swelling, and nodules on the extensor surface of the forearm are indicative of possible rheumatoid arthritis. Given the presentation, the most appropriate pharmacotherapy for this patient's current symptoms would be Methotrexate, which is a first-line disease-modifying antirheumatic drug (DMARD) for rheumatoid arthritis.",
+  "analysis": "The patient's symptoms and physical exam findings are highly suggestive of rheumatoid arthritis, characterized by morning stiffness, joint swelling, and nodules. Methotrexate is a first-line DMARD commonly used to manage rheumatoid arthritis due to its efficacy in reducing inflammation and joint damage. Given the patient's presentation, Methotrexate would be the most appropriate pharmacotherapy.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

@@ -1,0 +1,113 @@
+{
+  "question": "A 75-year-old male presents to his primary care physician complaining of epigastric pain. He has developed progressively worsening epigastric pain, heartburn, and nausea over the past five months. The pain does not change with meals and is not positional. He also reports that he is rarely hungry and has lost ten pounds. The patient immigrated from Japan two years ago to live with his son in the United States. He worked as a fisherman and dock worker for most of his life. His past medical history is notable for gout and gastroesophageal reflux disease. He takes allopurinol and cimetidine. He has a 30 pack-year smoking history and drinks 1-2 alcoholic beverages per day. Physical examination reveals mild epigastric tenderness to palpation and a hard lymph node near his left shoulder. Which of the following substances is most strongly associated with this patient’s condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Nitrosamine",
+    "opb": "Vinyl chloride",
+    "opc": "Aflatoxin",
+    "opd": "Naphthalene",
+    "ope": "Asbestos"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Gastroesophageal reflux disease",
+        "Disease",
+        "Respiration",
+        "Esophagus"
+      ],
+      [
+        "Gastroesophageal reflux disease",
+        "Disease",
+        "Physiologic Function",
+        "Esophagus"
+      ],
+      [
+        "Gastroesophageal reflux disease",
+        "Disease",
+        "Transformation, function",
+        "Esophagus"
+      ],
+      [
+        "Chronic inflammation",
+        "Barrett Esophagus"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Gastroesophageal reflux disease)-CAUSES->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Esophagus)",
+      "(Gastroesophageal reflux disease)-CAUSES->(Disease)-MANIFESTATION_OF->(Physiologic Function)-PROCESS_OF->(Esophagus)",
+      "(Gastroesophageal reflux disease)-CAUSES->(Disease)-MANIFESTATION_OF->(Transformation, function)-PROCESS_OF->(Esophagus)",
+      "(Chronic inflammation)-CAUSES->(Barrett Esophagus)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Esophagus",
+        "Barrett Esophagus"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Esophagus)-LOCATION_OF->(Barrett Esophagus)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Chronic inflammation)-CAUSES->(Barrett Esophagus)",
+      "(Esophagus)-LOCATION_OF->(Barrett Esophagus)",
+      "(Gastroesophageal reflux disease)-CAUSES->(Disease)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Esophagus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Gastroesophageal reflux disease -> chronic inflammation of the esophagus -> Barrett's esophagus -> increased risk of esophageal adenocarcinoma -> possible exposure to nitrosamines -> 70%"
+  ],
+  "enhanced_information": "The most strongly associated substance with this patient's condition is nitrosamine, possibly due to the increased risk of esophageal adenocarcinoma in the setting of Barrett's esophagus, which can be linked to chronic inflammation from gastroesophageal reflux disease. The patient's symptoms and history align with this chain of events.",
+  "analysis": "The patient's presentation of progressively worsening epigastric pain, heartburn, nausea, weight loss, and a hard lymph node near his left shoulder raises concern for esophageal adenocarcinoma. Given his history of gastroesophageal reflux disease and the enhanced information linking nitrosamine exposure to esophageal adenocarcinoma in the setting of Barrett's esophagus, nitrosamine is the most likely substance associated with his condition.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

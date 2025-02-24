@@ -1,0 +1,102 @@
+{
+  "question": "A 4-year-old boy is brought to the pediatrician in the month of January with a one-week history of a cough and somnolence. He developed a fever and cough and stated that his legs hurt ‘really bad’ 3–4 days prior to his symptoms. He has asthma but no other significant past medical history. He takes albuterol and his mom administered acetaminophen because he was feeling ‘hot’. The blood pressure is 92/66 mm Hg, the heart rate is 118/min, the respiratory rate is 40/min, and the temperature is 39.2°C (102.6°F). On physical examination, the visualization of the pharynx shows mild erythema without purulence. Auscultation of the lungs reveals crackles over the right lung base. The rapid strep test is negative. A chest X-ray shows homogenous opacity in the lower lobe of the right lung. Which of the following best describes the vaccine that could have prevented the boy from acquiring this infection?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Live attenuated vaccine",
+    "opb": "Inactivated vaccine",
+    "opc": "Subunit vaccine",
+    "opd": "Conjugate vaccine",
+    "ope": "Toxoid vaccine"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pneumococcal Infections",
+        "Pneumonia"
+      ],
+      [
+        "Pneumonia",
+        "Liver Cirrhosis",
+        "Radiography, Thoracic"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pneumococcal Infections)-CAUSES->(Pneumonia)",
+      "(Pneumonia)-CAUSES->(Liver Cirrhosis)-CAUSES->(Radiography, Thoracic)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Radiography, Thoracic",
+        "Disease",
+        "uptake",
+        "Pneumococcal vaccine"
+      ],
+      [
+        "Radiography, Thoracic",
+        "Symptoms",
+        "uptake",
+        "Pneumococcal vaccine"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Radiography, Thoracic)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Pneumococcal vaccine)",
+      "(Radiography, Thoracic)-CAUSES->(Symptoms)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Pneumococcal vaccine)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Radiography, Thoracic)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Pneumococcal vaccine)",
+      "(Radiography, Thoracic)-CAUSES->(Symptoms)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Pneumococcal vaccine)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Streptococcus pneumoniae infection -> Pneumonia -> Lower lobe opacity on chest X-ray -> Pneumococcal vaccine -> Conjugate vaccine -> 95%"
+  ],
+  "enhanced_information": "The infection causing the lower lobe opacity on the chest X-ray is likely due to Streptococcus pneumoniae. A conjugate vaccine against Streptococcus pneumoniae could have prevented this infection, with a reported efficacy of around 95%.",
+  "analysis": "The infection causing the lower lobe opacity on the chest X-ray is likely due to Streptococcus pneumoniae. Given the scenario of a 4-year-old boy with a pneumonia-like presentation, the most appropriate vaccine that could have prevented this infection is a conjugate vaccine against Streptococcus pneumoniae, with a high reported efficacy of around 95%.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

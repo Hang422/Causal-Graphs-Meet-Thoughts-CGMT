@@ -1,0 +1,189 @@
+{
+  "question": "A 75-year-old woman presents to the emergency department because of a brief loss of consciousness, slurred speech, and facial numbness. Family members report that she complained about feeling chest pain and shortness of breath while on her morning walk. Medical history is noncontributory. Physical examination shows decreased pupil reactivity to light and hemiplegic gait. Her pulse is 120/min, respirations are 26/min, temperature is 36.7°C (98.0°F), and blood pressure is 160/80 mm Hg. On heart auscultation, S1 is loud, widely split, and there is a diastolic murmur. Transthoracic echocardiography in a 4-chamber apical view revealed a large oval-shaped and sessile left atrial mass. Which of the following is the most likely complication of this patient's condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Atrial fibrillation",
+    "opb": "Atrioventricular block",
+    "opc": "Congestive heart failure",
+    "opd": "Mitral valve obstruction",
+    "ope": "Pericarditis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "LEFT ATRIAL MASS",
+        "Shock",
+        "Disease",
+        "physiological aspects",
+        "Mitral Valve"
+      ],
+      [
+        "LEFT ATRIAL MASS",
+        "Obstruction",
+        "Disease",
+        "physiological aspects",
+        "Mitral Valve"
+      ],
+      [
+        "LEFT ATRIAL MASS",
+        "Atrial Fibrillation",
+        "Disease",
+        "physiological aspects",
+        "Mitral Valve"
+      ],
+      [
+        "Obstruction",
+        "Mitral Valve Stenosis"
+      ],
+      [
+        "LEFT ATRIAL MASS",
+        "Atrial Fibrillation"
+      ],
+      [
+        "Embolization, Therapeutic",
+        "Embolism",
+        "Mitral valve obstruction"
+      ],
+      [
+        "Embolization, Therapeutic",
+        "Infective endocarditis",
+        "Mitral valve obstruction"
+      ],
+      [
+        "Embolization, Therapeutic",
+        "Massive hemorrhage",
+        "Mitral valve obstruction"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(LEFT ATRIAL MASS)-CAUSES->(Shock)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Mitral Valve)",
+      "(LEFT ATRIAL MASS)-CAUSES->(Obstruction)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Mitral Valve)",
+      "(LEFT ATRIAL MASS)-CAUSES->(Atrial Fibrillation)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Mitral Valve)",
+      "(Obstruction)-CAUSES->(Mitral Valve Stenosis)",
+      "(LEFT ATRIAL MASS)-CAUSES->(Atrial Fibrillation)",
+      "(Embolization, Therapeutic)-CAUSES->(Embolism)-CAUSES->(Mitral valve obstruction)",
+      "(Embolization, Therapeutic)-CAUSES->(Infective endocarditis)-CAUSES->(Mitral valve obstruction)",
+      "(Embolization, Therapeutic)-CAUSES->(Massive hemorrhage)-COMPLICATES->(Mitral valve obstruction)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Mitral Valve",
+        "Mitral Valve Stenosis"
+      ],
+      [
+        "LEFT ATRIAL MASS",
+        "Shock",
+        "Genes",
+        "Bone Marrow",
+        "Embolization, Therapeutic"
+      ],
+      [
+        "LEFT ATRIAL MASS",
+        "Atrial Fibrillation",
+        "Genes",
+        "Bone Marrow",
+        "Embolization, Therapeutic"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Mitral Valve)-LOCATION_OF->(Mitral Valve Stenosis)",
+      "(LEFT ATRIAL MASS)-CAUSES->(Shock)-ASSOCIATED_WITH->(Genes)-PART_OF->(Bone Marrow)-LOCATION_OF->(Embolization, Therapeutic)",
+      "(LEFT ATRIAL MASS)-CAUSES->(Atrial Fibrillation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Bone Marrow)-LOCATION_OF->(Embolization, Therapeutic)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(LEFT ATRIAL MASS)-CAUSES->(Atrial Fibrillation)",
+      "(Embolization, Therapeutic)-CAUSES->(Massive hemorrhage)-COMPLICATES->(Mitral valve obstruction)",
+      "(Obstruction)-CAUSES->(Mitral Valve Stenosis)",
+      "(LEFT ATRIAL MASS)-CAUSES->(Shock)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Mitral Valve)",
+      "(Embolization, Therapeutic)-CAUSES->(Embolism)-CAUSES->(Mitral valve obstruction)",
+      "(Mitral Valve)-LOCATION_OF->(Mitral Valve Stenosis)",
+      "(LEFT ATRIAL MASS)-CAUSES->(Atrial Fibrillation)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Mitral Valve)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Left atrial mass -> obstruction of mitral valve -> mitral valve stenosis -> decreased cardiac output -> congestive heart failure -> 80% CHAIN: Left atrial mass -> atrial fibrillation -> irregular heart rhythm -> decreased cardiac output -> congestive heart failure -> 70% CHAIN: Left atrial mass -> embolization of the mass -> mitral valve obstruction -> decreased cardiac output -> congestive heart failure -> 80%"
+  ],
+  "enhanced_information": "The most likely complication of the patient's condition with a left atrial mass is mitral valve obstruction leading to decreased cardiac output and congestive heart failure. The evidence paths support the chain of events involving embolization of the mass causing mitral valve obstruction, which aligns with consensus understanding.",
+  "analysis": "The core medical principle in this case involves understanding the consequences of a left atrial mass, which can lead to complications such as mitral valve obstruction. The patient's presentation with symptoms of chest pain, shortness of breath, slurred speech, facial numbness, and hemiplegic gait, along with the findings of a large left atrial mass on echocardiography, strongly suggest the possibility of mitral valve obstruction. This obstruction can result in decreased cardiac output and subsequent congestive heart failure. The evidence provided aligns with the consensus understanding of the pathophysiology involved.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

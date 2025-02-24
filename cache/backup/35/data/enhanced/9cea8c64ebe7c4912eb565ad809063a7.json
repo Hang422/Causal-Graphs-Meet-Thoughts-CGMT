@@ -1,0 +1,130 @@
+{
+  "question": "A 73-year-old man presents to your office accompanied by his wife. He has been experiencing a tremor in his right hand for the last several months that seems to be worsening. He does not have any other complaints and says he’s “fine.” His wife thinks that he has also had more difficulty walking. His history is significant for hypertension and an ischemic stroke of the right middle cerebral artery 2 years ago. His medications include hydrochlorothiazide and daily aspirin. On physical exam you note that the patient speaks with a soft voice and has decreased facial expressions. He has a resting tremor that is worse on the right side. He has increased resistance to passive movement when you flex and extend his relaxed wrist. He has 5/5 strength bilaterally. Neuronal degeneration in which of the following locations is most likely responsible for the progression of this disease?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Substantia nigra pars compacta",
+    "opb": "Frontotemporal lobe",
+    "opc": "Subthalamic nucleus",
+    "opd": "Caudate and putamen",
+    "ope": "Vermis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Resting Tremor",
+        "Parkinson Disease",
+        "Dehydration",
+        "Voice Fatigue"
+      ],
+      [
+        "Resting Tremor",
+        "Disease",
+        "Dehydration",
+        "Voice Fatigue"
+      ],
+      [
+        "Resting Tremor",
+        "Disease",
+        "Arthritis",
+        "Voice Fatigue"
+      ],
+      [
+        "Voice Fatigue",
+        "Dehydration",
+        "Disease"
+      ],
+      [
+        "Voice Fatigue",
+        "Hoarseness",
+        "Disease"
+      ],
+      [
+        "Voice Fatigue",
+        "Voice Disorders",
+        "Disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Resting Tremor)-CAUSES->(Parkinson Disease)-PREDISPOSES->(Dehydration)-CAUSES->(Voice Fatigue)",
+      "(Resting Tremor)-MANIFESTATION_OF->(Disease)-CAUSES->(Dehydration)-CAUSES->(Voice Fatigue)",
+      "(Resting Tremor)-MANIFESTATION_OF->(Disease)-CAUSES->(Arthritis)-CAUSES->(Voice Fatigue)",
+      "(Voice Fatigue)-CAUSES->(Dehydration)-CAUSES->(Disease)",
+      "(Voice Fatigue)-CAUSES->(Hoarseness)-CAUSES->(Disease)",
+      "(Voice Fatigue)-CAUSES->(Voice Disorders)-PREDISPOSES->(Disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Voice Fatigue)-CAUSES->(Hoarseness)-CAUSES->(Disease)",
+      "(Resting Tremor)-MANIFESTATION_OF->(Disease)-CAUSES->(Dehydration)-CAUSES->(Voice Fatigue)",
+      "(Resting Tremor)-MANIFESTATION_OF->(Disease)-CAUSES->(Arthritis)-CAUSES->(Voice Fatigue)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Ischemic stroke of the right middle cerebral artery 2 years ago -> Increased resistance to passive movement in the wrist -> Neuronal degeneration in the substantia nigra pars compacta is most likely responsible for the progression of this disease -> 95%",
+    "CHAIN: Resting tremor worse on the right side -> Soft voice and decreased facial expressions -> Neuronal degeneration in the substantia nigra pars compacta is most likely responsible for the progression of this disease -> 90%",
+    "CHAIN: Tremor in the right hand worsening over several months -> Difficulty walking -> Neuronal degeneration in the substantia nigra pars compacta is most likely responsible for the progression of this disease -> 85%"
+  ],
+  "enhanced_information": "Neuronal degeneration in the substantia nigra pars compacta is most likely responsible for the progression of this disease, leading to symptoms such as resting tremor, soft voice, decreased facial expressions, and increased resistance to passive movement. The evidence paths provided do not directly contribute to the understanding of the underlying pathology in this case.",
+  "analysis": "The core medical principle in this case is the understanding of Parkinson's disease, which is characterized by neuronal degeneration in the substantia nigra pars compacta. The patient's presentation with resting tremor, soft voice, decreased facial expressions, and increased resistance to passive movement aligns with the typical features of Parkinson's disease. The history of tremor worsening over time and the presence of other parkinsonian symptoms support this diagnosis. The other options do not fit the clinical picture provided.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      100.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

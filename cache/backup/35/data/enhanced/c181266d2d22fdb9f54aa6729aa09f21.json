@@ -1,0 +1,147 @@
+{
+  "question": "A 23-year-old man comes to the emergency department for 2 days of severe headaches. The pain is most intense on his left forehead and eye. He had similar symptoms last summer. He has been taking indomethacin every 6 hours for the last 24 hours but has not had any relief. He has smoked 1 pack of cigarettes daily for the past 5 years. He works as an accountant and describes his work as very stressful. Physical examination shows drooping of the left eyelid, tearing of the left eye, and rhinorrhea. The left pupil is 2 mm and the right pupil is 4 mm. There is localized tenderness along the right supraspinatus muscle. The remainder of the examination shows no abnormalities. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Giant cell arteritis",
+    "opb": "Medication overuse headache",
+    "opc": "Cluster headache",
+    "opd": "Trigeminal neuralgia",
+    "ope": "Tension headache"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Headache",
+        "Muscle tenderness"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Headache)-CAUSES->(Muscle tenderness)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Right supraspinatus",
+        "Atrophic",
+        "Disease",
+        "Headache"
+      ],
+      [
+        "Right supraspinatus",
+        "Atrophic",
+        "Disease",
+        "Headache"
+      ],
+      [
+        "Muscle tenderness",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Muscle tenderness",
+        "Symptoms",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Headache Disorders",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Headache Disorders",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "CAUSES",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Right supraspinatus)-LOCATION_OF->(Atrophic)-MANIFESTATION_OF->(Disease)-CAUSES->(Headache)",
+      "(Right supraspinatus)-LOCATION_OF->(Atrophic)-CAUSES->(Disease)-CAUSES->(Headache)",
+      "(Muscle tenderness)-ASSOCIATED_WITH->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Muscle tenderness)-ISA->(Symptoms)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Headache Disorders)-ISA->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Headache Disorders)-CAUSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Muscle tenderness)-ISA->(Symptoms)-CAUSES->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Muscle tenderness)-ASSOCIATED_WITH->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Right supraspinatus)-LOCATION_OF->(Atrophic)-CAUSES/MANIFESTATION_OF->(Disease)-CAUSES->(Headache)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Severe headaches on left forehead and eye\" -> \"Similar symptoms last summer\" -> \"Unilateral headache pattern\" -> \"Cluster headache presentation\" -> 80%",
+    "CHAIN: \"Drooping of left eyelid, tearing of left eye, rhinorrhea\" -> \"Pupil size discrepancy (2 mm vs. 4 mm)\" -> \"Autonomic symptoms\" -> \"Cluster headache features\" -> 85%",
+    "CHAIN: \"Local tenderness along right supraspinatus muscle\" -> \"Unrelated to headache symptoms\" -> \"Muscle tenderness not characteristic of headache disorders\" -> \"Low relevance to diagnosis\" -> 70%"
+  ],
+  "enhanced_information": "The patient's presentation of severe headaches on the left forehead and eye, along with autonomic symptoms like drooping of the left eyelid, tearing of the left eye, and rhinorrhea, along with pupil size discrepancy, is highly suggestive of a cluster headache. The presence of muscle tenderness along the right supraspinatus muscle is not characteristic of headache disorders and is of low relevance to the diagnosis. Therefore, the most likely diagnosis is Cluster headache (opc).",
+  "analysis": "The patient's presentation of severe headaches on the left forehead and eye, along with autonomic symptoms like drooping of the left eyelid, tearing of the left eye, and rhinorrhea, along with pupil size discrepancy, is highly suggestive of a cluster headache. The lack of response to indomethacin, the pattern of symptoms, and the patient's smoking history and stressful job further support this diagnosis. The muscle tenderness along the right supraspinatus muscle is not typical for headache disorders and can be considered an incidental finding. Therefore, the most likely correct diagnosis is a Cluster headache.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      4
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

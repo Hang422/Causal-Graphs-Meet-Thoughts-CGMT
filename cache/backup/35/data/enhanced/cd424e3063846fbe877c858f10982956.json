@@ -1,0 +1,111 @@
+{
+  "question": "A 41-year-old woman presents with acute onset severe epigastric pain radiating to the back that began a few hours ago. She also complains of nausea and has vomited twice in the past hour. She denies any history of similar symptoms or trauma in the past. Past medical history is significant for diabetes type 2 and HIV infection diagnosed 6 months ago long-standing mild intermittent asthma, and generalized anxiety disorder. She takes metformin for her diabetes but does not remember the names of her HIV medications. She reports moderate social alcohol use. Her vital signs include temperature 37.6°C (99.6 °F), pulse 95/min, blood pressure 110/74 mm Hg, respiratory rate 12/min Her body mass index (BMI) is 21 kg/m2. Laboratory findings are significant for the following:\nSerum amylase: 415 U/L\nSerum lipase: 520 U/L\nA contrast CT of the abdomen reveals an edematous pancreas with peripancreatic fluid collection with a normal gallbladder. Which of the following is the most likely etiology of this patient’s condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "HIV medication-related",
+    "opb": "Alcohol use",
+    "opc": "Abdominal trauma",
+    "opd": "Metformin",
+    "ope": "Congenital anomaly of the pancreas"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Metformin",
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Pancreatitis, Acute"
+      ],
+      [
+        "Metformin",
+        "Adverse effects",
+        "Pancreatitis, Acute"
+      ],
+      [
+        "Metformin",
+        "Disease",
+        "Pancreatitis, Acute"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Metformin)-CAUSES->(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Pancreatitis, Acute)",
+      "(Metformin)-CAUSES->(Adverse effects)-CAUSES->(Pancreatitis, Acute)",
+      "(Metformin)-TREATS->(Disease)-CAUSES->(Pancreatitis, Acute)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pancreatitis, Acute",
+        "Fat necrosis",
+        "Lipase"
+      ],
+      [
+        "Pancreatitis, Acute",
+        "Liver damage",
+        "Lipase"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Pancreatitis, Acute)-CAUSES->(Fat necrosis)-ASSOCIATED_WITH->(Lipase)",
+      "(Pancreatitis, Acute)-COMPLICATES->(Liver damage)-ASSOCIATED_WITH->(Lipase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Metformin)-CAUSES->(Adverse effects)-CAUSES->(Pancreatitis, Acute)",
+      "(Metformin)-CAUSES->(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Pancreatitis, Acute)",
+      "(Metformin)-TREATS->(Disease)-CAUSES->(Pancreatitis, Acute)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Alcohol use -> Acute pancreatitis -> Elevated serum amylase and lipase levels -> 80% CHAIN: Metformin -> Unlikely to cause acute pancreatitis -> 10% CHAIN: Abdominal trauma -> Unlikely given no history of trauma -> 20% CHAIN: HIV medication-related -> Possible but less likely compared to alcohol use -> 30% CHAIN: Congenital anomaly of the pancreas -> Unlikely given acute presentation -> 80%"
+  ],
+  "enhanced_information": "The most likely etiology of this patient's condition is alcohol use leading to acute pancreatitis, supported by elevated serum amylase and lipase levels. Metformin is unlikely to cause acute pancreatitis based on consensus. There is no history of abdominal trauma. While HIV medication-related pancreatitis is possible, it is less likely compared to alcohol use. A congenital anomaly of the pancreas is unlikely given the acute presentation. The evidence paths support the consensus that metformin is not a common cause of acute pancreatitis.",
+  "analysis": "The patient's presentation with acute onset severe epigastric pain, nausea, vomiting, and elevated serum amylase and lipase levels is highly suggestive of acute pancreatitis. Given her history of moderate social alcohol use and the absence of other clear etiologies, alcohol use is the most likely cause of her condition. While HIV medication-related pancreatitis is a possibility, alcohol remains a more common cause. Metformin is not typically associated with acute pancreatitis. Abdominal trauma and congenital anomalies are less likely based on the clinical scenario.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

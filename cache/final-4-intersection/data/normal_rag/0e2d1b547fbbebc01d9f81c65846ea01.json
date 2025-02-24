@@ -1,0 +1,142 @@
+{
+  "question": "A 72-year-old man comes to the emergency department because of blurry vision for the past 3 days. He has also had 4 episodes of right-sided headaches over the past month. He has no significant past medical history. His father died of coronary artery disease at the age of 62 years. His temperature is 37.2°C (99°F), pulse is 94/min, and blood pressure is 232/128 mm Hg. Fundoscopy shows right-sided optic disc blurring and retinal hemorrhages. A medication is given immediately. Five minutes later, his pulse is 75/min and blood pressure is 190/105 mm Hg. Which of the following drugs was most likely administered?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Labetalol",
+    "opb": "Hydralazine",
+    "opc": "Fenoldopam",
+    "opd": "Nicardipine",
+    "ope": "Nitroprusside"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hydralazine",
+        "Pharmaceutical Preparations",
+        "agonists",
+        "Arteriolar Vasodilation"
+      ],
+      [
+        "Hydralazine",
+        "Cells",
+        "agonists",
+        "Arteriolar Vasodilation"
+      ],
+      [
+        "Fenoldopam",
+        "Inflammation",
+        "Dopamine Receptor"
+      ],
+      [
+        "Dopamine Receptor",
+        "Vasodilation"
+      ],
+      [
+        "Nicardipine",
+        "Calcium Channel Blockers"
+      ],
+      [
+        "Calcium Channel Blockers",
+        "Vasodilation"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "INTERACTS_WITH",
+        "CAUSES"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hydralazine)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(agonists)-CAUSES->(Arteriolar Vasodilation)",
+      "(Hydralazine)-PART_OF->(Cells)-LOCATION_OF->(agonists)-CAUSES->(Arteriolar Vasodilation)",
+      "(Fenoldopam)-TREATS->(Inflammation)-ASSOCIATED_WITH->(Dopamine Receptor)",
+      "(Dopamine Receptor)-CAUSES->(Vasodilation)",
+      "(Nicardipine)-INTERACTS_WITH->(Calcium Channel Blockers)",
+      "(Calcium Channel Blockers)-CAUSES->(Vasodilation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Nicardipine)-INTERACTS_WITH->(Calcium Channel Blockers)",
+      "(Fenoldopam)-TREATS->(Inflammation)-ASSOCIATED_WITH->(Dopamine Receptor)",
+      "(Hydralazine)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(agonists)-CAUSES->(Arteriolar Vasodilation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Labetalol\" -> \"alpha and beta adrenergic blockade\" -> \"decreased heart rate and blood pressure\" -> \"rapid onset of action\" -> 95%",
+    "CHAIN: \"Hydralazine\" -> \"arteriolar vasodilation\" -> \"decreased blood pressure\" -> \"slow onset, does not significantly affect heart rate\" -> 70%",
+    "CHAIN: \"Fenoldopam\" -> \"dopamine receptor agonist\" -> \"vasodilation\" -> \"rapid decrease in blood pressure\" -> \"minimal effect on heart rate\" -> 80%",
+    "CHAIN: \"Nicardipine\" -> \"calcium channel blocker\" -> \"vasodilation\" -> \"decrease in blood pressure\" -> \"moderate effect on heart rate\" -> 85%",
+    "CHAIN: \"Nitroprusside\" -> \"direct vasodilator\" -> \"rapid decrease in blood pressure\" -> \"minimal change in heart rate\" -> 90%"
+  ],
+  "enhanced_information": "Labetalol, acting as both an alpha and beta blocker, is the most likely administered drug, given its rapid onset and significant effects on reducing both heart rate and blood pressure, aligning with the patient's observed changes. Other considered drugs either lacked the necessary rapid impact on both parameters or did not align with the effects on heart rate observed.",
+  "analysis": "The patient presented with severe hypertension and symptoms indicative of a hypertensive emergency, including blurry vision and retinal hemorrhages. Immediate treatment is crucial to prevent further organ damage. Among the options provided, labetalol, nicardipine, and nitroprusside are commonly used in hypertensive emergencies. Labetalol is effective for rapid reduction of blood pressure and also has the benefit of reducing heart rate, which is observed in the patient's response. Nicardipine is also a potent antihypertensive but typically does not affect heart rate as significantly as labetalol. Nitroprusside is another strong candidate but is usually reserved for more critical cases and requires careful monitoring due to its potency and risk of cyanide toxicity. Given the significant and rapid reduction in both blood pressure and heart rate, labetalol is the most likely administered drug, as it effectively addresses both parameters.",
+  "answer": "opa",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      2,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      20.0,
+      40.0,
+      40.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "Phentolamine ASSOCIATED_WITH Hypertensive emergency",
+    "Medical therapy TREATS Ocular Hypotension",
+    "Diastasis ASSOCIATED_WITH Aspartate|ASIP|ASPA|C3|ATG5|A1CF|ROPN1L|ASPM",
+    "KCNJ13 CAUSES Retinal dystrophy",
+    "Nicardipine TREATS Hypertensive episode",
+    "CCL22 gene|CCL22 INTERACTS_WITH CNTN2",
+    "Nitroglycerin ASSOCIATED_WITH Hypertensive emergency",
+    "ATF3 gene|ATF3 INTERACTS_WITH SNAP25 gene|SNAP25",
+    "Phototherapy TREATS Venous lake",
+    "Ischemia CAUSES Retinal Edema",
+    "Hypertensive disease CAUSES Retinal Edema",
+    "Phenobarbital TREATS Vasogenic Brain Edema",
+    "Retinal Diseases CAUSES Edema"
+  ]
+}

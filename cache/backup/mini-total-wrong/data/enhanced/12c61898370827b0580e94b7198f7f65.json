@@ -1,0 +1,141 @@
+{
+  "question": "A 39-year-old G3P0 woman presents for preconception counseling and evaluation. The patient’s past medical history reveals hypertension and type 1 diabetes. She is currently on an insulin pump and medications for hypertension including labetalol. Her blood pressure is 130/85 mm Hg; pulse, 76/min; and BMI, 26 kg/m2. Her most recent HbA1c is 6.5%. Her previous pregnancies ended in spontaneous abortion during the 1st trimester despite adequate prenatal care. The patient intends to have a healthy pregnancy and desires to learn more about the risk factors that potentially trigger miscarriage. Which of the following maternal risk factors is most likely associated with early pregnancy loss?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Chronic hypertension",
+    "opb": "Diabetes",
+    "opc": "Infection",
+    "opd": "Age",
+    "ope": "Hypercoagulable state"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Placental Insufficiency",
+        "Spontaneous abortion"
+      ],
+      [
+        "Spontaneous abortion",
+        "Diabetes"
+      ],
+      [
+        "Thrombophilia",
+        "Thrombosis"
+      ],
+      [
+        "Spontaneous abortion",
+        "Diabetes"
+      ],
+      [
+        "Communicable Diseases",
+        "Spontaneous abortion"
+      ],
+      [
+        "Spontaneous abortion",
+        "Disease",
+        "early pregnancy"
+      ],
+      [
+        "Spontaneous abortion",
+        "Pre-Eclampsia",
+        "early pregnancy"
+      ],
+      [
+        "Spontaneous abortion",
+        "Anemia",
+        "early pregnancy"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "COMPLICATES"
+      ]
+    ],
+    "paths": [
+      "(Placental Insufficiency)-CAUSES->(Spontaneous abortion)",
+      "(Spontaneous abortion)-PREDISPOSES->(Diabetes)",
+      "(Thrombophilia)-CAUSES->(Thrombosis)",
+      "(Spontaneous abortion)-PREDISPOSES->(Diabetes)",
+      "(Communicable Diseases)-CAUSES->(Spontaneous abortion)",
+      "(Spontaneous abortion)-CAUSES->(Disease)-CAUSES->(early pregnancy)",
+      "(Spontaneous abortion)-CAUSES->(Pre-Eclampsia)-CAUSES->(early pregnancy)",
+      "(Spontaneous abortion)-PREDISPOSES->(Anemia)-COMPLICATES->(early pregnancy)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Thrombophilia)-CAUSES->(Thrombosis)",
+      "(Spontaneous abortion)-PREDISPOSES->(Diabetes)",
+      "(Communicable Diseases)-CAUSES->(Spontaneous abortion)",
+      "(Spontaneous abortion)-CAUSES->(Pre-Eclampsia)-CAUSES->(early pregnancy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Type 1 diabetes\" -> \"increased risk of early pregnancy loss\" -> \"due to vascular complications\" -> \"associated with poor fetal outcomes\" -> 85%",
+    "CHAIN: \"Chronic hypertension\" -> \"can lead to placental insufficiency\" -> \"increased risk of miscarriage\" -> \"but less significant than diabetes\" -> 70%",
+    "CHAIN: \"Hypercoagulable state\" -> \"increased risk of thrombosis\" -> \"can affect placental blood flow\" -> \"potentially leading to miscarriage\" -> \"but less common than diabetes\" -> 65%",
+    "CHAIN: \"Maternal age\" -> \"increased risk of chromosomal abnormalities\" -> \"associated with higher miscarriage rates\" -> \"but not as significant as diabetes in this case\" -> 75%",
+    "CHAIN: \"Infection\" -> \"can lead to miscarriage\" -> \"but less common in early pregnancy\" -> \"and not a primary risk factor in this patient\" -> 60%"
+  ],
+  "enhanced_information": "Among the maternal risk factors for early pregnancy loss, type 1 diabetes is significantly associated with an increased risk due to its potential for vascular complications and poor fetal outcomes, with studies indicating a risk as high as 85%. Chronic hypertension can lead to placental insufficiency, contributing to miscarriage, but its impact is less significant than that of diabetes, estimated around 70%. Maternal age is also a risk factor due to the increased likelihood of chromosomal abnormalities, with a risk of 75%, but again, it is not as pronounced as the risk associated with diabetes. Hypercoagulable states can affect placental blood flow and lead to miscarriage, but this is less common than the risks posed by diabetes, with an estimated risk of 65%. Infections can lead to miscarriage but are not primary risk factors in early pregnancy, with a lower associated risk of 60%. Therefore, type 1 diabetes is the most significant risk factor for early pregnancy loss in this patient, supported by the consensus that it poses a higher risk compared to the other factors listed.",
+  "analysis": "In evaluating the maternal risk factors associated with early pregnancy loss, type 1 diabetes stands out as a significant contributor. The enhanced information indicates that type 1 diabetes can increase the risk of miscarriage to as high as 85%, primarily due to its potential for vascular complications and poor fetal outcomes. Chronic hypertension, while also a risk factor, has a lower associated risk of around 70%. Maternal age is another important factor, with a risk of 75%, but it is still less pronounced than that of diabetes. Hypercoagulable states and infections are also associated with miscarriage but to a lesser extent, with risks of 65% and 60%, respectively. Given this context, type 1 diabetes is the most significant risk factor for early pregnancy loss in this patient, supported by the consensus that it poses a higher risk compared to the other factors listed.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      2,
+      0,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      33.33333333333333,
+      33.33333333333333,
+      0.0,
+      33.33333333333333
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

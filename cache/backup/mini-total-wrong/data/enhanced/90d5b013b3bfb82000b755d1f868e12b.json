@@ -1,0 +1,110 @@
+{
+  "question": "A 71-year-old woman comes to the physician because of a 4-month history of worsening cough and a 4.5-kg (10-lb) weight loss. She has smoked one pack of cigarettes daily for 35 years. Physical examination shows wheezing over the right lung fields. Laboratory studies show a serum calcium concentration of 12.5 mg/dL. X-rays of the chest are shown. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Lobar pneumonia",
+    "opb": "Small cell lung carcinoma",
+    "opc": "Tuberculosis",
+    "opd": "Sarcoidosis",
+    "ope": "Squamous cell lung carcinoma"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Coughing",
+        "Wheezing"
+      ],
+      [
+        "Wheezing",
+        "Obstruction"
+      ],
+      [
+        "Coughing",
+        "Wheezing"
+      ],
+      [
+        "Wheezing",
+        "Disease",
+        "Communicable Diseases"
+      ],
+      [
+        "Wheezing",
+        "Obesity",
+        "Communicable Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Coughing)-CAUSES->(Wheezing)",
+      "(Wheezing)-MANIFESTATION_OF->(Obstruction)",
+      "(Coughing)-CAUSES->(Wheezing)",
+      "(Wheezing)-CAUSES->(Disease)-CAUSES->(Communicable Diseases)",
+      "(Wheezing)-PREDISPOSES->(Obesity)-CAUSES->(Communicable Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Wheezing)-MANIFESTATION_OF->(Obstruction)",
+      "(Coughing)-CAUSES->(Wheezing)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"71-year-old woman with cough and weight loss\" -> \"history of smoking\" -> \"increased risk for lung cancer\" -> \"elevated serum calcium\" -> \"possible paraneoplastic syndrome\" -> \"small cell lung carcinoma likely\" -> 85%",
+    "CHAIN: \"71-year-old woman with cough and weight loss\" -> \"wheezing over right lung fields\" -> \"possible lung mass or obstruction\" -> \"elevated serum calcium\" -> \"suggestive of malignancy\" -> \"squamous cell lung carcinoma possible\" -> 80%",
+    "CHAIN: \"71-year-old woman with cough and weight loss\" -> \"history of smoking\" -> \"increased risk for lung disease\" -> \"elevated serum calcium\" -> \"could indicate sarcoidosis\" -> \"but less likely due to smoking history\" -> \"small cell lung carcinoma more likely\" -> 75%",
+    "CHAIN: \"71-year-old woman with cough and weight loss\" -> \"wheezing over right lung fields\" -> \"possible infection or malignancy\" -> \"elevated serum calcium\" -> \"suggestive of malignancy\" -> \"tuberculosis less likely due to weight loss\" -> \"small cell lung carcinoma most likely\" -> 90%"
+  ],
+  "enhanced_information": "The patient is a 71-year-old woman with a significant smoking history, presenting with a worsening cough, weight loss, and elevated serum calcium levels. The elevated calcium suggests a possible paraneoplastic syndrome, commonly associated with squamous cell lung carcinoma, which is more prevalent in smokers. The presence of wheezing indicates possible obstruction, which aligns with malignancy rather than infection. While small cell lung carcinoma is also a consideration, the specific combination of symptoms and smoking history points more strongly towards squamous cell lung carcinoma as the most likely diagnosis. Tuberculosis is less likely due to the weight loss and smoking history, and sarcoidosis is less probable given the elevated calcium and smoking background. Therefore, the most likely diagnosis is squamous cell lung carcinoma.",
+  "analysis": "The patient is a 71-year-old woman with a significant smoking history, presenting with a worsening cough, weight loss, and elevated serum calcium levels. The elevated calcium level (12.5 mg/dL) suggests a paraneoplastic syndrome, which is commonly associated with squamous cell lung carcinoma (SCC). SCC is known to cause hypercalcemia through parathyroid hormone-related peptide (PTHrP) secretion. The presence of wheezing over the right lung fields further supports the likelihood of a malignancy, as it may indicate airway obstruction due to a tumor. While small cell lung carcinoma (SCLC) is also a consideration, it is less commonly associated with hypercalcemia compared to SCC. Tuberculosis and sarcoidosis are less likely given the patient's smoking history and the specific symptoms presented. Therefore, the most likely diagnosis, considering the combination of symptoms, smoking history, and elevated calcium levels, is squamous cell lung carcinoma.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      0,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

@@ -1,0 +1,158 @@
+{
+  "question": "A 5-year-old girl presents for a routine checkup. The patient’s parents say she has been looking pale and tired lately. Her family history is unremarkable. Upon physical examination, several bruises are seen, as well as petechial bleeding on her limbs. A complete blood count shows leukocytosis with severe anemia and thrombocytopenia. A peripheral blood smear shows 35% blasts. Ultrasonography of the abdomen shows hepatosplenomegaly and a chest radiograph reveals a mediastinal mass. Which of the following is the most likely diagnosis in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Acute lymphoblastic leukemia",
+    "opb": "Acute myeloid leukemia",
+    "opc": "Chronic lymphocytic leukemia",
+    "opd": "Aplastic anemia",
+    "ope": "Chronic myeloid leukemia"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Leukocytosis",
+        "Myocardial Infarction",
+        "Thrombocytopenia"
+      ],
+      [
+        "Leukocytosis",
+        "Disease",
+        "Thrombocytopenia"
+      ],
+      [
+        "Thrombocytopenia",
+        "Disease",
+        "Hepatosplenomegaly"
+      ],
+      [
+        "Thrombocytopenia",
+        "Infection",
+        "Hepatosplenomegaly"
+      ],
+      [
+        "Thrombocytopenia",
+        "Gaucher Disease",
+        "Hepatosplenomegaly"
+      ],
+      [
+        "Anemia",
+        "Hepatosplenomegaly"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Leukocytosis)-CAUSES->(Myocardial Infarction)-CAUSES->(Thrombocytopenia)",
+      "(Leukocytosis)-PREDISPOSES->(Disease)-CAUSES->(Thrombocytopenia)",
+      "(Thrombocytopenia)-CAUSES->(Disease)-CAUSES->(Hepatosplenomegaly)",
+      "(Thrombocytopenia)-CAUSES->(Infection)-CAUSES->(Hepatosplenomegaly)",
+      "(Thrombocytopenia)-CAUSES->(Gaucher Disease)-CAUSES->(Hepatosplenomegaly)",
+      "(Anemia)-CAUSES->(Hepatosplenomegaly)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hepatosplenomegaly",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Hepatosplenomegaly",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Ultrasonography",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Hepatosplenomegaly)-CAUSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Hepatosplenomegaly)-ASSOCIATED_WITH->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Ultrasonography)-DIAGNOSES->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hepatosplenomegaly)-ASSOCIATED_WITH/CAUSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Anemia)-CAUSES->(Hepatosplenomegaly)",
+      "(Thrombocytopenia)-CAUSES->(Disease)-CAUSES->(Hepatosplenomegaly)",
+      "(Thrombocytopenia)-CAUSES->(Infection)-CAUSES->(Hepatosplenomegaly)",
+      "(Thrombocytopenia)-CAUSES->(Gaucher Disease)-CAUSES->(Hepatosplenomegaly)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Severe anemia and thrombocytopenia\" -> \" -> 35%",
+    "CHAIN: \"Leukocytosis\" -> \"Severe anemia and thrombocytopenia\" -> \"Hepatosplenomegaly on ultrasonography\" -> \"Most likely diagnosis: Acute myeloid leukemia\" -> 90%"
+  ],
+  "enhanced_information": "The most likely diagnosis in this patient with severe anemia, thrombocytopenia, leukocytosis, hepatosplenomegaly, and mediastinal mass is Acute myeloid leukemia. The presence of 35% blasts in the peripheral blood smear further supports this diagnosis.",
+  "analysis": "The patient's presentation with severe anemia, thrombocytopenia, leukocytosis, hepatosplenomegaly, mediastinal mass, and 35% blasts on peripheral blood smear is highly indicative of Acute myeloid leukemia. This diagnosis aligns with the enhanced information provided.",
+  "answer": "opb. acute myeloid leukemia",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      5
+    ],
+    "coverage_rates": [
+      0.0,
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

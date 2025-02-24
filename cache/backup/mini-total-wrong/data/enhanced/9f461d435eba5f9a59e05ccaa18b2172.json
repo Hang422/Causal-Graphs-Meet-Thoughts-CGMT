@@ -1,0 +1,92 @@
+{
+  "question": "A 36-year-old woman comes to the physician to discuss contraceptive options. She is currently sexually active with one male partner, and they have not been using any contraception. She has no significant past medical history and takes no medications. She has smoked one pack of cigarettes daily for 15 years. She is allergic to latex and copper. A urine pregnancy test is negative. Which of the following contraceptive methods is contraindicated in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Diaphragm with spermicide",
+    "opb": "Progestin-only pill",
+    "opc": "Intrauterine device",
+    "opd": "Condoms",
+    "ope": "Combined oral contraceptive pill"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Copper",
+        "Peripheral blood mononuclear cell",
+        "Brain",
+        "Intrauterine Devices"
+      ],
+      [
+        "Copper",
+        "Peripheral blood mononuclear cell",
+        "Stomach",
+        "Intrauterine Devices"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Copper)-PART_OF->(Peripheral blood mononuclear cell)-PART_OF->(Brain)-LOCATION_OF->(Intrauterine Devices)",
+      "(Copper)-PART_OF->(Peripheral blood mononuclear cell)-PART_OF->(Stomach)-LOCATION_OF->(Intrauterine Devices)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Copper)-PART_OF->(Peripheral blood mononuclear cell)-PART_OF->(Brain)-LOCATION_OF->(Intrauterine Devices)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient is a smoker\" -> \"Increased risk of thromboembolic events\" -> \"Combined oral contraceptive pill contraindicated\" -> 85%",
+    "CHAIN: \"Patient has latex allergy\" -> \"Cannot use latex condoms\" -> \"Other contraceptive options available\" -> 90%",
+    "CHAIN: \"Patient has copper allergy\" -> \"Cannot use copper IUD\" -> \"Consider other IUD options\" -> 90%",
+    "CHAIN: \"Progestin-only pill is safe for smokers\" -> \"No contraindications for this method\" -> \"Recommended option\" -> 95%",
+    "CHAIN: \"Diaphragm with spermicide is not contraindicated\" -> \"Can be used safely\" -> \"Recommended option\" -> 90%"
+  ],
+  "enhanced_information": "The patient is a 36-year-old woman who smokes one pack of cigarettes daily, which increases her risk of thromboembolic events. Therefore, the combined oral contraceptive pill is contraindicated due to this risk. She has a latex allergy, which precludes the use of latex condoms, but other contraceptive options remain available. The patient also has a copper allergy, making the copper intrauterine device (IUD) unsuitable for her. The progestin-only pill is safe for smokers and has no contraindications in this case, making it a recommended option. The diaphragm with spermicide is also safe for her use. Thus, the only contraindicated method for this patient is the combined oral contraceptive pill.",
+  "analysis": "The patient is a 36-year-old woman who smokes one pack of cigarettes daily, which significantly increases her risk of thromboembolic events. According to medical guidelines, the combined oral contraceptive pill (COCP) is contraindicated in women over 35 who smoke more than 15 cigarettes per day due to this increased risk. The patient also has allergies to latex and copper, which eliminate the use of latex condoms and the copper intrauterine device (IUD), respectively. The progestin-only pill is a safe option for her, as it does not carry the same thromboembolic risk as the COCP. The diaphragm with spermicide is also safe for her use. Therefore, the only contraceptive method that is contraindicated in this patient is the combined oral contraceptive pill due to her smoking history. This aligns with established medical consensus regarding contraceptive use in smokers.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      100.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": []
+}

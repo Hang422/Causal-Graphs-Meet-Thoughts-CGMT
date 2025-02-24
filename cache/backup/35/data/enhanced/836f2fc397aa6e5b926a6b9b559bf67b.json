@@ -1,0 +1,165 @@
+{
+  "question": "A 38-year-old woman presents to her surgeon 1 year after a surgery for Crohn disease involving the removal of much of her small bowel. She had no major complications during the surgery and recovered as expected. Since then, she has noticed bone pain and weakness throughout her body. She has also had several fractures since the surgery. A panel of labs relevant to bone physiology was obtained and the results are shown below:\n\nSerum:\nPhosphate: Decreased\nCalcium: Decreased\nAlkaline phosphatase: Increased\n\nThe factor that is most likely abnormal in this patient can also be synthesized from which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "7-dehydrocholesterol",
+    "opb": "Alpha-tocopherol",
+    "opc": "Beta-carotene",
+    "opd": "Calcium-sensing receptor",
+    "ope": "Glutamyl carboxylase"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Crohn's disease",
+        "Malabsorption Syndromes"
+      ],
+      [
+        "Small intestine excision",
+        "Malabsorption Syndromes"
+      ],
+      [
+        "Calcium measurement",
+        "Liver diseases",
+        "Asthenia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Crohn's disease)-CAUSES->(Malabsorption Syndromes)",
+      "(Small intestine excision)-CAUSES->(Malabsorption Syndromes)",
+      "(Calcium measurement)-TREATS->(Liver diseases)-CAUSES->(Asthenia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Malabsorption Syndromes",
+        "Disease",
+        "physiological aspects",
+        "calcium"
+      ],
+      [
+        "Malabsorption Syndromes",
+        "Disease",
+        "Sleep, Slow-Wave",
+        "calcium"
+      ],
+      [
+        "calcium",
+        "Complication",
+        "PTH protein, human|PTH",
+        "Serum Calcium Level"
+      ],
+      [
+        "calcium",
+        "Complication",
+        "PTH protein, human|PTH",
+        "Serum Calcium Level"
+      ],
+      [
+        "Serum Calcium Level",
+        "Cardiovascular Diseases",
+        "Genes",
+        "Prostatic epithelium",
+        "Calcium measurement"
+      ],
+      [
+        "Serum Calcium Level",
+        "Cardiovascular Diseases",
+        "Genes",
+        "Endothelium",
+        "Calcium measurement"
+      ]
+    ],
+    "relationships": [
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Malabsorption Syndromes)-COMPLICATES->(Disease)-MANIFESTATION_OF->(physiological aspects)-ASSOCIATED_WITH->(calcium)",
+      "(Malabsorption Syndromes)-ISA->(Disease)-MANIFESTATION_OF->(Sleep, Slow-Wave)-ASSOCIATED_WITH->(calcium)",
+      "(calcium)-ASSOCIATED_WITH->(Complication)-ASSOCIATED_WITH->(PTH protein, human|PTH)-CAUSES->(Serum Calcium Level)",
+      "(calcium)-PREVENTS->(Complication)-ASSOCIATED_WITH->(PTH protein, human|PTH)-CAUSES->(Serum Calcium Level)",
+      "(Serum Calcium Level)-PREDISPOSES->(Cardiovascular Diseases)-ASSOCIATED_WITH->(Genes)-PART_OF->(Prostatic epithelium)-LOCATION_OF->(Calcium measurement)",
+      "(Serum Calcium Level)-PREDISPOSES->(Cardiovascular Diseases)-ASSOCIATED_WITH->(Genes)-PART_OF->(Endothelium)-LOCATION_OF->(Calcium measurement)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Small intestine excision)-CAUSES->(Malabsorption Syndromes)",
+      "(calcium)-ASSOCIATED_WITH/PREVENTS->(Complication)-ASSOCIATED_WITH->(PTH protein, human|PTH)-CAUSES->(Serum Calcium Level)",
+      "(Crohn's disease)-CAUSES->(Malabsorption Syndromes)",
+      "(Malabsorption Syndromes)-COMPLICATES->(Disease)-MANIFESTATION_OF->(physiological aspects)-ASSOCIATED_WITH->(calcium)",
+      "(Malabsorption Syndromes)-ISA->(Disease)-MANIFESTATION_OF->(Sleep, Slow-Wave)-ASSOCIATED_WITH->(calcium)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Small bowel resection for Crohn disease\" -> \"Malabsorption of nutrients\" -> \"Decreased absorption of calcium and phosphate\" -> \"Decreased serum calcium and phosphate levels\" -> \"Increased bone resorption due to low calcium levels\" -> \"Bone pain, weakness, and fractures\" -> \"Abnormal bone physiology\" -> \"Increased alkaline phosphatase due to increased bone turnover\" -> \"Abnormal bone metabolism\" -> \"Vitamin D deficiency\" -> \"7-dehydrocholesterol\" -> 95%"
+  ],
+  "enhanced_information": "The most likely abnormal factor in this patient is related to vitamin D deficiency, leading to abnormal bone metabolism. The correct option is 7-dehydrocholesterol, which can be synthesized into vitamin D. The patient's symptoms of bone pain, weakness, and fractures, along with the abnormal lab results, are indicative of vitamin D deficiency impacting bone physiology.",
+  "analysis": "The patient's symptoms of bone pain, weakness, and fractures, along with the abnormal lab results of decreased phosphate, decreased calcium, and increased alkaline phosphatase, are indicative of abnormal bone metabolism likely due to vitamin D deficiency. Vitamin D is synthesized in the skin from 7-dehydrocholesterol upon exposure to sunlight. Therefore, the most likely correct option is 7-dehydrocholesterol.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

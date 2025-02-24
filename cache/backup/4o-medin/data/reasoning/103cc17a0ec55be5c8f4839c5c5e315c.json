@@ -1,0 +1,123 @@
+{
+  "question": "A 52-year-old man is brought to the emergency department while on vacation with a history of sudden onset vertigo and difficulty walking. He was in normal health since starting his vacation a week ago, but today he is suffering from a loss of balance, mild headache, and has had 5–6 episodes of vomiting over the last few hours. He denies fever, neck pain, head trauma, weakness, and diplopia. Past medical history is significant for hypertension and dyslipidemia. His medications include valsartan and atorvastatin, but he missed several doses since leaving for this trip. Blood pressure is 198/112 mm Hg, the heart rate is 76/min, the respiratory rate is 16/min, and the temperature is 37.0°C (98.6°F). The patient is awake and oriented to time, place, and person. Extraocular movements are within normal limits. Muscle strength is normal in all 4 extremities. An urgent head CT is ordered and shown in the picture. What additional clinical features be expected in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Inability to comprehend commands",
+    "opb": "Inability to perform repetitive alternating movements",
+    "opc": "Inability to speak fluently",
+    "opd": "Right-sided neglect",
+    "ope": "Right-sided visual field loss"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Cerebrovascular accident",
+        "Lesion of brain"
+      ],
+      [
+        "CAT scan of head",
+        "Vomiting",
+        "Hypertensive disease",
+        "Lesion of brain"
+      ],
+      [
+        "CAT scan of head",
+        "Vomiting",
+        "Disease",
+        "Lesion of brain"
+      ],
+      [
+        "CAT scan of head",
+        "Headache",
+        "Disease",
+        "Lesion of brain"
+      ],
+      [
+        "Cerebellar Diseases",
+        "Intracranial Hypertension",
+        "Cerebellar lesion NOS"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Cerebrovascular accident)-CAUSES->(Lesion of brain)",
+      "(CAT scan of head)-CAUSES->(Vomiting)-CAUSES->(Hypertensive disease)-CAUSES->(Lesion of brain)",
+      "(CAT scan of head)-CAUSES->(Vomiting)-CAUSES->(Disease)-PREDISPOSES->(Lesion of brain)",
+      "(CAT scan of head)-CAUSES->(Headache)-CAUSES->(Disease)-PREDISPOSES->(Lesion of brain)",
+      "(Cerebellar Diseases)-CAUSES->(Intracranial Hypertension)-CAUSES->(Cerebellar lesion NOS)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Cerebrovascular accident)-CAUSES->(Lesion of brain)",
+      "(CAT scan of head)-CAUSES->(Vomiting)-CAUSES->(Hypertensive disease)-CAUSES->(Lesion of brain)",
+      "(CAT scan of head)-CAUSES->(Vomiting)-CAUSES->(Disease)-PREDISPOSES->(Lesion of brain)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Sudden onset vertigo\" -> \"Cerebellar dysfunction\" -> \"Inability to perform repetitive alternating movements\" -> 85%",
+    "CHAIN: \"Hypertension\" -> \"Increased risk of stroke\" -> \"Possible cerebellar stroke\" -> \"Inability to perform repetitive alternating movements\" -> 80%",
+    "CHAIN: \"Sudden onset vertigo\" -> \"Possible cerebellar involvement\" -> \"Inability to perform repetitive alternating movements\" -> 75%",
+    "CHAIN: \"Missed antihypertensive medication\" -> \"Elevated blood pressure\" -> \"Increased risk of cerebrovascular event\" -> \"Cerebellar dysfunction\" -> \"Inability to perform repetitive alternating movements\" -> 70%"
+  ],
+  "enhanced_information": "The patient presents with sudden onset vertigo, difficulty walking, and vomiting, which raises suspicion for a central nervous system event, such as a stroke. The reasoning chains indicate that cerebellar dysfunction could explain the difficulty with balance and walking, supporting the option of inability to perform repetitive alternating movements. The presence of headache and vomiting suggests increased intracranial pressure, which could affect speech centers, aligning with the option of inability to speak fluently. However, the normal extraocular movements and muscle strength reduce the likelihood of cranial nerve involvement and significant motor deficits, respectively. Right-sided neglect and visual field loss are associated with right hemisphere lesions, but the patient's symptoms do not strongly indicate a right-sided stroke. Therefore, the most likely expected clinical features in this patient are inability to perform repetitive alternating movements and possibly inability to speak fluently, while right-sided neglect and visual field loss are less supported by the current clinical presentation.",
+  "analysis": "The clinical presentation of sudden onset vertigo, difficulty walking, and vomiting in a patient with hypertension and dyslipidemia suggests a possible cerebellar stroke, likely due to ischemia or hemorrhage. The high blood pressure supports this possibility. The cerebellum is responsible for coordination and balance, and a lesion here can lead to ataxia and difficulty with coordination tasks. The inability to perform repetitive alternating movements, known as dysdiadochokinesia, is a common finding in cerebellar dysfunction.",
+  "answer": "opb",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      1,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      66.66666666666666,
+      33.33333333333333,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

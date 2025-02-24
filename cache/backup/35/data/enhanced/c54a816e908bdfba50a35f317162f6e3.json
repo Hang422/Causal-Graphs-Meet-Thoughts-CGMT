@@ -1,0 +1,148 @@
+{
+  "question": "A 71-year-old man comes to the physician because of a 2-week history of fatigue and a cough productive of a blood-tinged phlegm. Over the past month, he has had a 5.0-kg (11-lb) weight loss. He has hypertension and type 2 diabetes mellitus. Eight months ago, he underwent a kidney transplantation. The patient does not smoke. His current medications include lisinopril, insulin, prednisone, and mycophenolate mofetil. His temperature is 38.9°C (102.1°F), pulse is 88/min, and blood pressure is 152/92 mm Hg. Rhonchi are heard at the right lower lobe of the lung on auscultation. There is a small ulceration on the left forearm. An x-ray of the chest shows a right lung mass with lobar consolidation. Antibiotic therapy with levofloxacin is started. Three days later, the patient has a seizure and difficulty coordinating movements with his left hand. An MRI of the brain shows an intraparenchymal lesion with peripheral ring enhancement. Bronchoscopy with bronchoalveolar lavage yields weakly acid-fast, gram-positive bacteria with branching, filamentous shapes. Which of the following is the most appropriate initial pharmacotherapy?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Rifampin, isoniazid, pyrazinamide, and ethambutol",
+    "opb": "Vancomycin",
+    "opc": "Piperacillin/tazobactam",
+    "opd": "Trimethoprim/sulfamethoxazole",
+    "ope": "Erythromycin"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Dimercaprol",
+        "Disease",
+        "Gram-Positive Bacteria"
+      ],
+      [
+        "Dimercaprol",
+        "Pneumonia",
+        "Gram-Positive Bacteria"
+      ],
+      [
+        "Bronchoscopy",
+        "Disease",
+        "Gram-Positive Bacteria"
+      ],
+      [
+        "Bronchoscopy",
+        "Communicable Diseases",
+        "Gram-Positive Bacteria"
+      ],
+      [
+        "Bronchoscopy",
+        "Pneumonia",
+        "Gram-Positive Bacteria"
+      ],
+      [
+        "Gram-Positive Bacteria",
+        "Nocardia Infections"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "PREVENTS",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Dimercaprol)-TREATS->(Disease)-PROCESS_OF->(Gram-Positive Bacteria)",
+      "(Dimercaprol)-TREATS->(Pneumonia)-PROCESS_OF->(Gram-Positive Bacteria)",
+      "(Bronchoscopy)-CAUSES->(Disease)-PROCESS_OF->(Gram-Positive Bacteria)",
+      "(Bronchoscopy)-CAUSES->(Communicable Diseases)-PROCESS_OF->(Gram-Positive Bacteria)",
+      "(Bronchoscopy)-PREVENTS->(Pneumonia)-PROCESS_OF->(Gram-Positive Bacteria)",
+      "(Gram-Positive Bacteria)-CAUSES->(Nocardia Infections)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Nocardia Infections",
+        "Disease",
+        "Pathogenesis",
+        "NPM1 gene|NPM1",
+        "Ethambutol"
+      ],
+      [
+        "Nocardia Infections",
+        "Disease",
+        "Pathogenesis",
+        "NPM1 gene|NPM1",
+        "Ethambutol"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Nocardia Infections)-CAUSES->(Disease)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(NPM1 gene|NPM1)-INTERACTS_WITH->(Ethambutol)",
+      "(Nocardia Infections)-ISA->(Disease)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(NPM1 gene|NPM1)-INTERACTS_WITH->(Ethambutol)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Dimercaprol)-TREATS->(Disease)-PROCESS_OF->(Gram-Positive Bacteria)",
+      "(Dimercaprol)-TREATS->(Pneumonia)-PROCESS_OF->(Gram-Positive Bacteria)",
+      "(Gram-Positive Bacteria)-CAUSES->(Nocardia Infections)",
+      "(Bronchoscopy)-CAUSES->(Disease)-PROCESS_OF->(Gram-Positive Bacteria)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Pulmonary mass with lobar consolidation -> Bronchoscopy with bronchoalveolar lavage -> Identification of weakly acid-fast, gram-positive bacteria with branching, filamentous shapes -> Likely Nocardia infection -> Initial pharmacotherapy with Rifampin, isoniazid, pyrazinamide, and ethambutol -> 85%"
+  ],
+  "enhanced_information": "The most appropriate initial pharmacotherapy for the patient with a likely Nocardia infection presenting with a pulmonary mass and lobar consolidation is Rifampin, isoniazid, pyrazinamide, and ethambutol. This choice is supported by the identification of weakly acid-fast, gram-positive bacteria with branching, filamentous shapes on bronchoscopy, indicating a Nocardia infection. Relevant evidence paths confirm the link between gram-positive bacteria and Nocardia infections, supporting the choice of this antibiotic regimen.",
+  "analysis": "The patient's presentation with a lung mass, lobar consolidation, and weakly acid-fast, gram-positive bacteria with branching, filamentous shapes on bronchoscopy suggests a Nocardia infection. The most appropriate initial pharmacotherapy for Nocardia infection is a combination of Rifampin, isoniazid, pyrazinamide, and ethambutol. This regimen is effective against Nocardia species and aligns with the enhanced information provided.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

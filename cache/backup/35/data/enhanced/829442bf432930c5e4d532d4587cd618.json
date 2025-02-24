@@ -1,0 +1,150 @@
+{
+  "question": "A 35-year-old man comes to the physician because of a 4-month history of intermittent headaches. They have been getting progressively worse and no longer respond to ibuprofen. He also complains of weight gain and excessive sweating. Physical examination shows prominent supraorbital ridges, prognathism, macroglossia with thick lips, and disproportionately broad hands and feet. There is decreased peripheral vision bilaterally on visual field testing. An MRI of the brain shows a mass in the sella turcica. Genetic analysis of a biopsy specimen from the mass shows cells that overexpress adenylyl cyclase. Which of the following is the most appropriate pharmacotherapy for this condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Methimazole",
+    "opb": "Octreotide",
+    "opc": "Leuprolide",
+    "opd": "Risperidone",
+    "ope": "Metyrapone"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Somatotropin",
+        "Acromegaly"
+      ],
+      [
+        "Acromegaly",
+        "Disease",
+        "Hearing",
+        "Pes"
+      ],
+      [
+        "Acromegaly",
+        "Disease",
+        "physiological aspects",
+        "Pes"
+      ],
+      [
+        "Acromegaly",
+        "Disease",
+        "biological adaptation to stress",
+        "Pes"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Somatotropin)-TREATS->(Acromegaly)",
+      "(Acromegaly)-CAUSES->(Disease)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Pes)",
+      "(Acromegaly)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Pes)",
+      "(Acromegaly)-COMPLICATES->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-PROCESS_OF->(Pes)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Structure of pituitary fossa",
+        "Disease",
+        "Diastasis",
+        "Adenylate Cyclase"
+      ],
+      [
+        "Structure of pituitary fossa",
+        "Disease",
+        "Diastasis",
+        "Adenylate Cyclase"
+      ],
+      [
+        "Adenylate Cyclase",
+        "Fibroblasts",
+        "cyclic AMP"
+      ],
+      [
+        "cyclic AMP",
+        "Inflammation",
+        "Somatotropin"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "PREVENTS",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Structure of pituitary fossa)-LOCATION_OF->(Disease)-PREDISPOSES->(Diastasis)-ASSOCIATED_WITH->(Adenylate Cyclase)",
+      "(Structure of pituitary fossa)-LOCATION_OF->(Disease)-MANIFESTATION_OF->(Diastasis)-ASSOCIATED_WITH->(Adenylate Cyclase)",
+      "(Adenylate Cyclase)-INTERACTS_WITH->(Fibroblasts)-LOCATION_OF->(cyclic AMP)",
+      "(cyclic AMP)-PREVENTS->(Inflammation)-ASSOCIATED_WITH->(Somatotropin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Somatotropin)-TREATS->(Acromegaly)",
+      "(Adenylate Cyclase)-INTERACTS_WITH->(Fibroblasts)-LOCATION_OF->(cyclic AMP)",
+      "(Structure of pituitary fossa)-LOCATION_OF->(Disease)-MANIFESTATION_OF/PREDISPOSES->(Diastasis)-ASSOCIATED_WITH->(Adenylate Cyclase)",
+      "(cyclic AMP)-PREVENTS->(Inflammation)-ASSOCIATED_WITH->(Somatotropin)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Mass in the sella turcica\" -> \"Overexpression of adenylyl cyclase\" -> \"Increased production of cyclic adenosine monophosphate (cAMP)\" -> \"Excessive growth hormone secretion\" -> \"Acromegaly symptoms\" -> \"Prominent supraorbital ridges, prognathism, macroglossia, thick lips, broad hands and feet\" -> \"Decreased peripheral vision\" -> \"Bilateral visual field defects\" -> \"Pituitary adenoma\" -> \"Octreotide therapy\" -> 95%"
+  ],
+  "enhanced_information": "The patient presents with symptoms of acromegaly, likely due to a pituitary adenoma leading to excessive growth hormone secretion. The overexpression of adenylyl cyclase results in increased cAMP production. Octreotide, a somatostatin analog, is the most appropriate pharmacotherapy for this condition to inhibit growth hormone secretion. Evidence supports the use of octreotide in treating acromegaly.",
+  "analysis": "The patient presents with symptoms consistent with acromegaly, likely due to a pituitary adenoma causing excessive growth hormone secretion. The genetic analysis showing overexpression of adenylyl cyclase indicates increased cAMP production. The most appropriate pharmacotherapy for this condition is octreotide, a somatostatin analog known to inhibit growth hormone secretion. Evidence supports the use of octreotide in treating acromegaly.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

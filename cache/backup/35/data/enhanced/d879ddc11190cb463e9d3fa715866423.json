@@ -1,0 +1,104 @@
+{
+  "question": "A 67-year-old man comes to the physician because of numbness and burning sensation of his legs for the past week. He also complains that his stools have been larger and rougher than usual. He has non-Hodgkin lymphoma and is currently receiving chemotherapy with prednisone, vincristine, rituximab, cyclophosphamide, and doxorubicin. He has received 4 cycles of chemotherapy, and his last chemotherapy cycle was 2 weeks ago. His temperature is 37.1°C (98.8°F), pulse is 89/min, and blood pressure is 122/80 mm Hg. Examination shows decreased muscle strength in the distal muscles of the lower extremities. Ankle jerk is 1+ bilaterally and knee reflex is 2+ bilaterally. Sensation to pain, vibration, and position is decreased over the lower extremities. Serum concentrations of glucose, creatinine, electrolytes, and calcium are within the reference range. Which of the following is the most likely cause of this patient's symptoms?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Adverse effect of vincristine",
+    "opb": "Spinal cord compression",
+    "opc": "Paraneoplastic autoantibodies",
+    "opd": "Guillain-Barré syndrome",
+    "ope": "Charcot–Marie–Tooth disease"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Vincristine",
+        "Peripheral Neuropathy"
+      ],
+      [
+        "Pharmacotherapy",
+        "Peripheral Neuropathy"
+      ],
+      [
+        "Peripheral Neuropathy",
+        "Symptoms",
+        "Burning sensation"
+      ],
+      [
+        "Peripheral Neuropathy",
+        "Neuropathy",
+        "Burning sensation"
+      ],
+      [
+        "Peripheral Neuropathy",
+        "Syndrome",
+        "Burning sensation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Vincristine)-CAUSES->(Peripheral Neuropathy)",
+      "(Pharmacotherapy)-CAUSES->(Peripheral Neuropathy)",
+      "(Peripheral Neuropathy)-CAUSES->(Symptoms)-CAUSES->(Burning sensation)",
+      "(Peripheral Neuropathy)-CAUSES->(Neuropathy)-CAUSES->(Burning sensation)",
+      "(Peripheral Neuropathy)-CAUSES->(Syndrome)-CAUSES->(Burning sensation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Peripheral Neuropathy)-CAUSES->(Symptoms)-CAUSES->(Burning sensation)",
+      "(Vincristine)-CAUSES->(Peripheral Neuropathy)",
+      "(Pharmacotherapy)-CAUSES->(Peripheral Neuropathy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Chemotherapy with vincristine -> peripheral neuropathy -> numbness and burning sensation in legs -> 80% CHAIN: Vincristine-induced peripheral neuropathy -> decreased muscle strength in distal lower extremities -> 70% CHAIN: Vincristine-induced peripheral neuropathy -> decreased ankle jerk reflex -> 60% CHAIN: Vincristine-induced peripheral neuropathy -> decreased sensation to pain, vibration, and position in lower extremities -> 70% CHAIN: Vincristine-induced peripheral neuropathy -> larger and rougher stools -> 80%"
+  ],
+  "enhanced_information": "The most likely cause of this patient's symptoms is the adverse effect of vincristine, leading to vincristine-induced peripheral neuropathy. This is supported by the patient's history of chemotherapy with vincristine, which can cause peripheral neuropathy manifesting as numbness, burning sensation in legs, decreased muscle strength in distal lower extremities, decreased ankle jerk reflex, and decreased sensation to pain, vibration, and position in lower extremities. The presence of larger and rougher stools is also consistent with this adverse effect.",
+  "analysis": "The patient's symptoms of numbness, burning sensation in legs, decreased muscle strength, decreased ankle jerk reflex, and sensory deficits in the lower extremities are consistent with peripheral neuropathy. Given the patient's history of receiving vincristine, a known chemotherapy agent associated with peripheral neuropathy, and the enhanced information provided, the most likely cause of the symptoms is the adverse effect of vincristine, leading to vincristine-induced peripheral neuropathy.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

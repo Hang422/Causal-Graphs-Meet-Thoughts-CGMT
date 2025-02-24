@@ -1,0 +1,143 @@
+{
+  "question": "A 55-year-old Caucasian male presents for a routine colonoscopy. A polyp is found in the patient's transverse colon and is found to be cancerous on histological evaluation. Upon examination, it is found that these cancerous cells have decreased MHC class I expression on their surface. Which immune system cell is most capable of killing these tumor cells?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Natural killer cells",
+    "opb": "B-cells",
+    "opc": "Macrophages",
+    "opd": "Eosinophils",
+    "ope": "Cytotoxic T-cells"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Natural Killer Cells",
+        "[M]Unspecified tumor cell NOS"
+      ],
+      [
+        "Major Histocompatibility Complex",
+        "Epithelium",
+        "Detection"
+      ],
+      [
+        "Major Histocompatibility Complex",
+        "Human tissue",
+        "Detection"
+      ],
+      [
+        "Detection",
+        "Virus",
+        "Amino Acids",
+        "Natural Killer Cells"
+      ],
+      [
+        "Detection",
+        "Virus",
+        "RUNX3 gene|RUNX3",
+        "Natural Killer Cells"
+      ],
+      [
+        "Major Histocompatibility Complex",
+        "T-Lymphocyte",
+        "Tumor Antigens"
+      ],
+      [
+        "Major Histocompatibility Complex",
+        "Lymphocyte",
+        "Tumor Antigens"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PREVENTS",
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PART_OF",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Natural Killer Cells)-INTERACTS_WITH->([M]Unspecified tumor cell NOS)",
+      "(Major Histocompatibility Complex)-PART_OF->(Epithelium)-LOCATION_OF->(Detection)",
+      "(Major Histocompatibility Complex)-PART_OF->(Human tissue)-LOCATION_OF->(Detection)",
+      "(Detection)-TREATS->(Virus)-LOCATION_OF->(Amino Acids)-INTERACTS_WITH->(Natural Killer Cells)",
+      "(Detection)-PREVENTS->(Virus)-LOCATION_OF->(RUNX3 gene|RUNX3)-PART_OF->(Natural Killer Cells)",
+      "(Major Histocompatibility Complex)-INTERACTS_WITH->(T-Lymphocyte)-INTERACTS_WITH->(Tumor Antigens)",
+      "(Major Histocompatibility Complex)-PART_OF->(Lymphocyte)-INTERACTS_WITH->(Tumor Antigens)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Natural Killer Cells)-INTERACTS_WITH->([M]Unspecified tumor cell NOS)",
+      "(Major Histocompatibility Complex)-PART_OF->(Epithelium)-LOCATION_OF->(Detection)",
+      "(Major Histocompatibility Complex)-PART_OF->(Human tissue)-LOCATION_OF->(Detection)",
+      "(Detection)-TREATS->(Virus)-LOCATION_OF->(Amino Acids)-INTERACTS_WITH->(Natural Killer Cells)",
+      "(Detection)-PREVENTS->(Virus)-LOCATION_OF->(RUNX3 gene|RUNX3)-PART_OF->(Natural Killer Cells)",
+      "(Major Histocompatibility Complex)-INTERACTS_WITH->(T-Lymphocyte)-INTERACTS_WITH->(Tumor Antigens)",
+      "(Major Histocompatibility Complex)-PART_OF->(Lymphocyte)-INTERACTS_WITH->(Tumor Antigens)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Cancerous cells with decreased MHC class I\" -> \"reduced recognition by cytotoxic T-cells\" -> \"increased susceptibility to natural killer cells\" -> \"natural killer cells can kill these tumor cells\" -> 95%",
+    "CHAIN: \"Cancerous cells with decreased MHC class I\" -> \"impaired antigen presentation\" -> \"cytotoxic T-cells less effective\" -> \"natural killer cells can recognize and kill\" -> 90%",
+    "CHAIN: \"Cancerous cells with decreased MHC class I\" -> \"evade detection by adaptive immune response\" -> \"natural killer cells can detect stress signals\" -> \"natural killer cells are activated\" -> 85%",
+    "CHAIN: \"Cancerous cells with decreased MHC class I\" -> \"reduced ability to present tumor antigens\" -> \"cytotoxic T-cells less likely to engage\" -> \"natural killer cells can still respond\" -> 80%"
+  ],
+  "enhanced_information": "Cancerous cells with decreased MHC class I expression are less recognizable by cytotoxic T-cells, which rely on MHC class I for antigen presentation. This reduction in MHC class I allows these tumor cells to evade detection by the adaptive immune response. However, natural killer (NK) cells can recognize and kill these tumor cells due to their ability to detect stress signals and the absence of MHC class I. Therefore, NK cells are the most capable immune cells of targeting and eliminating these cancerous cells. This reasoning aligns with the consensus that NK cells play a crucial role in recognizing and destroying cells with reduced MHC class I expression.",
+  "analysis": "In this scenario, the cancerous cells have decreased MHC class I expression, which is a mechanism that tumors often use to evade detection by the adaptive immune system, particularly cytotoxic T-cells (CD8+ T-cells). These T-cells rely on MHC class I molecules to recognize and kill infected or cancerous cells. However, natural killer (NK) cells are part of the innate immune system and can recognize and kill cells that have low or absent MHC class I expression. This ability allows NK cells to target tumor cells that have downregulated MHC class I as a means of immune evasion. Therefore, the most capable immune system cell for killing these tumor cells is the natural killer cell. This reasoning is supported by the consensus in immunology regarding the roles of different immune cells in tumor surveillance and elimination.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      25.0,
+      0.0,
+      50.0,
+      25.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

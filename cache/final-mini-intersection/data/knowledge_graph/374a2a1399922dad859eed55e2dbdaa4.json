@@ -1,0 +1,108 @@
+{
+  "question": "A 8-month-old girl is brought to her pediatrician because her mom is concerned that she may have a \"lazy eye\". She was born prematurely at 33 weeks and was 3 pounds at birth. Her mother also says that there is a history of visual problems that run in the family, which is why she wanted to make sure that her daughter was evaluated early. On presentation, she is found to have eyes that are misaligned both horizontally and vertically. Physical examination and labs reveal no underlying disorders, and the patient is discharged with occlusion therapy to help correct the misalignment. Which of the following would most likely have also been seen on physical exam?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Asymmetric corneal light reflex",
+    "opb": "Bitemporal hemianopsia",
+    "opc": "Increased intraocular pressure",
+    "opd": "Fundus neovascularization",
+    "ope": "Nystagmus"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Retinal Diseases",
+        "Pathologic Neovascularization"
+      ],
+      [
+        "Retinal Diseases",
+        "Pathologic Neovascularization"
+      ],
+      [
+        "Nystagmus",
+        "Strabismus"
+      ],
+      [
+        "Strabismus",
+        "Nystagmus"
+      ],
+      [
+        "Strabismus",
+        "Nystagmus"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Retinal Diseases)-CAUSES->(Pathologic Neovascularization)",
+      "(Retinal Diseases)-PREDISPOSES->(Pathologic Neovascularization)",
+      "(Nystagmus)-CAUSES->(Strabismus)",
+      "(Strabismus)-PREDISPOSES->(Nystagmus)",
+      "(Strabismus)-CAUSES->(Nystagmus)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Nystagmus)-CAUSES->(Strabismus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"8-month-old girl with misaligned eyes\" -> \"possible strabismus\" -> \"asymmetric corneal light reflex\" -> 85%",
+    "CHAIN: \"8-month-old girl with misaligned eyes\" -> \"possible neurological involvement\" -> \"bitemporal hemianopsia unlikely\" -> \"low confidence\" -> 30%",
+    "CHAIN: \"8-month-old girl with misaligned eyes\" -> \"no underlying disorders found\" -> \"increased intraocular pressure unlikely\" -> \"low confidence\" -> 25%",
+    "CHAIN: \"8-month-old girl with misaligned eyes\" -> \"premature birth history\" -> \"risk for retinopathy of prematurity\" -> \"fundus neovascularization possible\" -> \"unclear\" -> 50%",
+    "CHAIN: \"8-month-old girl with misaligned eyes\" -> \"possible nystagmus\" -> \"common in strabismus\" -> \"nystagmus likely\" -> 70%"
+  ],
+  "enhanced_information": "The 8-month-old girl with misaligned eyes is likely experiencing strabismus, which is characterized by misalignment of the eyes. A common finding in strabismus is an asymmetric corneal light reflex, indicating a deviation in eye alignment. The possibility of bitemporal hemianopsia is unlikely in this case, as it typically suggests a neurological issue, which is not supported by the absence of underlying disorders. Increased intraocular pressure is also unlikely given the normal examination findings. While the history of premature birth raises concern for retinopathy of prematurity, fundus neovascularization is not a direct finding associated with strabismus itself. Nystagmus can occur in conjunction with strabismus, but it is not a definitive finding in this case. Therefore, the most likely finding on physical exam would be an asymmetric corneal light reflex, which aligns with the consensus on strabismus evaluation.",
+  "analysis": "The 8-month-old girl is likely experiencing strabismus, which is characterized by misalignment of the eyes. A common finding in strabismus is an asymmetric corneal light reflex, which indicates a deviation in eye alignment. The other options, such as bitemporal hemianopsia, increased intraocular pressure, fundus neovascularization, and nystagmus, are less likely based on the information provided. Bitemporal hemianopsia suggests a neurological issue, which is not supported by the absence of underlying disorders. Increased intraocular pressure is unlikely given the normal examination findings. Fundus neovascularization is associated with retinopathy of prematurity but is not a direct finding of strabismus itself. Nystagmus can occur with strabismus but is not a definitive finding. Therefore, the most likely finding on physical exam would be an asymmetric corneal light reflex, which aligns with the consensus on strabismus evaluation.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      1,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      33.33333333333333,
+      66.66666666666666
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

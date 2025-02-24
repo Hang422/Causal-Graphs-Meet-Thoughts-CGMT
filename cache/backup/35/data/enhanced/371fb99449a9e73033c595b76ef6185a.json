@@ -1,0 +1,151 @@
+{
+  "question": "A 16-year-old girl is brought to the physician because of a 1-month history of fever, headaches, and profound fatigue. Her temperature is 38.2°C (100.8°F). Examination shows splenomegaly. Laboratory studies show:\nLeukocyte count 13,000/mm3 (15% atypical lymphocytes)\nSerum\nAlanine aminotransferase (ALT) 60 U/L\nAspartate aminotransferase (AST) 40 U/L\nHeterophile antibody assay negative\nEBV viral capsid antigen (VCA) antibodies negative\nHIV antibody negative\nIn an immunocompromised host, the causal organism of this patient's symptoms would most likely cause which of the following conditions?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Multiple cerebral abscesses with surrounding edema",
+    "opb": "Diffuse pulmonary infiltrates with pneumatoceles",
+    "opc": "Purplish skin nodules on the distal extremities",
+    "opd": "Non-scrapable white patches on the lateral tongue",
+    "ope": "Linear ulcers near the lower esophageal sphincter"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Splenomegaly",
+        "Disease",
+        "Fatigue"
+      ],
+      [
+        "Splenomegaly",
+        "Infection",
+        "Fatigue"
+      ],
+      [
+        "Splenomegaly",
+        "Symptoms",
+        "Fatigue"
+      ],
+      [
+        "Opportunistic Infections",
+        "Disease",
+        "Edema"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Splenomegaly)-CAUSES->(Disease)-CAUSES->(Fatigue)",
+      "(Splenomegaly)-CAUSES->(Infection)-CAUSES->(Fatigue)",
+      "(Splenomegaly)-CAUSES->(Symptoms)-CAUSES->(Fatigue)",
+      "(Opportunistic Infections)-CAUSES->(Disease)-CAUSES->(Edema)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Herpesvirus 4, Human",
+        "cytokine",
+        "Lymphocyte"
+      ],
+      [
+        "Herpesvirus 4, Human",
+        "Hydrocortisone",
+        "Lymphocyte"
+      ],
+      [
+        "Lymphocyte",
+        "Pharmaceutical Preparations",
+        "Splenomegaly"
+      ],
+      [
+        "Lymphocyte",
+        "Pharmaceutical Preparations",
+        "Splenomegaly"
+      ],
+      [
+        "Blood",
+        "Splenomegaly"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PREVENTS"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Herpesvirus 4, Human)-LOCATION_OF->(cytokine)-INTERACTS_WITH->(Lymphocyte)",
+      "(Herpesvirus 4, Human)-LOCATION_OF->(Hydrocortisone)-PART_OF->(Lymphocyte)",
+      "(Lymphocyte)-LOCATION_OF->(Pharmaceutical Preparations)-PREVENTS->(Splenomegaly)",
+      "(Lymphocyte)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Splenomegaly)",
+      "(Blood)-LOCATION_OF->(Splenomegaly)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Herpesvirus 4, Human)-LOCATION_OF->(cytokine)-INTERACTS_WITH->(Lymphocyte)",
+      "(Splenomegaly)-CAUSES->(Symptoms)-CAUSES->(Fatigue)",
+      "(Blood)-LOCATION_OF->(Splenomegaly)",
+      "(Splenomegaly)-CAUSES->(Disease)-CAUSES->(Fatigue)",
+      "(Splenomegaly)-CAUSES->(Infection)-CAUSES->(Fatigue)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Epstein-Barr virus (EBV) infection -> atypical lymphocytes in the blood -> splenomegaly -> fever, headaches, fatigue -> immunocompromised state -> opportunistic infections -> multiple cerebral abscesses with surrounding edema -> 85%"
+  ],
+  "enhanced_information": "Epstein-Barr virus (EBV) infection can lead to atypical lymphocytes in the blood, splenomegaly, fever, headaches, and fatigue. In an immunocompromised state, opportunistic infections are common. The causal organism in this patient's symptoms would most likely cause multiple cerebral abscesses with surrounding edema.",
+  "analysis": "The core medical principle here is understanding the manifestations of Epstein-Barr virus (EBV) infection, which can lead to atypical lymphocytes, splenomegaly, fever, headaches, and fatigue. In an immunocompromised state, opportunistic infections are common. Given the enhanced information provided, the causal organism in this patient's symptoms would most likely cause multiple cerebral abscesses with surrounding edema.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

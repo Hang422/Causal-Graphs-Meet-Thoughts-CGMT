@@ -1,0 +1,118 @@
+{
+  "question": "A 49-year-old man presents to his physician complaining of weakness and fatigue. On exam, you note significant peripheral edema. Transthoracic echocardiogram is performed and reveals a preserved ejection fraction with impaired diastolic relaxation. A representative still image is shown in Image A. Which of the following is likely the cause of this patient's symptoms?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Previous treatment with doxorubicin",
+    "opb": "Hemochromatosis",
+    "opc": "Heavy, long-term alcohol consumption",
+    "opd": "History of myocardial infarction",
+    "ope": "History of a recent viral infection"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Echocardiography",
+        "Disease",
+        "[D]Peripheral edema"
+      ],
+      [
+        "Echocardiography",
+        "Congestive heart failure",
+        "[D]Peripheral edema"
+      ],
+      [
+        "Echocardiography",
+        "Heart failure",
+        "[D]Peripheral edema"
+      ],
+      [
+        "Echocardiography",
+        "Disease",
+        "Diastolic dysfunction"
+      ],
+      [
+        "Echocardiography",
+        "Obesity",
+        "Diastolic dysfunction"
+      ],
+      [
+        "Echocardiography",
+        "Myocardial Infarction",
+        "Diastolic dysfunction"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Echocardiography)-CAUSES->(Disease)-CAUSES->([D]Peripheral edema)",
+      "(Echocardiography)-CAUSES->(Congestive heart failure)-CAUSES->([D]Peripheral edema)",
+      "(Echocardiography)-CAUSES->(Heart failure)-CAUSES->([D]Peripheral edema)",
+      "(Echocardiography)-CAUSES->(Disease)-CAUSES->(Diastolic dysfunction)",
+      "(Echocardiography)-CAUSES->(Obesity)-CAUSES->(Diastolic dysfunction)",
+      "(Echocardiography)-CAUSES->(Myocardial Infarction)-CAUSES->(Diastolic dysfunction)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Echocardiography)-CAUSES->(Myocardial Infarction)-CAUSES->(Diastolic dysfunction)",
+      "(Echocardiography)-CAUSES->(Disease)-CAUSES->(Diastolic dysfunction)",
+      "(Echocardiography)-CAUSES->(Obesity)-CAUSES->(Diastolic dysfunction)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Impaired diastolic relaxation on echocardiogram\" -> \"Peripheral edema\" -> \"Heart failure symptoms\" -> 80% CHAIN: \"Impaired diastolic relaxation on echocardiogram\" -> \"Preserved ejection fraction\" -> \"Diastolic heart failure\" -> 75% CHAIN: \"Impaired diastolic relaxation on echocardiogram\" -> \"Diastolic dysfunction\" -> \"Heart failure symptoms\" -> 80%"
+  ],
+  "enhanced_information": "The likely cause of this patient's symptoms is heavy, long-term alcohol consumption, leading to alcoholic cardiomyopathy. This is supported by the presence of impaired diastolic relaxation on echocardiogram, preserved ejection fraction, and the manifestation of heart failure symptoms. The evidence paths do not provide additional relevant support in this context.",
+  "analysis": "The patient's presentation of weakness, fatigue, peripheral edema, preserved ejection fraction, and impaired diastolic relaxation on echocardiogram is highly suggestive of alcoholic cardiomyopathy. This condition is commonly seen in individuals with heavy, long-term alcohol consumption. Other options like doxorubicin toxicity, hemochromatosis, history of myocardial infarction, or recent viral infection are less likely to cause this specific pattern of findings.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

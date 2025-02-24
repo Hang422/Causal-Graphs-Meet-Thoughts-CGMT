@@ -1,0 +1,152 @@
+{
+  "question": "A 27-year-old woman comes to the physician because of a 2-day history of severe burning pain with urination, and urinary frequency. She has no history of serious illness. The patient and her husband are currently trying to conceive a child. Her only medication is a prenatal multivitamin. Her temperature is 36.5°C (97.7°F), pulse is 75/min, and blood pressure is 125/78 mm Hg. Examination shows mild tenderness to palpation over the suprapubic region. There is no costovertebral angle tenderness. The remainder of the examination shows no abnormalities. Laboratory studies show:\nHemoglobin 14.8 g/dL\nLeukocyte count 8,200/mm3\nPlatelet count 230,000/mm3\nUrine\npH 7\nWBC 52/hpf\nRBC 17/hpf\nProtein negative\nNitrites positive\nLeukocyte esterase positive\nA urine pregnancy test is negative. Which of the following is the most appropriate next step in management?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Oral ciprofloxacin",
+    "opb": "Reassurance and follow-up in 2 weeks",
+    "opc": "Urinary catheterization",
+    "opd": "Oral fosfomycin",
+    "ope": "Urine culture\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pain, Burning",
+        "Symptoms",
+        "Urinary tract infection"
+      ],
+      [
+        "Pain, Burning",
+        "Thrombophlebitis",
+        "Urinary tract infection"
+      ],
+      [
+        "Pain, Burning",
+        "Disease",
+        "Urinary tract infection"
+      ],
+      [
+        "Leucocyte esterase",
+        "Urinary symptoms",
+        "Urinary tract infection"
+      ],
+      [
+        "Leucocyte esterase",
+        "Discharge, body substance",
+        "Urinary tract infection"
+      ],
+      [
+        "Nitrites",
+        "Urinary tract infection"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Pain, Burning)-CAUSES->(Symptoms)-CAUSES->(Urinary tract infection)",
+      "(Pain, Burning)-CAUSES->(Thrombophlebitis)-COMPLICATES->(Urinary tract infection)",
+      "(Pain, Burning)-PREDISPOSES->(Disease)-CAUSES->(Urinary tract infection)",
+      "(Leucocyte esterase)-CAUSES->(Urinary symptoms)-CAUSES->(Urinary tract infection)",
+      "(Leucocyte esterase)-CAUSES->(Discharge, body substance)-PREDISPOSES->(Urinary tract infection)",
+      "(Nitrites)-TREATS->(Urinary tract infection)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Urine for culture",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "Neurons",
+        "brain tissue surgical material",
+        "Providing presence (regime/therapy)"
+      ],
+      [
+        "Urine for culture",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "Neurons",
+        "brain tissue surgical material",
+        "Providing presence (regime/therapy)"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Urine for culture)-DIAGNOSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-PART_OF->(Neurons)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy))",
+      "(Urine for culture)-DIAGNOSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Neurons)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy))"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Nitrites)-TREATS->(Urinary tract infection)",
+      "(Leucocyte esterase)-CAUSES->(Urinary symptoms)-CAUSES->(Urinary tract infection)",
+      "(Leucocyte esterase)-CAUSES->(Discharge, body substance)-PREDISPOSES->(Urinary tract infection)",
+      "(Urine for culture)-DIAGNOSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH/PART_OF->(Neurons)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Symptoms of burning pain with urination and urinary frequency\" -> \"suggest urinary tract infection (UTI)\" -> \"moderate confidence\" -> 80% CHAIN: \"Positive nitrites and leukocyte esterase in urine\" -> \"indicative of UTI\" -> \"high confidence\" -> 90% CHAIN: \"Negative urine pregnancy test\" -> \"rules out pregnancy-related causes of symptoms\" -> \"high confidence\" -> 95% CHAIN: \"Next step: Urine culture\" -> \"to confirm the presence of UTI pathogens\" -> \"high confidence\" -> 80%"
+  ],
+  "enhanced_information": "The patient's symptoms of burning pain with urination, urinary frequency, positive nitrites, and leukocyte esterase in urine suggest a urinary tract infection (UTI). The negative urine pregnancy test rules out pregnancy-related causes. The most appropriate next step is to perform a urine culture to confirm the presence of UTI pathogens, aligning with standard practice.",
+  "analysis": "The patient's symptoms, along with the positive nitrites and leukocyte esterase in urine, strongly suggest a urinary tract infection (UTI). Given the negative urine pregnancy test ruling out pregnancy-related causes, the most appropriate next step is to perform a urine culture to confirm the presence of UTI pathogens. This aligns with standard practice in managing UTIs.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

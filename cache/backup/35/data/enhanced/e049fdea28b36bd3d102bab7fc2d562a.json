@@ -1,0 +1,150 @@
+{
+  "question": "A 24-year-old man with type 1 diabetes mellitus is brought to the emergency department because of weakness, abdominal pain, nausea, and one episode of vomiting for 1 day. He has not taken his insulin for 3 days. His pulse is 125/min and respirations are 29/min. Examination shows dry mucous membranes. His breath has a fruity odor. Which of the following sets of laboratory values is most likely on evaluation of urine obtained before treatment?\n $$$ pH %%% HCO3- %%% NH4+ %%% K+ $$$?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "↓ ↓ ↑ ↑",
+    "opb": "↓ normal ↓ ↓",
+    "opc": "↓ ↑ normal ↑",
+    "opd": "↑ ↑ normal ↑",
+    "ope": "↓ ↓ ↑ ↓"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Insulin",
+        "Finding of blood glucose level"
+      ],
+      [
+        "Ketosis",
+        "Acidosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Insulin)-CAUSES->(Finding of blood glucose level)",
+      "(Ketosis)-CAUSES->(Acidosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Pathogenesis",
+        "Insulin"
+      ],
+      [
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Abnormal renal function",
+        "Insulin"
+      ],
+      [
+        "Finding of blood glucose level",
+        "Disease",
+        "Virus",
+        "S100B",
+        "Adipose tissue"
+      ],
+      [
+        "Finding of blood glucose level",
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Virus",
+        "S100B",
+        "Adipose tissue"
+      ],
+      [
+        "Adipose tissue",
+        "Infection",
+        "Acidosis"
+      ],
+      [
+        "Adipose tissue",
+        "Pharmaceutical Preparations",
+        "Acidosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "INTERACTS_WITH",
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "PREVENTS"
+      ]
+    ],
+    "paths": [
+      "(Diabetes Mellitus, Insulin-Dependent)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Insulin)",
+      "(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Abnormal renal function)-ASSOCIATED_WITH->(Insulin)",
+      "(Finding of blood glucose level)-PREDISPOSES->(Disease)-ASSOCIATED_WITH->(Virus)-LOCATION_OF->(S100B)-PART_OF->(Adipose tissue)",
+      "(Finding of blood glucose level)-PREDISPOSES->(Diabetes Mellitus, Insulin-Dependent)-INTERACTS_WITH->(Virus)-LOCATION_OF->(S100B)-PART_OF->(Adipose tissue)",
+      "(Adipose tissue)-LOCATION_OF->(Infection)-CAUSES->(Acidosis)",
+      "(Adipose tissue)-LOCATION_OF->(Pharmaceutical Preparations)-PREVENTS->(Acidosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Diabetes Mellitus, Insulin-Dependent)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Insulin)",
+      "(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Abnormal renal function)-ASSOCIATED_WITH->(Insulin)",
+      "(Insulin)-CAUSES->(Finding of blood glucose level)",
+      "(Ketosis)-CAUSES->(Acidosis)",
+      "(Adipose tissue)-LOCATION_OF->(Infection)-CAUSES->(Acidosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Type 1 diabetes mellitus\" -> \"lack of insulin production\" -> \"increased blood glucose levels\" -> \"ketosis due to fat breakdown\" -> \"acidosis\" -> \"low pH in urine\" -> \"increased NH4+ in urine\" -> \"increased K+ in urine\" -> \"↓ ↓ ↑ ↑\" -> 95%",
+    "CHAIN: \"Insulin deficiency\" -> \"shift to anaerobic metabolism\" -> \"lactic acidosis\" -> \"low pH in urine\" -> \"increased NH4+ in urine\" -> \"increased K+ in urine\" -> \"↓ ↓ ↑ ↑\" -> 90%"
+  ],
+  "enhanced_information": "In a 24-year-old man with type 1 diabetes mellitus and insulin deficiency, the lack of insulin leads to increased blood glucose levels, ketosis, and subsequent acidosis. This results in low pH in urine, increased NH4+ in urine, and increased K+ in urine. Therefore, the most likely set of laboratory values on evaluation of urine obtained before treatment would be: ↓ ↓ ↑ ↑.",
+  "analysis": "In a 24-year-old man with type 1 diabetes mellitus and insulin deficiency, the lack of insulin leads to increased blood glucose levels, ketosis, and subsequent acidosis. This results in low pH in urine, increased NH4+ in urine, and increased K+ in urine. Therefore, the most likely set of laboratory values on evaluation of urine obtained before treatment would be: ↓ ↓ ↑ ↑.",
+  "answer": "opa",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      5,
+      0
+    ],
+    "coverage_rates": [
+      100.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

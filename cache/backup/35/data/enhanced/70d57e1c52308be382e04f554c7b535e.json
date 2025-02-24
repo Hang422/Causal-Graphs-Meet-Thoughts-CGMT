@@ -1,0 +1,149 @@
+{
+  "question": "A 52-year-old woman comes to the physician because of vaginal itchiness and urinary frequency for the past 1 year. She stopped having vaginal intercourse with her husband because it became painful and occasionally resulted in vaginal spotting. Her last menstrual cycle was 14 months ago. She has vitiligo. Her only medication is a topical tacrolimus ointment. Her temperature is 37.1°C (98.8°F), pulse is 85/min, and blood pressure is 135/82 mm Hg. Examination shows multiple white maculae on her forearms, abdomen, and feet. Pelvic examination shows scarce pubic hair, vulvar pallor, and narrowing of the vaginal introitus. Which of the following most likely contributes to this patient's current symptoms?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Thinning of the mucosa",
+    "opb": "Inflammation of the vestibular glands",
+    "opc": "Decrease of pH",
+    "opd": "Dysplasia of the epithelium",
+    "ope": "Sclerosis of the dermis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Sclerosis",
+        "Disease",
+        "Blood Circulation",
+        "Forearm"
+      ],
+      [
+        "Sclerosis",
+        "Disease",
+        "uptake",
+        "Forearm"
+      ],
+      [
+        "Sclerosis",
+        "Hypertensive disease",
+        "uptake",
+        "Forearm"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Sclerosis)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)-PROCESS_OF->(Forearm)",
+      "(Sclerosis)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Forearm)",
+      "(Sclerosis)-CAUSES->(Hypertensive disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Forearm)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Mucous Membrane",
+        "Upper Extremity",
+        "Bone structure of pubis"
+      ],
+      [
+        "Mucous Membrane",
+        "lymph nodes",
+        "Bone structure of pubis"
+      ],
+      [
+        "Dermis",
+        "Forearm"
+      ],
+      [
+        "Forearm",
+        "Vitiligo"
+      ],
+      [
+        "Pes",
+        "Vitiligo"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Mucous Membrane)-PART_OF->(Upper Extremity)-PART_OF->(Bone structure of pubis)",
+      "(Mucous Membrane)-PART_OF->(lymph nodes)-PART_OF->(Bone structure of pubis)",
+      "(Dermis)-PART_OF->(Forearm)",
+      "(Forearm)-LOCATION_OF->(Vitiligo)",
+      "(Pes)-LOCATION_OF->(Vitiligo)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Dermis)-PART_OF->(Forearm)",
+      "(Forearm)-LOCATION_OF->(Vitiligo)",
+      "(Pes)-LOCATION_OF->(Vitiligo)",
+      "(Sclerosis)-CAUSES->(Disease)-MANIFESTATION_OF->(Blood Circulation)-PROCESS_OF->(Forearm)",
+      "(Sclerosis)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-PROCESS_OF->(Forearm)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Thinning of the mucosa -> Scarce pubic hair and vulvar pallor -> Narrowing of the vaginal introitus -> Vaginal itchiness and painful intercourse -> Urinary frequency -> Vaginal spotting -> 80%",
+    "CHAIN: Sclerosis of the dermis -> White maculae on forearms, abdomen, and feet -> Vitiligo -> 20%",
+    "CHAIN: Inflammation of the vestibular glands -> Vulvar pallor -> Narrowing of the vaginal introitus -> Vaginal itchiness and painful intercourse -> Urinary frequency -> Vaginal spotting -> 70%"
+  ],
+  "enhanced_information": "The most likely contributor to this patient's current symptoms is the thinning of the mucosa, leading to scarce pubic hair, vulvar pallor, and narrowing of the vaginal introitus, resulting in vaginal itchiness, painful intercourse, urinary frequency, and vaginal spotting. The evidence supporting this includes the clinical presentation and progression of symptoms in alignment with mucosal changes.",
+  "analysis": "The patient's symptoms, including vaginal itchiness, painful intercourse, urinary frequency, and vaginal spotting, along with the physical examination findings of scarce pubic hair, vulvar pallor, and narrowing of the vaginal introitus, are indicative of mucosal changes. The enhanced information provided aligns with the clinical presentation, supporting the concept of mucosal thinning as the primary contributor to her symptoms.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      4,
+      0
+    ],
+    "coverage_rates": [
+      20.0,
+      80.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

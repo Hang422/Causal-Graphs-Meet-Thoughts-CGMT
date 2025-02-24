@@ -1,0 +1,140 @@
+{
+  "question": "A 24-hour-old newborn presents to the emergency department after a home birth because of fever, irritability alternating with lethargy, and poor feeding. The patient’s mother says symptoms acutely onset 12 hours ago and have not improved. No significant past medical history. His mother did not receive any prenatal care, and she had rupture of membranes 20 hours prior to delivery. His vital signs include: heart rate 150/min, respiratory rate 65/min, temperature 39.0°C (102.2°F), and blood pressure 60/40 mm Hg. On physical examination, the patient has delayed capillary refill. Laboratory studies show a pleocytosis and a low glucose level in the patient’s cerebrospinal fluid. Which of the following is the most likely causative organism for this patient’s condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Cryptococcus neoformans",
+    "opb": "Enterovirus",
+    "opc": "Group A Streptococcus",
+    "opd": "Group B Streptococcus",
+    "ope": "Streptococcus pneumoniae"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pleocytosis",
+        "Meningitis, Bacterial",
+        "Inflammatory Response"
+      ],
+      [
+        "Pleocytosis",
+        "Communicable Diseases",
+        "Inflammatory Response"
+      ],
+      [
+        "Pleocytosis",
+        "Tuberculosis, Meningeal",
+        "Inflammatory Response"
+      ],
+      [
+        "[D]Tachypnea",
+        "Respiratory Failure",
+        "Septicemia"
+      ],
+      [
+        "[D]Tachypnea",
+        "Respiratory distress",
+        "Septicemia"
+      ],
+      [
+        "[D]Tachypnea",
+        "Bacteremia",
+        "Septicemia"
+      ],
+      [
+        "Tachycardia",
+        "Myocardial Infarction",
+        "Septicemia"
+      ],
+      [
+        "Tachycardia",
+        "Hypertensive disease",
+        "Septicemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pleocytosis)-CAUSES->(Meningitis, Bacterial)-CAUSES->(Inflammatory Response)",
+      "(Pleocytosis)-CAUSES->(Communicable Diseases)-CAUSES->(Inflammatory Response)",
+      "(Pleocytosis)-CAUSES->(Tuberculosis, Meningeal)-CAUSES->(Inflammatory Response)",
+      "([D]Tachypnea)-CAUSES->(Respiratory Failure)-CAUSES->(Septicemia)",
+      "([D]Tachypnea)-CAUSES->(Respiratory distress)-PREDISPOSES->(Septicemia)",
+      "([D]Tachypnea)-PREDISPOSES->(Bacteremia)-CAUSES->(Septicemia)",
+      "(Tachycardia)-CAUSES->(Myocardial Infarction)-CAUSES->(Septicemia)",
+      "(Tachycardia)-CAUSES->(Hypertensive disease)-CAUSES->(Septicemia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "([D]Tachypnea)-CAUSES->(Respiratory distress)-PREDISPOSES->(Septicemia)",
+      "(Tachycardia)-CAUSES->(Myocardial Infarction)-CAUSES->(Septicemia)",
+      "(Tachycardia)-CAUSES->(Hypertensive disease)-CAUSES->(Septicemia)",
+      "(Pleocytosis)-CAUSES->(Meningitis, Bacterial)-CAUSES->(Inflammatory Response)",
+      "(Pleocytosis)-CAUSES->(Communicable Diseases)-CAUSES->(Inflammatory Response)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Rupture of membranes -> increased risk of infection -> 80% CHAIN: Fever, irritability, poor feeding -> signs of infection -> 70% CHAIN: Low glucose level in CSF -> bacterial infection more likely than viral -> 80% CHAIN: Pleocytosis in CSF -> inflammatory response -> 70% CHAIN: Delayed capillary refill -> signs of sepsis -> 70% CHAIN: Vital signs: tachycardia, tachypnea, hypotension -> sepsis -> 80% CHAIN: Most likely causative organism for this presentation is Group B Streptococcus -> 80%"
+  ],
+  "enhanced_information": "The most likely causative organism for this patient's condition is Group B Streptococcus, supported by the presence of rupture of membranes, signs of infection, low glucose level in CSF, pleocytosis, delayed capillary refill, and vital signs indicative of sepsis. The evidence paths confirm the inflammatory response associated with pleocytosis and the predisposition to septicemia due to tachycardia and tachypnea.",
+  "analysis": "The core medical principle guiding this case is the recognition of early-onset neonatal sepsis, which is commonly caused by Group B Streptococcus in infants with risk factors such as rupture of membranes. The clinical presentation of fever, irritability, lethargy, poor feeding, tachycardia, tachypnea, delayed capillary refill, pleocytosis, and low glucose in CSF strongly supports this diagnosis. Enterovirus is less likely due to the presence of risk factors for bacterial infection. Cryptococcus neoformans and Streptococcus pneumoniae are not common causes of neonatal sepsis. Group A Streptococcus is more associated with skin and soft tissue infections rather than early-onset sepsis in newborns.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

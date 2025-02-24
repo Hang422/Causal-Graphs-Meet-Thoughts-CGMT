@@ -1,0 +1,217 @@
+{
+  "question": "A 5-week-old infant born at 36 weeks' gestation is brought to the physician for a well-child examination. Her mother reports that she previously breastfed her for 15 minutes every 2 hours but now feeds her for 40 minutes every 4 hours. The infant has six wet diapers and two stools daily. She currently weighs 3500 g (7.7 lb) and is 52 cm (20.4 in) in length. Vital signs are with normal limits. Cardiopulmonary examination shows a grade 4/6 continuous murmur heard best at the left infraclavicular area. After confirming the diagnosis via echocardiography, which of the following is the most appropriate next step in management of this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Prostaglandin E1 infusion",
+    "opb": "Indomethacin infusion",
+    "opc": "Surgical ligation",
+    "opd": "Reassurance and follow-up",
+    "ope": "Percutaneous surgery"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Echocardiography",
+        "Heart failure"
+      ],
+      [
+        "Premature Birth",
+        "Complication"
+      ],
+      [
+        "Complication",
+        "Congestive heart failure",
+        "Echocardiography"
+      ],
+      [
+        "Complication",
+        "Heart Valve Diseases",
+        "Echocardiography"
+      ],
+      [
+        "Complication",
+        "Infective endocarditis",
+        "Echocardiography"
+      ],
+      [
+        "Continuous murmur",
+        "Ischemia",
+        "Congestive heart failure",
+        "Echocardiography"
+      ],
+      [
+        "Continuous murmur",
+        "Ischemia",
+        "Acute respiratory failure",
+        "Echocardiography"
+      ],
+      [
+        "Echocardiography",
+        "Complication"
+      ],
+      [
+        "Echocardiography",
+        "Complication"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Echocardiography)-CAUSES->(Heart failure)",
+      "(Premature Birth)-MANIFESTATION_OF->(Complication)",
+      "(Complication)-CAUSES->(Congestive heart failure)-CAUSES->(Echocardiography)",
+      "(Complication)-CAUSES->(Heart Valve Diseases)-CAUSES->(Echocardiography)",
+      "(Complication)-CAUSES->(Infective endocarditis)-CAUSES->(Echocardiography)",
+      "(Continuous murmur)-CAUSES->(Ischemia)-CAUSES->(Congestive heart failure)-CAUSES->(Echocardiography)",
+      "(Continuous murmur)-CAUSES->(Ischemia)-CAUSES->(Acute respiratory failure)-CAUSES->(Echocardiography)",
+      "(Echocardiography)-TREATS->(Complication)",
+      "(Echocardiography)-TREATS->(Complication)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Heart failure",
+        "uptake",
+        "Alprostadil"
+      ],
+      [
+        "Complication",
+        "Disease",
+        "uptake",
+        "Alprostadil"
+      ],
+      [
+        "Complication",
+        "Disease",
+        "uptake",
+        "Alprostadil"
+      ],
+      [
+        "Complication",
+        "Disease",
+        "uptake",
+        "Alprostadil"
+      ],
+      [
+        "Complication",
+        "Disease",
+        "uptake",
+        "Alprostadil"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Heart failure)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Alprostadil)",
+      "(Complication)-ISA->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Alprostadil)",
+      "(Complication)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Alprostadil)",
+      "(Complication)-ISA->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Alprostadil)",
+      "(Complication)-CAUSES->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Alprostadil)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Echocardiography)-CAUSES->(Heart failure)",
+      "(Echocardiography)-TREATS->(Complication)",
+      "(Heart failure)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Alprostadil)",
+      "(Continuous murmur)-CAUSES->(Ischemia)-CAUSES->(Congestive heart failure)-CAUSES->(Echocardiography)",
+      "(Continuous murmur)-CAUSES->(Ischemia)-CAUSES->(Acute respiratory failure)-CAUSES->(Echocardiography)",
+      "(Complication)-CAUSES/ISA->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Alprostadil)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Infant has a continuous murmur\" -> \"Suggests possible patent ductus arteriosus (PDA)\" -> \"Echocardiography confirms PDA\" -> \"PDA can lead to heart failure if untreated\" -> \"Prostaglandin E1 infusion is indicated to maintain ductal patency\" -> 95%",
+    "CHAIN: \"Infant is 5 weeks old and premature\" -> \"Higher risk for complications from PDA\" -> \"Echocardiography confirms significant PDA\" -> \"Management of significant PDA often requires medical intervention\" -> \"Prostaglandin E1 infusion is the first-line treatment\" -> 90%",
+    "CHAIN: \"Continuous murmur indicates hemodynamic significance\" -> \"Echocardiography shows left-to-right shunt\" -> \"Infant is symptomatic or at risk for complications\" -> \"Prostaglandin E1 infusion helps to keep ductus arteriosus open\" -> \"This is crucial for maintaining pulmonary blood flow\" -> 85%",
+    "CHAIN: \"Infant has normal vital signs but significant murmur\" -> \"Indicates possible hemodynamic instability\" -> \"Echocardiography confirms PDA\" -> \"Immediate management is required to prevent complications\" -> \"Prostaglandin E1 infusion is appropriate to manage PDA\" -> 90%"
+  ],
+  "enhanced_information": "The infant's continuous murmur suggests a patent ductus arteriosus (PDA), which is common in premature infants and can lead to significant complications such as heart failure if untreated. Echocardiography confirms the diagnosis of a significant PDA. Prostaglandin E1 infusion is the first-line treatment for maintaining ductal patency in cases of significant PDA, especially in symptomatic infants or those at risk for complications. This aligns with standard medical consensus regarding the management of PDA in premature infants. Other options such as indomethacin infusion, surgical ligation, reassurance and follow-up, or percutaneous surgery are not the immediate next steps in this scenario. Therefore, the most appropriate next step in management is prostaglandin E1 infusion.",
+  "analysis": "The infant in this scenario is a 5-week-old premature infant with a significant patent ductus arteriosus (PDA), as indicated by the continuous murmur and the echocardiography results. In premature infants, a significant PDA can lead to complications such as heart failure, and the management typically involves medical treatment to either maintain or close the ductus. Prostaglandin E1 infusion is used to maintain ductal patency in cases where the PDA is significant and symptomatic, which aligns with the consensus in pediatric cardiology. Indomethacin is often used to promote closure of the PDA, but it is more effective in preterm infants who are asymptomatic or have a less significant PDA. Surgical ligation is considered in cases where medical management fails or in symptomatic infants with significant PDAs. Given the information provided, the most appropriate next step in management for this infant is to initiate prostaglandin E1 infusion to address the significant PDA. Therefore, the best-supported option is prostaglandin E1 infusion.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      2,
+      3,
+      2
+    ],
+    "coverage_rates": [
+      22.22222222222222,
+      22.22222222222222,
+      33.33333333333333,
+      22.22222222222222
+    ],
+    "total_successes": 9
+  },
+  "normal_results": []
+}

@@ -1,0 +1,95 @@
+{
+  "question": "A 5-year-old boy is brought to the physician because of a 10-day history of intermittent fevers and painful swelling of the right ankle. He has not had trauma to the ankle. He has a history of sickle cell disease and had an episode of dactylitis of his left index finger 3 years ago. Current medications include hydroxyurea and acetaminophen as needed for the ankle pain. His temperature is 38°C (100.4°F), blood pressure is 125/68 mm Hg, pulse is 105/min, and respirations are 14/min. Examination shows a tender, swollen, and erythematous right ankle with point tenderness over the medial malleolus. X-ray of the right ankle demonstrates marked periosteal thickening and elevation, as well as a central sclerotic lesion with a lucent rim over the right lateral malleolus. A bone biopsy culture confirms the diagnosis. Which of the following is the most likely causal organism?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Streptococcus pneumoniae",
+    "opb": "Escherichia coli",
+    "opc": "Streptococcus pyogenes",
+    "opd": "Salmonella enterica",
+    "ope": "Pseudomonas aeruginosa"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Sickle Cell Anemia",
+        "Osteomyelitis"
+      ],
+      [
+        "Osteomyelitis",
+        "Infection",
+        "Salmonella enterica"
+      ],
+      [
+        "Osteomyelitis",
+        "Meningitis",
+        "Salmonella enterica"
+      ],
+      [
+        "Osteomyelitis",
+        "Septicemia",
+        "Salmonella enterica"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Sickle Cell Anemia)-CAUSES->(Osteomyelitis)",
+      "(Osteomyelitis)-CAUSES->(Infection)-PROCESS_OF->(Salmonella enterica)",
+      "(Osteomyelitis)-CAUSES->(Meningitis)-PROCESS_OF->(Salmonella enterica)",
+      "(Osteomyelitis)-CAUSES->(Septicemia)-PROCESS_OF->(Salmonella enterica)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Sickle Cell Anemia)-CAUSES->(Osteomyelitis)",
+      "(Osteomyelitis)-CAUSES->(Infection)-PROCESS_OF->(Salmonella enterica)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Sickle cell disease -> Increased risk of osteomyelitis -> 80% CHAIN: Bone biopsy culture -> Confirmed diagnosis of osteomyelitis -> 90% CHAIN: Osteomyelitis -> Likely caused by Salmonella enterica -> 80%"
+  ],
+  "enhanced_information": "The 5-year-old boy with sickle cell disease presenting with osteomyelitis of the right ankle is most likely caused by Salmonella enterica, supported by the confirmed bone biopsy culture. Sickle cell disease increases the risk of osteomyelitis, and Salmonella enterica is a common causative organism in this population.",
+  "analysis": "The core medical principle here is that sickle cell disease predisposes individuals to Salmonella osteomyelitis. The enhanced information provided aligns with this principle, indicating that Salmonella enterica is the most likely causal organism in this case. This is further supported by the bone biopsy culture confirming the diagnosis. Streptococcus pneumoniae, Escherichia coli, Streptococcus pyogenes, and Pseudomonas aeruginosa are less commonly associated with osteomyelitis in sickle cell disease patients.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

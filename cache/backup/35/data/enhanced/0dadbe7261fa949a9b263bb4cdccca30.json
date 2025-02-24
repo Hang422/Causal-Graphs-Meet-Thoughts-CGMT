@@ -1,0 +1,137 @@
+{
+  "question": "A 37‐year‐old woman presents with a severe, deep, sharp pain in her right hand and forearm. A week before she presented her pain symptoms, she fell on her right forearm and developed mild bruising. She has type-1 diabetes mellitus and is on an insulin treatment. The physical examination reveals that her right hand and forearm were warmer, more swollen, and had a more reddish appearance than the left side. She feels an intense pain upon light touching of her right hand and forearm. Her radial and brachial pulses are palpable. The neurological examination is otherwise normal. The laboratory test results are as follows:\nHemoglobin 15.2 g/dL\nWhite blood cell count 6,700 cells/cm3\nPlatelets 300,000 cells/cm3\nAlanine aminotransferase 32 units/L\nAspartate aminotransferase 38 units/L\nC-reactive protein 0.4 mg/L\nErythrocyte sedimentation rate 7 mm/1st hour\nThe X-ray of the right hand and forearm do not show a fracture. The nerve conduction studies are also within normal limits. What is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Cellulitis",
+    "opb": "Compartment syndrome",
+    "opc": "Complex regional pain syndrome",
+    "opd": "Diabetic neuropathy",
+    "ope": "Limb ischemia"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Sharp pain",
+        "Pain, Radiating",
+        "Pain",
+        "Erythema"
+      ],
+      [
+        "Sharp pain",
+        "Pain, Radiating",
+        "Disease",
+        "Erythema"
+      ],
+      [
+        "Sharp pain",
+        "Fasciitis, Plantar",
+        "Disease",
+        "Erythema"
+      ],
+      [
+        "Insulin",
+        "Disease",
+        "Compartment syndromes"
+      ],
+      [
+        "Insulin",
+        "Obesity",
+        "Compartment syndromes"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Sharp pain)-CAUSES->(Pain, Radiating)-CAUSES->(Pain)-CAUSES->(Erythema)",
+      "(Sharp pain)-CAUSES->(Pain, Radiating)-MANIFESTATION_OF->(Disease)-CAUSES->(Erythema)",
+      "(Sharp pain)-MANIFESTATION_OF->(Fasciitis, Plantar)-CAUSES->(Disease)-CAUSES->(Erythema)",
+      "(Insulin)-CAUSES->(Disease)-CAUSES->(Compartment syndromes)",
+      "(Insulin)-CAUSES->(Obesity)-PREDISPOSES->(Compartment syndromes)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Forearm",
+        "Erythema"
+      ],
+      [
+        "Structure of right hand",
+        "Erythema"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Forearm)-LOCATION_OF->(Erythema)",
+      "(Structure of right hand)-LOCATION_OF->(Erythema)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Structure of right hand)-LOCATION_OF->(Erythema)",
+      "(Insulin)-CAUSES->(Disease)-CAUSES->(Compartment syndromes)",
+      "(Insulin)-CAUSES->(Obesity)-PREDISPOSES->(Compartment syndromes)",
+      "(Forearm)-LOCATION_OF->(Erythema)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Trauma to right forearm -> Mild bruising -> Severe, deep, sharp pain in right hand and forearm -> Warmth, swelling, redness in right hand and forearm -> Intense pain upon light touching -> Radial and brachial pulses palpable -> Normal neurological examination -> X-ray negative for fracture -> Nerve conduction studies normal -> Likely compartment syndrome -> 95%",
+    "CHAIN: Type-1 diabetes mellitus -> Insulin treatment -> Increased risk of compartment syndrome due to impaired tissue healing and sensation -> 90%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 37-year-old woman with severe, deep, sharp pain in her right hand and forearm, along with warmth, swelling, and redness, intense pain upon light touching, palpable pulses, normal neurological examination, negative X-ray, and normal nerve conduction studies, is compartment syndrome. The presence of type-1 diabetes mellitus and insulin treatment increases the risk for compartment syndrome due to impaired tissue healing and sensation.",
+  "analysis": "The patient's presentation of severe pain, warmth, swelling, redness, and intense pain upon light touching in the right hand and forearm, along with the risk factors of type-1 diabetes mellitus and insulin treatment, is highly suggestive of compartment syndrome. The absence of neurological deficits, normal pulses, negative X-ray, and normal nerve conduction studies further support this diagnosis.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      1
+    ],
+    "coverage_rates": [
+      75.0,
+      25.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

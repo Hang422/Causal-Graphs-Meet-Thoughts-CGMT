@@ -1,0 +1,187 @@
+{
+  "question": "A 25-year-old woman presents to her college campus clinic with the complaint of being unable to get up for her morning classes. She says that, because of this, her grades are being affected. For the past 6 weeks, she says she has been feeling depressed because her boyfriend dumped her. She finds herself very sleepy, sleeping in most mornings, eating more snacks and fast foods, and feeling drained of energy. She is comforted by her friend’s efforts to cheer her up but still feels guarded around any other boy that shows interest in her. The patient says she had similar symptoms 7 years ago for which she was prescribed several selective serotonin reuptake inhibitors (SSRIs) and a tricyclic antidepressant (TCA). However, none of the medications provided any long-term relief. She has prescribed a trial of Phenelzine to treat her symptoms. Past medical history is significant for a long-standing seizure disorder well managed with phenytoin. Which of the following statements would most likely be relevant to this patient’s new medication?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "“While taking this medication, you should avoid drinking red wine.”",
+    "opb": "“You will have a risk for cardiotoxicity from this medication.”",
+    "opc": "“While on this medication, you may have a decreased seizure threshold.”",
+    "opd": "“This medication is known to cause anorgasmia during treatment.”",
+    "ope": "“A common side effect of this medication is sedation.”"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Mental Depression",
+        "Obesity",
+        "Disease",
+        "Drowsiness"
+      ],
+      [
+        "Mental Depression",
+        "Epilepsy",
+        "Disease",
+        "Drowsiness"
+      ],
+      [
+        "Mental Depression",
+        "Acidosis",
+        "Disease",
+        "Drowsiness"
+      ],
+      [
+        "Phenelzine",
+        "Adverse effects"
+      ],
+      [
+        "Phenelzine",
+        "Disease",
+        "Seizures"
+      ],
+      [
+        "Phenelzine",
+        "Obesity",
+        "Seizures"
+      ],
+      [
+        "Phenelzine",
+        "Migraine Disorders",
+        "Seizures"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Mental Depression)-CAUSES->(Obesity)-CAUSES->(Disease)-CAUSES->(Drowsiness)",
+      "(Mental Depression)-COMPLICATES->(Epilepsy)-CAUSES->(Disease)-CAUSES->(Drowsiness)",
+      "(Mental Depression)-MANIFESTATION_OF->(Acidosis)-CAUSES->(Disease)-CAUSES->(Drowsiness)",
+      "(Phenelzine)-TREATS->(Adverse effects)",
+      "(Phenelzine)-TREATS->(Disease)-CAUSES->(Seizures)",
+      "(Phenelzine)-TREATS->(Obesity)-CAUSES->(Seizures)",
+      "(Phenelzine)-TREATS->(Migraine Disorders)-CAUSES->(Seizures)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Selective serotonin re-uptake inhibitor",
+        "Genes",
+        "Heart",
+        "Phenelzine"
+      ],
+      [
+        "Selective serotonin re-uptake inhibitor",
+        "IMPACT gene",
+        "Heart",
+        "Phenelzine"
+      ],
+      [
+        "Phenelzine",
+        "Infertility",
+        "IMPACT gene",
+        "Phenytoin"
+      ],
+      [
+        "Phenelzine",
+        "Ischemia",
+        "IMPACT gene",
+        "Phenytoin"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Selective serotonin re-uptake inhibitor)-INTERACTS_WITH->(Genes)-PART_OF->(Heart)-LOCATION_OF->(Phenelzine)",
+      "(Selective serotonin re-uptake inhibitor)-INTERACTS_WITH->(IMPACT gene)-PART_OF->(Heart)-LOCATION_OF->(Phenelzine)",
+      "(Phenelzine)-TREATS->(Infertility)-ASSOCIATED_WITH->(IMPACT gene)-INTERACTS_WITH->(Phenytoin)",
+      "(Phenelzine)-TREATS->(Ischemia)-ASSOCIATED_WITH->(IMPACT gene)-INTERACTS_WITH->(Phenytoin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Phenelzine)-TREATS->(Adverse effects)",
+      "(Phenelzine)-TREATS->(Disease)-CAUSES->(Seizures)",
+      "(Phenelzine)-TREATS->(Obesity)-CAUSES->(Seizures)",
+      "(Phenelzine)-TREATS->(Migraine Disorders)-CAUSES->(Seizures)",
+      "(Phenelzine)-TREATS->(Infertility)-ASSOCIATED_WITH->(IMPACT gene)-INTERACTS_WITH->(Phenytoin)",
+      "(Phenelzine)-TREATS->(Ischemia)-ASSOCIATED_WITH->(IMPACT gene)-INTERACTS_WITH->(Phenytoin)",
+      "(Selective serotonin re-uptake inhibitor)-INTERACTS_WITH->(Genes)-PART_OF->(Heart)-LOCATION_OF->(Phenelzine)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Depression -> disrupted daily routine -> impaired academic performance -> 80% CHAIN: Depression -> increased sleepiness -> poor dietary habits -> decreased energy levels -> 70% CHAIN: Previous ineffective treatment with SSRIs and TCA -> trial of Phenelzine -> 60% CHAIN: Phenelzine -> potential side effects -> 50% CHAIN: Phenelzine -> sedation as a common side effect -> 70% CHAIN: Phenelzine -> possible interaction with phenytoin -> 50% CHAIN: Phenelzine -> potential for decreased seizure threshold -> 60% CHAIN: Phenelzine -> possible need for dietary restrictions -> 80%"
+  ],
+  "enhanced_information": "Phenelzine, prescribed for the patient's depression, may have potential side effects including sedation. There is a possible interaction with phenytoin, which could impact the seizure threshold. Dietary restrictions may be necessary while on Phenelzine. The patient should be monitored for these effects during treatment.",
+  "analysis": "The core medical principle here is to consider the potential interactions and side effects of Phenelzine in a patient with a history of seizures managed with phenytoin. Given the enhanced information provided, the most relevant statement would be related to the possible impact on the seizure threshold due to the interaction between Phenelzine and phenytoin.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

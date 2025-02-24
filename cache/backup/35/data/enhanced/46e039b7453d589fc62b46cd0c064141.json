@@ -1,0 +1,87 @@
+{
+  "question": "A 59-year-old man is brought to the emergency department one hour after developing shortness of breath and “squeezing” chest pain that began while he was mowing the lawn. He has asthma, hypertension, and erectile dysfunction. Current medications include salmeterol, amlodipine, lisinopril, and vardenafil. His pulse is 110/min and blood pressure is 122/70 mm Hg. Physical examination shows diaphoresis. An ECG shows sinus tachycardia. Sublingual nitroglycerin is administered. Five minutes later, his pulse is 137/min and his blood pressure is 78/40 mm Hg. Which of the following is the most likely mechanism of this patient's hypotension?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Bradykinin accumulation",
+    "opb": "Calcium channel antagonism",
+    "opc": "Alpha-1 receptor antagonism",
+    "opd": "Cyclic GMP elevation",
+    "ope": "Decreased nitric oxide production"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Nitroglycerin",
+        "Vasodilation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Nitroglycerin)-CAUSES->(Vasodilation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Nitroglycerin",
+        "Blood Circulation",
+        "nitric oxide"
+      ],
+      [
+        "nitric oxide",
+        "Fibroblasts",
+        "Guanylate Cyclase"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Nitroglycerin)-CAUSES->(Blood Circulation)-ASSOCIATED_WITH->(nitric oxide)",
+      "(nitric oxide)-INTERACTS_WITH->(Fibroblasts)-INTERACTS_WITH->(Guanylate Cyclase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Nitroglycerin)-CAUSES->(Vasodilation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Nitroglycerin administration\" -> \"vasodilation\" -> \"decreased systemic vascular resistance\" -> \"hypotension due to decreased blood pressure\" -> \"Alpha-1 receptor antagonism\" -> 80% CHAIN: \"Nitroglycerin administration\" -> \"conversion to nitric oxide\" -> \"activation of guanylate cyclase\" -> \"increased cyclic GMP levels\" -> \"vasodilation\" -> \"hypotension due to decreased blood pressure\" -> \"Cyclic GMP elevation\" -> 80%"
+  ],
+  "enhanced_information": "Nitroglycerin administration leads to vasodilation, which decreases systemic vascular resistance and can cause hypotension. The most likely mechanism of hypotension in this patient is due to alpha-1 receptor antagonism rather than cyclic GMP elevation.",
+  "analysis": "Nitroglycerin administration leads to vasodilation by releasing nitric oxide, which decreases systemic vascular resistance and can cause hypotension. In this patient, the hypotension is most likely due to alpha-1 receptor antagonism rather than cyclic GMP elevation. Alpha-1 receptor antagonism results in vasodilation and subsequent hypotension, which is consistent with the patient's presentation.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

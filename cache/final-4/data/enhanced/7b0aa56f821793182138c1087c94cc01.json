@@ -1,0 +1,171 @@
+{
+  "question": "A 3-year-old girl with no significant past medical history presents to the clinic with a 4-day history of acute onset cough. Her parents have recently started to introduce several new foods into her diet. Her vital signs are all within normal limits. Physical exam is significant for decreased breath sounds on the right. What is the most appropriate definitive management in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Chest x-ray (CXR)",
+    "opb": "Rigid broncoscopy",
+    "opc": "Inhaled bronchodilators and oral corticosteroids",
+    "opd": "Flexible broncoscopy",
+    "ope": "Empiric antibiotic therapy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypersensitivity",
+        "Inflammation"
+      ],
+      [
+        "Coughing",
+        "Bronchial Spasm"
+      ],
+      [
+        "Bronchial Spasm",
+        "Disease",
+        "Inflammation"
+      ],
+      [
+        "Bronchial Spasm",
+        "Hypertensive disease",
+        "Inflammation"
+      ],
+      [
+        "Food Allergy",
+        "Inflammation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hypersensitivity)-CAUSES->(Inflammation)",
+      "(Coughing)-CAUSES->(Bronchial Spasm)",
+      "(Bronchial Spasm)-CAUSES->(Disease)-CAUSES->(Inflammation)",
+      "(Bronchial Spasm)-PREDISPOSES->(Hypertensive disease)-CAUSES->(Inflammation)",
+      "(Food Allergy)-CAUSES->(Inflammation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Chronic Condition",
+        "Hypoxia",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "Bronchoscopy"
+      ],
+      [
+        "Chronic Condition",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "Inflammatory cell",
+        "Bronchoscopy"
+      ],
+      [
+        "Bacterial Infections",
+        "fluid secretion",
+        "Organ",
+        "Antibiotic therapy"
+      ],
+      [
+        "Bacterial Infections",
+        "Immunity",
+        "Organ",
+        "Antibiotic therapy"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Chronic Condition)-PREDISPOSES->(Hypoxia)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Bronchoscopy)",
+      "(Chronic Condition)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Inflammatory cell)-LOCATION_OF->(Bronchoscopy)",
+      "(Bacterial Infections)-MANIFESTATION_OF->(fluid secretion)-PROCESS_OF->(Organ)-LOCATION_OF->(Antibiotic therapy)",
+      "(Bacterial Infections)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Organ)-LOCATION_OF->(Antibiotic therapy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Coughing)-CAUSES->(Bronchial Spasm)",
+      "(Bacterial Infections)-MANIFESTATION_OF->(fluid secretion)-PROCESS_OF->(Organ)-LOCATION_OF->(Antibiotic therapy)",
+      "(Bacterial Infections)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Organ)-LOCATION_OF->(Antibiotic therapy)",
+      "(Hypersensitivity)-CAUSES->(Inflammation)",
+      "(Food Allergy)-CAUSES->(Inflammation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Introduction of new foods\" -> \"possible allergic reaction\" -> \"inflammation in airways\" -> \"decreased breath sounds on the right\" -> \"Chest x-ray (CXR) to check for inflammation or obstruction\" -> 75%",
+    "CHAIN: \"Acute onset cough\" -> \"decreased breath sounds on the right\" -> \"possible foreign body aspiration\" -> \"Rigid bronchoscopy to remove foreign body\" -> 85%",
+    "CHAIN: \"4-day history of cough\" -> \"no significant past medical history\" -> \"unlikely chronic condition\" -> \"Flexible bronchoscopy to explore and diagnose\" -> 70%",
+    "CHAIN: \"Cough and introduction of new foods\" -> \"possible food allergy causing bronchospasm\" -> \"Inhaled bronchodilators and oral corticosteroids to reduce inflammation and open airways\" -> 65%",
+    "CHAIN: \"Acute onset cough\" -> \"normal vital signs\" -> \"less likely bacterial infection\" -> \"Empiric antibiotic therapy not indicated without evidence of bacterial infection\" -> 60%"
+  ],
+  "enhanced_information": "In a 3-year-old girl presenting with acute onset cough and decreased breath sounds on the right, the most appropriate definitive management is rigid bronchoscopy. This decision is based on the high likelihood of foreign body aspiration, a common scenario in young children with such presentations. Chest X-ray can be considered as an initial diagnostic step but should not delay the bronchoscopy if foreign body aspiration is strongly suspected. Other options like flexible bronchoscopy, inhaled bronchodilators, oral corticosteroids, and empiric antibiotic therapy are less appropriate based on the clinical findings and standard medical consensus.",
+  "analysis": "In this clinical scenario, a 3-year-old girl presents with an acute onset cough and decreased breath sounds on the right side, which raises the suspicion of a possible foreign body aspiration. This is a common occurrence in young children who are exploring their environment and may inadvertently inhale or ingest small objects. The presence of decreased breath sounds is particularly suggestive of a foreign body that may be partially obstructing an airway. The standard approach in such cases involves confirming the diagnosis and then removing the foreign body to prevent further complications such as infection or persistent airway obstruction. A chest x-ray (CXR) is a useful initial diagnostic tool to visualize the lungs and check for the presence of a foreign body or other abnormalities. However, if foreign body aspiration is strongly suspected, especially with clinical signs like localized decreased breath sounds, a more direct approach with rigid bronchoscopy is warranted. Rigid bronchoscopy allows for both visualization and potential removal of the foreign body under general anesthesia, which is safer in young children due to their smaller airways and less cooperative nature. Flexible bronchoscopy, while useful in older children and adults for diagnostic purposes, may not be as effective in removing foreign bodies in small children. Inhaled bronchodilators, corticosteroids, and empiric antibiotics do not address the underlying issue if a foreign body is present and are therefore not appropriate as initial definitive management in this context.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      1,
+      3,
+      1
+    ],
+    "coverage_rates": [
+      16.666666666666664,
+      0.0,
+      16.666666666666664,
+      50.0,
+      16.666666666666664
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

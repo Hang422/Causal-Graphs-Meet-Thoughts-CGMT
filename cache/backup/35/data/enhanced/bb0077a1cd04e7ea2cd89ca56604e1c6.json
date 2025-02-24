@@ -1,0 +1,132 @@
+{
+  "question": "A 67-year-old man comes to the emergency department because of retrosternal chest pressure and shortness of breath for 4 hours. The symptoms started while he was walking to work and have only minimally improved with rest. He has a history of type 2 diabetes mellitus. He has smoked one pack of cigarettes daily for 35 years. He appears uncomfortable. His pulse is 95/min. Serum studies show a normal troponin concentration. An ECG shows no abnormalities. Which of the following is the most likely underlying cause of this patient's symptoms?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Aortic valve thickening and calcification",
+    "opb": "Coronary artery occlusion due to transient increase in vascular tone",
+    "opc": "Stable atherosclerotic plaque with 85% coronary artery occlusion",
+    "opd": "Disruption of an atherosclerotic plaque with a non-occlusive coronary artery thrombus",
+    "ope": "Atherosclerotic plaque thrombus with complete coronary artery occlusion"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Arteriosclerosis",
+        "Inflammation",
+        "Dental Plaque"
+      ],
+      [
+        "Arteriosclerosis",
+        "Periodontitis",
+        "Dental Plaque"
+      ],
+      [
+        "Arteriosclerosis",
+        "Bacteria",
+        "Dental Plaque"
+      ],
+      [
+        "Blood Circulation",
+        "Pancreas",
+        "Pancreatitis",
+        "Coronary Arteriosclerosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES"
+      ],
+      [
+        "PROCESS_OF",
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Arteriosclerosis)-CAUSES->(Inflammation)-CAUSES->(Dental Plaque)",
+      "(Arteriosclerosis)-CAUSES->(Periodontitis)-CAUSES->(Dental Plaque)",
+      "(Arteriosclerosis)-PROCESS_OF->(Bacteria)-CAUSES->(Dental Plaque)",
+      "(Blood Circulation)-PROCESS_OF->(Pancreas)-CAUSES->(Pancreatitis)-PREDISPOSES->(Coronary Arteriosclerosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Coronary artery",
+        "Lipopolysaccharides",
+        "Dental Plaque"
+      ],
+      [
+        "Coronary artery",
+        "Adhesions",
+        "Dental Plaque"
+      ],
+      [
+        "Heart",
+        "Coronary Arteriosclerosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Coronary artery)-LOCATION_OF->(Lipopolysaccharides)-ASSOCIATED_WITH->(Dental Plaque)",
+      "(Coronary artery)-LOCATION_OF->(Adhesions)-CAUSES->(Dental Plaque)",
+      "(Heart)-LOCATION_OF->(Coronary Arteriosclerosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Arteriosclerosis)-CAUSES->(Inflammation)-CAUSES->(Dental Plaque)",
+      "(Coronary artery)-LOCATION_OF->(Adhesions)-CAUSES->(Dental Plaque)",
+      "(Heart)-LOCATION_OF->(Coronary Arteriosclerosis)",
+      "(Arteriosclerosis)-CAUSES->(Periodontitis)-CAUSES->(Dental Plaque)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Atherosclerosis in coronary arteries -> Plaque formation -> Possible plaque rupture -> Coronary artery thrombus formation -> Reduced blood flow to the heart -> Myocardial ischemia -> Retrosternal chest pressure and shortness of breath -> 80%"
+  ],
+  "enhanced_information": "The most likely underlying cause of this patient's symptoms is disruption of an atherosclerotic plaque with a non-occlusive coronary artery thrombus. The chain of events includes atherosclerosis in coronary arteries leading to plaque formation, possible plaque rupture, thrombus formation, reduced blood flow to the heart, resulting in myocardial ischemia, retrosternal chest pressure, and shortness of breath. The absence of ECG abnormalities and normal troponin concentration make complete coronary artery occlusion less likely.",
+  "analysis": "The patient's presentation of retrosternal chest pressure and shortness of breath, along with the risk factors of diabetes mellitus and long-term smoking, suggests a cardiac etiology. The absence of ECG abnormalities and normal troponin levels make complete coronary artery occlusion less likely. The most likely cause aligning with consensus is the disruption of an atherosclerotic plaque with a non-occlusive coronary artery thrombus, leading to myocardial ischemia.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

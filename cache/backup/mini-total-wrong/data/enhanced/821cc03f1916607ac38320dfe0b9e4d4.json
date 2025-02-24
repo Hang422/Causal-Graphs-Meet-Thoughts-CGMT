@@ -1,0 +1,98 @@
+{
+  "question": "A P2G1 diabetic woman is at risk of delivering at 29 weeks gestation. Her obstetrician counsels her that there is a risk the baby could have significant pulmonary distress after it is born. However, she states she will give the mother corticosteroids, which will help prevent this from occurring. Additionally, the obstetrician states she will perform a test on the amniotic fluid which will indicate the likelihood of the infant being affected by this syndrome. Which of the following ratios would be most predictive of the infant having pulmonary distress?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "lecithin:sphingomyelin > 1.5",
+    "opb": "lecithin:phosphatidylserine > 3.0",
+    "opc": "lecithin:sphingomyelin > 3.0",
+    "opd": "lecithin:sphingomyelin < 1.5",
+    "ope": "lecithin:phosphatidylserine < 1.5"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Lecithin",
+        "drug retention",
+        "Lung"
+      ],
+      [
+        "Lecithin",
+        "Fibrinolysis",
+        "Lung"
+      ],
+      [
+        "Lecithin",
+        "biological adaptation to stress",
+        "Lung"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Lecithin)-CAUSES->(drug retention)-PROCESS_OF->(Lung)",
+      "(Lecithin)-CAUSES->(Fibrinolysis)-PROCESS_OF->(Lung)",
+      "(Lecithin)-CAUSES->(biological adaptation to stress)-PROCESS_OF->(Lung)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Lecithin)-CAUSES->(biological adaptation to stress)-PROCESS_OF->(Lung)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Corticosteroids administered\" -> \"increased fetal lung maturity\" -> \"higher lecithin production\" -> \"lecithin:sphingomyelin ratio increases\" -> \"ratio > 1.5 indicates lower risk of pulmonary distress\" -> 85%",
+    "CHAIN: \"Amniotic fluid test performed\" -> \"lecithin:sphingomyelin ratio measured\" -> \"ratio < 1.5 indicates immature lungs\" -> \"higher risk of significant pulmonary distress\" -> 90%",
+    "CHAIN: \"Lecithin:sphingomyelin ratio > 3.0\" -> \"indicates mature fetal lungs\" -> \"lower risk of pulmonary distress\" -> 80%",
+    "CHAIN: \"Lecithin:sphingomyelin ratio < 1.5\" -> \"indicates high risk of pulmonary distress\" -> \"significant pulmonary distress likely\" -> 95%",
+    "CHAIN: \"Lecithin:phosphatidylserine ratio > 3.0\" -> \"unclear correlation with pulmonary distress\" -> \"not the most predictive ratio\" -> 70%"
+  ],
+  "enhanced_information": "In the context of assessing the risk of pulmonary distress in a preterm infant, the lecithin:sphingomyelin (L:S) ratio in amniotic fluid is a critical indicator of fetal lung maturity. Corticosteroids administered to the mother enhance fetal lung development, leading to increased production of lecithin, which is a key component of surfactant. A L:S ratio greater than 1.5 is generally considered indicative of adequate fetal lung maturity and correlates with a lower risk of significant pulmonary distress. Conversely, a ratio less than 1.5 suggests immature lungs and a higher risk of respiratory complications. The ratio of lecithin:phosphatidylserine does not have a well-established correlation with pulmonary distress and is not the most predictive measure. Therefore, the most predictive ratio for assessing the risk of pulmonary distress in this scenario is the lecithin:sphingomyelin ratio, particularly when it is greater than 1.5.",
+  "analysis": "The core medical principle here is the assessment of fetal lung maturity through the analysis of the lecithin:sphingomyelin (L:S) ratio in amniotic fluid. A higher L:S ratio indicates better lung maturity and a lower risk of pulmonary distress in preterm infants. The consensus in obstetric care is that an L:S ratio greater than 1.5 is associated with adequate fetal lung maturity, while a ratio less than 1.5 suggests immature lungs and a higher risk of respiratory complications. Given the options provided, the most predictive measure for assessing the risk of pulmonary distress is the L:S ratio. Therefore, the correct answer is that an L:S ratio less than 1.5 indicates a higher risk of pulmonary distress, making option opd the most relevant choice in this context.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      100.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": []
+}

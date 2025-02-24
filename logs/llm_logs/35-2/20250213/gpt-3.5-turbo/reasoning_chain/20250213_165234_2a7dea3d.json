@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250213_165234",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "2a7dea3d",
+  "question_text": "A 10-year-old boy is brought to the pediatric clinic because of a sore throat of 1-week duration. He also has a cough and fever. He has pain when swallowing and sometimes water regurgitates from his nose when drinking. He was diagnosed with acute tonsillitis by his primary care physician 1 month ago, for which he received a week-long course of amoxicillin. His immunization status is unknown as he recently moved to the US from Asia. On examination, he is alert and oriented to time, place, and person. On inspection of his oral cavity, an edematous tongue with a grey-white membrane on the soft palate and tonsils is noted. The neck is diffusely swollen with bilateral tender cervical lymphadenopathy. Which of the following is the cause of this patient’s condition and could have been prevented through vaccinations in childhood?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 10-year-old boy is brought to the pediatric clinic because of a sore throat of 1-week duration. He also has a cough and fever. He has pain when swallowing and sometimes water regurgitates from his nose when drinking. He was diagnosed with acute tonsillitis by his primary care physician 1 month ago, for which he received a week-long course of amoxicillin. His immunization status is unknown as he recently moved to the US from Asia. On examination, he is alert and oriented to time, place, and person. On inspection of his oral cavity, an edematous tongue with a grey-white membrane on the soft palate and tonsils is noted. The neck is diffusely swollen with bilateral tender cervical lymphadenopathy. Which of the following is the cause of this patient’s condition and could have been prevented through vaccinations in childhood?\n\n            ### Options\n    opa. Streptococcus pyogenes\nopb. Corynebacterium diphtheriae\nopc. Haemophilus influenzae b\nopd. Agranulocytosis\nope. Epstein Barr virus\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Edematous tongue with a grey-white membrane on the soft palate and tonsils\" -> \"Diffusely swollen neck with bilateral tender cervical lymphadenopathy\" -> \"Possible diagnosis of diphtheria\" -> 80% confidence.\n\nCHAIN: \"Recent move from Asia with unknown immunization status\" -> \"Increased risk of exposure to pathogens not commonly seen in the US\" -> \"Possible lack of vaccination against Corynebacterium diphtheriae\" -> 70% confidence.\n\nCHAIN: \"History of acute tonsillitis 1 month ago\" -> \"Possible incomplete resolution of previous infection\" -> \"Increased susceptibility to secondary infections like diphtheria\" -> 75% confidence.",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

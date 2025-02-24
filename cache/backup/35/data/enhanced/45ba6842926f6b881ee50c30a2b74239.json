@@ -1,0 +1,143 @@
+{
+  "question": "A 43-year-old male visits the emergency room around 4 weeks after getting bitten by a bat during a cave diving trip. After cleansing the wound with water, the patient reports that he felt well enough not to seek medical attention immediately following his trip. He does endorse feeling feverish in the past week but a new onset of photophobia and irritability led him to seek help today. What would the post-mortem pathology report show if the patient succumbs to this infection?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Psammoma bodies",
+    "opb": "Pick bodies",
+    "opc": "Heinz bodies",
+    "opd": "Negri bodies",
+    "ope": "Howell-Jolly bodies"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Encephalitis",
+        "Disease",
+        "Photophobia"
+      ],
+      [
+        "Encephalitis",
+        "Symptoms",
+        "Photophobia"
+      ],
+      [
+        "Encephalitis",
+        "Brain Abscess",
+        "Photophobia"
+      ],
+      [
+        "Encephalitis",
+        "Disease",
+        "Fever"
+      ],
+      [
+        "Encephalitis",
+        "Obesity",
+        "Fever"
+      ],
+      [
+        "Encephalitis",
+        "Hypertensive disease",
+        "Fever"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Encephalitis)-CAUSES->(Disease)-CAUSES->(Photophobia)",
+      "(Encephalitis)-CAUSES->(Symptoms)-CAUSES->(Photophobia)",
+      "(Encephalitis)-CAUSES->(Brain Abscess)-CAUSES->(Photophobia)",
+      "(Encephalitis)-CAUSES->(Disease)-CAUSES->(Fever)",
+      "(Encephalitis)-CAUSES->(Obesity)-CAUSES->(Fever)",
+      "(Encephalitis)-CAUSES->(Hypertensive disease)-CAUSES->(Fever)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Negri Body",
+        "Brain tissue",
+        "Rabies"
+      ],
+      [
+        "Negri Body",
+        "Brain",
+        "Rabies"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Negri Body)-PART_OF->(Brain tissue)-LOCATION_OF->(Rabies)",
+      "(Negri Body)-PART_OF->(Brain)-LOCATION_OF->(Rabies)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Encephalitis)-CAUSES->(Disease)-CAUSES->(Photophobia)",
+      "(Encephalitis)-CAUSES->(Symptoms)-CAUSES->(Photophobia)",
+      "(Encephalitis)-CAUSES->(Brain Abscess)-CAUSES->(Photophobia)",
+      "(Encephalitis)-CAUSES->(Disease)-CAUSES->(Fever)",
+      "(Encephalitis)-CAUSES->(Obesity)-CAUSES->(Fever)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Bat bite -> Rabies infection -> Negri bodies -> 95% CHAIN: Rabies infection -> Encephalitis -> Irritability and photophobia -> 90% CHAIN: Encephalitis -> Fever -> 80% CHAIN: Negri bodies -> Rabies encephalitis -> Fatal outcome -> Post-mortem pathology report showing Negri bodies -> 95%"
+  ],
+  "enhanced_information": "The post-mortem pathology report would show Negri bodies if the patient succumbs to rabies infection. This is supported by the consensus that rabies infection can lead to encephalitis, presenting with symptoms like irritability, photophobia, and fever, ultimately resulting in a fatal outcome with characteristic Negri bodies in the brain.",
+  "analysis": "Rabies infection is a viral illness that can lead to encephalitis and presents with symptoms like irritability, photophobia, and fever. The presence of Negri bodies in the brain is a characteristic finding in rabies infection, especially in post-mortem pathology reports.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

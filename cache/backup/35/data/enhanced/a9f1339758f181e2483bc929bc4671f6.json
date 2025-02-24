@@ -1,0 +1,213 @@
+{
+  "question": "A 9-year-old boy presents to the emergency department with a 12 hour history of severe vomiting and increased sleepiness. He experienced high fever and muscle pain about 5 days prior to presentation, and his parents gave him an over the counter medication to control the fever at that time. On presentation, he is found to be afebrile though he is still somnolent and difficult to arouse. Physical exam reveals hepatomegaly and laboratory testing shows the following results:\n\nAlanine aminotransferase: 85 U/L\nAspartate aminotransferase: 78 U/L\n\nWhich of the following is the most likely cause of this patient's neurologic changes?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Bacterial sepsis",
+    "opb": "Cerebral edema",
+    "opc": "Drug overdose",
+    "opd": "Subarachnoid hemorrhage",
+    "ope": "Viral meningitis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Myalgia",
+        "Disease",
+        "Fever"
+      ],
+      [
+        "Myalgia",
+        "Obesity",
+        "Fever"
+      ],
+      [
+        "Myalgia",
+        "Hypertensive disease",
+        "Fever"
+      ],
+      [
+        "Alanine Transaminase",
+        "Physical findings",
+        "Disease",
+        "Liver Dysfunction"
+      ],
+      [
+        "Alanine Transaminase",
+        "Hypokinesia",
+        "Disease",
+        "Liver Dysfunction"
+      ],
+      [
+        "Aspartate Transaminase",
+        "Symptoms",
+        "Disease",
+        "Liver Dysfunction"
+      ],
+      [
+        "Aspartate Transaminase",
+        "Pain",
+        "Disease",
+        "Liver Dysfunction"
+      ],
+      [
+        "Liver Dysfunction",
+        "Disease",
+        "Drug-induced liver disease"
+      ],
+      [
+        "Liver Dysfunction",
+        "Obesity",
+        "Drug-induced liver disease"
+      ],
+      [
+        "Liver Dysfunction",
+        "Chronic liver disease NOS",
+        "Drug-induced liver disease"
+      ],
+      [
+        "Drowsiness",
+        "Disease",
+        "Metabolic Diseases"
+      ],
+      [
+        "Drowsiness",
+        "Obesity",
+        "Metabolic Diseases"
+      ],
+      [
+        "Vomiting",
+        "Metabolic Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Myalgia)-CAUSES->(Disease)-CAUSES->(Fever)",
+      "(Myalgia)-CAUSES->(Obesity)-CAUSES->(Fever)",
+      "(Myalgia)-CAUSES->(Hypertensive disease)-CAUSES->(Fever)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-CAUSES->(Disease)-CAUSES->(Liver Dysfunction)",
+      "(Alanine Transaminase)-CAUSES->(Hypokinesia)-PREDISPOSES->(Disease)-CAUSES->(Liver Dysfunction)",
+      "(Aspartate Transaminase)-CAUSES->(Symptoms)-CAUSES->(Disease)-CAUSES->(Liver Dysfunction)",
+      "(Aspartate Transaminase)-CAUSES->(Pain)-CAUSES->(Disease)-CAUSES->(Liver Dysfunction)",
+      "(Liver Dysfunction)-CAUSES->(Disease)-PREDISPOSES->(Drug-induced liver disease)",
+      "(Liver Dysfunction)-CAUSES->(Obesity)-PREDISPOSES->(Drug-induced liver disease)",
+      "(Liver Dysfunction)-PREDISPOSES->(Chronic liver disease NOS)-CAUSES->(Drug-induced liver disease)",
+      "(Drowsiness)-CAUSES->(Disease)-CAUSES->(Metabolic Diseases)",
+      "(Drowsiness)-PREDISPOSES->(Obesity)-MANIFESTATION_OF->(Metabolic Diseases)",
+      "(Vomiting)-CAUSES->(Metabolic Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hepatomegaly",
+        "Liver Dysfunction",
+        "Alanine Transaminase"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hepatomegaly)-ASSOCIATED_WITH->(Liver Dysfunction)-ASSOCIATED_WITH->(Alanine Transaminase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Aspartate Transaminase)-CAUSES->(Pain)-CAUSES->(Disease)-CAUSES->(Liver Dysfunction)",
+      "(Hepatomegaly)-ASSOCIATED_WITH->(Liver Dysfunction)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Alanine Transaminase)-CAUSES->(Physical findings)-CAUSES->(Disease)-CAUSES->(Liver Dysfunction)",
+      "(Alanine Transaminase)-CAUSES->(Hypokinesia)-PREDISPOSES->(Disease)-CAUSES->(Liver Dysfunction)",
+      "(Aspartate Transaminase)-CAUSES->(Symptoms)-CAUSES->(Disease)-CAUSES->(Liver Dysfunction)",
+      "(Liver Dysfunction)-PREDISPOSES->(Chronic liver disease NOS)-CAUSES->(Drug-induced liver disease)",
+      "(Myalgia)-CAUSES->(Disease)-CAUSES->(Fever)",
+      "(Myalgia)-CAUSES->(Obesity)-CAUSES->(Fever)",
+      "(Myalgia)-CAUSES->(Hypertensive disease)-CAUSES->(Fever)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"High fever and muscle pain\" -> \"Over the counter medication for fever\" -> \"Possible drug overdose\" -> 70% confidence CHAIN: \"Hepatomegaly\" -> \"Elevated liver enzymes (ALT, AST)\" -> \"Liver dysfunction\" -> \"Possible drug-induced liver injury\" -> 80% confidence CHAIN: \"Increased sleepiness and difficult to arouse\" -> \"Neurologic changes\" -> \"Possible cerebral edema\" -> 60% confidence CHAIN: \"Vomiting and somnolence\" -> \"Possible metabolic derangement\" -> \"Neurologic changes\" -> 70%"
+  ],
+  "enhanced_information": "The most likely cause of this patient's neurologic changes is drug overdose. The patient's history of high fever and muscle pain followed by over-the-counter medication use aligns with a possible drug overdose, supported by elevated liver enzymes indicating possible drug-induced liver injury. The neurologic changes, including increased sleepiness and difficulty to arouse, are consistent with the effects of a drug overdose rather than cerebral edema or other causes.",
+  "analysis": "The core medical principle here is to consider the most likely cause of the patient's neurologic changes based on the clinical presentation and laboratory findings. Given the history of high fever, muscle pain, and subsequent over-the-counter medication use leading to elevated liver enzymes, the most probable cause of the neurologic changes is a drug overdose. The patient's somnolence and difficulty to arouse are consistent with the effects of a drug overdose rather than other potential causes like bacterial sepsis, cerebral edema, subarachnoid hemorrhage, or viral meningitis.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

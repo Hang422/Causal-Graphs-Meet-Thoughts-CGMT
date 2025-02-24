@@ -1,0 +1,136 @@
+{
+  "question": "An otherwise healthy 27-year-old man presents to the Emergency Department with dark urine and left flank pain. He has had a fever, sore throat, and malaise for the last 2 days. Vital signs reveal a temperature of 38.1°C (100.5°F), blood pressure of 120/82 mm Hg, and a pulse of 95/min. His family history is noncontributory. Physical examination reveals enlarged tonsils with tender anterior cervical lymphadenopathy. Urinalysis shows pink urine with 20–25 red cells/high power field and 2+ protein. This patient’s condition is most likely due to which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Inherited abnormalities in type IV collagen",
+    "opb": "Autoantibodies against alpha-3 chain of type IV collagen",
+    "opc": "C3 nephritic factor",
+    "opd": "Immune complex deposition",
+    "ope": "Diffuse mesangial IgA deposition"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Streptococcal Infections",
+        "Disease",
+        "Physiological stress",
+        "Kidney"
+      ],
+      [
+        "Streptococcal Infections",
+        "Disease",
+        "paracrine",
+        "Kidney"
+      ],
+      [
+        "Streptococcal Infections",
+        "Disease",
+        "metabolic effects",
+        "Kidney"
+      ],
+      [
+        "Antigen-Antibody Complex",
+        "Kidney Diseases",
+        "Glomerulonephritis"
+      ],
+      [
+        "Antigen-Antibody Complex",
+        "Symptoms",
+        "Glomerulonephritis"
+      ],
+      [
+        "Antigen-Antibody Complex",
+        "Hepatitis",
+        "Glomerulonephritis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Streptococcal Infections)-CAUSES->(Disease)-CAUSES->(Physiological stress)-PROCESS_OF->(Kidney)",
+      "(Streptococcal Infections)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Kidney)",
+      "(Streptococcal Infections)-CAUSES->(Disease)-MANIFESTATION_OF->(metabolic effects)-PROCESS_OF->(Kidney)",
+      "(Antigen-Antibody Complex)-CAUSES->(Kidney Diseases)-CAUSES->(Glomerulonephritis)",
+      "(Antigen-Antibody Complex)-CAUSES->(Symptoms)-CAUSES->(Glomerulonephritis)",
+      "(Antigen-Antibody Complex)-CAUSES->(Hepatitis)-CAUSES->(Glomerulonephritis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Kidney",
+        "Glomerulonephritis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Kidney)-LOCATION_OF->(Glomerulonephritis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Antigen-Antibody Complex)-CAUSES->(Symptoms)-CAUSES->(Glomerulonephritis)",
+      "(Antigen-Antibody Complex)-CAUSES->(Kidney Diseases)-CAUSES->(Glomerulonephritis)",
+      "(Antigen-Antibody Complex)-CAUSES->(Hepatitis)-CAUSES->(Glomerulonephritis)",
+      "(Kidney)-LOCATION_OF->(Glomerulonephritis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Viral infection -> Immune response activation -> Glomerulonephritis -> 70% CHAIN: Streptococcal infection -> Activation of alternative complement pathway -> C3 nephritic factor production -> Glomerulonephritis -> 80% CHAIN: Streptococcal infection -> Immune complex deposition in the kidney -> Glomerulonephritis -> 70%"
+  ],
+  "enhanced_information": "The patient's presentation with dark urine, flank pain, fever, sore throat, and malaise, along with urinalysis findings of red cells and protein, is most likely due to a post-streptococcal glomerulonephritis. This is supported by the chain: Streptococcal infection -> Activation of alternative complement pathway -> C3 nephritic factor production -> Glomerulonephritis. The evidence paths indicating (Antigen-Antibody Complex)-CAUSES->(Symptoms)-CAUSES->(Glomerulonephritis) and (Antigen-Antibody Complex)-CAUSES->(Kidney Diseases)-CAUSES->(Glomerulonephritis) align with the consensus that immune complex deposition in the kidney leads to glomerulonephritis in this context.",
+  "analysis": "The patient's presentation with dark urine, flank pain, fever, sore throat, and malaise, along with urinalysis findings of red cells and protein, is highly suggestive of post-streptococcal glomerulonephritis. The enhanced information provided supports the chain of events from Streptococcal infection to C3 nephritic factor production to glomerulonephritis. This aligns with the consensus that immune complex deposition in the kidney leads to glomerulonephritis in this context.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

@@ -1,0 +1,100 @@
+{
+  "question": "A 60-year-old patient is at his physician’s office for a routine health maintenance exam. The patient has a past medical history of osteoarthritis in his right knee and GERD that is well-controlled with over the counter medication. On a fasting lipid profile, he is found to have high cholesterol. The patient is started on daily atorvastatin to reduce his risk of cardiovascular disease. What is the major apolipoprotein found on the lipoprotein most directly affected by his statin medication?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Apolipoprotein A-I",
+    "opb": "Apolipoprotein B-48",
+    "opc": "Apolipoprotein B-100",
+    "opd": "Apolipoprotein C-II",
+    "ope": "Apolipoprotein E"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "atorvastatin",
+        "Disease",
+        "Obstruction",
+        "Hydroxymethylglutaryl-CoA reductase"
+      ],
+      [
+        "atorvastatin",
+        "Disease",
+        "Obstruction",
+        "Hydroxymethylglutaryl-CoA reductase"
+      ],
+      [
+        "Low-Density Lipoproteins",
+        "Cells",
+        "apolipoprotein B-100"
+      ],
+      [
+        "Low-Density Lipoproteins",
+        "Cells",
+        "apolipoprotein B-100"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "COMPLICATES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PART_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(atorvastatin)-TREATS->(Disease)-COMPLICATES->(Obstruction)-ASSOCIATED_WITH->(Hydroxymethylglutaryl-CoA reductase)",
+      "(atorvastatin)-ASSOCIATED_WITH->(Disease)-CAUSES->(Obstruction)-ASSOCIATED_WITH->(Hydroxymethylglutaryl-CoA reductase)",
+      "(Low-Density Lipoproteins)-PART_OF->(Cells)-INTERACTS_WITH->(apolipoprotein B-100)",
+      "(Low-Density Lipoproteins)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(apolipoprotein B-100)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(atorvastatin)-ASSOCIATED_WITH/TREATS->(Disease)-CAUSES/COMPLICATES->(Obstruction)-ASSOCIATED_WITH->(Hydroxymethylglutaryl-CoA reductase)-CoA reductase)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Atorvastatin\" -> \"Inhibits HMG-CoA reductase\" -> \"Reduces cholesterol synthesis\" -> \"Decreases LDL production\" -> \"Reduces Apolipoprotein B-100 levels\" -> \"Directly affects Apolipoprotein B-100\" -> 95%"
+  ],
+  "enhanced_information": "Atorvastatin inhibits HMG-CoA reductase, reducing cholesterol synthesis and decreasing LDL production. This leads to a reduction in Apolipoprotein B-100 levels, making Apolipoprotein B-100 the major apolipoprotein most directly affected by the statin medication.",
+  "analysis": "Atorvastatin inhibits HMG-CoA reductase, leading to a reduction in cholesterol synthesis and LDL production. This reduction primarily affects Apolipoprotein B-100 levels, making it the major apolipoprotein most directly influenced by the statin medication.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

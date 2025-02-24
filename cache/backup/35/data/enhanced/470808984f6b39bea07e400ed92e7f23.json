@@ -1,0 +1,162 @@
+{
+  "question": "A 50-year-old man is brought to the emergency department with progressive retrosternal chest pain and shortness of breath that started the day before. The pain is severe, worsens with inspiration, and radiates to his neck. He has also had a sore throat and neck pain the last 4 days. He remained bed-bound during this time and had poor appetite. One week ago, he underwent an upper endoscopy for peptic ulcer disease. He has type 2 diabetes mellitus, peptic ulcer disease, hyperlipidemia, and hypertension. His only medication is omeprazole. He does not smoke or drink alcohol. He appears in significant distress. His temperature is 39.1°C (102.3°F), pulse is 108/min, respirations are 28/min, and blood pressure is 88/46 mm Hg. The lungs are clear to auscultation. Cardiac examinations shows tachycardia but is otherwise unremarkable. The abdomen is soft and nontender. Oropharyngeal examination is limited because the patient is unable to open his mouth due to pain. His hematocrit is 42%, leukocyte count is 13,800/mm3, and platelet count is 205,000/mm3. The patient is intubated in the emergency department and appropriate treatment is started. Chest x-ray shows a widened mediastinum. Which of the following is most likely to have prevented this patient's condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Pericardiocentesis",
+    "opb": "Intravenous methylprednisolone administration",
+    "opc": "Intravenous ampicillin-sulbactam administration",
+    "opd": "Blood pressure control",
+    "ope": "Intravenous levofloxacin administration\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Esophageal Perforation",
+        "Mediastinitis"
+      ],
+      [
+        "Neck Pain",
+        "Disease",
+        "Communicable Diseases"
+      ],
+      [
+        "Neck Pain",
+        "Symptoms",
+        "Communicable Diseases"
+      ],
+      [
+        "Neck Pain",
+        "Cerebrovascular accident",
+        "Communicable Diseases"
+      ],
+      [
+        "Pharyngitis",
+        "Communicable Diseases"
+      ],
+      [
+        "Communicable Diseases",
+        "Disease",
+        "Mediastinitis"
+      ],
+      [
+        "Communicable Diseases",
+        "Infection",
+        "Mediastinitis"
+      ],
+      [
+        "Communicable Diseases",
+        "Obesity",
+        "Mediastinitis"
+      ],
+      [
+        "Hyperlipidemia",
+        "Arteriosclerosis"
+      ],
+      [
+        "Arteriosclerosis",
+        "Dissection of aorta"
+      ],
+      [
+        "Hypertensive disease",
+        "Dissection of aorta"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Esophageal Perforation)-CAUSES->(Mediastinitis)",
+      "(Neck Pain)-CAUSES->(Disease)-CAUSES->(Communicable Diseases)",
+      "(Neck Pain)-CAUSES->(Symptoms)-CAUSES->(Communicable Diseases)",
+      "(Neck Pain)-CAUSES->(Cerebrovascular accident)-CAUSES->(Communicable Diseases)",
+      "(Pharyngitis)-CAUSES->(Communicable Diseases)",
+      "(Communicable Diseases)-CAUSES->(Disease)-CAUSES->(Mediastinitis)",
+      "(Communicable Diseases)-CAUSES->(Infection)-PREDISPOSES->(Mediastinitis)",
+      "(Communicable Diseases)-PREDISPOSES->(Obesity)-PREDISPOSES->(Mediastinitis)",
+      "(Hyperlipidemia)-CAUSES->(Arteriosclerosis)",
+      "(Arteriosclerosis)-CAUSES->(Dissection of aorta)",
+      "(Hypertensive disease)-CAUSES->(Dissection of aorta)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypertensive disease)-CAUSES->(Dissection of aorta)",
+      "(Arteriosclerosis)-CAUSES->(Dissection of aorta)",
+      "(Pharyngitis)-CAUSES->(Communicable Diseases)",
+      "(Hyperlipidemia)-CAUSES->(Arteriosclerosis)",
+      "(Neck Pain)-CAUSES->(Symptoms)-CAUSES->(Communicable Diseases)",
+      "(Esophageal Perforation)-CAUSES->(Mediastinitis)",
+      "(Neck Pain)-CAUSES->(Disease)-CAUSES->(Communicable Diseases)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Peptic ulcer disease -> upper endoscopy -> possible esophageal perforation -> mediastinitis -> widened mediastinum -> 70% CHAIN: Sore throat and neck pain -> possible infection -> mediastinitis -> widened mediastinum -> 60% CHAIN: Hyperlipidemia -> atherosclerosis -> possible aortic dissection -> widened mediastinum -> 50% CHAIN: Hypertension -> possible aortic dissection -> widened mediastinum -> 70%"
+  ],
+  "enhanced_information": "The most likely preventive measure for this patient's condition would have been blood pressure control. Hypertension is a known risk factor for aortic dissection, which can lead to a widened mediastinum. The evidence paths support this relationship, indicating that hypertension can cause aortic dissection. Therefore, focusing on blood pressure control could have potentially prevented the development of the widened mediastinum in this case.",
+  "analysis": "Hypertension is a known risk factor for aortic dissection, which can lead to a widened mediastinum. Controlling blood pressure could have potentially prevented the development of the widened mediastinum in this patient. The other options are not directly related to preventing aortic dissection.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

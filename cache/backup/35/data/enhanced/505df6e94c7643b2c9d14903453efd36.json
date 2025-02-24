@@ -1,0 +1,101 @@
+{
+  "question": "A 6-year-old boy is brought to the physician by his mother who is concerned about his early sexual development. He has no history of serious illness and takes no medications. He is at the 99th percentile for height and 70th percentile for weight. His blood pressure is 115/78 mm Hg. Examination shows greasy facial skin and cystic acne on his forehead and back. There is coarse axillary and pubic hair. Serum studies show:\nCortisol (0800 h) 4 μg/dL\nDeoxycorticosterone 2.5 ng/dL (N = 3.5–11.5)\nDehydroepiandrosterone sulfate 468 mcg/dL (N = 29–412)\nWhich of the following is the most likely underlying cause of this patient's symptoms?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Deficiency of 21β-hydroxylase",
+    "opb": "Constitutive activation of adenylyl cyclase",
+    "opc": "Idiopathic overproduction of GnRH",
+    "opd": "Deficiency of 17α-hydroxylase",
+    "ope": "Deficiency of 11β-hydroxylase"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hydrocortisone",
+        "physiological aspects",
+        "Adrenal Glands"
+      ],
+      [
+        "Hydrocortisone",
+        "Excretory function",
+        "Adrenal Glands"
+      ],
+      [
+        "Hydrocortisone",
+        "biological adaptation to stress",
+        "Adrenal Glands"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "PROCESS_OF"
+      ]
+    ],
+    "paths": [
+      "(Hydrocortisone)-CAUSES->(physiological aspects)-PROCESS_OF->(Adrenal Glands)",
+      "(Hydrocortisone)-CAUSES->(Excretory function)-PROCESS_OF->(Adrenal Glands)",
+      "(Hydrocortisone)-CAUSES->(biological adaptation to stress)-PROCESS_OF->(Adrenal Glands)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Deoxycorticosterone",
+        "Hydrocortisone"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Deoxycorticosterone)-INTERACTS_WITH->(Hydrocortisone)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hydrocortisone)-CAUSES->(biological adaptation to stress)-PROCESS_OF->(Adrenal Glands)",
+      "(Deoxycorticosterone)-INTERACTS_WITH->(Hydrocortisone)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"High levels of dehydroepiandrosterone sulfate\" -> \"Increased androgen production\" -> \"Early sexual development and acne\" -> \"Possible underlying cause of symptoms\" -> 70%",
+    "CHAIN: \"High levels of deoxycorticosterone\" -> \"Low levels of cortisol\" -> \"Possible adrenal gland dysfunction\" -> \"Underlying cause of symptoms\" -> 60%"
+  ],
+  "enhanced_information": "The most likely underlying cause of this patient's symptoms is deficiency of 21β-hydroxylase, leading to high levels of dehydroepiandrosterone sulfate, increased androgen production, early sexual development, and acne. The high levels of deoxycorticosterone and low cortisol levels suggest adrenal gland dysfunction, supporting the possibility of a deficiency in 21β-hydroxylase.",
+  "analysis": "The patient's presentation with early sexual development, acne, high dehydroepiandrosterone sulfate levels, and adrenal dysfunction suggests a likely deficiency of 21β-hydroxylase. This enzyme deficiency leads to increased androgen production, explaining the symptoms observed.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

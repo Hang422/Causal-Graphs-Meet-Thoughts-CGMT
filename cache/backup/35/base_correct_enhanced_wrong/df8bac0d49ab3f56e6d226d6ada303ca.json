@@ -1,0 +1,184 @@
+{
+  "question": "A 61-year-old woman comes to the physician because of a constant, dull headache and generalized body pains for the past 8 months. She has also had difficulty hearing from her left side, which started a month after the onset of the headaches. Five months ago, she had surgery to correct a fracture of the right femur that occurred without a fall or any significant trauma. Five years ago, she underwent a total thyroidectomy for localized thyroid carcinoma. She takes levothyroxine and calcium supplements, which she started after menopause. Physical examination reveals a prominent forehead and irregular, tender skull surface. Bony tenderness is present over bilateral hip and knee joints, with decreased range of motion of the right hip joint and increased anterior curvature of both tibias. Laboratory studies show a highly elevated level of alkaline phosphatase, with vitamin D, calcium and PTH levels within normal limits. A plain x-ray of the head is most likely to show which of the following findings?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Lytic lesions with no sclerotic margin",
+    "opb": "Multiple, well-defined, punched out lytic lesions",
+    "opc": "Mixed lytic and sclerotic lesions",
+    "opd": "Periosteal trabeculations with radiolucent marrow hyperplasia",
+    "ope": "Generalized dense, sclerotic bone"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Alkaline Phosphatase",
+        "Symptoms",
+        "Tuberculosis",
+        "Lytic lesion"
+      ],
+      [
+        "Alkaline Phosphatase",
+        "Symptoms",
+        "Hyperparathyroidism, Primary",
+        "Lytic lesion"
+      ],
+      [
+        "Alkaline Phosphatase",
+        "Hypersensitivity",
+        "Tuberculosis",
+        "Lytic lesion"
+      ],
+      [
+        "CALCIUM SUPPLEMENTS",
+        "Cardiovascular Diseases",
+        "Sclerosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Alkaline Phosphatase)-CAUSES->(Symptoms)-CAUSES->(Tuberculosis)-CAUSES->(Lytic lesion)",
+      "(Alkaline Phosphatase)-CAUSES->(Symptoms)-CAUSES->(Hyperparathyroidism, Primary)-CAUSES->(Lytic lesion)",
+      "(Alkaline Phosphatase)-CAUSES->(Hypersensitivity)-CAUSES->(Tuberculosis)-CAUSES->(Lytic lesion)",
+      "(CALCIUM SUPPLEMENTS)-PREDISPOSES->(Cardiovascular Diseases)-CAUSES->(Sclerosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Bone structure of cranium",
+        "Cortex of bone",
+        "Hip structure"
+      ],
+      [
+        "Bone structure of cranium",
+        "Bone structure of acetabulum",
+        "Hip structure"
+      ],
+      [
+        "Bone structure of tibia",
+        "Entire tibia",
+        "Alkaline Phosphatase"
+      ],
+      [
+        "Bone structure of tibia",
+        "Obstruction",
+        "Alkaline Phosphatase"
+      ],
+      [
+        "Hearing Loss, Partial",
+        "hearing impairment",
+        "Hearing",
+        "Supernumerary maxillary right lateral primary incisor",
+        "Plain x-ray"
+      ],
+      [
+        "Hearing Loss, Partial",
+        "Deafness",
+        "Hearing",
+        "Head of right femur",
+        "Plain x-ray"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "PROCESS_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Bone structure of cranium)-PART_OF->(Cortex of bone)-PART_OF->(Hip structure)",
+      "(Bone structure of cranium)-PART_OF->(Bone structure of acetabulum)-PART_OF->(Hip structure)",
+      "(Bone structure of tibia)-PART_OF->(Entire tibia)-LOCATION_OF->(Alkaline Phosphatase)",
+      "(Bone structure of tibia)-LOCATION_OF->(Obstruction)-ASSOCIATED_WITH->(Alkaline Phosphatase)",
+      "(Hearing Loss, Partial)-ISA->(hearing impairment)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Supernumerary maxillary right lateral primary incisor)-LOCATION_OF->(Plain x-ray)",
+      "(Hearing Loss, Partial)-ISA->(Deafness)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Head of right femur)-LOCATION_OF->(Plain x-ray)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Bone structure of tibia)-LOCATION_OF->(Obstruction)-ASSOCIATED_WITH->(Alkaline Phosphatase)",
+      "(Alkaline Phosphatase)-CAUSES->(Symptoms)-CAUSES->(Hyperparathyroidism, Primary)-CAUSES->(Lytic lesion)",
+      "(CALCIUM SUPPLEMENTS)-PREDISPOSES->(Cardiovascular Diseases)-CAUSES->(Sclerosis)",
+      "(Bone structure of tibia)-PART_OF->(Entire tibia)-LOCATION_OF->(Alkaline Phosphatase)",
+      "(Alkaline Phosphatase)-CAUSES->(Symptoms)-CAUSES->(Tuberculosis)-CAUSES->(Lytic lesion)",
+      "(Hearing Loss, Partial)-ISA->(hearing impairment)-MANIFESTATION_OF->(Hearing)-PROCESS_OF->(Supernumerary maxillary right lateral primary incisor)-LOCATION_OF->(Plain x-ray)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Prominent forehead and irregular, tender skull surface\" -> \"Bony tenderness over bilateral hip and knee joints\" -> \"Decreased range of motion of the right hip joint\" -> \"Increased anterior curvature of both tibias\" -> \"Highly elevated alkaline phosphatase level\" -> \"Possible lytic lesions with no sclerotic margin on plain x-ray of the head\" -> 70%",
+    "CHAIN: \"History of total thyroidectomy for localized thyroid carcinoma\" -> \"Takes levothyroxine and calcium supplements\" -> \"Possible mixed lytic and sclerotic lesions on plain x-ray of the head\" -> 80%",
+    "CHAIN: \"Fracture of the right femur without significant trauma\" -> \"Difficulty hearing from the left side\" -> \"Possible periosteal trabeculations with radiolucent marrow hyperplasia on plain x-ray of the head\" -> 75%"
+  ],
+  "enhanced_information": "The patient's symptoms and history suggest a possible diagnosis of hyperparathyroidism, which can lead to lytic lesions with no sclerotic margin on a plain x-ray of the head. The highly elevated alkaline phosphatase level further supports this possibility. The evidence paths linking alkaline phosphatase to hyperparathyroidism and lytic lesions align with this reasoning.",
+  "analysis": "The patient's symptoms and history, along with the highly elevated alkaline phosphatase level, suggest a possible diagnosis of hyperparathyroidism. In hyperparathyroidism, lytic lesions with no sclerotic margin are commonly seen on imaging studies. This aligns with the enhanced information provided. Given the context, the most likely correct option is lytic lesions with no sclerotic margin.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      60.0,
+      20.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_012108",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "4222ee12",
+  "question_text": "You are developing a new diagnostic test to identify patients with disease X. Of 100 patients tested with the gold standard test, 10% tested positive. Of those that tested positive, the experimental test was positive for 90% of those patients. The specificity of the experimental test is 20%. What is the positive predictive value of this new test?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            You are developing a new diagnostic test to identify patients with disease X. Of 100 patients tested with the gold standard test, 10% tested positive. Of those that tested positive, the experimental test was positive for 90% of those patients. The specificity of the experimental test is 20%. What is the positive predictive value of this new test?\n\n            ### Options\n    opa. 90%\nopb. 10%\nopc. 11%\nopd. 95%\nope. 20%\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN:\nGold standard test positive rate = 10%\nExperimental test sensitivity = 90% of gold standard positive cases\nExperimental test specificity = 20%\nPositive predictive value = (True positives) / (True positives + False positives)\nTrue positives = 10% (gold standard positive) * 90% (experimental test sensitivity)\nFalse positives = 80% (gold standard negative) * 20% (1 - experimental test specificity)\nCalculate positive predictive value using the formula\nPositive predictive value = (10% * 90%) / (10% * 90% + 80% * 20%)\nPositive predictive value = 90% / (90% + 16%)\nPositive predictive value = 90% / 106%\nPositive predictive value ≈ 85%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

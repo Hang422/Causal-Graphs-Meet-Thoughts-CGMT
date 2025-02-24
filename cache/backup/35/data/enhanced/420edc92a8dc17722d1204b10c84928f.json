@@ -1,0 +1,157 @@
+{
+  "question": "A 52-year-old woman is accompanied by her husband to the emergency department with a severe occipital headache that started suddenly an hour ago. She is drowsy but able to answer the physician’s questions. She describes it as the worst headache she has ever had, 9/10 in intensity. The husband says it was initially localized to the occiput but has now spread all over her head and she also complained of a generalized heaviness. She took an ibuprofen without experiencing any relief. She also complains of blurry vision and nausea and had 1 episode of vomiting. She denies a recent history of fever, chills, numbness, or seizures. Her past medical history is significant for hypertension controlled with lisinopril and metoprolol. On examination, she is drowsy but oriented. Papilledema is seen on ophthalmoscopy. Neck flexion is difficult and painful. The rest of the exam is unremarkable. Her blood pressure is 160/100 mm Hg, heart rate is 100/min, and temperature is 37.0°C (98.6°F). The ECG, cardiac enzymes, and laboratory studies are normal. Lumbar puncture results are as follows:\nOpening pressure 210 mm H2O\nRBC 50/mm3, numbers steady over 4 test tubes\nCell count 5/mm3\nGlucose 40 mg/dL\nProteins 100 mg/dL\nThe patient is admitted to the ICU for further management. Which of the following is the most likely pathophysiology based on her history and CSF findings?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Viral infection of the brain parenchyma",
+    "opb": "Intracerebral bleed",
+    "opc": "Bacterial infection of the meninges",
+    "opd": "Trauma during lumbar puncture",
+    "ope": "Rupture of the communicating branches of the cerebral arteries"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Ophthalmoscopy",
+        "Disease",
+        "Pain"
+      ],
+      [
+        "Ophthalmoscopy",
+        "Ischemia",
+        "Pain"
+      ],
+      [
+        "Papilledema",
+        "Headache",
+        "Pain"
+      ],
+      [
+        "Papilledema",
+        "Craniosynostosis",
+        "Pain"
+      ],
+      [
+        "Papilledema",
+        "Physical findings",
+        "Pain"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Ophthalmoscopy)-CAUSES->(Disease)-CAUSES->(Pain)",
+      "(Ophthalmoscopy)-CAUSES->(Ischemia)-CAUSES->(Pain)",
+      "(Papilledema)-CAUSES->(Headache)-CAUSES->(Pain)",
+      "(Papilledema)-CAUSES->(Craniosynostosis)-CAUSES->(Pain)",
+      "(Papilledema)-CAUSES->(Physical findings)-CAUSES->(Pain)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Spinal Puncture",
+        "Tachycardia, Ventricular",
+        "Genes",
+        "Erythrocytes"
+      ],
+      [
+        "Spinal Puncture",
+        "Tachycardia, Ventricular",
+        "Genes",
+        "Erythrocytes"
+      ],
+      [
+        "Erythrocytes",
+        "Renal Tissue",
+        "Cell Count"
+      ],
+      [
+        "Erythrocytes",
+        "Frozen Sections",
+        "Cell Count"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Spinal Puncture)-CAUSES->(Tachycardia, Ventricular)-ASSOCIATED_WITH->(Genes)-PART_OF->(Erythrocytes)",
+      "(Spinal Puncture)-CAUSES->(Tachycardia, Ventricular)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Erythrocytes)",
+      "(Erythrocytes)-PART_OF->(Renal Tissue)-LOCATION_OF->(Cell Count)",
+      "(Erythrocytes)-PART_OF->(Frozen Sections)-LOCATION_OF->(Cell Count)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ophthalmoscopy)-CAUSES->(Disease)-CAUSES->(Pain)",
+      "(Ophthalmoscopy)-CAUSES->(Ischemia)-CAUSES->(Pain)",
+      "(Papilledema)-CAUSES->(Physical findings)-CAUSES->(Pain)",
+      "(Papilledema)-CAUSES->(Headache)-CAUSES->(Pain)",
+      "(Papilledema)-CAUSES->(Craniosynostosis)-CAUSES->(Pain)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Severe occipital headache -> sudden onset -> worst headache ever -> 9/10 intensity -> drowsiness -> able to answer questions -> blurry vision -> nausea -> vomiting -> no recent fever, chills, numbness, or seizures -> 70% CHAIN: Headache localized to occiput -> spread all over head -> generalized heaviness -> no relief with ibuprofen -> 70% CHAIN: Hypertension controlled with lisinopril and metoprolol -> blood pressure 160/100 mm Hg -> 70% CHAIN: Papilledema on ophthalmoscopy -> neck flexion difficult and painful -> 70% CHAIN: Lumbar puncture results: Opening pressure 210 mm H2O -> RBC 50/mm3 -> Cell count 5/mm3 -> Glucose 40 mg/dL -> Proteins 100 mg/dL -> 90% CHAIN: CSF findings: Low glucose (40 mg/dL) -> high protein (100 mg/dL) -> 90% CHAIN: Based on history and CSF findings -> Bacterial infection of the meninges (opc) -> 70%"
+  ],
+  "enhanced_information": "The patient's presentation with severe occipital headache, drowsiness, blurry vision, nausea, vomiting, papilledema, and abnormal CSF findings (low glucose, high protein) is most indicative of bacterial infection of the meninges (opc) rather than other options like viral infection, intracerebral bleed, trauma during lumbar puncture, or rupture of cerebral arteries. The evidence from papilledema and physical findings supports the association with pain, aligning with the diagnosis of meningitis.",
+  "analysis": "The patient's presentation with severe occipital headache, drowsiness, blurry vision, nausea, vomiting, papilledema, and abnormal CSF findings (low glucose, high protein) is highly suggestive of bacterial meningitis. The presence of neck stiffness and the elevated opening pressure on lumbar puncture further support this diagnosis. The history of hypertension and the absence of trauma or bleeding disorders make bacterial meningitis the most likely pathophysiology.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

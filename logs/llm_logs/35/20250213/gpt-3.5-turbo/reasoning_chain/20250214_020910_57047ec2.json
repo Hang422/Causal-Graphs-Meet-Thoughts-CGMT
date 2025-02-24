@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_020910",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "57047ec2",
+  "question_text": "A 31-year-old female presents to the emergency room complaining of fever and difficulty breathing. She first noticed these symptoms 3 days prior to presentation. Her past medical history is notable for well-controlled asthma. She does not smoke and drinks alcohol socially. Upon further questioning, she reports that her urine is tea-colored when she wakes up but generally becomes more yellow and clear over the course of the day. Her temperature is 100.8°F (38.2°C), blood pressure is 135/90 mmHg, pulse is 115/min, and respirations are 20/min. Lung auscultation reveals rales at the right lung base. Laboratory analysis is shown below:\n\nHemoglobin: 9.4 g/dL\nHematocrit: 31%\nLeukocyte count: 3,700 cells/mm^3 with normal differential\nPlatelet count: 110,000/mm^3\nReticulocyte count: 3%\n\nA chest radiograph reveals consolidation in the right lung base and the patient is given oral antibiotics. Which of the following processes is likely impaired in this patient?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 31-year-old female presents to the emergency room complaining of fever and difficulty breathing. She first noticed these symptoms 3 days prior to presentation. Her past medical history is notable for well-controlled asthma. She does not smoke and drinks alcohol socially. Upon further questioning, she reports that her urine is tea-colored when she wakes up but generally becomes more yellow and clear over the course of the day. Her temperature is 100.8°F (38.2°C), blood pressure is 135/90 mmHg, pulse is 115/min, and respirations are 20/min. Lung auscultation reveals rales at the right lung base. Laboratory analysis is shown below:\n\nHemoglobin: 9.4 g/dL\nHematocrit: 31%\nLeukocyte count: 3,700 cells/mm^3 with normal differential\nPlatelet count: 110,000/mm^3\nReticulocyte count: 3%\n\nA chest radiograph reveals consolidation in the right lung base and the patient is given oral antibiotics. Which of the following processes is likely impaired in this patient?\n\n            ### Options\n    opa. Inactivation of C3 convertase\nopb. Inactivation of C5 convertase\nopc. Erythrocyte cytoskeletal formation\nopd. Nicotinamide dinucleotide phosphate metabolism\nope. Aminolevulinic acid metabolism\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Consolidation in the right lung base\" -> \"Difficulty breathing\" -> \"Fever\" -> \"Possible pneumonia\" -> 80%\nCHAIN: \"Tea-colored urine in the morning\" -> \"Clears up during the day\" -> \"Possible hemolysis\" -> \"Impaired erythrocyte cytoskeletal formation\" -> 70%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

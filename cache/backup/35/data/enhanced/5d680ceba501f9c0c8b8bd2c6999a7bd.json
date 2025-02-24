@@ -1,0 +1,162 @@
+{
+  "question": "A 28-year-old man is brought to the emergency department by ambulance after being hit in the head with a baseball bat. Physical examination shows swelling and bruising around the left temple and eye. A CT scan of the head shows a transverse fracture through the sphenoid bone and blood in the sphenoid sinus. Neurological examination is most likely to show which of the following findings?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Left homonymous hemianopia",
+    "opb": "Inward deviation of the left eye",
+    "opc": "Left facial paralysis",
+    "opd": "Decreased hearing in the left ear",
+    "ope": "Deviation of uvula to the right"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Sphenoid bone structure",
+        "Bone structure of cranium",
+        "Lipids",
+        "Blood"
+      ],
+      [
+        "Sphenoid bone structure",
+        "Sclerosis",
+        "STATH",
+        "Blood"
+      ],
+      [
+        "Blood",
+        "Disease",
+        "Cranial nerve compression"
+      ],
+      [
+        "Blood",
+        "Bone structure of cranium",
+        "Cranial nerve compression"
+      ],
+      [
+        "Cranial nerve compression",
+        "Symptoms",
+        "Sphincter",
+        "Eye",
+        "Neurologic Examination"
+      ],
+      [
+        "Cranial nerve compression",
+        "Symptoms",
+        "Sphincter",
+        "Eye",
+        "Neurologic Examination"
+      ],
+      [
+        "Blood",
+        "Tongue",
+        "Facial nerve structure"
+      ],
+      [
+        "Blood",
+        "Skeletal bone",
+        "Facial nerve structure"
+      ],
+      [
+        "Facial nerve structure",
+        "Bone structure of cranium",
+        "Neurologic Examination"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "LOCATION_OF",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Sphenoid bone structure)-PART_OF->(Bone structure of cranium)-LOCATION_OF->(Lipids)-PART_OF->(Blood)",
+      "(Sphenoid bone structure)-LOCATION_OF->(Sclerosis)-ASSOCIATED_WITH->(STATH)-PART_OF->(Blood)",
+      "(Blood)-LOCATION_OF->(Disease)-CAUSES->(Cranial nerve compression)",
+      "(Blood)-PART_OF->(Bone structure of cranium)-LOCATION_OF->(Cranial nerve compression)",
+      "(Cranial nerve compression)-CAUSES->(Symptoms)-ASSOCIATED_WITH->(Sphincter)-PART_OF->(Eye)-LOCATION_OF->(Neurologic Examination)",
+      "(Cranial nerve compression)-CAUSES->(Symptoms)-PREDISPOSES->(Sphincter)-PART_OF->(Eye)-LOCATION_OF->(Neurologic Examination)",
+      "(Blood)-PART_OF->(Tongue)-PART_OF->(Facial nerve structure)",
+      "(Blood)-PART_OF->(Skeletal bone)-PART_OF->(Facial nerve structure)",
+      "(Facial nerve structure)-PART_OF->(Bone structure of cranium)-LOCATION_OF->(Neurologic Examination)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Sphenoid bone structure)-LOCATION_OF->(Sclerosis)-ASSOCIATED_WITH->(STATH)-PART_OF->(Blood)",
+      "(Cranial nerve compression)-CAUSES->(Symptoms)-ASSOCIATED_WITH/PREDISPOSES->(Sphincter)-PART_OF->(Eye)-LOCATION_OF->(Neurologic Examination)",
+      "(Sphenoid bone structure)-PART_OF->(Bone structure of cranium)-LOCATION_OF->(Lipids)-PART_OF->(Blood)",
+      "(Blood)-PART_OF->(Bone structure of cranium)-LOCATION_OF->(Cranial nerve compression)",
+      "(Blood)-PART_OF->(Tongue)-PART_OF->(Facial nerve structure)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Trauma to the head -> transverse fracture through the sphenoid bone -> blood in the sphenoid sinus -> possible cranial nerve injury -> neurological examination findings. CHAIN: Trauma to the head -> sphenoid bone fracture -> blood in the sphenoid sinus -> cranial nerve compression -> neurological examination findings. CHAIN: Trauma to the head -> sphenoid bone fracture -> blood in the sphenoid sinus -> cranial nerve VII (facial nerve) involvement -> neurological examination findings. -> 85%"
+  ],
+  "enhanced_information": "The trauma to the head resulting in a transverse fracture through the sphenoid bone and blood in the sphenoid sinus can lead to cranial nerve compression and possible cranial nerve injury. This can manifest as neurological examination findings such as left facial paralysis, making option opc the most likely finding in this case.",
+  "analysis": "The trauma described involving a transverse fracture through the sphenoid bone and blood in the sphenoid sinus suggests potential cranial nerve involvement. Given the anatomical location and likely compression of cranial nerves, the most likely finding on neurological examination would be left facial paralysis, as supported by the enhanced information provided.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

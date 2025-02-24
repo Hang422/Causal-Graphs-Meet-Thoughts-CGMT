@@ -1,0 +1,201 @@
+{
+  "question": "A 22-year-old woman comes to the physician because of 1 week of progressive left anterior knee pain. The pain is worse after sitting for a prolonged period of time and while ascending stairs. She first noticed the pain the day after a basketball game. She has often taken painful blows to the side of the knees while playing basketball but does not recall this having happened in the last game. Four weeks ago, she was diagnosed with a chlamydial urinary tract infection and treated with azithromycin. She is sexually active with one male partner; they use condoms inconsistently. Her vital signs are within normal limits. She is 178 cm (5 ft 10 in) tall and weighs 62 kg (137 lb); BMI is 19.6 kg/m2. Physical examination shows tenderness over the left anterior knee that is exacerbated with anterior pressure to the patella when the knee is fully extended; there is no erythema or swelling. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Patellofemoral pain syndrome",
+    "opb": "Medial collateral ligament injury",
+    "opc": "Osgood-Schlatter disease",
+    "opd": "Anterior cruciate ligament injury",
+    "ope": "Patellar tendinitis\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pain",
+        "Muscle Contraction",
+        "Knee"
+      ],
+      [
+        "Pain",
+        "physiological aspects",
+        "Knee"
+      ],
+      [
+        "Pain",
+        "Musculoskeletal torsion, function",
+        "Knee"
+      ],
+      [
+        "Cocaine",
+        "Disease",
+        "Sore to touch"
+      ],
+      [
+        "Cocaine",
+        "Symptoms",
+        "Sore to touch"
+      ],
+      [
+        "Sore to touch",
+        "Infection",
+        "Edema"
+      ],
+      [
+        "Sore to touch",
+        "Lymphatic Diseases",
+        "Edema"
+      ],
+      [
+        "Sore to touch",
+        "Benign foot rot",
+        "Edema"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pain)-MANIFESTATION_OF->(Muscle Contraction)-PROCESS_OF->(Knee)",
+      "(Pain)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Knee)",
+      "(Pain)-MANIFESTATION_OF->(Musculoskeletal torsion, function)-PROCESS_OF->(Knee)",
+      "(Cocaine)-TREATS->(Disease)-CAUSES->(Sore to touch)",
+      "(Cocaine)-PREVENTS->(Symptoms)-CAUSES->(Sore to touch)",
+      "(Sore to touch)-CAUSES->(Infection)-CAUSES->(Edema)",
+      "(Sore to touch)-PREDISPOSES->(Lymphatic Diseases)-CAUSES->(Edema)",
+      "(Sore to touch)-PREDISPOSES->(Benign foot rot)-CAUSES->(Edema)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Knee",
+        "Pathogenesis",
+        "Estrogens",
+        "Cocaine"
+      ],
+      [
+        "Knee",
+        "Pathogenesis",
+        "IMPACT gene",
+        "Cocaine"
+      ],
+      [
+        "Knee bone",
+        "Edema"
+      ],
+      [
+        "Edema",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Edema",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Knee)-LOCATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Estrogens)-INTERACTS_WITH->(Cocaine)",
+      "(Knee)-LOCATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(IMPACT gene)-INTERACTS_WITH->(Cocaine)",
+      "(Knee bone)-LOCATION_OF->(Edema)",
+      "(Edema)-COMPLICATES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Edema)-MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Sore to touch)-CAUSES->(Infection)-CAUSES->(Edema)",
+      "(Sore to touch)-PREDISPOSES->(Lymphatic Diseases)-CAUSES->(Edema)",
+      "(Knee bone)-LOCATION_OF->(Edema)",
+      "(Cocaine)-TREATS->(Disease)-CAUSES->(Sore to touch)",
+      "(Cocaine)-PREVENTS->(Symptoms)-CAUSES->(Sore to touch)",
+      "(Edema)-COMPLICATES/MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Sore to touch)-PREDISPOSES->(Benign foot rot)-CAUSES->(Edema)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Progressive left anterior knee pain\" -> \"Worse after sitting for a prolonged period and ascending stairs\" -> \"Pain noticed after a basketball game\" -> \"Took painful blows to the side of the knees while playing basketball\" -> \"No recall of recent blow in the last game\" -> \"Tenderness over the left anterior knee exacerbated with anterior pressure to the patella when fully extended\" -> \"No erythema or swelling\" -> \"Most likely diagnosis is Patellofemoral pain syndrome\" -> 95%"
+  ],
+  "enhanced_information": "The most likely diagnosis for the 22-year-old woman with progressive left anterior knee pain exacerbated by sitting and ascending stairs, with tenderness over the left anterior knee exacerbated by anterior pressure to the patella when fully extended, and no erythema or swelling, is Patellofemoral pain syndrome. There is no evidence to suggest other specific diagnoses such as infection, edema, or lymphatic diseases. The patient's history and physical exam findings align with the diagnosis of Patellofemoral pain syndrome.",
+  "analysis": "The patient's presentation of progressive left anterior knee pain exacerbated by certain activities, tenderness over the patella, and absence of erythema or swelling is consistent with patellofemoral pain syndrome. This condition commonly occurs in young active individuals, especially after activities like basketball. The history of no recent trauma to the knee and the physical exam findings support this diagnosis. Other options like ligament injuries or tendinitis are less likely based on the provided information.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

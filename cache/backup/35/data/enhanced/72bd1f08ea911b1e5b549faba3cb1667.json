@@ -1,0 +1,194 @@
+{
+  "question": "A 37-year-old woman is brought to the emergency department by police after being found naked outside a government building. She is accompanied by her husband who reports that she has been having “crazy” ideas. The patient’s speech is pressured and she switches topics quickly from how she is going to be president one day to how she is going to learn 20 languages fluently by the end of the year. Upon further questioning, it is revealed that she has struggled with at least 2 depressive episodes in the past year. Her medical history is significant for hypertension, hyperlipidemia, gout, and chronic migraines. She was recently diagnosed with a urinary tract infection and given nitrofurantoin. She has also been taking indomethacin for an acute gout flare. Her other medications include atorvastatin, allopurinol, metoprolol, and acetazolamide. She is prescribed lithium and instructed to follow-up with a primary care physician. At a follow-up appointment, she complains of nausea, vomiting, and increased urinary frequency. On examination, she has a coarse tremor and diffuse hyperreflexia. Which of the following medications is most likely is responsible for the patient’s current presentation?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Acetazolamide",
+    "opb": "Atorvastatin",
+    "opc": "Indomethacin",
+    "opd": "Metoprolol",
+    "ope": "Nitrofurantoin"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Nitrofurantoin",
+        "Disease",
+        "Gastrointestinal symptoms NOS"
+      ],
+      [
+        "Nitrofurantoin",
+        "Infection",
+        "Gastrointestinal symptoms NOS"
+      ],
+      [
+        "Nitrofurantoin",
+        "Nausea",
+        "Gastrointestinal symptoms NOS"
+      ],
+      [
+        "Gastrointestinal symptoms NOS",
+        "Disease",
+        "Nausea"
+      ],
+      [
+        "Gastrointestinal symptoms NOS",
+        "Obesity",
+        "Nausea"
+      ],
+      [
+        "Gastrointestinal symptoms NOS",
+        "Symptoms",
+        "Nausea"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Nitrofurantoin)-TREATS->(Disease)-CAUSES->(Gastrointestinal symptoms NOS)",
+      "(Nitrofurantoin)-TREATS->(Infection)-CAUSES->(Gastrointestinal symptoms NOS)",
+      "(Nitrofurantoin)-TREATS->(Nausea)-CAUSES->(Gastrointestinal symptoms NOS)",
+      "(Gastrointestinal symptoms NOS)-CAUSES->(Disease)-CAUSES->(Nausea)",
+      "(Gastrointestinal symptoms NOS)-CAUSES->(Obesity)-CAUSES->(Nausea)",
+      "(Gastrointestinal symptoms NOS)-CAUSES->(Symptoms)-CAUSES->(Nausea)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Lithium",
+        "Antipsychotic Agents",
+        "Coarse Tremor"
+      ],
+      [
+        "Nausea",
+        "Disease",
+        "biological adaptation to stress",
+        "Lithium"
+      ],
+      [
+        "Nausea",
+        "Disease",
+        "biological adaptation to stress",
+        "Lithium"
+      ],
+      [
+        "Vomiting",
+        "Disease",
+        "biological adaptation to stress",
+        "Lithium"
+      ],
+      [
+        "Vomiting",
+        "Disease",
+        "biological adaptation to stress",
+        "Lithium"
+      ],
+      [
+        "Lithium",
+        "Antipsychotic Agents",
+        "Coarse Tremor"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Lithium)-INTERACTS_WITH->(Antipsychotic Agents)-CAUSES->(Coarse Tremor)",
+      "(Nausea)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-ASSOCIATED_WITH->(Lithium)",
+      "(Nausea)-CAUSES->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-ASSOCIATED_WITH->(Lithium)",
+      "(Vomiting)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-ASSOCIATED_WITH->(Lithium)",
+      "(Vomiting)-CAUSES->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-ASSOCIATED_WITH->(Lithium)",
+      "(Lithium)-INTERACTS_WITH->(Antipsychotic Agents)-CAUSES->(Coarse Tremor)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Nausea)-CAUSES/PREDISPOSES->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-ASSOCIATED_WITH->(Lithium)",
+      "(Vomiting)-CAUSES/PREDISPOSES->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-ASSOCIATED_WITH->(Lithium)",
+      "(Nitrofurantoin)-TREATS->(Disease)-CAUSES->(Gastrointestinal symptoms NOS)",
+      "(Nitrofurantoin)-TREATS->(Infection)-CAUSES->(Gastrointestinal symptoms NOS)",
+      "(Nitrofurantoin)-TREATS->(Nausea)-CAUSES->(Gastrointestinal symptoms NOS)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Nitrofurantoin -> gastrointestinal symptoms -> nausea, vomiting -> increased urinary frequency -> lithium toxicity symptoms -> coarse tremor, diffuse hyperreflexia -> patient's current presentation -> 95%",
+    "CHAIN: Lithium -> adverse effects -> nausea, vomiting, increased urinary frequency -> lithium toxicity symptoms -> coarse tremor, diffuse hyperreflexia -> patient's current presentation -> 90%"
+  ],
+  "enhanced_information": "The patient's current presentation of nausea, vomiting, increased urinary frequency, coarse tremor, and diffuse hyperreflexia is most likely due to lithium toxicity. The symptoms are consistent with known adverse effects of lithium, including gastrointestinal symptoms and neurological manifestations. The evidence paths support the association between lithium and gastrointestinal symptoms, further strengthening the likelihood of lithium as the cause in this case.",
+  "analysis": "The patient's presentation of nausea, vomiting, increased urinary frequency, coarse tremor, and diffuse hyperreflexia is consistent with lithium toxicity. These symptoms align with known adverse effects of lithium. Given the patient's recent prescription of lithium and the absence of similar side effects associated with the other medications, lithium is the most likely cause of her current symptoms.",
+  "answer": "n/a",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      3
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

@@ -1,0 +1,115 @@
+{
+  "question": "A 30-year-old man is diagnosed with multi-drug resistant tuberculosis after a recent trip to Eastern Europe. After drug susceptibility testing is completed, he is given a regimen of antibiotics as treatment. He returns two weeks later complaining of decreased visual acuity and color-blindness. Which drug of the following is the mechanism of action of the drug that is most likely to cause this side effect?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Inhibition of mycolic acid synthesis",
+    "opb": "Inhibition of arabinogalactan synthesis",
+    "opc": "Binding to ergosterol and formation of a transmembrane channel",
+    "opd": "Inhibition of RNA synthesis",
+    "ope": "Inhibition of RNA translation"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Treatment Protocols",
+        "Optic Neuritis"
+      ],
+      [
+        "Ethambutol",
+        "Optic Neuritis"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Treatment Protocols)-TREATS->(Optic Neuritis)",
+      "(Ethambutol)-TREATS->(Optic Neuritis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Tuberculosis, Multidrug-Resistant",
+        "Disease Progression",
+        "Genes",
+        "Cartilage",
+        "Treatment Protocols"
+      ],
+      [
+        "Tuberculosis, Multidrug-Resistant",
+        "Adverse effects",
+        "Genes",
+        "Cartilage",
+        "Treatment Protocols"
+      ],
+      [
+        "Ethambutol",
+        "Mycobacterium tuberculosis",
+        "arabinogalactan"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Tuberculosis, Multidrug-Resistant)-PREDISPOSES->(Disease Progression)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage)-LOCATION_OF->(Treatment Protocols)",
+      "(Tuberculosis, Multidrug-Resistant)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cartilage)-LOCATION_OF->(Treatment Protocols)",
+      "(Ethambutol)-TREATS->(Mycobacterium tuberculosis)-LOCATION_OF->(arabinogalactan)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ethambutol)-TREATS->(Optic Neuritis)",
+      "(Ethambutol)-TREATS->(Mycobacterium tuberculosis)-LOCATION_OF->(arabinogalactan)",
+      "(Treatment Protocols)-TREATS->(Optic Neuritis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Multi-drug resistant tuberculosis\" -> \"Treatment with antibiotics\" -> \"Side effects from antibiotics\" -> 70% CHAIN: \"Antibiotics for multi-drug resistant tuberculosis\" -> \"Ethambutol as part of the regimen\" -> \"Optic neuritis as a side effect\" -> 80% CHAIN: \"Ethambutol\" -> \"Inhibition of mycolic acid synthesis\" -> \"Optic neuritis due to disruption of optic nerve function\" -> 90% CHAIN: \"Ethambutol\" -> \"Inhibition of arabinogalactan synthesis\" -> \"Less likely to cause visual and color vision changes\" -> 70%"
+  ],
+  "enhanced_information": "The mechanism of action of the drug most likely to cause decreased visual acuity and color-blindness in the 30-year-old man with multi-drug resistant tuberculosis is the inhibition of mycolic acid synthesis, specifically related to Ethambutol use. Ethambutol is known to cause optic neuritis due to disruption of optic nerve function, which aligns with the reported symptoms. The evidence paths support this by linking Ethambutol to optic neuritis and highlighting its role in treating Mycobacterium tuberculosis.",
+  "analysis": "The core medical principle here is understanding the side effects of medications used in the treatment of multi-drug resistant tuberculosis. The enhanced information provided specifically links the symptoms of decreased visual acuity and color-blindness to the inhibition of mycolic acid synthesis, which is a known side effect of Ethambutol. Optic neuritis is a well-documented adverse effect of Ethambutol due to its impact on the optic nerve function. This aligns with the patient's presentation and the drug's mechanism of action.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

@@ -1,0 +1,177 @@
+{
+  "question": "A 55-year-old man comes to the physician because of increasing swelling of the legs and face over the past 2 months. During this time, he has experienced fatigue and weight loss. He has no history of any serious illness and takes no medications. Vital signs are within normal range. On physical examination, both lower limbs show significant pitting edema extending above the knees. A photograph of the patient’s facial features is shown. His urinary protein is 3 g/24 h. Serum and urine electrophoresis shows monoclonal light chains. Skeletal survey shows no osteolytic lesions. Without treatment, which of the following is the most likely clinical course for this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Death within 1–2 years",
+    "opb": "Hyperviscosity syndrome",
+    "opc": "Long-term survival without serious complications",
+    "opd": "Richter’s transformation",
+    "ope": "Transformation into multiple myeloma"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Amyloidosis",
+        "Disease",
+        "paracrine",
+        "Kidney"
+      ],
+      [
+        "Amyloidosis",
+        "Disease",
+        "metabolic effects",
+        "Kidney"
+      ],
+      [
+        "Amyloidosis",
+        "Disease",
+        "Neutrophil Infiltration",
+        "Kidney"
+      ],
+      [
+        "Amyloidosis",
+        "Disease",
+        "paracrine",
+        "Heart"
+      ],
+      [
+        "Amyloidosis",
+        "Disease",
+        "Thermotolerance",
+        "Heart"
+      ],
+      [
+        "Amyloidosis",
+        "Disease",
+        "biological adaptation to stress",
+        "Heart"
+      ],
+      [
+        "Amyloid",
+        "Heart failure"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Amyloidosis)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Kidney)",
+      "(Amyloidosis)-CAUSES->(Disease)-MANIFESTATION_OF->(metabolic effects)-PROCESS_OF->(Kidney)",
+      "(Amyloidosis)-COMPLICATES->(Disease)-MANIFESTATION_OF->(Neutrophil Infiltration)-PROCESS_OF->(Kidney)",
+      "(Amyloidosis)-CAUSES->(Disease)-MANIFESTATION_OF->(paracrine)-PROCESS_OF->(Heart)",
+      "(Amyloidosis)-CAUSES->(Disease)-MANIFESTATION_OF->(Thermotolerance)-PROCESS_OF->(Heart)",
+      "(Amyloidosis)-COMPLICATES->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-PROCESS_OF->(Heart)",
+      "(Amyloid)-CAUSES->(Heart failure)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Amyloidosis",
+        "Pathogenesis",
+        "Amyloid Fibrils"
+      ],
+      [
+        "Amyloidosis",
+        "Pathogenesis",
+        "Amyloid Fibrils"
+      ],
+      [
+        "Heart",
+        "Heart failure"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Amyloidosis)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Amyloid Fibrils)",
+      "(Amyloidosis)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Amyloid Fibrils)",
+      "(Heart)-LOCATION_OF->(Heart failure)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Amyloid)-CAUSES->(Heart failure)",
+      "(Heart)-LOCATION_OF->(Heart failure)",
+      "(Amyloidosis)-CAUSES->(Disease)-MANIFESTATION_OF->(metabolic effects)-PROCESS_OF->(Kidney)",
+      "(Amyloidosis)-COMPLICATES->(Disease)-MANIFESTATION_OF->(biological adaptation to stress)-PROCESS_OF->(Heart)",
+      "(Amyloidosis)-MANIFESTATION_OF/PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Amyloid Fibrils)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: amyloidosis -> systemic deposition of amyloid fibrils -> organ dysfunction -> poor prognosis -> Death within 1–2 years -> 80%",
+    "CHAIN: amyloidosis -> renal involvement with significant proteinuria -> progressive kidney damage -> end-stage renal disease -> Death within 1–2 years -> 75%",
+    "CHAIN: amyloidosis -> cardiac involvement with amyloid deposition -> heart failure -> poor prognosis -> Death within 1–2 years -> 70%"
+  ],
+  "enhanced_information": "In a patient with amyloidosis presenting with swelling, fatigue, weight loss, and significant proteinuria, the most likely clinical course without treatment is death within 1–2 years due to organ dysfunction, particularly renal and cardiac involvement. The presence of monoclonal light chains and systemic deposition of amyloid fibrils further support this poor prognosis.",
+  "analysis": "The core medical principle here is that in a patient with amyloidosis presenting with significant proteinuria and systemic involvement, the prognosis without treatment is poor, with a high risk of organ dysfunction leading to death within 1-2 years. The presence of monoclonal light chains and systemic amyloid deposition further supports this grave outcome.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      3
+    ],
+    "coverage_rates": [
+      20.0,
+      20.0,
+      60.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

@@ -1,0 +1,155 @@
+{
+  "question": "A 7-year-old boy is brought to the clinic by his mother due to a sudden onset of puffiness of the eyes. His mother is also concerned about his abdominal distention which she first noticed 5 days ago. There is no history of a recent upper respiratory tract infection, decreased urination, or gross hematuria. His vaccinations are up to date. His vitals include: heart rate 86/min, respiratory rate 16/min, temperature 37.6°C (99.7°F), and blood pressure 100/70 mm Hg. Physical examination findings include periorbital edema and abdominal distention with a fluid thrill. Laboratory evaluation reveals the following findings:\nUrinalysis\nProtein 4+\nUrinary protein 4 g/L\nCreatinine ratio 2.6\nRed blood cells Nil\nWhite blood cells Nil\nUrinary casts Fatty casts\nSerum creatinine 0.4 mg/dL\n> Serum albumin 1.9 g/dL\nSerum cholesterol 350 mg/dL\nUltrasonogram of the abdomen reveals kidneys with normal morphology and gross ascites. Which of the following statements best describes the complications that this boy may develop?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Spontaneous bacterial peritonitis caused by Haemophilus influenzae",
+    "opb": "Urinary loss of calcium leading to hypocalcemia",
+    "opc": "Prophylactic anticoagulation is indicated due to the risk of thromboembolism.",
+    "opd": "Acute renal failure due to intrinsic renal failure",
+    "ope": "Microcytic hypochromic anemia responding poorly to oral iron therapy"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Nephrotic Syndrome",
+        "Proteinuria"
+      ],
+      [
+        "Proteinuria",
+        "Disease",
+        "Hypoalbuminemia"
+      ],
+      [
+        "Proteinuria",
+        "Secondary amyloidosis",
+        "Hypoalbuminemia"
+      ],
+      [
+        "Proteinuria",
+        "Extravasation",
+        "Hypoalbuminemia"
+      ],
+      [
+        "Hypoalbuminemia",
+        "Edema"
+      ],
+      [
+        "Edema",
+        "Disease",
+        "Ascites"
+      ],
+      [
+        "Nephrotic Syndrome",
+        "Hyperlipidemia"
+      ],
+      [
+        "Nephrotic Syndrome",
+        "Infection",
+        "Ultrasonography"
+      ],
+      [
+        "Nephrotic Syndrome",
+        "Symptoms",
+        "Ultrasonography"
+      ],
+      [
+        "Nephrotic Syndrome",
+        "Obesity",
+        "Ultrasonography"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Nephrotic Syndrome)-CAUSES->(Proteinuria)",
+      "(Proteinuria)-CAUSES->(Disease)-CAUSES->(Hypoalbuminemia)",
+      "(Proteinuria)-CAUSES->(Secondary amyloidosis)-CAUSES->(Hypoalbuminemia)",
+      "(Proteinuria)-CAUSES->(Extravasation)-CAUSES->(Hypoalbuminemia)",
+      "(Hypoalbuminemia)-CAUSES->(Edema)",
+      "(Edema)-CAUSES->(Disease)-CAUSES->(Ascites)",
+      "(Nephrotic Syndrome)-CAUSES->(Hyperlipidemia)",
+      "(Nephrotic Syndrome)-CAUSES->(Infection)-CAUSES->(Ultrasonography)",
+      "(Nephrotic Syndrome)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(Nephrotic Syndrome)-COMPLICATES->(Obesity)-CAUSES->(Ultrasonography)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Nephrotic Syndrome)-CAUSES->(Proteinuria)",
+      "(Hypoalbuminemia)-CAUSES->(Edema)",
+      "(Nephrotic Syndrome)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(Nephrotic Syndrome)-CAUSES->(Hyperlipidemia)",
+      "(Proteinuria)-CAUSES->(Extravasation)-CAUSES->(Hypoalbuminemia)",
+      "(Nephrotic Syndrome)-CAUSES->(Infection)-CAUSES->(Ultrasonography)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Nephrotic syndrome -> Proteinuria -> Hypoalbuminemia -> Edema -> Ascites -> 90% CHAIN: Nephrotic syndrome -> Hyperlipidemia -> 90% CHAIN: Nephrotic syndrome -> Fatty casts in urine -> 80% CHAIN: Nephrotic syndrome -> Normal kidney morphology on ultrasound -> 90%"
+  ],
+  "enhanced_information": "The 7-year-old boy presents with nephrotic syndrome characterized by proteinuria, hypoalbuminemia, edema, and ascites. Complications may include spontaneous bacterial peritonitis due to immunosuppression, hypercoagulability leading to thromboembolism, and acute renal failure from underlying kidney damage. Microcytic hypochromic anemia is not a typical complication of nephrotic syndrome.",
+  "analysis": "The core medical principle here is to recognize the complications associated with nephrotic syndrome in a pediatric patient. Nephrotic syndrome can lead to various complications, including spontaneous bacterial peritonitis, hypercoagulability with the risk of thromboembolism, and acute renal failure. Microcytic hypochromic anemia is not a typical complication of nephrotic syndrome. Given the clinical presentation and laboratory findings, the most likely complication for this boy is acute renal failure due to intrinsic renal damage.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      6
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

@@ -1,0 +1,118 @@
+{
+  "question": "A 45-year-old woman visits your office with concerns about recent changes in her menstrual cycle. She noticed that her menses last longer and are heavier, to the point of needing almost twice the number of sanitary pads than 6 months ago. She denies any abdominal or pelvic discomfort. She started menstruating at 9 years of age. She had a negative Pap smear and HPV test 5 years ago. The physical examination is unremarkable with no masses on abdominal palpation and the pelvic examination is negative for vaginal lesions or tenderness. The bimanual examination reveals a mobile, non-tender, retroverted uterus with no masses in the adnexa. A transvaginal ultrasound performed 4 days after her last menses revealed an endometrial thickness of 4 mm. Which of the following is the most likely cause of this patient’s condition?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Uterine leiomyoma",
+    "opb": "Endometrial carcinoma",
+    "opc": "Uterine adenomyosis",
+    "opd": "Endometrial polyp",
+    "ope": "Endometrial hyperplasia"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Endometrial Hyperplasia",
+        "Disease",
+        "Obesity",
+        "Ultrasonography"
+      ],
+      [
+        "Endometrial Hyperplasia",
+        "Disease",
+        "Infection",
+        "Ultrasonography"
+      ],
+      [
+        "Pelvic Pain",
+        "Disease",
+        "Endometrial Hyperplasia"
+      ],
+      [
+        "Pelvic Pain",
+        "Infertility",
+        "Endometrial Hyperplasia"
+      ],
+      [
+        "Pelvic Pain",
+        "Endometriosis, site unspecified",
+        "Endometrial Hyperplasia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Endometrial Hyperplasia)-CAUSES->(Disease)-CAUSES->(Obesity)-CAUSES->(Ultrasonography)",
+      "(Endometrial Hyperplasia)-CAUSES->(Disease)-CAUSES->(Infection)-CAUSES->(Ultrasonography)",
+      "(Pelvic Pain)-PREDISPOSES->(Disease)-CAUSES->(Endometrial Hyperplasia)",
+      "(Pelvic Pain)-CAUSES->(Infertility)-PREDISPOSES->(Endometrial Hyperplasia)",
+      "(Pelvic Pain)-CAUSES->(Endometriosis, site unspecified)-PREDISPOSES->(Endometrial Hyperplasia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pelvic Pain)-CAUSES->(Infertility)-PREDISPOSES->(Endometrial Hyperplasia)",
+      "(Pelvic Pain)-PREDISPOSES->(Disease)-CAUSES->(Endometrial Hyperplasia)",
+      "(Pelvic Pain)-CAUSES->(Endometriosis, site unspecified)-PREDISPOSES->(Endometrial Hyperplasia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"45-year-old woman with heavy menstrual bleeding\" -> \"menstrual cycle changes noted\" -> \"menses last longer and are heavier\" -> \"negative Pap smear and HPV test 5 years ago\" -> \"unremarkable physical examination\" -> \"transvaginal ultrasound shows endometrial thickness of 4 mm\" -> \"endometrial thickness is within normal limits\" -> \"less likely to be endometrial carcinoma\" -> \"less likely to be endometrial hyperplasia\" -> \"uterine leiomyoma is possible but less likely due to normal ultrasound\" -> \"endometrial polyp is possible but less likely due to normal endometrial thickness\" -> \"uterine adenomyosis is possible but typically presents with pelvic pain\" -> \"most likely cause is endometrial hyperplasia\" -> 70%",
+    "CHAIN: \"45-year-old woman with heavy menstrual bleeding\" -> \"menstrual cycle changes noted\" -> \"menses last longer and are heavier\" -> \"negative Pap smear and HPV test 5 years ago\" -> \"unremarkable physical examination\" -> \"transvaginal ultrasound shows endometrial thickness of 4 mm\" -> \"endometrial thickness is normal\" -> \"less likely to be endometrial carcinoma\" -> \"less likely to be endometrial hyperplasia\" -> \"uterine adenomyosis is less likely due to lack of pain\" -> \"uterine leiomyoma is possible but not supported by ultrasound findings\" -> \"endometrial polyp is possible but less likely due to normal endometrial thickness\" -> \"most likely cause is endometrial hyperplasia\" -> 60%",
+    "CHAIN: \"45-year-old woman with heavy menstrual bleeding\" -> \"menstrual cycle changes noted\" -> \"menses last longer and are heavier\" -> \"negative Pap smear and HPV test 5 years ago\" -> \"unremarkable physical examination\" -> \"transvaginal ultrasound shows endometrial thickness of 4 mm\" -> \"normal endometrial thickness suggests low risk for malignancy\" -> \"uterine leiomyoma is possible but not indicated by ultrasound\" -> \"endometrial polyp is possible but less likely due to normal endometrial thickness\" -> \"uterine adenomyosis is less likely due to lack of pain\" -> \"endometrial hyperplasia is possible due to heavy bleeding\" -> \"most likely cause is endometrial hyperplasia\" -> 65%"
+  ],
+  "enhanced_information": "The patient is a 45-year-old woman experiencing heavier and prolonged menstrual bleeding, with a transvaginal ultrasound revealing an endometrial thickness of 4 mm, which is within normal limits. This suggests a low risk for malignancy, making endometrial carcinoma and endometrial hyperplasia less likely. Uterine leiomyoma and endometrial polyp are possible but not supported by the ultrasound findings of normal endometrial thickness. Uterine adenomyosis is also less likely due to the absence of pelvic pain, which is a common symptom. Therefore, the most likely cause of her condition is endometrial hyperplasia, as it can present with heavy menstrual bleeding, especially in perimenopausal women. The evidence paths regarding pelvic pain and its relation to endometrial hyperplasia are not directly relevant to this case, as the patient does not report pain. Thus, the consensus supports endometrial hyperplasia as the most probable diagnosis.",
+  "analysis": "The patient is a 45-year-old woman experiencing heavier and prolonged menstrual bleeding, which is a common symptom in perimenopausal women. The transvaginal ultrasound shows an endometrial thickness of 4 mm, which is within the normal range for a woman in this age group. This finding suggests a low risk for malignancy, making endometrial carcinoma and endometrial hyperplasia less likely. Uterine leiomyoma and endometrial polyp are possible causes of heavy menstrual bleeding, but the normal endometrial thickness makes these less likely as well. Uterine adenomyosis typically presents with pelvic pain, which this patient does not have. Given the symptoms and the ultrasound findings, the most likely cause of her condition is endometrial hyperplasia, as it can present with heavy menstrual bleeding, especially in perimenopausal women. However, the normal endometrial thickness makes this diagnosis less certain. Therefore, while endometrial hyperplasia is a consideration, the absence of other findings suggests that the most likely cause is not definitively clear. The best-supported option, considering the overall clinical picture, is endometrial hyperplasia, but with moderate confidence due to the normal ultrasound findings.",
+  "answer": "ope",
+  "confidence": 70.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      100.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

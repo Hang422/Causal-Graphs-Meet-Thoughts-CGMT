@@ -1,0 +1,26 @@
+{
+  "timestamp": "20250214_020049",
+  "model": "gpt-3.5-turbo",
+  "interaction_type": "reasoning_chain",
+  "question_id": "8a2bc999",
+  "question_text": "A 48-year-old female presents to the emergency room with mental status changes.\nLaboratory analysis of the patient's serum shows:\nNa 122 mEq/L\nK 3.9 mEq/L\nHCO3 24 mEq/L\nBUN 21 mg/dL\nCr 0.9 mg/dL\nCa 8.5 mg/dL\nGlu 105 mg/dL\n\nUrinalysis shows:\nOsmolality 334 mOsm/kg\nNa 45 mEq/L\nGlu 0 mg/dL\n\nWhich of the following is the most likely diagnosis?",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert generating diagnostic reasoning chains."
+    },
+    {
+      "role": "user",
+      "content": "\n        You are a medical expert. Generate multiple reasoning chains for the following question.\n\n            Each chain:\n            - Uses '->' to connect sequential reasoning states.\n            - Each step is a single state or result, not a complete causal sentence in one step.\n              Example:\n                Correct: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolism\" -> 90%\n                Incorrect: \"Insulin decreases blood glucose\" in one step.\n            - End with a confidence percentage (0-100%).\n\n            If a step clearly conflicts with widely accepted medical knowledge, you may indicate uncertainty (e.g., \n            \"possible\", \"unclear\") and slightly lower confidence. However, do this only if necessary. If unsure, \n            it is acceptable to show a plausible chain with moderate confidence.\n\n            ### Question\n            A 48-year-old female presents to the emergency room with mental status changes.\nLaboratory analysis of the patient's serum shows:\nNa 122 mEq/L\nK 3.9 mEq/L\nHCO3 24 mEq/L\nBUN 21 mg/dL\nCr 0.9 mg/dL\nCa 8.5 mg/dL\nGlu 105 mg/dL\n\nUrinalysis shows:\nOsmolality 334 mOsm/kg\nNa 45 mEq/L\nGlu 0 mg/dL\n\nWhich of the following is the most likely diagnosis?\n\n            ### Options\n    opa. Aspirin overdose\nopb. Diarrhea\nopc. Diabetes insipidus\nopd. Primary polydipsia\nope. Lung cancer\n\n            ### Instructions:\n            - Keep steps simple, each step just one state or outcome.\n            - '->' separates each step.\n\n            ### Output Format:\n            Start each chain with \"CHAIN:\" on a new line.\n            Example:\n            CHAIN: \"Insulin\" -> \"decreased blood glucose\" -> \"improved metabolic state\" -> 90%"
+    }
+  ],
+  "response": "CHAIN: \"Low serum sodium (Na)\" -> \"Hyponatremia\" -> \"Mental status changes\" -> 80%\nCHAIN: \"Low urine osmolality\" -> \"Inability to concentrate urine\" -> \"Excessive water intake\" -> 70%\nCHAIN: \"Low urine sodium (Na)\" -> \"Inappropriate urinary sodium excretion\" -> \"Possible renal sodium loss\" -> 60%\nCHAIN: \"Low urine glucose\" -> \"Excludes diabetes mellitus\" -> \"Less likely to be the cause of mental status changes\" -> 50%\nCHAIN: \"Hyponatremia\" -> \"Euvolemic state\" -> \"Less likely due to fluid loss (diarrhea)\" -> 40%\nCHAIN: \"Hyponatremia\" -> \"Normal potassium (K)\" -> \"Less likely due to primary polydipsia\" -> 30%\nCHAIN: \"Hyponatremia\" -> \"Normal calcium (Ca)\" -> \"Less likely due to lung cancer\" -> 20%\nCHAIN: \"Hyponatremia\" -> \"Normal bicarbonate (HCO3)\" -> \"Less likely due to aspirin overdose\" -> 10%\nCHAIN: \"Hyponatremia\" -> \"Low urine osmolality\" -> \"Diabetes insipidus\" -> 90%",
+  "metadata": {
+    "topic": null,
+    "is_multi_choice": true,
+    "has_reasoning_chain": false,
+    "has_enhanced_info": false,
+    "model_config": "gpt-3.5-turbo",
+    "temperature": 0.0
+  }
+}

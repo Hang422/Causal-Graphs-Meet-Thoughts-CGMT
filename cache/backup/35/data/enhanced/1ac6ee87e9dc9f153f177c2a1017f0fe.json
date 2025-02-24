@@ -1,0 +1,97 @@
+{
+  "question": "A 35-year-old woman with type 1 diabetes mellitus comes to the emergency department for evaluation of a 1-month history of fever, fatigue, loss of appetite, and a 3.6-kg (8-lb) weight loss. She has also had a cough for the last 2 months. She reports recent loss of pubic hair. The patient immigrated from the Philippines 7 weeks ago. Her mother has systemic lupus erythematosus. She has never smoked and does not drink alcohol. Her only medication is insulin, but she sometimes misses doses. She is 165 cm (5 ft 5 in) tall and weighs 49 kg (108 lb); BMI is 18 kg/m2. She appears lethargic. Her temperature is 38.9°C (102°F), pulse is 58/min, and blood pressure is 90/60 mm Hg. Examination shows decreased sensation to touch and vibration over both feet. The remainder of the examination shows no abnormalities. Serum studies show:\nNa+ 122 mEq/L\nCl- 100 mEq/L\nK+ 5.8 mEq/L\nGlucose 172 mg/dL\nAlbumin 2.8 g/dL\nCortisol 2.5 μg/dL\nACTH 531.2 pg/mL (N=5–27 pg/mL)\nCT scan of the abdomen with contrast shows bilateral adrenal enlargement. Which of the following is the most likely underlying mechanism of this patient's symptoms?\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Adrenal infarction",
+    "opb": "Adrenal hemorrhage",
+    "opc": "Pituitary tumor",
+    "opd": "Infection with acid-fast bacilli",
+    "ope": "Autoimmune adrenalitis"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Autoimmune Diseases"
+      ],
+      [
+        "Autoimmune Diseases",
+        "Addison's disease"
+      ],
+      [
+        "Adrenal gland hypofunction",
+        "Addison's disease"
+      ],
+      [
+        "Corticotropin",
+        "Adrenal gland hypofunction"
+      ],
+      [
+        "Adrenal gland hypofunction",
+        "Addison's disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Autoimmune Diseases)",
+      "(Autoimmune Diseases)-CAUSES->(Addison's disease)",
+      "(Adrenal gland hypofunction)-CAUSES->(Addison's disease)",
+      "(Corticotropin)-TREATS->(Adrenal gland hypofunction)",
+      "(Adrenal gland hypofunction)-CAUSES->(Addison's disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Corticotropin)-TREATS->(Adrenal gland hypofunction)",
+      "(Adrenal gland hypofunction)-CAUSES->(Addison's disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Type 1 diabetes mellitus\" -> \"increased risk of autoimmune conditions\" -> \"possible autoimmune adrenalitis\" -> 70% CHAIN: \"Adrenal enlargement on CT scan\" -> \"suggestive of adrenal pathology\" -> \"possible autoimmune adrenalitis\" -> 80% CHAIN: \"Low cortisol levels\" -> \"suggestive of adrenal insufficiency\" -> \"possible autoimmune adrenalitis\" -> 85% CHAIN: \"Elevated ACTH levels\" -> \"indicative of pituitary stimulation due to adrenal insufficiency\" -> \"possible autoimmune adrenalitis\" -> 70%"
+  ],
+  "enhanced_information": "The most likely underlying mechanism of this patient's symptoms is autoimmune adrenalitis. The patient's history of type 1 diabetes mellitus, adrenal enlargement on CT scan, low cortisol levels, and elevated ACTH levels all point towards autoimmune adrenalitis as the cause of her symptoms. The evidence path confirming the relationship between corticotropin and adrenal gland hypofunction further supports this conclusion.",
+  "analysis": "The patient's presentation with symptoms of fatigue, weight loss, low cortisol levels, elevated ACTH levels, adrenal enlargement, and a history of type 1 diabetes mellitus strongly suggests autoimmune adrenalitis as the underlying mechanism. The combination of these findings aligns with the known pathophysiology of autoimmune adrenalitis, leading to adrenal insufficiency.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      5
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

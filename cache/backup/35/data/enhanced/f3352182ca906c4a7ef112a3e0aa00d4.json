@@ -1,0 +1,127 @@
+{
+  "question": "A 25-year-old woman with bipolar disorder and schizophrenia presents to the emergency room stating that she is pregnant. She says that she has been pregnant since she was 20 years old and is expecting a baby now that she is breathing much harder and feeling more faint with chest pain caused by deep breaths. Her hospital medical record shows multiple negative pregnancy tests over the past 5 years. The patient has a 20 pack-year smoking history. Her temperature is 98°F (37°C), blood pressure is 100/60 mmHg, pulse is 110/min, respirations are 28/min, and oxygen saturation is 90% on room air. Her fingerstick glucose is 100 mg/dL. She has a large abdominal pannus which is soft and nontender. Her legs are symmetric and non-tender. Oxygen is provided via nasal cannula. Her urine pregnancy test comes back positive and an initial chest radiograph is unremarkable. What is the next best step in diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "CT angiogram",
+    "opb": "D-dimer",
+    "opc": "Psychiatry consult for pseudocyesis",
+    "opd": "Ultrasound",
+    "ope": "Ventilation-perfusion scan"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pregnancy, Ectopic",
+        "Infection",
+        "Ultrasonography"
+      ],
+      [
+        "Gestational trophoblastic disease",
+        "imbalance",
+        "Obesity",
+        "Ultrasonography"
+      ],
+      [
+        "Gestational trophoblastic disease",
+        "Hyperthyroidism",
+        "Obesity",
+        "Ultrasonography"
+      ],
+      [
+        "Gestational trophoblastic disease",
+        "imbalance",
+        "Infection",
+        "Ultrasonography"
+      ]
+    ],
+    "relationships": [
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pregnancy, Ectopic)-COMPLICATES->(Infection)-CAUSES->(Ultrasonography)",
+      "(Gestational trophoblastic disease)-CAUSES->(imbalance)-CAUSES->(Obesity)-CAUSES->(Ultrasonography)",
+      "(Gestational trophoblastic disease)-CAUSES->(Hyperthyroidism)-CAUSES->(Obesity)-CAUSES->(Ultrasonography)",
+      "(Gestational trophoblastic disease)-CAUSES->(imbalance)-CAUSES->(Infection)-CAUSES->(Ultrasonography)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Urine pregnancy test NOS",
+        "Pregnancy, Ectopic"
+      ],
+      [
+        "Urine pregnancy test NOS",
+        "Pre-Eclampsia",
+        "imbalance",
+        "Gestational trophoblastic disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Urine pregnancy test NOS)-DIAGNOSES->(Pregnancy, Ectopic)",
+      "(Urine pregnancy test NOS)-DIAGNOSES->(Pre-Eclampsia)-CAUSES->(imbalance)-CAUSES->(Gestational trophoblastic disease)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Urine pregnancy test NOS)-DIAGNOSES->(Pregnancy, Ectopic)",
+      "(Pregnancy, Ectopic)-COMPLICATES->(Infection)-CAUSES->(Ultrasonography)",
+      "(Urine pregnancy test NOS)-DIAGNOSES->(Pre-Eclampsia)-CAUSES->(imbalance)-CAUSES->(Gestational trophoblastic disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Positive urine pregnancy test\" -> \"Consider ectopic pregnancy\" -> \"Ultrasound for confirmation\" -> 80% CHAIN: \"Positive urine pregnancy test\" -> \"Consider molar pregnancy\" -> \"Ultrasound for evaluation\" -> 75% CHAIN: \"Positive urine pregnancy test\" -> \"Consider gestational trophoblastic disease\" -> \"Ultrasound for assessment\" -> 80%"
+  ],
+  "enhanced_information": "Given the patient's symptoms and positive urine pregnancy test, the next best step in diagnosis is an ultrasound to evaluate for ectopic pregnancy, molar pregnancy, or gestational trophoblastic disease. The evidence paths support the consideration of these conditions and the use of ultrasound for confirmation.",
+  "analysis": "The patient's presentation with positive urine pregnancy test and symptoms of chest pain and shortness of breath raises concern for possible ectopic pregnancy, molar pregnancy, or gestational trophoblastic disease. Given the enhanced information suggesting the need for ultrasound to evaluate these conditions, the next best step in diagnosis would be to perform an ultrasound to assess the pregnancy status and rule out these potential complications.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

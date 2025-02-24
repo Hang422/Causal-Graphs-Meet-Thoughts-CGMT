@@ -1,0 +1,100 @@
+{
+  "question": "A 27-year-old woman is brought to the emergency department after sustaining a fall from her bicycle 1 hour ago. The patient was on her way to work as she lost her balance, hitting her head on the sidewalk. She had an initial loss of consciousness for a couple of minutes following the accident. She currently has nausea and a headache. She has vomited twice during the last 30 minutes. She has no history of a serious illness. The patient does not smoke or drink alcohol. She has never used illicit drugs. She takes no medications. Her temperature is 37°C (98.6°F), pulse is 50/min, respirations are 10/min, and blood pressure is 160/90 mm Hg. She is oriented to person, place, and time. Her lungs are clear to auscultation. Cardiac examination shows bradycardia but no murmurs, rubs, or gallops. The abdomen is soft and nontender. There is a bruise on the right temporal side of the head. While performing the remainder of the physical examination the patient starts having a seizure. Intravenous lorazepam is administered and she is admitted to the intensive care unit. Which of the following is the most likely diagnosis in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Ischemic stroke",
+    "opb": "Intracerebral hemorrhage",
+    "opc": "Subarachnoidal hemorrhage",
+    "opd": "Idiopathic intracranial hypertension",
+    "ope": "Epidural hematoma"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Seizures",
+        "Disease",
+        "Cerebral Hemorrhage"
+      ],
+      [
+        "Seizures",
+        "Hypertensive disease",
+        "Cerebral Hemorrhage"
+      ],
+      [
+        "Seizures",
+        "Disease",
+        "Hematoma"
+      ],
+      [
+        "Seizures",
+        "Infection",
+        "Hematoma"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Seizures)-CAUSES->(Disease)-CAUSES->(Cerebral Hemorrhage)",
+      "(Seizures)-CAUSES->(Hypertensive disease)-CAUSES->(Cerebral Hemorrhage)",
+      "(Seizures)-CAUSES->(Disease)-CAUSES->(Hematoma)",
+      "(Seizures)-CAUSES->(Infection)-CAUSES->(Hematoma)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Seizures)-CAUSES->(Disease)-CAUSES->(Cerebral Hemorrhage)",
+      "(Seizures)-CAUSES->(Hypertensive disease)-CAUSES->(Cerebral Hemorrhage)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Fall from bicycle -> head injury -> loss of consciousness -> nausea and headache -> vomiting -> bradycardia -> seizure -> possible intracerebral hemorrhage -> 70%",
+    "CHAIN: Fall from bicycle -> head injury -> loss of consciousness -> nausea and headache -> vomiting -> bradycardia -> seizure -> possible epidural hematoma -> 60%"
+  ],
+  "enhanced_information": "The most likely diagnosis in this patient is intracerebral hemorrhage. The patient's presentation with a fall from a bicycle, head injury, loss of consciousness, nausea, headache, vomiting, bradycardia, and subsequent seizure is highly suggestive of intracerebral hemorrhage. The evidence paths linking seizures to cerebral hemorrhage and hypertensive disease to cerebral hemorrhage support this conclusion.",
+  "analysis": "The patient's presentation with a fall from a bicycle, head injury, loss of consciousness, nausea, headache, vomiting, bradycardia, and subsequent seizure is highly suggestive of intracerebral hemorrhage. The enhanced information provided further supports this conclusion by linking seizures to cerebral hemorrhage and hypertensive disease to cerebral hemorrhage.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

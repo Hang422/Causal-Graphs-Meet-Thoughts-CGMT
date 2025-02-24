@@ -1,0 +1,177 @@
+{
+  "question": "A 40-year-old man comes to the physician because of a 5-month history of watery diarrhea and episodic crampy abdominal pain. He has no fever, nausea, or vomiting. Over the past 6 months, he has had a 1.8-kg (4-lb) weight loss, despite experiencing no decrease in appetite. His wife has noticed that sometimes his face and neck become red after meals or when he is in distress. A year ago, he was diagnosed with asthma. He has hypertension. Current medications include an albuterol inhaler and enalapril. He drinks one beer daily. His temperature is 36.7°C (98°F), pulse is 85/min, and blood pressure is 130/85 mm Hg. The lungs are clear to auscultation. A grade 2/6 systolic murmur is heard best at the left sternal border and fourth intercostal space. The abdomen is soft, and there is mild tenderness to palpation with no guarding or rebound. The remainder of the physical examination shows no abnormalities. A complete blood count is within the reference range. Without treatment, this patient is at greatest risk for which of the following conditions?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Asphyxia",
+    "opb": "Achlorhydria",
+    "opc": "Megaloblastic anemia",
+    "opd": "Dementia",
+    "ope": "Intestinal fistula"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Chronic diarrhea",
+        "Malabsorption Syndromes"
+      ],
+      [
+        "Vitamin B 12",
+        "Anemia, Megaloblastic"
+      ],
+      [
+        "Hypoalbuminemia",
+        "Edema"
+      ],
+      [
+        "Chronic diarrhea",
+        "Symptoms",
+        "Flushing"
+      ],
+      [
+        "Chronic diarrhea",
+        "Diarrhea",
+        "Flushing"
+      ],
+      [
+        "Chronic diarrhea",
+        "Lactose Intolerance",
+        "Flushing"
+      ],
+      [
+        "Flushing",
+        "Symptoms",
+        "Malignant Carcinoid Syndrome"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Chronic diarrhea)-CAUSES->(Malabsorption Syndromes)",
+      "(Vitamin B 12)-TREATS->(Anemia, Megaloblastic)",
+      "(Hypoalbuminemia)-CAUSES->(Edema)",
+      "(Chronic diarrhea)-CAUSES->(Symptoms)-CAUSES->(Flushing)",
+      "(Chronic diarrhea)-CAUSES->(Diarrhea)-CAUSES->(Flushing)",
+      "(Chronic diarrhea)-CAUSES->(Lactose Intolerance)-CAUSES->(Flushing)",
+      "(Flushing)-CAUSES->(Symptoms)-PREDISPOSES->(Malignant Carcinoid Syndrome)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Malabsorption Syndromes",
+        "Leak NOS",
+        "Genes",
+        "Vitamin B 12"
+      ],
+      [
+        "Malabsorption Syndromes",
+        "loss; bone",
+        "Genes",
+        "Vitamin B 12"
+      ],
+      [
+        "Anemia, Megaloblastic",
+        "Disease",
+        "Immunity",
+        "Oligomeric Procyanidin Complex"
+      ],
+      [
+        "Anemia, Megaloblastic",
+        "Cardiovascular Diseases",
+        "Genes",
+        "Oligomeric Procyanidin Complex"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Malabsorption Syndromes)-CAUSES->(Leak NOS)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Vitamin B 12)",
+      "(Malabsorption Syndromes)-CAUSES->(loss; bone)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Vitamin B 12)",
+      "(Anemia, Megaloblastic)-ISA->(Disease)-MANIFESTATION_OF->(Immunity)-ASSOCIATED_WITH->(Oligomeric Procyanidin Complex)",
+      "(Anemia, Megaloblastic)-PREDISPOSES->(Cardiovascular Diseases)-ASSOCIATED_WITH->(Genes)-INTERACTS_WITH->(Oligomeric Procyanidin Complex)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vitamin B 12)-TREATS->(Anemia, Megaloblastic)",
+      "(Hypoalbuminemia)-CAUSES->(Edema)",
+      "(Chronic diarrhea)-CAUSES->(Malabsorption Syndromes)",
+      "(Chronic diarrhea)-CAUSES->(Symptoms)-CAUSES->(Flushing)",
+      "(Chronic diarrhea)-CAUSES->(Diarrhea)-CAUSES->(Flushing)",
+      "(Chronic diarrhea)-CAUSES->(Lactose Intolerance)-CAUSES->(Flushing)",
+      "(Flushing)-CAUSES->(Symptoms)-PREDISPOSES->(Malignant Carcinoid Syndrome)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: Chronic diarrhea -> malabsorption -> vitamin B12 deficiency -> megaloblastic anemia -> opc. Megaloblastic anemia -> 80% CHAIN: Chronic diarrhea -> protein loss -> hypoalbuminemia -> edema -> intestinal fistula -> ope. Intestinal fistula -> 70% CHAIN: Chronic diarrhea -> flushing after meals/distress -> carcinoid syndrome -> serotonin release -> achlorhydria -> opb. Achlorhydria -> 80%"
+  ],
+  "enhanced_information": "Chronic diarrhea in this patient can lead to malabsorption, potentially causing vitamin B12 deficiency and subsequent megaloblastic anemia. The presence of flushing after meals or distress suggests a possible carcinoid syndrome, leading to achlorhydria. The risk for this patient is highest for achlorhydria (opb) due to the potential development of carcinoid syndrome.",
+  "analysis": "The patient's presentation of watery diarrhea, weight loss, flushing after meals, and a history of asthma and hypertension raises suspicion for carcinoid syndrome. Carcinoid syndrome can lead to achlorhydria, which is the highest risk for this patient due to potential complications. The enhanced information supports the likelihood of achlorhydria in this case.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

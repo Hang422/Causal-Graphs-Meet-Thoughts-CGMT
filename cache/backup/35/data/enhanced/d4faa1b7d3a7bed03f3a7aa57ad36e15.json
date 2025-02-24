@@ -1,0 +1,97 @@
+{
+  "question": "A 55-year-old postmenopausal woman comes to the physician for a screening Pap smear. She has no history of serious illness. Her last Pap smear was 10 years ago and showed no abnormalities. She has smoked one-half pack of cigarettes daily for 20 years and drinks 3 bottles of wine per week. She is sexually active with multiple male partners and uses condoms inconsistently. Her paternal grandmother had ovarian cancer and her maternal aunt had breast cancer. Pelvic examination shows multiple red, fleshy polypoid masses on the anterior vaginal wall. A biopsy is obtained and histology shows large cells with abundant clear cytoplasm. Which of the following is the most significant risk factor for this diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Alcohol consumption",
+    "opb": "Cigarette smoking",
+    "opc": "Family history of breast and ovarian cancer",
+    "opd": "Human papillomavirus infection",
+    "ope": "Diethylstilbestrol exposure in utero"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Sexually Transmitted Diseases",
+        "Human Papillomavirus"
+      ],
+      [
+        "Human Papillomavirus",
+        "Janus kinase 2|JAK2",
+        "T-Lymphocyte",
+        "Diagnosis"
+      ],
+      [
+        "Human Papillomavirus",
+        "TP53 gene|TP53",
+        "T-Lymphocyte",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Sexually Transmitted Diseases)-INTERACTS_WITH->(Human Papillomavirus)",
+      "(Human Papillomavirus)-LOCATION_OF->(Janus kinase 2|JAK2)-INTERACTS_WITH->(T-Lymphocyte)-LOCATION_OF->(Diagnosis)",
+      "(Human Papillomavirus)-LOCATION_OF->(TP53 gene|TP53)-PART_OF->(T-Lymphocyte)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Sexually Transmitted Diseases)-INTERACTS_WITH->(Human Papillomavirus)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Sexually active with multiple male partners\" -> \"increased risk of sexually transmitted infections\" -> \"increased risk of human papillomavirus (HPV) infection\" -> \"possible risk factor for the diagnosis\" -> 70%",
+    "CHAIN: \"Cigarette smoking\" -> \"increased risk of vaginal cancer\" -> \"significant risk factor for the diagnosis\" -> 80%",
+    "CHAIN: \"Family history of breast and ovarian cancer\" -> \"increased genetic predisposition to certain cancers\" -> \"possible risk factor for the diagnosis\" -> 60%",
+    "CHAIN: \"Diethylstilbestrol exposure in utero\" -> \"increased risk of vaginal clear cell adenocarcinoma\" -> \"significant risk factor for the diagnosis\" -> 90%"
+  ],
+  "enhanced_information": "Cigarette smoking is the most significant risk factor for the diagnosis of vaginal clear cell adenocarcinoma in this patient. The patient's smoking history significantly increases the risk of vaginal cancer, aligning with consensus knowledge. The evidence path confirming an increased risk of vaginal cancer with smoking further supports this conclusion.",
+  "analysis": "Cigarette smoking is a well-established risk factor for vaginal clear cell adenocarcinoma. This patient's smoking history significantly increases her risk of developing this type of cancer. While other factors like family history of breast and ovarian cancer may contribute to overall cancer risk, the enhanced information specifically highlights smoking as the most significant risk factor in this case.",
+  "answer": "opb",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      100.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

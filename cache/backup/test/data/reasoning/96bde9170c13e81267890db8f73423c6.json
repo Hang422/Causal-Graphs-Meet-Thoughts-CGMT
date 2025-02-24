@@ -1,0 +1,175 @@
+{
+  "question": "A 31-year-old woman comes to the physician for evaluation of worsening pain, swelling, and erythema in her left leg for the past 4 hours. She returned from a trip to Taiwan to celebrate her sister's wedding 2 days ago. She has no history of serious illness. She is sexually active with one male partner and uses a combined oral contraceptive pill (OCP). She does not smoke, drink, or use illicit drugs. Her only other medication is a multivitamin. Her temperature is 37.2°C (99°F), pulse is 67/min, respirations are 16/min, and blood pressure is 90/60 mm Hg. Examination shows swelling in her left calf and pain behind her left knee when she is asked to dorsiflex her left foot. Laboratory results show elevated D-dimers. Which of the following is the most likely cause of this patient's clinical presentation?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Increased protein C",
+    "opb": "Decreased fibrinogen",
+    "opc": "ADAMTS13 deficiency",
+    "opd": "Vitamin K supplementation",
+    "ope": "Decreased protein S\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Deep Vein Thrombosis",
+        "Pain"
+      ],
+      [
+        "Pain",
+        "Deep Vein Thrombosis"
+      ],
+      [
+        "Edema",
+        "Deep Vein Thrombosis"
+      ],
+      [
+        "Erythema",
+        "Infection",
+        "Deep Vein Thrombosis"
+      ],
+      [
+        "Erythema",
+        "Symptoms",
+        "Deep Vein Thrombosis"
+      ],
+      [
+        "Erythema",
+        "Compartment syndromes",
+        "Deep Vein Thrombosis"
+      ],
+      [
+        "Fibrin fragment D",
+        "Disseminated Intravascular Coagulation",
+        "Deep Vein Thrombosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Deep Vein Thrombosis)-CAUSES->(Pain)",
+      "(Pain)-CAUSES->(Deep Vein Thrombosis)",
+      "(Edema)-CAUSES->(Deep Vein Thrombosis)",
+      "(Erythema)-CAUSES->(Infection)-CAUSES->(Deep Vein Thrombosis)",
+      "(Erythema)-CAUSES->(Symptoms)-CAUSES->(Deep Vein Thrombosis)",
+      "(Erythema)-CAUSES->(Compartment syndromes)-COMPLICATES->(Deep Vein Thrombosis)",
+      "(Fibrin fragment D)-CAUSES->(Disseminated Intravascular Coagulation)-CAUSES->(Deep Vein Thrombosis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Structure of left lower leg",
+        "Hemiparesis",
+        "Disease",
+        "Deep Vein Thrombosis"
+      ],
+      [
+        "Structure of left lower leg",
+        "Hemiparesis",
+        "Disease",
+        "Deep Vein Thrombosis"
+      ],
+      [
+        "Deep Vein Thrombosis",
+        "Complication",
+        "Fibrin fragment D"
+      ],
+      [
+        "Deep Vein Thrombosis",
+        "Gastrointestinal Hemorrhage",
+        "Fibrin fragment D"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "ISA",
+        "CAUSES"
+      ],
+      [
+        "LOCATION_OF",
+        "ISA",
+        "PREDISPOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Structure of left lower leg)-LOCATION_OF->(Hemiparesis)-ISA->(Disease)-CAUSES->(Deep Vein Thrombosis)",
+      "(Structure of left lower leg)-LOCATION_OF->(Hemiparesis)-ISA->(Disease)-PREDISPOSES->(Deep Vein Thrombosis)",
+      "(Deep Vein Thrombosis)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(Fibrin fragment D)",
+      "(Deep Vein Thrombosis)-CAUSES->(Gastrointestinal Hemorrhage)-ASSOCIATED_WITH->(Fibrin fragment D)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Deep Vein Thrombosis)-CAUSES->(Pain)",
+      "(Pain)-CAUSES->(Deep Vein Thrombosis)",
+      "(Fibrin fragment D)-CAUSES->(Disseminated Intravascular Coagulation)-CAUSES->(Deep Vein Thrombosis)",
+      "(Edema)-CAUSES->(Deep Vein Thrombosis)",
+      "(Erythema)-CAUSES->(Symptoms)-CAUSES->(Deep Vein Thrombosis)",
+      "(Deep Vein Thrombosis)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(Fibrin fragment D)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Combined oral contraceptive pill\" -> \"increased risk of venous thromboembolism\" -> \"swelling and pain in left calf\" -> \"elevated D-dimers\" -> \"decreased protein S\" -> 85%",
+    "CHAIN: \"Recent long-haul flight\" -> \"prolonged immobility\" -> \"venous stasis\" -> \"increased risk of deep vein thrombosis\" -> \"swelling and pain in left calf\" -> \"elevated D-dimers\" -> \"decreased protein S\" -> 80%",
+    "CHAIN: \"Combined oral contraceptive pill\" -> \"hormonal changes\" -> \"increased coagulation factors\" -> \"hypercoagulable state\" -> \"deep vein thrombosis\" -> \"elevated D-dimers\" -> \"decreased protein S\" -> 75%",
+    "CHAIN: \"Recent travel\" -> \"possible dehydration\" -> \"increased blood viscosity\" -> \"risk of thrombosis\" -> \"swelling and pain in left calf\" -> \"elevated D-dimers\" -> \"decreased protein S\" -> 70%"
+  ],
+  "enhanced_information": "The most likely cause of this patient's clinical presentation is deep vein thrombosis (DVT) based on her recent trip to Taiwan, increased risk of DVT, pain, swelling, erythema in the left leg, and elevated D-dimers. The evidence paths support the relationship between pain, edema, erythema, and DVT, confirming the clinical suspicion of DVT in this case.",
+  "analysis": "The patient's symptoms and recent travel history suggest a deep vein thrombosis (DVT), which is supported by the elevated D-dimer levels. The use of combined oral contraceptive pills (OCPs) is a known risk factor for venous thromboembolism due to their effect on increasing coagulation factors and decreasing anticoagulant proteins like protein S. Decreased protein S levels can lead to a hypercoagulable state, increasing the risk of thrombosis.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      7
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

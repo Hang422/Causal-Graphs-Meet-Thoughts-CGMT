@@ -1,0 +1,127 @@
+{
+  "question": "A 33-year-old man presents to the emergency department with severe anxiety. He has had multiple episodes in the past treated with low dose lorazepam. The patient states that he feels as if he is going to die and that he cannot breathe. His past medical history is notable for depression and anxiety. His temperature is 98.1°F (36.7°C), blood pressure is 122/83 mmHg, pulse is 153/min, respirations are 13/min, and oxygen saturation is 98% on room air. The patient is given a low dose of lorazepam and reports a complete resolution of his symptoms. An ECG is performed and demonstrates prolongation of the P-R interval with a widened QRS complex. There is a P wave preceding every QRS complex, no dropped QRS complexes, and the P-R interval does not change. His initial lab values are unremarkable. Which of the following is the best management of this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Cardiac catheterization",
+    "opb": "Electrophysiological studies",
+    "opc": "No further management needed",
+    "opd": "Sodium bicarbonate",
+    "ope": "Transcutaneous pacing"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Wide QRS complex",
+        "Cardiomyopathies",
+        "Abnormal cardiac conduction"
+      ],
+      [
+        "Electrocardiogram",
+        "Disease",
+        "Abnormal cardiac conduction"
+      ],
+      [
+        "Electrocardiogram",
+        "Myocardial Infarction",
+        "Abnormal cardiac conduction"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Wide QRS complex)-PREDISPOSES->(Cardiomyopathies)-PREDISPOSES->(Abnormal cardiac conduction)",
+      "(Electrocardiogram)-CAUSES->(Disease)-CAUSES->(Abnormal cardiac conduction)",
+      "(Electrocardiogram)-CAUSES->(Myocardial Infarction)-CAUSES->(Abnormal cardiac conduction)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Abnormal cardiac conduction",
+        "DMD",
+        "Cell Nucleus",
+        "Electrophysiological studies"
+      ],
+      [
+        "Abnormal cardiac conduction",
+        "CD69 protein, human|CD69",
+        "Cells",
+        "Electrophysiological studies"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Abnormal cardiac conduction)-ASSOCIATED_WITH->(DMD)-PART_OF->(Cell Nucleus)-LOCATION_OF->(Electrophysiological studies)",
+      "(Abnormal cardiac conduction)-ASSOCIATED_WITH->(CD69 protein, human|CD69)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Electrophysiological studies)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Electrocardiogram)-CAUSES->(Disease)-CAUSES->(Abnormal cardiac conduction)",
+      "(Electrocardiogram)-CAUSES->(Myocardial Infarction)-CAUSES->(Abnormal cardiac conduction)",
+      "(Wide QRS complex)-PREDISPOSES->(Cardiomyopathies)-PREDISPOSES->(Abnormal cardiac conduction)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Severe anxiety\" -> \"Treated with lorazepam\" -> \"Symptoms resolve\" -> \"ECG shows P-R prolongation and widened QRS\" -> \"Possible drug-induced conduction delay\" -> \"No further management needed\" -> 85%",
+    "CHAIN: \"Severe anxiety\" -> \"Treated with lorazepam\" -> \"Symptoms resolve\" -> \"ECG shows P-R prolongation and widened QRS\" -> \"Possible underlying conduction issue\" -> \"Sodium bicarbonate considered for drug-induced conduction delay\" -> 70%",
+    "CHAIN: \"Severe anxiety\" -> \"Treated with lorazepam\" -> \"Symptoms resolve\" -> \"ECG shows P-R prolongation and widened QRS\" -> \"No acute cardiac symptoms\" -> \"No further management needed\" -> 80%",
+    "CHAIN: \"Severe anxiety\" -> \"Treated with lorazepam\" -> \"Symptoms resolve\" -> \"ECG shows P-R prolongation and widened QRS\" -> \"Possible conduction abnormality\" -> \"Electrophysiological studies considered\" -> 60%",
+    "CHAIN: \"Severe anxiety\" -> \"Treated with lorazepam\" -> \"Symptoms resolve\" -> \"ECG shows P-R prolongation and widened QRS\" -> \"No immediate life-threatening condition\" -> \"No further management needed\" -> 75%"
+  ],
+  "enhanced_information": "The patient presents with severe anxiety and ECG findings of P-R interval prolongation and widened QRS complex. The resolution of symptoms with lorazepam suggests the anxiety is not directly related to a cardiac issue. The ECG changes could indicate a drug-induced conduction delay, possibly from medications like tricyclic antidepressants, which can cause such ECG changes. Sodium bicarbonate is a known treatment for tricyclic antidepressant overdose, which can cause widened QRS complexes. However, given the absence of acute cardiac symptoms and the resolution of anxiety with lorazepam, immediate intervention may not be necessary. The consensus is that if the patient is stable and asymptomatic after treatment, no further management is needed. The retrieved evidence paths suggest associations with abnormal cardiac conduction but do not directly apply to this case, as there is no indication of acute cardiac pathology or life-threatening condition. Therefore, the best management is 'No further management needed,' as the patient is stable and the ECG changes are not causing symptoms or immediate risk.",
+  "analysis": "The patient presents with symptoms of severe anxiety, which resolve completely with lorazepam, indicating that the primary issue is likely anxiety-related rather than cardiac. The ECG findings of P-R interval prolongation and widened QRS complex could suggest a conduction delay, possibly due to medication effects such as tricyclic antidepressants. However, the patient is stable, asymptomatic after treatment, and has no acute cardiac symptoms. In such cases, if the patient is stable and there is no immediate risk, further invasive or aggressive management is not typically necessary. Sodium bicarbonate is used in cases of tricyclic antidepressant overdose with significant cardiac effects, but given the patient's stability and resolution of symptoms, this is not indicated. Therefore, the best management approach, considering the patient's current stable condition and lack of acute symptoms, is 'No further management needed.'",
+  "answer": "opc",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      3,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      100.0,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

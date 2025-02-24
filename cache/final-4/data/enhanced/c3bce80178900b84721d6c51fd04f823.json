@@ -1,0 +1,161 @@
+{
+  "question": "A 23-year-old woman presents to the emergency department complaining of nausea, vomiting, and abdominal pain. She has a 10-year history of type I diabetes mellitus treated with lispro and glargine. Upon questioning, she mentions that she stopped taking her insulin 3 days ago due to recent malaise and decreased appetite. She denies recent weight change, illicit drug use, or sexual activity. She does not take any other medications and she does not use tobacco products or alcohol. Upon physical examination she is afebrile. Her blood pressure is 105/70 mm Hg, pulse is 108/min and respiratory rate is 25/min. She appears lethargic, with clear breath sounds bilateral and a soft, nontender and nondistended abdomen. Laboratory results are as follows:\nSodium 130 mEq/L\nPotassium 5.6 mEq/L\nChloride 91 mEq/L\nBicarbonate 12 mEq/L\nGlucose 450 mg/dL\nWhich of the following is most likely to be found in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Signs of hypocalcemia",
+    "opb": "Suppression of antidiuretic hormone (ADH) secretion",
+    "opc": "Normal-to-high phosphate levels",
+    "opd": "Total body potassium depletion",
+    "ope": "Loss of sodium in urine is greater than free water loss"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Hyperglycemia"
+      ],
+      [
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Hyperglycemia"
+      ],
+      [
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Hyperglycemia"
+      ],
+      [
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Hyperglycemia"
+      ],
+      [
+        "Diabetes Mellitus, Insulin-Dependent",
+        "Hyperglycemia"
+      ],
+      [
+        "Hyperglycemia",
+        "Acidosis"
+      ],
+      [
+        "Acidosis",
+        "Functional disorder",
+        "GLUCOSE TOLERANCE",
+        "Cells"
+      ],
+      [
+        "calcium",
+        "Hypocalcemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Hyperglycemia)",
+      "(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Hyperglycemia)",
+      "(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Hyperglycemia)",
+      "(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Hyperglycemia)",
+      "(Diabetes Mellitus, Insulin-Dependent)-CAUSES->(Hyperglycemia)",
+      "(Hyperglycemia)-CAUSES->(Acidosis)",
+      "(Acidosis)-MANIFESTATION_OF->(Functional disorder)-MANIFESTATION_OF->(GLUCOSE TOLERANCE)-PROCESS_OF->(Cells)",
+      "(calcium)-CAUSES->(Hypocalcemia)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Cells",
+        "Pharmaceutical Preparations",
+        "Hypocalcemia"
+      ],
+      [
+        "Cells",
+        "Pharmaceutical Preparations",
+        "Hypocalcemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "INTERACTS_WITH",
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Cells)-LOCATION_OF->(Pharmaceutical Preparations)-CAUSES->(Hypocalcemia)",
+      "(Cells)-INTERACTS_WITH->(Pharmaceutical Preparations)-TREATS->(Hypocalcemia)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(calcium)-CAUSES->(Hypocalcemia)",
+      "(Hyperglycemia)-CAUSES->(Acidosis)",
+      "(Cells)-INTERACTS_WITH/LOCATION_OF->(Pharmaceutical Preparations)-CAUSES/TREATS->(Hypocalcemia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Stopped taking insulin\" -> \"uncontrolled type I diabetes\" -> \"hyperglycemia\" -> \"osmotic diuresis\" -> \"loss of sodium and water\" -> \"loss of sodium in urine is greater than free water loss\" -> 85%",
+    "CHAIN: \"Stopped taking insulin\" -> \"uncontrolled type I diabetes\" -> \"hyperglycemia\" -> \"osmotic diuresis\" -> \"electrolyte imbalances\" -> \"total body potassium depletion\" -> 80%",
+    "CHAIN: \"Stopped taking insulin\" -> \"uncontrolled type I diabetes\" -> \"hyperglycemia\" -> \"increased breakdown of tissue proteins\" -> \"release of intracellular potassium\" -> \"normal-to-high phosphate levels\" -> 75%",
+    "CHAIN: \"Stopped taking insulin\" -> \"uncontrolled type I diabetes\" -> \"hyperglycemia\" -> \"osmotic diuresis\" -> \"increased urine output\" -> \"suppression of antidiuretic hormone (ADH) secretion\" -> 70%",
+    "CHAIN: \"Stopped taking insulin\" -> \"uncontrolled type I diabetes\" -> \"hyperglycemia\" -> \"acidosis\" -> \"shift of calcium into cells\" -> \"signs of hypocalcemia\" -> 65%"
+  ],
+  "enhanced_information": "The patient's cessation of insulin has led to uncontrolled type I diabetes and subsequent diabetic ketoacidosis, characterized by hyperglycemia and metabolic acidosis. This has induced osmotic diuresis, resulting in a significant loss of sodium relative to free water. This aligns with standard medical consensus on the pathophysiology of diabetic ketoacidosis and is supported by the patient's symptoms and lab findings.",
+  "analysis": "The patient's presentation and lab results indicate diabetic ketoacidosis, characterized by hyperglycemia, metabolic acidosis, and an initial elevation in serum potassium. However, total body potassium is typically depleted due to urinary losses, despite what serum levels indicate. This understanding is consistent with the standard medical consensus on the pathophysiology of DKA.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      1,
+      1,
+      5
+    ],
+    "coverage_rates": [
+      11.11111111111111,
+      11.11111111111111,
+      11.11111111111111,
+      11.11111111111111,
+      55.55555555555556
+    ],
+    "total_successes": 9
+  },
+  "normal_results": []
+}

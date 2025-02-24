@@ -1,0 +1,123 @@
+{
+  "question": "A 78-year-old man presents to his primary care physician for persistent back pain. The patient states that he has had back pain for awhile; however, this past weekend he was helping his son move heavy furniture. Since the move, his symptoms have been more severe. The patient states that the pain is constant and occurs throughout the day. On review of systems, the patient endorses a recent 15 pound weight loss and constipation. His temperature is 99.5°F (37.5°C), blood pressure is 137/79 mmHg, pulse is 90/min, respirations are 15/min, and oxygen saturation is 98% on room air. Cardiovascular exam is notable for a murmur at the right sternal border that radiates to the carotids. Pulmonary exam reveals mild bibasilar crackles. Musculoskeletal exam is notable for mild midline tenderness of the lower thoracic spine and the upper segment of the lumbar spine. No bruising or signs of external trauma are observable on the back. Symptoms are not exacerbated when the patient is lying down and his straight leg is lifted. Strength is 5/5 in the lower and upper extremities. The patient's sensation is intact bilaterally in his lower and upper extremities. Laboratory values are ordered and return as seen below.\n\nHemoglobin: 11 g/dL\nHematocrit: 34%\nLeukocyte count: 10,500/mm^3 with normal differential\nPlatelet count: 288,000/mm^3\n\nSerum:\nNa+: 139 mEq/L\nCl-: 100 mEq/L\nK+: 4.3 mEq/L\nHCO3-: 25 mEq/L\nBUN: 20 mg/dL\nGlucose: 99 mg/dL\nCreatinine: 1.6 mg/dL\nCa2+: 11.8 mg/dL\nAST: 12 U/L\nALT: 12 U/L\n\nWhich of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Muscle strain",
+    "opb": "Herniated nucleus pulposus",
+    "opc": "Sciatic nerve irritation",
+    "opd": "Piriformis muscle inflammation",
+    "ope": "Plasma cell dyscrasia"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Back Pain",
+        "Disease",
+        "Constipation"
+      ],
+      [
+        "Back Pain",
+        "Obesity",
+        "Constipation"
+      ],
+      [
+        "Back Pain",
+        "Symptoms",
+        "Constipation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Back Pain)-CAUSES->(Disease)-CAUSES->(Constipation)",
+      "(Back Pain)-CAUSES->(Obesity)-CAUSES->(Constipation)",
+      "(Back Pain)-CAUSES->(Symptoms)-CAUSES->(Constipation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Limb structure",
+        "Anemia"
+      ],
+      [
+        "Anemia",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ],
+      [
+        "Anemia",
+        "Disease",
+        "Sphincter",
+        "Diagnosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Limb structure)-LOCATION_OF->(Anemia)",
+      "(Anemia)-MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)",
+      "(Anemia)-CAUSES->(Disease)-MANIFESTATION_OF->(Sphincter)-LOCATION_OF->(Diagnosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Limb structure)-LOCATION_OF->(Anemia)",
+      "(Back Pain)-CAUSES->(Symptoms)-CAUSES->(Constipation)",
+      "(Back Pain)-CAUSES->(Disease)-CAUSES->(Constipation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Back pain worsened after heavy lifting\" -> \"Recent weight loss and constipation\" -> \"Mild bibasilar crackles on pulmonary exam\" -> \"Mild midline tenderness of lower thoracic and upper lumbar spine\" -> \"Normal strength and sensation in extremities\" -> \"Lab values show anemia and elevated creatinine\" -> \"Most likely diagnosis is option ope. Plasma cell dyscrasia\" -> 80%"
+  ],
+  "enhanced_information": "The patient's presentation with back pain worsened after heavy lifting, recent weight loss, constipation, anemia, and elevated creatinine levels suggests a systemic condition rather than a musculoskeletal issue. The most likely diagnosis is plasma cell dyscrasia (ope) based on the constellation of symptoms and lab findings.",
+  "analysis": "The patient's presentation with back pain exacerbated by heavy lifting, recent weight loss, constipation, anemia, and elevated creatinine levels suggests a systemic condition rather than a musculoskeletal issue. The constellation of symptoms and lab findings point towards a more serious underlying condition. Given the context provided, the most likely diagnosis is plasma cell dyscrasia (ope).",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

@@ -1,0 +1,123 @@
+{
+  "question": "A 23-year-old male with a homozygous CCR5 mutation is found to be immune to HIV infection. The patient’s CCR5 mutation interferes with the function of which viral protein?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Reverse transcriptase",
+    "opb": "gp120",
+    "opc": "gp41",
+    "opd": "p24",
+    "ope": "pp17"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "HIV",
+        "HIV Infections"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(HIV)-CAUSES->(HIV Infections)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "HIV Infections",
+        "Pathogenesis",
+        "HIV Envelope Protein gp120"
+      ],
+      [
+        "HIV Infections",
+        "Pathogenesis",
+        "HIV Envelope Protein gp120"
+      ],
+      [
+        "HIV envelope protein",
+        "T-Lymphocyte",
+        "Virus",
+        "Obstruction"
+      ],
+      [
+        "HIV envelope protein",
+        "Cells",
+        "Virus",
+        "Obstruction"
+      ],
+      [
+        "Obstruction",
+        "Pathogenesis",
+        "HIV Envelope Protein gp120"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(HIV Infections)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(HIV Envelope Protein gp120)",
+      "(HIV Infections)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(HIV Envelope Protein gp120)",
+      "(HIV envelope protein)-INTERACTS_WITH->(T-Lymphocyte)-LOCATION_OF->(Virus)-CAUSES->(Obstruction)",
+      "(HIV envelope protein)-INTERACTS_WITH->(Cells)-PART_OF->(Virus)-CAUSES->(Obstruction)",
+      "(Obstruction)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(HIV Envelope Protein gp120)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(HIV)-CAUSES->(HIV Infections)",
+      "(HIV Infections)-CAUSES/MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(HIV Envelope Protein gp120)",
+      "(HIV envelope protein)-INTERACTS_WITH->(T-Lymphocyte)-LOCATION_OF->(Virus)-CAUSES->(Obstruction)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: CCR5 mutation -> interferes with HIV entry into host cells -> prevents HIV infection -> gp120 -> 95% CHAIN: CCR5 mutation -> affects HIV binding to host cell -> inhibits viral entry -> gp120 -> 90% CHAIN: CCR5 mutation -> disrupts interaction with HIV envelope protein -> blocks viral entry -> gp120 -> 95%"
+  ],
+  "enhanced_information": "The homozygous CCR5 mutation interferes with HIV entry into host cells by disrupting the interaction with the HIV envelope protein gp120, thereby blocking viral entry. This mutation prevents HIV infection by inhibiting viral entry through interference with gp120. The patient's CCR5 mutation affects the function of the viral protein gp120.",
+  "analysis": "The core medical principle here is that the homozygous CCR5 mutation interferes with HIV entry by disrupting the interaction with the viral envelope protein gp120. This disruption blocks viral entry into host cells. Therefore, the patient's CCR5 mutation affects the function of the viral protein gp120.",
+  "answer": "opb",
+  "confidence": 100.0,
+  "chain_coverage": {
+    "success_counts": [
+      4
+    ],
+    "coverage_rates": [
+      100.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}
