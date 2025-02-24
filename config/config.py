@@ -69,12 +69,31 @@ class Config:
         # Load environment variables
         load_dotenv()
 
-        # 设置项目根目录
+        # Set project root first
         self.project_root = self._get_project_root()
 
-        # Initialize components
-        self.paths = self._setup_paths()
+        # Create basic paths without logging
+        self.paths = {
+            "data": self.project_root / "data",
+            "cache": self.project_root / "cache",
+            "output": self.project_root / "output",
+            "logs": self.project_root / "logs",
+        }
+
+        # Create necessary directories
+        self.paths["logs"].mkdir(parents=True, exist_ok=True)
+        self.paths["cache"].mkdir(parents=True, exist_ok=True)
+
+        # Now setup logger after paths are created
         self.logger = self._setup_logger("causal_graphrag")
+
+        # Now we can log directory status
+        if not self.paths["data"].exists():
+            self.logger.warning(f"Data directory not found at {self.paths['data']}")
+        if not self.paths["output"].exists():
+            self.logger.warning(f"Output directory not found at {self.paths['output']}")
+
+        # Load remaining configuration
         self._load_config()
 
         # Log initialization
@@ -83,34 +102,10 @@ class Config:
         self.logger.debug(f"Current database: {self.db.current_database}")
 
     def _get_project_root(self) -> Path:
-        """确定项目根目录"""
-        # 如果设置了环境变量，使用环境变量
+        """Determine project root directory"""
         if project_root := os.getenv("PROJECT_ROOT"):
             return Path(project_root)
-
-        # 否则，使用当前文件的父目录的父目录作为项目根目录
         return Path(__file__).parent.parent
-
-    def _setup_paths(self) -> Dict[str, Path]:
-        """Setup project paths relative to project root"""
-        paths = {
-            "data": self.project_root / "data",
-            "cache": self.project_root / "cache",
-            "output": self.project_root / "output",
-            "logs": self.project_root / "logs",
-        }
-
-        # 只创建必要的目录（logs和cache）
-        paths["logs"].mkdir(parents=True, exist_ok=True)
-        paths["cache"].mkdir(parents=True, exist_ok=True)
-
-        # data和output目录应该预先存在，如果不存在则警告
-        if not paths["data"].exists():
-            self.logger.warning(f"Data directory not found at {paths['data']}")
-        if not paths["output"].exists():
-            self.logger.warning(f"Output directory not found at {paths['output']}")
-
-        return paths
 
     def _setup_logger(self, name: str) -> logging.Logger:
         """Setup logging configuration for a specific name"""
@@ -154,7 +149,7 @@ class Config:
 
         self.cohere = {
             "api_key": os.getenv("COHERE_API_KEY", ""),
-            "model": "embed-english-v3.0",  # 默认模型
+            "model": "embed-english-v3.0",  # Default model
         }
 
     def get_db_config(self, database: Optional[str] = None) -> Dict:

@@ -1,0 +1,28 @@
+{
+  "timestamp": "20250104_050655",
+  "model": "gpt-4-turbo",
+  "interaction_type": "enhancement_with_chain_kg_only",
+  "question_id": "3b4898a2",
+  "question_text": "Steroids are indicated in all of the following forms of tuberculosis except:",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a medical expert making decisions based on enhanced information and careful verification."
+    },
+    {
+      "role": "user",
+      "content": "You are a medical expert specializing in Pharmacology.\n        Your task:\n        - You have per-option reasoning chains (from previous step).\n        - You have retrieved evidence paths (enhanced graph info) that are correct but may be broad and not directly addressing the key point.\n        - Use standard medical/biochemical consensus to evaluate each chain.\n        - If a chain step contradicts consensus, correct or remove it.\n        - Check evidence paths: if they provide relevant support or clarify consensus, incorporate them.\n        - If paths are too broad or not relevant, do not let them mislead you.\n        - Aim to produce a final \"enhanced_information\" that:\n          1. Reflects corrected, consensus-aligned reasoning for each option,\n          2. Integrates helpful evidence from paths,\n          3. Excludes misleading or irrelevant info,\n          4. Focuses on what best helps answer the question correctly.\n\n        ### Question\n        Steroids are indicated in all of the following forms of tuberculosis except:\n\n        ### Options\n        opa. Meningitis\nopb. Pericarditis\nopc. Ileo-caecal tuberculosis\nopd. Adrenal involvement\n\n### Reasoning Chains per Option:\nCHAIN: \"Tuberculosis meningitis\" -> \"inflammation of meninges\" -> \"steroids reduce inflammation\" -> \"improved patient outcomes\" -> 95%\nCHAIN: \"Tuberculosis pericarditis\" -> \"inflammation of pericardium\" -> \"steroids reduce inflammation\" -> \"prevention of constrictive pericarditis\" -> 95%\nCHAIN: \"Ileo-caecal tuberculosis\" -> \"localized intestinal inflammation\" -> \"steroids not typically required for localized forms\" -> \"surgery or anti-tuberculosis medication preferred\" -> 80%\nCHAIN: \"Adrenal involvement in tuberculosis\" -> \"risk of adrenal insufficiency\" -> \"steroids replace insufficient adrenal hormones\" -> \"prevents adrenal crisis\" -> 90%\n\n### Retrieved Evidence Paths (broad but correct):\n(Steroids)-ASSOCIATED_WITH->(Symptoms)-CAUSES->(Pericarditis, Constrictive)\n(Steroids)-TREATS->(Disease)-CAUSES->(Pericarditis, Constrictive)\n(Tuberculosis)-CAUSES->(Adrenal gland hypofunction)\n(Adrenal gland hypofunction)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(Hydrocortisone)-ISA->(Adrenal hormone preparation)\n(Adrenal gland hypofunction)-PREDISPOSES->(Adverse event)-ASSOCIATED_WITH->(Pharmaceutical Preparations)-INTERACTS_WITH->(Adrenal hormone preparation)\n(Steroids)-TREATS->(Addisonian crisis)\n(Adrenal hormone preparation)-ASSOCIATED_WITH->(Disease)-PREDISPOSES->(Addisonian crisis)\n(Adrenal hormone preparation)-TREATS->(Infection)-CAUSES->(Addisonian crisis)\n(Inflammation)-ASSOCIATED_WITH->(IL13 gene|IL13)-INTERACTS_WITH->(Steroids)\n(Inflammation)-ASSOCIATED_WITH->(ELAVL2 gene|ELAVL2)-INTERACTS_WITH->(Steroids)\n(Intestinal inflammation)-ASSOCIATED_WITH->(NF-kappa B)-INTERACTS_WITH->(ELAVL2 gene|ELAVL2)-INTERACTS_WITH->(Steroids)\n\n        ### Instructions:\n        1. Recall standard consensus facts relevant to the question.\n        2. For each option's chain, compare steps to consensus and paths:\n           - Remove/adjust steps contradicting known facts.\n           - If paths confirm or clarify a point aligned with consensus, use them.\n           - Ignore irrelevant or overly broad paths that don't help.\n        3. If uncertain, note uncertainty but choose the best consensus-supported interpretation.\n        4. Output a short \"enhanced_information\" summarizing the corrected reasoning and relevant evidence that truly aids in final answer determination.\n\n        ### Output Format:\n        {\n          \"enhanced_information\": \"A concise, consensus-aligned summary integrating corrected reasoning and relevant evidence.\"\n        }\n        "
+    }
+  ],
+  "response": {
+    "enhanced_information": "Steroids are indicated in tuberculosis meningitis, pericarditis, and adrenal involvement to manage inflammation and replace insufficient hormones, respectively. However, they are not typically required in ileo-caecal tuberculosis, where localized intestinal inflammation is primarily treated with anti-tuberculosis medications and possibly surgery."
+  },
+  "metadata": {
+    "topic": "Pharmacology",
+    "is_multi_choice": true,
+    "has_reasoning_chain": true,
+    "has_enhanced_info": true,
+    "model_config": "gpt-4-turbo",
+    "temperature": 0.0
+  }
+}

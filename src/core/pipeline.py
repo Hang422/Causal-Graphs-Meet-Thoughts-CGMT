@@ -175,33 +175,33 @@ class QuestionProcessor:
                     question.to_cache()
                 else:
                     question = cached_question
-                #
-                # cached_question = MedicalQuestion.from_cache(
-                #     self.cache_paths['derelict'],
-                #     question.question
-                # )
-                # if not cached_question:
-                #     self.llm.direct_answer(question)
-                #     question.set_cache_paths(self.cache_paths['derelict'])
-                #     question.to_cache()
-                # else:
-                #     question = cached_question
 
                 cached_question = MedicalQuestion.from_cache(
-                    self.cache_paths['reasoning'],
+                    self.cache_paths['derelict'],
                     question.question
                 )
                 if not cached_question:
-                    self.llm.generate_reasoning_chain(question)
-                    question.set_cache_paths(self.cache_paths['reasoning'])
+                    self.llm.direct_answer(question)
+                    question.set_cache_paths(self.cache_paths['derelict'])
                     question.to_cache()
                 else:
                     question = cached_question
 
-                if not self.complete_process_question(question, False):
-                    continue
-
-                self.compare_experiments(question)
+                # cached_question = MedicalQuestion.from_cache(
+                #     self.cache_paths['reasoning'],
+                #     question.question
+                # )
+                # if not cached_question:
+                #     self.llm.generate_reasoning_chain(question)
+                #     question.set_cache_paths(self.cache_paths['reasoning'])
+                #     question.to_cache()
+                # else:
+                #     question = cached_question
+                #
+                # if not self.complete_process_question(question, False):
+                #     continue
+                #
+                # self.compare_experiments(question)
 
             except Exception as e:
                 self.logger.error(f"Error processing question {i + 1}: {str(e)}")
@@ -234,7 +234,6 @@ class QuestionProcessor:
                         correct_answer=data['correct_answer'],
                         options=data['options'],
                         topic_name=data['topic_name'],
-                        # initial_causal_graph=initial_causal_graph,
                         reasoning_chain=data['reasoning_chain']
                     )
 
@@ -389,6 +388,7 @@ def compare_models(process_path):
     try:
         processor = QuestionProcessor(process_path)
         processor.process_from_cache(process_path)
+        # processor.batch_process_file('test1',1)
 
         STAGES = ['derelict', 'enhanced', 'knowledge_graph', 'remove_llm_enhanced', 'normal_rag', 'remove_enhancer']
         base_dir = process_path
@@ -410,14 +410,14 @@ def compare_models(process_path):
 
 
 if __name__ == "__main__":
-    # models = ['4', '4o', '4o-mini']
+    # models = ['4-filtered', '4o-filtered', '4o-mini-filtered']
     # intersect(models)
-    config.openai['model'] = 'gpt-4o-mini'
-    compare_models('4o-mini-intersection')
-    config.openai['model'] = 'gpt-4o'
-    compare_models('4o-intersection')
-    config.openai['model'] = 'gpt-4-turbo'
-    compare_models('4-intersection')
-    compare_models('2-mini_1-4o')
-    compare_models('chain=40-rest=mini')
-    compare_models('chain=mini-rest=4o')
+    config.openai['model'] = 'gpt-3.5-turbo'
+    compare_models('f1')
+    # config.openai['model'] = 'gpt-4o'
+    # compare_models('4o-intersection')
+    # config.openai['model'] = 'gpt-4-turbo'
+    # compare_models('4-intersection')
+    # compare_models('2-mini_1-4o')
+    # compare_models('chain=40-rest=mini')
+    # compare_models('chain=mini-rest=4o')
