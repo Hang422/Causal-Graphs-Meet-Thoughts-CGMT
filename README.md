@@ -115,20 +115,6 @@ config = {
 
 ## Usage
 
-### Basic Usage
-
-```python
-from pipeline import QuestionProcessor
-
-# Initialize the processor
-processor = QuestionProcessor("test_path")
-
-# Process questions from a file
-processor.batch_process_file("medmcqa", sample_size=100)
-
-# Compare model performance
-compare_models("test_path")
-```
 
 ### Running Experiments
 
