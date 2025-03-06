@@ -175,16 +175,4 @@ Licensed under the Apache License, Version 2.0
 Original code maintained by Neo4j under Apache 2.0 license
 
 When using this project, please note that while the core project is under MIT license, the Neo4j GraphRAG component follows its original Apache 2.0 license as indicated in its source code headers.
-## Citation
 
-If you use this work in your research, please cite:
-
-```bibtex
-@misc{CoT_Causal_enhancedGrahphRAG,
-  author = {Hang422},
-  title = {CoT_Causal_enhancedGrahphRAG},
-  year = {2024},
-  publisher = {GitHub},
-  url = {https://github.com/Hang422/CoT_Causal_enhancedGrahphRAG}
-}
-```
