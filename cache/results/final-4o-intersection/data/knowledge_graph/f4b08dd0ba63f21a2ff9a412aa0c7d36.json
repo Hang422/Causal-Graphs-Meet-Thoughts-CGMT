@@ -1,0 +1,106 @@
+{
+  "question": "A 66-year-old man presents with severe respiratory distress. He was diagnosed with pulmonary hypertension secondary to occupational pneumoconiosis. Biopsy findings of the lung showed ferruginous bodies. What is the most likely etiology?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Coal",
+    "opb": "Iron",
+    "opc": "Asbestos",
+    "opd": "Beryllium",
+    "ope": "Silica"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Asbestosis",
+        "Disease",
+        "Hypertension, Pulmonary"
+      ],
+      [
+        "Asbestosis",
+        "Disease",
+        "Hypertension, Pulmonary"
+      ],
+      [
+        "Biopsy of lung",
+        "Bronchiolitis Obliterans",
+        "Hypertension, Pulmonary"
+      ],
+      [
+        "Chronic lung disease",
+        "Respiratory distress"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Asbestosis)-CAUSES->(Disease)-MANIFESTATION_OF->(Hypertension, Pulmonary)",
+      "(Asbestosis)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Hypertension, Pulmonary)",
+      "(Biopsy of lung)-DIAGNOSES->(Bronchiolitis Obliterans)-CAUSES->(Hypertension, Pulmonary)",
+      "(Chronic lung disease)-CAUSES->(Respiratory distress)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Chronic lung disease)-CAUSES->(Respiratory distress)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Ferruginous bodies\" -> \"asbestos exposure\" -> \"asbestosis\" -> \"pulmonary hypertension\" -> 95%",
+    "CHAIN: \"Ferruginous bodies\" -> \"iron coating\" -> \"asbestos fibers\" -> \"occupational exposure\" -> 90%",
+    "CHAIN: \"Ferruginous bodies\" -> \"asbestos\" -> \"occupational pneumoconiosis\" -> \"respiratory distress\" -> 92%",
+    "CHAIN: \"Ferruginous bodies\" -> \"asbestos\" -> \"lung biopsy\" -> \"pulmonary hypertension\" -> 93%",
+    "CHAIN: \"Ferruginous bodies\" -> \"asbestos\" -> \"chronic lung disease\" -> \"respiratory distress\" -> 91%"
+  ],
+  "enhanced_information": "Ferruginous bodies are indicative of asbestos exposure, as they are asbestos fibers coated with iron-containing protein. This aligns with the diagnosis of asbestosis, a type of pneumoconiosis caused by occupational exposure to asbestos. Asbestosis can lead to chronic lung disease and pulmonary hypertension, which explains the patient's respiratory distress. The retrieved evidence path supports the link between chronic lung disease and respiratory distress, which is consistent with the effects of asbestosis. Therefore, the most likely etiology for the ferruginous bodies and the patient's condition is asbestos exposure.",
+  "analysis": "The presence of ferruginous bodies in the lung biopsy is a key indicator of asbestos exposure. Ferruginous bodies are asbestos fibers that have been coated with iron-containing protein, which is a classic finding in asbestosis. Asbestosis is a type of pneumoconiosis caused by occupational exposure to asbestos, and it can lead to chronic lung disease and pulmonary hypertension. The patient's severe respiratory distress and the biopsy findings strongly suggest that asbestos is the underlying cause. Other options such as coal, iron, beryllium, and silica do not typically result in ferruginous bodies. Therefore, based on standard medical knowledge and the enhanced information provided, asbestos is the most likely etiology.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      0.0,
+      0.0,
+      33.33333333333333,
+      33.33333333333333
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

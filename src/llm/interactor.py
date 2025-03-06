@@ -13,27 +13,20 @@ import re
 
 def format_reasoning_chains(raw_text: str) -> List[str]:
     """
-    将非标准格式的思维链转换为标准格式
-
     Args:
-        raw_text: 原始响应文本
+        raw_text: raw
 
     Returns:
-        List[str]: 标准格式的思维链列表
+        List[str]: CoT list
     """
 
     def clean_step(step: str) -> str:
-        """清理单个步骤"""
-        # 移除数字编号
         step = re.sub(r'^\d+\.\s*', '', step)
-        # 移除多余空格
         step = ' '.join(step.split())
-        # 移除"above side effect"等重复短语
         step = re.sub(r'\s*->\s*(?:above\s+)?side\s+effect(?:\s*$)?', '', step)
         return step.strip()
 
     def extract_confidence(text: str) -> Optional[str]:
-        """提取置信度"""
         confidence_patterns = [
             r'(?:Confidence:?\s*)?(\d+)%',
             r'confidence\s*(?:is|:)\s*(\d+)',
@@ -47,37 +40,27 @@ def format_reasoning_chains(raw_text: str) -> List[str]:
         return None
 
     def process_single_chain(chain_text: str) -> Optional[str]:
-        """处理单个思维链"""
-        # 移除常见的标题/前缀
         chain_text = re.sub(r'^.*(?:Reasoning Chain|Chain)\s*\d*:?\s*', '', chain_text, flags=re.IGNORECASE)
 
-        # 提取置信度
         confidence = extract_confidence(chain_text)
         if not confidence:
             return None
-
-        # 移除置信度部分以处理步骤
         chain_text = re.sub(r'(?:Confidence:?\s*)?(?:\d+%|confidence\s*(?:is|:)\s*\d+).*$', '', chain_text,
                             flags=re.IGNORECASE)
 
-        # 分割步骤
         if '->' in chain_text:
             steps = [clean_step(step) for step in chain_text.split('->')]
         else:
             steps = [clean_step(step) for step in chain_text.split('\n') if step.strip()]
 
-        # 过滤空步骤并组合
         steps = [step for step in steps if step]
         if not steps:
             return None
 
-        # 构建标准格式
         return f"CHAIN: {' -> '.join(steps)} -> {confidence}"
 
-    # 主处理逻辑
     chains = []
 
-    # 1. 尝试按编号或分隔符分割多个链
     chain_separators = [
         r'(?:###?\s*)?(?:Reasoning\s+)?Chain\s*\d+:',
         r'^\d+\.\s',
@@ -93,7 +76,6 @@ def format_reasoning_chains(raw_text: str) -> List[str]:
     if not text_chunks:
         text_chunks = [raw_text]
 
-    # 2. 处理每个潜在的链
     for chunk in text_chunks:
         formatted_chain = process_single_chain(chunk)
         if formatted_chain:
@@ -103,15 +85,6 @@ def format_reasoning_chains(raw_text: str) -> List[str]:
 
 
 def fix_reasoning_chains(response_text: str) -> List[str]:
-    """
-    修复并标准化推理链格式
-
-    Args:
-        response_text: GPT的原始响应文本
-
-    Returns:
-        List[str]: 修复后的标准格式推理链列表
-    """
     try:
         return format_reasoning_chains(response_text)
     except Exception as e:
@@ -119,7 +92,6 @@ def fix_reasoning_chains(response_text: str) -> List[str]:
         return []
 
 
-# 在LLMProcessor中使用
 
 @dataclass
 class LLMInteraction:

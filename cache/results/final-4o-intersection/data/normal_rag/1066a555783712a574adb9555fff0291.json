@@ -1,0 +1,109 @@
+{
+  "question": "A 42-year-old man is brought to the emergency department by the police after he was involved in a physical altercation at a friend’s home. Upon physical examination, the patient is disheveled. He is very agitated and actively strikes out at nurses and other hospital staff. A decision is made to place him in restraints. Head, eyes, ears, nose, and throat exam reveals temporal wasting, marked tooth decay, and healing and new ulcers in his mouth and on his lips. His pupils are dilated and minimally reactive to light. His skin shows dramatic diaphoresis as well as excoriations over his arms. Vital signs show pulse of 120/min, respirations of 12/min, temperature of 39.0°C (102.2°F), and blood pressure of 150/100 mm Hg. Urine drug screen is positive for an amphetamine. Which of the following is a life-threatening complication of the toxicity seen in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Heat stroke",
+    "opb": "Malignant hyperthermia",
+    "opc": "Respiratory depression",
+    "opd": "Seizure",
+    "ope": "Sudden cardiac arrest"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Muscle Rigidity",
+        "Malignant hyperpyrexia due to anesthesia"
+      ],
+      [
+        "Muscle Rigidity",
+        "Malignant hyperpyrexia due to anesthesia"
+      ],
+      [
+        "cardiac arrhythmia",
+        "Sudden Cardiac Arrest"
+      ],
+      [
+        "cardiac arrhythmia",
+        "Sudden Cardiac Arrest"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Muscle Rigidity)-ASSOCIATED_WITH->(Malignant hyperpyrexia due to anesthesia)",
+      "(Muscle Rigidity)-PREDISPOSES->(Malignant hyperpyrexia due to anesthesia)",
+      "(cardiac arrhythmia)-CAUSES->(Sudden Cardiac Arrest)",
+      "(cardiac arrhythmia)-PREDISPOSES->(Sudden Cardiac Arrest)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Muscle Rigidity)-ASSOCIATED_WITH/PREDISPOSES->(Malignant hyperpyrexia due to anesthesia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Amphetamine use\" -> \"increased sympathetic activity\" -> \"increased heart rate and blood pressure\" -> \"increased body temperature\" -> \"heat stroke\" -> 85%",
+    "CHAIN: \"Amphetamine use\" -> \"increased sympathetic activity\" -> \"increased heart rate and blood pressure\" -> \"cardiac stress\" -> \"sudden cardiac arrest\" -> 80%",
+    "CHAIN: \"Amphetamine use\" -> \"increased sympathetic activity\" -> \"increased body temperature\" -> \"muscle rigidity\" -> \"malignant hyperthermia\" -> 70%",
+    "CHAIN: \"Amphetamine use\" -> \"increased sympathetic activity\" -> \"central nervous system excitation\" -> \"seizure\" -> 75%",
+    "CHAIN: \"Amphetamine use\" -> \"increased sympathetic activity\" -> \"increased heart rate and blood pressure\" -> \"increased risk of cardiac arrhythmia\" -> \"sudden cardiac arrest\" -> 80%"
+  ],
+  "enhanced_information": "Amphetamine toxicity can lead to several life-threatening complications due to increased sympathetic activity. The most relevant complications include heat stroke, sudden cardiac arrest, and seizures. Heat stroke is a direct result of hyperthermia caused by increased metabolic activity and impaired thermoregulation, aligning with the patient's high body temperature and diaphoresis. Sudden cardiac arrest can occur due to increased heart rate, blood pressure, and potential arrhythmias, which are consistent with the patient's tachycardia and hypertension. Seizures can result from central nervous system excitation, which is plausible given the patient's agitation and altered mental status. Malignant hyperthermia is typically associated with anesthesia and not directly with amphetamine use, making it less relevant here. Respiratory depression is not a typical complication of amphetamine toxicity, as it is more associated with opioid overdose. Therefore, the most likely life-threatening complication in this scenario is heat stroke, supported by the patient's hyperthermia and diaphoresis.",
+  "analysis": "The patient exhibits signs of amphetamine toxicity, including agitation, dilated pupils, diaphoresis, and hyperthermia. Among the listed complications, heat stroke is a life-threatening condition directly associated with hyperthermia, which is a common consequence of stimulant overdose. The elevated temperature (39.0°C) and other symptoms align with heat stroke, making it the most likely life-threatening complication in this scenario.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      50.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Pharmacologic Substance PREDISPOSES Violence",
+    "Anticonvulsants CAUSES Aggressive behavior",
+    "[M]Unspecified tumor cell NOS LOCATION_OF PECAM1 gene|PECAM1",
+    "Narcotic Antagonists CAUSES Aggressive behavior",
+    "Electromyography ISA Electrodiagnosis",
+    "Emergency treatment TREATS COMBATIVE",
+    "Emergency treatment PREDISPOSES Agitation",
+    "Sedatives CAUSES Abuse"
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "question": "A 72-year-old woman comes to the physician because she is seeing things that she knows are not there. Sometimes she sees a dog in her kitchen and at other times she sees a stranger in her garden, both of which no one else can see. She also reports a lack of motivation to do daily tasks for the past week. Three years ago, she was diagnosed with Parkinson disease and was started on levodopa and carbidopa. Her younger brother has schizophrenia. The patient also takes levothyroxine for hypothyroidism. She used to drink a bottle of wine every day, but she stopped drinking alcohol 2 months ago. Neurologic examination shows a mild resting tremor of the hands and bradykinesia. Her thought process is organized and logical. Which of the following is the most likely underlying cause of this patient's symptoms?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Adverse effect of medication",
+    "opb": "Alcohol withdrawal",
+    "opc": "Schizophrenia",
+    "opd": "Major depressive disorder",
+    "ope": "Poorly controlled hypothyroidism"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Psychotic symptom",
+        "Disease",
+        "Hallucinations, Visual"
+      ],
+      [
+        "Psychotic symptom",
+        "Hyponatremia",
+        "Hallucinations, Visual"
+      ],
+      [
+        "Dopamine Hydrochloride",
+        "Disease",
+        "Psychotic symptom"
+      ],
+      [
+        "Dopamine Hydrochloride",
+        "Seizures",
+        "Psychotic symptom"
+      ],
+      [
+        "Psychotic symptom",
+        "Disease",
+        "Hallucinations, Visual"
+      ],
+      [
+        "Psychotic symptom",
+        "Hyponatremia",
+        "Hallucinations, Visual"
+      ],
+      [
+        "Hypothyroidism",
+        "Pathogenesis",
+        "Thyroxine"
+      ],
+      [
+        "Hypothyroidism",
+        "Adverse effects",
+        "Thyroxine"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Psychotic symptom)-PREDISPOSES->(Disease)-CAUSES->(Hallucinations, Visual)",
+      "(Psychotic symptom)-ASSOCIATED_WITH->(Hyponatremia)-CAUSES->(Hallucinations, Visual)",
+      "(Dopamine Hydrochloride)-TREATS->(Disease)-CAUSES->(Psychotic symptom)",
+      "(Dopamine Hydrochloride)-PREVENTS->(Seizures)-CAUSES->(Psychotic symptom)",
+      "(Psychotic symptom)-PREDISPOSES->(Disease)-CAUSES->(Hallucinations, Visual)",
+      "(Psychotic symptom)-ASSOCIATED_WITH->(Hyponatremia)-CAUSES->(Hallucinations, Visual)",
+      "(Hypothyroidism)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Thyroxine)",
+      "(Hypothyroidism)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(Thyroxine)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Hypothyroidism)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Thyroxine)",
+      "(Hypothyroidism)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(Thyroxine)",
+      "(Dopamine Hydrochloride)-TREATS->(Disease)-CAUSES->(Psychotic symptom)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Levodopa and carbidopa\" -> \"increased dopamine levels\" -> \"dopamine dysregulation\" -> \"visual hallucinations\" -> 85%",
+    "CHAIN: \"Alcohol cessation\" -> \"reduced GABAergic activity\" -> \"increased excitatory neurotransmission\" -> \"visual hallucinations\" -> 60%",
+    "CHAIN: \"Family history of schizophrenia\" -> \"genetic predisposition\" -> \"psychotic symptoms\" -> \"visual hallucinations\" -> 50%",
+    "CHAIN: \"Parkinson's disease\" -> \"dopaminergic treatment\" -> \"psychotic symptoms\" -> \"visual hallucinations\" -> 75%",
+    "CHAIN: \"Hypothyroidism\" -> \"levothyroxine treatment\" -> \"stable thyroid function\" -> \"unlikely cause of hallucinations\" -> 30%"
+  ],
+  "enhanced_information": "The most likely underlying cause of this patient's visual hallucinations is an adverse effect of her Parkinson's disease medication, specifically levodopa and carbidopa. This aligns with the consensus that increased dopamine levels from dopaminergic treatment can lead to dopamine dysregulation, resulting in psychotic symptoms such as visual hallucinations. The evidence path 'Dopamine Hydrochloride-TREATS->Disease-CAUSES->Psychotic symptom' supports this reasoning. Alcohol withdrawal is less likely given the timeline and the nature of her symptoms. Schizophrenia is unlikely as her thought process is organized and logical, and there is no history of schizophrenia in her. Major depressive disorder and poorly controlled hypothyroidism are also unlikely causes, as her hypothyroidism is managed with levothyroxine, and her symptoms do not align with typical depressive or hypothyroid presentations.",
+  "analysis": "The patient's symptoms of visual hallucinations and lack of motivation are likely related to her Parkinson's disease and its treatment. Levodopa and carbidopa, used to manage Parkinson's disease, are known to cause hallucinations as a side effect, especially in older patients. The patient's organized and logical thought process makes schizophrenia less likely, and her cessation of alcohol two months ago makes alcohol withdrawal an unlikely cause. Major depressive disorder could explain the lack of motivation but not the hallucinations. Poorly controlled hypothyroidism could contribute to fatigue and depression but is less likely to cause hallucinations. Therefore, the adverse effect of medication is the most plausible explanation for her symptoms.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      25.0,
+      50.0,
+      25.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": [
+    "Parkinson Disease PREDISPOSES Mental disorders",
+    "JUN gene|JUN INTERACTS_WITH mast cell",
+    "Hypothyroidism COMPLICATES Parkinson Disease",
+    "Parkinson Disease PREDISPOSES Hallucinations",
+    "CFB PART_OF Retinal pigment cell",
+    "EPO PREDISPOSES Sleep Apnea, Obstructive",
+    "Hypothyroidism PREDISPOSES Parkinson Disease"
+  ]
+}

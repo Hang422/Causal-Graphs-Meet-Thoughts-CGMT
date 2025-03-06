@@ -291,8 +291,7 @@ def merge_group(paths: List[str]) -> str:
 
 
 def main():
-    """测试增强器功能"""
-    # 创建测试用例
+    """test"""
     reasoning_chain = ["CHAIN: \"Ulcerative colitis\" -> \"chronic inflammation of colon\" -> \"bloody diarrhea\" -> \"abdominal pain\" -> \"increased risk of colon cancer\" -> 60%"]
     question = MedicalQuestion(
         question= "All of the following are true about Sickle cell disease, Except:",

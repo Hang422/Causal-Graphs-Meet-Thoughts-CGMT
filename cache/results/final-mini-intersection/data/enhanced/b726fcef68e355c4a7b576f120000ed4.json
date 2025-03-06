@@ -1,0 +1,176 @@
+{
+  "question": "A 68-year-old man presents to his primary care physician with pain that started after he visited his daughter as she moved into her new apartment. The patient states that the pain is likely related to all the traveling he has done and helping his daughter move and setup up furniture. The patient has a past medical history of obesity, type II diabetes, multiple concussions while he served in the army, and GERD. He is currently taking metformin, lisinopril, omeprazole, and a multivitamin. On physical exam, pain is elicited upon palpation of the patient's lower back. Flexion of the patient's leg results in pain that travels down the patient's lower extremity. The patient's cardiac, pulmonary, and abdominal exam are within normal limits. Rectal exam reveals normal rectal tone. The patient denies any difficulty caring for himself, defecating, or urinating. Which of the following is the best next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "NSAIDS and activity as tolerated",
+    "opb": "NSAIDS and bed rest",
+    "opc": "Oxycodone and bed rest",
+    "opd": "Oxycodone and activity as tolerated",
+    "ope": "MRI of the spine"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Low Back Pain",
+        "Pain"
+      ],
+      [
+        "Anti-Inflammatory Agents, Non-Steroidal",
+        "Acute back pain"
+      ],
+      [
+        "Pain",
+        "[X]Unspecified osteoporosis with pathological fracture",
+        "Acute back pain"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Low Back Pain)-CAUSES->(Pain)",
+      "(Anti-Inflammatory Agents, Non-Steroidal)-TREATS->(Acute back pain)",
+      "(Pain)-CAUSES->([X]Unspecified osteoporosis with pathological fracture)-CAUSES->(Acute back pain)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Pain",
+        "Sphincter",
+        "Intestines, Small",
+        "Palpation"
+      ],
+      [
+        "Pain",
+        "Sphincter",
+        "Urethra",
+        "Palpation"
+      ],
+      [
+        "Recovery of Function",
+        "paracrine",
+        "Anti-Inflammatory Agents, Non-Steroidal"
+      ],
+      [
+        "Pain relief",
+        "Adverse event",
+        "Anti-Inflammatory Agents, Non-Steroidal"
+      ],
+      [
+        "Pain relief",
+        "Adverse event",
+        "Anti-Inflammatory Agents, Non-Steroidal"
+      ],
+      [
+        "Neurologic Symptoms",
+        "Disease",
+        "Antiinflammatory Effect",
+        "Anti-Inflammatory Agents, Non-Steroidal"
+      ],
+      [
+        "Neurologic Symptoms",
+        "Disease",
+        "Antiinflammatory Effect",
+        "Anti-Inflammatory Agents, Non-Steroidal"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREVENTS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Pain)-ASSOCIATED_WITH->(Sphincter)-PART_OF->(Intestines, Small)-LOCATION_OF->(Palpation)",
+      "(Pain)-CAUSES->(Sphincter)-PART_OF->(Urethra)-LOCATION_OF->(Palpation)",
+      "(Recovery of Function)-MANIFESTATION_OF->(paracrine)-ASSOCIATED_WITH->(Anti-Inflammatory Agents, Non-Steroidal)",
+      "(Pain relief)-PREVENTS->(Adverse event)-ASSOCIATED_WITH->(Anti-Inflammatory Agents, Non-Steroidal)",
+      "(Pain relief)-PREDISPOSES->(Adverse event)-ASSOCIATED_WITH->(Anti-Inflammatory Agents, Non-Steroidal)",
+      "(Neurologic Symptoms)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(Antiinflammatory Effect)-ASSOCIATED_WITH->(Anti-Inflammatory Agents, Non-Steroidal)",
+      "(Neurologic Symptoms)-MANIFESTATION_OF->(Disease)-MANIFESTATION_OF->(Antiinflammatory Effect)-ASSOCIATED_WITH->(Anti-Inflammatory Agents, Non-Steroidal)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Anti-Inflammatory Agents, Non-Steroidal)-TREATS->(Acute back pain)",
+      "(Pain)-ASSOCIATED_WITH->(Sphincter)-PART_OF->(Intestines, Small)-LOCATION_OF->(Palpation)",
+      "(Pain)-CAUSES->(Sphincter)-PART_OF->(Urethra)-LOCATION_OF->(Palpation)",
+      "(Low Back Pain)-CAUSES->(Pain)",
+      "(Neurologic Symptoms)-MANIFESTATION_OF/PREDISPOSES->(Disease)-MANIFESTATION_OF->(Antiinflammatory Effect)-ASSOCIATED_WITH->(Anti-Inflammatory Agents, Non-Steroidal)-Inflammatory Agents, Non"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient presents with lower back pain\" -> \"Pain likely due to physical activity and travel\" -> \"Physical exam shows pain on palpation and leg flexion\" -> \"No neurological deficits or bowel/bladder issues noted\" -> \"Management should focus on pain relief and functional recovery\" -> \"NSAIDs are effective for musculoskeletal pain\" -> \"Activity as tolerated promotes recovery\" -> 85%",
+    "CHAIN: \"Patient has a history of obesity and diabetes\" -> \"Increased risk for musculoskeletal issues\" -> \"Pain on palpation and leg flexion suggests possible strain\" -> \"No red flags for serious underlying conditions\" -> \"NSAIDs are first-line treatment for acute pain\" -> \"Encouraging activity as tolerated is beneficial\" -> 90%",
+    "CHAIN: \"Patient's pain is likely mechanical in nature\" -> \"No signs of serious pathology on exam\" -> \"NSAIDs can help manage pain effectively\" -> \"Bed rest is not recommended for acute back pain\" -> \"Activity as tolerated is preferred for recovery\" -> 80%",
+    "CHAIN: \"Patient's symptoms suggest a musculoskeletal origin\" -> \"No neurological symptoms present\" -> \"NSAIDs are appropriate for pain management\" -> \"Activity as tolerated is encouraged to prevent deconditioning\" -> 88%"
+  ],
+  "enhanced_information": "The patient presents with lower back pain likely due to recent physical activity, with pain on palpation and leg flexion indicating a musculoskeletal origin. There are no neurological deficits or red flags for serious underlying conditions, such as bowel or bladder dysfunction. Standard medical consensus supports the use of NSAIDs as first-line treatment for acute musculoskeletal pain, and activity as tolerated is encouraged to promote recovery and prevent deconditioning. Bed rest is generally not recommended for acute back pain. Therefore, the best next step in management is NSAIDs and activity as tolerated.",
+  "analysis": "The patient presents with lower back pain likely due to recent physical activity, which is consistent with a musculoskeletal origin. The physical exam findings, including pain on palpation and pain radiating down the leg upon flexion, suggest a possible strain or sprain rather than a serious underlying condition. There are no neurological deficits or red flags indicating a more serious issue, such as cauda equina syndrome or fractures. The standard medical consensus supports the use of NSAIDs as first-line treatment for acute musculoskeletal pain, and activity as tolerated is encouraged to promote recovery and prevent deconditioning. Bed rest is generally not recommended for acute back pain, as it can lead to increased stiffness and prolonged recovery. Therefore, the best next step in management is NSAIDs and activity as tolerated, which aligns with the enhanced information provided.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      4,
+      0,
+      2,
+      1
+    ],
+    "coverage_rates": [
+      57.14285714285714,
+      0.0,
+      28.57142857142857,
+      14.285714285714285
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

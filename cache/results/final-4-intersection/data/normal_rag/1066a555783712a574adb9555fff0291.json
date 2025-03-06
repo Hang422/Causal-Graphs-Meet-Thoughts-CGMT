@@ -1,0 +1,121 @@
+{
+  "question": "A 42-year-old man is brought to the emergency department by the police after he was involved in a physical altercation at a friend’s home. Upon physical examination, the patient is disheveled. He is very agitated and actively strikes out at nurses and other hospital staff. A decision is made to place him in restraints. Head, eyes, ears, nose, and throat exam reveals temporal wasting, marked tooth decay, and healing and new ulcers in his mouth and on his lips. His pupils are dilated and minimally reactive to light. His skin shows dramatic diaphoresis as well as excoriations over his arms. Vital signs show pulse of 120/min, respirations of 12/min, temperature of 39.0°C (102.2°F), and blood pressure of 150/100 mm Hg. Urine drug screen is positive for an amphetamine. Which of the following is a life-threatening complication of the toxicity seen in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Heat stroke",
+    "opb": "Malignant hyperthermia",
+    "opc": "Respiratory depression",
+    "opd": "Seizure",
+    "ope": "Sudden cardiac arrest"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Amphetamine",
+        "Symptoms",
+        "Respiration",
+        "Respiratory Center"
+      ],
+      [
+        "Amphetamine",
+        "Symptoms",
+        "Respiration",
+        "Respiratory Center"
+      ],
+      [
+        "Exhaustion",
+        "Infection",
+        "Respiratory Depression"
+      ],
+      [
+        "Exhaustion",
+        "Infection",
+        "Respiratory Depression"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREVENTS",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Amphetamine)-TREATS->(Symptoms)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Respiratory Center)",
+      "(Amphetamine)-PREVENTS->(Symptoms)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Respiratory Center)",
+      "(Exhaustion)-PREDISPOSES->(Infection)-CAUSES->(Respiratory Depression)",
+      "(Exhaustion)-ASSOCIATED_WITH->(Infection)-CAUSES->(Respiratory Depression)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Amphetamine)-PREVENTS/TREATS->(Symptoms)-MANIFESTATION_OF->(Respiration)-PROCESS_OF->(Respiratory Center)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Positive for amphetamine\" -> \"Increased sympathetic activity\" -> \"Elevated body temperature\" -> \"Heat stroke\" -> 85%",
+    "CHAIN: \"Positive for amphetamine\" -> \"Increased neuronal activity\" -> \"Seizure\" -> 80%",
+    "CHAIN: \"Positive for amphetamine\" -> \"Increased heart rate and blood pressure\" -> \"Cardiac workload increase\" -> \"Sudden cardiac arrest\" -> 75%",
+    "CHAIN: \"Positive for amphetamine\" -> \"Increased muscle activity\" -> \"Elevated body temperature\" -> \"Malignant hyperthermia\" -> 60%",
+    "CHAIN: \"Positive for amphetamine\" -> \"Stimulation of respiratory centers\" -> \"Increased respiratory rate initially\" -> \"Potential for subsequent respiratory depression if exhaustion or central failure occurs\" -> \"Respiratory depression\" -> 50%"
+  ],
+  "enhanced_information": "The most likely life-threatening complications of amphetamine toxicity include heat stroke, seizure, and sudden cardiac arrest, due to increased sympathetic activity, heightened neuronal activity, and elevated cardiovascular stress respectively. Malignant hyperthermia is not triggered by amphetamines, and respiratory depression, though possible, is not a common direct effect.",
+  "analysis": "The patient's symptoms including marked agitation, dilated pupils, high temperature, and diaphoresis, along with a positive drug screen for an amphetamine, suggest amphetamine toxicity. Among the listed complications, heat stroke is a direct consequence of hyperthermia, which is evident in this patient with a high temperature of 39.0°C. Amphetamines can cause increased body temperature and the inability to dissipate heat, leading to heat stroke, which is life-threatening. Other options, while possible, are less directly linked to the symptoms described or the effects of amphetamines.",
+  "answer": "opa",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      100.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Pharmacologic Substance PREDISPOSES Violence",
+    "Emergency treatment PREDISPOSES Agitation",
+    "Narcotic Antagonists CAUSES Aggressive behavior",
+    "Electromyography ISA Electrodiagnosis",
+    "Anticonvulsants CAUSES Aggressive behavior",
+    "Sedatives CAUSES Abuse",
+    "[M]Unspecified tumor cell NOS LOCATION_OF PECAM1 gene|PECAM1",
+    "Emergency treatment TREATS COMBATIVE"
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "question": "A 36-year-old woman comes to the physician to discuss contraceptive options. She is currently sexually active with one male partner, and they have not been using any contraception. She has no significant past medical history and takes no medications. She has smoked one pack of cigarettes daily for 15 years. She is allergic to latex and copper. A urine pregnancy test is negative. Which of the following contraceptive methods is contraindicated in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Diaphragm with spermicide",
+    "opb": "Progestin-only pill",
+    "opc": "Intrauterine device",
+    "opd": "Condoms",
+    "ope": "Combined oral contraceptive pill"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Condoms, Male",
+        "Hypersensitivity"
+      ],
+      [
+        "Intrauterine Devices",
+        "Hypersensitivity"
+      ],
+      [
+        "Copper",
+        "Hypersensitivity"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Condoms, Male)-CAUSES->(Hypersensitivity)",
+      "(Intrauterine Devices)-CAUSES->(Hypersensitivity)",
+      "(Copper)-TREATS->(Hypersensitivity)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Contraceptives, Oral",
+        "Estrogens"
+      ],
+      [
+        "Estrogens",
+        "Contraceptives, Oral"
+      ],
+      [
+        "Cardiovascular system",
+        "Antioxidants",
+        "Contraceptives, Oral"
+      ],
+      [
+        "Cardiovascular system",
+        "Testosterone",
+        "Contraceptives, Oral"
+      ],
+      [
+        "Contraceptive Agents",
+        "Estrogens"
+      ],
+      [
+        "Diaphragm (Anatomy)",
+        "Disease",
+        "Latex allergy"
+      ],
+      [
+        "Diaphragm (Anatomy)",
+        "Eye",
+        "Latex allergy"
+      ]
+    ],
+    "relationships": [
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH"
+      ],
+      [
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Contraceptives, Oral)-INTERACTS_WITH->(Estrogens)",
+      "(Estrogens)-INTERACTS_WITH->(Contraceptives, Oral)",
+      "(Cardiovascular system)-LOCATION_OF->(Antioxidants)-INTERACTS_WITH->(Contraceptives, Oral)",
+      "(Cardiovascular system)-LOCATION_OF->(Testosterone)-INTERACTS_WITH->(Contraceptives, Oral)",
+      "(Contraceptive Agents)-INTERACTS_WITH->(Estrogens)",
+      "(Diaphragm (Anatomy))-LOCATION_OF->(Disease)-CAUSES->(Latex allergy)",
+      "(Diaphragm (Anatomy))-PART_OF->(Eye)-LOCATION_OF->(Latex allergy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Condoms, Male)-CAUSES->(Hypersensitivity)",
+      "(Intrauterine Devices)-CAUSES->(Hypersensitivity)",
+      "(Copper)-TREATS->(Hypersensitivity)",
+      "(Contraceptives, Oral)-INTERACTS_WITH->(Estrogens)",
+      "(Estrogens)-INTERACTS_WITH->(Contraceptives, Oral)",
+      "(Cardiovascular system)-LOCATION_OF->(Antioxidants)-INTERACTS_WITH->(Contraceptives, Oral)",
+      "(Cardiovascular system)-LOCATION_OF->(Testosterone)-INTERACTS_WITH->(Contraceptives, Oral)",
+      "(Contraceptive Agents)-INTERACTS_WITH->(Estrogens)",
+      "(Diaphragm (Anatomy))-LOCATION_OF->(Disease)-CAUSES->(Latex allergy)",
+      "(Diaphragm (Anatomy))-PART_OF->(Eye)-LOCATION_OF->(Latex allergy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Smoking\" -> \"Increased risk of cardiovascular events\" -> \"Combined oral contraceptive pill contains estrogen\" -> \"Estrogen can exacerbate cardiovascular risks in smokers\" -> \"Combined oral contraceptive pill is contraindicated\" -> 95%",
+    "CHAIN: \"Allergic to latex\" -> \"Condoms often made from latex\" -> \"Potential for allergic reaction\" -> \"Non-latex condoms are available\" -> \"Latex allergy does not contraindicate all condoms\" -> 70%",
+    "CHAIN: \"Allergic to copper\" -> \"Some intrauterine devices (IUDs) contain copper\" -> \"Potential for allergic reaction to copper IUD\" -> \"Non-copper IUDs are available\" -> \"Copper allergy does not contraindicate all IUDs\" -> 70%",
+    "CHAIN: \"No significant past medical history\" -> \"No contraindications based on health history for most contraceptives\" -> \"Progestin-only pill does not contain estrogen\" -> \"Progestin-only pill is safe for smokers\" -> 90%",
+    "CHAIN: \"Allergic to latex\" -> \"Diaphragm may require use of latex products\" -> \"Non-latex diaphragms are available\" -> \"Latex allergy does not contraindicate all diaphragms\" -> 70%"
+  ],
+  "enhanced_information": "The combined oral contraceptive pill is contraindicated for this 36-year-old woman who smokes, due to increased cardiovascular risks associated with estrogen. Alternatives such as the progestin-only pill, non-latex condoms, non-copper IUDs, and non-latex diaphragms remain viable options, accommodating her specific allergies without increasing cardiovascular risk.",
+  "analysis": "The primary consideration in choosing a contraceptive method for this patient involves her smoking status and allergies. Smoking significantly increases the risk of cardiovascular events, particularly when combined with estrogen-containing contraceptives. Therefore, the combined oral contraceptive pill, which contains both estrogen and progestin, is contraindicated in women over 35 who smoke due to the elevated risk of thrombotic events. This aligns with standard medical guidelines which advise against the use of estrogen-containing contraceptives in this demographic. The patient's allergies to latex and copper also need consideration, but they do not affect the contraindication status of the combined oral contraceptive pill. Other options such as the progestin-only pill, non-latex condoms, and non-copper intrauterine devices would be safer alternatives for her. Thus, based on the consensus and the patient's specific risk factors, the combined oral contraceptive pill is the contraindicated option.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      1,
+      2,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      37.5,
+      12.5,
+      25.0,
+      12.5,
+      12.5
+    ],
+    "total_successes": 8
+  },
+  "normal_results": []
+}

@@ -1,0 +1,127 @@
+{
+  "question": "Please refer to the summary above to answer this question\nWhich of the following is most appropriate to confirm the diagnosis in this patient?\"\n\"Patient information\nAge: 62 years\nGender: F, self-identified\nEthnicity: unspecified\nSite of care: office\nHistory\nReason for Visit/Chief Concern: “My cough is getting worse.”\nHistory of Present Illness:\n12-month history of episodic cough and dyspnea; episodes last multiple weeks and have improved with antibiotics\ncough is usually productive of large amounts of yellow sputum; in the past 2 days, it has been productive of cupfuls of yellow-green sputum\nhas occasionally noticed streaks of blood in the sputum\nhas not had fever, chills, or chest pain\nPast Medical History:\ntype 2 diabetes mellitus\nkidney transplantation 3 years ago for diabetic nephropathy\nhyperlipidemia\nosteoporosis\nSocial History:\ndoes not smoke, drink alcohol, or use illicit drugs\nMedications:\nmycophenolate mofetil, prednisone, metformin, atorvastatin, alendronate\nAllergies:\nno known drug allergies\nPhysical Examination\nTemp Pulse Resp. BP O2 Sat Ht Wt BMI\n37.6°C\n(99.7°F)\n80/min 18/min 138/86 mm Hg 97%\n165 cm\n(5 ft 5 in)\n58 kg\n(128 lb)\n21 kg/m2\nAppearance: mildly uncomfortable, sitting on the examination table\nNeck: no jugular venous distention\nPulmonary: cough productive of yellow-green sputum; mildly diminished lung sounds over all lung fields; bilateral expiratory wheezes, rhonchi, and crackles are heard\nCardiac: normal S1 and S2; no murmurs, rubs, or gallops\nAbdominal: soft; nontender; a well-healed left lower abdominal scar is present at the site of kidney transplantation; normal bowel sounds\nExtremities: digital clubbing; no joint erythema, edema, or warmth; dorsalis pedis and radial pulses intact\nSkin: no rashes\nNeurologic: alert and oriented; cranial nerves grossly intact; no focal neurologic deficits\"?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Bronchoalveolar lavage",
+    "opb": "Sweat chloride test",
+    "opc": "Mycobacterial sputum culture",
+    "opd": "High-resolution CT scan of the chest",
+    "ope": "Pulmonary function tests"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Chronic cough",
+        "Shock",
+        "Genes",
+        "Epithelium",
+        "Therapeutic immunosuppression"
+      ],
+      [
+        "Chronic cough",
+        "Hypersensitivity",
+        "Genes",
+        "Epithelium",
+        "Therapeutic immunosuppression"
+      ],
+      [
+        "Lung Diseases, Obstructive",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "Pulmonary function tests"
+      ],
+      [
+        "Lung Diseases, Obstructive",
+        "Obstruction",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "Pulmonary function tests"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Chronic cough)-MANIFESTATION_OF->(Shock)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Therapeutic immunosuppression)",
+      "(Chronic cough)-MANIFESTATION_OF->(Hypersensitivity)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Therapeutic immunosuppression)",
+      "(Lung Diseases, Obstructive)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Pulmonary function tests)",
+      "(Lung Diseases, Obstructive)-CAUSES->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Pulmonary function tests)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Chronic cough)-MANIFESTATION_OF->(Shock)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Therapeutic immunosuppression)",
+      "(Chronic cough)-MANIFESTATION_OF->(Hypersensitivity)-ASSOCIATED_WITH->(Genes)-PART_OF->(Epithelium)-LOCATION_OF->(Therapeutic immunosuppression)",
+      "(Lung Diseases, Obstructive)-PREDISPOSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Pulmonary function tests)",
+      "(Lung Diseases, Obstructive)-CAUSES->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-LOCATION_OF->(Pulmonary function tests)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Chronic productive cough\" -> \"Yellow-green sputum\" -> \"Possible bronchiectasis\" -> \"High-resolution CT scan of the chest\" -> 85%",
+    "CHAIN: \"Chronic cough with sputum\" -> \"History of dyspnea\" -> \"Possible mycobacterial infection\" -> \"Mycobacterial sputum culture\" -> 70%",
+    "CHAIN: \"Chronic cough\" -> \"Digital clubbing\" -> \"Possible cystic fibrosis\" -> \"Sweat chloride test\" -> 60%",
+    "CHAIN: \"Chronic cough\" -> \"Immunosuppression\" -> \"Increased infection risk\" -> \"Bronchoalveolar lavage\" -> 65%",
+    "CHAIN: \"Chronic cough\" -> \"Expiratory wheezes\" -> \"Possible obstructive lung disease\" -> \"Pulmonary function tests\" -> 55%"
+  ],
+  "enhanced_information": "The patient's chronic productive cough, digital clubbing, and history of dyspnea suggest a possible diagnosis of bronchiectasis. The high-resolution CT scan of the chest is the most appropriate test to confirm this diagnosis, as it can visualize the characteristic airway dilation associated with bronchiectasis. The reasoning chain for the CT scan aligns with standard medical consensus for diagnosing bronchiectasis. The mycobacterial sputum culture is relevant if a mycobacterial infection is suspected, but the clinical presentation is more indicative of bronchiectasis. The sweat chloride test is primarily used for diagnosing cystic fibrosis, which is less likely given the patient's age and presentation. Bronchoalveolar lavage is useful for identifying infections in immunocompromised patients but is not the first-line diagnostic tool for bronchiectasis. Pulmonary function tests assess obstructive lung disease but do not confirm bronchiectasis. Therefore, the high-resolution CT scan of the chest is the most appropriate diagnostic test in this scenario.",
+  "analysis": "The patient's symptoms, including a chronic productive cough, digital clubbing, and history of dyspnea, strongly suggest bronchiectasis. The most appropriate test to confirm bronchiectasis is a high-resolution CT scan of the chest, as it can directly visualize the characteristic airway dilation associated with this condition. While other tests like mycobacterial sputum culture and bronchoalveolar lavage can be useful in specific contexts, they are not the first-line diagnostic tools for bronchiectasis. The sweat chloride test is primarily used for diagnosing cystic fibrosis, which is unlikely given the patient's age and presentation. Pulmonary function tests can assess lung function but do not confirm bronchiectasis. Therefore, based on standard medical knowledge and consensus, the high-resolution CT scan of the chest is the most appropriate diagnostic test in this scenario.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

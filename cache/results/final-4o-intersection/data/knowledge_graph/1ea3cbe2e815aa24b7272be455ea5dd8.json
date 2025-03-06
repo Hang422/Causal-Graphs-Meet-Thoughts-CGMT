@@ -1,0 +1,188 @@
+{
+  "question": "A 57-year-old man presents with a large wound on his right lower leg that has been present for 6 months as shown in the picture. He has had chronically swollen legs for over 10 years. His mother and brother had similar problems with their legs. He had a documented deep vein thrombosis (DVT) in the affected leg 5 years earlier, but has no other past medical history. He has a blood pressure of 126/84 and heart rate of 62/min. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Arterial ulcer",
+    "opb": "Marjolin ulcer",
+    "opc": "Chronic venous insufficiency",
+    "opd": "Lymphedema",
+    "ope": "Kaposi sarcoma"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Deep Vein Thrombosis",
+        "Complication",
+        "IRF6|INPP5K",
+        "Lower Extremity"
+      ],
+      [
+        "Deep Vein Thrombosis",
+        "Pathological Dilatation",
+        "LINC01194 gene|LINC01194",
+        "Lower Extremity"
+      ],
+      [
+        "Lower Extremity",
+        "Venous stasis"
+      ],
+      [
+        "Venous stasis",
+        "Disease",
+        "Chronic venous insufficiency NOS"
+      ],
+      [
+        "Venous stasis",
+        "Deep Vein Thrombosis",
+        "Chronic venous insufficiency NOS"
+      ],
+      [
+        "Venous stasis",
+        "Disease",
+        "Chronic venous insufficiency NOS"
+      ],
+      [
+        "Venous stasis",
+        "Deep Vein Thrombosis",
+        "Chronic venous insufficiency NOS"
+      ],
+      [
+        "Arteriopathic disease",
+        "Disease",
+        "Ulcer of artery"
+      ],
+      [
+        "Arteriopathic disease",
+        "Disease",
+        "Ulcer of artery"
+      ],
+      [
+        "Ulcer of artery",
+        "Thromboangiitis Obliterans",
+        "Disease",
+        "Chronic venous insufficiency NOS"
+      ],
+      [
+        "Ulcer of artery",
+        "Gangrene",
+        "Disease",
+        "Chronic venous insufficiency NOS"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "ISA",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Deep Vein Thrombosis)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(IRF6|INPP5K)-PART_OF->(Lower Extremity)",
+      "(Deep Vein Thrombosis)-PREDISPOSES->(Pathological Dilatation)-ASSOCIATED_WITH->(LINC01194 gene|LINC01194)-PART_OF->(Lower Extremity)",
+      "(Lower Extremity)-LOCATION_OF->(Venous stasis)",
+      "(Venous stasis)-CAUSES->(Disease)-CAUSES->(Chronic venous insufficiency NOS)",
+      "(Venous stasis)-CAUSES->(Deep Vein Thrombosis)-CAUSES->(Chronic venous insufficiency NOS)",
+      "(Venous stasis)-CAUSES->(Disease)-CAUSES->(Chronic venous insufficiency NOS)",
+      "(Venous stasis)-CAUSES->(Deep Vein Thrombosis)-CAUSES->(Chronic venous insufficiency NOS)",
+      "(Arteriopathic disease)-PREDISPOSES->(Disease)-CAUSES->(Ulcer of artery)",
+      "(Arteriopathic disease)-MANIFESTATION_OF->(Disease)-CAUSES->(Ulcer of artery)",
+      "(Ulcer of artery)-MANIFESTATION_OF->(Thromboangiitis Obliterans)-CAUSES->(Disease)-CAUSES->(Chronic venous insufficiency NOS)",
+      "(Ulcer of artery)-CAUSES->(Gangrene)-ISA->(Disease)-CAUSES->(Chronic venous insufficiency NOS)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Lower Extremity)-LOCATION_OF->(Venous stasis)",
+      "(Venous stasis)-CAUSES->(Deep Vein Thrombosis)-CAUSES->(Chronic venous insufficiency NOS)",
+      "(Venous stasis)-CAUSES->(Disease)-CAUSES->(Chronic venous insufficiency NOS)",
+      "(Deep Vein Thrombosis)-PREDISPOSES->(Complication)-ASSOCIATED_WITH->(IRF6|INPP5K)-PART_OF->(Lower Extremity)",
+      "(Deep Vein Thrombosis)-PREDISPOSES->(Pathological Dilatation)-ASSOCIATED_WITH->(LINC01194 gene|LINC01194)-PART_OF->(Lower Extremity)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Chronic leg swelling\" -> \"History of DVT\" -> \"Family history of similar leg problems\" -> \"Venous stasis\" -> \"Chronic venous insufficiency\" -> 85%",
+    "CHAIN: \"Large wound on leg\" -> \"Present for 6 months\" -> \"Chronic leg swelling\" -> \"Possible venous stasis\" -> \"Chronic venous insufficiency\" -> 80%",
+    "CHAIN: \"Chronic leg swelling\" -> \"Family history of leg problems\" -> \"Possible genetic predisposition\" -> \"Chronic venous insufficiency\" -> 75%",
+    "CHAIN: \"Large wound on leg\" -> \"Chronic leg swelling\" -> \"No history of arterial disease\" -> \"Unlikely arterial ulcer\" -> \"Chronic venous insufficiency\" -> 70%",
+    "CHAIN: \"Large wound on leg\" -> \"Chronic leg swelling\" -> \"No signs of malignancy\" -> \"Unlikely Marjolin ulcer\" -> \"Chronic venous insufficiency\" -> 65%"
+  ],
+  "enhanced_information": "The patient's presentation is most consistent with chronic venous insufficiency. This is supported by the history of chronic leg swelling, a previous deep vein thrombosis (DVT), and a family history of similar leg problems, all of which are risk factors for venous stasis and subsequent chronic venous insufficiency. The retrieved evidence paths confirm that venous stasis can lead to chronic venous insufficiency, particularly following a DVT. The absence of arterial disease and signs of malignancy makes arterial ulcer and Marjolin ulcer unlikely. Lymphedema and Kaposi sarcoma are less likely given the clinical history and presentation. Therefore, the most likely diagnosis is chronic venous insufficiency.",
+  "analysis": "The patient's presentation is indicative of chronic venous insufficiency. The key factors supporting this diagnosis include the history of chronic leg swelling, a previous deep vein thrombosis (DVT), and a family history of similar leg issues. These are classic risk factors for venous stasis, which can lead to chronic venous insufficiency. The chronicity of the wound and the absence of signs of arterial disease or malignancy make arterial ulcer and Marjolin ulcer unlikely. Lymphedema is characterized by swelling but does not typically present with ulceration, and Kaposi sarcoma is less likely given the lack of other systemic symptoms or immunocompromised status. Therefore, the most likely diagnosis is chronic venous insufficiency.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      1,
+      0,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      16.666666666666664,
+      0.0,
+      33.33333333333333,
+      0.0
+    ],
+    "total_successes": 6
+  },
+  "normal_results": []
+}

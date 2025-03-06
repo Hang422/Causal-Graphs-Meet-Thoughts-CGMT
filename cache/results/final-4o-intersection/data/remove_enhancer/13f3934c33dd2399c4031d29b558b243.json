@@ -1,0 +1,103 @@
+{
+  "question": "A 38-year-old man presents to his primary care provider for abdominal pain. He reports that he has had a dull, burning pain for several months that has progressively gotten worse. He also notes a weight loss of about five pounds over that time frame. The patient endorses nausea and feels that the pain is worse after meals, but he denies any vomiting or diarrhea. He has a past medical history of hypertension, and he reports that he has been under an unusual amount of stress since losing his job as a construction worker. His home medications include enalapril and daily ibuprofen, which he takes for lower back pain he developed at his job. The patient drinks 1-2 beers with dinner and has a 25-pack-year smoking history. His family history is significant for colorectal cancer in his father and leukemia in his grandmother. On physical exam, the patient is moderately tender to palpation in the epigastrium. A fecal occult test is positive for blood in the stool.\n\nWhich of the following in the patient’s history is most likely causing this condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Physiologic stress",
+    "opb": "Alcohol use",
+    "opc": "Medication use",
+    "opd": "Smoking history",
+    "ope": "Family history of cancer"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Peptic Ulcer",
+        "Abdominal Pain"
+      ],
+      [
+        "Peptic Ulcer",
+        "Abdominal Pain"
+      ],
+      [
+        "Peptic Ulcer",
+        "Abdominal Pain"
+      ],
+      [
+        "Peptic Ulcer",
+        "Abdominal Pain"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Peptic Ulcer)-CAUSES->(Abdominal Pain)",
+      "(Peptic Ulcer)-CAUSES->(Abdominal Pain)",
+      "(Peptic Ulcer)-CAUSES->(Abdominal Pain)",
+      "(Peptic Ulcer)-CAUSES->(Abdominal Pain)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Peptic Ulcer)-CAUSES->(Abdominal Pain)",
+      "(Peptic Ulcer)-CAUSES->(Abdominal Pain)",
+      "(Peptic Ulcer)-CAUSES->(Abdominal Pain)",
+      "(Peptic Ulcer)-CAUSES->(Abdominal Pain)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Ibuprofen use\" -> \"increased gastric acid production\" -> \"gastric mucosal damage\" -> \"peptic ulcer formation\" -> \"abdominal pain\" -> 85%",
+    "CHAIN: \"Physiologic stress\" -> \"increased gastric acid secretion\" -> \"gastric mucosal damage\" -> \"peptic ulcer formation\" -> \"abdominal pain\" -> 70%",
+    "CHAIN: \"Alcohol use\" -> \"irritation of gastric mucosa\" -> \"gastric mucosal damage\" -> \"peptic ulcer formation\" -> \"abdominal pain\" -> 60%",
+    "CHAIN: \"Smoking history\" -> \"reduced gastric mucosal blood flow\" -> \"impaired mucosal healing\" -> \"peptic ulcer formation\" -> \"abdominal pain\" -> 50%",
+    "CHAIN: \"Family history of cancer\" -> \"genetic predisposition\" -> \"possible increased risk of gastrointestinal issues\" -> \"unclear link to current symptoms\" -> 40%"
+  ],
+  "enhanced_information": "The patient's condition is most likely caused by his medication use, specifically the daily use of ibuprofen. Ibuprofen, a nonsteroidal anti-inflammatory drug (NSAID), is known to increase gastric acid production and cause gastric mucosal damage, leading to peptic ulcer formation and abdominal pain. This aligns with the consensus that NSAIDs are a common cause of peptic ulcers. While physiologic stress, alcohol use, and smoking can contribute to gastric mucosal damage, they are less directly linked to peptic ulcer formation compared to NSAID use. The family history of cancer is not directly relevant to the current symptoms. The retrieved evidence paths confirm that peptic ulcers cause abdominal pain, supporting the link between ibuprofen use and the patient's symptoms.",
+  "analysis": "The patient's symptoms and history suggest a peptic ulcer, likely due to the daily use of ibuprofen, a nonsteroidal anti-inflammatory drug (NSAID). NSAIDs are well-known to cause gastric mucosal damage and increase gastric acid production, leading to peptic ulcer formation. While other factors such as physiologic stress, alcohol use, and smoking can contribute to gastric issues, they are less directly linked to peptic ulcer formation compared to NSAID use. The family history of cancer is not directly relevant to the current symptoms. The positive fecal occult blood test supports the presence of a gastrointestinal bleed, which is consistent with an NSAID-induced ulcer. Therefore, the most likely cause of the patient's condition is his medication use.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

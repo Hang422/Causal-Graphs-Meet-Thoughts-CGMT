@@ -8,25 +8,19 @@ from src.graphrag.graph_enhancer import EnhancedGraphEnhancer
 from src.graphrag.query_processor import QueryProcessor
 from src.llm.interactor import LLMProcessor
 from src.modules.AccuracyAnalysis import calculate_accuracies
-from src.modules.MedicalQuestion import MedicalQuestion, SubGraph
-from src.modules.filter import compare_enhanced_with_baseline
-from src.modules.AccuracyAnalysis import intersect
+from src.modules.MedicalQuestion import MedicalQuestion
 
 
 class QuestionProcessor:
-    """处理医学问题的流水线处理器"""
 
     def __init__(self, path):
-        """初始化处理器"""
         self.llm = LLMProcessor(path)
         self.logger = config.get_logger("question_processor")
 
-        # 使用config中定义的缓存根目录
         self.cache_root = config.paths["cache"]
 
         self.cache_path = path
 
-        # 设置不同类型缓存的子目录
         self.cache_paths = {
             'original': self.cache_root / self.cache_path / 'data' / 'original',
             'original1': self.cache_root / self.cache_path / 'data' / 'original1',
@@ -180,18 +174,6 @@ class QuestionProcessor:
                 else:
                     question = cached_question
 
-                # cached_question = MedicalQuestion.from_cache(
-                #     self.cache_paths['original1'],
-                #     question.question
-                # )
-                # if not cached_question:
-                #     if not self.llm.detect_multihop_question(question):
-                #         continue
-                #     question.set_cache_paths(self.cache_paths['original1'])
-                #     question.to_cache()
-                # else:
-                #     question = cached_question
-
                 cached_question = MedicalQuestion.from_cache(
                     self.cache_paths['derelict'],
                     question.question
@@ -214,18 +196,17 @@ class QuestionProcessor:
                 else:
                     question = cached_question
 
-                # if not self.complete_process_question(question, False):
-                #     continue
+                if not self.complete_process_question(question, False):
+                    continue
 
                 self.compare_experiments(question)
-                # self.normal_rag(question)
+                self.normal_rag(question)
 
             except Exception as e:
                 self.logger.error(f"Error processing question {i + 1}: {str(e)}")
                 continue
 
     def process_from_cache(self, path: str) -> None:
-        """从original缓存目录读取并处理问题"""
         original_path = self.cache_root / path / 'data' / 'original'
 
         if not original_path.exists():
@@ -270,32 +251,23 @@ class QuestionProcessor:
         if questions:
             self.process_questions(questions)
 
-    def batch_process_file(self, file_path: str, sample_size: Optional[int] = None) -> None:
+    def process_from_hugging_face(self, data_name: str, sample_size: Optional[int] = None) -> None:
         try:
-            questions = self.load_questions_from_parquet(file_path, sample_size)
+            questions = self.load_questions_from_parquet(data_name, sample_size)
             self.logger.info(f"Loaded {len(questions)} questions from huggingface parquet file")
             self.process_questions(questions)
         except Exception as e:
-            self.logger.error(f"Error processing file {file_path}: {str(e)}")
+            self.logger.error(f"Error processing test data {data_name}: {str(e)}")
 
     @staticmethod
-    def load_questions_from_parquet(file_path: str, sample_size: Optional[int] = None) -> List[MedicalQuestion]:
-        """从 Parquet 文件加载问题，仅选择生理学、生物化学和药理学领域的题目。
-
-        参数：
-            file_path (str): 数据集标识符（'medinstruct' 或 'medmcqa'）或 Parquet 文件路径
-            sample_size (Optional[int]): 可选参数，指定要随机选择的问题数量
-
-        返回：
-            List[MedicalQuestion]: 包含问题的列表
-        """
+    def load_questions_from_parquet(test_data: str, sample_size: Optional[int] = None) -> List[MedicalQuestion]:
         logger = config.get_logger("questions_loader")
         questions = []
-        # 定义目标学科
+        # define subject
         target_subjects = {'Physiology', 'Biochemistry', 'Pharmacology'}
         try:
-            if file_path == "test2":
-                # 加载 medinstruct 数据集
+            if test_data == "test2":
+                # medinstruct data set
                 from datasets import load_dataset
                 dataset = load_dataset("cxllin/medinstruct")
                 df = pd.DataFrame(dataset['train'])
@@ -306,22 +278,17 @@ class QuestionProcessor:
 
                 for idx, row in df.iterrows():
                     try:
-                        # 获取整个文本
                         text = row['text']
 
-                        # 移除前缀
                         text = text.replace("Please answer with one of the option in the bracket\nQ:", "").strip()
 
-                        # 分离问题、选项和答案部分
                         parts = text.split("{'A':")
                         if len(parts) != 2:
                             print(f"Warning: Invalid format in row {idx}")
                             continue
 
-                        # 获取问题文本
                         question_text = parts[0].strip().strip('?') + "?"
 
-                        # 处理选项部分
                         options_and_answer = parts[1].strip()
                         options_text = "{" + "'A':" + options_and_answer.split("},")[0] + "}"
 
@@ -331,18 +298,15 @@ class QuestionProcessor:
                             print(f"Warning: Could not parse options in row {idx}")
                             continue
 
-                        # 转换选项格式
                         formatted_options = {
                             f'op{chr(97 + i)}': str(value)
                             for i, (key, value) in enumerate(options_dict.items())
                         }
 
-                        # 获取答案
                         answer = options_and_answer.split("},")[1].strip().split(":")[0].strip()
                         answer_idx = ord(answer) - ord('A')
                         formatted_answer = f'op{chr(97 + answer_idx)}'
 
-                        # 创建问题对象
                         question = MedicalQuestion(
                             question=question_text,
                             is_multi_choice=True,
@@ -357,7 +321,7 @@ class QuestionProcessor:
                         continue
 
             else:
-                # medmcqa 部分
+                # medmcqa data
                 splits = {'train': 'data/train-00000-of-00001.parquet',
                           'validation': 'data/validation-00000-of-00001.parquet'}
 
@@ -401,12 +365,13 @@ class QuestionProcessor:
         return questions
 
 
-def compare_models(process_path):
-    """主函数示例"""
+def compare_models(process_path,data_name=None,sample_size=None):
     try:
         processor = QuestionProcessor(process_path)
-        processor.process_from_cache(process_path)
-        # processor.batch_process_file('test2',3000)
+        if data_name is None or sample_size is None:
+            processor.process_from_cache(process_path)
+        else:
+            processor.process_from_hugging_face(data_name, sample_size)
 
         STAGES = ['derelict', 'enhanced', 'knowledge_graph', 'remove_llm_enhanced', 'normal_rag', 'remove_enhancer']
         base_dir = process_path
@@ -416,105 +381,23 @@ def compare_models(process_path):
         output_path = config.paths["output"] / f'{process_path}.xlsx'
         df_report.to_excel(output_path, index=False)
 
-        compare_enhanced_with_baseline(process_path)  # 对比增强与基线
-
-
     finally:
-        # 手动清理内存
-        print("开始清理内存...")
-        # del processor, df_report # 删除变量引用
-        gc.collect()  # 执行垃圾回收
-        print("内存清理完成！")
+        del processor, df_report
+        gc.collect()
 
-
-import shutil
-from pathlib import Path
-
-
-def random_copy_json_files(src_dir: str, dest_dir: str, num_files: int) -> None:
-    """
-    Randomly select and copy a given number of JSON files from a source directory to a destination directory.
-
-    :param src_dir: Path to the source directory containing JSON files.
-    :param dest_dir: Path to the destination directory to store the files.
-    :param num_files: Number of JSON files to copy.
-    """
-    # Ensure source and destination directories exist
-    src_path = Path(src_dir)
-    dest_path = Path(dest_dir)
-    if not src_path.is_dir():
-        raise ValueError(f"Source directory does not exist: {src_dir}")
-
-    # Get all JSON files in the source directory
-    json_files = [file for file in src_path.iterdir() if file.suffix == '.json']
-    target_files = [file for file in dest_path.iterdir() if file.suffix == '.json']
-    dest_path = Path('../../cache/final')
-    dest_path.mkdir(parents=True, exist_ok=True)
-    # Randomly select the specified number of files
-    j = 0
-    for i in json_files:
-        if i not in target_files:
-            shutil.copy(i, dest_path)
-
-            j += 1
-        if j == num_files:
-            break
-
-
-def remove_matching_files(base_dir: str, target_dirs: list) -> None:
-    """
-    Remove files from target directories that match files in the base directory.
-
-    Args:
-        base_dir: Directory containing the reference JSON files
-        target_dirs: List of directories to remove matching files from
-    """
-    # Convert base directory to Path object
-    base_path = Path(base_dir)
-
-    # Get list of JSON files in base directory
-    base_files = {f.name for f in base_path.glob('*.json')}
-
-    # Process each target directory
-    for target_dir in target_dirs:
-        target_path = Path(target_dir)
-        if not target_path.exists():
-            print(f"Warning: Target directory does not exist: {target_dir}")
-            continue
-
-        # Find and remove matching files
-        for file_path in target_path.glob('*.json'):
-            if file_path.name in base_files:
-                try:
-                    file_path.unlink()
-                    print(f"Removed: {file_path}")
-                except Exception as e:
-                    print(f"Error removing {file_path}: {str(e)}")
-
-
-# 使用示例
-# base_dir = "../../cache/final-mini/base_correct_enhanced_wrong"
-# target_directories = [
-#     "../../cache/final-mini/data/derelict",
-#     "../../cache/final-mini/data/enhanced",
-#     "../../cache/final-mini/data/reasoning"
-# ]
-
-# remove_matching_files(base_dir, target_directories)
-# Example usage:
-# random_copy_json_files("../../cache/temp-intersection/data/original", "../../cache/temp-intersection/base_correct_enhanced_wrong", 50)
 
 if __name__ == "__main__":
-    # models = ['final-4', 'final-4o','final-mini']
-    # intersect(models)
+    # process questions from hugging face
+    config.openai['model'] = 'gpt-3.5-turbo'
+    compare_models('3-5','test1',10)
+
+    # process questions from local
+    config.openai['model'] = 'gpt-3.5-turbo'
+    compare_models('3-5')
+
     # config.openai['model'] = 'gpt-4o-mini'
-    # compare_models('final-mini-intersection')
+    # compare_models('4o-mini')
     # config.openai['model'] = 'gpt-4o'
-    # compare_models('final-4o-intersection')
-    config.openai['model'] = 'gpt-4-turbo'
-    compare_models('final-4-intersection')
-    # compare_models('2-mini_1-4o')
-    # config.openai['model'] = 'gpt-4o'
-    # compare_models('test')
-    # config.openai['model'] = 'gpt-4-turbo'
-    # compare_models('test1')
+    # compare_models('4o')
+    # models = ['3-5', '4o-mini','4o']
+    # intersect(models)

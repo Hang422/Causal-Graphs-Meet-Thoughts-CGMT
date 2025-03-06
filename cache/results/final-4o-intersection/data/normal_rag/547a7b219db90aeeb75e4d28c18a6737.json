@@ -1,0 +1,181 @@
+{
+  "question": "A 21-year-old man comes to the emergency department because of a 2-week history of progressive shortness of breath and intermittent cough with blood-tinged sputum. During this time, he has also noticed blood in his urine. He has no history of serious illness and does not take any medications. His temperature is 37°C (98.6°F), pulse is 92/min, respirations are 28/min, and blood pressure is 152/90 mm Hg. Cardiopulmonary examination shows crackles at both lung bases. Urinalysis is positive for blood and results of a direct enzyme-linked immunoassay are positive for anti-GBM antibodies. The pathogenesis of this patient's disease is most similar to which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Henoch-Schönlein purpura",
+    "opb": "Polyarteritis nodosa",
+    "opc": "Poststreptococcal glomerulonephritis",
+    "opd": "Autoimmune hemolytic anemia",
+    "ope": "Graft versus host disease"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Glomerulonephritis",
+        "Disease",
+        "[D]Pulmonary hemorrhage"
+      ],
+      [
+        "Glomerulonephritis",
+        "Disease",
+        "[D]Pulmonary hemorrhage"
+      ],
+      [
+        "[D]Pulmonary hemorrhage",
+        "PULMONARY INVOLVEMENT",
+        "Anti-Glomerular Basement Membrane Disease"
+      ],
+      [
+        "[D]Pulmonary hemorrhage",
+        "Hemolytic-Uremic Syndrome",
+        "Anti-Glomerular Basement Membrane Disease"
+      ],
+      [
+        "Anti-Glomerular Basement Membrane Disease",
+        "Disease",
+        "Autoimmune hemolytic anemia"
+      ],
+      [
+        "Anti-Glomerular Basement Membrane Disease",
+        "Disease",
+        "Autoimmune hemolytic anemia"
+      ],
+      [
+        "Antibodies",
+        "T-Lymphocyte",
+        "Basement membrane"
+      ],
+      [
+        "Antibodies",
+        "Cells",
+        "Basement membrane"
+      ],
+      [
+        "[D]Pulmonary hemorrhage",
+        "Disease",
+        "Autoimmune hemolytic anemia"
+      ],
+      [
+        "[D]Pulmonary hemorrhage",
+        "Disease",
+        "Autoimmune hemolytic anemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "ISA",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF"
+      ],
+      [
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Glomerulonephritis)-PREDISPOSES->(Disease)-CAUSES->([D]Pulmonary hemorrhage)",
+      "(Glomerulonephritis)-MANIFESTATION_OF->(Disease)-CAUSES->([D]Pulmonary hemorrhage)",
+      "([D]Pulmonary hemorrhage)-MANIFESTATION_OF->(PULMONARY INVOLVEMENT)-CAUSES->(Anti-Glomerular Basement Membrane Disease)",
+      "([D]Pulmonary hemorrhage)-COMPLICATES->(Hemolytic-Uremic Syndrome)-CAUSES->(Anti-Glomerular Basement Membrane Disease)",
+      "(Anti-Glomerular Basement Membrane Disease)-ISA->(Disease)-CAUSES->(Autoimmune hemolytic anemia)",
+      "(Anti-Glomerular Basement Membrane Disease)-CAUSES->(Disease)-CAUSES->(Autoimmune hemolytic anemia)",
+      "(Antibodies)-INTERACTS_WITH->(T-Lymphocyte)-PART_OF->(Basement membrane)",
+      "(Antibodies)-PART_OF->(Cells)-PART_OF->(Basement membrane)",
+      "([D]Pulmonary hemorrhage)-COMPLICATES->(Disease)-CAUSES->(Autoimmune hemolytic anemia)",
+      "([D]Pulmonary hemorrhage)-CAUSES->(Disease)-CAUSES->(Autoimmune hemolytic anemia)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "([D]Pulmonary hemorrhage)-CAUSES/COMPLICATES->(Disease)-CAUSES->(Autoimmune hemolytic anemia)",
+      "(Glomerulonephritis)-MANIFESTATION_OF/PREDISPOSES->(Disease)-CAUSES->([D]Pulmonary hemorrhage)",
+      "([D]Pulmonary hemorrhage)-MANIFESTATION_OF->(PULMONARY INVOLVEMENT)-CAUSES->(Anti-Glomerular Basement Membrane Disease)",
+      "([D]Pulmonary hemorrhage)-COMPLICATES->(Hemolytic-Uremic Syndrome)-CAUSES->(Anti-Glomerular Basement Membrane Disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Anti-GBM antibodies\" -> \"attack glomerular basement membrane\" -> \"glomerulonephritis\" -> \"lung hemorrhage\" -> \"Goodpasture syndrome\" -> \"similar to autoimmune hemolytic anemia\" -> 85%",
+    "CHAIN: \"Anti-GBM antibodies\" -> \"bind to basement membrane\" -> \"complement activation\" -> \"tissue damage\" -> \"similar to autoimmune hemolytic anemia\" -> 80%",
+    "CHAIN: \"Anti-GBM antibodies\" -> \"immune complex formation\" -> \"glomerular inflammation\" -> \"pulmonary hemorrhage\" -> \"similar to autoimmune hemolytic anemia\" -> 75%"
+  ],
+  "enhanced_information": "The patient's symptoms and positive anti-GBM antibodies indicate Goodpasture syndrome, characterized by glomerulonephritis and pulmonary hemorrhage due to antibodies targeting the glomerular basement membrane. This pathogenesis involves direct antibody binding and complement activation, leading to tissue damage, similar to the mechanism in autoimmune hemolytic anemia where antibodies target red blood cells. The retrieved evidence paths confirm the pulmonary involvement and glomerulonephritis as manifestations of anti-GBM disease, aligning with the consensus that Goodpasture syndrome shares a similar autoimmune mechanism with autoimmune hemolytic anemia. Other options like Henoch-Schönlein purpura, polyarteritis nodosa, poststreptococcal glomerulonephritis, and graft versus host disease involve different immunological processes and are not directly comparable in pathogenesis to Goodpasture syndrome.",
+  "analysis": "The patient's symptoms and positive anti-GBM antibodies suggest Goodpasture syndrome, which is characterized by the presence of antibodies against the glomerular basement membrane. This is an autoimmune condition where the immune system mistakenly attacks the body's own tissues. The pathogenesis of Goodpasture syndrome is most similar to autoimmune hemolytic anemia, where the immune system produces antibodies against red blood cells. Both conditions involve the production of autoantibodies that target specific components of the body, leading to tissue damage.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      60.0,
+      20.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "Somatostatin|SST TREATS hearing impairment",
+    "Ragocyte PART_OF Synovial Membrane",
+    "cis acting element|CISH INTERACTS_WITH Genes, Plant",
+    "Disease PREDISPOSES Septic Shock",
+    "Glomerulonephritis PREDISPOSES Septicemia",
+    "Atypical Hemolytic Uremic Syndrome COMPLICATES Pulmonary hemorrhage",
+    "Assay DIAGNOSES Polyradiculoneuropathy, Chronic Inflammatory Demyelinating",
+    "Atypical Hemolytic Uremic Syndrome COMPLICATES Respiratory Failure",
+    "Upper Respiratory Infections CAUSES Vasodilation disorder",
+    "Pulmonary Embolism COMPLICATES Hamman-Rich syndrome",
+    "IFITM3 gene|IFITM3 ASSOCIATED_WITH Alzheimer's Disease",
+    "Mass Immunization TREATS Pertussis",
+    "Hydrocortisone TREATS Anorexia Nervosa",
+    "Systemic infection PREDISPOSES Thromboembolism",
+    "Abnormal renal function COMPLICATES Microscopic polyarteritis nodosa"
+  ]
+}

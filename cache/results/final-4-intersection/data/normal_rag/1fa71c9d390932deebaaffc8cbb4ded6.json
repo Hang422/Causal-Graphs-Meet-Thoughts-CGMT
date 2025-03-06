@@ -1,0 +1,118 @@
+{
+  "question": "A 17-year-old girl is brought to the physician for a physical examination prior to participating in sports. She has no history of serious illness. She is on the school's cheerleading team and is preparing for an upcoming competition. Menarche was at 13 years of age, and her last menstrual period was 4 months ago. She is 167 cm (5 ft 6 in) tall and weighs 45 kg (99 lb); BMI is 16.1 kg/m2. Examination shows pale skin with thin, soft body hair. The patient is at increased risk for which of the following complications?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Hyperkalemia",
+    "opb": "Hyperphosphatemia",
+    "opc": "Fractures",
+    "opd": "Shortened QT interval",
+    "ope": "Hyperthyroidism"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Malnutrition",
+        "Pathogenesis",
+        "Genes",
+        "Bone Density"
+      ],
+      [
+        "Malnutrition",
+        "Pathogenesis",
+        "Genes",
+        "Bone Density"
+      ],
+      [
+        "Pallor",
+        "Anemia"
+      ],
+      [
+        "Pallor",
+        "Anemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Malnutrition)-CAUSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-CAUSES->(Bone Density)",
+      "(Malnutrition)-PREDISPOSES->(Pathogenesis)-ASSOCIATED_WITH->(Genes)-CAUSES->(Bone Density)",
+      "(Pallor)-CAUSES->(Anemia)",
+      "(Pallor)-ASSOCIATED_WITH->(Anemia)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pallor)-ASSOCIATED_WITH/CAUSES->(Anemia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"BMI of 16.1 kg/m2\" -> \"underweight\" -> \"decreased estrogen production\" -> \"increased risk of osteoporosis\" -> \"higher susceptibility to fractures\" -> 95%",
+    "CHAIN: \"BMI of 16.1 kg/m2\" -> \"underweight\" -> \"nutritional deficiencies\" -> \"decreased bone density\" -> \"increased risk of fractures\" -> 92%",
+    "CHAIN: \"Last menstrual period 4 months ago\" -> \"possible amenorrhea\" -> \"decreased estrogen levels\" -> \"reduced bone mineral density\" -> \"increased risk of fractures\" -> 90%",
+    "CHAIN: \"Pale skin\" -> \"possible anemia\" -> \"reduced physical stamina\" -> \"increased risk of fainting during physical activity\" -> \"possible indirect risk of fractures due to falls\" -> 75%",
+    "CHAIN: \"Thin, soft body hair\" -> \"possible hormonal imbalance\" -> \"potential impact on bone metabolism\" -> \"possible increased risk of fractures\" -> 70%"
+  ],
+  "enhanced_information": "The patient, a 17-year-old girl with a BMI of 16.1 kg/m2, is significantly underweight, which increases her risk of fractures. This risk is compounded by potential nutritional deficiencies and decreased estrogen production associated with her low body weight. Estrogen is essential for maintaining bone density; thus, reduced levels likely contribute to decreased bone mineral density and heightened fracture risk. Additionally, her amenorrhea suggests a hormonal imbalance that could further impact bone health. The findings of pale skin and thin, soft body hair support the possibility of nutritional and hormonal imbalances but do not directly correlate with an increased risk of fractures as strongly as her low BMI and estrogen deficiency do.",
+  "analysis": "The patient described in the scenario is a 17-year-old girl with a BMI of 16.1, indicating underweight status. Her physical examination findings of pale skin and thin, soft body hair, along with a history of infrequent menstrual periods (last period 4 months ago), suggest possible malnutrition or an eating disorder such as anorexia nervosa. These conditions are commonly associated with decreased bone density due to inadequate nutrition, particularly a deficiency in calcium and vitamin D, which are crucial for bone health. This can lead to an increased risk of fractures. The other options provided (hyperkalemia, hyperphosphatemia, shortened QT interval, hyperthyroidism) do not directly relate to the symptoms and physical findings described in the patient.",
+  "answer": "opc",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      0.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "MOV10 INTERACTS_WITH UPF1",
+    "Obesity COMPLICATES Menopausal syndrome",
+    "CD34+ cell INTERACTS_WITH Leukocytes",
+    "Parenteral form glucose TREATS Hyperglycemia",
+    "high weight PREDISPOSES Precocious Puberty",
+    "Physical findings ASSOCIATED_WITH Polycystic Ovary Syndrome",
+    "Hormones ASSOCIATED_WITH Physical findings",
+    "Physical findings PREDISPOSES Polycystic Ovary Syndrome",
+    "tax Genes|CNTN2 PART_OF T-Cell Leukemia Viruses, Human"
+  ]
+}

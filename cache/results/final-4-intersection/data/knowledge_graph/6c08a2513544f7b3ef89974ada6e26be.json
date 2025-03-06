@@ -1,0 +1,112 @@
+{
+  "question": "A 46-year-old woman comes to the physician for a routine health maintenance examination. She feels well. She has a history of seizures controlled with levetiracetam. She has needed glasses for the past 13 years. Her father died of pancreatic cancer. She is 175 cm (5 ft 9 in) tall and weighs 79 kg (174 lbs); BMI is 25.8 kg/m2. Vital signs are within normal limits. A photograph of the face is shown. This patient is most likely to be at increased risk for which of the following conditions?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Optic glioma",
+    "opb": "Squamous cell carcinoma",
+    "opc": "Gastric cancer",
+    "opd": "Coronary artery disease",
+    "ope": "Renal angiomyolipoma"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Levetiracetam",
+        "Disease",
+        "Coronary Arteriosclerosis"
+      ],
+      [
+        "Levetiracetam",
+        "Disease",
+        "Coronary Arteriosclerosis"
+      ],
+      [
+        "Body mass index procedure",
+        "Overweight"
+      ],
+      [
+        "Overweight",
+        "Coronary Arteriosclerosis"
+      ],
+      [
+        "Overweight",
+        "Coronary Arteriosclerosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "COMPLICATES"
+      ],
+      [
+        "DIAGNOSES"
+      ],
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Levetiracetam)-TREATS->(Disease)-CAUSES->(Coronary Arteriosclerosis)",
+      "(Levetiracetam)-TREATS->(Disease)-COMPLICATES->(Coronary Arteriosclerosis)",
+      "(Body mass index procedure)-DIAGNOSES->(Overweight)",
+      "(Overweight)-PREDISPOSES->(Coronary Arteriosclerosis)",
+      "(Overweight)-ASSOCIATED_WITH->(Coronary Arteriosclerosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Levetiracetam)-TREATS->(Disease)-CAUSES/COMPLICATES->(Coronary Arteriosclerosis)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"History of seizures\" -> \"use of levetiracetam\" -> \"possible side effects of levetiracetam\" -> \"no direct link to increased risk of optic glioma, squamous cell carcinoma, gastric cancer, coronary artery disease, or renal angiomyolipoma\" -> 95%",
+    "CHAIN: \"Father died of pancreatic cancer\" -> \"possible genetic predisposition to cancer\" -> \"increased surveillance for cancers\" -> \"no specific increased risk for gastric cancer based on family history of pancreatic cancer\" -> 80%",
+    "CHAIN: \"BMI of 25.8 kg/m2\" -> \"overweight\" -> \"higher risk of coronary artery disease due to overweight status\" -> 70%",
+    "CHAIN: \"Use of glasses for 13 years\" -> \"vision impairment\" -> \"no direct correlation with increased risk of optic glioma, squamous cell carcinoma, gastric cancer, coronary artery disease, or renal angiomyolipoma\" -> 90%",
+    "CHAIN: \"Photograph of the face shown\" -> \"possible visible signs of skin damage or lesions\" -> \"increased risk of squamous cell carcinoma if lesions are precancerous or cancerous\" -> \"unclear if lesions are present\" -> 65%"
+  ],
+  "enhanced_information": "The analysis of the patient's history and current health status, along with the lack of direct connections in the evidence paths, suggests that there is no increased risk for optic glioma, squamous cell carcinoma, gastric cancer, coronary artery disease, or renal angiomyolipoma based on the information provided. The patient should continue routine health surveillance without specific focus on these conditions unless new symptoms or family history elements emerge.",
+  "analysis": "Based on the patient's history and lack of specific risk factors for the conditions listed, none of the options present a clear increased risk. However, considering the slight elevation in BMI and the prevalence of coronary artery disease, this condition is selected for future monitoring, though the evidence supporting this is weak in this specific scenario.",
+  "answer": "opd",
+  "confidence": 55.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      2,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      0.0,
+      66.66666666666666,
+      0.0,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

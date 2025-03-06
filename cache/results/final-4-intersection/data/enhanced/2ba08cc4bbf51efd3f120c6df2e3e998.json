@@ -1,0 +1,155 @@
+{
+  "question": "An 1800-g (4.0-lb) male newborn is delivered to a 26-year-old woman, gravida 2, para 1, at 33 weeks' gestation. The Apgar scores are 7 at 1 minute and 8 at 5 minutes. The pregnancy was complicated by iron deficiency anemia. The mother has no other history of serious illness. She has smoked one-half pack of cigarettes daily for the past 10 years. She does not drink alcohol. She has never used illicit drugs. Pregnancy and delivery of her first child were complicated by placenta previa. The mother has received all appropriate immunizations. It is most appropriate for the physician to recommend which of the following to the mother regarding her son's immunizations?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Give first dose of hepatitis B vaccine at 3 months of chronological age",
+    "opb": "Give first dose of influenza vaccine at 2 months of chronological age",
+    "opc": "Give first dose of varicella vaccine at 2 months of chronological age",
+    "opd": "Give first dose of Haemophilus influenza type b vaccine at 3 months of chronological age",
+    "ope": "Give first dose of diphtheria and tetanus toxoids, acellular pertussis (DTaP) vaccine at 2 months of chronological age"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Vaccine Administration",
+        "Complication",
+        "Vaccines"
+      ],
+      [
+        "Vaccine Administration",
+        "Adverse reactions",
+        "Vaccines"
+      ],
+      [
+        "Respiratory complication",
+        "Complication",
+        "Vaccines"
+      ],
+      [
+        "Respiratory complication",
+        "DMPK|IGHD1-7",
+        "Vaccines"
+      ],
+      [
+        "Immunization Schedule",
+        "Disease",
+        "uptake",
+        "Hepatitis B Vaccines"
+      ],
+      [
+        "Immunization Schedule",
+        "Disease",
+        "uptake",
+        "Hepatitis B Vaccines"
+      ],
+      [
+        "Influenza virus vaccine",
+        "Virus",
+        "Vaccines"
+      ],
+      [
+        "Influenza virus vaccine",
+        "Complication",
+        "Vaccines"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PREVENTS",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Vaccine Administration)-TREATS->(Complication)-ASSOCIATED_WITH->(Vaccines)",
+      "(Vaccine Administration)-TREATS->(Adverse reactions)-ASSOCIATED_WITH->(Vaccines)",
+      "(Respiratory complication)-ISA->(Complication)-ASSOCIATED_WITH->(Vaccines)",
+      "(Respiratory complication)-ASSOCIATED_WITH->(DMPK|IGHD1-7)-INTERACTS_WITH->(Vaccines)",
+      "(Immunization Schedule)-PREVENTS->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Hepatitis B Vaccines)",
+      "(Immunization Schedule)-PREDISPOSES->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Hepatitis B Vaccines)",
+      "(Influenza virus vaccine)-TREATS->(Virus)-LOCATION_OF->(Vaccines)",
+      "(Influenza virus vaccine)-TREATS->(Complication)-ASSOCIATED_WITH->(Vaccines)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Vaccine Administration)-TREATS->(Complication)-ASSOCIATED_WITH->(Vaccines)",
+      "(Vaccine Administration)-TREATS->(Adverse reactions)-ASSOCIATED_WITH->(Vaccines)",
+      "(Influenza virus vaccine)-TREATS->(Complication)-ASSOCIATED_WITH->(Vaccines)",
+      "(Immunization Schedule)-PREDISPOSES/PREVENTS->(Disease)-MANIFESTATION_OF->(uptake)-ASSOCIATED_WITH->(Hepatitis B Vaccines)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Newborn delivered at 33 weeks\" -> \"Considered preterm\" -> \"Preterm infants follow standard immunization schedule unless contraindicated\" -> \"DTaP vaccine first dose recommended at 2 months of age\" -> \"No contraindications based on mother's history or newborn's condition\" -> \"Recommend DTaP vaccine at 2 months of chronological age\" -> 95%",
+    "CHAIN: \"Mother smoked during pregnancy\" -> \"Increased risk of respiratory issues in newborn\" -> \"Respiratory issues could complicate vaccine administration\" -> \"DTaP vaccine does not have respiratory complications as a contraindication\" -> \"Safe to administer DTaP vaccine at 2 months of chronological age\" -> 90%",
+    "CHAIN: \"Newborn is preterm\" -> \"Immunization schedule generally same as full-term infants\" -> \"Hepatitis B vaccine first dose usually given at birth\" -> \"No information on Hepatitis B vaccine given at birth\" -> \"Next doses follow at 1-2 and 6 months\" -> \"Recommendation to give Hepatitis B at 3 months not aligned with typical schedule\" -> 70%",
+    "CHAIN: \"Mother's history of placenta previa and smoking\" -> \"No direct impact on timing of newborn's vaccinations\" -> \"Standard vaccination schedule should be followed\" -> \"Influenza vaccine not recommended until 6 months of age\" -> \"Varicella vaccine not recommended until 12 months of age\" -> \"Haemophilus influenza type b vaccine typically starts at 2 months\" -> \"Recommend DTaP vaccine at 2 months of chronological age as it aligns with standard guidelines\" -> 95%",
+    "CHAIN: \"Iron deficiency anemia in mother\" -> \"No direct effect on newborn's vaccine schedule\" -> \"Newborn's Apgar scores relatively normal\" -> \"Indicates stable condition post-delivery\" -> \"Stable condition supports adherence to standard immunization schedule\" -> \"DTaP vaccine first dose is at 2 months of age according to CDC schedule\" -> \"Recommend DTaP vaccine at 2 months of chronological age\" -> 92%"
+  ],
+  "enhanced_information": "The most appropriate recommendation for the physician is to administer the first dose of the DTaP vaccine at 2 months of chronological age for the preterm newborn. This decision aligns with standard immunization guidelines, which suggest that preterm infants should follow the same schedule as full-term infants unless contraindicated. The mother's history of smoking and iron deficiency anemia does not provide any contraindications to the DTaP vaccine. Other vaccine options such as Hepatitis B, Influenza, and Varicella do not align with the standard schedule for a 2-month-old and are therefore not recommended at this stage.",
+  "analysis": "The core medical principle in this scenario involves adhering to established immunization schedules for newborns, including those born preterm. The standard immunization schedule recommends that the diphtheria and tetanus toxoids, acellular pertussis (DTaP) vaccine be administered at 2 months of chronological age. This guideline applies regardless of the infant being preterm, as long as there are no specific contraindications. The mother's history of smoking and iron deficiency anemia does not alter the standard vaccine schedule for the newborn. Other vaccines listed in the options, such as hepatitis B, influenza, and varicella, are not typically administered at 2 months of age according to standard immunization schedules. Therefore, the most appropriate and supported option is to administer the first dose of DTaP vaccine at 2 months of chronological age.",
+  "answer": "ope",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      1,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      25.0,
+      25.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

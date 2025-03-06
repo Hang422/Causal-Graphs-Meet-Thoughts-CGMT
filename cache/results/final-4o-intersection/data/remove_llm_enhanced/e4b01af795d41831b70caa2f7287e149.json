@@ -1,0 +1,135 @@
+{
+  "question": "A 3-year-old girl is brought to the physician by her mother two days after the sudden onset of a rash. The mother says that the rash developed an hour after she bathed the child in lukewarm water. Two weeks ago, the patient was diagnosed with a skin infection and was treated with penicillin V. She has been otherwise healthy but has missed several well-child examinations. She lives with her single mother, who recently lost her job and is now dependent on social assistance. The patient's mother has major depressive disorder and her maternal aunt has systemic lupus erythematosus. The girl's temperature is 36.8°C (98.2°F), pulse is 112/min, and blood pressure is 108/62 mm Hg. She has poor eye contact. Physical examination shows sharply delineated erythema on the lower extremities up to the umbilicus with sparing of the knees and flexor surfaces. Further evaluation is most likely to reveal which of the following?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Multiple injuries in different stages of healing",
+    "opb": "Dermatographism",
+    "opc": "Positive Nikolsky's sign",
+    "opd": "Malar rash with sparing of the nasolabial folds",
+    "ope": "Ulcers of the oral mucosa\n\""
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Exanthema",
+        "Hypersensitivity"
+      ],
+      [
+        "Bathing",
+        "Hypersensitivity"
+      ],
+      [
+        "Hypersensitivity",
+        "Disease",
+        "Symptomatic dermographism"
+      ],
+      [
+        "Hypersensitivity",
+        "Infection",
+        "Symptomatic dermographism"
+      ],
+      [
+        "Hypersensitivity",
+        "Urticaria",
+        "Symptomatic dermographism"
+      ],
+      [
+        "Lupus Erythematosus, Systemic",
+        "Autoimmune Diseases"
+      ],
+      [
+        "Adverse reaction to drug",
+        "Disease",
+        "Symptomatic dermographism"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Exanthema)-CAUSES->(Hypersensitivity)",
+      "(Bathing)-TREATS->(Hypersensitivity)",
+      "(Hypersensitivity)-CAUSES->(Disease)-CAUSES->(Symptomatic dermographism)",
+      "(Hypersensitivity)-CAUSES->(Infection)-CAUSES->(Symptomatic dermographism)",
+      "(Hypersensitivity)-CAUSES->(Urticaria)-CAUSES->(Symptomatic dermographism)",
+      "(Lupus Erythematosus, Systemic)-CAUSES->(Autoimmune Diseases)",
+      "(Adverse reaction to drug)-CAUSES->(Disease)-CAUSES->(Symptomatic dermographism)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Exanthema)-CAUSES->(Hypersensitivity)",
+      "(Bathing)-TREATS->(Hypersensitivity)",
+      "(Lupus Erythematosus, Systemic)-CAUSES->(Autoimmune Diseases)",
+      "(Hypersensitivity)-CAUSES->(Disease)-CAUSES->(Symptomatic dermographism)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Sudden onset of rash after bathing\" -> \"Possible allergic reaction\" -> \"Dermatographism\" -> 70%",
+    "CHAIN: \"Rash with sharply delineated erythema\" -> \"Possible skin condition\" -> \"Dermatographism\" -> 60%",
+    "CHAIN: \"Family history of systemic lupus erythematosus\" -> \"Consider autoimmune condition\" -> \"Malar rash with sparing of nasolabial folds\" -> 50%",
+    "CHAIN: \"Poor eye contact\" -> \"Possible neglect or abuse\" -> \"Multiple injuries in different stages of healing\" -> 40%",
+    "CHAIN: \"Recent penicillin treatment\" -> \"Possible drug reaction\" -> \"Dermatographism\" -> 65%"
+  ],
+  "enhanced_information": "The sudden onset of a rash after bathing, combined with the sharply delineated erythema, suggests a hypersensitivity reaction, which aligns with dermatographism. The retrieved evidence supports this, as hypersensitivity can lead to symptomatic dermographism, often triggered by physical stimuli like bathing. The recent penicillin treatment could also contribute to a hypersensitivity reaction, further supporting dermatographism. The family history of systemic lupus erythematosus is less relevant here, as the rash's characteristics do not match a malar rash typical of lupus. Poor eye contact and the social context suggest possible neglect, but there is no direct evidence of multiple injuries. Therefore, further evaluation is most likely to reveal dermatographism, supported by the evidence of hypersensitivity reactions leading to this condition.",
+  "analysis": "The case describes a 3-year-old girl with a sudden onset rash after bathing, with sharply delineated erythema on the lower extremities. The recent history of penicillin treatment suggests a possible hypersensitivity reaction. The sharply delineated erythema and the timing after bathing suggest a physical urticaria, such as dermatographism, which is a form of physical urticaria where the skin becomes raised and inflamed when stroked or subjected to pressure. This aligns with the enhanced information suggesting a hypersensitivity reaction. Other options, such as multiple injuries, positive Nikolsky's sign, malar rash, or oral ulcers, do not fit the clinical presentation. The family history of lupus is noted but does not match the rash characteristics. Therefore, the most likely finding upon further evaluation is dermatographism.",
+  "answer": "opb",
+  "confidence": 75.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      0,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      60.0,
+      0.0,
+      20.0,
+      0.0,
+      20.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

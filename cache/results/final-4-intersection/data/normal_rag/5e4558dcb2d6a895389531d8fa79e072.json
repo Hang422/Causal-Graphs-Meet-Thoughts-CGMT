@@ -1,0 +1,147 @@
+{
+  "question": "A 25-year-old woman presented to an urgent care center with a complaint of a cough for more than 3 weeks that was accompanied by night sweats, weight loss, and malaise. On physical examination, the patient had slightly pale palpebral conjunctivae bilateral posterior cervical lymphadenopathy, but with no adventitious breath sounds in the lung fields bilaterally. The remainder of the physical examination was routine. The patient was started on a drug regimen that was to be taken for 6 months. On follow-up after 2 months, the ALT and AST levels were elevated. Which of the following anti-tubercular drug could have contributed to this labor result?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Rifampicin",
+    "opb": "Pyrazinamide",
+    "opc": "Isoniazid",
+    "opd": "Streptomycin",
+    "ope": "Ethambutol"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Streptomycin",
+        "Disease",
+        "Toxic nephropathy"
+      ],
+      [
+        "Streptomycin",
+        "Complication",
+        "Toxic nephropathy"
+      ],
+      [
+        "Toxic nephropathy",
+        "Adverse effects",
+        "Alanine Transaminase"
+      ],
+      [
+        "Toxic nephropathy",
+        "Adverse effects",
+        "Alanine Transaminase"
+      ],
+      [
+        "Ethambutol",
+        "Optic Neuritis"
+      ],
+      [
+        "Optic Neuritis",
+        "Edema",
+        "Alanine Transaminase"
+      ],
+      [
+        "Optic Neuritis",
+        "Functional disorder",
+        "Alanine Transaminase"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Streptomycin)-ASSOCIATED_WITH->(Disease)-CAUSES->(Toxic nephropathy)",
+      "(Streptomycin)-ASSOCIATED_WITH->(Complication)-CAUSES->(Toxic nephropathy)",
+      "(Toxic nephropathy)-CAUSES->(Adverse effects)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Toxic nephropathy)-PREDISPOSES->(Adverse effects)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Ethambutol)-TREATS->(Optic Neuritis)",
+      "(Optic Neuritis)-CAUSES->(Edema)-ASSOCIATED_WITH->(Alanine Transaminase)",
+      "(Optic Neuritis)-CAUSES->(Functional disorder)-ASSOCIATED_WITH->(Alanine Transaminase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ethambutol)-TREATS->(Optic Neuritis)",
+      "(Streptomycin)-ASSOCIATED_WITH->(Disease)-CAUSES->(Toxic nephropathy)",
+      "(Streptomycin)-ASSOCIATED_WITH->(Complication)-CAUSES->(Toxic nephropathy)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Isoniazid\" -> \"hepatotoxicity\" -> \"elevated ALT and AST levels\" -> 85%",
+    "CHAIN: \"Rifampicin\" -> \"mild hepatotoxic effects\" -> \"possible elevation of ALT and AST levels\" -> 70%",
+    "CHAIN: \"Pyrazinamide\" -> \"strong hepatotoxic effects\" -> \"elevated ALT and AST levels\" -> 80%",
+    "CHAIN: \"Streptomycin\" -> \"nephrotoxicity\" -> \"unlikely to elevate ALT and AST levels\" -> 30%",
+    "CHAIN: \"Ethambutol\" -> \"optic neuritis\" -> \"unlikely to elevate ALT and AST levels\" -> 30%"
+  ],
+  "enhanced_information": "In the context of anti-tubercular treatment, both isoniazid and pyrazinamide are known to cause hepatotoxicity, which can lead to elevated ALT and AST levels. Isoniazid is particularly noted for this side effect and aligns with the medical consensus as a common cause of drug-induced liver injury. Pyrazinamide also has a strong association with hepatotoxic effects. Streptomycin and ethambutol are unlikely contributors to the elevated liver enzymes, as their primary side effects are nephrotoxicity and optic neuritis, respectively.",
+  "analysis": "The patient's symptoms and the initiation of a 6-month drug regimen suggest a diagnosis of tuberculosis. The drugs listed are commonly used in the treatment of tuberculosis. Among the options provided, Isoniazid is well-known for its potential to cause hepatotoxicity, which can manifest as elevated liver enzymes (ALT and AST). While Rifampicin and Pyrazinamide can also cause hepatotoxicity, Isoniazid is more classically associated with this side effect in the context of tuberculosis treatment. Streptomycin and Ethambutol are less commonly associated with liver enzyme elevation. Therefore, based on the standard medical knowledge and the typical side effects of these medications, Isoniazid is the most likely cause of the elevated liver enzymes in this scenario.",
+  "answer": "opc",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      2,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": [
+    "cervical abnormality ASSOCIATED_WITH Mycobacterium tuberculosis",
+    "Injection procedure TREATS Chronic pelvic pain syndrome",
+    "Tuberculosis PREDISPOSES Pneumothorax",
+    "Coughing CAUSES Influenza",
+    "Mycobacterium tuberculosis CAUSES Cervical lymphadenopathy",
+    "Structure of parenchyma of lung PART_OF Parenchyma",
+    "Mycobacterium Infections CAUSES Cervical lymphadenopathy",
+    "Respiratory Tract Infections PREDISPOSES Tuberculosis"
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "question": "A 25-year-old mother presents to her primary care physician for wrist pain. The patient recently gave birth to a healthy newborn at 40 weeks gestation. Beginning one week ago, she started having pain over her wrist that has steadily worsened. The patient notes that she also recently fell while walking and broke the fall with her outstretched arm. The patient is an accountant who works from home and spends roughly eight hours a day typing or preparing financial statements. Recreationally, the patient is a competitive cyclist who began a rigorous training routine since the birth of her child. The patient's past medical history is notable for hypothyroidism that is treated with levothyroxine. On physical exam, inspection of the wrist reveals no visible or palpable abnormalities. Pain is reproduced when the thumb is held in flexion, and the wrist is deviated toward the ulna. The rest of the patient's physical exam is within normal limits. Which of the following is the best next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Radiography of the wrist",
+    "opb": "Thumb spica cast",
+    "opc": "Wrist guard to be worn during work and at night",
+    "opd": "Repositioning of the wrist while cycling",
+    "ope": "Rest and ibuprofen"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Pain",
+        "Sore to touch",
+        "De Quervain Disease"
+      ],
+      [
+        "Pain",
+        "Inflammation",
+        "De Quervain Disease"
+      ],
+      [
+        "Pain",
+        "Tenosynovitis",
+        "De Quervain Disease"
+      ],
+      [
+        "De Quervain Disease",
+        "Tenosynovitis",
+        "Inflammation"
+      ],
+      [
+        "De Quervain Disease",
+        "Pain",
+        "Inflammation"
+      ],
+      [
+        "De Quervain Disease",
+        "Complication",
+        "Inflammation"
+      ],
+      [
+        "Pain",
+        "Inflammation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Pain)-CAUSES->(Sore to touch)-CAUSES->(De Quervain Disease)",
+      "(Pain)-CAUSES->(Inflammation)-CAUSES->(De Quervain Disease)",
+      "(Pain)-CAUSES->(Tenosynovitis)-CAUSES->(De Quervain Disease)",
+      "(De Quervain Disease)-CAUSES->(Tenosynovitis)-CAUSES->(Inflammation)",
+      "(De Quervain Disease)-CAUSES->(Pain)-CAUSES->(Inflammation)",
+      "(De Quervain Disease)-CAUSES->(Complication)-COMPLICATES->(Inflammation)",
+      "(Pain)-CAUSES->(Inflammation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Inflammation",
+        "Disease",
+        "Escherichia coli",
+        "Ibuprofen"
+      ],
+      [
+        "Inflammation",
+        "Disease",
+        "Escherichia coli",
+        "Ibuprofen"
+      ]
+    ],
+    "relationships": [
+      [
+        "COMPLICATES",
+        "ASSOCIATED_WITH",
+        "LOCATION_OF"
+      ],
+      [
+        "PREDISPOSES",
+        "ASSOCIATED_WITH",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Inflammation)-COMPLICATES->(Disease)-ASSOCIATED_WITH->(Escherichia coli)-LOCATION_OF->(Ibuprofen)",
+      "(Inflammation)-PREDISPOSES->(Disease)-ASSOCIATED_WITH->(Escherichia coli)-LOCATION_OF->(Ibuprofen)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pain)-CAUSES->(Sore to touch)-CAUSES->(De Quervain Disease)",
+      "(Pain)-CAUSES->(Inflammation)-CAUSES->(De Quervain Disease)",
+      "(Pain)-CAUSES->(Tenosynovitis)-CAUSES->(De Quervain Disease)",
+      "(De Quervain Disease)-CAUSES->(Tenosynovitis)-CAUSES->(Inflammation)",
+      "(De Quervain Disease)-CAUSES->(Pain)-CAUSES->(Inflammation)",
+      "(De Quervain Disease)-CAUSES->(Complication)-COMPLICATES->(Inflammation)",
+      "(Pain)-CAUSES->(Inflammation)",
+      "(Inflammation)-COMPLICATES->(Disease)-ASSOCIATED_WITH->(Escherichia coli)-LOCATION_OF->(Ibuprofen)",
+      "(Inflammation)-PREDISPOSES->(Disease)-ASSOCIATED_WITH->(Escherichia coli)-LOCATION_OF->(Ibuprofen)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Recent fall with outstretched arm\" -> \"Potential for bone injury or fracture\" -> \"Radiography of the wrist to assess for fractures\" -> 95%",
+    "CHAIN: \"Pain reproduced with thumb in flexion and wrist ulnar deviation\" -> \"Suggestive of De Quervain's tenosynovitis\" -> \"Thumb spica cast to immobilize and reduce inflammation\" -> 85%",
+    "CHAIN: \"Daily extensive typing and financial work\" -> \"Repetitive strain on wrist\" -> \"Wrist guard to reduce strain and prevent worsening\" -> 80%",
+    "CHAIN: \"Competitive cycling with rigorous training\" -> \"Possible improper wrist positioning during cycling\" -> \"Repositioning of the wrist while cycling to reduce stress\" -> 70%",
+    "CHAIN: \"Pain in wrist\" -> \"Inflammation likely\" -> \"Rest and ibuprofen to reduce inflammation and pain\" -> 90%"
+  ],
+  "enhanced_information": "The patient should undergo radiography of the wrist to rule out any fractures due to the recent fall. If no fractures are detected, the symptoms and physical examination findings suggest De Quervain's tenosynovitis, for which a thumb spica cast is appropriate to reduce inflammation and pain. Rest and ibuprofen can be used as supportive treatments to manage symptoms.",
+  "analysis": "Radiography of the wrist is essential to rule out fractures following the patient's fall. This diagnostic step is prioritized before considering specific treatments for conditions like De Quervain's tenosynovitis.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      2,
+      0,
+      0,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      50.0,
+      0.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

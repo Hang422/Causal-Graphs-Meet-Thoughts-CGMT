@@ -1,0 +1,128 @@
+{
+  "question": "A 72-year-old man presents to the emergency department with severe respiratory distress. He was diagnosed with metastatic pancreatic cancer 6 months ago and underwent 2 rounds of chemotherapy. He says that he has had a cough and flu-like symptoms for the past week. During the interview, he is having progressive difficulty answering questions and suddenly becomes obtunded with decreased motor reflexes. His temperature is 38.8°C (102.0°F), blood pressure is 90/60 mm Hg, pulse is 94/min, and respirations are 22/min. Pulse oximetry is 82% on room air. The patient’s medical record contains an advanced directive stating that he would like all interventions except for cardiopulmonary resuscitation. Which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Observe and monitor vital signs for improvement.",
+    "opb": "Administer intravenous fluids.",
+    "opc": "Intubate and administer intravenous antibiotics.",
+    "opd": "Administer intravenous antibiotics and draw blood for testing.",
+    "ope": "Intubate only."
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Respiratory distress",
+        "Pre-Eclampsia",
+        "Genes",
+        "Cells",
+        "Oximetry, Pulse"
+      ],
+      [
+        "Respiratory distress",
+        "Icterus",
+        "Genes",
+        "Cells",
+        "Oximetry, Pulse"
+      ],
+      [
+        "Airway device",
+        "Disease",
+        "Communicable Diseases"
+      ],
+      [
+        "Airway device",
+        "Disease",
+        "Communicable Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Respiratory distress)-ASSOCIATED_WITH->(Pre-Eclampsia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cells)-LOCATION_OF->(Oximetry, Pulse)",
+      "(Respiratory distress)-CAUSES->(Icterus)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cells)-LOCATION_OF->(Oximetry, Pulse)",
+      "(Airway device)-TREATS->(Disease)-MANIFESTATION_OF->(Communicable Diseases)",
+      "(Airway device)-CAUSES->(Disease)-CAUSES->(Communicable Diseases)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Respiratory distress)-ASSOCIATED_WITH->(Pre-Eclampsia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cells)-LOCATION_OF->(Oximetry, Pulse)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Severe respiratory distress\" -> \"Pulse oximetry at -> 82%",
+    "CHAIN: \"Flu-like symptoms for a week\" -> \"High fever of 38.8°C\" -> \"Possible infection\" -> \"Administer intravenous antibiotics\" -> \"Draw blood for testing to identify pathogen\" -> 90%",
+    "CHAIN: \"Metastatic pancreatic cancer\" -> \"Immunocompromised due to chemotherapy\" -> \"Increased risk of severe infections\" -> \"Administer intravenous antibiotics and draw blood for testing\" -> 85%",
+    "CHAIN: \"Blood pressure at 90/60 mm Hg\" -> \"Signs of potential septic shock\" -> \"Administer intravenous fluids to support blood pressure\" -> \"Monitor vital signs closely\" -> 80%",
+    "CHAIN: \"Advanced directive against cardiopulmonary resuscitation\" -> \"Still allows for other life-saving interventions\" -> \"Intubate to manage airway and support breathing\" -> \"Administer intravenous antibiotics to treat infection\" -> 90%"
+  ],
+  "enhanced_information": "Intubate and administer intravenous antibiotics, alongside drawing blood for cultures and administering intravenous fluids to manage potential septic shock. This approach addresses the immediate life-threatening issues and aligns with the patient's expressed wishes for care.",
+  "analysis": "The patient presents with severe respiratory distress, a high fever, and hypotension, indicative of septic shock, likely secondary to a respiratory infection. Given his critical condition and hypoxia (pulse oximetry at 82%), immediate intervention is necessary to stabilize his condition. The patient's advanced directive allows for all interventions except cardiopulmonary resuscitation, which includes intubation and administration of medications. Therefore, the most appropriate management would be to secure the airway through intubation and treat the suspected infection with intravenous antibiotics. This approach addresses both the respiratory failure and the underlying infection, which is consistent with standard emergency care protocols for a patient showing signs of septic shock and respiratory compromise.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      0.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": [
+    "Pharmaceutical Preparations TREATS Hypocellular bone marrow",
+    "Lentinellus cochleatus ISA Basidiomycota",
+    "lamina densa LOCATION_OF Gentamicins",
+    "Disc degeneration CAUSES Hernia",
+    "Operative Surgical Procedures TREATS Hepatoptosis",
+    "Emergency procedure TREATS Critical Illness",
+    "X-Ray Computed Tomography DIAGNOSES Kallmann Syndrome",
+    "Induction CAUSES Lung diseases",
+    "HSPD1 INTERACTS_WITH [M]Unspecified tumor cell NOS",
+    "therapeutic use TREATS Childhood asthma",
+    "Genetic Therapy TREATS Disease"
+  ]
+}

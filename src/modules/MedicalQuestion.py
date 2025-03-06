@@ -23,7 +23,6 @@ class SubGraph:
         self.paths.clear()
 
     def to_dict(self) -> Dict:
-        """转换为可序列化的字典"""
         return {
             'nodes': self.nodes,
             'relationships': self.relationships,
@@ -32,7 +31,6 @@ class SubGraph:
 
     @classmethod
     def from_dict(cls, data: Dict) -> 'SubGraph':
-        """从字典创建实例"""
         if data is None:
             return cls()
         return cls(
@@ -150,13 +148,11 @@ class MedicalQuestion:
 
     @property
     def is_correct(self) -> bool:
-        """检查答案是否正确"""
         if not self.answer:
             return False
         return self.answer.lower() == self.correct_answer.lower()
 
     def to_dict(self) -> Dict:
-        """转换为字典格式"""
         data = {
             'question': self.question,
             'is_multi_choice': self.is_multi_choice,
@@ -180,7 +176,6 @@ class MedicalQuestion:
 
     @classmethod
     def from_cache(cls, cachepath, question_text: str) -> Optional['MedicalQuestion']:
-        """从缓存加载问题数据"""
         cache_id = hashlib.md5(question_text.encode()).hexdigest()
         cache_path = cachepath / f"{cache_id}.json"
 
@@ -219,7 +214,6 @@ class MedicalQuestion:
         return None
 
     def to_cache(self) -> None:
-        """将问题数据缓存到本地"""
         # 使用问题文本和选项生成唯一标识
         cache_id = hashlib.md5(self.question.encode()).hexdigest()
         cache_path = self.cache_dir / f"{cache_id}.json"

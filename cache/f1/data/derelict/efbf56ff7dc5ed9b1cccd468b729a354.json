@@ -1,0 +1,167 @@
+{
+  "question": "A 72-year-old man presents to the emergency department with severe respiratory distress. He was diagnosed with metastatic pancreatic cancer 6 months ago and underwent 2 rounds of chemotherapy. He says that he has had a cough and flu-like symptoms for the past week. During the interview, he is having progressive difficulty answering questions and suddenly becomes obtunded with decreased motor reflexes. His temperature is 38.8°C (102.0°F), blood pressure is 90/60 mm Hg, pulse is 94/min, and respirations are 22/min. Pulse oximetry is 82% on room air. The patient’s medical record contains an advanced directive stating that he would like all interventions except for cardiopulmonary resuscitation. Which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Observe and monitor vital signs for improvement.",
+    "opb": "Administer intravenous fluids.",
+    "opc": "Intubate and administer intravenous antibiotics.",
+    "opd": "Administer intravenous antibiotics and draw blood for testing.",
+    "ope": "Intubate only."
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Respiratory distress",
+        "Septicemia"
+      ],
+      [
+        "Influenza-like symptoms",
+        "Disease",
+        "Respiratory Tract Infections"
+      ],
+      [
+        "Influenza-like symptoms",
+        "COVID-19",
+        "Respiratory Tract Infections"
+      ],
+      [
+        "Influenza-like symptoms",
+        "Influenza",
+        "Respiratory Tract Infections"
+      ],
+      [
+        "Coughing",
+        "Respiratory Tract Infections"
+      ],
+      [
+        "Respiratory Tract Infections",
+        "Fever"
+      ],
+      [
+        "Fever",
+        "Septicemia"
+      ],
+      [
+        "Septicemia",
+        "Respiratory Failure"
+      ]
+    ],
+    "relationships": [
+      [
+        "PREDISPOSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Respiratory distress)-PREDISPOSES->(Septicemia)",
+      "(Influenza-like symptoms)-CAUSES->(Disease)-CAUSES->(Respiratory Tract Infections)",
+      "(Influenza-like symptoms)-CAUSES->(COVID-19)-CAUSES->(Respiratory Tract Infections)",
+      "(Influenza-like symptoms)-CAUSES->(Influenza)-CAUSES->(Respiratory Tract Infections)",
+      "(Coughing)-CAUSES->(Respiratory Tract Infections)",
+      "(Respiratory Tract Infections)-CAUSES->(Fever)",
+      "(Fever)-CAUSES->(Septicemia)",
+      "(Septicemia)-CAUSES->(Respiratory Failure)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Airway device",
+        "Obesity, Morbid",
+        "Difficult intubation",
+        "Intubation"
+      ],
+      [
+        "Airway device",
+        "Obesity",
+        "Difficult intubation",
+        "Intubation"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "PREDISPOSES",
+        "ISA"
+      ],
+      [
+        "TREATS",
+        "PREDISPOSES",
+        "ISA"
+      ]
+    ],
+    "paths": [
+      "(Airway device)-TREATS->(Obesity, Morbid)-PREDISPOSES->(Difficult intubation)-ISA->(Intubation)",
+      "(Airway device)-TREATS->(Obesity)-PREDISPOSES->(Difficult intubation)-ISA->(Intubation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Respiratory distress)-PREDISPOSES->(Septicemia)",
+      "(Coughing)-CAUSES->(Respiratory Tract Infections)",
+      "(Respiratory Tract Infections)-CAUSES->(Fever)",
+      "(Fever)-CAUSES->(Septicemia)",
+      "(Airway device)-TREATS->(Obesity, Morbid)-PREDISPOSES->(Difficult intubation)-ISA->(Intubation)",
+      "(Airway device)-TREATS->(Obesity)-PREDISPOSES->(Difficult intubation)-ISA->(Intubation)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Severe respiratory distress\" -> \"possible pneumonia or sepsis\" -> \"high fever and hypotension\" -> \"requires immediate intervention\" -> \"intubation may be necessary\" -> \"advanced directive limits resuscitation efforts\" -> \"administer intravenous antibiotics and draw blood for testing\" -> 85%",
+    "CHAIN: \"Obtunded state\" -> \"possible hypoxia or infection\" -> \"low oxygen saturation\" -> \"requires urgent airway management\" -> \"intubation indicated\" -> \"administer intravenous antibiotics\" -> \"blood tests needed for diagnosis\" -> 80%",
+    "CHAIN: \"Cough and flu-like symptoms\" -> \"suggestive of respiratory infection\" -> \"fever and hypotension present\" -> \"indicates possible sepsis\" -> \"intubation may be required due to respiratory failure\" -> \"administer intravenous antibiotics\" -> \"draw blood for further testing\" -> 90%",
+    "CHAIN: \"Patient with metastatic cancer\" -> \"immunocompromised state\" -> \"increased risk of severe infection\" -> \"high fever and altered mental status\" -> \"urgent intervention needed\" -> \"intubation may be necessary\" -> \"administer intravenous antibiotics\" -> \"blood cultures to identify infection\" -> 75%"
+  ],
+  "enhanced_information": "The patient presents with severe respiratory distress, fever, hypotension, and altered mental status, indicating a high likelihood of sepsis and respiratory failure, particularly given his history of metastatic pancreatic cancer and recent chemotherapy, which places him at increased risk for infections. The reasoning chains correctly identify the need for urgent intervention due to the patient's obtunded state and low oxygen saturation. Intubation is indicated to secure the airway due to respiratory failure, and intravenous antibiotics are necessary to address the suspected infection. Drawing blood for testing is also critical to identify the causative organism and guide treatment. Therefore, the most appropriate next step in management is to intubate the patient, administer intravenous antibiotics, and draw blood for testing, aligning with the consensus on managing severe respiratory distress in the context of suspected sepsis.",
+  "analysis": "The patient is presenting with severe respiratory distress, hypotension, altered mental status, and hypoxemia, indicating a critical condition. The presence of metastatic pancreatic cancer and recent chemotherapy increases the risk of infection and sepsis. Given the patient's advanced directive, the focus should be on providing comfort care and symptom management.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      5,
+      0
+    ],
+    "coverage_rates": [
+      14.285714285714285,
+      14.285714285714285,
+      71.42857142857143,
+      0.0
+    ],
+    "total_successes": 7
+  },
+  "normal_results": []
+}

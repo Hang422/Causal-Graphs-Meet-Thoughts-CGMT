@@ -1,0 +1,100 @@
+{
+  "question": "A 36-year-old woman comes to the physician to discuss contraceptive options. She is currently sexually active with one male partner, and they have not been using any contraception. She has no significant past medical history and takes no medications. She has smoked one pack of cigarettes daily for 15 years. She is allergic to latex and copper. A urine pregnancy test is negative. Which of the following contraceptive methods is contraindicated in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "ope",
+  "options": {
+    "opa": "Diaphragm with spermicide",
+    "opb": "Progestin-only pill",
+    "opc": "Intrauterine device",
+    "opd": "Condoms",
+    "ope": "Combined oral contraceptive pill"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Copper",
+        "Peripheral blood mononuclear cell",
+        "Brain",
+        "Intrauterine Devices"
+      ],
+      [
+        "Copper",
+        "Peripheral blood mononuclear cell",
+        "Stomach",
+        "Intrauterine Devices"
+      ],
+      [
+        "Condoms, Male",
+        "Latex allergy"
+      ]
+    ],
+    "relationships": [
+      [
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "PART_OF",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Copper)-PART_OF->(Peripheral blood mononuclear cell)-PART_OF->(Brain)-LOCATION_OF->(Intrauterine Devices)",
+      "(Copper)-PART_OF->(Peripheral blood mononuclear cell)-PART_OF->(Stomach)-LOCATION_OF->(Intrauterine Devices)",
+      "(Condoms, Male)-TREATS->(Latex allergy)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Copper)-PART_OF->(Peripheral blood mononuclear cell)-PART_OF->(Brain)-LOCATION_OF->(Intrauterine Devices)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Combined oral contraceptive pill\" -> \"contains estrogen\" -> \"increased risk of cardiovascular events\" -> \"smoking increases risk\" -> \"contraindicated in smokers over 35\" -> 95%",
+    "CHAIN: \"Diaphragm with spermicide\" -> \"requires latex\" -> \"latex allergy\" -> \"contraindicated\" -> 90%",
+    "CHAIN: \"Intrauterine device\" -> \"copper allergy\" -> \"copper IUD contraindicated\" -> \"possible use of non-copper IUD\" -> 70%",
+    "CHAIN: \"Progestin-only pill\" -> \"no estrogen\" -> \"no increased cardiovascular risk\" -> \"not contraindicated\" -> 85%",
+    "CHAIN: \"Condoms\" -> \"latex allergy\" -> \"possible use of non-latex condoms\" -> \"not contraindicated\" -> 80%"
+  ],
+  "enhanced_information": "The combined oral contraceptive pill is contraindicated in this patient due to her smoking history. Standard medical consensus states that women over 35 who smoke should avoid estrogen-containing contraceptives due to an increased risk of cardiovascular events. The diaphragm with spermicide is also contraindicated because it typically requires latex, to which the patient is allergic. The intrauterine device (IUD) could be considered if a non-copper option is used, as the patient is allergic to copper. Progestin-only pills do not contain estrogen and therefore do not carry the same cardiovascular risks, making them a suitable option. Non-latex condoms are also a viable option given the patient's latex allergy. The retrieved evidence path regarding copper and IUDs is too broad and does not directly inform the decision about non-copper IUDs, so it is not included in the final reasoning.",
+  "analysis": "The primary medical principle to consider in this scenario is the contraindication of estrogen-containing contraceptives in women over 35 who smoke, due to the increased risk of cardiovascular events such as thrombosis. This makes the combined oral contraceptive pill (option ope) contraindicated for this patient. Additionally, the patient's latex allergy contraindicates the use of a diaphragm with spermicide (option opa), as diaphragms are typically made of latex. However, the question asks for the contraceptive method that is contraindicated, and the most significant contraindication based on standard medical guidelines is the use of estrogen-containing contraceptives in smokers over 35. Therefore, the combined oral contraceptive pill is the most likely correct answer. The other options, such as progestin-only pills, non-latex condoms, and non-copper IUDs, do not have the same level of contraindication in this patient.",
+  "answer": "ope",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      50.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

@@ -1,0 +1,159 @@
+{
+  "question": "A 25-year-old woman presented to an urgent care center with a complaint of a cough for more than 3 weeks that was accompanied by night sweats, weight loss, and malaise. On physical examination, the patient had slightly pale palpebral conjunctivae bilateral posterior cervical lymphadenopathy, but with no adventitious breath sounds in the lung fields bilaterally. The remainder of the physical examination was routine. The patient was started on a drug regimen that was to be taken for 6 months. On follow-up after 2 months, the ALT and AST levels were elevated. Which of the following anti-tubercular drug could have contributed to this labor result?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Rifampicin",
+    "opb": "Pyrazinamide",
+    "opc": "Isoniazid",
+    "opd": "Streptomycin",
+    "ope": "Ethambutol"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Streptomycin",
+        "Infection",
+        "Disease",
+        "Toxic nephropathy"
+      ],
+      [
+        "Streptomycin",
+        "Tuberculosis",
+        "Disease",
+        "Toxic nephropathy"
+      ],
+      [
+        "Streptomycin",
+        "Infection",
+        "Hypertensive disease",
+        "Toxic nephropathy"
+      ],
+      [
+        "Ethambutol",
+        "Optic Neuritis"
+      ]
+    ],
+    "relationships": [
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES",
+        "PREDISPOSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Streptomycin)-TREATS->(Infection)-CAUSES->(Disease)-CAUSES->(Toxic nephropathy)",
+      "(Streptomycin)-TREATS->(Tuberculosis)-CAUSES->(Disease)-CAUSES->(Toxic nephropathy)",
+      "(Streptomycin)-TREATS->(Infection)-CAUSES->(Hypertensive disease)-PREDISPOSES->(Toxic nephropathy)",
+      "(Ethambutol)-TREATS->(Optic Neuritis)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Toxic nephropathy",
+        "Complication",
+        "Aspartate Transaminase"
+      ],
+      [
+        "Toxic nephropathy",
+        "Abnormal renal function",
+        "Aspartate Transaminase"
+      ],
+      [
+        "Optic Neuritis",
+        "Complication",
+        "Aspartate Transaminase"
+      ],
+      [
+        "Optic Neuritis",
+        "Atrophic",
+        "Aspartate Transaminase"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Toxic nephropathy)-CAUSES->(Complication)-ASSOCIATED_WITH->(Aspartate Transaminase)",
+      "(Toxic nephropathy)-ISA->(Abnormal renal function)-ASSOCIATED_WITH->(Aspartate Transaminase)",
+      "(Optic Neuritis)-CAUSES->(Complication)-ASSOCIATED_WITH->(Aspartate Transaminase)",
+      "(Optic Neuritis)-CAUSES->(Atrophic)-ASSOCIATED_WITH->(Aspartate Transaminase)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Ethambutol)-TREATS->(Optic Neuritis)",
+      "(Toxic nephropathy)-CAUSES->(Complication)-ASSOCIATED_WITH->(Aspartate Transaminase)",
+      "(Toxic nephropathy)-ISA->(Abnormal renal function)-ASSOCIATED_WITH->(Aspartate Transaminase)",
+      "(Optic Neuritis)-CAUSES->(Complication)-ASSOCIATED_WITH->(Aspartate Transaminase)",
+      "(Optic Neuritis)-CAUSES->(Atrophic)-ASSOCIATED_WITH->(Aspartate Transaminase)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Isoniazid\" -> \"hepatotoxicity\" -> \"elevated ALT and AST levels\" -> 85%",
+    "CHAIN: \"Rifampicin\" -> \"mild hepatotoxic effects\" -> \"possible elevation of ALT and AST levels\" -> 70%",
+    "CHAIN: \"Pyrazinamide\" -> \"strong hepatotoxic effects\" -> \"elevated ALT and AST levels\" -> 80%",
+    "CHAIN: \"Streptomycin\" -> \"nephrotoxicity\" -> \"unlikely to elevate ALT and AST levels\" -> 30%",
+    "CHAIN: \"Ethambutol\" -> \"optic neuritis\" -> \"unlikely to elevate ALT and AST levels\" -> 30%"
+  ],
+  "enhanced_information": "Among the anti-tubercular drugs, isoniazid, rifampicin, and pyrazinamide are known for their hepatotoxic effects, which can lead to elevated liver enzymes such as ALT and AST. Isoniazid, in particular, is notorious for significant hepatotoxicity. Streptomycin and ethambutol are less likely to cause liver enzyme elevation, with streptomycin being nephrotoxic and ethambutol mainly causing optic neuritis. The evidence paths regarding optic neuritis and nephrotoxicity do not contribute to understanding liver enzyme elevation in this context.",
+  "analysis": "The patient's symptoms and the duration of the drug regimen suggest a diagnosis of tuberculosis, for which a combination of anti-tubercular drugs is typically prescribed. Among the options provided, isoniazid, rifampicin, and pyrazinamide are known to cause hepatotoxicity, which can lead to elevated liver enzymes such as ALT and AST. Isoniazid is particularly notorious for causing significant hepatotoxicity. Streptomycin and ethambutol are less associated with liver enzyme elevation; streptomycin is more commonly linked to nephrotoxicity, and ethambutol to optic neuritis. Given the specific mention of elevated ALT and AST, which are liver enzymes, the focus should be on the drugs known for hepatotoxic effects. Among these, isoniazid is the most commonly associated with severe hepatotoxicity, making it the most likely culprit in this scenario. Therefore, based on the consensus and the known side effects of these medications, isoniazid is the most probable cause of the elevated liver enzymes in this patient.",
+  "answer": "opc",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      0,
+      2,
+      2
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      0.0,
+      50.0,
+      50.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

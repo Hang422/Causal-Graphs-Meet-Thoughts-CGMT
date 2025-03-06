@@ -1,0 +1,141 @@
+{
+  "question": "A 27-year-old G1P0 at 12 weeks estimated gestational age presents for prenatal care. The patient says she has occasional nausea and vomiting and a few episodes of palpitations and diarrhea this last week. Physical examination is unremarkable, except for a heart rate of 145/min. Basic thyroid function tests are shown in the table below. Which of the following additional laboratory tests would be most useful is assessing this patient’s condition?\nThyroid-stimulating hormone (TSH) \n0.28 mIU/L (0.3–4.5 mIU/L)\nTotal T4\n12 µg/dL (5.4–11.5 µg/dL)?",
+  "is_multi_choice": true,
+  "correct_answer": "opb",
+  "options": {
+    "opa": "Total triiodothyronine (T3) levels",
+    "opb": "Free thyroxine (T4) levels",
+    "opc": "Thyroxine-binding globulin (TBG) levels",
+    "opd": "Thyroid peroxidase (TPO) antibodies",
+    "ope": "Thyrotropin receptor antibodies (TRAb)"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Thyroid Hormones",
+        "Graves' Disease"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Thyroid Hormones)-CAUSES->(Graves' Disease)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Diarrhea",
+        "Pathogenesis",
+        "Thyroxine"
+      ],
+      [
+        "Diarrhea",
+        "Atrial Fibrillation",
+        "Thyroxine"
+      ],
+      [
+        "Thyroxine",
+        "Cells",
+        "Triiodothyronine"
+      ],
+      [
+        "Thyroxine",
+        "Lymphocyte",
+        "Triiodothyronine"
+      ],
+      [
+        "Thyroid Hormones",
+        "Cells",
+        "Thyroxine-Binding Globulin"
+      ],
+      [
+        "Thyroid Hormones",
+        "Cells",
+        "Thyroxine-Binding Globulin"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "PART_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "INTERACTS_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Diarrhea)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Thyroxine)",
+      "(Diarrhea)-ASSOCIATED_WITH->(Atrial Fibrillation)-ASSOCIATED_WITH->(Thyroxine)",
+      "(Thyroxine)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Triiodothyronine)",
+      "(Thyroxine)-INTERACTS_WITH->(Lymphocyte)-INTERACTS_WITH->(Triiodothyronine)",
+      "(Thyroid Hormones)-PART_OF->(Cells)-INTERACTS_WITH->(Thyroxine-Binding Globulin)",
+      "(Thyroid Hormones)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Thyroxine-Binding Globulin)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Diarrhea)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(Thyroxine)",
+      "(Diarrhea)-ASSOCIATED_WITH->(Atrial Fibrillation)-ASSOCIATED_WITH->(Thyroxine)",
+      "(Thyroxine)-INTERACTS_WITH->(Cells)-INTERACTS_WITH->(Triiodothyronine)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Low TSH\" -> \"Possible hyperthyroidism\" -> \"Increased heart rate\" -> \"Symptoms of palpitations and diarrhea\" -> \"Total T4 elevated\" -> \"Confirm with Total T3 to assess level of hyperthyroidism\" -> 85%",
+    "CHAIN: \"Low TSH\" -> \"High Total T4\" -> \"Symptoms of hyperthyroidism\" -> \"Measure Free T4 to assess unbound hormone activity\" -> 80%",
+    "CHAIN: \"Low TSH\" -> \"High Total T4\" -> \"Possible thyroid hormone resistance\" -> \"Measure Thyrotropin receptor antibodies (TRAb) to check for Graves' disease\" -> 75%",
+    "CHAIN: \"Low TSH\" -> \"High Total T4\" -> \"Pregnancy can alter thyroid hormone levels\" -> \"Measure Thyroxine-binding globulin (TBG) to assess binding protein levels\" -> 70%",
+    "CHAIN: \"Low TSH\" -> \"High Total T4\" -> \"Autoimmune thyroid disorder possible\" -> \"Measure Thyroid peroxidase (TPO) antibodies to check for Hashimoto's thyroiditis\" -> 65%"
+  ],
+  "enhanced_information": "The most useful additional laboratory test for a patient presenting with symptoms and lab results suggestive of hyperthyroidism is the measurement of Total triiodothyronine (T3) levels. This test will help confirm the degree of hyperthyroidism, supported by the clinical presentation of low TSH, elevated total T4, and symptoms such as palpitations and diarrhea. The evidence paths reinforce the relevance of T3 in the context of suspected hyperthyroidism, making it the most appropriate next step in assessment.",
+  "analysis": "The patient presents with symptoms and lab findings indicative of hyperthyroidism. Measurement of Total triiodothyronine (T3) levels is the most appropriate next step to confirm the diagnosis and assess the severity, as it directly reflects thyroid hormone activity. This choice is supported by standard medical practice for evaluating suspected hyperthyroidism.",
+  "answer": "opa",
+  "confidence": 75.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      1,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      25.0,
+      25.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

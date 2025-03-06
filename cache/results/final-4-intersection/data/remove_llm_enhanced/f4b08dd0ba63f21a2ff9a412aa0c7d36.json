@@ -1,0 +1,103 @@
+{
+  "question": "A 66-year-old man presents with severe respiratory distress. He was diagnosed with pulmonary hypertension secondary to occupational pneumoconiosis. Biopsy findings of the lung showed ferruginous bodies. What is the most likely etiology?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Coal",
+    "opb": "Iron",
+    "opc": "Asbestos",
+    "opd": "Beryllium",
+    "ope": "Silica"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Hypertension, Pulmonary",
+        "Lung diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Hypertension, Pulmonary)-CAUSES->(Lung diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Biopsy",
+        "Virus",
+        "Homologous Gene",
+        "Iron"
+      ],
+      [
+        "Biopsy",
+        "Virus",
+        "Lipids",
+        "Iron"
+      ]
+    ],
+    "relationships": [
+      [
+        "DIAGNOSES",
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "LOCATION_OF",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Biopsy)-DIAGNOSES->(Virus)-LOCATION_OF->(Homologous Gene)-INTERACTS_WITH->(Iron)",
+      "(Biopsy)-DIAGNOSES->(Virus)-LOCATION_OF->(Lipids)-INTERACTS_WITH->(Iron)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Biopsy)-DIAGNOSES->(Virus)-LOCATION_OF->(Lipids)-INTERACTS_WITH->(Iron)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Ferruginous bodies in lung biopsy\" -> \"indicates exposure to iron-containing dust\" -> \"commonly associated with asbestos\" -> \"asbestos exposure\" -> \"asbestos\" -> 95%",
+    "CHAIN: \"Occupational pneumoconiosis\" -> \"caused by inhalation of mineral dust\" -> \"ferruginous bodies suggest asbestos\" -> \"asbestos\" -> 95%",
+    "CHAIN: \"Pulmonary hypertension\" -> \"secondary to lung disease\" -> \"lung disease from occupational exposure\" -> \"ferruginous bodies linked to asbestos\" -> \"asbestos\" -> 95%",
+    "CHAIN: \"Severe respiratory distress\" -> \"related to underlying lung pathology\" -> \"pathology involves ferruginous bodies\" -> \"ferruginous bodies typically from asbestos\" -> \"asbestos\" -> 95%",
+    "CHAIN: \"Biopsy shows ferruginous bodies\" -> \"ferruginous bodies are asbestos fibers coated with iron\" -> \"indicates asbestos exposure\" -> \"asbestos\" -> 95%"
+  ],
+  "enhanced_information": "Ferruginous bodies in lung biopsies are indicative of asbestos exposure, particularly in the context of occupational pneumoconiosis. The presence of these iron-coated asbestos fibers is a key diagnostic feature pointing to asbestos as the etiology in this patient with severe respiratory distress and pulmonary hypertension.",
+  "analysis": "The patient's diagnosis of pulmonary hypertension secondary to occupational pneumoconiosis, combined with the presence of ferruginous bodies in the lung biopsy, is critical in determining the etiology. Ferruginous bodies are typically associated with asbestos exposure. These bodies are formed when asbestos fibers are coated with iron, and their presence is a hallmark of asbestos-related lung disease, including asbestosis and mesothelioma. Other substances listed such as coal, iron, beryllium, and silica can also cause occupational lung diseases, but they do not typically result in the formation of ferruginous bodies. Therefore, the presence of these specific bodies strongly points to asbestos as the causative agent in this patient's condition. This aligns with standard medical knowledge and consensus on the pathology of asbestos exposure.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      0,
+      1,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      0.0,
+      0.0,
+      50.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

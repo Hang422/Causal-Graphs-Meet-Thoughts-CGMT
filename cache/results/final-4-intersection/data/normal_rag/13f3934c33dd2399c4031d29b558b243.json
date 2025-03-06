@@ -1,0 +1,185 @@
+{
+  "question": "A 38-year-old man presents to his primary care provider for abdominal pain. He reports that he has had a dull, burning pain for several months that has progressively gotten worse. He also notes a weight loss of about five pounds over that time frame. The patient endorses nausea and feels that the pain is worse after meals, but he denies any vomiting or diarrhea. He has a past medical history of hypertension, and he reports that he has been under an unusual amount of stress since losing his job as a construction worker. His home medications include enalapril and daily ibuprofen, which he takes for lower back pain he developed at his job. The patient drinks 1-2 beers with dinner and has a 25-pack-year smoking history. His family history is significant for colorectal cancer in his father and leukemia in his grandmother. On physical exam, the patient is moderately tender to palpation in the epigastrium. A fecal occult test is positive for blood in the stool.\n\nWhich of the following in the patient’s history is most likely causing this condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Physiologic stress",
+    "opb": "Alcohol use",
+    "opc": "Medication use",
+    "opd": "Smoking history",
+    "ope": "Family history of cancer"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Nausea",
+        "Acute graft-versus-host disease",
+        "Genes",
+        "Adipose tissue",
+        "Fecal occult blood test"
+      ],
+      [
+        "Nausea",
+        "Pregnancy Complications",
+        "Genes",
+        "Adipose tissue",
+        "Fecal occult blood test"
+      ],
+      [
+        "[D]Epigastric pain",
+        "Ulcer",
+        "Genes",
+        "Adipose tissue",
+        "Fecal occult blood test"
+      ],
+      [
+        "[D]Epigastric pain",
+        "Pathological Dilatation",
+        "Genes",
+        "Adipose tissue",
+        "Fecal occult blood test"
+      ],
+      [
+        "[D]Epigastric pain",
+        "Pain",
+        "Pain worsened"
+      ],
+      [
+        "[D]Epigastric pain",
+        "Disease",
+        "Decrease in appetite"
+      ],
+      [
+        "[D]Epigastric pain",
+        "Disease",
+        "Decrease in appetite"
+      ],
+      [
+        "Gastrointestinal Diseases",
+        "Disease",
+        "[D]Epigastric pain"
+      ],
+      [
+        "Gastrointestinal Diseases",
+        "Disease",
+        "[D]Epigastric pain"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "ISA",
+        "CAUSES"
+      ],
+      [
+        "ISA",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Nausea)-MANIFESTATION_OF->(Acute graft-versus-host disease)-ASSOCIATED_WITH->(Genes)-PART_OF->(Adipose tissue)-LOCATION_OF->(Fecal occult blood test)",
+      "(Nausea)-ASSOCIATED_WITH->(Pregnancy Complications)-ASSOCIATED_WITH->(Genes)-PART_OF->(Adipose tissue)-LOCATION_OF->(Fecal occult blood test)",
+      "([D]Epigastric pain)-MANIFESTATION_OF->(Ulcer)-ASSOCIATED_WITH->(Genes)-PART_OF->(Adipose tissue)-LOCATION_OF->(Fecal occult blood test)",
+      "([D]Epigastric pain)-MANIFESTATION_OF->(Pathological Dilatation)-ASSOCIATED_WITH->(Genes)-PART_OF->(Adipose tissue)-LOCATION_OF->(Fecal occult blood test)",
+      "([D]Epigastric pain)-ISA->(Pain)-CAUSES->(Pain worsened)",
+      "([D]Epigastric pain)-ISA->(Disease)-CAUSES->(Decrease in appetite)",
+      "([D]Epigastric pain)-CAUSES->(Disease)-CAUSES->(Decrease in appetite)",
+      "(Gastrointestinal Diseases)-PREDISPOSES->(Disease)-CAUSES->([D]Epigastric pain)",
+      "(Gastrointestinal Diseases)-MANIFESTATION_OF->(Disease)-CAUSES->([D]Epigastric pain)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "([D]Epigastric pain)-CAUSES/ISA->(Disease)-CAUSES->(Decrease in appetite)",
+      "([D]Epigastric pain)-ISA->(Pain)-CAUSES->(Pain worsened)",
+      "(Gastrointestinal Diseases)-MANIFESTATION_OF/PREDISPOSES->(Disease)-CAUSES->([D]Epigastric pain)",
+      "(Nausea)-MANIFESTATION_OF->(Acute graft-versus-host disease)-ASSOCIATED_WITH->(Genes)-PART_OF->(Adipose tissue)-LOCATION_OF->(Fecal occult blood test)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Daily ibuprofen use\" -> \"NSAID-induced gastritis\" -> \"epigastric pain and nausea\" -> \"positive fecal occult blood test\" -> 85%",
+    "CHAIN: \"Alcohol use\" -> \"gastric mucosal irritation\" -> \"epigastric pain\" -> \"worsening pain after meals\" -> 60%",
+    "CHAIN: \"Physiologic stress\" -> \"increased gastric acid secretion\" -> \"aggravation of epigastric pain\" -> \"weight loss due to decreased appetite\" -> 70%",
+    "CHAIN: \"Smoking history\" -> \"increased risk of gastrointestinal diseases\" -> \"possible contribution to epigastric pain\" -> \"unclear direct causation of current symptoms\" -> 50%",
+    "CHAIN: \"Family history of cancer\" -> \"genetic predisposition to gastrointestinal cancers\" -> \"possible future risk\" -> \"no direct evidence linking current symptoms to cancer\" -> 40%"
+  ],
+  "enhanced_information": "The patient's symptoms of epigastric pain, nausea, and positive fecal occult blood test are most likely caused by his daily use of ibuprofen, a nonsteroidal anti-inflammatory drug known to cause gastritis and gastrointestinal bleeding. This aligns with medical consensus on the effects of NSAIDs on the stomach's mucosal lining. Other factors such as moderate alcohol use, stress, smoking, and family history of cancer are less directly linked to the acute symptoms described.",
+  "analysis": "The patient's symptoms of dull, burning epigastric pain worsening after meals, along with a positive fecal occult blood test, suggest a gastrointestinal issue possibly linked to peptic ulcer disease or gastritis. Chronic use of NSAIDs, such as ibuprofen, which the patient has been taking regularly for back pain, is a well-known risk factor for developing such conditions. NSAIDs can cause gastrointestinal irritation and lead to ulcers, which can bleed, correlating with the positive fecal occult blood test. The other factors listed, such as stress, alcohol use, smoking, and family history of cancer, also contribute to gastrointestinal issues but are less directly linked to the symptoms described compared to the NSAID use. Therefore, medication use (ibuprofen) is the most likely cause of his condition.",
+  "answer": "opc",
+  "confidence": 85.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      1,
+      1,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      40.0,
+      20.0,
+      20.0,
+      20.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": [
+    "Stress management TREATS Abdominal Pain",
+    "Eye LOCATION_OF Parasitic infection",
+    "Abdominal Pain PREDISPOSES Intestinal Diseases",
+    "Therapeutic procedure TREATS Mesenteric Panniculitis",
+    "Abdominal Pain ASSOCIATED_WITH Chronic Disease",
+    "ETFDH CAUSES Respiratory Insufficiency",
+    "Tube feeding of patient TREATS Fish-Eye Disease"
+  ]
+}

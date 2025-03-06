@@ -1,0 +1,207 @@
+{
+  "question": "A 65-year-old Caucasian man visits the nephrology outpatient clinic for a follow-up appointment. He was previously diagnosed with stage G3a chronic kidney disease (CKD) and albuminuria stage A2. He follows strict dietary recommendations and takes enalapril. He has a history of benign prostatic hyperplasia which has been complicated by urinary tract obstruction. His vitals are stable, and his blood pressure is within the recommended limits. His most recent laboratory studies are as follows:\nSerum sodium 140 mEq/L\nSerum potassium 5.8 mEq/L\nSerum chloride 102 mEq/L\nSerum phosphate 4.0 mg/dL\nHemoglobin 11.5 mg/dL\nAlbumin excretion rate (AER) 280 mg/day\nWhich of the following is the best strategy in the management of this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Removal of enalapril",
+    "opb": "Addition of furosemide",
+    "opc": "Observation",
+    "opd": "Addition of patiromer",
+    "ope": "Addition of sevelamer"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "hyperkalemia",
+        "Enalapril"
+      ],
+      [
+        "Serum potassium assay",
+        "Heart Arrest",
+        "Genes",
+        "Ligaments",
+        "removal technique"
+      ],
+      [
+        "Serum potassium assay",
+        "Heart Arrest",
+        "Genes",
+        "Testicular Tissue",
+        "removal technique"
+      ],
+      [
+        "Enalapril",
+        "Genes",
+        "Ligaments",
+        "removal technique"
+      ],
+      [
+        "Enalapril",
+        "Genes",
+        "Testicular Tissue",
+        "removal technique"
+      ],
+      [
+        "hyperkalemia",
+        "Disease",
+        "Respiration",
+        "Furosemide"
+      ],
+      [
+        "hyperkalemia",
+        "Disease",
+        "Excretory function",
+        "Furosemide"
+      ],
+      [
+        "potassium",
+        "Disease",
+        "hyperkalemia"
+      ],
+      [
+        "potassium",
+        "Kidney Failure, Acute",
+        "hyperkalemia"
+      ],
+      [
+        "serum phosphate",
+        "Kidney Failure, Chronic",
+        "Hyperphosphatemia"
+      ],
+      [
+        "serum phosphate",
+        "Kidney Failure, Chronic",
+        "Hyperphosphatemia"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(hyperkalemia)-ASSOCIATED_WITH->(Enalapril)",
+      "(Serum potassium assay)-DIAGNOSES->(Heart Arrest)-ASSOCIATED_WITH->(Genes)-PART_OF->(Ligaments)-LOCATION_OF->(removal technique)",
+      "(Serum potassium assay)-DIAGNOSES->(Heart Arrest)-ASSOCIATED_WITH->(Genes)-PART_OF->(Testicular Tissue)-LOCATION_OF->(removal technique)",
+      "(Enalapril)-INTERACTS_WITH->(Genes)-PART_OF->(Ligaments)-LOCATION_OF->(removal technique)",
+      "(Enalapril)-INTERACTS_WITH->(Genes)-PART_OF->(Testicular Tissue)-LOCATION_OF->(removal technique)",
+      "(hyperkalemia)-CAUSES->(Disease)-MANIFESTATION_OF->(Respiration)-ASSOCIATED_WITH->(Furosemide)",
+      "(hyperkalemia)-ISA->(Disease)-MANIFESTATION_OF->(Excretory function)-ASSOCIATED_WITH->(Furosemide)",
+      "(potassium)-ASSOCIATED_WITH->(Disease)-CAUSES->(hyperkalemia)",
+      "(potassium)-TREATS->(Kidney Failure, Acute)-CAUSES->(hyperkalemia)",
+      "(serum phosphate)-DIAGNOSES->(Kidney Failure, Chronic)-CAUSES->(Hyperphosphatemia)",
+      "(serum phosphate)-DIAGNOSES->(Kidney Failure, Chronic)-MANIFESTATION_OF->(Hyperphosphatemia)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(hyperkalemia)-ASSOCIATED_WITH->(Enalapril)",
+      "(hyperkalemia)-ISA->(Disease)-MANIFESTATION_OF->(Excretory function)-ASSOCIATED_WITH->(Furosemide)",
+      "(potassium)-TREATS->(Kidney Failure, Acute)-CAUSES->(hyperkalemia)",
+      "(hyperkalemia)-CAUSES->(Disease)-MANIFESTATION_OF->(Respiration)-ASSOCIATED_WITH->(Furosemide)",
+      "(potassium)-ASSOCIATED_WITH->(Disease)-CAUSES->(hyperkalemia)",
+      "(serum phosphate)-DIAGNOSES->(Kidney Failure, Chronic)-CAUSES/MANIFESTATION_OF->(Hyperphosphatemia)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Patient has stage G3a CKD\" -> \"Elevated serum potassium at 5.8 mEq/L\" -> \"Risk of hyperkalemia\" -> \"Enalapril can increase potassium levels\" -> \"Consider removal of enalapril\" -> 85%",
+    "CHAIN: \"Patient has stage G3a CKD\" -> \"Elevated serum potassium at 5.8 mEq/L\" -> \"Need to manage hyperkalemia\" -> \"Furosemide can help lower potassium\" -> \"Addition of furosemide may be beneficial\" -> 80%",
+    "CHAIN: \"Patient has stage G3a CKD\" -> \"Stable vitals and blood pressure\" -> \"Current management is effective\" -> \"Observation may be sufficient\" -> 70%",
+    "CHAIN: \"Patient has elevated potassium at 5.8 mEq/L\" -> \"Patiromer is indicated for hyperkalemia\" -> \"Patiromer can help lower potassium levels\" -> \"Addition of patiromer is a reasonable option\" -> 75%",
+    "CHAIN: \"Patient has stage G3a CKD\" -> \"Serum phosphate is normal at 4.0 mg/dL\" -> \"Sevelamer is used for hyperphosphatemia\" -> \"No indication for sevelamer at this time\" -> \"Addition of sevelamer is not necessary\" -> 90%"
+  ],
+  "enhanced_information": "The patient has stage G3a CKD and an elevated serum potassium level of 5.8 mEq/L, indicating hyperkalemia. Enalapril, an ACE inhibitor, can contribute to increased potassium levels, so its removal is a valid consideration. However, the addition of furosemide is also a reasonable strategy as it can help lower potassium levels through increased renal excretion. Patiromer is specifically indicated for managing hyperkalemia and could be beneficial in this case. Observation may not be sufficient given the elevated potassium, and sevelamer is not indicated since the serum phosphate is normal. Therefore, the best management strategy would involve either the removal of enalapril or the addition of patiromer, with a strong emphasis on addressing the hyperkalemia effectively.",
+  "analysis": "The patient has elevated serum potassium (5.8 mEq/L), which indicates hyperkalemia. Enalapril, an ACE inhibitor, can contribute to hyperkalemia, especially in patients with chronic kidney disease. The best management strategy in this case would be to address the hyperkalemia. Patiromer is a potassium binder that can help lower serum potassium levels. Therefore, adding patiromer is the most appropriate option to manage the patient's hyperkalemia while continuing to treat his CKD. Other options, such as removing enalapril or adding furosemide, may not effectively address the hyperkalemia in this context. Observation is not appropriate given the elevated potassium levels, and sevelamer is primarily used for phosphate control, not potassium management.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      1,
+      0,
+      1,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      16.666666666666664,
+      0.0,
+      16.666666666666664,
+      16.666666666666664
+    ],
+    "total_successes": 6
+  },
+  "normal_results": [
+    "Medical therapy TREATS Kidney Diseases",
+    "Dorsal vein PART_OF Hand",
+    "Cineangiocardiography DIAGNOSES Ventricular dilatation",
+    "Migraine Disorders CAUSES nervous system disorder",
+    "Structure of sural artery LOCATION_OF X-ray Angiography",
+    "Furosemide TREATS Abnormal renal function",
+    "Plain x-ray DIAGNOSES Primary Lesion",
+    "Rough endoplasmic reticulum PART_OF Nuclear Envelope",
+    "Biopsy of bronchus DIAGNOSES Hepatosplenomegaly"
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "question": "A 72-year-old man presents to the emergency department with severe respiratory distress. He was diagnosed with metastatic pancreatic cancer 6 months ago and underwent 2 rounds of chemotherapy. He says that he has had a cough and flu-like symptoms for the past week. During the interview, he is having progressive difficulty answering questions and suddenly becomes obtunded with decreased motor reflexes. His temperature is 38.8°C (102.0°F), blood pressure is 90/60 mm Hg, pulse is 94/min, and respirations are 22/min. Pulse oximetry is 82% on room air. The patient’s medical record contains an advanced directive stating that he would like all interventions except for cardiopulmonary resuscitation. Which of the following is the most appropriate next step in management?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Observe and monitor vital signs for improvement.",
+    "opb": "Administer intravenous fluids.",
+    "opc": "Intubate and administer intravenous antibiotics.",
+    "opd": "Administer intravenous antibiotics and draw blood for testing.",
+    "ope": "Intubate only."
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Airway device",
+        "Disease",
+        "Communicable Diseases"
+      ],
+      [
+        "Airway device",
+        "Obesity",
+        "Communicable Diseases"
+      ],
+      [
+        "Airway device",
+        "Infection",
+        "Communicable Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Airway device)-CAUSES->(Disease)-CAUSES->(Communicable Diseases)",
+      "(Airway device)-TREATS->(Obesity)-CAUSES->(Communicable Diseases)",
+      "(Airway device)-CAUSES->(Infection)-MANIFESTATION_OF->(Communicable Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Respiratory distress",
+        "Pre-Eclampsia",
+        "Genes",
+        "Cells",
+        "Oximetry, Pulse"
+      ],
+      [
+        "Respiratory distress",
+        "Icterus",
+        "Genes",
+        "Cells",
+        "Oximetry, Pulse"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Respiratory distress)-ASSOCIATED_WITH->(Pre-Eclampsia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cells)-LOCATION_OF->(Oximetry, Pulse)",
+      "(Respiratory distress)-CAUSES->(Icterus)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cells)-LOCATION_OF->(Oximetry, Pulse)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Respiratory distress)-ASSOCIATED_WITH->(Pre-Eclampsia)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cells)-LOCATION_OF->(Oximetry, Pulse)",
+      "(Respiratory distress)-CAUSES->(Icterus)-ASSOCIATED_WITH->(Genes)-PART_OF->(Cells)-LOCATION_OF->(Oximetry, Pulse)",
+      "(Airway device)-CAUSES->(Disease)-CAUSES->(Communicable Diseases)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Severe respiratory distress\" -> \"Pulse oximetry at -> 82%",
+    "CHAIN: \"Flu-like symptoms for a week\" -> \"High fever of 38.8°C\" -> \"Possible infection\" -> \"Administer intravenous antibiotics\" -> \"Draw blood for testing to identify pathogen\" -> 90%",
+    "CHAIN: \"Metastatic pancreatic cancer\" -> \"Immunocompromised due to chemotherapy\" -> \"Increased risk of severe infections\" -> \"Administer intravenous antibiotics and draw blood for testing\" -> 85%",
+    "CHAIN: \"Blood pressure at 90/60 mm Hg\" -> \"Signs of potential septic shock\" -> \"Administer intravenous fluids to support blood pressure\" -> \"Monitor vital signs closely\" -> 80%",
+    "CHAIN: \"Advanced directive against cardiopulmonary resuscitation\" -> \"Still allows for other life-saving interventions\" -> \"Intubate to manage airway and support breathing\" -> \"Administer intravenous antibiotics to treat infection\" -> 90%"
+  ],
+  "enhanced_information": "For a 72-year-old man with severe respiratory distress, hypoxemia, and signs of potential sepsis, appropriate management includes intubation to secure the airway and improve oxygenation, administration of intravenous antibiotics to address the infectious etiology, drawing blood for testing to identify the pathogen, and administering intravenous fluids to support blood pressure. These steps are in line with his advanced directive allowing life-saving interventions other than cardiopulmonary resuscitation.",
+  "analysis": "The patient presents with severe respiratory distress, hypoxemia (indicated by a pulse oximetry reading of 82% on room air), and signs of systemic infection (fever and hypotension). These symptoms suggest a possible severe respiratory infection or sepsis, which is a life-threatening condition requiring immediate intervention. Given the patient's advanced directive that allows all interventions except cardiopulmonary resuscitation, the management should focus on stabilizing the patient's airway, breathing, and circulation. Intubation is warranted to secure the airway and improve oxygenation. Administering intravenous antibiotics is critical to treat the suspected infection, and drawing blood for testing will help identify the causative pathogen and tailor antibiotic therapy. Administering intravenous fluids will support the patient's blood pressure and address the signs of potential shock. This approach aligns with standard medical practices for managing severe sepsis and respiratory failure in the context of the patient's expressed wishes regarding life-saving interventions.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      0.0,
+      0.0,
+      50.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

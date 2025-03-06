@@ -49,8 +49,6 @@ class EntityProcessor:
             # General terms
             'normal', 'abnormal', 'routine', 'standard', 'regular',
             'common', 'typical', 'usual', 'general', 'specific',
-
-            # 其它你认为不需要的低信息量词，可以按需添加...
         }
 
     def _initialize_nlp(self) -> None:
@@ -77,12 +75,6 @@ class EntityProcessor:
         return text.lower() in self.excluded_terms
 
     def _is_valid_entity(self, text: str, cui: str, score: float) -> bool:
-        """
-        Decide if an extracted entity is valid based on:
-          - Not in excluded_terms
-          - Linker confidence score >= self.threshold
-        你也可在此根据 semantic type、cui分布等更进一步过滤。
-        """
         if not text or score < self.threshold:
             return False
 
@@ -92,9 +84,6 @@ class EntityProcessor:
 
         return True
 
-    # ─────────────────────────────────────────────────────────────────────────
-    # (A) 给定 CUI，获取其语义类型列表（仅保留 type code，如 T007、T047）
-    # ─────────────────────────────────────────────────────────────────────────
     def get_semantic_types_for_cui(self, cui: str) -> List[str]:
         """
         Return a list of semantic type codes (e.g. T007) for a given CUI.
@@ -115,9 +104,6 @@ class EntityProcessor:
                 semantic_codes.append(full_type_str)  # 或者直接放进列表
         return semantic_codes
 
-    # ─────────────────────────────────────────────────────────────────────────
-    # (B) 输入文本，返回其中识别到的 CUI 集合
-    # ─────────────────────────────────────────────────────────────────────────
     def extract_cuis_from_text(self, text: str) -> Set[str]:
         """
         Analyze input text, extract UMLS CUIs for recognized entities
@@ -138,9 +124,6 @@ class EntityProcessor:
                     found_cuis.add(top_cui)
         return found_cuis
 
-    # ─────────────────────────────────────────────────────────────────────────
-    # (C) 输入文本，返回其中所有识别到的语义类型 code 的集合
-    # ─────────────────────────────────────────────────────────────────────────
     def extract_semantic_types_from_text(self, text: str) -> Set[str]:
         """
         Extract all CUIs from text, then gather their semantic type codes

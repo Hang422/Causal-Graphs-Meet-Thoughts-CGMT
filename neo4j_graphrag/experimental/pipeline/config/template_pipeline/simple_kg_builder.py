@@ -207,16 +207,16 @@ class SimpleKGPipelineConfig(TemplatePipelineConfig):
                 "lexical_graph_config": self.lexical_graph_config
             }
         text = user_input.get("text")
-        file_path = user_input.get("file_path")
+        file_path = user_input.get("test_data")
         if not ((text is None) ^ (file_path is None)):
             # exactly one of text or user_input must be set
             raise PipelineDefinitionError(
-                "Use either 'text' (when from_pdf=False) or 'file_path' (when from_pdf=True) argument."
+                "Use either 'text' (when from_pdf=False) or 'test_data' (when from_pdf=True) argument."
             )
         if self.from_pdf:
             if not file_path:
                 raise PipelineDefinitionError(
-                    "Expected 'file_path' argument when 'from_pdf' is True."
+                    "Expected 'test_data' argument when 'from_pdf' is True."
                 )
             run_params["pdf_loader"] = {"filepath": file_path}
         else:

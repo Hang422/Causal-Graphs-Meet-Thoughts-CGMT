@@ -1,0 +1,203 @@
+{
+  "question": "A 54-year-old man with lymphoma presents to his oncologist with severe abdominal pain and flank pain. He says that the pain started 2 days ago and has gotten worse over time. He has also not been able to urinate over the same time period. On presentation, his temperature is 99°F (37.2°C), blood pressure is 110/72 mmHg, pulse is 105/min, and respirations are 12/min. Physical exam reveals bilateral flank tenderness. Labs results are shown below:\n\nBlood urea nitrogen: 34 mg/dL\nCreatinine: 3.7 mg/dl\nUrine osmolality: 228 mOsm/kg\n\nRenal ultrasonography shows dilation of the kidneys bilaterally with a normal-sized bladder. Which of the following would most likely be beneficial in treating this patient's condition?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Administration of a loop diuretic",
+    "opb": "Bilateral stenting of the renal arteries",
+    "opc": "Bilateral stenting of the ureters",
+    "opd": "Catheterization of the bladder",
+    "ope": "Volume repletion with saline"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Lymphadenopathy",
+        "Symptoms",
+        "Ultrasonography"
+      ],
+      [
+        "Ureteral obstruction",
+        "Symptoms",
+        "Ultrasonography"
+      ],
+      [
+        "Ureteral obstruction",
+        "Flank Pain",
+        "Ultrasonography"
+      ],
+      [
+        "Ultrasonography",
+        "Obstruction"
+      ],
+      [
+        "Ureteral obstruction",
+        "Disease",
+        "physiological aspects",
+        "Ureter"
+      ],
+      [
+        "Ureteral obstruction",
+        "Disease",
+        "Excretory function",
+        "Ureter"
+      ],
+      [
+        "Ureteral obstruction",
+        "Disease",
+        "Immunity",
+        "Ureter"
+      ],
+      [
+        "Urinary tract obstruction",
+        "Obstruction"
+      ],
+      [
+        "Pathological Dilatation",
+        "Obstruction"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "PREVENTS"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "PROCESS_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF"
+      ]
+    ],
+    "paths": [
+      "(Lymphadenopathy)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(Ureteral obstruction)-CAUSES->(Symptoms)-CAUSES->(Ultrasonography)",
+      "(Ureteral obstruction)-CAUSES->(Flank Pain)-CAUSES->(Ultrasonography)",
+      "(Ultrasonography)-PREVENTS->(Obstruction)",
+      "(Ureteral obstruction)-CAUSES->(Disease)-MANIFESTATION_OF->(physiological aspects)-PROCESS_OF->(Ureter)",
+      "(Ureteral obstruction)-CAUSES->(Disease)-MANIFESTATION_OF->(Excretory function)-PROCESS_OF->(Ureter)",
+      "(Ureteral obstruction)-CAUSES->(Disease)-MANIFESTATION_OF->(Immunity)-PROCESS_OF->(Ureter)",
+      "(Urinary tract obstruction)-CAUSES->(Obstruction)",
+      "(Pathological Dilatation)-MANIFESTATION_OF->(Obstruction)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Kidney",
+        "Obstruction"
+      ],
+      [
+        "Urinary tract",
+        "Obstruction"
+      ],
+      [
+        "Blood urea nitrogen measurement",
+        "Disease",
+        "Pathological Dilatation"
+      ],
+      [
+        "Blood urea nitrogen measurement",
+        "Disease",
+        "Pathological Dilatation"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "DIAGNOSES",
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Kidney)-LOCATION_OF->(Obstruction)",
+      "(Urinary tract)-LOCATION_OF->(Obstruction)",
+      "(Blood urea nitrogen measurement)-DIAGNOSES->(Disease)-MANIFESTATION_OF->(Pathological Dilatation)",
+      "(Blood urea nitrogen measurement)-DIAGNOSES->(Disease)-CAUSES->(Pathological Dilatation)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Pathological Dilatation)-MANIFESTATION_OF->(Obstruction)",
+      "(Kidney)-LOCATION_OF->(Obstruction)",
+      "(Urinary tract)-LOCATION_OF->(Obstruction)",
+      "(Blood urea nitrogen measurement)-DIAGNOSES->(Disease)-CAUSES/MANIFESTATION_OF->(Pathological Dilatation)",
+      "(Ultrasonography)-PREVENTS->(Obstruction)",
+      "(Urinary tract obstruction)-CAUSES->(Obstruction)",
+      "(Ureteral obstruction)-CAUSES->(Flank Pain)-CAUSES->(Ultrasonography)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Lymphoma\" -> \"potential for ureteral obstruction due to lymph node enlargement\" -> \"bilateral kidney dilation on ultrasound\" -> \"bilateral ureteral stenting to relieve obstruction\" -> 95%",
+    "CHAIN: \"Severe abdominal and flank pain\" -> \"inability to urinate\" -> \"bilateral kidney dilation\" -> \"ureteral obstruction\" -> \"bilateral stenting of the ureters to restore urine flow\" -> 92%",
+    "CHAIN: \"Increased creatinine and BUN levels\" -> \"indicates reduced kidney function\" -> \"bilateral dilation of kidneys suggests obstructive uropathy\" -> \"bilateral ureteral stenting to alleviate obstruction\" -> 90%",
+    "CHAIN: \"Bilateral flank tenderness\" -> \"bilateral kidney dilation\" -> \"obstructive process in the urinary tract\" -> \"ureteral stenting to bypass the obstruction\" -> 93%",
+    "CHAIN: \"No urine output\" -> \"elevated creatinine and BUN\" -> \"renal ultrasonography shows dilation\" -> \"obstruction likely at the ureters\" -> \"bilateral ureteral stenting to relieve pressure and restore kidney function\" -> 94%"
+  ],
+  "enhanced_information": "The patient, a 54-year-old man with lymphoma, presents with symptoms and diagnostic findings indicative of ureteral obstruction due to lymph node enlargement, leading to acute kidney injury. Bilateral stenting of the ureters is identified as the most appropriate treatment to relieve the obstruction, restore urine flow, and address the renal dysfunction. This decision is supported by the clinical presentation, lab findings, and ultrasonography results, aligning with medical consensus on managing obstructive uropathy in lymphoma patients.",
+  "analysis": "Bilateral stenting of the ureters is the most appropriate treatment to address the acute kidney injury caused by ureteral obstruction in this lymphoma patient. This intervention aligns with medical consensus on managing obstructive uropathy and is supported by the clinical and diagnostic findings.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      1,
+      2,
+      1,
+      2
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      11.11111111111111,
+      22.22222222222222,
+      11.11111111111111,
+      22.22222222222222
+    ],
+    "total_successes": 9
+  },
+  "normal_results": []
+}

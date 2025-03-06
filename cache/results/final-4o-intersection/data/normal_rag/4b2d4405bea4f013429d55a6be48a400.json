@@ -1,0 +1,101 @@
+{
+  "question": "A 33-year-old woman comes to the physician because of a 3-day history of dry cough and low-grade fever. Four months ago, she was diagnosed with major depressive disorder and started treatment with fluoxetine. Physical examination shows no abnormalities. A diagnosis of upper respiratory infection is made and a medication is prescribed to relieve her symptoms. A drug with which of the following mechanisms of action should be avoided in this patient?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Disruption of mucoid disulfide bonds",
+    "opb": "Inhibition of H1 receptors",
+    "opc": "Reduction in secretion viscosity",
+    "opd": "Inhibition of NMDA glutamate receptors",
+    "ope": "Stimulation of α-adrenergic receptors"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Malignant Carcinoid Syndrome",
+        "Disease",
+        "Diastasis",
+        "N-Methyl-D-Aspartate Receptors"
+      ],
+      [
+        "Malignant Carcinoid Syndrome",
+        "Disease",
+        "Diastasis",
+        "N-Methyl-D-Aspartate Receptors"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "PREDISPOSES",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "ISA",
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH"
+      ]
+    ],
+    "paths": [
+      "(Malignant Carcinoid Syndrome)-ISA->(Disease)-PREDISPOSES->(Diastasis)-ASSOCIATED_WITH->(N-Methyl-D-Aspartate Receptors)",
+      "(Malignant Carcinoid Syndrome)-ISA->(Disease)-MANIFESTATION_OF->(Diastasis)-ASSOCIATED_WITH->(N-Methyl-D-Aspartate Receptors)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Malignant Carcinoid Syndrome)-ISA->(Disease)-MANIFESTATION_OF/PREDISPOSES->(Diastasis)-ASSOCIATED_WITH->(N-Methyl-D-Aspartate Receptors)-Methyl"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Fluoxetine\" -> \"increased serotonin levels\" -> \"risk of serotonin syndrome\" -> \"avoid NMDA receptor inhibition\" -> 85%",
+    "CHAIN: \"Fluoxetine\" -> \"increased serotonin levels\" -> \"risk of serotonin syndrome\" -> \"avoid H1 receptor inhibition\" -> 70%",
+    "CHAIN: \"Fluoxetine\" -> \"increased serotonin levels\" -> \"risk of serotonin syndrome\" -> \"avoid α-adrenergic receptor stimulation\" -> 60%",
+    "CHAIN: \"Fluoxetine\" -> \"increased serotonin levels\" -> \"risk of serotonin syndrome\" -> \"avoid mucoid disulfide bond disruption\" -> 50%",
+    "CHAIN: \"Fluoxetine\" -> \"increased serotonin levels\" -> \"risk of serotonin syndrome\" -> \"avoid reduction in secretion viscosity\" -> 50%"
+  ],
+  "enhanced_information": "In this scenario, the patient is taking fluoxetine, a selective serotonin reuptake inhibitor (SSRI), which increases serotonin levels and can lead to serotonin syndrome if combined with other serotonergic drugs. The key concern is to avoid medications that could exacerbate this risk. Inhibition of NMDA glutamate receptors, such as with dextromethorphan, is known to potentially increase serotonin levels and contribute to serotonin syndrome. Therefore, a drug with NMDA receptor inhibition should be avoided. The retrieved evidence path mentioning NMDA receptors supports this concern. Other mechanisms, such as H1 receptor inhibition, α-adrenergic receptor stimulation, disruption of mucoid disulfide bonds, and reduction in secretion viscosity, do not have a direct link to serotonin syndrome risk and are less relevant in this context. Thus, the focus should be on avoiding NMDA receptor inhibitors to prevent serotonin syndrome in this patient.",
+  "analysis": "The patient is on fluoxetine, a selective serotonin reuptake inhibitor (SSRI), which can increase serotonin levels. Medications that inhibit NMDA glutamate receptors, such as dextromethorphan, can also increase serotonin levels and potentially lead to serotonin syndrome when combined with SSRIs. Therefore, a drug with NMDA receptor inhibition should be avoided in this patient to prevent this risk.",
+  "answer": "opd",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      100.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 1
+  },
+  "normal_results": [
+    "Antidepressive Agents TREATS Disease",
+    "Antidepressive Agents TREATS Influenza",
+    "Antidepressive Agents TREATS Pneumonia",
+    "Antidepressive Agents PREDISPOSES Symptoms",
+    "Interferon gamma assay DIAGNOSES Latent Infection",
+    "Antidepressive Agents TREATS Coughing",
+    "Gene Mutant ASSOCIATED_WITH Esotropia",
+    "Symptoms ASSOCIATED_WITH CARDIAC ETIOLOGY"
+  ]
+}

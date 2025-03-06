@@ -1,0 +1,144 @@
+{
+  "question": "A 57-year-old man presents with a large wound on his right lower leg that has been present for 6 months as shown in the picture. He has had chronically swollen legs for over 10 years. His mother and brother had similar problems with their legs. He had a documented deep vein thrombosis (DVT) in the affected leg 5 years earlier, but has no other past medical history. He has a blood pressure of 126/84 and heart rate of 62/min. Which of the following is the most likely diagnosis?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Arterial ulcer",
+    "opb": "Marjolin ulcer",
+    "opc": "Chronic venous insufficiency",
+    "opd": "Lymphedema",
+    "ope": "Kaposi sarcoma"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Deep Vein Thrombosis",
+        "Inflammation",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "brain tissue surgical material",
+        "Providing presence (regime/therapy)"
+      ],
+      [
+        "Deep Vein Thrombosis",
+        "Obstruction",
+        "neuropeptide Y|NPY",
+        "Cells",
+        "brain tissue surgical material",
+        "Providing presence (regime/therapy)"
+      ],
+      [
+        "Providing presence (regime/therapy)",
+        "Infiltration",
+        "Disease",
+        "Chronic venous insufficiency NOS"
+      ],
+      [
+        "Providing presence (regime/therapy)",
+        "Infiltration",
+        "Disease",
+        "Chronic venous insufficiency NOS"
+      ],
+      [
+        "Drainage of lymphatics",
+        "Lymphedema"
+      ],
+      [
+        "Drainage of lymphatics",
+        "Lymphedema"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH",
+        "PART_OF",
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES",
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(Deep Vein Thrombosis)-CAUSES->(Inflammation)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy))",
+      "(Deep Vein Thrombosis)-CAUSES->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy))",
+      "(Providing presence (regime/therapy))-CAUSES->(Infiltration)-MANIFESTATION_OF->(Disease)-CAUSES->(Chronic venous insufficiency NOS)",
+      "(Providing presence (regime/therapy))-CAUSES->(Infiltration)-CAUSES->(Disease)-CAUSES->(Chronic venous insufficiency NOS)",
+      "(Drainage of lymphatics)-CAUSES->(Lymphedema)",
+      "(Drainage of lymphatics)-TREATS->(Lymphedema)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Drainage of lymphatics)-CAUSES/TREATS->(Lymphedema)",
+      "(Deep Vein Thrombosis)-CAUSES->(Obstruction)-ASSOCIATED_WITH->(neuropeptide Y|NPY)-INTERACTS_WITH->(Cells)-PART_OF->(brain tissue surgical material)-LOCATION_OF->(Providing presence (regime/therapy))"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Chronic swollen legs for over 10 years\" -> \"History of deep vein thrombosis\" -> \"Presence of a large, chronic wound\" -> \"Chronic venous insufficiency\" -> 95%",
+    "CHAIN: \"Family history of similar leg problems\" -> \"Genetic predisposition\" -> \"Chronic venous insufficiency\" -> 90%",
+    "CHAIN: \"Chronic swollen legs\" -> \"Impaired lymphatic drainage\" -> \"Lymphedema\" -> 80%",
+    "CHAIN: \"Documented deep vein thrombosis\" -> \"Post-thrombotic syndrome\" -> \"Chronic venous insufficiency\" -> 92%",
+    "CHAIN: \"Large wound present for 6 months\" -> \"Possible malignant transformation\" -> \"Marjolin ulcer\" -> 70%",
+    "CHAIN: \"Chronic wound\" -> \"Potential for malignancy\" -> \"Kaposi sarcoma\" -> \"Unclear if patient has HIV or other risk factors for Kaposi sarcoma\" -> 50%"
+  ],
+  "enhanced_information": "The patient's long-standing history of swollen legs, familial pattern of similar issues, and a previous deep vein thrombosis strongly suggest Chronic Venous Insufficiency (CVI). This diagnosis is supported by the chronic nature of the wound and the genetic predisposition indicated by the family history. Evidence paths confirming the complications of DVT further support CVI as the most likely diagnosis, while other potential diagnoses like lymphedema, Marjolin ulcer, Kaposi sarcoma, and arterial ulcer are less supported by the patient's specific clinical presentation and available evidence.",
+  "analysis": "The patient's clinical history and presentation are key to diagnosing his condition. He has a long-standing history of leg swelling, a familial pattern of similar leg issues, and a past occurrence of deep vein thrombosis (DVT) in the same leg where the wound is now present. Chronic Venous Insufficiency (CVI) is characterized by poor venous return over a long period, often leading to leg swelling, skin changes, and ulcerations, which aligns with the patient's symptoms. The presence of a chronic, non-healing wound on the lower leg further supports this diagnosis, as venous ulcers typically occur in this area due to venous hypertension. The familial history suggests a possible genetic predisposition to venous issues, reinforcing the likelihood of CVI. Other options such as lymphedema, Marjolin ulcer, Kaposi sarcoma, and arterial ulcer do not align as closely with the entirety of the clinical picture, particularly the specific characteristics of the wound and the history of DVT. Therefore, based on the consensus in medical literature regarding the presentation and progression of CVI, this diagnosis is the most supported.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      2,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      66.66666666666666,
+      0.0,
+      33.33333333333333,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": []
+}

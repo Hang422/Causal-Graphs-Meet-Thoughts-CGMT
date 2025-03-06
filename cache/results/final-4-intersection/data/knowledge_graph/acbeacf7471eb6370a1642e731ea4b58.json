@@ -1,0 +1,141 @@
+{
+  "question": "Two days after delivery, a 4300-g (9-lb 8-oz) newborn has difficulty feeding and has become increasingly lethargic. His cry has become weak. He was born at term. His mother has a history of intravenous drug use. His temperature is 36.4°C (96.5°F), pulse is 170/min, respirations are 62/min, and blood pressure is 70/48 mm Hg. Examination shows midfacial hypoplasia, diaphoresis, and tremor of the lower extremities. Macroglossia is present. There are folds in the posterior auricular cartilage. The left lower extremity is larger than the right lower extremity. Abdominal examination shows an umbilical hernia. The liver is palpated 4 cm below the right costal margin. Neurological examination shows decreased tone in all extremities. Which of the following is the most appropriate intervention?",
+  "is_multi_choice": true,
+  "correct_answer": "opc",
+  "options": {
+    "opa": "Administer thyroxine",
+    "opb": "Administer 3% saline",
+    "opc": "Administer glucose",
+    "opd": "Administer ampicillin and gentamicin",
+    "ope": "Administer naloxone"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Lethargy",
+        "hypoglycemia"
+      ],
+      [
+        "INTRAVENOUS DRUG",
+        "Symptoms",
+        "Abstinence Syndrome"
+      ],
+      [
+        "INTRAVENOUS DRUG",
+        "Symptoms",
+        "Abstinence Syndrome"
+      ],
+      [
+        "Umbilical hernia",
+        "Ulcer",
+        "Disease",
+        "Cretinism"
+      ],
+      [
+        "Umbilical hernia",
+        "Ulcer",
+        "Disease",
+        "Cretinism"
+      ],
+      [
+        "Respiration",
+        "Pharmaceutical Preparations",
+        "Dehydration"
+      ],
+      [
+        "Respiration",
+        "Pharmaceutical Preparations",
+        "Dehydration"
+      ]
+    ],
+    "relationships": [
+      [
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "TREATS",
+        "MANIFESTATION_OF"
+      ],
+      [
+        "COMPLICATES",
+        "COMPLICATES",
+        "CAUSES"
+      ],
+      [
+        "COMPLICATES",
+        "MANIFESTATION_OF",
+        "CAUSES"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "CAUSES"
+      ],
+      [
+        "ASSOCIATED_WITH",
+        "PREDISPOSES"
+      ]
+    ],
+    "paths": [
+      "(Lethargy)-ASSOCIATED_WITH->(hypoglycemia)",
+      "(INTRAVENOUS DRUG)-TREATS->(Symptoms)-ASSOCIATED_WITH->(Abstinence Syndrome)",
+      "(INTRAVENOUS DRUG)-TREATS->(Symptoms)-MANIFESTATION_OF->(Abstinence Syndrome)",
+      "(Umbilical hernia)-COMPLICATES->(Ulcer)-COMPLICATES->(Disease)-CAUSES->(Cretinism)",
+      "(Umbilical hernia)-COMPLICATES->(Ulcer)-MANIFESTATION_OF->(Disease)-CAUSES->(Cretinism)",
+      "(Respiration)-ASSOCIATED_WITH->(Pharmaceutical Preparations)-CAUSES->(Dehydration)",
+      "(Respiration)-ASSOCIATED_WITH->(Pharmaceutical Preparations)-PREDISPOSES->(Dehydration)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Lethargy)-ASSOCIATED_WITH->(hypoglycemia)",
+      "(INTRAVENOUS DRUG)-TREATS->(Symptoms)-ASSOCIATED_WITH/MANIFESTATION_OF->(Abstinence Syndrome)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Newborn with difficulty feeding and lethargy\" -> \"Possible hypoglycemia\" -> \"Administer glucose\" -> \"Increase blood glucose levels\" -> \"Improve symptoms\" -> 85%",
+    "CHAIN: \"Mother's history of intravenous drug use\" -> \"Possible neonatal abstinence syndrome\" -> \"Administer naloxone\" -> \"Reverse opioid withdrawal symptoms\" -> \"Improve feeding and reduce lethargy\" -> 75%",
+    "CHAIN: \"Symptoms of midfacial hypoplasia, macroglossia, and umbilical hernia\" -> \"Signs suggest congenital hypothyroidism\" -> \"Administer thyroxine\" -> \"Normalize thyroid hormone levels\" -> \"Improve metabolic function and developmental outcome\" -> 80%",
+    "CHAIN: \"High pulse and respirations, low blood pressure\" -> \"Possible dehydration or shock\" -> \"Administer -> 3%",
+    "CHAIN: \"Signs of infection could be present due to maternal drug use and symptoms\" -> \"Administer ampicillin and gentamicin\" -> \"Treat possible bacterial infection\" -> \"Reduce infection-related symptoms\" -> 65%"
+  ],
+  "enhanced_information": "Administer glucose to immediately address potential hypoglycemia and administer thyroxine for suspected congenital hypothyroidism, based on the newborn's symptoms and standard medical guidelines. Further diagnostics are recommended to confirm these conditions and refine treatment.",
+  "analysis": "Administering glucose is prioritized to address potential immediate life-threatening hypoglycemia in the newborn, with subsequent diagnostic and therapeutic measures to follow based on further evaluation.",
+  "answer": "opc",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      0.0
+    ],
+    "total_successes": 4
+  },
+  "normal_results": []
+}

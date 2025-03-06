@@ -57,7 +57,7 @@ class SimpleKGPipeline:
 
         potential_schema (Optional[List[tuple]]): A list of potential schema relationships.
         from_pdf (bool): Determines whether to include the PdfLoader in the pipeline.
-                         If True, expects `file_path` input in `run` methods.
+                         If True, expects `test_data` input in `run` methods.
                          If False, expects `text` input in `run` methods.
         text_splitter (Optional[Any]): A text splitter component. Defaults to FixedSizeSplitter().
         pdf_loader (Optional[Any]): A PDF loader component. Defaults to PdfLoader().
@@ -123,4 +123,4 @@ class SimpleKGPipeline:
         Returns:
             PipelineResult: The result of the pipeline execution.
         """
-        return await self.runner.run({"file_path": file_path, "text": text})
+        return await self.runner.run({"test_data": file_path, "text": text})

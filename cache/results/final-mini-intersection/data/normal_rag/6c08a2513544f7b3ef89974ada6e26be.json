@@ -1,0 +1,140 @@
+{
+  "question": "A 46-year-old woman comes to the physician for a routine health maintenance examination. She feels well. She has a history of seizures controlled with levetiracetam. She has needed glasses for the past 13 years. Her father died of pancreatic cancer. She is 175 cm (5 ft 9 in) tall and weighs 79 kg (174 lbs); BMI is 25.8 kg/m2. Vital signs are within normal limits. A photograph of the face is shown. This patient is most likely to be at increased risk for which of the following conditions?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Optic glioma",
+    "opb": "Squamous cell carcinoma",
+    "opc": "Gastric cancer",
+    "opd": "Coronary artery disease",
+    "ope": "Renal angiomyolipoma"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Seizures",
+        "Pathogenesis",
+        "SV2A gene|SV2A",
+        "Levetiracetam"
+      ],
+      [
+        "Seizures",
+        "Apnea",
+        "MECP2",
+        "Levetiracetam"
+      ],
+      [
+        "Metabolic Syndrome X",
+        "Coronary Arteriosclerosis"
+      ],
+      [
+        "Seizures",
+        "Pathogenesis",
+        "SV2A gene|SV2A",
+        "Levetiracetam"
+      ],
+      [
+        "Seizures",
+        "Apnea",
+        "MECP2",
+        "Levetiracetam"
+      ]
+    ],
+    "relationships": [
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "MANIFESTATION_OF",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ],
+      [
+        "CAUSES",
+        "ASSOCIATED_WITH",
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Seizures)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(SV2A gene|SV2A)-INTERACTS_WITH->(Levetiracetam)",
+      "(Seizures)-CAUSES->(Apnea)-ASSOCIATED_WITH->(MECP2)-INTERACTS_WITH->(Levetiracetam)",
+      "(Metabolic Syndrome X)-CAUSES->(Coronary Arteriosclerosis)",
+      "(Seizures)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(SV2A gene|SV2A)-INTERACTS_WITH->(Levetiracetam)",
+      "(Seizures)-CAUSES->(Apnea)-ASSOCIATED_WITH->(MECP2)-INTERACTS_WITH->(Levetiracetam)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Seizures)-MANIFESTATION_OF->(Pathogenesis)-ASSOCIATED_WITH->(SV2A gene|SV2A)-INTERACTS_WITH->(Levetiracetam)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"46-year-old woman\" -> \"history of seizures\" -> \"controlled with levetiracetam\" -> \"possible genetic predisposition\" -> \"family history of pancreatic cancer\" -> \"increased risk for certain cancers\" -> \"possible increased risk for gastric cancer\" -> 70%",
+    "CHAIN: \"46-year-old woman\" -> \"BMI of 25.8 kg/m2\" -> \"overweight classification\" -> \"increased risk for metabolic syndrome\" -> \"possible increased risk for coronary artery disease\" -> 65%",
+    "CHAIN: \"46-year-old woman\" -> \"history of seizures\" -> \"controlled with levetiracetam\" -> \"no direct association with optic glioma\" -> \"unclear risk for optic glioma\" -> 50%",
+    "CHAIN: \"46-year-old woman\" -> \"family history of pancreatic cancer\" -> \"possible genetic syndrome\" -> \"increased risk for renal angiomyolipoma\" -> \"possible association with tuberous sclerosis\" -> 60%",
+    "CHAIN: \"46-year-old woman\" -> \"history of needing glasses\" -> \"no direct association with squamous cell carcinoma\" -> \"unclear risk for squamous cell carcinoma\" -> 50%"
+  ],
+  "enhanced_information": "The patient is a 46-year-old woman with a family history of pancreatic cancer, which may suggest a genetic predisposition to certain cancers. This increases her risk for gastric cancer, particularly in the context of familial cancer syndromes. While her BMI indicates she is overweight, which is associated with an increased risk for coronary artery disease, the stronger association here is with gastric cancer due to the family history. There is no direct association between her history of seizures or the use of levetiracetam and optic glioma or squamous cell carcinoma. Additionally, while renal angiomyolipoma is associated with tuberous sclerosis, there is no clear evidence linking her family history to this condition. Therefore, the most likely increased risk for this patient is gastric cancer.",
+  "analysis": "The patient is a 46-year-old woman with a family history of pancreatic cancer, which suggests a potential genetic predisposition to certain cancers. The options provided include various conditions, but the most relevant one in the context of her age, family history, and potential genetic factors is gastric cancer. Gastric cancer can be associated with hereditary syndromes, particularly in individuals with a family history of other cancers. While renal angiomyolipoma is associated with tuberous sclerosis, which is not indicated here, and squamous cell carcinoma is more related to sun exposure and skin type, the familial link to pancreatic cancer raises the suspicion for gastric cancer. Therefore, the best-supported option is gastric cancer.",
+  "answer": "opc",
+  "confidence": 75.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      33.33333333333333,
+      33.33333333333333,
+      33.33333333333333,
+      0.0,
+      0.0
+    ],
+    "total_successes": 3
+  },
+  "normal_results": [
+    "physical appearance ASSOCIATED_WITH Disease",
+    "Anal canal LOCATION_OF Medical Imaging",
+    "membrane fraction PART_OF T-Lymphocyte",
+    "Phagocytes PART_OF Body tissue",
+    "Physical findings ASSOCIATED_WITH Malignant disease",
+    "Right ventricular structure LOCATION_OF Mechanical alternans",
+    "Aldosterone PREDISPOSES Physical findings",
+    "Neurodegenerative Disorders CAUSES Myoclonic Epilepsies, Progressive",
+    "Medical exam DIAGNOSES Obesity",
+    "Weighing patient DIAGNOSES Seizures",
+    "Weighing patient DIAGNOSES Optic nerve infarction",
+    "ATP1A1 INTERACTS_WITH Digoxin",
+    "High weight ASSOCIATED_WITH Malignant disease",
+    "Diabetes Mellitus, Non-Insulin-Dependent PREDISPOSES Ulcer",
+    "Psychotherapy, Multiple TREATS Mild depression"
+  ]
+}

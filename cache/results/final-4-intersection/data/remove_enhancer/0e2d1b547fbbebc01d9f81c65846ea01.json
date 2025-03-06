@@ -1,0 +1,134 @@
+{
+  "question": "A 72-year-old man comes to the emergency department because of blurry vision for the past 3 days. He has also had 4 episodes of right-sided headaches over the past month. He has no significant past medical history. His father died of coronary artery disease at the age of 62 years. His temperature is 37.2°C (99°F), pulse is 94/min, and blood pressure is 232/128 mm Hg. Fundoscopy shows right-sided optic disc blurring and retinal hemorrhages. A medication is given immediately. Five minutes later, his pulse is 75/min and blood pressure is 190/105 mm Hg. Which of the following drugs was most likely administered?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Labetalol",
+    "opb": "Hydralazine",
+    "opc": "Fenoldopam",
+    "opd": "Nicardipine",
+    "ope": "Nitroprusside"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Dopamine Receptor",
+        "Vasodilation"
+      ],
+      [
+        "Calcium Channel Blockers",
+        "Vasodilation"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Dopamine Receptor)-CAUSES->(Vasodilation)",
+      "(Calcium Channel Blockers)-CAUSES->(Vasodilation)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "Hydralazine",
+        "Pharmaceutical Preparations",
+        "agonists",
+        "Arteriolar Vasodilation"
+      ],
+      [
+        "Hydralazine",
+        "Cells",
+        "agonists",
+        "Arteriolar Vasodilation"
+      ],
+      [
+        "Fenoldopam",
+        "Inflammation",
+        "Dopamine Receptor"
+      ],
+      [
+        "Nicardipine",
+        "Calcium Channel Blockers"
+      ]
+    ],
+    "relationships": [
+      [
+        "ISA",
+        "INTERACTS_WITH",
+        "CAUSES"
+      ],
+      [
+        "PART_OF",
+        "LOCATION_OF",
+        "CAUSES"
+      ],
+      [
+        "TREATS",
+        "ASSOCIATED_WITH"
+      ],
+      [
+        "INTERACTS_WITH"
+      ]
+    ],
+    "paths": [
+      "(Hydralazine)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(agonists)-CAUSES->(Arteriolar Vasodilation)",
+      "(Hydralazine)-PART_OF->(Cells)-LOCATION_OF->(agonists)-CAUSES->(Arteriolar Vasodilation)",
+      "(Fenoldopam)-TREATS->(Inflammation)-ASSOCIATED_WITH->(Dopamine Receptor)",
+      "(Nicardipine)-INTERACTS_WITH->(Calcium Channel Blockers)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Dopamine Receptor)-CAUSES->(Vasodilation)",
+      "(Calcium Channel Blockers)-CAUSES->(Vasodilation)",
+      "(Hydralazine)-ISA->(Pharmaceutical Preparations)-INTERACTS_WITH->(agonists)-CAUSES->(Arteriolar Vasodilation)",
+      "(Hydralazine)-PART_OF->(Cells)-LOCATION_OF->(agonists)-CAUSES->(Arteriolar Vasodilation)",
+      "(Fenoldopam)-TREATS->(Inflammation)-ASSOCIATED_WITH->(Dopamine Receptor)",
+      "(Nicardipine)-INTERACTS_WITH->(Calcium Channel Blockers)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Labetalol\" -> \"alpha and beta adrenergic blockade\" -> \"decreased heart rate and blood pressure\" -> \"rapid onset of action\" -> 95%",
+    "CHAIN: \"Hydralazine\" -> \"arteriolar vasodilation\" -> \"decreased blood pressure\" -> \"slow onset, does not significantly affect heart rate\" -> 70%",
+    "CHAIN: \"Fenoldopam\" -> \"dopamine receptor agonist\" -> \"vasodilation\" -> \"rapid decrease in blood pressure\" -> \"minimal effect on heart rate\" -> 80%",
+    "CHAIN: \"Nicardipine\" -> \"calcium channel blocker\" -> \"vasodilation\" -> \"decrease in blood pressure\" -> \"moderate effect on heart rate\" -> 85%",
+    "CHAIN: \"Nitroprusside\" -> \"direct vasodilator\" -> \"rapid decrease in blood pressure\" -> \"minimal change in heart rate\" -> 90%"
+  ],
+  "enhanced_information": "Labetalol, due to its alpha and beta adrenergic blockade, is the most likely administered drug, as it rapidly decreases both heart rate and blood pressure, aligning with the patient's observed clinical changes. This choice is supported by standard medical consensus on the management of hypertensive emergencies.",
+  "analysis": "Labetalol is most consistent with the observed clinical changes of reduced blood pressure and heart rate, aligning with its pharmacological action as both an alpha and beta blocker. This choice is supported by standard medical consensus for the management of hypertensive emergencies where dual control of blood pressure and heart rate is beneficial.",
+  "answer": "opa",
+  "confidence": 90.0,
+  "chain_coverage": {
+    "success_counts": [
+      0,
+      1,
+      2,
+      2,
+      0
+    ],
+    "coverage_rates": [
+      0.0,
+      20.0,
+      40.0,
+      40.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}

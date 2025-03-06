@@ -24,7 +24,7 @@ class QueryProcessor:
             max_connection_lifetime=3600,
             max_connection_pool_size=db_config["max_connections"],
         )
-        self.entity_processor = EntityProcessor()  # Still needed for name-to-CUI conversion
+        self.entity_processor = EntityProcessor()  
 
         self.embedder = CohereEmbeddings(
             model=config.cohere["model"],
@@ -77,16 +77,14 @@ class QueryProcessor:
                     'path_length': record['path_length']
                 })
 
-            # 删除路径长度大于最短路径长度+1的路径
             if paths:
                 shortest_length = paths[0]['path_length']
                 paths = [path for path in paths if path['path_length'] <= shortest_length + 1]
 
-            # 对每组相同节点的路径，根据分数选择最高分路径
             unique_paths = {}
             for path in paths:
                 key = tuple(path['node_names'])
-                score = sum(path['scores']) / (1 + path['path_length'])  # 打分逻辑
+                score = sum(path['scores']) / (1 + path['path_length'])  
 
                 if key not in unique_paths or unique_paths[key]['score'] < score:
                     unique_paths[key] = {
@@ -96,7 +94,6 @@ class QueryProcessor:
                         'score': score
                     }
 
-            # 返回处理后的路径
             sorted_paths = sorted(unique_paths.values(), key=lambda x: x['score'], reverse=True)
 
             return sorted_paths[:self.hyper_parameter_cg]
@@ -125,26 +122,23 @@ class QueryProcessor:
                     'path_length': record['path_length']
                 })
 
-            # 直接返回最短的3条路径
+            
             return paths[:self.hyper_parameter_kg]
 
     def generate_initial_causal_graph(self, question: MedicalQuestion) -> None:
         """Enhanced version of process_casual_paths that returns multiple shorter paths"""
         try:
             with self.driver.session(database='causal') as session:
-                # 获取问题中的CUIs
+                
                 question_cuis = set(self.entity_processor.extract_cuis_from_text(question.question))
                 keys = list(question.options.keys())
 
-                # 分别获取每个选项的CUIs
                 options_cuis = set()
-                for key, option_text in question.options.items():  # 直接遍历选项字典
+                for key, option_text in question.options.items():  
                     processed_cuis = self.entity_processor.extract_cuis_from_text(option_text)
-                    options_cuis.update(set(processed_cuis))  # 使用 update 更新集合
+                    options_cuis.update(set(processed_cuis))  
 
-                # 用于去重的集合
                 seen_paths = set()
-
                 for start_cui in options_cuis:
                     for end_cui in question_cuis:
                         if start_cui == end_cui:
@@ -152,13 +146,13 @@ class QueryProcessor:
 
                         paths = self.process_causal_graph_paths_enhanced(start_cui, end_cui)
                         for path in paths:
-                            # 创建用于去重的路径标识
+                            
                             path_identifier = (
                                 tuple(path['node_names']),
                                 tuple(path['relationships'])
                             )
 
-                            # 如果是新路径，添加到结果中
+                            
                             if path_identifier not in seen_paths:
                                 seen_paths.add(path_identifier)
                                 question.initial_causal_graph.nodes.append(path['node_names'])
@@ -171,13 +165,13 @@ class QueryProcessor:
 
                         paths = self.process_causal_graph_paths_enhanced(start_cui, end_cui)
                         for path in paths:
-                            # 创建用于去重的路径标识
+                            
                             path_identifier = (
                                 tuple(path['node_names']),
                                 tuple(path['relationships'])
                             )
 
-                            # 如果是新路径，添加到结果中
+                            
                             if path_identifier not in seen_paths:
                                 seen_paths.add(path_identifier)
                                 question.initial_causal_graph.nodes.append(path['node_names'])
@@ -186,29 +180,26 @@ class QueryProcessor:
         except Exception as e:
             self.logger.error(f"Error in enhanced casual paths processing: {str(e)}", exc_info=True)
 
-        question.generate_paths()  # Update path strings
+        question.generate_paths()  
 
     def process_chain_of_thoughts(self, question: MedicalQuestion, graph: str, enhancement: bool) -> None:
-        """处理思维链的路径检索，并计算相对覆盖率"""
         question.causal_graph.clear()
         question.knowledge_graph.clear()
-        chain_success_counts = []  # 存储每条链的查询成功次数
+        chain_success_counts = []  
 
         for chain in question.reasoning_chain:
-            success_count = 0  # 每条链的查询成功次数
+            success_count = 0  
 
-            # 分割思维链的步骤
             steps = chain.split('->')
-            # 遍历相邻步骤对
+            
             for i in range(len(steps) - 1):
                 start = steps[i].strip()
                 end = steps[i + 1].strip()
-                # print(f"start {start} end {end}")
-                # 去掉置信度部分（如果存在）
+                
+                
                 if '%' in end:
                     end = end.split('%')[0].strip()
 
-                # 通过entity processor获取CUI
                 start_cuis = self.entity_processor.extract_cuis_from_text(start)
                 end_cuis = self.entity_processor.extract_cuis_from_text(end)
 
@@ -227,7 +218,7 @@ class QueryProcessor:
                             continue
 
                         if start_cui and end_cui:
-                            # print(f"start {start_cui} end {end_cui}")
+                            
                             if graph == 'both':
                                 paths = self.process_causal_graph_paths_enhanced(start_cui, end_cui)
                                 if len(paths) > 0:
@@ -265,16 +256,13 @@ class QueryProcessor:
 
             chain_success_counts.append(success_count)
 
-        # 计算总查询成功次数
         total_successes = sum(chain_success_counts)
 
-        # 计算每条链的相对覆盖率
         if total_successes > 0:
             chain_coverage_rates = [(count / total_successes) * 100 for count in chain_success_counts]
         else:
             chain_coverage_rates = [0.0] * len(chain_success_counts)
 
-        # 存储覆盖率信息
         question.chain_coverage = {
             'success_counts': chain_success_counts,
             'coverage_rates': chain_coverage_rates,
@@ -285,28 +273,26 @@ class QueryProcessor:
 
     def process_vector_search(self, question: MedicalQuestion) -> None:
         """
-        对问题和选项进行向量检索，返回最相关的结果
+        process using normal graphrag
 
         Args:
-            question: MedicalQuestion对象，包含问题和选项信息
+            question: MedicalQuestion object
         """
         try:
-            # 存储所有检索结果
+            
             all_results = set()
 
-            # 为每个选项构建查询文本并执行检索
             for option_key, option_text in question.options.items():
                 query_text = f"{question.question} {option_text}"
                 results = self.vector_retriever.search(query_text=query_text, top_k=3)
 
-                # 将结果添加到集合中（去重）
                 for result in results.items:
                     result_dict = eval(result.content)
                     text = result_dict.get('text', '')
                     if text:
                         all_results.add(text)
 
-            # 存储结果到问题对象中
+            
             question.normal_results = list(all_results)
 
         except Exception as e:

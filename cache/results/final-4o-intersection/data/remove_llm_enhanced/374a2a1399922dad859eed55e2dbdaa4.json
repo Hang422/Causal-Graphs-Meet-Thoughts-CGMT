@@ -1,0 +1,86 @@
+{
+  "question": "A 8-month-old girl is brought to her pediatrician because her mom is concerned that she may have a \"lazy eye\". She was born prematurely at 33 weeks and was 3 pounds at birth. Her mother also says that there is a history of visual problems that run in the family, which is why she wanted to make sure that her daughter was evaluated early. On presentation, she is found to have eyes that are misaligned both horizontally and vertically. Physical examination and labs reveal no underlying disorders, and the patient is discharged with occlusion therapy to help correct the misalignment. Which of the following would most likely have also been seen on physical exam?",
+  "is_multi_choice": true,
+  "correct_answer": "opa",
+  "options": {
+    "opa": "Asymmetric corneal light reflex",
+    "opb": "Bitemporal hemianopsia",
+    "opc": "Increased intraocular pressure",
+    "opd": "Fundus neovascularization",
+    "ope": "Nystagmus"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [
+      [
+        "Premature Birth",
+        "Disease",
+        "Strabismus"
+      ],
+      [
+        "Premature Birth",
+        "Retinal Diseases"
+      ]
+    ],
+    "relationships": [
+      [
+        "CAUSES",
+        "COMPLICATES"
+      ],
+      [
+        "CAUSES"
+      ]
+    ],
+    "paths": [
+      "(Premature Birth)-CAUSES->(Disease)-COMPLICATES->(Strabismus)",
+      "(Premature Birth)-CAUSES->(Retinal Diseases)"
+    ]
+  },
+  "knowledge_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(Premature Birth)-CAUSES->(Retinal Diseases)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Premature birth\" -> \"risk of strabismus\" -> \"misaligned eyes\" -> \"asymmetric corneal light reflex\" -> 95%",
+    "CHAIN: \"Family history of visual problems\" -> \"risk of strabismus\" -> \"misaligned eyes\" -> \"asymmetric corneal light reflex\" -> 90%",
+    "CHAIN: \"Misaligned eyes\" -> \"asymmetric corneal light reflex\" -> 85%",
+    "CHAIN: \"Premature birth\" -> \"risk of retinopathy of prematurity\" -> \"possible fundus neovascularization\" -> 60%",
+    "CHAIN: \"Misaligned eyes\" -> \"nystagmus\" -> 50%"
+  ],
+  "enhanced_information": "In evaluating the physical exam findings for an 8-month-old girl with misaligned eyes, the most likely finding is an asymmetric corneal light reflex. This is supported by the consensus that strabismus, a condition characterized by misaligned eyes, often results in an asymmetric corneal light reflex during examination. The reasoning chains correctly identify premature birth and family history of visual problems as risk factors for strabismus, which aligns with the retrieved evidence paths linking premature birth to strabismus. Other options, such as bitemporal hemianopsia, increased intraocular pressure, fundus neovascularization, and nystagmus, are less likely in this context. Bitemporal hemianopsia is typically associated with pituitary tumors, increased intraocular pressure with glaucoma, and fundus neovascularization with advanced retinopathy of prematurity, which is not indicated here. Nystagmus can occur with misaligned eyes but is less directly linked than the asymmetric corneal light reflex. Therefore, the most consensus-supported finding is the asymmetric corneal light reflex.",
+  "analysis": "The primary concern in this case is the misalignment of the eyes, which is indicative of strabismus. In strabismus, the eyes do not properly align with each other when looking at an object, and this often results in an asymmetric corneal light reflex. This is a common and straightforward finding during the physical examination of a child with strabismus. The other options are less likely in this context: bitemporal hemianopsia is associated with pituitary tumors, increased intraocular pressure is related to glaucoma, fundus neovascularization is seen in advanced retinopathy of prematurity, and nystagmus, while possible, is not as directly linked to strabismus as the asymmetric corneal light reflex. Given the child's history of premature birth and family history of visual problems, strabismus is a plausible diagnosis, and the asymmetric corneal light reflex is the most likely finding on examination.",
+  "answer": "opa",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "coverage_rates": [
+      50.0,
+      0.0,
+      0.0,
+      50.0,
+      0.0
+    ],
+    "total_successes": 2
+  },
+  "normal_results": []
+}

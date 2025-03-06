@@ -1,0 +1,126 @@
+{
+  "question": "A 40-year-old male visits a urologist and reports that for the past 2 weeks, his penis has been gradually curving to the right with associated pain during intercourse. He is able to have a normal erection and he does not recollect of any trauma to his penis. Although he is married, he admits to having unprotected sexual relationship with several females in the past year. His vitals are normal and physical examination in unremarkable except for a lesionless curved penis. It is painless to touch. Test results for sexually transmitted disease is pending. Which of the following is the most likely cause?",
+  "is_multi_choice": true,
+  "correct_answer": "opd",
+  "options": {
+    "opa": "Fibrosis of corpus cavernosa",
+    "opb": "Congenital hypospadias",
+    "opc": "Syphilitic chancre",
+    "opd": "Fibrosis of tunica albuginea",
+    "ope": "Hypertrophy of corpus cavernosa"
+  },
+  "topic_name": null,
+  "context": null,
+  "initial_causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "causal_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": []
+  },
+  "knowledge_graph": {
+    "nodes": [
+      [
+        "penis",
+        "Pain"
+      ],
+      [
+        "Tunica Albuginea",
+        "Peyronie Disease"
+      ],
+      [
+        "Fibrosis",
+        "Peyronie Disease"
+      ],
+      [
+        "Sexually Transmitted Diseases",
+        "Disease",
+        "Biopsy",
+        "Syphilitic chancre"
+      ],
+      [
+        "Sexually Transmitted Diseases",
+        "Disease",
+        "Biopsy",
+        "Syphilitic chancre"
+      ],
+      [
+        "Therapeutic tactile stimulation",
+        "Fibrosis"
+      ]
+    ],
+    "relationships": [
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "LOCATION_OF"
+      ],
+      [
+        "CAUSES"
+      ],
+      [
+        "CAUSES",
+        "CAUSES",
+        "DIAGNOSES"
+      ],
+      [
+        "PREDISPOSES",
+        "CAUSES",
+        "DIAGNOSES"
+      ],
+      [
+        "TREATS"
+      ]
+    ],
+    "paths": [
+      "(penis)-LOCATION_OF->(Pain)",
+      "(Tunica Albuginea)-LOCATION_OF->(Peyronie Disease)",
+      "(Fibrosis)-CAUSES->(Peyronie Disease)",
+      "(Sexually Transmitted Diseases)-CAUSES->(Disease)-CAUSES->(Biopsy)-DIAGNOSES->(Syphilitic chancre)",
+      "(Sexually Transmitted Diseases)-PREDISPOSES->(Disease)-CAUSES->(Biopsy)-DIAGNOSES->(Syphilitic chancre)",
+      "(Therapeutic tactile stimulation)-TREATS->(Fibrosis)"
+    ]
+  },
+  "enhanced_graph": {
+    "nodes": [],
+    "relationships": [],
+    "paths": [
+      "(penis)-LOCATION_OF->(Pain)",
+      "(Tunica Albuginea)-LOCATION_OF->(Peyronie Disease)",
+      "(Fibrosis)-CAUSES->(Peyronie Disease)"
+    ]
+  },
+  "reasoning_chain": [
+    "CHAIN: \"Gradual curvature of penis\" -> \"Pain during intercourse\" -> \"No trauma recollection\" -> \"Fibrosis of tunica albuginea\" -> \"Peyronie's disease\" -> 85%",
+    "CHAIN: \"Unprotected sexual relationships\" -> \"Possible exposure to sexually transmitted diseases\" -> \"Syphilitic chancre\" -> \"Unclear due to pending STD test results\" -> 40%",
+    "CHAIN: \"Curved penis without lesions\" -> \"Painless to touch\" -> \"Fibrosis of corpus cavernosa\" -> \"Less likely due to absence of palpable fibrosis or plaques\" -> 30%",
+    "CHAIN: \"Normal erection despite curvature\" -> \"No congenital abnormalities reported\" -> \"Congenital hypospadias\" -> \"Unlikely due to late onset of symptoms\" -> 10%",
+    "CHAIN: \"Curved penis\" -> \"Hypertrophy of corpus cavernosa\" -> \"Unlikely due to lack of evidence of hypertrophy in physical exam\" -> 5%"
+  ],
+  "enhanced_information": "The most likely cause of the patient's symptoms, including the gradual curvature of the penis and pain during intercourse without recollection of trauma, is Peyronie's disease. This condition is characterized by fibrosis of the tunica albuginea, which aligns with the patient's presentation of a curved penis that is painless to touch. The retrieved evidence path that links fibrosis and Peyronie's disease to the tunica albuginea supports this diagnosis. Other options such as syphilitic chancre and congenital hypospadias are less likely due to the absence of lesions and the late onset of symptoms, respectively. Hypertrophy of the corpus cavernosa is also unlikely as there is no evidence of hypertrophy on physical examination. Therefore, the diagnosis of Peyronie's disease, supported by the evidence of fibrosis causing this condition in the tunica albuginea, is the most consistent with the patient's clinical presentation and available evidence.",
+  "analysis": "The patient's symptoms of a gradually curving penis and pain during intercourse, without any history of trauma or lesions, suggest Peyronie's disease. Peyronie's disease is characterized by fibrosis of the tunica albuginea, which leads to the abnormal curvature of the penis. This diagnosis is supported by the absence of other symptoms that would suggest alternative diagnoses such as syphilitic chancre (which typically presents with a lesion), congenital hypospadias (a condition present from birth), or hypertrophy of the corpus cavernosa (which would likely show other signs on physical examination). The option that aligns with the medical consensus and the patient's presentation is fibrosis of the tunica albuginea, which is the hallmark of Peyronie's disease.",
+  "answer": "opd",
+  "confidence": 95.0,
+  "chain_coverage": {
+    "success_counts": [
+      3,
+      1,
+      1,
+      0,
+      0
+    ],
+    "coverage_rates": [
+      60.0,
+      20.0,
+      20.0,
+      0.0,
+      0.0
+    ],
+    "total_successes": 5
+  },
+  "normal_results": []
+}
