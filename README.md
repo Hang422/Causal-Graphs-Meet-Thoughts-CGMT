@@ -128,6 +128,7 @@ compare_models('test-4')
 # Run with different models
 config.openai['model'] = 'gpt-3.5-turbo'
 compare_models('test-3.5')
+...
 ```
 
 ## Evaluation
